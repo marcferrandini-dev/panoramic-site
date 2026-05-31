@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      INSERE LA LIGNE R DANS LE GRID NUMÃ‰RO N
+      INSERE LA LIGNE R DANS LE GRID NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La commande GRID_ROW_INSERT N,R insÃ¨re une ligne en position R dans l'objet GRID numÃ©ro N
+        La commande GRID_ROW_INSERT N,R insère une ligne en position R dans l'objet GRID numéro N
       </p>
     </blockquote>
 
@@ -107,8 +107,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>R = numÃ©ro de ligne (entier ou rÃ©el) de l'objet systÃ¨me GRID.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>R = numéro de ligne (entier ou réel) de l'objet système GRID.</li>
     </ul>
 
     <br>
@@ -118,7 +118,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande GRID_ROW_INSERT est utilisÃ©e pour insÃ©rer une ligne dans un GRID.</li>
+      <li>La commande GRID_ROW_INSERT est utilisée pour insérer une ligne dans un GRID.</li>
     </ul>
 
     <br>
@@ -128,13 +128,13 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
-      <li>Si l'objet numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un objet systÃ¨me : GRID.</li>
-      <li>Si la valeur R est infÃ©rieure ou Ã©gale Ã  0.</li>
-      <li>Si la valeur R + 1 est supÃ©rieure au nombre de lignes du GRID numÃ©ro N.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur ou égal à 0.</li>
+      <li>Si l'objet numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un objet système : GRID.</li>
+      <li>Si la valeur R est inférieure ou égale à 0.</li>
+      <li>Si la valeur R + 1 est supérieure au nombre de lignes du GRID numéro N.</li>
       <li>Si la valeur R n'est pas une expression correcte.</li>
     </ul>
 
@@ -149,7 +149,7 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>grid 1:' crÃ©e un GRID</p>
+              <p>grid 1:' crée un GRID</p>
               <p>' le positionner</p>
               <p>top 1,10:left 1,10</p>
               <p>' le dimensionner</p>
@@ -181,7 +181,7 @@
               <p>grid_write 1,5,4,"Cellule 5,4"</p>
               <p>grid_write 1,5,5,"Cellule 5,5"</p>
               <p>wait 1000:' attendre 1 seconde</p>
-              <p>' insÃ©rer la ligne nÂ° 3</p>
+              <p>' insérer la ligne n° 3</p>
               <p>grid_row_insert 1,3</p>
             </font></left></td>
           </tr>

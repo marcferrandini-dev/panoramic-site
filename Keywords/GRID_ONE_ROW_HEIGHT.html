@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DÃ‰FINIT LA HAUTEUR DE LA LIGNE NUMÃ‰RO R DU GRID NUMÃ‰RO N Ã€ V PIXELS
+      DÉFINIT LA HAUTEUR DE LA LIGNE NUMÉRO R DU GRID NUMÉRO N À V PIXELS
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 3</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 3</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande GRID_ONE_ROW_HEIGHT N,R,V met Ã  V pixels la hauteur de la ligne numÃ©ro R du GRID numÃ©ro N.
+        La commande GRID_ONE_ROW_HEIGHT N,R,V met à V pixels la hauteur de la ligne numéro R du GRID numéro N.
       </p>
       <p>
-        Remarque: un GRID est crÃ©Ã© avec des lignes de hauteur 24 pixels.
+        Remarque: un GRID est créé avec des lignes de hauteur 24 pixels.
       </p>
     </blockquote>
 
@@ -110,9 +110,9 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>R = numÃ©ro de la ligne (entier ou rÃ©el) de l'objet systÃ¨me GRID.</li>
-      <li>V = hauteur de la ligne (entier ou rÃ©el) en pixel.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>R = numéro de la ligne (entier ou réel) de l'objet système GRID.</li>
+      <li>V = hauteur de la ligne (entier ou réel) en pixel.</li>
     </ul>
 
     <br>
@@ -122,7 +122,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande GRID_ONE_ROW_HEIGHT est utilisÃ©e pour dimensionner la hauteur d'une ligne d'un GRID.</li>
+      <li>La commande GRID_ONE_ROW_HEIGHT est utilisée pour dimensionner la hauteur d'une ligne d'un GRID.</li>
     </ul>
 
     <br>
@@ -132,14 +132,14 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un objet systÃ¨me : GRID.</li>
-      <li>Si la valeur R est infÃ©rieure ou Ã©gale Ã  0.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un objet système : GRID.</li>
+      <li>Si la valeur R est inférieure ou égale à 0.</li>
       <li>Si la valeur R n'est pas une expression correcte.</li>
-      <li>Si la valeur V est infÃ©rieure ou Ã©gale Ã  0.</li>
+      <li>Si la valeur V est inférieure ou égale à 0.</li>
       <li>Si la valeur V n'est pas une expression correcte.</li>
     </ul>
 
@@ -154,14 +154,14 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©e un GRID avec sa position et ses dimensions par dÃ©faut </p>
+              <p>' crée un GRID avec sa position et ses dimensions par défaut </p>
               <p>grid 1</p>
-              <p>' change sa taille (son numÃ©ro est utilisÃ© comme rÃ©fÃ©rence)</p>
+              <p>' change sa taille (son numéro est utilisé comme référence)</p>
               <p>width 1,500</p>
               <p>height 1,180</p>
-              <p>' met 6 rangÃ©es</p>
+              <p>' met 6 rangées</p>
               <p>grid_row 1,6</p>
-              <p>' avec 2 rangÃ©es fixes</p>
+              <p>' avec 2 rangées fixes</p>
               <p>grid_row_fixed 1,2</p>
               <p>' hauteur des lignes</p>
               <p>grid_row_height 1,45</p>
@@ -171,7 +171,7 @@
               <p>grid_column_fixed 1,2</p>
               <p>' largeur des colonnes</p>
               <p>grid_column_width 1,100</p>
-              <p>' met Ã  50 pixels la premiÃ¨re ligne</p>
+              <p>' met à 50 pixels la première ligne</p>
               <p>grid_one_row_height 1,1,50</p>
             </font></left></td>
           </tr>

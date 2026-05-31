@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      CHARGE LA DLL D EN MÃ‰MOIRE
+      CHARGE LA DLL D EN MÉMOIRE
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
+      <li>Paramètre: 1</li>
       <li>Groupe: DLL</li>
     </ul></b></p>
 
@@ -93,16 +93,16 @@
 
     <blockquote>
       <p>
-        La commande DLL_ON D charge en mÃ©moire la DLL (Librairie de liens dynamiques) dont le nom est D. D est le nom absolu ou relatif du fichier DLL.
+        La commande DLL_ON D charge en mémoire la DLL (Librairie de liens dynamiques) dont le nom est D. D est le nom absolu ou relatif du fichier DLL.
       </p>
       <p>
-        Le nom absolu du fichier est le nom complet, par rapport Ã  la racine du systÃ¨me de fichier (ex: "c:\temp\mydll.dll").
+        Le nom absolu du fichier est le nom complet, par rapport à la racine du système de fichier (ex: "c:\temp\mydll.dll").
       </p>
       <p>
-        Le nom relatif est le nom du fichier par rapport au rÃ©pertoire courant (ex: "mydll.dll" ou "/file.dll" ou "\file.dll").
+        Le nom relatif est le nom du fichier par rapport au répertoire courant (ex: "mydll.dll" ou "/file.dll" ou "\file.dll").
       </p>
       <p>
-        Pour les fichiers DLL, le nom relatif dÃ©signe soit le rÃ©pertoire courant, soit le rÃ©pertoire spÃ©cifique aux DLL: Windows/System32
+        Pour les fichiers DLL, le nom relatif désigne soit le répertoire courant, soit le répertoire spécifique aux DLL: Windows/System32
       </p>
     </blockquote>
 
@@ -116,7 +116,7 @@
     </b></font></p>
 
     <ul>
-      <li>D = chaÃ®ne de caractÃ¨res, nom absolu ou relatif du fichier.</li>
+      <li>D = chaîne de caractères, nom absolu ou relatif du fichier.</li>
     </ul>
 
     <br>
@@ -126,7 +126,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande DLL_ON est utilisÃ©e pour charger une DLL en mÃ©moire, afin de pouvoir appeler ses fonctions.</li>
+      <li>La commande DLL_ON est utilisée pour charger une DLL en mémoire, afin de pouvoir appeler ses fonctions.</li>
     </ul>
 
     <br>
@@ -152,14 +152,14 @@
           <tr>
             <td><left><font face="Consolas">
               <p>dim v,r</p>
-              <p>' DLL chargÃ©e en mÃ©moire</p>
+              <p>' DLL chargée en mémoire</p>
               <p>dll_on "ma_dll.dll"</p>
-              <p>' appel d'une fonction de la DLL avec 2 paramÃ¨tres</p>
+              <p>' appel d'une fonction de la DLL avec 2 paramètres</p>
               <p>v=23</p>
               <p>r=dll_call2("func", 19, v)</p>
-              <p>' affichage du rÃ©sultat</p>
+              <p>' affichage du résultat</p>
               <p>print v</p>
-              <p>' libÃ©ration de la mÃ©moire</p>
+              <p>' libération de la mémoire</p>
               <p>dll_off</p>
             </font></left></td>
           </tr>

@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      Ã‰CRIT C OCTETS DANS LE FICHIER BINAIRE NUMÃ‰RO N, LES DONNÃ‰ES Ã€ Ã‰CRIRE SONT DANS LE TABLEAU V% Ã€ PARTIR DE L'INDICE P
+      ÉCRIT C OCTETS DANS LE FICHIER BINAIRE NUMÉRO N, LES DONNÉES À ÉCRIRE SONT DANS LE TABLEAU V% À PARTIR DE L'INDICE P
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 4</li>
+      <li>Paramètres: 4</li>
       <li>Groupe: Fichiers Binaires</li>
     </ul></b></p>
 
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande FILEBIN_BLOCK_WRITE N,C,V%(P) Ã©crit un bloc de C octets dans le fichier binaire numÃ©ro N. Les donnÃ©es Ã  Ã©crire sont dans le tableau V% Ã  partir de l'indice P.
+        La commande FILEBIN_BLOCK_WRITE N,C,V%(P) écrit un bloc de C octets dans le fichier binaire numéro N. Les données à écrire sont dans le tableau V% à partir de l'indice P.
       </p>
       <p>
-        Le tableau V% doit Ãªtre du type entier.
+        Le tableau V% doit être du type entier.
       </p>
       <p>
         La position courante dans le fichier binaire augmente de C.
@@ -113,10 +113,10 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier binaire (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier binaire permis.</li>
+      <li>N = numéro de fichier binaire (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier binaire permis.</li>
       <li>V% = nom de tableau de variable, de type entier.</li>
-      <li>C = nombre d'octets, de type entier ou rÃ©el.</li>
-      <li>P = indice dans le tableau, de type entier ou rÃ©el.</li>
+      <li>C = nombre d'octets, de type entier ou réel.</li>
+      <li>P = indice dans le tableau, de type entier ou réel.</li>
     </ul>
 
     <br>
@@ -126,7 +126,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILEBIN_BLOCK_WRITE est utilisÃ©e pour Ã©crire un bloc d'octet dans un fichier binaire.</li>
+      <li>La commande FILEBIN_BLOCK_WRITE est utilisée pour écrire un bloc d'octet dans un fichier binaire.</li>
     </ul>
 
     <br>
@@ -136,17 +136,17 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier binaire ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier binaire permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier binaire ouvert.</li>
       <li>Si C n'est pas une expression correcte.</li>
-      <li>Si C est infÃ©rieur Ã  1.</li>
+      <li>Si C est inférieur à 1.</li>
       <li>Si P n'est pas une expression correcte.</li>
-      <li>Si P est infÃ©rieur Ã  1.</li>
-      <li>Si la taille de V%() n'est pas supÃ©rieure ou Ã©gale Ã  P+C-1.</li>
-      <li>Si V% n'est pas une variable dÃ©clarÃ©e.</li>
+      <li>Si P est inférieur à 1.</li>
+      <li>Si la taille de V%() n'est pas supérieure ou égale à P+C-1.</li>
+      <li>Si V% n'est pas une variable déclarée.</li>
       <li>Si V% n'est pas une variable de type tableau entier.</li>
-      <li>Si les valeurs de V%(P) Ã  V%(P+C-1) ne sont pas comprises entre 0 et 255. </li>
+      <li>Si les valeurs de V%(P) à V%(P+C-1) ne sont pas comprises entre 0 et 255. </li>
     </ul>
 
     <br>
@@ -160,11 +160,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' ouvre un fichier binaire en Ã©criture</p>
+              <p>' ouvre un fichier binaire en écriture</p>
               <p>filebin_open_write 1,"file.abc"</p>
               <p>' on se positionne en 5</p>
               <p>filebin_position 1,5</p>
-              <p>' Ã©crit 10 octets</p>
+              <p>' écrit 10 octets</p>
               <p>filebin_block_write 1,10,v%(7)</p>
               <p>' ferme le fichier binaire</p>
               <p>filebin_close 1</p>

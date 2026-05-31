@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      CRÃ‰E UN FICHIER BINAIRE EN Ã‰CRITURE, AVEC LE NUMÃ‰RO N ET LE NOM S
+      CRÉE UN FICHIER BINAIRE EN ÉCRITURE, AVEC LE NUMÉRO N ET LE NOM S
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Binaires</li>
     </ul></b></p>
 
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande FILEBIN_OPEN_WRITE N,S crÃ©e un nouveau fichier binaire nommÃ© S et lui donne le numÃ©ro de fichier N. Le numÃ©ro N sera utilisÃ© pour dÃ©signer ce fichier binaire.
+        La commande FILEBIN_OPEN_WRITE N,S crée un nouveau fichier binaire nommé S et lui donne le numéro de fichier N. Le numéro N sera utilisé pour désigner ce fichier binaire.
       </p>
       <p>
-        Le fichier binaire crÃ©Ã© peut alors Ãªtre utilisÃ© par les commandes appropriÃ©es.
+        Le fichier binaire créé peut alors être utilisé par les commandes appropriées.
       </p>
       <p>
-        Remarque: si un fichier existant a le mÃªme nom S, il est supprimÃ© (donc perdu) et remplacÃ© par le nouveau.
+        Remarque: si un fichier existant a le même nom S, il est supprimé (donc perdu) et remplacé par le nouveau.
       </p>
     </blockquote>
 
@@ -113,8 +113,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier binaire (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>S = chaÃ®ne de caractÃ¨res. Nom de fichier absolu ou relatif.</li>
+      <li>N = numéro de fichier binaire (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier binaire permis.</li>
+      <li>S = chaîne de caractères. Nom de fichier absolu ou relatif.</li>
     </ul>
 
     <br>
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILEBIN_OPEN_WRITE est utilisÃ©e pour Ã©crire dans un fichier binaire.</li>
+      <li>La commande FILEBIN_OPEN_WRITE est utilisée pour écrire dans un fichier binaire.</li>
     </ul>
 
     <br>
@@ -134,9 +134,9 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>Si le numÃ©ro N est dÃ©jÃ  utilisÃ© pour un fichier binaire ouvert. (Fermer un fichier libÃ¨re son numÃ©ro)</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier binaire permis.</li>
+      <li>Si le numéro N est déjà utilisé pour un fichier binaire ouvert. (Fermer un fichier libère son numéro)</li>
       <li>Si S n'est pas un nom de fichier correct.</li>
     </ul>
 
@@ -151,9 +151,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' ouvrir un fichier binaire en Ã©criture</p>
+              <p>' ouvrir un fichier binaire en écriture</p>
               <p>filebin_open_write 1,"test"</p>
-              <p>' Ã©crire la valeur 40</p>
+              <p>' écrire la valeur 40</p>
               <p>filebin_write 1,40</p>
               <p>' fermer le fichier</p>
               <p>filebin_close 1</p>

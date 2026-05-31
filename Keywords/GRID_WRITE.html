@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      Ã‰CRIT LE CONTENU DE S DANS LA CELLULE (R,C) DU GRID NUMÃ‰RO N
+      ÉCRIT LE CONTENU DE S DANS LA CELLULE (R,C) DU GRID NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 4</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 4</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande GRID_WRITE N,R,C,S Ã©crit le string S (texte ou variable string) dans la cellule (R,C) du GRID numÃ©ro N, R Ã©tant le numÃ©ro de ligne, et C Ã©tant le numÃ©ro de colonne.
+        La commande GRID_WRITE N,R,C,S écrit le string S (texte ou variable string) dans la cellule (R,C) du GRID numéro N, R étant le numéro de ligne, et C étant le numéro de colonne.
       </p>
       <p>
-        Dans un GRID, les numÃ©ros de ligne et de colonne commencent Ã  1.
+        Dans un GRID, les numéros de ligne et de colonne commencent à 1.
       </p>
     </blockquote>
 
@@ -110,10 +110,10 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>R = numÃ©ro de ligne (entier ou rÃ©el)</li>
-      <li>C = numÃ©ro de colonne (entier ou rÃ©el)</li>
-      <li>S = chaÃ®ne de caractÃ¨res</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>R = numéro de ligne (entier ou réel)</li>
+      <li>C = numéro de colonne (entier ou réel)</li>
+      <li>S = chaîne de caractères</li>
     </ul>
 
     <br>
@@ -123,7 +123,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande GRID_WRITE est utilisÃ©e pour Ã©crire dans une cellule d'un GRID.</li>
+      <li>La commande GRID_WRITE est utilisée pour écrire dans une cellule d'un GRID.</li>
     </ul>
 
     <br>
@@ -133,11 +133,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un objet systÃ¨me : GRID.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un objet système : GRID.</li>
       <li>Si R n'est pas une expression correcte.</li>
       <li>Si C n'est pas une expression correcte.</li>
       <li>Si S n'est pas une expression string correcte.</li>
@@ -154,9 +154,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©e un GRID avec sa position et ses dimensions par dÃ©faut </p>
+              <p>' crée un GRID avec sa position et ses dimensions par défaut </p>
               <p>grid 1</p>
-              <p>' Ã©crit dans la cellule (2,3)</p>
+              <p>' écrit dans la cellule (2,3)</p>
               <p>grid_write 1,2,3,"Bonjour"</p>
             </font></left></td>
           </tr>

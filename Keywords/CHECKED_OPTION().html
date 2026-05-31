@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      RETOURNE LE NUMÃ‰RO D'OBJET DE L'OPTION SELECTIONNÃ‰E DANS LE CONTAINER_OPTION NUMÃ‰RO N
+      RETOURNE LE NUMÉRO D'OBJET DE L'OPTION SELECTIONNÉE DANS LE CONTAINER_OPTION NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La fonction CHECKED_OPTION(N) retourne le numÃ©ro de l'OPTION sÃ©lectionnÃ© dans le CONTAINER_OPTION  numÃ©ro N, et -1 si aucun OPTION n'est sÃ©lectionnÃ©.
+        La fonction CHECKED_OPTION(N) retourne le numéro de l'OPTION sélectionné dans le CONTAINER_OPTION  numéro N, et -1 si aucun OPTION n'est sélectionné.
       </p>
     </blockquote>
 
@@ -107,7 +107,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -117,7 +117,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction CHECKED_OPTION() est utilisÃ©e pour connaÃ®tre le numÃ©ro de l'OPTION sÃ©lectionnÃ© par l'utilisateur.</li>
+      <li>La fonction CHECKED_OPTION() est utilisée pour connaître le numéro de l'OPTION sélectionné par l'utilisateur.</li>
     </ul>
 
     <br>
@@ -127,11 +127,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet numÃ©ro N n'est pas du type : CONTAINER_OPTION.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet numéro N n'est pas du type : CONTAINER_OPTION.</li>
     </ul>
 
     <br>
@@ -146,7 +146,7 @@
           <tr>
             <td><left><font face="Consolas">
               <p>label select</p>
-              <p>' crÃ©er un CONTAINER_OPTION avec 4 OPTIONs</p>
+              <p>' créer un CONTAINER_OPTION avec 4 OPTIONs</p>
               <p>container_option 10</p>
               <p>caption 10,"Selectionnez une OPTION"</p>
               <p>option 50:parent 50,10:top 50,20:left 50,20:caption 50,"Option 50"</p>
@@ -159,7 +159,7 @@
               <p>on_click 70,select</p>
               <p>end</p>
               <p>select:</p>
-              <p>caption 0,str$(checked_option(10))+" est sÃ©lectionnÃ©"</p>
+              <p>caption 0,str$(checked_option(10))+" est sélectionné"</p>
               <p>return</p>
             </font></left></td>
           </tr>

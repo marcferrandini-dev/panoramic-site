@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      Ã‰CRIT LA DONNÃ‰E S DANS LE FICHIER TEXTE NUMÃ‰RO N
+      ÉCRIT LA DONNÉE S DANS LE FICHIER TEXTE NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Texte</li>
     </ul></b></p>
 
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande FILE_WRITE N,S Ã©crit la donnÃ©e S dans le fichier texte numÃ©ro N, sans aller Ã  la ligne suivante, la donnÃ©e Ã©tant dans la variable S de type entier, rÃ©el ou string ou dans l'expression string S.
+        La commande FILE_WRITE N,S écrit la donnée S dans le fichier texte numéro N, sans aller à la ligne suivante, la donnée étant dans la variable S de type entier, réel ou string ou dans l'expression string S.
       </p>
       <p>
         Exemple :
       </p>
       <p>
-        file_write 1,Ab3(6) (variable d'un tableau rÃ©el)
+        file_write 1,Ab3(6) (variable d'un tableau réel)
       </p>
       <p>
         file_write 1,A$+B$  (expression string)
@@ -119,8 +119,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier texte permis.</li>
-      <li>S = nom de variable, ou expression de type chaÃ®ne de caractÃ¨res.</li>
+      <li>N = numéro de fichier (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier texte permis.</li>
+      <li>S = nom de variable, ou expression de type chaîne de caractères.</li>
     </ul>
 
     <br>
@@ -130,7 +130,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILE_WRITE est utilisÃ©e pour Ã©crire une donnÃ©e dans un fichier texte.</li>
+      <li>La commande FILE_WRITE est utilisée pour écrire une donnée dans un fichier texte.</li>
     </ul>
 
     <br>
@@ -140,11 +140,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier texte permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier texte ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier texte permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier texte ouvert.</li>
       <li>Si S n'est pas une expression correcte.</li>
-      <li>Si S n'est pas une variable dÃ©clarÃ©e.</li>
+      <li>Si S n'est pas une variable déclarée.</li>
     </ul>
 
     <br>
@@ -158,9 +158,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' ouvir un fichier en Ã©criture</p>
+              <p>' ouvir un fichier en écriture</p>
               <p>file_open_write 1,"mon_fichier.txt"</p>
-              <p>' Ã©crire une donnÃ©e</p>
+              <p>' écrire une donnée</p>
               <p>file_write 1, "Salut!"</p>
               <p>' le fermer</p>
               <p>file_close 1</p>

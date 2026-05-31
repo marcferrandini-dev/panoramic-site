@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DEFINIT LE NOM DE FICHIER T PROPOSÃ‰ PAR L'OBJET SYSTÃˆME NUMÃ‰RO N
+      DEFINIT LE NOM DE FICHIER T PROPOSÉ PAR L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -110,8 +110,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = expression entiÃ¨re ou rÃ©elle, numÃ©ro de l'objet systÃ¨me. Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>F = expression chaÃ®ne de caractÃ¨res.</li>
+      <li>N = expression entière ou réelle, numéro de l'objet système. Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>F = expression chaîne de caractères.</li>
     </ul>
 
     <br>
@@ -121,7 +121,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILTER_DIALOG est utilisÃ©e pour proposer un nom de fichier dans les objets systÃ¨me de type OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC</li>
+      <li>La commande FILTER_DIALOG est utilisée pour proposer un nom de fichier dans les objets système de type OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC</li>
     </ul>
 
     <br>
@@ -131,11 +131,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
       <li>Si F n'est pas une expression string correcte.</li>
     </ul>
 
@@ -153,7 +153,7 @@
               <p>dim f$</p>
               <p>open_dialog 1</p>
               <p>file_dialog 1,"MonFichier.txt"</p>
-              <p>caption 0,"VÃ©rifier que le nom de fichier proposÃ© est MonFichier.txt"</p>
+              <p>caption 0,"Vérifier que le nom de fichier proposé est MonFichier.txt"</p>
               <p>f$=file_name$(1)</p>
             </font></left></td>
           </tr>

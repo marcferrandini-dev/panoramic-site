@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      CRÃ‰E UN OBJET SYSTÃˆME LED1 ET LUI DONNE LE NUMÃ‰RO N COMME RÃ‰FÃ‰RENCE
+      CRÉE UN OBJET SYSTÈME LED1 ET LUI DONNE LE NUMÉRO N COMME RÉFÉRENCE
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: CrÃ©ation Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Création Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,25 +93,25 @@
 
     <blockquote>
       <p>
-        La commande LED1 N crÃ©e un objet systÃ¨me LED1 et lui donne un numÃ©ro N. Le numÃ©ro N sera utilisÃ© pour dÃ©signer ce LED1.
+        La commande LED1 N crée un objet système LED1 et lui donne un numéro N. Le numéro N sera utilisé pour désigner ce LED1.
       </p>
       <p>
-        Le LED1 crÃ©Ã© peut alors Ãªtre utilisÃ© par les commandes appropriÃ©es.
+        Le LED1 créé peut alors être utilisé par les commandes appropriées.
       </p>
       <p>
-        Le LED1 est crÃ©Ã© Ã  la position (0,0) : c'est Ã  dire TOP = 0 pixel et LEFT = 0 pixel, avec les dimensions WIDTH = 22 pixels et HEIGHT = 22 pixels.
+        Le LED1 est créé à la position (0,0) : c'est à dire TOP = 0 pixel et LEFT = 0 pixel, avec les dimensions WIDTH = 22 pixels et HEIGHT = 22 pixels.
       </p>
       <p>
-        Un LED1 est un moyen pour l'utilisateur de visualiser une petite lumiÃ¨re colorÃ©e (Light-Emitting Diode).
+        Un LED1 est un moyen pour l'utilisateur de visualiser une petite lumière colorée (Light-Emitting Diode).
       </p>
       <p>
-        Un LED1 est vert et Ã©teint par dÃ©faut. Sa couleur peut Ãªtre changÃ©e par COLOR. On l'allume avec MARK_ON et on l'Ã©teint avec MARK_OFF.
+        Un LED1 est vert et éteint par défaut. Sa couleur peut être changée par COLOR. On l'allume avec MARK_ON et on l'éteint avec MARK_OFF.
       </p>
       <p>
-        Un LED1 peut gÃ©nÃ©rer l'Ã©vÃ©nement : ON_CLICK.
+        Un LED1 peut générer l'événement : ON_CLICK.
       </p>
       <p>
-        Remarque: par dÃ©faut, le LED1 est crÃ©Ã© sur le FORM numÃ©ro 0, mais un autre FORM peut Ãªtre utilisÃ©. Pour cela, crÃ©er un FORM par FORM N et lui envoyer les commandes par COMMAND_TARGET_IS N avant la crÃ©ation du LED1.
+        Remarque: par défaut, le LED1 est créé sur le FORM numéro 0, mais un autre FORM peut être utilisé. Pour cela, créer un FORM par FORM N et lui envoyer les commandes par COMMAND_TARGET_IS N avant la création du LED1.
       </p>
     </blockquote>
 
@@ -125,7 +125,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro d'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro d'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -135,7 +135,7 @@
     </font></b></p>
 
     <ul>
-      <li>Un LED1 est utilisÃ© pour visualiser une LED qu'on peut colorer avec COLOR, allumer avec MARK_ON, Ã©teindre avec MARK_OFF.</li>
+      <li>Un LED1 est utilisé pour visualiser une LED qu'on peut colorer avec COLOR, allumer avec MARK_ON, éteindre avec MARK_OFF.</li>
     </ul>
 
     <br>
@@ -145,10 +145,10 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
-      <li>Si le numÃ©ro N est dÃ©jÃ  utilisÃ© pour un numÃ©ro d'objet systÃ¨me.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur ou égal à 0.</li>
+      <li>Si le numéro N est déjà utilisé pour un numéro d'objet système.</li>
     </ul>
 
     <br>
@@ -162,7 +162,7 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©e un LED1 avec la position et les dimensions par dÃ©faut </p>
+              <p>' crée un LED1 avec la position et les dimensions par défaut </p>
               <p>led1 1</p>
               <p>wait 1000</p>
               <p>mark_on 1</p>

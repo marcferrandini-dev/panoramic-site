@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      OUVRE UN FICHIER TEXTE POUR Y ECRIRE APRÃˆS SA DERNIÃˆRE LIGNE, AVEC LE NUMÃ‰RO N ET LE NOM S
+      OUVRE UN FICHIER TEXTE POUR Y ECRIRE APRÈS SA DERNIÈRE LIGNE, AVEC LE NUMÉRO N ET LE NOM S
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Texte</li>
     </ul></b></p>
 
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande FILE_OPEN_APPEND N,S ouvre un fichier texte existant nommÃ© S et lui donne le numÃ©ro de fichier N. Le numÃ©ro N sera utilisÃ© pour dÃ©signer ce fichier.
+        La commande FILE_OPEN_APPEND N,S ouvre un fichier texte existant nommé S et lui donne le numéro de fichier N. Le numéro N sera utilisé pour désigner ce fichier.
       </p>
       <p>
-        Le fichier texte ouvert peut alors Ãªtre utilisÃ© par les commandes appropriÃ©es.
+        Le fichier texte ouvert peut alors être utilisé par les commandes appropriées.
       </p>
       <p>
-        Le contenu du fichier est conservÃ© et toutes les Ã©critures sont exÃ©cutÃ©es aprÃ¨s la derniÃ¨re ligne.
+        Le contenu du fichier est conservé et toutes les écritures sont exécutées après la dernière ligne.
       </p>
     </blockquote>
 
@@ -113,8 +113,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier texte permis.</li>
-      <li>S = chaÃ®ne de caractÃ¨res. Nom de fichier absolu ou relatif.</li>
+      <li>N = numéro de fichier (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier texte permis.</li>
+      <li>S = chaîne de caractères. Nom de fichier absolu ou relatif.</li>
     </ul>
 
     <br>
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILE_OPEN_APPEND est utilisÃ©e pour Ã©crire aprÃ¨s la derniÃ¨re ligne d'un fichier texte.</li>
+      <li>La commande FILE_OPEN_APPEND est utilisée pour écrire après la dernière ligne d'un fichier texte.</li>
     </ul>
 
     <br>
@@ -134,9 +134,9 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier texte permis.</li>
-      <li>Si le numÃ©ro N est dÃ©jÃ  utilisÃ© pour un fichier texte ouvert. (Fermer un fichier libÃ¨re son numÃ©ro)</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier texte permis.</li>
+      <li>Si le numéro N est déjà utilisé pour un fichier texte ouvert. (Fermer un fichier libère son numéro)</li>
       <li>Si S n'est pas un nom de fichier correct.</li>
     </ul>
 
@@ -151,9 +151,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' ouvrir un fichier texte pour Ã©crire aprÃ¨s sa derniÃ¨re ligne</p>
+              <p>' ouvrir un fichier texte pour écrire après sa dernière ligne</p>
               <p>file_open_append 1,"mon_fichier.txt"</p>
-              <p>' Ã©crire une ligne</p>
+              <p>' écrire une ligne</p>
               <p>file_writeln 1,"Salut!"</p>
               <p>' le fermer</p>
               <p>file_close 1</p>

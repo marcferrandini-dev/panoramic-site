@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      RETOURNE 1 SI L'OBJET SYSTÃˆME NUMÃ‰RO N A Ã‰TÃ‰ CLIQUÃ‰, 0 SINON
+      RETOURNE 1 SI L'OBJET SYSTÈME NUMÉRO N A ÉTÉ CLIQUÉ, 0 SINON
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La fonction CLICKED(N) retourne 1 si l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N a Ã©tÃ© cliquÃ© et 0 si l'objet systÃ¨me n'a pas Ã©tÃ© cliquÃ©.
+        La fonction CLICKED(N) retourne 1 si l'objet système désigné par son numéro N a été cliqué et 0 si l'objet système n'a pas été cliqué.
       </p>
       <p>
-        L'objet systÃ¨me N est du type : SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU.
+        L'objet système N est du type : SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction CLICKED() est utilisÃ©e pour savoir si un objet systÃ¨me est cliquÃ© par l'utilisateur.</li>
+      <li>La fonction CLICKED() est utilisée pour savoir si un objet système est cliqué par l'utilisateur.</li>
     </ul>
 
     <br>
@@ -130,11 +130,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N est le numÃ©ro d'un : MAIN_MENU, SOUND, MOVIE, TRACK_BAR, OPEN_DIALOG, SAVE_DIALOG, SCROLL_BAR, PROGRESS_BAR.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N est le numéro d'un : MAIN_MENU, SOUND, MOVIE, TRACK_BAR, OPEN_DIALOG, SAVE_DIALOG, SCROLL_BAR, PROGRESS_BAR.</li>
     </ul>
 
     <br>
@@ -148,13 +148,13 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un BUTTON</p>
+              <p>' créer un BUTTON</p>
               <p>button 1</p>
               <p>caption 1,"Cliquez"</p>
               <p>wait 3000</p>
               <p>print</p>
               <p>print</p>
-              <p>' imprimer son Ã©tat : 0 ou 1</p>
+              <p>' imprimer son état : 0 ou 1</p>
               <p>print clicked(1)</p>
             </font></left></td>
           </tr>

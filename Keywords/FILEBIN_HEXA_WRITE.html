@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      Ã‰CRIT C OCTETS DANS LE FICHIER BINAIRE NUMÃ‰RO N, LES DONNÃ‰ES Ã€ Ã‰CRIRE SONT DANS L'EXPRESSION CHAINE DE CARACTÃˆRES S
+      ÉCRIT C OCTETS DANS LE FICHIER BINAIRE NUMÉRO N, LES DONNÉES À ÉCRIRE SONT DANS L'EXPRESSION CHAINE DE CARACTÈRES S
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 3</li>
+      <li>Paramètres: 3</li>
       <li>Groupe: Fichiers Binaires</li>
     </ul></b></p>
 
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande FILEBIN_HEXA_WRITE N,C,S Ã©crit un bloc de C octets dans le fichier binaire numÃ©ro N, les donnÃ©es Ã  Ã©crire sont dans l'expression chaÃ®ne de caractÃ¨res S.
+        La commande FILEBIN_HEXA_WRITE N,C,S écrit un bloc de C octets dans le fichier binaire numéro N, les données à écrire sont dans l'expression chaîne de caractères S.
       </p>
       <p>
-        La taille de l'expression chaÃ®ne de caractÃ¨res S doit Ãªtre supÃ©rieure ou Ã©gale Ã  2xC.
+        La taille de l'expression chaîne de caractères S doit être supérieure ou égale à 2xC.
       </p>
       <p>
         La position courante dans le fichier binaire augmente de C.
@@ -113,9 +113,9 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier binaire (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>C = nombre d'octets, de type entier ou rÃ©el.</li>
-      <li>S = nom de variable (chaÃ®ne de caractÃ¨res), ou expression de type chaine de caractÃ¨res.</li>
+      <li>N = numéro de fichier binaire (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier binaire permis.</li>
+      <li>C = nombre d'octets, de type entier ou réel.</li>
+      <li>S = nom de variable (chaîne de caractères), ou expression de type chaine de caractères.</li>
     </ul>
 
     <br>
@@ -125,7 +125,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILEBIN_HEXA_WRITE est utilisÃ©e pour Ã©crire un bloc d'octet dans un fichier binaire.</li>
+      <li>La commande FILEBIN_HEXA_WRITE est utilisée pour écrire un bloc d'octet dans un fichier binaire.</li>
     </ul>
 
     <br>
@@ -135,13 +135,13 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier binaire ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier binaire permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier binaire ouvert.</li>
       <li>Si C n'est pas une expression correcte.</li>
-      <li>Si C est infÃ©rieur Ã  1.</li>
+      <li>Si C est inférieur à 1.</li>
       <li>Si S n'est pas une expression correcte.</li>
-      <li>Si la taille de l'expression chaÃ®ne de caractÃ¨res S n'est pas supÃ©rieure ou Ã©gale Ã  2xC.</li>
+      <li>Si la taille de l'expression chaîne de caractères S n'est pas supérieure ou égale à 2xC.</li>
     </ul>
 
     <br>
@@ -155,11 +155,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' ouvre un fichier binaire en Ã©criture</p>
+              <p>' ouvre un fichier binaire en écriture</p>
               <p>filebin_open_write 1,"file.abc"</p>
               <p>' on se positionne en 5</p>
               <p>filebin_position 1,5</p>
-              <p>' Ã©crit 10 octets</p>
+              <p>' écrit 10 octets</p>
               <p>filebin_hexa_write 1,10,"1A2B3C4D5E6F00112233"</p>
               <p>' ferme le fichier binaire</p>
               <p>filebin_close 1</p>

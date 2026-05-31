@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DÃ‰SIGNE L'OBJET SCENE3D NUMÃ‰RO N QUI RECEVRA LES COMMANDES "3D"
+      DÉSIGNE L'OBJET SCENE3D NUMÉRO N QUI RECEVRA LES COMMANDES "3D"
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande 3D_TARGET_IS N dÃ©signe l'objet SCENE3D numÃ©ro N qui recevra les prochaines commandes "3D" : crÃ©ation d'objet 3D, positionnement de la camÃ©ra 3D, du point visÃ© par la camÃ©ra 3D, de la lumiÃ¨re 3D. Ce SCENE3D devient l'objet "cible 3D".
+        La commande 3D_TARGET_IS N désigne l'objet SCENE3D numéro N qui recevra les prochaines commandes "3D" : création d'objet 3D, positionnement de la caméra 3D, du point visé par la caméra 3D, de la lumière 3D. Ce SCENE3D devient l'objet "cible 3D".
       </p>
       <p>
-        Par dÃ©faut, l'objet systÃ¨me "cible 3D" est le premier SCENE3D crÃ©Ã© s'il y a plusieurs SCENE3D. S'il y a seulement 1 SCENE3D, ce SCENE3D est la "cible 3D".
+        Par défaut, l'objet système "cible 3D" est le premier SCENE3D créé s'il y a plusieurs SCENE3D. S'il y a seulement 1 SCENE3D, ce SCENE3D est la "cible 3D".
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro d'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre supÃ©rieur Ã  0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨me.</li>
+      <li>N = numéro d'objet système (entier ou réel). Doit être supérieur à 0 et inférieur ou égal au nombre maximum permis d'objets système.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande 3D_TARGET_IS est utilisÃ©e pour exÃ©cuter des commandes 3D sur plusieurs SCENE3D.</li>
+      <li>La commande 3D_TARGET_IS est utilisée pour exécuter des commandes 3D sur plusieurs SCENE3D.</li>
     </ul>
 
     <br>
@@ -130,11 +130,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un SCENE3D.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur ou égal à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un SCENE3D.</li>
     </ul>
 
     <br>
@@ -148,20 +148,20 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er 2 SCENE3D</p>
+              <p>' créer 2 SCENE3D</p>
               <p>scene3d 1</p>
               <p>scene3d 2</p>
-              <p>' dÃ©placer le SCENE3D numÃ©ro 2 sur Y</p>
+              <p>' déplacer le SCENE3D numéro 2 sur Y</p>
               <p>left 2,100</p>
-              <p>' dÃ©signer l'objet numÃ©ro 2 comme la cible 3D</p>
+              <p>' désigner l'objet numéro 2 comme la cible 3D</p>
               <p>3d_target_is 2</p>
-              <p>' crÃ©er une sphÃ¨re dans le SCENE3D numÃ©ro 2</p>
+              <p>' créer une sphère dans le SCENE3D numéro 2</p>
               <p>3d_sphere 1,1.2</p>
               <p>' attendre 1 seconde</p>
               <p>wait 1000</p>
-              <p>' dÃ©signer l'objet numÃ©ro 1 comme la cible 3D</p>
+              <p>' désigner l'objet numéro 1 comme la cible 3D</p>
               <p>3d_target_is 1</p>
-              <p>' crÃ©er une sphÃ¨re dans le SCENE3D numÃ©ro 1</p>
+              <p>' créer une sphère dans le SCENE3D numéro 1</p>
               <p>3d_sphere 2,1.2</p>
             </font></left></td>
           </tr>

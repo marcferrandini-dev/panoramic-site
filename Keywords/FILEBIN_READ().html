@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      RETOURNE UN OCTET LU DANS LE FICHIER BINAIRE NUMÃ‰RO N
+      RETOURNE UN OCTET LU DANS LE FICHIER BINAIRE NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Binaires</li>
     </ul></b></p>
 
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La fonction FILEBIN_READ(N) retourne un octet (de 0 Ã  255) lu dans le fichier binaire numÃ©ro N.
+        La fonction FILEBIN_READ(N) retourne un octet (de 0 à 255) lu dans le fichier binaire numéro N.
       </p>
       <p>
         La position courante dans le fichier binaire augmente de 1.
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier binaire (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier binaire permis.</li>
+      <li>N = numéro de fichier binaire (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier binaire permis.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction FILEBIN_READ() est utilisÃ©e pour lire un octet dans un fichier binaire.</li>
+      <li>La fonction FILEBIN_READ() est utilisée pour lire un octet dans un fichier binaire.</li>
     </ul>
 
     <br>
@@ -130,9 +130,9 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier binaire ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier binaire permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier binaire ouvert.</li>
     </ul>
 
     <br>
@@ -149,7 +149,7 @@
               <p>dim v%</p>
               <p>' ouvir un fichier en lecture</p>
               <p>filebin_open_read 1,"test"</p>
-              <p>' lire le quatriÃ¨me octet</p>
+              <p>' lire le quatrième octet</p>
               <p>filebin_position 1,3</p>
               <p>v%=filebin_read(1)</p>
               <p>' imprimer la valeur lue</p>

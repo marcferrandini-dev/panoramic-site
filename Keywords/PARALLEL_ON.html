@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DEMARRE LES OPÃ‰RATIONS D'ENTRÃ‰ES-SORTIES SUR PORT PARALLÃˆLE
+      DEMARRE LES OPÉRATIONS D'ENTRÉES-SORTIES SUR PORT PARALLÈLE
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 0</li>
-      <li>Groupe: EntrÃ©es-Sorties</li>
+      <li>Paramètre: 0</li>
+      <li>Groupe: Entrées-Sorties</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande PARALLEL_ON dÃ©marre les opÃ©rations d'entrÃ©es-sorties sur port parallÃ¨le.
+        La commande PARALLEL_ON démarre les opérations d'entrées-sorties sur port parallèle.
       </p>
       <p>
-        La DLL inpout est chargÃ©e en mÃ©moire et les opÃ©rations d'entrÃ©es-sorties deviennent possibles: sortie avec PARALLEL_OUT et entrÃ©e avec PARALLEL_INP.
+        La DLL inpout est chargée en mémoire et les opérations d'entrées-sorties deviennent possibles: sortie avec PARALLEL_OUT et entrée avec PARALLEL_INP.
       </p>
       <p>
-        La DLL doit Ãªtre dans le mÃªme rÃ©pertoire que l'exÃ©cutable, soit dans le rÃ©pertoire Windows, avec toutes les DLL du systÃ¨me.
+        La DLL doit être dans le même répertoire que l'exécutable, soit dans le répertoire Windows, avec toutes les DLL du système.
       </p>
     </blockquote>
 
@@ -121,7 +121,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande PARALLEL_ON est utilisÃ©e pour dÃ©marrer les entrÃ©es-sorties sur la prise imprimante.</li>
+      <li>La commande PARALLEL_ON est utilisée pour démarrer les entrées-sorties sur la prise imprimante.</li>
     </ul>
 
     <br>
@@ -131,7 +131,7 @@
     </font></b></p>
 
     <ul>
-      <li>Si une commande PARALLEL_ON a dÃ©ja Ã©tÃ© exÃ©cutÃ©e (la commande PARALLEL_OFF arrÃªte les opÃ©rations d'entrÃ©e-sortie).</li>
+      <li>Si une commande PARALLEL_ON a déja été exécutée (la commande PARALLEL_OFF arrête les opérations d'entrée-sortie).</li>
       <li>Si la DLL inpout n'est pas accessible.</li>
     </ul>
 
@@ -146,13 +146,13 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' dÃ©marre les opÃ©rations d'entrÃ©es-sorties</p>
+              <p>' démarre les opérations d'entrées-sorties</p>
               <p>parallel_on</p>
-              <p>' met tous le bits Ã  1 sur le port de donnÃ©es</p>
+              <p>' met tous le bits à 1 sur le port de données</p>
               <p>parallel_out 888,255</p>
-              <p>' lecture du port d'Ã©tat</p>
+              <p>' lecture du port d'état</p>
               <p>print parallel_inp(889)</p>
-              <p>' arrÃªte les opÃ©rations d'entrÃ©es-sorties</p>
+              <p>' arrête les opérations d'entrées-sorties</p>
               <p>parallel_off</p>
             </font></left></td>
           </tr>

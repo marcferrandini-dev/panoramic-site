@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      LIT LES TOUCHES DU CLAVIER OU LES CARACTÃˆRES D'UN OBJET SYSTÃˆME ET LES STOCKE DANS LA VARIABLE V
+      LIT LES TOUCHES DU CLAVIER OU LES CARACTÈRES D'UN OBJET SYSTÈME ET LES STOCKE DANS LA VARIABLE V
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Système</li>
     </ul></b></p>
 
     <br>
@@ -93,46 +93,46 @@
 
     <blockquote>
       <p>
-        La commande INPUT affecte une valeur Ã  une variable.
+        La commande INPUT affecte une valeur à une variable.
       </p>
       <p>
         Elle a deux syntaxes valides: INPUT V et INPUT "TEXTE";V
       </p>
       <p>
-        Elle utilise le moyen d'entrÃ©e dÃ©fini par la commande INPUT_SOURCE_IS, qui est le clavier par dÃ©faut.
+        Elle utilise le moyen d'entrée défini par la commande INPUT_SOURCE_IS, qui est le clavier par défaut.
       </p>
       <p>
-        - Si l'entrÃ©e est le clavier, la commande INPUT suspend le dÃ©roulement du programme et attend que l'opÃ©rateur tape une valeur suivie de la touche ENTER. Cette valeur est alors affectÃ©e Ã  la variable.
+        - Si l'entrée est le clavier, la commande INPUT suspend le déroulement du programme et attend que l'opérateur tape une valeur suivie de la touche ENTER. Cette valeur est alors affectée à la variable.
       </p>
       <p>
-        - Si l'entrÃ©e est un objet systÃ¨me, les donnÃ©es sont lues automatiquement dans cet objet et le programme n'est pas suspendu.
+        - Si l'entrée est un objet système, les données sont lues automatiquement dans cet objet et le programme n'est pas suspendu.
       </p>
       <p>
-        La syntaxe INPUT "TEXTE";V a le mÃªme effet pour V, mais visualise un texte sur le "rÃ©cepteur des impressions", qui est FORM0 par dÃ©faut. L'objet systÃ¨me "rÃ©cepteur des impressions" est dÃ©fini par la commande PRINT_TARGET_IS.
+        La syntaxe INPUT "TEXTE";V a le même effet pour V, mais visualise un texte sur le "récepteur des impressions", qui est FORM0 par défaut. L'objet système "récepteur des impressions" est défini par la commande PRINT_TARGET_IS.
       </p>
       <p>
         De plus, la commande INPUT a des options:
       </p>
       <p>
-        - rÃ©pÃ©ter ou pas l'entrÃ©e si aucune valeur a Ã©tÃ© rentrÃ©e (INPUT_REDO_ON et INPUT_REDO_OFF),
+        - répéter ou pas l'entrée si aucune valeur a été rentrée (INPUT_REDO_ON et INPUT_REDO_OFF),
       </p>
       <p>
         - afficher ou pas un point d'interrogation (INPUT_MARK_ON et INPUT_MARK_OFF),
       </p>
       <p>
-        - afficher ou pas les caractÃ¨res tapÃ©s (INPUT_VISIBLE_ON et INPUT_VISIBLE_OFF).
+        - afficher ou pas les caractères tapés (INPUT_VISIBLE_ON et INPUT_VISIBLE_OFF).
       </p>
       <p>
-        Par dÃ©faut, les options sont:
+        Par défaut, les options sont:
       </p>
       <p>
-        - INPUT_REDO_OFF: si aucune valeur n'est rentrÃ©e (on tape seulement la touche RETURN ou l'objet systÃ¨me "source des donnÃ©es" est vide), il n'y a pas de nouvelle demande d'une entrÃ©e et la variable V contiendra 0 si c'est une variable numÃ©rique et la chaine vide ("") si c'est une variable string.
+        - INPUT_REDO_OFF: si aucune valeur n'est rentrée (on tape seulement la touche RETURN ou l'objet système "source des données" est vide), il n'y a pas de nouvelle demande d'une entrée et la variable V contiendra 0 si c'est une variable numérique et la chaine vide ("") si c'est une variable string.
       </p>
       <p>
         - INPUT_MARK_OFF: il n'y a pas d'affichage de point d'interrogation
       </p>
       <p>
-        - INPUT_VISIBLE_ON: il y a affichage des caractÃ¨res saisis
+        - INPUT_VISIBLE_ON: il y a affichage des caractères saisis
       </p>
     </blockquote>
 
@@ -146,10 +146,10 @@
     </b></font></p>
 
     <ul>
-      <li>V = variable dÃ©finie</li>
+      <li>V = variable définie</li>
       <li>INPUT "TEXTE";V</li>
-      <li>V = variable dÃ©finie</li>
-      <li>"TEXTE" = texte visualisÃ©</li>
+      <li>V = variable définie</li>
+      <li>"TEXTE" = texte visualisé</li>
     </ul>
 
     <br>
@@ -159,7 +159,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande INPUT est utilisÃ©e pour entrer une donnÃ©e au clavier ou par un objet systÃ¨me.</li>
+      <li>La commande INPUT est utilisée pour entrer une donnée au clavier ou par un objet système.</li>
     </ul>
 
     <br>
@@ -169,7 +169,7 @@
     </font></b></p>
 
     <ul>
-      <li>Si V n'est pas une variable dÃ©finie.</li>
+      <li>Si V n'est pas une variable définie.</li>
     </ul>
 
     <br>
@@ -184,8 +184,8 @@
           <tr>
             <td><left><font face="Consolas">
               <p>dim age,nom$</p>
-              <p>input "Donnez votre Ã¢ge"; age</p>
-              <p>print "Votre Ã¢ge est : "+str$(age)</p>
+              <p>input "Donnez votre âge"; age</p>
+              <p>print "Votre âge est : "+str$(age)</p>
               <p>print "Donnez votre nom"</p>
               <p>input nom$</p>
               <p>print "Votre nom est : "+nom$</p>

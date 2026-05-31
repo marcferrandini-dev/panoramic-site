@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      Ã‰CRIT UN OCTET E DANS LE FICHIER BINAIRE NUMÃ‰RO N
+      ÉCRIT UN OCTET E DANS LE FICHIER BINAIRE NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Binaires</li>
     </ul></b></p>
 
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La commande FILEBIN_WRITE N,E Ã©crit un octet dans le fichier binaire numÃ©ro N, cet octet Ã©tant dans la variable E ou le rÃ©sultat de l'expression arithmÃ©tique E.
+        La commande FILEBIN_WRITE N,E écrit un octet dans le fichier binaire numéro N, cet octet étant dans la variable E ou le résultat de l'expression arithmétique E.
       </p>
       <p>
         La position courante dans le fichier binaire augmente de 1.
@@ -105,7 +105,7 @@
         filebin_write 1,Ab3%(6) (variable d'un tableau d'entiers)
       </p>
       <p>
-        filebin_write 1,A+3     (expression arithmÃ©tique)
+        filebin_write 1,A+3     (expression arithmétique)
       </p>
     </blockquote>
 
@@ -119,8 +119,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier binaire (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>E = nom de variable, ou expression arithmÃ©tique.</li>
+      <li>N = numéro de fichier binaire (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier binaire permis.</li>
+      <li>E = nom de variable, ou expression arithmétique.</li>
     </ul>
 
     <br>
@@ -130,7 +130,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILEBIN_WRITE est utilisÃ©e pour Ã©crire un octet dans un fichier binaire.</li>
+      <li>La commande FILEBIN_WRITE est utilisée pour écrire un octet dans un fichier binaire.</li>
     </ul>
 
     <br>
@@ -140,11 +140,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier binaire permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier binaire ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier binaire permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier binaire ouvert.</li>
       <li>Si E n'est pas une expression correcte.</li>
-      <li>Si E n'est pas une variable dÃ©clarÃ©e.</li>
+      <li>Si E n'est pas une variable déclarée.</li>
       <li>Si la valeur de E n'est pas comprise entre 0 et 255.</li>
     </ul>
 
@@ -159,9 +159,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' ouvrir un fichier binaire en Ã©criture</p>
+              <p>' ouvrir un fichier binaire en écriture</p>
               <p>filebin_open_write 1,"test"</p>
-              <p>' Ã©crire la valeur 40</p>
+              <p>' écrire la valeur 40</p>
               <p>filebin_write 1,40</p>
               <p>' fermer le fichier</p>
               <p>filebin_close 1</p>

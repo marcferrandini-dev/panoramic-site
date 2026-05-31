@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DONNE LE FOCUS Ã€ L'OBJET SYSTÃˆME NUMÃ‰RO N
+      DONNE LE FOCUS À L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Système</li>
     </ul></b></p>
 
     <br>
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La commande SET_FOCUS N donne le focus d'entrÃ©e Ã  l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N. Cet objet systÃ¨me reÃ§oit alors les Ã©vÃ©nements clavier.
+        La commande SET_FOCUS N donne le focus d'entrée à l'objet système désigné par son numéro N. Cet objet système reçoit alors les événements clavier.
       </p>
     </blockquote>
 
@@ -107,7 +107,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -117,7 +117,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande SET_FOCUS est utilisÃ©e pour qu'un objet systÃ¨me reÃ§oive les donnÃ©es du clavier.</li>
+      <li>La commande SET_FOCUS est utilisée pour qu'un objet système reçoive les données du clavier.</li>
     </ul>
 
     <br>
@@ -127,11 +127,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N est un objet systÃ¨me du type : SCENE3D, ALPHA, PICTURE, MAIN_MENU, SUB_MENU, SOUND, OPEN_DIALOG, SAVE_DIALOG, LIST, TIMER, MAIN_MENU_POP, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC, SHAPE, HVIEWER, SERIAL, LED1, DIGIT1, SWITCH1, IMAGE.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N est un objet système du type : SCENE3D, ALPHA, PICTURE, MAIN_MENU, SUB_MENU, SOUND, OPEN_DIALOG, SAVE_DIALOG, LIST, TIMER, MAIN_MENU_POP, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC, SHAPE, HVIEWER, SERIAL, LED1, DIGIT1, SWITCH1, IMAGE.</li>
     </ul>
 
     <br>
@@ -145,9 +145,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un BUTTON</p>
+              <p>' créer un BUTTON</p>
               <p>button 1:caption 1,"button1"</p>
-              <p>' crÃ©er un autre BOUTON</p>
+              <p>' créer un autre BOUTON</p>
               <p>button 2:caption 2,"button2":left 2,100</p>
               <p>' attendre 1 seconde</p>
               <p>wait 1000</p>
@@ -155,7 +155,7 @@
               <p>set_focus 1</p>
               <p>' attendre 1 seconde</p>
               <p>wait 1000</p>
-              <p>' mettre le focus sur le deuxiÃ¨me bouton</p>
+              <p>' mettre le focus sur le deuxième bouton</p>
               <p>set_focus 2</p>
             </font></left></td>
           </tr>

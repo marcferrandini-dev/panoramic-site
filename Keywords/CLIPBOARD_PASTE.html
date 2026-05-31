@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      COLLE LE TEXTE OU L'IMAGE DU PRESSE-PAPIER DANS L'OBJET SYSTÃˆME NUMÃ‰RO N
+      COLLE LE TEXTE OU L'IMAGE DU PRESSE-PAPIER DANS L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande CLIPBOARD_PASTE N recopie le texte ou l'image prÃ©sent dans le presse-papier du systÃ¨me d'exploitation vers l'objet systÃ¨me numÃ©ro N (colle).
+        La commande CLIPBOARD_PASTE N recopie le texte ou l'image présent dans le presse-papier du système d'exploitation vers l'objet système numéro N (colle).
       </p>
       <p>
-        L'objet systÃ¨me est un MEMO, PICTURE, IMAGE.
+        L'objet système est un MEMO, PICTURE, IMAGE.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande CLIPBOARD_PASTE est utilisÃ©e pour copier un texte du presse-papier vers un MEMO, ou l'image du presse-papier vers un PICTURE ou un IMAGE.</li>
+      <li>La commande CLIPBOARD_PASTE est utilisée pour copier un texte du presse-papier vers un MEMO, ou l'image du presse-papier vers un PICTURE ou un IMAGE.</li>
     </ul>
 
     <br>
@@ -130,11 +130,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un MEMO, PICTURE, IMAGE.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un MEMO, PICTURE, IMAGE.</li>
     </ul>
 
     <br>
@@ -149,17 +149,17 @@
           <tr>
             <td><left><font face="Consolas">
               <p>label copy</p>
-              <p>memo 1:' crÃ©er un MEMO</p>
-              <p>memo 2:' crÃ©er un autre MEMO</p>
+              <p>memo 1:' créer un MEMO</p>
+              <p>memo 2:' créer un autre MEMO</p>
               <p>top 2,100</p>
               <p>item_add 1,"ligne 1":' lui ajouter une ligne</p>
-              <p>caption 0,"sÃ©lectionner cette ligne puis cliquez sur FORM0"</p>
+              <p>caption 0,"sélectionner cette ligne puis cliquez sur FORM0"</p>
               <p>on_click 0,copy</p>
               <p>end</p>
               <p>copy:</p>
               <p>clipboard_copy 1</p>
               <p>clipboard_paste 2</p>
-              <p>caption 0,"recopiÃ© dans le deuxiÃ¨me MEMO"</p>
+              <p>caption 0,"recopié dans le deuxième MEMO"</p>
               <p>return</p>
             </font></left></td>
           </tr>

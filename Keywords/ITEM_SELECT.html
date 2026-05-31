@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      SELECTIONNE L'ARTICLE NUMÃ‰RO L DE L'OBJET SYSTÃˆME NUMÃ‰RO N
+      SELECTIONNE L'ARTICLE NUMÉRO L DE L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,16 +93,16 @@
 
     <blockquote>
       <p>
-        La commande ITEM_SELECT N,L sÃ©lectionne la ligne (article) numÃ©ro L de l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N.
+        La commande ITEM_SELECT N,L sélectionne la ligne (article) numéro L de l'objet système désigné par son numéro N.
       </p>
       <p>
-        L'objet systÃ¨me est du type : MEMO, MEMO_RICH, COMBO, LIST, SYNEDIT.
+        L'objet système est du type : MEMO, MEMO_RICH, COMBO, LIST, SYNEDIT.
       </p>
       <p>
-        Remarque 1: la premiÃ¨re ligne a le numÃ©ro 1.
+        Remarque 1: la première ligne a le numéro 1.
       </p>
       <p>
-        Remarque 2: si L vaut 0, la sÃ©lection est annulÃ©e.
+        Remarque 2: si L vaut 0, la sélection est annulée.
       </p>
     </blockquote>
 
@@ -116,8 +116,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>L = numÃ©ro de ligne (entier ou rÃ©el). Ne doit pas Ãªtre nÃ©gatif. (0 est une dÃ©selection, 1 est la premiÃ¨re ligne)</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>L = numéro de ligne (entier ou réel). Ne doit pas être négatif. (0 est une déselection, 1 est la première ligne)</li>
     </ul>
 
     <br>
@@ -127,7 +127,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande ITEM_SELECT est utilisÃ©e pour sÃ©lectionner une ligne d'un MEMO, un MEMO_RICH, un COMBO, un LIST, un SYNEDIT ou pour annuler la sÃ©lection.</li>
+      <li>La commande ITEM_SELECT est utilisée pour sélectionner une ligne d'un MEMO, un MEMO_RICH, un COMBO, un LIST, un SYNEDIT ou pour annuler la sélection.</li>
     </ul>
 
     <br>
@@ -137,13 +137,13 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un : MEMO, MEMO_RICH, COMBO, LIST, SYNEDIT.</li>
-      <li>Si le numÃ©ro L n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro L est infÃ©rieur Ã  0.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un : MEMO, MEMO_RICH, COMBO, LIST, SYNEDIT.</li>
+      <li>Si le numéro L n'est pas une expression correcte.</li>
+      <li>Si le numéro L est inférieur à 0.</li>
     </ul>
 
     <br>
@@ -157,7 +157,7 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un LIST</p>
+              <p>' créer un LIST</p>
               <p>list 1</p>
               <p>' remplir le LIST avec 3 lignes</p>
               <p>item_add 1,"c'est la ligne 1"</p>
@@ -165,7 +165,7 @@
               <p>item_add 1,"c'est la ligne 3"</p>
               <p>' attendre pendant 1 seconde</p>
               <p>wait 1000</p>
-              <p>' sÃ©lectionner la deuxiÃ¨me ligne</p>
+              <p>' sélectionner la deuxième ligne</p>
               <p>item_select 1,2</p>
             </font></left></td>
           </tr>

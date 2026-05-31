@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      CRÃ‰E UN SCENE3D ET LUI DONNE LE NUMÃ‰RO N COMME RÃ‰FÃ‰RENCE
+      CRÉE UN SCENE3D ET LUI DONNE LE NUMÉRO N COMME RÉFÉRENCE
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: CrÃ©ation Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Création Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,25 +93,25 @@
 
     <blockquote>
       <p>
-        La commande SCENE3D N crÃ©e un SCENE3D pour visualiser un monde 3D et lui donne un numÃ©ro N. Le numÃ©ro N sera utilisÃ© pour dÃ©signer ce SCENE3D.
+        La commande SCENE3D N crée un SCENE3D pour visualiser un monde 3D et lui donne un numéro N. Le numéro N sera utilisé pour désigner ce SCENE3D.
       </p>
       <p>
-        Le SCENE3D possÃ¨de une lumiÃ¨re pour "Ã©clairer" les objets 3D et une camÃ©ra pour "voir" les objets 3D.
+        Le SCENE3D possède une lumière pour "éclairer" les objets 3D et une caméra pour "voir" les objets 3D.
       </p>
       <p>
-        Les objets 3D peuvent alors Ãªtre crÃ©Ã©s et traitÃ©s par les commandes appropriÃ©es pour Ãªtre animÃ©s, dÃ©placÃ©s, tournÃ©s, dÃ©formÃ©s, colorÃ©s, texturÃ©s, supprimÃ©s, cachÃ©s, visualisÃ©s...
+        Les objets 3D peuvent alors être créés et traités par les commandes appropriées pour être animés, déplacés, tournés, déformés, colorés, texturés, supprimés, cachés, visualisés...
       </p>
       <p>
-        Le SCENE3D est crÃ©Ã© Ã  la position (0,0) : c'est Ã  dire TOP = 0 pixel et LEFT = 0 pixel, avec les dimensions WIDTH = 200 pixels et HEIGHT = 200 pixels.
+        Le SCENE3D est créé à la position (0,0) : c'est à dire TOP = 0 pixel et LEFT = 0 pixel, avec les dimensions WIDTH = 200 pixels et HEIGHT = 200 pixels.
       </p>
       <p>
-        A la crÃ©ation, un SCENE3D est de couleur blanche.
+        A la création, un SCENE3D est de couleur blanche.
       </p>
       <p>
-        Un SCENE3D peut gÃ©nÃ©rer les Ã©vÃ©nements : ON_CLICK, ON_DOUBLE_CLICK.
+        Un SCENE3D peut générer les événements : ON_CLICK, ON_DOUBLE_CLICK.
       </p>
       <p>
-        Remarque: par dÃ©faut, le SCENE3D est crÃ©Ã© sur le FORM numÃ©ro 0, mais un autre FORM peut Ãªtre utilisÃ©. Pour cela, crÃ©er un FORM par FORM N et lui envoyer les commandes par COMMAND_TARGET_IS N avant la crÃ©ation du SCENE3D.
+        Remarque: par défaut, le SCENE3D est créé sur le FORM numéro 0, mais un autre FORM peut être utilisé. Pour cela, créer un FORM par FORM N et lui envoyer les commandes par COMMAND_TARGET_IS N avant la création du SCENE3D.
       </p>
     </blockquote>
 
@@ -125,7 +125,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro d'objet systÃ¨me(entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro d'objet système(entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -135,7 +135,7 @@
     </font></b></p>
 
     <ul>
-      <li>Un SCENE3D est utilisÃ© pour manipuler un monde 3D avec une lumiÃ¨re, une camÃ©ra et des objets 3D qui peuvent Ãªtre animÃ©s, dÃ©placÃ©s, tournÃ©s, dÃ©formÃ©s, colorÃ©s, texturÃ©s, supprimÃ©s, cachÃ©s, visualisÃ©s...</li>
+      <li>Un SCENE3D est utilisé pour manipuler un monde 3D avec une lumière, une caméra et des objets 3D qui peuvent être animés, déplacés, tournés, déformés, colorés, texturés, supprimés, cachés, visualisés...</li>
     </ul>
 
     <br>
@@ -145,10 +145,10 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
-      <li>Si le numÃ©ro N est dÃ©jÃ  utilisÃ© pour un numÃ©ro d'objet systÃ¨me.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur ou égal à 0.</li>
+      <li>Si le numéro N est déjà utilisé pour un numéro d'objet système.</li>
     </ul>
 
     <br>
@@ -162,9 +162,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©e un SCENE3D numÃ©ro 1 avec la position et les dimensions par dÃ©faut </p>
+              <p>' crée un SCENE3D numéro 1 avec la position et les dimensions par défaut </p>
               <p>scene3D 1</p>
-              <p>' crÃ©e un objet 3D numÃ©ro 1 (une thÃ©iÃ¨re)</p>
+              <p>' crée un objet 3D numéro 1 (une théière)</p>
               <p>3d_teapot 1</p>
             </font></left></td>
           </tr>

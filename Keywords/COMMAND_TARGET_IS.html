@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DÃ‰SIGNE L'OBJET SYSTÃˆME NUMÃ‰RO N COMME RÃ‰CEPTEUR DE COMMANDES
+      DÉSIGNE L'OBJET SYSTÈME NUMÉRO N COMME RÉCEPTEUR DE COMMANDES
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande COMMAND_TARGET_IS N dÃ©signe l'objet systÃ¨me numÃ©ro N qui recevra toutes les prochaines commandes. Cet objet systÃ¨me doit Ãªtre un rÃ©cepteur d'objets (FORM, CONTAINER, PANEL, TAB) et il devient l'objet "cible des commandes".
+        La commande COMMAND_TARGET_IS N désigne l'objet système numéro N qui recevra toutes les prochaines commandes. Cet objet système doit être un récepteur d'objets (FORM, CONTAINER, PANEL, TAB) et il devient l'objet "cible des commandes".
       </p>
       <p>
-        Par dÃ©faut, l'objet systÃ¨me "cible des commandes" est : FORM numÃ©ro 0.
+        Par défaut, l'objet système "cible des commandes" est : FORM numéro 0.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre supÃ©rieur Ã  0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être supérieur à 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande COMMAND_TARGET_IS est utilisÃ©e pour crÃ©er des objets systÃ¨mes sur un rÃ©cepteur d'objets (FORM, CONTAINER, PANEL, TAB).</li>
+      <li>La commande COMMAND_TARGET_IS est utilisée pour créer des objets systèmes sur un récepteur d'objets (FORM, CONTAINER, PANEL, TAB).</li>
     </ul>
 
     <br>
@@ -130,11 +130,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un FORM, CONTAINER, PANEL, TAB.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un FORM, CONTAINER, PANEL, TAB.</li>
     </ul>
 
     <br>
@@ -148,11 +148,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un FORM</p>
+              <p>' créer un FORM</p>
               <p>form 1</p>
-              <p>' dÃ©signer ce FORM comme la cible des commandes</p>
+              <p>' désigner ce FORM comme la cible des commandes</p>
               <p>command_target_is 1</p>
-              <p>' crÃ©er un BUTTON sur ce FORM</p>
+              <p>' créer un BUTTON sur ce FORM</p>
               <p>button 2</p>
               <p>caption 2,"Bouton sur Form1"</p>
             </font></left></td>

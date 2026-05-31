@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DEFINIT LE FILTRE T APPLIQUÃ‰ PAR L'OBJET SYSTÃˆME NUMÃ‰RO N
+      DEFINIT LE FILTRE T APPLIQUÉ PAR L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande FILTER N,T dÃ©finit le filtre appliquÃ© par l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N.
+        La commande FILTER N,T définit le filtre appliqué par l'objet système désigné par son numéro N.
       </p>
       <p>
-        L'objet systÃ¨me est un OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.
+        L'objet système est un OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.
       </p>
       <p>
-        Le filtre T est composÃ© d'un type de fichier Ã  filtrer prÃ©cÃ©dÃ© d'un commentaire. Pour prÃ©ciser plusieurs extensions de fichiers (par exemple wav et mp3), on les sÃ©pare par un point virgule. Par exemple: filter 2,"fichiers son|*.wav;*.mp3"
+        Le filtre T est composé d'un type de fichier à filtrer précédé d'un commentaire. Pour préciser plusieurs extensions de fichiers (par exemple wav et mp3), on les sépare par un point virgule. Par exemple: filter 2,"fichiers son|*.wav;*.mp3"
       </p>
     </blockquote>
 
@@ -113,8 +113,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>T = filtre appliquÃ© par l'objet systÃ¨me : "commentaire|fichier.extension" ou "commentaire|fichier.extension1;fichier.extension2;fichier.extension3"</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>T = filtre appliqué par l'objet système : "commentaire|fichier.extension" ou "commentaire|fichier.extension1;fichier.extension2;fichier.extension3"</li>
     </ul>
 
     <br>
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILTER est utilisÃ©e pour filtrer des types de fichier avec un OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
+      <li>La commande FILTER est utilisée pour filtrer des types de fichier avec un OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
     </ul>
 
     <br>
@@ -134,11 +134,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
       <li>Si le texte T n'est pas une expression correcte.</li>
     </ul>
 
@@ -153,11 +153,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un OPEN_DIALOG</p>
+              <p>' créer un OPEN_DIALOG</p>
               <p>open_dialog 1</p>
               <p>' filtrer les fichiers son (wav) et visualiser un commentaire</p>
               <p>filter 1,"fichiers son|*.wav"</p>
-              <p>' crÃ©er un SAVE_DIALOG</p>
+              <p>' créer un SAVE_DIALOG</p>
               <p>save_dialog 1</p>
               <p>' filtrer les fichiers son (wav et mp3) et visualiser un commentaire</p>
               <p>filter 2,"fichiers son|*.wav;*.mp3"</p>

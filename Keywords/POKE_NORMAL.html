@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      LES COMMANDES POKE16 A,V ET POKE32 A,V Ã‰CRIVENT V AVEC LE POIDS FORT DE V Ã€ L'ADRESSE A
+      LES COMMANDES POKE16 A,V ET POKE32 A,V ÉCRIVENT V AVEC LE POIDS FORT DE V À L'ADRESSE A
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 0</li>
-      <li>Groupe: SystÃ¨me</li>
+      <li>Paramètre: 0</li>
+      <li>Groupe: Système</li>
     </ul></b></p>
 
     <br>
@@ -96,13 +96,13 @@
         La commande POKE_NORMAL modifie le comportement des commandes POKE16 et POKE32.
       </p>
       <p>
-        AprÃ¨s la commande POKE_NORMAL, POKE16 A,V Ã©crit la valeur de 16 bits V en A et A+1, avec le poids fort de V en A.
+        Après la commande POKE_NORMAL, POKE16 A,V écrit la valeur de 16 bits V en A et A+1, avec le poids fort de V en A.
       </p>
       <p>
-        AprÃ¨s la commande POKE_NORMAL, POKE32 A,V Ã©crit la valeur V de 32 bits en A, A+1, A+2, A+3 avec le poids fort de V en A.
+        Après la commande POKE_NORMAL, POKE32 A,V écrit la valeur V de 32 bits en A, A+1, A+2, A+3 avec le poids fort de V en A.
       </p>
       <p>
-        Remarque : par dÃ©faut, POKE16 et POKE32 ont ce comportement (poids fort en A).
+        Remarque : par défaut, POKE16 et POKE32 ont ce comportement (poids fort en A).
       </p>
     </blockquote>
 
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande POKE_NORMAL est utilisÃ© pour revenir au fonctionnement par dÃ©faut des commandes POKE16 et POKE32.</li>
+      <li>La commande POKE_NORMAL est utilisé pour revenir au fonctionnement par défaut des commandes POKE16 et POKE32.</li>
     </ul>
 
     <br>
@@ -159,11 +159,11 @@
               <p>print 2</p>
               <p>print "-----"</p>
               <p>print peek16(address)</p>
-              <p>print "la valeur imprimÃ©e est: "+str$(power(256,1)+2*power(256,0))</p>
+              <p>print "la valeur imprimée est: "+str$(power(256,1)+2*power(256,0))</p>
               <p>print "-----"</p>
               <p>peek_reverse</p>
               <p>print peek16(address)</p>
-              <p>print "la valeur imprimÃ©e est: "+str$(2*power(256,1)+power(256,0))</p>
+              <p>print "la valeur imprimée est: "+str$(2*power(256,1)+power(256,0))</p>
               <p>print "-----"</p>
               <p>poke_normal</p>
               <p>poke16 address,2*power(256,1)+power(256,0)</p>
@@ -174,11 +174,11 @@
               <p>print 1</p>
               <p>print "-----"</p>
               <p>print peek16(address)</p>
-              <p>print "la valeur imprimÃ©e est: "+str$(power(256,1)+2*power(256,0))</p>
+              <p>print "la valeur imprimée est: "+str$(power(256,1)+2*power(256,0))</p>
               <p>peek_normal</p>
               <p>print "-----"</p>
               <p>print peek16(address)</p>
-              <p>print "la valeur imprimÃ©e est: "+str$(2*power(256,1)+power(256,0))</p>
+              <p>print "la valeur imprimée est: "+str$(2*power(256,1)+power(256,0))</p>
             </font></left></td>
           </tr>
         </table>

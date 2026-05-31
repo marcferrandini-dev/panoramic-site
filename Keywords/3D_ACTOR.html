@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      CRÃ‰E UN ACTEUR (OBJET 3D AU FORMAT MD2) ET LUI DONNE LE NUMÃ‰RO N COMME RÃ‰FÃ‰RENCE
+      CRÉE UN ACTEUR (OBJET 3D AU FORMAT MD2) ET LUI DONNE LE NUMÉRO N COMME RÉFÉRENCE
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
+      <li>Paramètre: 1</li>
       <li>Groupe: Objets 3D</li>
     </ul></b></p>
 
@@ -93,25 +93,25 @@
 
     <blockquote>
       <p>
-        La commande 3D_ACTOR crÃ©e un acteur, qui est un objet 3D structurÃ© au format MD2 et lui donne un numÃ©ro N.
+        La commande 3D_ACTOR crée un acteur, qui est un objet 3D structuré au format MD2 et lui donne un numéro N.
       </p>
       <p>
-        Le numÃ©ro N est utilisÃ© pour dÃ©signer cet acteur.
+        Le numéro N est utilisé pour désigner cet acteur.
       </p>
       <p>
-        Le centre de l'acteur est placÃ© en (0,0,0) : le centre du monde 3D (SCENE3D).
+        Le centre de l'acteur est placé en (0,0,0) : le centre du monde 3D (SCENE3D).
       </p>
       <p>
-        La couleur de l'acteur est grise Ã  la crÃ©ation et peut Ãªtre modifiÃ©e par la commande 3D_COLOR.
+        La couleur de l'acteur est grise à la création et peut être modifiée par la commande 3D_COLOR.
       </p>
       <p>
-        L'acteur peut Ãªtre dÃ©placÃ©, tournÃ©, dÃ©formÃ©, colorÃ©, texturÃ©, supprimÃ©, cachÃ©, visualisÃ©... avec les commandes appropriÃ©es.
+        L'acteur peut être déplacé, tourné, déformé, coloré, texturé, supprimé, caché, visualisé... avec les commandes appropriées.
       </p>
       <p>
-        Remarque 1: par dÃ©faut, l'acteur est crÃ©Ã© dans le premier SCENE3D crÃ©Ã©, mais un autre SCENE3D peut Ãªtre utilisÃ©. Pour cela, crÃ©er un nouveau SCENE3D et lui envoyer les commandes par 3D_TARGET_IS avant la crÃ©ation de l'acteur.
+        Remarque 1: par défaut, l'acteur est créé dans le premier SCENE3D créé, mais un autre SCENE3D peut être utilisé. Pour cela, créer un nouveau SCENE3D et lui envoyer les commandes par 3D_TARGET_IS avant la création de l'acteur.
       </p>
       <p>
-        Remarque 2: aprÃ¨s la crÃ©ation d'un acteur, un fichier (dans le format MD2) peut Ãªtre chargÃ© dans l'objet 3D par la commande 3D_LOAD_OBJECT. Il peut Ãªtre alors normalement traitÃ© comme n'importe quel objet 3D.
+        Remarque 2: après la création d'un acteur, un fichier (dans le format MD2) peut être chargé dans l'objet 3D par la commande 3D_LOAD_OBJECT. Il peut être alors normalement traité comme n'importe quel objet 3D.
       </p>
     </blockquote>
 
@@ -125,7 +125,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro d'objet 3D (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets 3D.</li>
+      <li>N = numéro d'objet 3D (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets 3D.</li>
     </ul>
 
     <br>
@@ -135,7 +135,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande 3D_ACTOR est utilisÃ©e pour crÃ©er un objet "MD2" dans un SCENE3D.</li>
+      <li>La commande 3D_ACTOR est utilisée pour créer un objet "MD2" dans un SCENE3D.</li>
     </ul>
 
     <br>
@@ -145,11 +145,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets 3D.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
-      <li>Si le numÃ©ro N est dÃ©jÃ  utilisÃ© pour un autre objet 3D.</li>
-      <li>Si aucun SCENE3D n'est crÃ©Ã©.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets 3D.</li>
+      <li>Si le numéro N est inférieur ou égal à 0.</li>
+      <li>Si le numéro N est déjà utilisé pour un autre objet 3D.</li>
+      <li>Si aucun SCENE3D n'est créé.</li>
     </ul>
 
     <br>
@@ -163,9 +163,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©e un monde 3D</p>
+              <p>' crée un monde 3D</p>
               <p>scene3d 1</p>
-              <p>' crÃ©e un acteur</p>
+              <p>' crée un acteur</p>
               <p>3d_actor 1</p>
               <p>' charge un fichier dans l'acteur</p>
               <p>3d_load_object 1,"zombi.md2"</p>

@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      REND ACTIF L'OBJET SYSTÃˆME TIMER NUMÃ‰RO N
+      REND ACTIF L'OBJET SYSTÈME TIMER NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La commande TIMER_ON N rend actif l'objet systÃ¨me TIMER dÃ©signÃ© par son numÃ©ro N: le TIMER se dÃ©clenchera pÃ©riodiquement.
+        La commande TIMER_ON N rend actif l'objet système TIMER désigné par son numéro N: le TIMER se déclenchera périodiquement.
       </p>
     </blockquote>
 
@@ -107,7 +107,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -117,7 +117,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande TIMER_ON est utilisÃ©e pour rendre actif un TIMER.</li>
+      <li>La commande TIMER_ON est utilisée pour rendre actif un TIMER.</li>
     </ul>
 
     <br>
@@ -127,11 +127,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : TIMER.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : TIMER.</li>
     </ul>
 
     <br>
@@ -145,17 +145,17 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' aprÃ¨s 5 secondes, affiche toutes les secondes un nombre de 1 Ã  10 puis s'arrÃªte</p>
+              <p>' après 5 secondes, affiche toutes les secondes un nombre de 1 à 10 puis s'arrête</p>
               <p>label compte</p>
               <p>dim i%</p>
-              <p>' crÃ©e un TIMER</p>
+              <p>' crée un TIMER</p>
               <p>timer 1</p>
-              <p>' le TIMER est inactivÃ©</p>
+              <p>' le TIMER est inactivé</p>
               <p>timer_off 1</p>
               <p>on_timer 1,compte</p>
               <p>' attendre 5 secondes</p>
               <p>wait 5000</p>
-              <p>' le TIMER est activÃ©</p>
+              <p>' le TIMER est activé</p>
               <p>timer_on 1</p>
               <p>end</p>
               <p>compte:</p>

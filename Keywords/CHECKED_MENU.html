@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      REMPLIT LE DLIST NUMÃ‰RO D AVEC LES NUMÃ‰ROS DES SUB_MENU SELECTIONNÃ‰S DANS L'OBJET NUMÃ‰RO N
+      REMPLIT LE DLIST NUMÉRO D AVEC LES NUMÉROS DES SUB_MENU SELECTIONNÉS DANS L'OBJET NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande CHECKED_MENU N,D efface puis remplit le DLIST numÃ©ro D avec les numÃ©ros d'objet des SUB_MENUs sÃ©lectionnÃ©s dans l'objet numÃ©ro N.
+        La commande CHECKED_MENU N,D efface puis remplit le DLIST numéro D avec les numéros d'objet des SUB_MENUs sélectionnés dans l'objet numéro N.
       </p>
       <p>
-        L'objet de numÃ©ro N est un MAIN_MENU ou un SUB_MENU.
+        L'objet de numéro N est un MAIN_MENU ou un SUB_MENU.
       </p>
       <p>
-        Si aucun SUB_MENU n'est sÃ©lectionnÃ©, le DLIST numÃ©ro D est vide.
+        Si aucun SUB_MENU n'est sélectionné, le DLIST numéro D est vide.
       </p>
     </blockquote>
 
@@ -113,7 +113,7 @@
     </b></font></p>
 
     <ul>
-      <li>N ou D = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N ou D = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -123,8 +123,8 @@
     </font></b></p>
 
     <ul>
-      <li>La commande CHECKED_MENU est utilisÃ©e pour connaÃ®tre quels sous-menus ont Ã©tÃ© cochÃ©s par l'utilisateur.</li>
-      <li>Si COUNT(D) est nul, aucun sous-menu n'a Ã©tÃ© cochÃ©.</li>
+      <li>La commande CHECKED_MENU est utilisée pour connaître quels sous-menus ont été cochés par l'utilisateur.</li>
+      <li>Si COUNT(D) est nul, aucun sous-menu n'a été coché.</li>
     </ul>
 
     <br>
@@ -134,16 +134,16 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet numÃ©ro N n'est pas du type : MAIN_MENU, SUB_MENU.</li>
-      <li>Si le numÃ©ro D n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro D excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro D est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro D n'existe pas.</li>
-      <li>Si l'objet numÃ©ro D n'est pas du type : DLIST</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet numéro N n'est pas du type : MAIN_MENU, SUB_MENU.</li>
+      <li>Si le numéro D n'est pas une expression correcte.</li>
+      <li>Si le numéro D excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro D est inférieur à 0.</li>
+      <li>Si l'objet système numéro D n'existe pas.</li>
+      <li>Si l'objet numéro D n'est pas du type : DLIST</li>
     </ul>
 
     <br>
@@ -159,7 +159,7 @@
             <td><left><font face="Consolas">
               <p>dim i%</p>
               <p>main_menu 1</p>
-              <p>sub_menu 2 : parent 2,1 : caption 2,"ParamÃ¨tres"</p>
+              <p>sub_menu 2 : parent 2,1 : caption 2,"Paramètres"</p>
               <p>sub_menu 3 : parent 3,2 : caption 3,"aaaaaaa"</p>
               <p>sub_menu 4 : parent 4,2 : caption 4,"bbbbbbbbb"</p>
               <p>sub_menu 5 : parent 5,2 : caption 5,"ccccccccccc"</p>

@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      REND INACTIVE LA VISUALISATION DU TEXTE BULLE DE L'OBJET SYSTÃˆME NUMÃ‰RO N
+      REND INACTIVE LA VISUALISATION DU TEXTE BULLE DE L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande HINT_HIDE N empÃªche la visualisation du texte bulle (texte jaune) de l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N.
+        La commande HINT_HIDE N empêche la visualisation du texte bulle (texte jaune) de l'objet système désigné par son numéro N.
       </p>
       <p>
-        Remarque: HINT_HIDE est l'Ã©tat par dÃ©faut : aucun texte bulle n'est visualisÃ© quand le curseur de souris reste sur un objet systÃ¨me.
+        Remarque: HINT_HIDE est l'état par défaut : aucun texte bulle n'est visualisé quand le curseur de souris reste sur un objet système.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande HINT_HIDE est utilisÃ©e pour empÃªcher la visualisation d'un petit texte (une explication, un rÃ´le, une dÃ©finition...) quand la commande HINT a Ã©tÃ© utilisÃ©e pour dÃ©finir un texte bulle sur cet objet systÃ¨me.</li>
+      <li>La commande HINT_HIDE est utilisée pour empêcher la visualisation d'un petit texte (une explication, un rôle, une définition...) quand la commande HINT a été utilisée pour définir un texte bulle sur cet objet système.</li>
     </ul>
 
     <br>
@@ -130,11 +130,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet numÃ©ro N est du type : MAIN_MENU, SUB_MENU, SOUND, OPEN_DIALOG, SAVE_DIALOG, DLIST, TIMER, MAIN_MENU_POP, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC, SERIAL, IMAGE.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet numéro N est du type : MAIN_MENU, SUB_MENU, SOUND, OPEN_DIALOG, SAVE_DIALOG, DLIST, TIMER, MAIN_MENU_POP, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC, SERIAL, IMAGE.</li>
     </ul>
 
     <br>
@@ -148,14 +148,14 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un BUTTON</p>
+              <p>' créer un BUTTON</p>
               <p>button 1</p>
               <p>' lui donner un texte bulle</p>
               <p>hint 1,"Utilisez-le soigneusement"</p>
-              <p>' empÃªcher la visualisation du texte bulle de l'objet systÃ¨me numÃ©ro 1</p>
+              <p>' empêcher la visualisation du texte bulle de l'objet système numéro 1</p>
               <p>hint_hide 1</p>
               <p>' ainsi, quand le programme tournera,</p>
-              <p>' aucun texte ne sera visualisÃ©</p>
+              <p>' aucun texte ne sera visualisé</p>
               <p>' quand l'utilisateur mettra le curseur sur le BUTTON</p>
             </font></left></td>
           </tr>

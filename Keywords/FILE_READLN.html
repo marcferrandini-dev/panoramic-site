@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      LIT LA LIGNE COURANTE DU FICHIER TEXTE NUMÃ‰RO N ET LA STOCKE DANS LA VARIABLE V
+      LIT LA LIGNE COURANTE DU FICHIER TEXTE NUMÉRO N ET LA STOCKE DANS LA VARIABLE V
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Texte</li>
     </ul></b></p>
 
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande FILE_READLN N,V lit une ligne du fichier texte numÃ©ro N et la stocke dans la variable V.
+        La commande FILE_READLN N,V lit une ligne du fichier texte numéro N et la stocke dans la variable V.
       </p>
       <p>
-        La variable V doit Ãªtre du mÃªme type que pour la commande d'Ã©criture (FILE_WRITELN), mais comme le fichier est un fichier texte, toute variable de type string peut convenir.
+        La variable V doit être du même type que pour la commande d'écriture (FILE_WRITELN), mais comme le fichier est un fichier texte, toute variable de type string peut convenir.
       </p>
     </blockquote>
 
@@ -110,8 +110,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier texte permis.</li>
-      <li>V = nom de variable de type chaÃ®ne de caractÃ¨res, ou de mÃªme type que celui utilisÃ© pour l'Ã©criture.</li>
+      <li>N = numéro de fichier (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier texte permis.</li>
+      <li>V = nom de variable de type chaîne de caractères, ou de même type que celui utilisé pour l'écriture.</li>
     </ul>
 
     <br>
@@ -121,7 +121,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILE_READLN est utilisÃ©e pour lire une ligne d'un fichier texte.</li>
+      <li>La commande FILE_READLN est utilisée pour lire une ligne d'un fichier texte.</li>
     </ul>
 
     <br>
@@ -131,11 +131,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier texte permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier texte ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier texte permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier texte ouvert.</li>
       <li>Si V n'est pas un nom de variable correct.</li>
-      <li>Si V n'est pas une variable dÃ©clarÃ©e.</li>
+      <li>Si V n'est pas une variable déclarée.</li>
     </ul>
 
     <br>
@@ -150,13 +150,13 @@
           <tr>
             <td><left><font face="Consolas">
               <p>dim a$</p>
-              <p>' choisir un rÃ©pertoire</p>
+              <p>' choisir un répertoire</p>
               <p>dir_is_shared_downloads</p>
-              <p>' dÃ©truire le fichier s'il existe</p>
+              <p>' détruire le fichier s'il existe</p>
               <p>if file_exists("mon_fichier.txt")=1 then file_delete "mon_fichier.txt"</p>
-              <p>' crÃ©er un fichier et l'ouvrir pour Ã©crire</p>
+              <p>' créer un fichier et l'ouvrir pour écrire</p>
               <p>file_open_write 1,"mon_fichier.txt"</p>
-              <p>' Ã©crire 2 lignes dans ce fichier</p>
+              <p>' écrire 2 lignes dans ce fichier</p>
               <p>file_writeln 1, "Salut"</p>
               <p>file_writeln 1, "tout le monde!"</p>
               <p>' le fermer</p>

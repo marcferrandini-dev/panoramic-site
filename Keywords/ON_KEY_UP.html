@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      EXÃ‰CUTE LE PROGRAMME Ã€ PARTIR DU LABEL L QUAND L'UTILISATEUR RELACHE UNE TOUCHE ET QUE L'OBJET SYSTÃˆME NUMÃ‰RO N Ã€ LE FOCUS
+      EXÉCUTE LE PROGRAMME À PARTIR DU LABEL L QUAND L'UTILISATEUR RELACHE UNE TOUCHE ET QUE L'OBJET SYSTÈME NUMÉRO N À LE FOCUS
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: EvÃ©nements</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Evénements</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande ON_KEY_UP N,L assigne un label (qui doit Ãªtre dÃ©fini dans le programme) Ã  partir duquel le programme s'exÃ©cutera chaque fois que l'utilisateur relache une touche du clavier, pendant que l'objet systÃ¨me dÃ©signÃ© par le numÃ©ro N a le focus.
+        La commande ON_KEY_UP N,L assigne un label (qui doit être défini dans le programme) à partir duquel le programme s'exécutera chaque fois que l'utilisateur relache une touche du clavier, pendant que l'objet système désigné par le numéro N a le focus.
       </p>
       <p>
-        L'objet systÃ¨me doit Ãªtre de l'un des types suivants: BUTTON, EDIT, MEMO, COMBO, FORM, LIST, CHECK, OPTION, SPIN, GRID, MEMO_RICH, BUTTON_PICTURE, SCENE2D, GRID_DRAW, SYNEDIT.
+        L'objet système doit être de l'un des types suivants: BUTTON, EDIT, MEMO, COMBO, FORM, LIST, CHECK, OPTION, SPIN, GRID, MEMO_RICH, BUTTON_PICTURE, SCENE2D, GRID_DRAW, SYNEDIT.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
       <li>L = label.</li>
     </ul>
 
@@ -121,8 +121,8 @@
     </font></b></p>
 
     <ul>
-      <li>La commande ON_KEY_UP est utilisÃ©e pour associer un Ã©vÃ©nement (KEY_UP) arrivant Ã  un objet systÃ¨me, Ã  un emplacement de programme (dÃ©fini par le label L).</li>
-      <li>Quand l'Ã©vÃ©nement arrive, le programme marquÃ© par le label est exÃ©cutÃ©.</li>
+      <li>La commande ON_KEY_UP est utilisée pour associer un événement (KEY_UP) arrivant à un objet système, à un emplacement de programme (défini par le label L).</li>
+      <li>Quand l'événement arrive, le programme marqué par le label est exécuté.</li>
     </ul>
 
     <br>
@@ -132,11 +132,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : BUTTON, EDIT, MEMO, COMBO, FORM, LIST, CHECK, OPTION, SPIN, GRID, MEMO_RICH, BUTTON_PICTURE, SCENE2D, GRID_DRAW, SYNEDIT.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : BUTTON, EDIT, MEMO, COMBO, FORM, LIST, CHECK, OPTION, SPIN, GRID, MEMO_RICH, BUTTON_PICTURE, SCENE2D, GRID_DRAW, SYNEDIT.</li>
       <li>Si le label L n'existe pas.</li>
       <li>Si L n'est pas un nom de label correct.</li>
     </ul>
@@ -152,16 +152,16 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' dÃ©clarer un label</p>
+              <p>' déclarer un label</p>
               <p>label enter_key</p>
-              <p>' un EDIT est crÃ©Ã©</p>
+              <p>' un EDIT est créé</p>
               <p>edit 1</p>
-              <p>' chaque fois qu'une touche est relachÃ©e dans l'EDIT, exÃ©cuter Ã  partir du label "enter_key"</p>
+              <p>' chaque fois qu'une touche est relachée dans l'EDIT, exécuter à partir du label "enter_key"</p>
               <p>on_key_up 1,enter_key</p>
               <p>end: ' le programme principal est fini</p>
               <p>enter_key:</p>
               <p>' treatment of event</p>
-              <p>if key_up_code=13 then caption 0,"ENTER est relachÃ©"</p>
+              <p>if key_up_code=13 then caption 0,"ENTER est relaché"</p>
               <p>return</p>
             </font></left></td>
           </tr>

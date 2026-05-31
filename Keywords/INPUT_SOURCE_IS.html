@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DÃ‰SIGNE L'OBJET SYSTÃˆME NUMÃ‰RO N COMME SOURCE DES DONNÃ‰ES
+      DÉSIGNE L'OBJET SYSTÈME NUMÉRO N COMME SOURCE DES DONNÉES
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Système</li>
     </ul></b></p>
 
     <br>
@@ -93,16 +93,16 @@
 
     <blockquote>
       <p>
-        La commande INPUT_SOURCE_IS N dÃ©signe l'objet systÃ¨me numÃ©ro N qui sera utilisÃ© comme la SOURCE de donnÃ©es d'une commande INPUT.
+        La commande INPUT_SOURCE_IS N désigne l'objet système numéro N qui sera utilisé comme la SOURCE de données d'une commande INPUT.
       </p>
       <p>
-        L'objet systÃ¨me doit Ãªtre du type : EDIT, COMBO, FORM.
+        L'objet système doit être du type : EDIT, COMBO, FORM.
       </p>
       <p>
-        Cet objet systÃ¨me devient l'objet systÃ¨me "source des donnÃ©es".
+        Cet objet système devient l'objet système "source des données".
       </p>
       <p>
-        Par dÃ©faut, la source des donnÃ©es est le clavier et le numÃ©ro 0 est utilisÃ© pour dÃ©signer le clavier (par dÃ©faut, la commande INPUT lit le clavier).
+        Par défaut, la source des données est le clavier et le numéro 0 est utilisé pour désigner le clavier (par défaut, la commande INPUT lit le clavier).
       </p>
     </blockquote>
 
@@ -116,7 +116,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro d'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre supÃ©rieur Ã  0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro d'objet système (entier ou réel). Doit être supérieur à 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -126,7 +126,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande INPUT_SOURCE_IS est utilisÃ©e pour lire par une commande INPUT un string appartenant Ã  un objet systÃ¨me .</li>
+      <li>La commande INPUT_SOURCE_IS est utilisée pour lire par une commande INPUT un string appartenant à un objet système .</li>
     </ul>
 
     <br>
@@ -136,11 +136,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un : EDIT, COMBO, FORM.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un : EDIT, COMBO, FORM.</li>
     </ul>
 
     <br>
@@ -155,15 +155,15 @@
           <tr>
             <td><left><font face="Consolas">
               <p>dim a$</p>
-              <p>' crÃ©er un LIST</p>
+              <p>' créer un LIST</p>
               <p>list 1</p>
               <p>' le remplir avec un fichier</p>
               <p>file_load 1,"data.txt"</p>
-              <p>' dÃ©signer ce LIST comme la source des donnÃ©es</p>
+              <p>' désigner ce LIST comme la source des données</p>
               <p>input_source_is 1</p>
-              <p>' lire puis imprimer la premiÃ¨re et la deuxiÃ¨me ligne du LIST</p>
-              <p>input a$:print "premiÃ¨re ligne ="+a$</p>
-              <p>input a$:print "deuxiÃ¨me ligne ="+a$</p>
+              <p>' lire puis imprimer la première et la deuxième ligne du LIST</p>
+              <p>input a$:print "première ligne ="+a$</p>
+              <p>input a$:print "deuxième ligne ="+a$</p>
             </font></left></td>
           </tr>
         </table>

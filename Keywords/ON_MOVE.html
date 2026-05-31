@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      EXÃ‰CUTE LE PROGRAMME Ã€ PARTIR DU LABEL L QUAND L'UTILISATEUR BOUGE LE FORM NUMÃ‰RO N
+      EXÉCUTE LE PROGRAMME À PARTIR DU LABEL L QUAND L'UTILISATEUR BOUGE LE FORM NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: EvÃ©nements</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Evénements</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande ON_MOVE N,L assigne un label (qui doit Ãªtre dÃ©fini dans le programme) Ã  partir duquel le programme s'exÃ©cutera chaque fois que l'utilisateur bouge le FORM dÃ©signÃ© par le numÃ©ro N.
+        La commande ON_MOVE N,L assigne un label (qui doit être défini dans le programme) à partir duquel le programme s'exécutera chaque fois que l'utilisateur bouge le FORM désigné par le numéro N.
       </p>
       <p>
-        Remarque : N doit Ãªtre Ã©gal Ã  0 pour le moment.
+        Remarque : N doit être égal à 0 pour le moment.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
       <li>L = label.</li>
     </ul>
 
@@ -121,8 +121,8 @@
     </font></b></p>
 
     <ul>
-      <li>La commande ON_MOVE est utilisÃ©e pour associer un Ã©vÃ©nement (MOVE) arrivant Ã  un FORM, Ã  un emplacement de programme (dÃ©fini par le label L).</li>
-      <li>Quand l'Ã©vÃ©nement arrive, le programme marquÃ© par le label est exÃ©cutÃ©.</li>
+      <li>La commande ON_MOVE est utilisée pour associer un événement (MOVE) arrivant à un FORM, à un emplacement de programme (défini par le label L).</li>
+      <li>Quand l'événement arrive, le programme marqué par le label est exécuté.</li>
     </ul>
 
     <br>
@@ -132,11 +132,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : FORM.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : FORM.</li>
       <li>Si le label L n'existe pas.</li>
       <li>Si L n'est pas un nom de label correct.</li>
     </ul>
@@ -159,7 +159,7 @@
               <p>end</p>
               <p>move:</p>
               <p>c%=c%+1</p>
-              <p>caption 0,"bougÃ© "+str$(c%)+" foiss"</p>
+              <p>caption 0,"bougé "+str$(c%)+" foiss"</p>
               <p>if c%>10 then off_move 0</p>
               <p>return</p>
             </font></left></td>

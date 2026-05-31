@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DEFINIT LA LARGEUR DE L'OBJET 3D_LINE NUMÃ‰RO N
+      DEFINIT LA LARGEUR DE L'OBJET 3D_LINE NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Objets 3D</li>
     </ul></b></p>
 
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande 3D_LINE_WIDTH N,W dÃ©finit la largeur W en pixels du 3D_LINE numÃ©ro N.
+        La commande 3D_LINE_WIDTH N,W définit la largeur W en pixels du 3D_LINE numéro N.
       </p>
       <p>
-        remarque: dans un SCENE3D, la largeur d'un 3D_LINE ne dÃ©pend pas de sa distance Ã  la camÃ©ra : son aspect reste le mÃªme.
+        remarque: dans un SCENE3D, la largeur d'un 3D_LINE ne dépend pas de sa distance à la caméra : son aspect reste le même.
       </p>
       <p>
-        Ã€ la crÃ©ation d'un 3D_LINE, la largeur vaut 1.
+        À la création d'un 3D_LINE, la largeur vaut 1.
       </p>
     </blockquote>
 
@@ -113,8 +113,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro d'objet 3D (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets 3D.</li>
-      <li>W = valeur de la largeur (entier ou rÃ©el) de la ligne.</li>
+      <li>N = numéro d'objet 3D (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets 3D.</li>
+      <li>W = valeur de la largeur (entier ou réel) de la ligne.</li>
     </ul>
 
     <br>
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande 3D_LINE_WIDTH est utilisÃ©e pour changer la largeur d'un 3D_LINE existant.</li>
+      <li>La commande 3D_LINE_WIDTH est utilisée pour changer la largeur d'un 3D_LINE existant.</li>
     </ul>
 
     <br>
@@ -134,14 +134,14 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets 3D.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un 3D_LINE.</li>
-      <li>Si l'objet 3D numÃ©ro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets 3D.</li>
+      <li>Si le numéro N est inférieur ou égal à 0.</li>
+      <li>Si le numéro N n'est pas le numéro d'un 3D_LINE.</li>
+      <li>Si l'objet 3D numéro N n'existe pas.</li>
       <li>Si W n'est pas une expression correcte.</li>
-      <li>Si W n'est pas supÃ©rieur Ã  0.</li>
-      <li>Si W est supÃ©rieur Ã  200.</li>
+      <li>Si W n'est pas supérieur à 0.</li>
+      <li>Si W est supérieur à 200.</li>
     </ul>
 
     <br>
@@ -155,13 +155,13 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un monde 3D</p>
+              <p>' créer un monde 3D</p>
               <p>scene3d 1</p>
-              <p>' crÃ©er le premier le point d'une ligne</p>
+              <p>' créer le premier le point d'une ligne</p>
               <p>3d_line 1,0,0,0</p>
-              <p>' crÃ©er le deuxiÃ¨me point de la ligne</p>
+              <p>' créer le deuxième point de la ligne</p>
               <p>3d_line 1,1,0,0</p>
-              <p>' mettre la largeur de la ligne Ã  5</p>
+              <p>' mettre la largeur de la ligne à 5</p>
               <p>3d_line_width 1,5</p>
             </font></left></td>
           </tr>

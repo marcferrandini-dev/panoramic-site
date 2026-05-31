@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      RETOURNE L'ARTICLE SELECTIONNÃ‰ DE L'OBJET SYSTÃˆME NUMÃ‰RO N
+      RETOURNE L'ARTICLE SELECTIONNÉ DE L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,16 +93,16 @@
 
     <blockquote>
       <p>
-        La fonction ITEM_INDEX$(N) retourne la ligne (article) de l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N, qui a Ã©tÃ© sÃ©lectionnÃ©e par l'utilisateur.
+        La fonction ITEM_INDEX$(N) retourne la ligne (article) de l'objet système désigné par son numéro N, qui a été sélectionnée par l'utilisateur.
       </p>
       <p>
-        L'objet systÃ¨me est du type : COMBO, LIST.
+        L'objet système est du type : COMBO, LIST.
       </p>
       <p>
-        Remarque 1: si aucune ligne (article) n'est sÃ©lectionnÃ©e, ITEM_INDEX$(N) retourne "" (la chaÃ®ne de caractÃ¨res vide).
+        Remarque 1: si aucune ligne (article) n'est sélectionnée, ITEM_INDEX$(N) retourne "" (la chaîne de caractères vide).
       </p>
       <p>
-        Remarque 2: le mot-clÃ© ITEM_INDEX$ se termine par '$' parce que la valeur retournÃ©e est du type chaÃ®ne de caractÃ¨res.
+        Remarque 2: le mot-clé ITEM_INDEX$ se termine par '$' parce que la valeur retournée est du type chaîne de caractères.
       </p>
     </blockquote>
 
@@ -116,8 +116,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Resultat$ est une chaÃ®ne de caractÃ¨res.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>Resultat$ est une chaîne de caractères.</li>
     </ul>
 
     <br>
@@ -127,7 +127,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction ITEM_INDEX$() est utilisÃ©e pour connaÃ®tre la ligne sÃ©lectionnÃ©e par l'utilisateur.</li>
+      <li>La fonction ITEM_INDEX$() est utilisée pour connaître la ligne sélectionnée par l'utilisateur.</li>
     </ul>
 
     <br>
@@ -137,11 +137,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un COMBO, un LIST.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas le numéro d'un COMBO, un LIST.</li>
     </ul>
 
     <br>
@@ -155,12 +155,12 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un LIST</p>
+              <p>' créer un LIST</p>
               <p>list 1</p>
               <p>' remplir ce LIST avec 2 lignes</p>
               <p>item_add 1,"c'est la ligne 1"</p>
               <p>item_add 1,"c'est la ligne 2"</p>
-              <p>' imprimer l'article sÃ©lectionnÃ©</p>
+              <p>' imprimer l'article sélectionné</p>
               <p>print item_index$(1)</p>
             </font></left></td>
           </tr>

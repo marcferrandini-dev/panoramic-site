@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      IGNORE L'Ã‰VÃ‰NEMENT "MOUSE_DOWN" QUAND L'UTILISATEUR PRESSE UNE TOUCHE DE LA SOURIS SUR L'OBJET SYSTÃˆME NUMÃ‰RO N
+      IGNORE L'ÉVÉNEMENT "MOUSE_DOWN" QUAND L'UTILISATEUR PRESSE UNE TOUCHE DE LA SOURIS SUR L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: EvÃ©nements</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Evénements</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande OFF_MOUSE_DOWN N ignore l'Ã©vÃ©nement "mouse_down" sur l'objet systÃ¨me dÃ©signÃ© par le numÃ©ro N: le sous-programme de traitement d'Ã©vÃ©nement n'est pas exÃ©cutÃ© quand l'utilisateur presse une touche de la souris et que la souris est sur l'objet systÃ¨me.
+        La commande OFF_MOUSE_DOWN N ignore l'événement "mouse_down" sur l'objet système désigné par le numéro N: le sous-programme de traitement d'événement n'est pas exécuté quand l'utilisateur presse une touche de la souris et que la souris est sur l'objet système.
       </p>
       <p>
-        Remarque 1: l'objet systÃ¨me doit Ãªtre de l'un des types suivants: SCENE3D, BUTTON , EDIT, MEMO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, PROGRESS_BAR, SPIN, GRID, CONTAINER, SCENE2D, PANEL, CONTAINER_TAB, TAB.
+        Remarque 1: l'objet système doit être de l'un des types suivants: SCENE3D, BUTTON , EDIT, MEMO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, PROGRESS_BAR, SPIN, GRID, CONTAINER, SCENE2D, PANEL, CONTAINER_TAB, TAB.
       </p>
       <p>
-        Remarque 2: le sous-programme de traitement d'Ã©vÃ©nement est dÃ©fini par la commande ON_MOUSE_DOWN N,L qui assigne le label L comme point de dÃ©part du sous-programme de traitement d'Ã©vÃ©nement. 
+        Remarque 2: le sous-programme de traitement d'événement est défini par la commande ON_MOUSE_DOWN N,L qui assigne le label L comme point de départ du sous-programme de traitement d'événement. 
       </p>
     </blockquote>
 
@@ -113,7 +113,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -123,7 +123,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande OFF_MOUSE_DOWN est utilisÃ©e pour ne pas traiter l'Ã©vÃ©nement "MOUSE_DOWN" arrivant Ã  un objet systÃ¨me: quand l'Ã©vÃ©nement arrive, le sous-programme de traitement d'Ã©vÃ©nement n'est pas exÃ©cutÃ©.</li>
+      <li>La commande OFF_MOUSE_DOWN est utilisée pour ne pas traiter l'événement "MOUSE_DOWN" arrivant à un objet système: quand l'événement arrive, le sous-programme de traitement d'événement n'est pas exécuté.</li>
     </ul>
 
     <br>
@@ -133,11 +133,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : SCENE3D, BUTTON , EDIT, MEMO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, PROGRESS_BAR, SPIN, GRID, CONTAINER, SCENE2D, PANEL, CONTAINER_TAB, TAB.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : SCENE3D, BUTTON , EDIT, MEMO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, PROGRESS_BAR, SPIN, GRID, CONTAINER, SCENE2D, PANEL, CONTAINER_TAB, TAB.</li>
     </ul>
 
     <br>
@@ -157,7 +157,7 @@
               <p>width 1,200</p>
               <p>on_mouse_up 1, down</p>
               <p>on_mouse_up 1, up</p>
-              <p>caption 0,"Appuyez et relÃ¢chez une touche de la souris sur le Button"</p>
+              <p>caption 0,"Appuyez et relâchez une touche de la souris sur le Button"</p>
               <p>end</p>
               <p>down:</p>
               <p>caption 0,"DOWN sur BUTTON"</p>

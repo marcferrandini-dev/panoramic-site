@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      FAIT RÃ‰TRÃ‰CIR OU DILATER LA LARGEUR DU SPRITE NUMÃ‰RO N
+      FAIT RÉTRÉCIR OU DILATER LA LARGEUR DU SPRITE NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: SPRITE</li>
     </ul></b></p>
 
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La commande SPRITE_X_SCALE N,CX modifie la taille du SPRITE dÃ©signÃ© par son numÃ©ro N, le long de l'axe des X c'est Ã  dire sa largeur, par le coefficient CX. La taille sur Y est inchangÃ©e (sa hauteur).
+        La commande SPRITE_X_SCALE N,CX modifie la taille du SPRITE désigné par son numéro N, le long de l'axe des X c'est à dire sa largeur, par le coefficient CX. La taille sur Y est inchangée (sa hauteur).
       </p>
       <p>
         Dans un SCENE2D, l'axe des X est l'axe horizontal, l'axe des Y est l'axe vertical.
@@ -102,10 +102,10 @@
         Si CX=1, aucune modification n'est faite sur sa largeur.
       </p>
       <p>
-        Si CX>1, le SPRITE est dilatÃ© sur l'axe des X (largeur).
+        Si CX>1, le SPRITE est dilaté sur l'axe des X (largeur).
       </p>
       <p>
-        Si CX<1, le SPRITE est rÃ©trÃ©ci sur l'axe des X (largeur).
+        Si CX<1, le SPRITE est rétréci sur l'axe des X (largeur).
       </p>
     </blockquote>
 
@@ -119,8 +119,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de SPRITE (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets SPRITE.</li>
-      <li>CX = coefficient entier ou rÃ©el. Doit Ãªtre plus grand que 0.</li>
+      <li>N = numéro de SPRITE (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets SPRITE.</li>
+      <li>CX = coefficient entier ou réel. Doit être plus grand que 0.</li>
     </ul>
 
     <br>
@@ -130,7 +130,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande SPRITE_X_SCALE est utilisÃ©e pour changer la largeur d'un SPRITE.</li>
+      <li>La commande SPRITE_X_SCALE est utilisée pour changer la largeur d'un SPRITE.</li>
     </ul>
 
     <br>
@@ -140,9 +140,9 @@
     </font></b></p>
 
     <ul>
-      <li>Si le SPRITE numÃ©ro N n'existe pas.</li>
+      <li>Si le SPRITE numéro N n'existe pas.</li>
       <li>Si le coefficient CX n'est pas une expression correcte.</li>
-      <li>Si le coefficient CX est infÃ©rieur ou Ã©gal Ã  0.</li>
+      <li>Si le coefficient CX est inférieur ou égal à 0.</li>
     </ul>
 
     <br>
@@ -156,11 +156,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un monde 2D numÃ©ro 1</p>
+              <p>' créer un monde 2D numéro 1</p>
               <p>scene2d 1</p>
               <p>' charger une image de fond</p>
               <p>file_load 1,"ville.bmp"</p>
-              <p>' crÃ©er un SPRITE numÃ©ro 1</p>
+              <p>' créer un SPRITE numéro 1</p>
               <p>sprite 1</p>
               <p>' charger une image dans le SPRITE</p>
               <p>sprite_file_load 1,"envahisseur.bmp"</p>

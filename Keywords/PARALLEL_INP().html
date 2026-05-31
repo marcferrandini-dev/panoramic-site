@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      RETOURNE LA VALEUR LUE SUR LE PORT PARALLÃˆLE D'ADRESSE A
+      RETOURNE LA VALEUR LUE SUR LE PORT PARALLÈLE D'ADRESSE A
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: EntrÃ©es-Sorties</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Entrées-Sorties</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La fonction PARALLEL_INP(A) retourne la valeur lue sur le port parallÃ¨le d'adresse A.
+        La fonction PARALLEL_INP(A) retourne la valeur lue sur le port parallèle d'adresse A.
       </p>
       <p>
-        A peut Ãªtre un rÃ©el ou un entier. Si A est une valeur rÃ©elle, elle est arrondie Ã  l'entier le plus proche avant l'opÃ©ration de lecture.
+        A peut être un réel ou un entier. Si A est une valeur réelle, elle est arrondie à l'entier le plus proche avant l'opération de lecture.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>A = adresse du port parallÃ¨le (entier ou rÃ©el)</li>
+      <li>A = adresse du port parallèle (entier ou réel)</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction PARALLEL_INP() est utilisÃ©e pour lire une valeur sur la prise imprimante.</li>
+      <li>La fonction PARALLEL_INP() est utilisée pour lire une valeur sur la prise imprimante.</li>
     </ul>
 
     <br>
@@ -130,8 +130,8 @@
     </font></b></p>
 
     <ul>
-      <li>Si la commande PARALLEL_ON n'a pas Ã©tÃ© exÃ©cutÃ©e.</li>
-      <li>Si A est infÃ©rieur Ã  0.</li>
+      <li>Si la commande PARALLEL_ON n'a pas été exécutée.</li>
+      <li>Si A est inférieur à 0.</li>
       <li>Si A est plus grand que 1000.</li>
     </ul>
 
@@ -146,13 +146,13 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' dÃ©marre les opÃ©rations d'entrÃ©es-sorties</p>
+              <p>' démarre les opérations d'entrées-sorties</p>
               <p>parallel_on</p>
-              <p>' met tous le bits Ã  1 sur le port de donnÃ©es</p>
+              <p>' met tous le bits à 1 sur le port de données</p>
               <p>parallel_out 888,255</p>
-              <p>' lecture du port d'Ã©tat</p>
+              <p>' lecture du port d'état</p>
               <p>print parallel_inp(889)</p>
-              <p>' arrÃªte les opÃ©rations d'entrÃ©es-sorties</p>
+              <p>' arrête les opérations d'entrées-sorties</p>
               <p>parallel_off</p>
             </font></left></td>
           </tr>

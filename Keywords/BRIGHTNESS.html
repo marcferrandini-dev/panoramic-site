@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      MODIFIE LA LUMINOSITÃ‰ DE L'OBJET SYSTÃˆME NUMÃ‰RO N (PICTURE)
+      MODIFIE LA LUMINOSITÉ DE L'OBJET SYSTÈME NUMÉRO N (PICTURE)
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,22 +93,22 @@
 
     <blockquote>
       <p>
-        La commande BRIGHTNESST N,V change la luminositÃ© de l'objet systÃ¨me, dÃ©signÃ© par son numÃ©ro N. L'objet systÃ¨me est un PICTURE.
+        La commande BRIGHTNESST N,V change la luminosité de l'objet système, désigné par son numéro N. L'objet système est un PICTURE.
       </p>
       <p>
-        A chaque fois que La commande est exÃ©cutÃ©e:
+        A chaque fois que La commande est exécutée:
       </p>
       <p>
-        - si V=0, l'image reste inchangÃ©e,
+        - si V=0, l'image reste inchangée,
       </p>
       <p>
-        - si V<0, sa luminositÃ© diminue,
+        - si V<0, sa luminosité diminue,
       </p>
       <p>
-        - si V>0, sa luminositÃ© augmente.
+        - si V>0, sa luminosité augmente.
       </p>
       <p>
-        Remarque : V doit Ãªtre entre -128 et 127.
+        Remarque : V doit être entre -128 et 127.
       </p>
     </blockquote>
 
@@ -122,8 +122,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>V = valeur de la luminositÃ©.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>V = valeur de la luminosité.</li>
     </ul>
 
     <br>
@@ -133,7 +133,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande BRIGHTNESS est utilisÃ©e pour modifier la luminositÃ© d'un PICTURE.</li>
+      <li>La commande BRIGHTNESS est utilisée pour modifier la luminosité d'un PICTURE.</li>
     </ul>
 
     <br>
@@ -143,12 +143,12 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me de numÃ©ro N n'est pas du type PICTURE.</li>
-      <li>Si V est infÃ©rieur Ã  -128 ou supÃ©rieur Ã  127.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système de numéro N n'est pas du type PICTURE.</li>
+      <li>Si V est inférieur à -128 ou supérieur à 127.</li>
       <li>Si V n'est pas une expression correcte.</li>
     </ul>
 
@@ -163,11 +163,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un objet PICTURE</p>
+              <p>' créer un objet PICTURE</p>
               <p>picture 1</p>
               <p>' charger une image</p>
               <p>file_load 1,"mon_image.bmp"</p>
-              <p>' augmenter sa luminositÃ©</p>
+              <p>' augmenter sa luminosité</p>
               <p>brightness 1,10</p>
             </font></left></td>
           </tr>

@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      IGNORE L'Ã‰VÃ‰NEMENT "CLICK" QUAND L'OBJET SYSTÃˆME NUMÃ‰RO N EST CLIQUÃ‰
+      IGNORE L'ÉVÉNEMENT "CLICK" QUAND L'OBJET SYSTÈME NUMÉRO N EST CLIQUÉ
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: EvÃ©nements</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Evénements</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande OFF_CLICK N ignore l'Ã©vÃ©nement "click" quand l'utilisateur clique sur l'objet systÃ¨me dÃ©signÃ© par le numÃ©ro N.
+        La commande OFF_CLICK N ignore l'événement "click" quand l'utilisateur clique sur l'objet système désigné par le numéro N.
       </p>
       <p>
-        Remarque 1: l'objet systÃ¨me doit Ãªtre de l'un des types suivants: SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU, SCENE2D, SPIN, CONTAINER_OPTION.
+        Remarque 1: l'objet système doit être de l'un des types suivants: SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU, SCENE2D, SPIN, CONTAINER_OPTION.
       </p>
       <p>
-        Remarque 2: le sous-programme de traitement d'Ã©vÃ©nement est dÃ©fini par la commande ON_CLICK N,L qui assigne le label L comme point de dÃ©part du sous-programme de traitement d'Ã©vÃ©nement.
+        Remarque 2: le sous-programme de traitement d'événement est défini par la commande ON_CLICK N,L qui assigne le label L comme point de départ du sous-programme de traitement d'événement.
       </p>
     </blockquote>
 
@@ -113,7 +113,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -123,8 +123,8 @@
     </font></b></p>
 
     <ul>
-      <li>La commande OFF_CLICK est utilisÃ©e pour ne plus associer l'Ã©vÃ©nement "click" arrivant Ã  un objet systÃ¨me, Ã  un emplacement de programme (dÃ©fini par le label L).</li>
-      <li>Quand l'Ã©vÃ©nement arrive, le programme marquÃ© par le label n'est plus exÃ©cutÃ©.</li>
+      <li>La commande OFF_CLICK est utilisée pour ne plus associer l'événement "click" arrivant à un objet système, à un emplacement de programme (défini par le label L).</li>
+      <li>Quand l'événement arrive, le programme marqué par le label n'est plus exécuté.</li>
     </ul>
 
     <br>
@@ -134,11 +134,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU, SCENE2D, SPIN, CONTAINER_OPTION.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU, SCENE2D, SPIN, CONTAINER_OPTION.</li>
     </ul>
 
     <br>
@@ -152,22 +152,22 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' dÃ©clarer 2 labels</p>
+              <p>' déclarer 2 labels</p>
               <p>label click1,click2</p>
-              <p>' un BUTTON est crÃ©Ã©</p>
+              <p>' un BUTTON est créé</p>
               <p>button 1:top 1,60:width 1,200</p>
               <p>caption 1,"clique 2 fois"</p>
-              <p>' chaque fois que le BUTTON est cliquÃ©, exÃ©cuter Ã  partir du label "click1"</p>
+              <p>' chaque fois que le BUTTON est cliqué, exécuter à partir du label "click1"</p>
               <p>on_click 1, click1</p>
               <p>end: ' le programme principal est fini</p>
               <p>click1:</p>
-              <p>caption 1,"cliquÃ© pour la premiÃ¨re fois"</p>
+              <p>caption 1,"cliqué pour la première fois"</p>
               <p>wait 250</p>
               <p>off_click 1</p>
               <p>on_click 1, click2</p>
               <p>return</p>
               <p>click2:</p>
-              <p>caption 1,"cliquÃ© pour la deuxiÃ¨me fois"</p>
+              <p>caption 1,"cliqué pour la deuxième fois"</p>
               <p>wait 250</p>
               <p>terminate</p>
               <p>return</p>

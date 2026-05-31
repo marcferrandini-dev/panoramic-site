@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      L'INSTRUMENT MIDI UTILISÃ‰ EST L'INSTRUMENT NUMÃ‰RO N
+      L'INSTRUMENT MIDI UTILISÉ EST L'INSTRUMENT NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
+      <li>Paramètre: 1</li>
       <li>Groupe: MIDI</li>
     </ul></b></p>
 
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande MIDI_INSTRUMENT N spÃ©cifie l'instrument MIDI utilisÃ© sur la sortie MIDI.
+        La commande MIDI_INSTRUMENT N spécifie l'instrument MIDI utilisé sur la sortie MIDI.
       </p>
       <p>
-        N doit Ãªtre compris entre 1 et 127.
+        N doit être compris entre 1 et 127.
       </p>
       <p>
-        Remarque: la qualitÃ© de l'instrument dÃ©pends de la carte son.
+        Remarque: la qualité de l'instrument dépends de la carte son.
       </p>
       <p>
         Quelques instruments:
@@ -126,7 +126,7 @@
         oiseaux = 123
       </p>
       <p>
-        sonneries de tÃ©lÃ©phone = 124
+        sonneries de téléphone = 124
       </p>
     </blockquote>
 
@@ -140,7 +140,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = code MIDI de l'instrument (entier ou rÃ©el).</li>
+      <li>N = code MIDI de l'instrument (entier ou réel).</li>
     </ul>
 
     <br>
@@ -150,7 +150,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande MIDI_INSTRUMENT est utilisÃ©e pour changer l'instrument MIDI utilisÃ© sur la sortie MIDI.</li>
+      <li>La commande MIDI_INSTRUMENT est utilisée pour changer l'instrument MIDI utilisé sur la sortie MIDI.</li>
     </ul>
 
     <br>
@@ -160,8 +160,8 @@
     </font></b></p>
 
     <ul>
-      <li>Si la sortie MIDI n'a pas Ã©tÃ© ouverte (MIDI_ON).</li>
-      <li>Si la valeur N est infÃ©rieure Ã  1 ou supÃ©rieure Ã  127.</li>
+      <li>Si la sortie MIDI n'a pas été ouverte (MIDI_ON).</li>
+      <li>Si la valeur N est inférieure à 1 ou supérieure à 127.</li>
       <li>Si la valeur N n'est pas une expression correcte.</li>
     </ul>
 
@@ -179,7 +179,7 @@
               <p>label joue</p>
               <p>midi_on</p>
               <p>print "5 notes"</p>
-              <p>print "                 jouÃ© par un xylophone"</p>
+              <p>print "                 joué par un xylophone"</p>
               <p>midi_instrument 13</p>
               <p>gosub joue</p>
               <p>print "                      par un harmonica"</p>
@@ -200,7 +200,7 @@
               <p>print "                      par des oiseaux"</p>
               <p>midi_instrument 123</p>
               <p>gosub joue</p>
-              <p>print "                      par des sonneries de tÃ©lÃ©phone"</p>
+              <p>print "                      par des sonneries de téléphone"</p>
               <p>midi_instrument 124</p>
               <p>gosub joue</p>
               <p>midi_off</p>

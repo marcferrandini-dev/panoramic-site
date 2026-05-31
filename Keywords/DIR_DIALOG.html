@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      LE RÃ‰PERTOIRE COURANT DE L'OBJET SYSTÃˆME NUMÃ‰RO N DEVIENT LE RÃ‰PERTOIRE D
+      LE RÉPERTOIRE COURANT DE L'OBJET SYSTÈME NUMÉRO N DEVIENT LE RÉPERTOIRE D
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,22 +93,22 @@
 
     <blockquote>
       <p>
-        La commande DIR_DIALOG N,D change le rÃ©pertoire courant de l'objet systÃ¨me numÃ©ro N, qui devient le rÃ©pertoire D.
+        La commande DIR_DIALOG N,D change le répertoire courant de l'objet système numéro N, qui devient le répertoire D.
       </p>
       <p>
-        L'objet systÃ¨me est du type: OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.
+        L'objet système est du type: OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.
       </p>
       <p>
-        D est le nom absolu ou relatif du rÃ©pertoire.
+        D est le nom absolu ou relatif du répertoire.
       </p>
       <p>
-        Si D est un nom relatif, D est considÃ©rÃ© comme un sous-rÃ©pertoire du rÃ©pertoire courant. 
+        Si D est un nom relatif, D est considéré comme un sous-répertoire du répertoire courant. 
       </p>
       <p>
-        Le nom absolu du rÃ©pertoire est le nom complet, par rapport Ã  la racine du systÃ¨me de fichier (ex: "c:\temp\files\" ou "c:\temp\files").
+        Le nom absolu du répertoire est le nom complet, par rapport à la racine du système de fichier (ex: "c:\temp\files\" ou "c:\temp\files").
       </p>
       <p>
-        Le nom relatif est le nom du rÃ©pertoire par rapport au rÃ©pertoire courant (ex: "files").
+        Le nom relatif est le nom du répertoire par rapport au répertoire courant (ex: "files").
       </p>
     </blockquote>
 
@@ -122,8 +122,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>D = nom absolu ou relatif du rÃ©pertoire.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>D = nom absolu ou relatif du répertoire.</li>
     </ul>
 
     <br>
@@ -133,7 +133,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction DIR_DIALOG est utilisÃ©e pour changer le rÃ©pertoire courant d'un OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
+      <li>La fonction DIR_DIALOG est utilisée pour changer le répertoire courant d'un OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
     </ul>
 
     <br>
@@ -143,12 +143,12 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
-      <li>Si D n'est pas un nom correct de rÃ©pertoire.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : OPEN_DIALOG, SAVE_DIALOG, OPEN_DIALOG_PIC, SAVE_DIALOG_PIC.</li>
+      <li>Si D n'est pas un nom correct de répertoire.</li>
     </ul>
 
     <br>
@@ -162,9 +162,9 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un SAVE_DIALOG</p>
+              <p>' créer un SAVE_DIALOG</p>
               <p>save_dialog 1</p>
-              <p>' prendre comme rÃ©pertoire courant le rÃ©pertoire "c:\aaaa"</p>
+              <p>' prendre comme répertoire courant le répertoire "c:\aaaa"</p>
               <p>dir_dialog 1,"c:\aaaa"</p>
             </font></left></td>
           </tr>

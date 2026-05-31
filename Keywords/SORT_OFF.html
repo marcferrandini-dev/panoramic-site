@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      ARRÃŠTE LE TRI AUTOMATIQUE DE L'OBJET SYSTÃˆME NUMÃ‰RO N 
+      ARRÊTE LE TRI AUTOMATIQUE DE L'OBJET SYSTÈME NUMÉRO N 
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 1</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 1</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande SORT_OFF N arrÃªte le tri automatique des articles de l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N.
+        La commande SORT_OFF N arrête le tri automatique des articles de l'objet système désigné par son numéro N.
       </p>
       <p>
-        Remarque: le tri automatique est dÃ©marrÃ© par la commande SORT_ON.
+        Remarque: le tri automatique est démarré par la commande SORT_ON.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
     </ul>
 
     <br>
@@ -120,7 +120,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande SORT_OFF est utilisÃ©e pour arrÃªter le tri automatiquement du contenu d'un objet systÃ¨me COMBO, LIST ou DLIST.</li>
+      <li>La commande SORT_OFF est utilisée pour arrêter le tri automatiquement du contenu d'un objet système COMBO, LIST ou DLIST.</li>
     </ul>
 
     <br>
@@ -130,11 +130,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'est pas du type : COMBO, LIST, DLIST.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet système numéro N n'est pas du type : COMBO, LIST, DLIST.</li>
     </ul>
 
     <br>
@@ -148,18 +148,18 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un LIST</p>
+              <p>' créer un LIST</p>
               <p>list 1</p>
               <p>' lui ajouter 3 articles</p>
               <p>item_add 1,"BBB"</p>
               <p>item_add 1,"CCC"</p>
               <p>item_add 1,"AAA"</p>
-              <p>' dÃ©marrer le tri automatique</p>
+              <p>' démarrer le tri automatique</p>
               <p>sort_on 1</p>
               <p>' ajouter un article</p>
               <p>item_add 1,"ABC"</p>
               <p>' l'ordre est : AAA,ABC,BBB,CCC</p>
-              <p>' arrÃªter le tri automatique</p>
+              <p>' arrêter le tri automatique</p>
               <p>sort_off 1</p>
               <p>' ajouter un article</p>
               <p>item_add 1,"ABD"</p>

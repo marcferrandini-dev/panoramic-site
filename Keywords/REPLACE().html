@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      REMPLACE LE STRING S1 PAR S2 DANS L'OBJET SYSTÃˆME NUMÃ‰RO N, Ã€ PARTIR DE LA POSITION P, ET RETOURNE LA POSITION DU DERNIER CARACTÃˆRE DU STRING REMPLACÃ‰
+      REMPLACE LE STRING S1 PAR S2 DANS L'OBJET SYSTÈME NUMÉRO N, À PARTIR DE LA POSITION P, ET RETOURNE LA POSITION DU DERNIER CARACTÈRE DU STRING REMPLACÉ
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tres: 4</li>
-      <li>Groupe: Chaines de caractÃ¨res</li>
+      <li>Paramètres: 4</li>
+      <li>Groupe: Chaines de caractères</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La fonction REPLACE((S1$,S2$,N,P) remplace la chaine de caractÃ¨res S1$ par S2$ dans le source de l'objet SYNEDIT numÃ©ro N, Ã  partir de la position P, sÃ©lectionne la chaine S2$ et retourne la position du dernier caractÃ¨re de la chaine remplacÃ©e ou -1 si la chaine S1$ n'a pas Ã©tÃ© trouvÃ©e.
+        La fonction REPLACE((S1$,S2$,N,P) remplace la chaine de caractères S1$ par S2$ dans le source de l'objet SYNEDIT numéro N, à partir de la position P, sélectionne la chaine S2$ et retourne la position du dernier caractère de la chaine remplacée ou -1 si la chaine S1$ n'a pas été trouvée.
       </p>
       <p>
-        On peut ainsi facilement remplacer dans un source toutes les occurences d'une chaine de caractÃ¨re par une autre, lÃ  aussi en appelant la fonction avec le paramÃ¨tre P fourni par un appel prÃ©cÃ©dent.
+        On peut ainsi facilement remplacer dans un source toutes les occurences d'une chaine de caractère par une autre, là aussi en appelant la fonction avec le paramètre P fourni par un appel précédent.
       </p>
       <p>
-        L'objet systÃ¨me est du type : MEMO, MEMO_RICH, SYNEDIT.
+        L'objet système est du type : MEMO, MEMO_RICH, SYNEDIT.
       </p>
     </blockquote>
 
@@ -113,10 +113,10 @@
     </b></font></p>
 
     <ul>
-      <li>S1 = expression chaÃ®ne de caractÃ¨res.</li>
-      <li>S2 = expression chaÃ®ne de caractÃ¨res.</li>
-      <li>N = expression rÃ©elle ou entiÃ¨re.</li>
-      <li>P = expression rÃ©elle ou entiÃ¨re.</li>
+      <li>S1 = expression chaîne de caractères.</li>
+      <li>S2 = expression chaîne de caractères.</li>
+      <li>N = expression réelle ou entière.</li>
+      <li>P = expression réelle ou entière.</li>
     </ul>
 
     <br>
@@ -126,7 +126,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction REPLACE() est utilisÃ©e pour remplacer une chaine de caractÃ¨res par une autre dans un objet.</li>
+      <li>La fonction REPLACE() est utilisée pour remplacer une chaine de caractères par une autre dans un objet.</li>
     </ul>
 
     <br>
@@ -136,14 +136,14 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet numÃ©ro N n'est pas du type : MEMO, MEMO_RICH, SYNEDIT.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet numéro N n'est pas du type : MEMO, MEMO_RICH, SYNEDIT.</li>
       <li>Si S1 n'est pas une expression chaine correcte.</li>
       <li>Si S2 n'est pas une expression chaine correcte.</li>
-      <li>Si P n'est pas une expression arithmÃ©tique correcte.</li>
+      <li>Si P n'est pas une expression arithmétique correcte.</li>
     </ul>
 
     <br>
@@ -157,15 +157,15 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un SYNEDIT</p>
+              <p>' créer un SYNEDIT</p>
               <p>dim pos</p>
               <p>synedit 1:height 1,280</p>
               <p>item_add 1,"dim a"</p>
               <p>item_add 1,"a=12345"</p>
               <p>wait 1000</p>
-              <p>' remplacer 2345 by 11 et donner la position du dernier caractÃ¨re</p>
+              <p>' remplacer 2345 by 11 et donner la position du dernier caractère</p>
               <p>pos=replace("2345","11",1,pos)</p>
-              <p>caption 0,"position du dernier caractÃ¨re="+str$(pos)</p>
+              <p>caption 0,"position du dernier caractère="+str$(pos)</p>
             </font></left></td>
           </tr>
         </table>

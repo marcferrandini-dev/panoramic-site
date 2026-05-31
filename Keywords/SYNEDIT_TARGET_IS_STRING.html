@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      DIRIGE LES COMMANDES VERS LES CHAINES DE CARACTÃˆRES DES OBJETS SYNEDIT
+      DIRIGE LES COMMANDES VERS LES CHAINES DE CARACTÈRES DES OBJETS SYNEDIT
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tre: 0</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètre: 0</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,7 +93,7 @@
 
     <blockquote>
       <p>
-        La commande SYNEDIT_TARGET_IS_STRING dirige les commandes suivantes FONT_COLOR, FONT_BOLD, FONT_BOLD_OFF, FONT_ITALIC, FONT_ITALIC_OFF, FONT_STRIKE, FONT_STRIKE_OFF, FONT_UNDERLINE, FONT_UNDERLINE_OFF vers les chaines de caractÃ¨res des objets SYNEDIT.
+        La commande SYNEDIT_TARGET_IS_STRING dirige les commandes suivantes FONT_COLOR, FONT_BOLD, FONT_BOLD_OFF, FONT_ITALIC, FONT_ITALIC_OFF, FONT_STRIKE, FONT_STRIKE_OFF, FONT_UNDERLINE, FONT_UNDERLINE_OFF vers les chaines de caractères des objets SYNEDIT.
       </p>
     </blockquote>
 
@@ -115,7 +115,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande SYNEDIT_TARGET_IS_STRING est utilisÃ©e pour diriger des commandes vers les chaines de caractÃ¨res des objets SYNEDIT.</li>
+      <li>La commande SYNEDIT_TARGET_IS_STRING est utilisée pour diriger des commandes vers les chaines de caractères des objets SYNEDIT.</li>
     </ul>
 
     <br>
@@ -145,11 +145,11 @@
               <p>item_add 1,"print 123456"</p>
               <p>item_add 1,"2D_CIRCLE 10,20,30"</p>
               <p>item_add 1,"' ceci est un commentaire"</p>
-              <p>item_add 1,"print "+chr$(34)+"ceci est une chaÃ®ne de caractÃ¨res"+chr$(34)</p>
+              <p>item_add 1,"print "+chr$(34)+"ceci est une chaîne de caractères"+chr$(34)</p>
               <p>for i%=0 to 12:gosub target:wait 1000:next i%</p>
               <p>end</p>
               <p>target:</p>
-              <p>' mots-clÃ©s</p>
+              <p>' mots-clés</p>
               <p>if c=0 then synedit_target_is_keyword:font_color 1,255,0,0</p>
               <p>if c=1 then font_italic 1</p>
               <p>if c=2 then font_bold 1</p>
@@ -162,7 +162,7 @@
               <p>' commentaires</p>
               <p>if c=8 then synedit_target_is_comment:font_color 1,200,200,200</p>
               <p>if c=9 then font_strike 1</p>
-              <p>' gouttiÃ¨re</p>
+              <p>' gouttière</p>
               <p>if c=10 then synedit_target_is_gutter:font_size 1,16:font_color 1,0,255,0</p>
               <p>if c=11 then hide 1</p>
               <p>if c=12 then synedit_target_is_object:font_size 1,16</p>

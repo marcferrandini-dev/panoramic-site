@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      CHARGE L'IMAGE DU FICHIER F (FORMAT BMP) DANS LE SPRITE NUMÃ‰RO N
+      CHARGE L'IMAGE DU FICHIER F (FORMAT BMP) DANS LE SPRITE NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: SPRITE</li>
     </ul></b></p>
 
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande SPRITE_FILE_LOAD N,F charge une image dans le SPRITE numÃ©ro N.
+        La commande SPRITE_FILE_LOAD N,F charge une image dans le SPRITE numéro N.
       </p>
       <p>
-        Le fichier doit Ãªtre dans le format BMP.
+        Le fichier doit être dans le format BMP.
       </p>
     </blockquote>
 
@@ -110,7 +110,7 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de SPRITE (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets SPRITE.</li>
+      <li>N = numéro de SPRITE (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets SPRITE.</li>
       <li>F = nom (absolu ou relatif) du fichier contenant l'image.</li>
     </ul>
 
@@ -121,7 +121,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande est utilisÃ©e pour charger une image (format BMP) dans un SPRITE.</li>
+      <li>La commande est utilisée pour charger une image (format BMP) dans un SPRITE.</li>
     </ul>
 
     <br>
@@ -131,8 +131,8 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le SPRITE numÃ©ro N n'existe pas.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le SPRITE numéro N n'existe pas.</li>
       <li>Si F n'est pas une expression string correcte.</li>
       <li>Si le fichier F n'existe pas.</li>
     </ul>
@@ -148,11 +148,11 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un monde 2D numÃ©ro 1</p>
+              <p>' créer un monde 2D numéro 1</p>
               <p>scene2d 1</p>
               <p>' charger une image de fond</p>
               <p>file_load 1,"ville.bmp"</p>
-              <p>' crÃ©er un SPRITE numÃ©ro 1</p>
+              <p>' créer un SPRITE numéro 1</p>
               <p>sprite 1</p>
               <p>' charger une image dans le SPRITE</p>
               <p>sprite_file_load 1,"envahisseur.bmp"</p>

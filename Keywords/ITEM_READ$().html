@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      RETOUNE L'ARTICLE NUMÃ‰RO L DE L'OBJET SYSTÃˆME NUMÃ‰RO N
+      RETOUNE L'ARTICLE NUMÉRO L DE L'OBJET SYSTÈME NUMÉRO N
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: Objets SystÃ¨me</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Objets Système</li>
     </ul></b></p>
 
     <br>
@@ -93,16 +93,16 @@
 
     <blockquote>
       <p>
-        La fonction ITEM_READ$(N,L) retourne la ligne (article) numÃ©ro L de l'objet systÃ¨me dÃ©signÃ© par son numÃ©ro N.
+        La fonction ITEM_READ$(N,L) retourne la ligne (article) numéro L de l'objet système désigné par son numéro N.
       </p>
       <p>
-        L'objet systÃ¨me est du type : MEMO, MEMO_RICH, COMBO, LIST, DLIST, SYNEDIT.
+        L'objet système est du type : MEMO, MEMO_RICH, COMBO, LIST, DLIST, SYNEDIT.
       </p>
       <p>
-        Remarque 1: la premiÃ¨re ligne a le numÃ©ro 1.
+        Remarque 1: la première ligne a le numéro 1.
       </p>
       <p>
-        Remarque 2: le mot-clÃ© ITEM_READ$ se termine par '$' parce que la valeur retournÃ©e est du type chaÃ®ne de caractÃ¨res.
+        Remarque 2: le mot-clé ITEM_READ$ se termine par '$' parce que la valeur retournée est du type chaîne de caractères.
       </p>
     </blockquote>
 
@@ -116,9 +116,9 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>L = numÃ©ro d'article (entier ou rÃ©el). Doit Ãªtre plus grand que 0.</li>
-      <li>Resultat$ est une chaÃ®ne de caractÃ¨res.</li>
+      <li>N = numéro de l'objet système (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au nombre maximum permis d'objets systèmes.</li>
+      <li>L = numéro d'article (entier ou réel). Doit être plus grand que 0.</li>
+      <li>Resultat$ est une chaîne de caractères.</li>
     </ul>
 
     <br>
@@ -128,7 +128,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction ITEM_READ$() est utilisÃ©e pour lire une ligne d'un objet manipulant du texte.</li>
+      <li>La fonction ITEM_READ$() est utilisée pour lire une ligne d'un objet manipulant du texte.</li>
     </ul>
 
     <br>
@@ -138,13 +138,13 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
-      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
-      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
-      <li>Si l'objet numÃ©ro N n'est pas du type : MEMO, MEMO_RICH, COMBO, LIST, DLIST, SYNEDIT.</li>
-      <li>Si le numÃ©ro L n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro L est infÃ©rieur Ã  0.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le nombre maximum permis d'objets systèmes.</li>
+      <li>Si le numéro N est inférieur à 0.</li>
+      <li>Si l'objet système numéro N n'existe pas.</li>
+      <li>Si l'objet numéro N n'est pas du type : MEMO, MEMO_RICH, COMBO, LIST, DLIST, SYNEDIT.</li>
+      <li>Si le numéro L n'est pas une expression correcte.</li>
+      <li>Si le numéro L est inférieur à 0.</li>
     </ul>
 
     <br>
@@ -158,12 +158,12 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' crÃ©er un LIST</p>
+              <p>' créer un LIST</p>
               <p>list 1</p>
               <p>' remplir le LIST avec 2 lignes</p>
               <p>item_add 1,"c'est la ligne 1"</p>
               <p>item_add 1,"c'est la ligne 2"</p>
-              <p>' imprimer le deuxiÃ¨me article</p>
+              <p>' imprimer le deuxième article</p>
               <p>print</p>
               <p>print</p>
               <p>print</p>

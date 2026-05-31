@@ -77,13 +77,13 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      ECRIT LA DONNÃ‰E D SUR LE PORT PARALLÃˆLE D'ADRESSE A
+      ECRIT LA DONNÉE D SUR LE PORT PARALLÈLE D'ADRESSE A
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
-      <li>Groupe: EntrÃ©es-Sorties</li>
+      <li>Paramètres: 2</li>
+      <li>Groupe: Entrées-Sorties</li>
     </ul></b></p>
 
     <br>
@@ -93,13 +93,13 @@
 
     <blockquote>
       <p>
-        La commande PARALLEL_OUT A,D Ã©crit la donnÃ©e D sur le port parallÃ¨le d'adresse A.
+        La commande PARALLEL_OUT A,D écrit la donnée D sur le port parallèle d'adresse A.
       </p>
       <p>
-        D est une valeur rÃ©elle ou entiÃ¨re, de 0 Ã  255. Si D est une valeur rÃ©elle, elle est arrondie Ã  l'entier le plus proche avant l'opÃ©ration d'Ã©criture.
+        D est une valeur réelle ou entière, de 0 à 255. Si D est une valeur réelle, elle est arrondie à l'entier le plus proche avant l'opération d'écriture.
       </p>
       <p>
-        A peut Ãªtre un rÃ©el ou un entier. Si A est une valeur rÃ©elle, elle est arrondie Ã  l'entier le plus proche avant l'opÃ©ration d'Ã©criture.
+        A peut être un réel ou un entier. Si A est une valeur réelle, elle est arrondie à l'entier le plus proche avant l'opération d'écriture.
       </p>
     </blockquote>
 
@@ -113,8 +113,8 @@
     </b></font></p>
 
     <ul>
-      <li>D = donnÃ©e Ã©crite (entier ou rÃ©el)</li>
-      <li>A = adresse du port parallÃ¨le (entier ou rÃ©el)</li>
+      <li>D = donnée écrite (entier ou réel)</li>
+      <li>A = adresse du port parallèle (entier ou réel)</li>
     </ul>
 
     <br>
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande PARALLEL_OUT est utilisÃ©e pour Ã©crire une valeur sur la prise imprimante.</li>
+      <li>La commande PARALLEL_OUT est utilisée pour écrire une valeur sur la prise imprimante.</li>
     </ul>
 
     <br>
@@ -134,11 +134,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si la commande PARALLEL_ON n'a pas Ã©tÃ© exÃ©cutÃ©e.</li>
-      <li>Si A est infÃ©rieur Ã  0.</li>
+      <li>Si la commande PARALLEL_ON n'a pas été exécutée.</li>
+      <li>Si A est inférieur à 0.</li>
       <li>Si A est plus grand que 1000.</li>
-      <li>Si D est infÃ©rieur Ã  0.</li>
-      <li>Si D est supÃ©rieur Ã  255.</li>
+      <li>Si D est inférieur à 0.</li>
+      <li>Si D est supérieur à 255.</li>
     </ul>
 
     <br>
@@ -152,13 +152,13 @@
         <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
           <tr>
             <td><left><font face="Consolas">
-              <p>' dÃ©marre les opÃ©rations d'entrÃ©es-sorties</p>
+              <p>' démarre les opérations d'entrées-sorties</p>
               <p>parallel_on</p>
-              <p>' met tous le bits Ã  1 sur le port de donnÃ©es</p>
+              <p>' met tous le bits à 1 sur le port de données</p>
               <p>parallel_out 888,255</p>
-              <p>' lecture du port d'Ã©tat</p>
+              <p>' lecture du port d'état</p>
               <p>print parallel_inp(889)</p>
-              <p>' arrÃªte les opÃ©rations d'entrÃ©es-sorties</p>
+              <p>' arrête les opérations d'entrées-sorties</p>
               <p>parallel_off</p>
             </font></left></td>
           </tr>

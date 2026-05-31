@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      LIT LE FICHIER TEXTE NUMÃ‰RO N JUSQU'AU SÃ‰PARATEUR SUIVANT ET STOCKE LE CONTENU DANS LA VARIABLE V
+      LIT LE FICHIER TEXTE NUMÉRO N JUSQU'AU SÉPARATEUR SUIVANT ET STOCKE LE CONTENU DANS LA VARIABLE V
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Commande</li>
-      <li>ParamÃ¨tres: 2</li>
+      <li>Paramètres: 2</li>
       <li>Groupe: Fichiers Texte</li>
     </ul></b></p>
 
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La commande FILE_READ N,V lit le fichier texte numÃ©ro N de la position courante jusqu'au sÃ©parateur suivant et stocke le rÃ©sultat dans la variable V.
+        La commande FILE_READ N,V lit le fichier texte numéro N de la position courante jusqu'au séparateur suivant et stocke le résultat dans la variable V.
       </p>
       <p>
-        La variable V doit Ãªtre du mÃªme type que pour la commande d'Ã©criture (FILE_WRITE), mais comme le fichier est un fichier texte, toute variable string peut convenir.
+        La variable V doit être du même type que pour la commande d'écriture (FILE_WRITE), mais comme le fichier est un fichier texte, toute variable string peut convenir.
       </p>
     </blockquote>
 
@@ -110,8 +110,8 @@
     </b></font></p>
 
     <ul>
-      <li>N = numÃ©ro de fichier (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au maximum de numÃ©ro de fichier texte permis.</li>
-      <li>V = nom de variable de type chaÃ®ne de caractÃ¨res, ou de mÃªme type que celui utilisÃ© pour l'Ã©criture.</li>
+      <li>N = numéro de fichier (entier ou réel). Doit être plus grand que 0 et inférieur ou égal au maximum de numéro de fichier texte permis.</li>
+      <li>V = nom de variable de type chaîne de caractères, ou de même type que celui utilisé pour l'écriture.</li>
     </ul>
 
     <br>
@@ -121,7 +121,7 @@
     </font></b></p>
 
     <ul>
-      <li>La commande FILE_READ est utilisÃ©e pour lire une valeur d'un fichier texte.</li>
+      <li>La commande FILE_READ est utilisée pour lire une valeur d'un fichier texte.</li>
     </ul>
 
     <br>
@@ -131,11 +131,11 @@
     </font></b></p>
 
     <ul>
-      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
-      <li>Si le numÃ©ro N excÃ¨de le maximum de numÃ©ro de fichier texte permis.</li>
-      <li>Si le numÃ©ro N n'est pas utilisÃ© pour un fichier texte ouvert.</li>
+      <li>Si le numéro N n'est pas une expression correcte.</li>
+      <li>Si le numéro N excède le maximum de numéro de fichier texte permis.</li>
+      <li>Si le numéro N n'est pas utilisé pour un fichier texte ouvert.</li>
       <li>Si V n'est pas un nom de variable correct.</li>
-      <li>Si V n'est pas une variable dÃ©clarÃ©e.</li>
+      <li>Si V n'est pas une variable déclarée.</li>
     </ul>
 
     <br>
@@ -151,7 +151,7 @@
             <td><left><font face="Consolas">
               <p>' ouvir un fichier en lecture</p>
               <p>file_open_read 1,"mon_fichier.txt"</p>
-              <p>' imprimer la premiÃ¨re valeur</p>
+              <p>' imprimer la première valeur</p>
               <p>file_read 1,a$:print a$</p>
               <p>' le fermer</p>
               <p>file_close 1</p>

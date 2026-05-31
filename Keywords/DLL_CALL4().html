@@ -77,12 +77,12 @@
     </font></p>
     
     <p align="center"><font size="4"><b>
-      APPELLE LA FONCTION F DE LA DLL EN MÃ‰MOIRE, AVEC 4 PARAMÃˆTRES
+      APPELLE LA FONCTION F DE LA DLL EN MÉMOIRE, AVEC 4 PARAMÈTRES
     </b></font></p>
     <br>
     <p><b><ul>
       <li>Type: Fonction</li>
-      <li>ParamÃ¨tres: 5</li>
+      <li>Paramètres: 5</li>
       <li>Groupe: DLL</li>
     </ul></b></p>
 
@@ -93,10 +93,10 @@
 
     <blockquote>
       <p>
-        La fonction DLL_CALL4(F,P1,P2,P3,P4) appelle une fonction de la DLL (Librairie de liens dynamiques) chargÃ©e en mÃ©moire, en lui passant 4 paramÃ¨tres, et retourne un rÃ©sultat arithmÃ©tique.
+        La fonction DLL_CALL4(F,P1,P2,P3,P4) appelle une fonction de la DLL (Librairie de liens dynamiques) chargée en mémoire, en lui passant 4 paramètres, et retourne un résultat arithmétique.
       </p>
       <p>
-        Remarque: l'Ã©criture de la fonction F appelÃ©e est "sensible Ã  la casse", c'est Ã  dire qu'elle doit Ãªtre exactement la mÃªme que celle qui est dÃ©clarÃ©e dans la DLL. Les majuscules et les minuscules doivent Ãªtre les mÃªmes.
+        Remarque: l'écriture de la fonction F appelée est "sensible à la casse", c'est à dire qu'elle doit être exactement la même que celle qui est déclarée dans la DLL. Les majuscules et les minuscules doivent être les mêmes.
       </p>
     </blockquote>
 
@@ -105,16 +105,16 @@
     <p><font size="4"><b>
       SYNTAXE :
       <font color="#FF0000">
-        RÃ©sultat=DLL_CALL4(F,P1,P2,P3,P4)
+        Résultat=DLL_CALL4(F,P1,P2,P3,P4)
       </font>
     </b></font></p>
 
     <ul>
-      <li>F = chaÃ®ne de caractÃ¨res, nom de fonction.</li>
-      <li>P1 = paramÃ¨tre, entier ou rÃ©el.</li>
-      <li>P2 = paramÃ¨tre, entier ou rÃ©el.</li>
-      <li>P3 = paramÃ¨tre, entier ou rÃ©el.</li>
-      <li>P4 = paramÃ¨tre, entier ou rÃ©el.</li>
+      <li>F = chaîne de caractères, nom de fonction.</li>
+      <li>P1 = paramètre, entier ou réel.</li>
+      <li>P2 = paramètre, entier ou réel.</li>
+      <li>P3 = paramètre, entier ou réel.</li>
+      <li>P4 = paramètre, entier ou réel.</li>
     </ul>
 
     <br>
@@ -124,7 +124,7 @@
     </font></b></p>
 
     <ul>
-      <li>La fonction DLL_CALL4() est utilisÃ©e pour appeler une fonction d'une DLL chargÃ©e en mÃ©moire.</li>
+      <li>La fonction DLL_CALL4() est utilisée pour appeler une fonction d'une DLL chargée en mémoire.</li>
     </ul>
 
     <br>
@@ -135,9 +135,9 @@
 
     <ul>
       <li>Si la fonction F n'existe pas dans la DLL.</li>
-      <li>Si l'Ã©criture de la fonction F (majuscules et minuscules) n'est pas la mÃªme que celle de la DLL.</li>
+      <li>Si l'écriture de la fonction F (majuscules et minuscules) n'est pas la même que celle de la DLL.</li>
       <li>Si F n'est pas un nom correct de fonction.</li>
-      <li>Si P1 ou P2 ou P3 ou P4 n'est pas une expression arithmÃ©tique correcte.</li>
+      <li>Si P1 ou P2 ou P3 ou P4 n'est pas une expression arithmétique correcte.</li>
     </ul>
 
     <br>
@@ -152,14 +152,14 @@
           <tr>
             <td><left><font face="Consolas">
               <p>dim r,a,b</p>
-              <p>' DLL chargÃ©e en mÃ©moire</p>
+              <p>' DLL chargée en mémoire</p>
               <p>dll_on "ma_dll.dll"</p>
-              <p>' appel d'une fonction de la DLL avec 4 paramÃ¨tres</p>
+              <p>' appel d'une fonction de la DLL avec 4 paramètres</p>
               <p>a=10:b=3</p>
               <p>r=dll_call4("func",a,15,b,6)</p>
-              <p>' affichage du rÃ©sultat</p>
+              <p>' affichage du résultat</p>
               <p>print v</p>
-              <p>' libÃ©ration de la mÃ©moire</p>
+              <p>' libération de la mémoire</p>
               <p>dll_off</p>
             </font></left></td>
           </tr>
