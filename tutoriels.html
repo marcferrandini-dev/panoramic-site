@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriels et Guides - PANORAMIC</title>
+  <meta name="description" content="Apprenez à programmer avec PANORAMIC grâce à nos tutoriels pas à pas : de la base du BASIC à la création de jeux 2D et d'espaces 3D.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Tutoriels de Programmation</h1>
+        <p>Apprenez à développer pas à pas vos propres logiciels Windows. Que vous soyez débutant ou développeur chevronné, trouvez le guide qui correspond à vos besoins.</p>
+      </div>
+    </section>
+
+    <!-- Tutorials Grid List -->
+    <section class="container">
+      <div class="grid grid-2">
+        
+        <!-- Card 1: La Base -->
+        <div class="glass-card">
+          <div class="feature-icon flex-center">🌱</div>
+          <h3>1. Les Bases Fondamentales</h3>
+          <p>Découvrez l'environnement et l'écosystème de PANORAMIC pour bien démarrer votre voyage.</p>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <li><a href="./Tuto/01_01_BASE.html" style="color: var(--text-bright); text-decoration: none;"><strong>La base de la base</strong></a> : Comprendre comment fonctionne le compilateur.</li>
+            <li><a href="./Tuto/01_02_EDITOR.html" style="color: var(--text-bright); text-decoration: none;"><strong>Rôle de PANORAMIC_EDITOR</strong></a> : Prise en main de l'éditeur de texte officiel.</li>
+            <li><a href="./Tuto/01_03_IDE.html" style="color: var(--text-bright); text-decoration: none;"><strong>Rôle de PANORAMIC_IDE</strong></a> : Découverte de l'environnement de développement complet.</li>
+          </ul>
+        </div>
+
+        <!-- Card 2: Le Langage Basic -->
+        <div class="glass-card">
+          <div class="feature-icon flex-center">📝</div>
+          <h3>2. Syntaxe et Langage BASIC</h3>
+          <p>Maîtrisez la syntaxe du langage BASIC pour écrire vos premières instructions de programmation.</p>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <li><a href="./Tuto/VARIABLES.html" style="color: var(--text-bright); text-decoration: none;"><strong>Les variables</strong></a> : Déclarer et stocker des données numériques ou chaînes.</li>
+            <li><a href="./Tuto/LABEL.html" style="color: var(--text-bright); text-decoration: none;"><strong>Les labels</strong></a> : Gérer les sauts et les structures de sous-programmes.</li>
+            <li><a href="./Tuto/STRINGS.html" style="color: var(--text-bright); text-decoration: none;"><strong>Manipuler les chaînes</strong></a> : Opérations avancées sur le texte (strings).</li>
+          </ul>
+        </div>
+
+        <!-- Card 3: Les Objets Système -->
+        <div class="glass-card">
+          <div class="feature-icon flex-center">🖥️</div>
+          <h3>3. Création d'Interfaces (GUI)</h3>
+          <p>Donnez vie à vos logiciels en créant des fenêtres, des boutons et des menus interactifs.</p>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <li><a href="./Tuto/OBJET.html" style="color: var(--text-bright); text-decoration: none;"><strong>Créer un objet</strong></a> : Positionner des boutons, des zones de texte, etc.</li>
+            <li><a href="./Tuto/MENU.html" style="color: var(--text-bright); text-decoration: none;"><strong>Créer un menu</strong></a> : Intégrer des barres de menus déroulants professionnels.</li>
+            <li><a href="./Tuto/OPEN_DIALOG.html" style="color: var(--text-bright); text-decoration: none;"><strong>Utiliser OPEN_DIALOG</strong></a> : Permettre à l'utilisateur de charger des fichiers locaux.</li>
+          </ul>
+        </div>
+
+        <!-- Card 4: Logique et Événements -->
+        <div class="glass-card">
+          <div class="feature-icon flex-center">⚙️</div>
+          <h3>4. Logique Événementielle</h3>
+          <p>Rendez vos interfaces vivantes en réagissant aux actions de l'utilisateur.</p>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <li><a href="./Tuto/CLICK.html" style="color: var(--text-bright); text-decoration: none;"><strong>Gérer l'événement ON_CLICK</strong></a> : Exécuter du code suite au clic sur un objet.</li>
+            <li><a href="./Tuto/PRINT_TARGET.html" style="color: var(--text-bright); text-decoration: none;"><strong>Imprimer avec PRINT</strong></a> : Afficher des données textuelles directement dans la fenêtre.</li>
+          </ul>
+        </div>
+
+        <!-- Card 5: Graphismes et 3D -->
+        <div class="glass-card">
+          <div class="feature-icon flex-center">🎨</div>
+          <h3>5. Rendu 3D Avancé</h3>
+          <p>Explorez les capacités de modélisation et de rendu en 3D temps réel intégrées à PANORAMIC.</p>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <li><a href="./Tuto/BASE3D.html" style="color: var(--text-bright); text-decoration: none;"><strong>SCENE3D et objets 3D</strong></a> : Initialiser un univers 3D temps réel.</li>
+            <li><strong>Modélisation basique</strong> : Manipuler, déplacer et redimensionner des sphères, cubes et théières.</li>
+          </ul>
+        </div>
+
+        <!-- Card 6: Matériel et Electronique -->
+        <div class="glass-card">
+          <div class="feature-icon flex-center">🔌</div>
+          <h3>6. Entrées / Sorties & Matériel</h3>
+          <p>Connectez votre code avec le monde réel en pilotant du matériel électronique et des ports physiques.</p>
+          <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem; margin-top: 1rem;">
+            <li><strong>Pilotage USB & Domotique</strong> : Contrôler des circuits externes depuis votre PC.</li>
+            <li><a href="https://panoramic.1fr1.net/t6642-domotique-et-electronique-avec-panoramic-sommaire" target="_blank" rel="noopener noreferrer"><em>Consultez les exemples complets sur le forum d'entraide ↗</em></a></li>
+          </ul>
+        </div>
+
+        <!-- Card 7: Pas à Pas -->
+        <div class="glass-card" style="grid-column: span 2;">
+          <div class="feature-icon flex-center">🎮</div>
+          <h3>7. Projets Complets & Jeux Vidéo</h3>
+          <p>Mettez en pratique vos connaissances dans des projets concrets étape par étape.</p>
+          <div class="grid grid-2" style="margin-top: 1rem; gap: 1rem;">
+            <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><a href="./Tuto/GAME_2D.html" style="color: var(--text-bright); text-decoration: none;"><strong>Créer un jeu 2D</strong></a> : Gestion de sprites, de collisions et de contrôles clavier/souris.</li>
+            </ul>
+            <ul style="padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+              <li><a href="./Tuto/ADAPTATION_BASIC.html" style="color: var(--text-bright); text-decoration: none;"><strong>Migration depuis QBasic</strong></a> : Adapter facilement vos anciens codes sources BASIC sous Windows moderne.</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

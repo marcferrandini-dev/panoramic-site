@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 3 : Le Dessin 2D - PANORAMIC</title>
+  <meta name="description" content="Dessiner des formes géométriques, cercles, rectangles, lignes et points. Gestion des couleurs.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 3 : Le Dessin 2D</h1>
+        <p>Dessiner des formes géométriques, cercles, rectangles, lignes et points. Gestion des couleurs.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="top"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Dessin</h1></div>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <br><br>
+            <p>
+              1 – <a href="#b1">Dessin</a>
+            </p>
+              <blockquote style="border-left: none;">
+                1.1 – <a href="#b1.1">Caractéristiques du tracé</a><br>
+                1.2 – <a href="#b1.2">Caractéristique de la surface</a><br>
+                1.3 – <a href="#b1.3">Points et lignes</a><br>
+                1.4 – <a href="#b1.4">Surfaces</a><br>
+                1.5 – <a href="#b1.5">Effacer</a><br>
+                1.6 – <a href="#b1.6">Remplissage à partir d&rsquo;un point</a><br>
+                1.7 – <a href="#b1.7">Utilisation d&rsquo;un objet système IMAGE</a>
+              </blockquote>
+            </blockquote>        
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <br>
+      <p>
+        <h2><a name="b1"></a>1 – Dessin</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          <span class="text-large">Dessin de points, de lignes, de polylignes (ensemble de segments), de cercles, de rectangles, sur un <code class="kw">FORM,</code> un <code class="kw">PICTURE</code> ou un <code class="kw">BUTTON_PICTURE</code> qui est « cible 2D ».</span>
+        </p>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.1"></a>1.1 – Caractéristiques du tracé</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_COLOR</code> R, G, B
+              </td>
+              <td>
+                Définit la couleur de toutes les nouvelles lignes (par les composantes rouge, vert, bleu).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_WIDTH</code> W
+              </td>
+              <td>
+                Définit la largeur (W en pixels) de toutes les nouvelles lignes.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_DOT</code>
+              </td>
+              <td>
+                Définit le style du tracé: série de points.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_DASH</code>
+              </td>
+              <td>
+                Définit le style du tracé : série de traits.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_SOLID</code>
+              </td>
+              <td>
+                Définit le style du tracé : plein.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_DASH_DOT</code>
+              </td>
+              <td>
+                Définit le style du tracé : alternance de traits et de points.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_PEN_DASH_DOT_DOT</code>
+              </td>
+              <td>
+                Définit le style du tracé : alternance de traits et deux points.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.2"></a>1.2 – Caractéristique de la surface</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_COLOR</code> R, G, B 
+              </td>
+              <td>
+                Définit la couleur de toutes les nouvelles surfaces (par les composantes rouge, vert, bleu).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_SOLID</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : plein.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_CROSS</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : lignes en croix.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_VERTICAL</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : lignes verticales.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_HORIZONTAL</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : lignes horizontales.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_DIAGONAL_CROSS</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : lignes croisées diagonales.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_DIAGONAL_DOWN</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : lignes diagonales descendantes.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_DIAGONAL_UP</code>
+              </td>
+              <td>
+                Définit le motif de remplissage des figures : lignes diagonales montantes.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.3"></a>1.3 – Points et lignes</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_POINT</code> X, Y 
+              </td>
+              <td>
+                Dessine le point (X, Y).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_POLY_FROM</code> X, Y 
+              </td>
+              <td>
+                Définit la position actuelle (X, Y) du tracé. (premier point d&rsquo;une poly-ligne)
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_POLY_TO</code> X, Y 
+              </td>
+              <td>
+                Dessine un segment de la position actuelle du tracé jusqu&rsquo;au point (X, Y). (segment d&rsquo;une poly-ligne)<br>
+                Le point (X, Y) devient la position actuelle pour une nouvelle commande <code class="kw">2D_POLY_TO</code>.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_LINE</code> X1, Y1, X2, Y2 
+              </td>
+              <td>
+                Dessine la ligne du point (X1, Y1) au point (X2, Y2).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_ARC</code> X , Y, R, S, E
+              </td>
+              <td>
+                Dessine un arc de cercle défini par un centre (X,Y), un rayon R, un angle de début S, un angle de fin E.
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.4"></a>1.4 – Surfaces</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_CIRCLE</code> X, Y, R
+              </td>
+              <td>
+                Dessine un cercle de centre (X, Y) et de rayon R.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_RECTANGLE</code> X1, Y1, X2, Y2 
+              </td>
+              <td>
+                Dessine un rectangle entre 2 points différents (X1, Y1) et (X2, Y2).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_ELLIPSE</code> X1, Y1, X2, Y2 
+              </td>
+              <td>
+                Dessine une ellipse inscrite dans le rectangle défini par les 2 points (X1, Y1) et (X2, Y2).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_RECTANGLE</code> X1, Y1, X2, Y2 
+              </td>
+              <td>
+                Dessine un rectangle entre 2 points différents (X1, Y1) et (X2, Y2).
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_ON</code>
+              </td>
+              <td>
+                Les prochaines figures <code class="kw">2D_CIRCLE</code> et <code class="kw">2D_RECTANGLE</code> seront  remplies avec la couleur définie par <code class="kw">2D_FILL_COLOR</code>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_FILL_OFF</code>
+              </td>
+              <td>
+                Les prochaines figures <code class="kw">2D_CIRCLE</code> et <code class="kw">2D_RECTANGLE</code> seront transparentes
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.5"></a>1.5 – Effacer</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_CLEAR</code>
+              </td>
+              <td>
+                Efface tous les dessins de l&rsquo;objet « cible 2D ».
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw"><span id="UNKNOWN_WORD">CLS</span></code>
+              </td>
+              <td>
+                Efface tous les dessins de l&rsquo;objet « cible 2D » (comme <code class="kw">2D_CLEAR</code>).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.6"></a>1.6 – Remplissage à partir d&rsquo;un point</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_FLOOD</code> X, Y, R, G, B 
+              </td>
+              <td>
+                Peint une surface à partir d&rsquo;un point. 
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.7"></a>1.7 – Utilisation d&rsquo;un objet système IMAGE</h3>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <code class="kw">2D_IMAGE_COPY</code> N, X1, Y1, X2, Y2 
+              </td>
+              <td>
+                Capture la partie d&rsquo;écran définie par les 2 points (X1,Y1) et (X2,Y2) dans l&rsquo;objet système <code class="kw">IMAGE</code> numéro N.
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <code class="kw">2D_IMAGE_PASTE</code> N, X, Y 
+              </td>
+              <td>
+                Recopie l&rsquo;image contenue dans l&rsquo;objet système <code class="kw">IMAGE</code> numéro N vers le point (X,Y).
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>    
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      </blockquote>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 01 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

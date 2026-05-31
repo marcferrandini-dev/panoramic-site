@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CURSOR_ARROW N — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction CURSOR_ARROW N du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>CURSOR_ARROW N</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      CURSOR_ARROW N
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      VISUALISE UN CURSEUR EN FORME DE FLÃˆCHE SUR L'OBJET SYSTÃˆME NUMÃ‰RO N
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>ParamÃ¨tre: 1</li>
+      <li>Groupe: Objets SystÃ¨me</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande CURSOR_ARROW N visualise un curseur en forme de flÃ¨che (pilotÃ© par la souris) sur l'objet systÃ¨me numÃ©ro N.
+      </p>
+      <p>
+        L'objet systÃ¨me est du type: SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, MOVIE, TRACK_BAR, SCROLL_BAR, PROGRESS_BAR, SPIN, GRID, CONTAINER, MEMO_RICH, BUTTON_PICTURE, SCENE2D,PANEL, GRID_DRAW, CONTAINER_OPTION, SHAPE, HVIEWER, LED1,DIGIT1, SWITCH1, CONTAINER_TAB, SYNEDIT, CHART.
+      </p>
+      <p>
+        Remarque: le curseur peut Ãªtre cachÃ© par la commande CURSOR_HIDE, et ramenÃ© Ã  la forme standard par la commande CURSOR_DEFAULT. 
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        CURSOR_ARROW N
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>La commande CURSOR_ARROW est utilisÃ©e pour visualiser un curseur (image de la souris) en forme de flÃ¨che sur un objet systÃ¨me.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
+      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>Si le numÃ©ro N est infÃ©rieur Ã  0.</li>
+      <li>Si l'objet systÃ¨me numÃ©ro N n'existe pas.</li>
+      <li>Si l'objet numÃ©ro N n'est pas du type : SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, MOVIE, TRACK_BAR, SCROLL_BAR, PROGRESS_BAR, SPIN, GRID, CONTAINER, MEMO_RICH, BUTTON_PICTURE, SCENE2D,PANEL, GRID_DRAW, CONTAINER_OPTION, SHAPE, HVIEWER, LED1,DIGIT1, SWITCH1, CONTAINER_TAB, SYNEDIT, CHART.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>' crÃ©er un container gris avec un curseur flÃ¨che</p>
+              <p>container 1</p>
+              <p>color 1,200,200,200</p>
+              <p>cursor_arrow 1</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./CURSOR_BEAM.html" class="related-link">CURSOR_BEAM</a></p>
+      <p><a href="./CURSOR_CROSS.html" class="related-link">CURSOR_CROSS</a></p>
+      <p><a href="./CURSOR_DEFAULT.html" class="related-link">CURSOR_DEFAULT</a></p>
+      <p><a href="./CURSOR_HELP.html" class="related-link">CURSOR_HELP</a></p>
+      <p><a href="./CURSOR_HIDE.html" class="related-link">CURSOR_HIDE</a></p>
+      <p><a href="./CURSOR_HOURGLASS.html" class="related-link">CURSOR_HOURGLASS</a></p>
+      <p><a href="./CURSOR_NOPARKING.html" class="related-link">CURSOR_NOPARKING</a></p>
+      <p><a href="./CURSOR_POINT.html" class="related-link">CURSOR_POINT</a></p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

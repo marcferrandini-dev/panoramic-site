@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 9 : Conseils et Astuces - PANORAMIC</title>
+  <meta name="description" content="Meilleures pratiques de programmation, optimisation du code source BASIC et astuces.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 9 : Conseils et Astuces</h1>
+        <p>Meilleures pratiques de programmation, optimisation du code source BASIC et astuces.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="top"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Conseils</h1></div>
+      <br>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <p>
+              1 – <a href="#b1">Généralités</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                1.1 – <a href="#h1.1">Quelle est la structure d&rsquo;un programme ?</a>
+              </p>
+            </blockquote>
+            <p>
+              2 – <a href="#h2">Monde 3D</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                2.1 – <a href="#h2.1">Comment cr&eacute;er un monde 3D ?</a><br>
+                2.2 – <a href="#h2.2">Comment avoir un monde 3D prenant tout l&rsquo;espace disponible ?</a><br>
+                2.3 – <a href="#h2.3">Comment avoir deux mondes 3D avec des objets 3D ?</a><br>
+                2.4 – <a href="#h2.4">Comment colorer le fond d&rsquo;un monde 3D ?</a><br>
+                2.5 – <a href="#h2.5">Comment utiliser des rotations 3D ?</a><br>
+                2.6 – <a href="#h2.6">Comment d&eacute;placer un objet 3D ?</a><br>
+                2.7 – <a href="#h2.7">Comment utiliser un objet 3D cr&eacute;&eacute; dans le format 3DS (Studio 3D Max) ?</a><br>
+                2.8 – <a href="#h2.8">Comment utiliser un objet 3D cr&eacute;&eacute; dans le format de MD2 (Quake) ?</a>
+              </p>
+            </blockquote>
+            <p>
+              3 – <a href="#h3">Objets</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                3.1 – <a href="#h3.1">Comment colorer le fond d&rsquo;un FORM ?</a><br>
+                3.2 – <a href="#h3.2">Il est conseill&eacute; de faire une pause apr&egrave;s la coloration d&rsquo;un FORM</a><br>
+                3.3 – <a href="#h3.3">Comment colorer le fond d&rsquo;une image ?</a><br>
+                3.4 – <a href="#h3.4">Comment cr&eacute;er un MENU ?</a><br> 
+                3.5 – <a href="#h3.5">Comment utiliser LEFT, TOP, WIDTH, HEIGHT ?</a><br>
+                3.6 – <a href="#h3.6">Comment mettre un BUTTON (ou un autre objet) sur un autre FORM que FORM num&eacute;ro 0 ?</a><br>
+                3.7 – <a href="#h3.7">Comment placer un MENU sur un autre FORM que FORM num&eacute;ro 0 ?</a><br>
+                3.8 – <a href="#h3.8">Comment utiliser un OPEN_DIALOG pour choisir un fichier ?</a><br>
+                3.9 – <a href="#h3.8">Comment utiliser un SAVE_DIALOG pour sauvegarder un MEMO dans un fichier ?</a><br>
+                3.10 – <a href="#h3.10">Comment charger une image avec un fichier, dont le nom absolu est dans a$ ?</a><br>
+                3.11 – <a href="#h3.11">Comment charger une image avec un un fichier choisi avec un OPEN_DIALOG ?</a><br>
+                3.12 – <a href="#h3.12">Comment charger un MEMO avec un fichier choisi avec un OPEN_DIALOG ?</a><br>
+                3.13 – <a href="#h3.13">CAPTION est possible seulement avec BUTTON, OPTION, CHECK, ALPHA ou FORM</a><br>
+                3.14 – <a href="#h3.14">TEXT est possible seulement avec EDIT ou COMBO</a><br>
+                3.15 – <a href="#h3.15">Comment utiliser les barres ?</a>
+              </p>
+            </blockquote>
+            <p>
+              4 – <a href="#h4">Multimédia : sons, musiques, films</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                4.1 – <a href="#h4.1">Comment charger et jouer un fichier de musique de MIDI ?</a><br>
+                4.2 – <a href="#h4.2">Comment charger et jouer un fichier son WAV ?</a><br>
+                4.3 – <a href="#h4.3">Comment charger et jouer un fichier de musique MP3 ?</a><br>
+                4.4 – <a href="#h4.4">Comment charger et jouer un film avec un fichier, dont le nom absolu est dans a$</a>
+              </p>
+            </blockquote>
+            <p>
+              5 – <a href="#h5">Divers</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                5.1 – <a href="#h5.1">Comment utiliser INKEY$ ?</a><br>
+                5.2 – <a href="#h5.2">Comment utiliser les sous-programmes ?</a><br>
+                5.3 – <a href="#h5.3">Comment utiliser les &eacute;v&eacute;nements ?</a>
+              </p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <br>
+
+      <p>
+        <h2><a name="h1"></a>1 – Généralités</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+    
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h1.1"></a>1.1 – Quelle est la structure d&rsquo;un programme ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <P>
+            La structure conseillée d&rsquo;un programme est la suivante :
+          </p>
+          <blockquote style="border-left: none;">
+            <p>
+              1) Déclaration : DIM et LABEL<br>
+              2) Programme principal : définition des composants (objets), calculs, comportement, END<br>
+              3) Traitement d&rsquo;événements
+            </p>
+          </blockquote>
+          <br>
+          <p>
+            <i>Exemple :</i> création d&rsquo;un bouton qui affiche « Cliquez sur moi », puis « Salut ! » quand on a cliqué sur lui :
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                <code class="kw">rem</code><span class="com"><i> &#8212; déclaration des variables utilisées &#8212;</i></span><br>
+                <code class="kw">DIM</code> A$<br>
+                <br>
+                <code class="kw">rem</code><span class="com"><i> &#8212; déclaration des étiquettes utilisées &#8212;</i></span><br>
+                <code class="kw">LABEL</code> clk<br>
+                <br>
+                <code class="kw">rem</code><span class="com"><i> ******** PROGRAMME PRINCIPAL ********</i></span><br>
+                A$ = « Cliquez sur moi« <br>
+                <br>
+                <code class="kw">rem</code><span class="com"><i> &#8212; création d&rsquo;un OBJET &#8212;</i></span><br>
+                <code class="kw">BUTTON</code> 1<br>
+                <code class="kw">rem</code><span class="com"><i> lui donner un petit texte (son « intitulé »)</i></span><br>
+                <code class="kw">CAPTION</code> 1,a$<br>
+                <br>
+                <code class="kw">rem</code><span class="com"><i> définir le traitement quand il est cliqué</i></span><br>
+                <code class="kw">ON_CLICK</code> 1,clk<br>
+                <br>
+                <code class="kw">rem</code><span class="com"><i> ******** FIN DU PROGRAMME PRINCIPAL ********</i></span><br>
+                <code class="kw">END</code><br>
+                <br>
+                <code class="kw">rem</code><span class="com"><i> &#8212; TRAITEMENT DES ÉVÉNEMENTS&#8212;</i></span><br>
+                Clk:<br>
+                &nbsp; <code class="kw">CAPTION</code> 1, »Salut !« <br>
+                <code class="kw">RETURN</code><br>
+                
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      <br>
+
+      <p><h2><a name="h2"></a>2 – Monde 3D</h2>
+      <hr noshade size="1" color="666666"></p>
+      <br>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h2.1"></a>2.1 – Comment créer un monde 3D ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">
+              1) Tout d&rsquo;abord, cré&eacute;ez un objet pour visualiser votre monde 3D avec le mot-cl&eacute; <code class="kw">SCENE3D</code> et lui donner un num&eacute;ro :
+            </span>
+          </P>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">SCENE3D</code> 1<br>
+                  
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <p>
+            Une cam&eacute;ra 3D et une lumi&egrave;re 3D sont alors automatiquement cr&eacute;&eacute;s avec votre <code class="kw">SCENE3D</code> et maintenant vous pouvez les utiliser (pour les positionner et viser un point avec la cam&eacute;ra).
+          </p>
+          <br>
+          <P>
+            <span class="text-large">
+              2) Placer des objets dans votre monde 3D.
+            </span>
+          </P>
+          <blockquote style="border-left: none;">
+            <P>Vous pouvez cr&eacute;er des objets 3D pr&eacute;d&eacute;termin&eacute;s :</p>
+              <blockquote style="border-left: none;">          
+                <p><code class="kw">
+                3D_BOX<br>
+                3D_CUBE<br>
+                3D_CONE<br>
+                3D_TORUS<br>
+                3D_SPHERE<br>
+                3D_CYLINDER<br>
+                3D_TEXT<br>
+                3D_TEAPOT<br>
+                3D_DODECAHEDRON<br></code></p>
+            </blockquote>
+            <p>Ou des objets 3D format&eacute;s :</p>
+            <blockquote style="border-left: none;">
+              <p>
+              <code class="kw">3D_MESH</code> (en &quot;3DS&quot;, format de Studio 3D Max)<br>
+              <code class="kw">3D_ACTOR</code> (en &quot;MD2&quot;, format de Quake)<br></p>
+            </blockquote>
+              <P>Avec le mot-cl&eacute; correspondant, vous lui donnez un num&eacute;ro 3D :</P>
+            <blockquote style="border-left: none;">
+              <table>
+                <tr>
+                  <td>
+                    <code class="kw">3D_TEAPOT</code> 1<br>
+                    
+                  </td>
+                </tr>
+              </table>
+            </blockquote>
+          </blockquote>
+          <br>
+          <p>
+            <span class="text-large">
+              3) Vous pouvez alors les d&eacute;placer, les dimensionner, les faire tourner, les colorer, leur donner une texture&#8230;
+            </span>
+          </p>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h2.2"></a>2.2 – Comment avoir un monde 3D emplissant tout l&rsquo;espace disponible ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <P>Cr&eacute;er un monde 3D :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">SCENE_3D</code> 1<br>
+                  
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <p>Lui donner tout l&rsquo;espace disponible dans FORM num&eacute;ro 0 :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">FULL_SPACE</code> 1<br>
+                  
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <P>Remarque : pour donner tout l&rsquo;espace de l&rsquo;&eacute;cran &agrave; FORM num&eacute;ro 0 :</P>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">FULL_SPACE</code> 0<br>
+                  
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <P>En combinant les 2 commandes, vous avez un monde 3D prenant tout l&rsquo;&eacute;cran :</P>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">FULL_SPACE</code> 0 : <code class="kw">rem</code><span class="com"><i> FORM 0 prend tout l&rsquo;espace sur l&rsquo;&eacute;cran</i></span><br>
+                  <code class="kw">SCENE3D</code> 1<br>
+                  <code class="kw">FULL_SPACE</code> 1 : <code class="kw">rem</code><span class="com"><i> SCENE3D prend tout l&rsquo;espace sur FORM 0</i></span></td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <br>
+        <p><h3><a name="h2.3"></a>2.3 – Comment avoir deux mondes 3D avec des objets 3D ?</h3></p>
+        <blockquote style="border-left: none;">
+        <p>Utilisez 3D_TARGET_IS pour désigner le récepteur d&rsquo;objet 3D</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">SCENE3D</code> 1 : <code class="kw">rem</code><span class="com"><i> créer le premier monde 3D</i></span><br>
+                  <code class="kw">SCENE3D</code> 2 : <code class="kw">rem</code><span class="com"><i> créer le deuxième monde 3D</i></span><br>
+                  <code class="kw">LEFT</code> 2,210 : <code class="kw">rem</code><span class="com"><i> le positionner (autrement il recouvre le premier)</i></span><br>
+                  <code class="kw">3D_TEAPOT</code> 1 : <code class="kw">rem</code><span class="com"><i> créer le premier objet 3D dans le premier monde 3D</i></span><br>
+                  <code class="kw">3D_TARGET_IS</code> 2 : <code class="kw">rem</code><span class="com"><i> assigner le deuxième monde 3D comme le récepteur de commandes 3D</i></span><br>
+                  <code class="kw">3D_TEAPOT</code> 2 : <code class="kw">rem</code><span class="com"><i> créer le deuxième objet 3D dans le deuxième monde 3D</i></span><br></td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="h2.4"></a>2.4 – Comment colorer le fond d&rsquo;un monde 3D ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <P>
+            Utilisez le num&eacute;ro N du SCENE3D (le monde 3D a &eacute;t&eacute; cr&eacute;&eacute; par la commande <code class="kw">SCENE3D</code> N) dans la commande <code class="kw">COLOR</code> :
+          </P>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td><code class="kw">COLOR</code> N, Rouge, Vert, Bleu</td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h2.5"></a>2.5 – Comment utiliser des rotations 3D ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <P>
+            <code class="kw">3D_X_ROTATE</code>, <code class="kw">3D_Y_ROTATE</code>, <code class="kw">3D_Z_ROTATE</code> sont relatifs aux axes propres de l&rsquo;objet.
+          </P>
+          <p>
+            Les axes propres de l&rsquo;objet 3D sont les axes qui étaient parallèles aux axes du monde quand l&rsquo;objet 3D a été créé.
+          </p>
+          <p>
+            Les angles de rotation sont exprimés par rapport à la position d&rsquo;origine :
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">3D_X_ROTATE</code> N,30 : <code class="kw">rem</code><span class="com"><i> positionne l&rsquo;objet 3D N à 30° par rapport à sa position d&rsquo;origine</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h2.6"></a>2.6 – Comment déplacer un objet 3D ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <P>Tous les objets 3D sont créés à la position (0,0,0).</p>
+          <p>Pour déplacer un objet 3D, utilisez les commandes : 3D_X_POSITION, 3D_Y_POSITION, 3D_Z_POSITION.</p>
+          <p>Exemple :</P>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">3D_SPHERE</code> 1 : <code class="kw">rem</code><span class="com"><i> la sphère n°1 avec rayon=2 est créée en (0,0,0)</i></span><br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> la déplacer en (5,6,7)</i></span><br>
+                  <code class="kw">3D_X_POSITION</code> 1,5<br>
+                  <code class="kw">3D_Y_POSITION</code> 1,6<br>
+                  <code class="kw">3D_Z_POSITION</code> 1,7
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h2.7"></a>2.7 – Comment utiliser un objet 3D créé dans le format 3DS (3D Studio Max) ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">       
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">rem</code><span class="com"><i> créez un scene3D (monde 3D)</i></span><br>
+                  <code class="kw">SCENE3D</code> 1 : <code class="kw">rem</code><span class="com"><i> 1 est le numéro d&rsquo;objet</i></span><br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> créez un objet « maillé »</i></span><br>
+                  <code class="kw">3D_MESH</code> 1 : <code class="kw">rem</code><span class="com"><i> 1 est le numéro d&rsquo;objet 3D</i></span><br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> chargez votre fichier dans l&rsquo;objet 3D numéro 1</i></span><br>
+                  <code class="kw">3D_LOAD_OBJECT</code> 1, »MonObjet.3ds« </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h2.8"></a>2.8 – Comment utiliser un objet 3D créé dans le format MD2 (Quake) ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">rem</code><span class="com"><i> créez un scene3D (monde 3D)</i></span><br>
+                  <code class="kw">SCENE3D</code> 1 : <code class="kw">rem</code><span class="com"><i> 1 est le numéro d&rsquo;objet</i></span><br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> créez un objet « acteur »</i></span><br>
+                  <code class="kw">3D_ACTOR</code> 1 : <code class="kw">rem</code><span class="com"><i> 1 est le numéro d&rsquo;objet 3D</i></span><br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> chargez votre fichier dans l&rsquo;objet 3D numéro 1</i></span><br>
+                  <code class="kw">3D_LOAD_OBJECT</code> 1, »MonObjet.md2« </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="h3"></a>3 – Objets</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.1"></a>3.1 – Comment colorer le fond d&rsquo;un FORM ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Utilisez le numéro N du <code class="kw">FORM</code> dans la commande <code class="kw">COLOR</code> (0 pour le <code class="kw">FORM</code> de base, ou N pour un <code class="kw">FORM</code> créé par la commande <code class="kw">FORM</code> N) :
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">COLOR</code> N, Rouge, Vert, Bleu
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.2"></a>3.2 – il est conseillé de faire une pause après la coloration d&rsquo;un FORM :</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">rem</code><span class="com"><i> mettre le fond en couleur blanche</i></span><br>
+                  <code class="kw">COLOR</code> 0,255,255,255 : <code class="kw">DISPLAY</code>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.3"></a>3.3 – Comment colorer le fond d&rsquo;une image ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>Une image a été créée par la commande picture N . Utilisez le numéro N dans la commande COLOR :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">COLOR</code> N, Rouge, Vert, Bleu</td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.4"></a>3.4 – Comment créer un MENU ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>Voir l&rsquo;exemple suivant :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">rem</code><span class="com"><i> créer l&rsquo;objet « menu principal »</i></span><br>
+                  <code class="kw">MAIN_MENU</code> 1<br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> créer 2 « sous menus » au même niveau (fils de l&rsquo;objet numéro 1)</i></span><br>
+                  <code class="kw">SUB_MENU</code> 2 : <code class="kw">CAPTION</code> 2, »Fichier » : <code class="kw">PARENT</code> 2,1<br>
+                  <code class="kw">SUB_MENU</code> 3 : <code class="kw">CAPTION</code> 3, »Edition » : <code class="kw">PARENT</code> 3,1<br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> créer 3 « sous-menus » fils de l&rsquo;objet numéro 2</i></span><br>
+                  <code class="kw">SUB_MENU</code> 4 : <code class="kw">CAPTION</code> 4, »Ouvrir » : <code class="kw">PARENT</code> 4,2<br>
+                  <code class="kw">SUB_MENU</code> 5 : <code class="kw">CAPTION</code> 5, »Sauvegarder » : <code class="kw">PARENT</code> 5,2<br>
+                  <code class="kw">SUB_MENU</code> 6 : <code class="kw">CAPTION</code> 6, »<code class="kw">Quitter</code> » : <code class="kw">PARENT</code> 6,2<br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> créer 3 « sous-menus » fils de l&rsquo;objet numéro 3</i></span><br>
+                  <code class="kw">SUB_MENU</code> 7 : <code class="kw">CAPTION</code> 7, »Copier » : parent 7,3<br>
+                  <code class="kw">SUB_MENU</code> 8 : <code class="kw">CAPTION</code> 8, »Coller » : parent 8,3<br>
+                  <code class="kw">SUB_MENU</code> 9 : <code class="kw">CAPTION</code> 9, »Défaire » : parent 9, 3</td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.5"></a>3.5 – Comment utiliser</h3><code class="kw">LEFT</code>, <code class="kw">TOP</code>, <code class="kw">WIDTH</code>, <code class="kw">HEIGHT</code> ?
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <code class="kw">LEFT</code> et <code class="kw">TOP</code> sont utilisés pour positionner un objet sur son père (son conteneur).
+          </p>
+          <p>
+            <code class="kw">WIDTH</code> et <code class="kw">HEIGHT</code> sont utilisés pour dimensionner un objet.
+          </p>
+          <br>
+        </blockquote>
+        <p>
+          <h3><a name="h3.6"></a>3.6 – Comment placer un</h3><code class="kw">BUTTON</code> (ou un autre objet) sur un autre <code class="kw">FORM</code> que <code class="kw">FORM</code> numéro 0 ?
+        </p>
+        <blockquote style="border-left: none;">
+          <p>Première possibilité :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">FORM</code> 3 : <code class="kw">rem</code><span class="com"><i> créer un autre FORM (numéro 3)</i></span><br>
+                  <code class="kw">BUTTON</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un BUTTON (numéro 1)</i></span><br>
+                  <code class="kw">PARENT</code> 1,3 : <code class="kw">rem</code><span class="com"><i> le BUTTON va sur son père (le container) : FORM numéro 3</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <p>Deuxième possibilité :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">FORM</code> 3 : <code class="kw">rem</code><span class="com"><i> créer un autre FORM (numéro 3)</i></span><br>
+                  <code class="kw">COMMAND_TARGET_IS</code> 3 : <code class="kw">rem</code><span class="com"><i> toutes les commandes vont sur l&rsquo;objet numéro 3</i></span><br>
+                  <code class="kw">BUTTON</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un BUTTON : il va sur sur FORM numéro 3</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <a name="h3.7">3.7 – Comment placer un MENU sur un autre FORM que FORM numéro 0 ?</a>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">FORM</code> 3 : <code class="kw">rem</code><span class="com"><i> créer un autre FORM (numéro 3)</i></span><br>
+                  <code class="kw">COMMAND_TARGET_IS</code> 3 : <code class="kw">rem</code><span class="com"><i> toutes les commandes vont sur l&rsquo;objet numéro 3</i></span><br>
+                  <code class="kw">MAIN_MENU</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un menu sur FORM numéro 3</i></span><br>
+                  <code class="kw">CAPTION</code> 1, »Menu » : <code class="kw">rem</code><span class="com"><i> lui donner un caption le rend visible</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <a name="h3.8">3.8 – Comment utiliser un <code class="kw">OPEN_DIALOG</code> pour choisir un fichier ?</a>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Un <code class="kw">OPEN_DIALOG</code> est créé par la commande <code class="kw">OPEN_DIALOG</code> N et est utilisé par la commande <code class="kw">FILE_NAME$</code>(N), N étant le numéro de l&rsquo;<code class="kw">OPEN_DIALOG</code>.
+          </p>
+          <p>
+            Comme <code class="kw">FILE_NAME$</code> retourne soit le nom du fichier choisi par l&rsquo;utilisateur, soit le caractère souligné « _ » si aucun fichier n&rsquo;est choisi, la valeur rendue doit être stockée dans une variable string puis comparée à « _ ».
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">DIM</code> a$ : <code class="kw">rem</code><span class="com"><i> déclarer une variable string</i></span><br>
+                  <br>
+                  <code class="kw">OPEN_DIALOG</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un OPEN_DIALOG</i></span><br>
+                  a$ = <code class="kw">FILE_NAME$</code>(1) : <code class="kw">rem</code><span class="com"><i> choisir un nom de fichier avec l&rsquo;OPEN_DIALOG numéro 1</i></span><br>
+                  <code class="kw">IF</code> a$ &lt;> « _ » <code class="kw">THEN</code> – &#8211; – : <code class="kw">rem</code><span class="com"><i> si a$ contient un nom de fichier, alors – &#8211; &#8211;</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <a name="h3.9">3.9 – Comment sauvegarder un MEMO dans un fichier avec <code class="kw">SAVE_DIALOG</code> ?</a>
+        </p>
+        <blockquote style="border-left: none;">
+            <p>
+              Un save_dialog est créé par la commande save_dialog N et est utilisé par la commande file_name$(N), N étant le numéro du save_dialog.
+            </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">SAVE_DIALOG</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un save_dialog</i></span><br>
+                  <code class="kw">MEMO</code> 2 : <code class="kw">rem</code><span class="com"><i> créer un MEMO</i></span><br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> pour sauvegarder le contenu du memo avec le SAVE_DIALOG</i></span><br>
+                  <code class="kw">FILE_SAVE</code> 2,<code class="kw">FILE_NAME$</code>(1)
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.10"></a>3.10 – Comment charger une image avec un fichier dont le nom absolu est dans a$ ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">DIM</code> a$ : <code class="kw">rem</code><span class="com"><i> déclarer une variable string</i></span><br>
+                  <br>
+                  <code class="kw">PICTURE</code> 1 : <code class="kw">rem</code><span class="com"><i> créer une image</i></span><br>
+                  <br>
+                  a$ = « c:\MyPicture.bmp » : <code class="kw">rem</code><span class="com"><i> définir le nom du fichier</i></span><br>
+                  <code class="kw">FILE_LOAD</code> 1,a$ : <code class="kw">rem</code><span class="com"><i> Le fichier est chargé dans le PICTURE</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.11"></a>3.11 – Comment charger une image avec un fichier choisi par un OPEN_DIALOG ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">DIM</code> a$ : <code class="kw">rem</code><span class="com"><i> déclarer une variable string</i></span><br>
+                  <br>
+                  <code class="kw">PICTURE</code> 1 : <code class="kw">rem</code><span class="com"><i> créer une image</i></span><br>
+                  <code class="kw">OPEN_DIALOG</code> 2 : <code class="kw">rem</code><span class="com"><i> créer un OPEN_DIALOG</i></span><br>
+                  a$ = <code class="kw">FILE_NAME$ »</code>(2) : <code class="kw">rem</code><span class="com"><i> activer l&rsquo;open_dialog numéro 2</i></span><br>
+                  <code class="kw">IF</code> a$ &lt;> « _ » <code class="kw">THEN</code><code class="kw"> FILE_LOAD</code> 1,a$ : <code class="kw">rem</code><span class="com"><i> si un fichier est choisi, le charger dans l&rsquo;image</i></span></td>
+              </tr>
+            </table>
+            <br>
+            <p>
+              Rappel : la fonction <code class="kw">FILE_NAME$</code> retourne le caractère souligné « _ » si aucun fichier n&rsquo;a été choisi par l&rsquo;utilisateur.
+            </p>
+            <p>
+              C&rsquo;est pourquoi il faut comparer la valeur de a$ avec « _ » :
+            </p>
+            <blockquote style="border-left: none;">
+              <blockquote style="border-left: none;">
+                <blockquote style="border-left: none;">
+                  <table>
+                    <tr>
+                      <td>
+                        <code class="kw">IF</code> a$ &lt;> « _ » <code class="kw">THEN</code>&#8230;
+                      </td>
+                    </tr>
+                  </table>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.12"></a>3.12 – Comment charger un MEMO avec un fichier choisi par un OPEN_DIALOG ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">DIM</code> a$ : <code class="kw">rem</code><span class="com"><i> déclarer une variable string</i></span><br>
+                  <br>
+                  <code class="kw">MEMO</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un MEMO</i></span><br>
+                  <code class="kw">OPEN_DIALOG</code> 2 : <code class="kw">rem</code><span class="com"><i> créer un OPEN_DIALOG</i></span><br>
+                  a$ = <code class="kw">FILE_NAME$ »</code>(2) : <code class="kw">rem</code><span class="com"><i> activer l&rsquo;open_dialog numéro 2</i></span><br>
+                  <code class="kw">IF</code> a$ &lt;> « _ » <code class="kw">THEN</code><code class="kw">FILE_LOAD</code> 1,a$ : <code class="kw">rem</code><span class="com"><i> si un fichier est choisi, le charger dans le MEMO</i></span></td>
+              </tr>
+            </table>
+            <br>
+            <p>
+              Rappel : la fonction <code class="kw">FILE_NAME$</code> retourne le caractère souligné « _ » si aucun fichier n&rsquo;a été choisi par l&rsquo;utilisateur.
+            </p>
+            <p>
+              C&rsquo;est pourquoi il faut comparer la valeur de a$ avec « _ » : 
+            </p>
+            <blockquote style="border-left: none;">
+              <blockquote style="border-left: none;">
+                <blockquote style="border-left: none;">
+                  <table>
+                    <tr>
+                      <td>
+                        <code class="kw">IF</code> a$ &lt;> « _ » <code class="kw">THEN</code>&#8230;
+                      </td>
+                    </tr>
+                  </table>
+                </blockquote>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.13"></a>3.13 –</h3><code class="kw">CAPTION</code> est possible seulement avec <code class="kw">BUTTON</code>, <code class="kw">OPTION</code>, <code class="kw">CHECK</code>, <code class="kw">ALPHA</code> ou <code class="kw">FORM</code>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">CAPTION</code> N, »Salut ! » : <code class="kw">rem</code><span class="com"><i> N doit être un numéro de BUTTON, OPTION, CHECK, ALPHA ou FORM</i></span></td>
+              </tr>
+            </table>
+            <p>Cette commande sur un autre type d&rsquo;objet produit une erreur.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.14"></a>3.14 –</h3><code class="kw">TEXT</code> est possible seulement avec <code class="kw">EDIT</code> ou <code class="kw">COMBO</code>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">TEXT</code> N, »Salut ! » : <code class="kw">rem</code><span class="com"><i> N doit être un numéro d&rsquo;un <code class="kw">EDIT</code> ou  d&rsquo;un <code class="kw">COMBO</code></i></span></td>
+              </tr>
+            </table>
+            <p>Cette commande sur un autre type d&rsquo;objet produit une erreur.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h3.15"></a>3.15 – Comment utiliser les barres ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Il y a 3 sortes de barres : <code class="kw">TRACK_BAR</code>, <code class="kw">SCROLL_BAR</code> et <code class="kw">PROGRESS_BAR</code>.
+          </p>
+          <blockquote style="border-left: none;">
+            <p>Pour lire la position du curseur :</p>
+            <blockquote style="border-left: none;">
+              <table>
+                <tr>
+                  <td>
+                    A = <code class="kw">POSITION</code>(N) : <code class="kw">rem</code><span class="com"><i> N est le numéro de l&rsquo;objet barre.</i></span>
+                  </td>
+                </tr>
+              </table>
+            </blockquote>
+            <br>
+            <p>Pour changer la position de curseur :</p>
+            <blockquote style="border-left: none;">
+              <table>
+                <tr>
+                  <td>
+                    
+                    <code class="kw">POSITION</code> N, P : <code class="kw">rem</code><span class="com"><i> P est la position à prendre par le curseur de la barre numéro N.</i></span>
+                  </td>
+                </tr>
+              </table>
+            </blockquote>
+          </blockquote>
+          <br>
+          <br>
+          <p>
+            Quand vous créez des barres, elles ont des valeurs standards pour le minimum et le maximum.
+          </p>
+          <blockquote style="border-left: none;">
+            <p>Pour changer la valeur minimale :</p>
+            <blockquote style="border-left: none;">
+              <table>
+                <tr>
+                  <td>
+                    
+                    <code class="kw">MIN</code> N, M : <code class="kw">rem</code><span class="com"><i> M est la valeur minimale, N est le numéro de l&rsquo;objet barre.</i></span>
+                  </td>
+                </tr>
+              </table>
+            </blockquote>
+            <br>
+            <p>Pour changer la valeur maximale :
+            <blockquote style="border-left: none;">
+              <table>
+                <tr>
+                  <td>
+                    <code class="kw">MAX</code> N, M : <code class="kw">rem</code><span class="com"><i> M est la valeur maximale, N est le numéro de l&rsquo;objet barre.</i></span></td>
+                </tr>
+              </table>
+            </blockquote>
+          </blockquote>
+        </blockquote>  
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <p>
+        <h2><a name="h4"></a>4 – Multimédia : sons, musiques, films</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h4.1"></a>4.1 – Comment charger et jouer un fichier de musique MIDI ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">SOUND</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un son</i></span><br>
+                  <code class="kw">FILE_LOAD</code> 1, »file.mid » : <code class="kw">rem</code><span class="com"><i> charger un fichier</i></span><br>
+                  <code class="kw">PLAY</code> 1 : <code class="kw">rem</code><span class="com"><i> le jouer</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h4.2"></a>4.2 – Comment charger et jouer un fichier son WAV ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">SOUND</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un son</i></span><br>
+                  <code class="kw">FILE_LOAD</code> 1, »file.wav » : <code class="kw">rem</code><span class="com"><i> charger un fichier</i></span><br>
+                  <code class="kw">PLAY</code> 1 : <code class="kw">rem</code><span class="com"><i> le jouer</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <blockquote style="border-left: none;">
+      <p>
+        <h3><a name="h4.3"></a>4.3 – Comment charger et jouer un fichier de musique MP3 ?</h3>
+      </p>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">SOUND</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un son</i></span><br>
+                  <code class="kw">FILE_LOAD</code> 1, »file.mp3&Prime; : <code class="kw">rem</code><span class="com"><i> charger un fichier</i></span><br>
+                  <code class="kw">PLAY</code> 1 : <code class="kw">rem</code><span class="com"><i> le jouer</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h4.4"></a>4.4 – Comment charger et jouer un film avec un fichier dont le nom absolu est dans a$ ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">DIM</code> a$ : <code class="kw">rem</code><span class="com"><i> déclarer une variable string</i></span><br>
+                  <br>
+                  a$ = « c:\MonFilm.avi » : <code class="kw">rem</code><span class="com"><i> définir le nom du fichier</i></span><br>
+                  <code class="kw">MOVIE</code> 1 : <code class="kw">rem</code><span class="com"><i> créer un film</i></span><br>
+                  <code class="kw">FILE_LOAD</code> 1, a$ : <code class="kw">rem</code><span class="com"><i> charger le fichier</i></span><br>
+                  <code class="kw">PLAY</code> 1 : <code class="kw">rem</code><span class="com"><i> le jouer</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="h5"></a>5 – Divers</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h5.1"></a>5.1 – Comment utiliser INKEY$ ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>Voir l&rsquo;exempe suivant :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">DIM</code> a$<br>
+                  <code class="kw">LABEL</code> loop<br>
+                  <br>
+                  loop:<br>
+                  a$ = <code class="kw">INKEY$</code><br>
+                  <code class="kw">IF</code> a$ = «  » <code class="kw">THEN GOTO</code> loop<br>
+                  <br>
+                  <code class="kw">rem</code><span class="com"><i> ici, a$ contient la touche qui a été enfoncée</i></span>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h5.2"></a>5.2 – Comment utiliser les sous-programmes ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Un sous-programme est un groupe de commandes qui peut être traités un certain nombre de fois.
+          </p>
+          <p>
+            Un sous-programme commence par un <code class="kw">LABEL</code> (que l&rsquo;on doit déclarer par le mot clé <code class="kw">LABEL</code>) et finit par <code class="kw">RETURN</code>.
+          </p>
+          <p>
+            Quand <code class="kw">RETURN</code> est exécuté, l&rsquo;exécution de programme retourne à la commande immédiatement après la commande <code class="kw">GOSUB</code>.
+          </p>
+        </blockquote>  
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="h5.3"></a>5.3 – Comment utiliser les événements ?</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+          Quand un événement (clic, changement) arrive sur un objet, vous définissez dans un sous-programme les commandes à traiter pour répondre à l&rsquo;événement.
+          </p>
+          <p>
+            Un sous-programme commence par un LABEL et se termine par RETURN.
+          </p>
+          <p>
+            Attention : Certains événements ne sont pas possibles avec certains objets !
+          </p>
+        </blockquote>
+       </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      </blockquote>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 03 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

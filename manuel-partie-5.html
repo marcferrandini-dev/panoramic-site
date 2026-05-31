@@ -1,0 +1,1436 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 5 : Scene3D et Objets 3D - PANORAMIC</title>
+  <meta name="description" content="Initialisation d'espaces 3D temps réel, intégration de lumières, caméras, maillages et textures.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 5 : Scene3D et Objets 3D</h1>
+        <p>Initialisation d'espaces 3D temps réel, intégration de lumières, caméras, maillages et textures.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="TOP">
+									</a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">SCENE3D et objets 3D</h1></div><br>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <p>
+              1 – <a href="#b1">Monde 3D (objets : SCENE3D)</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                1.1 – <a href="#b1.1">Traitement de la caméra dans un SCENE3D</a>
+              </p>  
+              <blockquote style="border-left: none;">
+                <p>
+                  1.1.1 – <a href="#b1.1.1">Position de la caméra 3D</a><br>
+                  1.1.2 – <a href="#b1.1.2">Rotation de la caméra 3D</a><br>
+                  1.1.3 – <a href="#b1.1.3">Position du point visé</a><br>
+                </p>
+              </blockquote>
+              <p>
+                1.2 – <a href="#b1.2">Traitement de la lumière 3D dans un SCENE3D</a>
+              </p>
+              <blockquote style="border-left: none;">
+                <p>
+                  1.2.1 – <a href="#b1.2.1">Position de la lumière 3D</a>
+                </p>
+              </blockquote>
+              <p>
+                1.3 – <a href="#b1.3">Créer un objet 3D dans un SCENE3D</a>
+              </p>
+              <p>
+                1.4 – <a href="#b1.4">Commandes sur un objet 3D (dans un SCENE3D)</a>
+              </p>
+              <blockquote style="border-left: none;">
+                <p>
+                  1.4.1 – <a href="#b1.4.1">Supprimer</a><br>
+                  1.4.2 – <a href="#b1.4.2">Visualiser ou cacher</a><br>
+                  1.4.3 – <a href="#b1.4.3">Positionner</a><br>
+                  1.4.4 – <a href="#b1.4.4">Rotation</a><br>
+                  1.4.5 – <a href="#b1.4.5">Redimensionner</a><br>
+                  1.4.6 – <a href="#b1.4.6">Couleur</a><br>
+                  1.4.7 – <a href="#b1.4.7">Texture</a><br>
+                  1.4.8 – <a href="#b1.4.8">Charger une structure</a><br>
+                  1.4.9 – <a href="#b1.4.9">Changer le texte</a><br>
+                  1.4.10 – <a href="#b1.4.10">Changer l&rsquo;épaisseur</a><br>
+                  1.4.11 – <a href="#b1.4.11">Chaîner</a><br>
+                  1.4.12 – <a href="#b1.4.12">Transparence</a><br>
+                  1.4.13 – <a href="#b1.4.13">Mouvement</a><br>
+                  1.4.14 – <a href="#b1.4.14">Pointer un objet 3D</a><br>
+                  1.4.15 – <a href="#b1.4.15">Nombre d&rsquo;objets 3D</a><br>
+                  1.4.16 – <a href="#b1.4.16">Types de collision</a><br>
+                  1.4.17 – <a href="#b1.4.17">Tuiles</a><br>          
+                </p>
+              </blockquote>
+              <p>
+                1.5 – <a href="#b1.5">Fonctions d&rsquo;un objet 3D (dans un SCENED3D)</a>
+              </p>
+              <blockquote style="border-left: none;">
+                1.5.1 – <a href="#b1.5.1">Position</a><br>
+                1.5.2 – <a href="#b1.5.2">Angles de rotation</a><br>
+                1.5.3 – <a href="#b1.5.3">Coefficients d&rsquo;échelle</a><br>
+                1.5.4 – <a href="#b1.5.4">Collision</a><br>
+                1.5.5 – <a href="#b1.5.5">Divers</a><br>
+              </blockquote>
+              <p>
+                1.6 – <a href="#b1.6">Brouillard (dans un SCENE3D)</a>
+              </p>
+            </blockquote>
+          </blockquote>
+        </blockquote>  
+      </blockquote>
+      <br>
+      
+      <p>
+        <h2><a name="b1"></a>1 – Monde 3D (objet :</h2><code class="kw">SCENE3D</code>)
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.1"></a>1.1 – Traitement de la caméra 3D dans un SCENE3D</h3>
+        </p>
+        <p>
+          Aussitôt qu&rsquo;un <code class="kw">SCENE3D</code> est créé, il possède une caméra 3D placée en (0,0,5) et visant l&rsquo;origine (0,0,0).<br>
+          La caméra 3D d&rsquo;un <code class="kw">SCENE3D</code> est « l&rsquo;oeil » de l&rsquo;utilisateur observant le monde 3D.<br>
+          Il est possible de déplacer la caméra 3D et le point visé par cette caméra 3D.
+        </p>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.1.1"></a>1.1.1 – Position de la caméra 3D</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">CAM_X_POSITION</code> X
+                </td>
+                <td>
+                  Positionne la caméra 3D en X.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">CAM_Y_POSITION</code> Y
+                </td>
+                <td>
+                  Positionne la caméra 3D en Y.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">CAM_Z_POSITION</code> Z
+                </td>
+                <td>
+                  Positionne la caméra 3D en Z.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">CAM_POSITION</code> X, Y, Z
+                </td>
+                <td>
+                  Positionne la caméra 3D en X, Y, Z.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>
+              Par défaut, la caméra 3D est en position (0,0,5)
+            </p>
+          </blockquote>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.1.2"></a>1.1.2 – Rotation de la caméra 3D</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">CAM_PITCH</code> A 
+								</td>
+                <td>
+                  Tourne la caméra 3D autour de son axe X de l&rsquo;angle A.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">CAM_ROLL</code> A 
+								</td>
+                <td>
+                  Tourne la caméra 3D autour de son axe Y de l&rsquo;angle A.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">CAM_ROLL</code> Z 
+								</td>
+                <td>
+                  Tourne la caméra 3D autour de son axe Z de l&rsquo;angle A.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>Par défaut, la caméra 3D est orientée suivant le vecteur (0,0,1)</p>
+          </blockquote>
+       </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.1.3"></a>1.1.3 – Position du point visé</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">POINT_X_POSITION</code> X 
+								</td>
+                <td>
+                  Positionne en X le point visé par la caméra 3D. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">POINT_Y_POSITION</code> Y 
+								</td>
+                <td>
+                  Positionne en Y le point visé par la caméra 3D. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">POINT_Z_POSITION</code> Z 
+								</td>
+                <td>
+                  Positionne en Z le point visé par la caméra 3D. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">POINT_POSITION</code> X, Y, Z 
+								</td>
+                <td>
+                  Positionne en X, Y, Z le point visé par la caméra 3D.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">POINT_OBJECT</code> N 
+								</td>
+                <td>
+                  La caméra 3D pointe l&rsquo;objet 3D numéro N. 
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>Par défaut, la caméra 3D vise le point en (0,0,0)</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.2"></a>1.2 – Traitement de la lumière 3D dans un SCENE3D</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Aussitôt qu&rsquo;un <code class="kw">SCENE3D</code> est créé, il possède une lumière 3D placée en (0,0,5).<br>
+            Il est possible de déplacer la lumière 3D.
+          </p>
+          <br>
+          <p>
+            <span class="text-large"><a name="b1.2.1"></a>1.2.1 – position de la lumière 3D</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">LIGHT_X_POSITION</code> X
+								</td>
+                <td>
+                  Positionne la lumière 3D en X.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">LIGHT_Y_POSITION</code> Y
+								</td>
+                <td>
+                  Positionne la lumière 3D en Y. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">LIGHT_Z_POSITION</code> Z
+								</td>
+                <td>
+                  Positionne la lumière 3D en Z. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">LIGHT_POSITION</code> X, Y, Z
+								</td>
+                <td>
+                  Positionne la lumière 3D en X, Y, Z.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>
+              Par défaut, la lumière 3D est à la même position que la caméra 3D : (0,0,5)
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.3"></a>1.3 – Créer un objet 3D dans un SCENE3D</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            À chaque objet 3D, un nombre N est associé.<br>
+            L&rsquo;objet 3D est créé en (0,0,0) et sa couleur est grise.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_ACTOR</code> N 
+								</td>
+                <td>
+                  Crée un acteur (objet MD2). 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_BOX</code> N, Largeur, Hauteur, Profondeur 
+								</td>
+                <td>
+                  Crée une boîte.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_CONE</code> N,Hauteur, Rayon 
+								</td>
+                <td>
+                  Crée un cône.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_CUBE</code> N, Côté 
+								</td>
+                <td>
+                  Crée un cube.
+								</td>
+              </tr>
+              <tr>
+              <td>
+                <code class="kw">3D_CYLINDER</code> N, Hauteur, Rayon_Haut, Rayon_Bas 
+								</td>
+                <td>
+                  Crée un cylindre.
+						  	</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_DODECAHEDRON</code> N 
+								</td>
+                <td>
+                  Crée un dodécaèdre. 
+								</td>
+              </tr>
+              <tr>
+              <td>
+                <code class="kw">3D_LINE</code> N 
+								</td>
+              <td>
+                Crée une ligne 3D.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_MESH</code> N 
+  							</td>
+                <td>
+                  Créez un objet maillé (objet 3DS).
+  							</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_SPHERE</code> N, Rayon 
+  							</td>
+                <td>
+                  Crée une sphère.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_TEAPOT</code> N 
+  								</td>
+                <td>
+                  Crée une théière.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_TEXT</code> N, String$ 
+  								</td>
+                <td>
+                  Crée un texte 3D.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_TORUS</code> N, Rayon_Externe, Rayon_Interne 
+  								</td>
+                <td>
+                  Crée un tore.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_SKYBOX</code> N 
+								</td>
+                <td>
+                  Crée un skybox.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_PLANE</code> N 
+								</td>
+                <td>
+                  Crée un plan.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>
+              N = numéro d&rsquo;objet 3D créé
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.4"></a>1.4 – Commandes sur un objet 3D (dans un SCENE3D)</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">Pour toutes les commandes, N est le numéro de l&rsquo;objet 3D.</span>
+          </p>
+          <br>
+          <p>
+            <span class="text-large"><a name="b1.4.1"></a>1.4.1 – Supprimer</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_DELETE</code> N 
+								</td>
+                <td>
+                  Supprime l&rsquo;objet 3D numéro N. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_DELETE_ALL</code>
+								</td>
+                <td>
+                  Supprime tous les objets 3D.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.2"></a>1.4.2 – Visualiser ou cacher</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_SHOW</code> N 
+								</td>
+                <td>
+                  Visualise l&rsquo;objet 3D numéro N. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_HIDE</code> N 
+								</td>
+                <td>
+                  Cache l&rsquo;objet 3D numéro N. 
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.3"></a>1.4.3 – Positionner</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_X_POSITION</code> N, X 
+								</td>
+                <td>
+                  Positionne en X l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_Y_POSITION</code> N, Y 
+								</td>
+                <td>
+                  Positionne en Y l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_Z_POSITION</code> N, Z 
+								</td>
+                <td>
+                  Positionne en Z l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_POSITION</code> N, X, Y, Z
+								</td>
+                <td>
+                  Positionne en (X,Y,Z) l&rsquo;objet 3D numéro N. 
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p><span class="text-large"><a name="b1.4.4"></a>1.4.4 – Rotation</span></p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_X_ROTATE</code> N, AX 
+								</td>
+                <td>
+                  Fait tourner l&rsquo;objet 3D numéro N d&rsquo;un angle de AX degrés autour de son propre axe des X.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_Y_ROTATE</code> N, AY 
+								</td>
+                <td>
+                  Fait tourner l&rsquo;objet 3D numéro N d&rsquo;un angle de AY degrés autour de son propre axe des Y.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_Z_ROTATE</code> N, AZ 
+								</td>
+                <td>
+                  Fait tourner l&rsquo;objet 3D numéro N d&rsquo;un angle de AZ degrés autour de son propre axe des Z.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_ROTATE</code> N, AX, AY, AZ 
+								</td>
+                <td>
+                  Fait tourner l&rsquo;objet 3D numéro N d&rsquo;un angle de AX degrés autour de son propre axe des X, puis d&rsquo;un angle de Y degrés autour de son propre axe des Y, puis d&rsquo;un angle de AZ degrés autour de son propre axe des Z.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>Les angles AX, AY, AZ sont en degrés.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p><span class="text-large"><a name="b1.4.5"></a>1.4.5 – Redimensionner</span></p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_X_SCALE</code> N, CX
+								</td>
+                <td>
+                  Redimensionne l&rsquo;objet 3D numéro N sur son propre axe des X d&rsquo;un coefficient CX.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_Y_SCALE</code> N, CY 
+								</td>
+                <td>
+                  Redimensionne l&rsquo;objet 3D numéro N sur son propre axe des Y d&rsquo;un coefficient CY.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_Z_SCALE</code> N, CZ
+								</td>
+                <td>
+                  Redimensionne l&rsquo;objet 3D numéro N sur son propre axe des Z d&rsquo;un coefficient CZ.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_SCALE</code> N, CX, CY, CZ
+                </td>
+                <td>
+                  Redimensionne l&rsquo;objet 3D numéro N sur son propre axe des X d&rsquo;un coefficient CX, puis sur son propre axe des Y d&rsquo;un coefficient CY, puis sur son propre axe des Z d&rsquo;un coefficient CZ.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>Dilatation si Cn &gt; 1, contraction si Cn &lt; 1</p>
+          </blockquote>
+       </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.6"></a>1.4.6 – Couleur</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_COLOR</code> N, R, G, B 
+								</td>
+                <td>
+                  L&rsquo;objet 3D numéro N prend la couleur définie par les couleurs de base R, G, B. 
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>
+              0 &lt;= R &lt;= 255 (rouge)<br>
+              0 &lt;= G &lt;= 255 (vert)<br>
+              0 &lt;= B &lt;= 255 (bleu)
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.7"></a>1.4.7 – Texture</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE</code> N, F 
+								</td>
+                <td>
+                  L&rsquo;objet 3D numéro N prend la texture « BMP » du fichier F. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_IMAGE_TEXTURE</code> N1, N2
+								</td>
+                <td>
+                  L&rsquo;objet 3D numéro N1 prend la texture de l&rsquo;objet système numéro N2. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE_BOTTOM</code> N, F
+								</td>
+                <td>
+                   La face basse du 3D_SKYBOX numéro N prend la texture dans le fichier F. 
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE_FRONT</code> N, F
+								</td>
+                <td>
+                  La face avant du 3D_SKYBOX numéro N prend la texture dans le fichier F.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE_RIGHT</code> N, F
+								</td>
+                <td>
+                  La face droite du 3D_SKYBOX numéro N prend la texture dans le fichier F.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE_BACK</code> N, F
+								</td>
+                <td>
+                  La face arrière du 3D_SKYBOX numéro N prend la texture dans le fichier F.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE_LEFT</code> N, F
+								</td>
+                <td>
+                  La face gauche du 3D_SKYBOX numéro N prend la texture dans le fichier F.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_TEXTURE_TOP</code> N, F
+								</td>
+                <td>
+                  La face haute du 3D_SKYBOX numéro N prend la texture dans le fichier F.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.8"></a>1.4.8 – Charger une structure</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_LOAD_OBJECT</code> N, F 
+								</td>
+                <td>
+                  Une structure « MD2 » ou « 3DS » du fichier F est chargée dans l&rsquo;objet 3D numéro N (<code class="kw">3D_ACTOR</code> ou <code class="kw">3D_MESH</code>).
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.9"></a>1.4.9 – Changer le texte</span>
+          </p>
+          <p>
+            Pour changer le texte visualisé dans l&rsquo;objet 3D.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_TEXT_CHANGE</code> N, A$ 
+								</td>
+                <td>
+                  Le <code class="kw">3D_TEXT</code> numéro N visualise maintenant A$. 
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.10"></a>1.4.10 – Changer l&rsquo;épaisseur</span>
+          </p>
+          <p>
+            Pour modifier l&rsquo;épaisseur d&rsquo;une ligne 3D.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_LINE_WIDTH</code> N, W 
+								</td>
+                <td>
+                  Définit l&rsquo;épaisseur W en pixels du <code class="kw">3D_LINE</code> numéro N.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.11"></a>1.4.11 – Chaîner</span>
+          </p>
+          <p>
+            Pour lier les mouvements d&rsquo;un objet 3D à un autre objet 3D.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_CHAIN</code> N, P
+								</td>
+                <td>
+                  Chaîne l&rsquo;objet 3D numéro N à l&rsquo;objet 3D numéro P : les mouvements de l&rsquo;objet numéro P sont liés à ceux de l&rsquo;objet numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_CHAIN_BREAK</code> N, P
+								</td>
+                <td>
+                  Rompt le chaînage entre les objets 3D numéro N et numéro P.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.12"></a>1.4.12 – Transparence</span>
+          </p>
+          <p>
+            Pour rendre un objet 3D plus ou moins transparent.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_TRANSPARENT</code> N, T
+								</td>
+                <td>
+                  Modifie la transparence de l&rsquo;objet 3D numéro N.<br>
+                  T va de 0 à 255.<br>
+                  Si T=0, l&rsquo;objet 3D est totalement opaque.<br>
+                  Si T=255, l&rsquo;objet 3D est totalement transparent.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.13"></a>1.4.13 – Mouvement</span>
+          </p>
+          <p>
+            Pour bouger un objet 3D dans sa direction de pointage.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_MOVE</code> N, D
+								</td>
+                <td>
+                  Bouge l&rsquo;objet 3D numéro N de la distance D dans sa direction de pointage.<br>
+                  Si D&gt;0, l&rsquo;objet 3D avance.<br>
+                  Si D&lt;0, l&rsquo;objet 3D recule.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.14"></a>1.4.14 – Pointer un objet 3D</span>
+          </p>
+          <p>
+            Pour pointer un objet 3D.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_POINT</code> N, P
+								</td>
+                <td>
+                  Pointe l&rsquo;objet 3D numéro N vers l&rsquo;objet 3D numéro P.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.15"></a>1.4.15 – Nombre d&rsquo;objets 3D</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">NUMBER_3D_OBJECTS</code>
+								</td>
+                <td>
+                  Retourne le nombre d&rsquo;objet 3D.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.16"></a>1.4.16 – Types de collision</span>
+          </p>
+          
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_COLLISION_AS_SPHERE</code> N
+								</td>
+                <td>
+                   L&rsquo;objet 3D numéro N se comporte comme sa sphère englobante.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_COLLISION_AS_CUBE</code> N
+								</td>
+                <td>
+                  L&rsquo;objet 3D numéro N se comporte comme son cube englobant.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_COLLISION_AS_ELLIPSOID</code> N
+								</td>
+                  <td>
+                    L&rsquo;objet 3D numéro N se comporte comme son ellipsoïde englobant.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_COLLISION_AS_POINT</code> N
+								</td>
+                <td>
+                  L&rsquo;objet 3D numéro N entre en collision comme s&rsquo;il était un point.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_COLLISION_AS_FACES</code> N
+								</td>
+                <td>
+                  L&rsquo;objet 3D numéro N utilise ses faces.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.4.17"></a>1.4.17 – Tuiles</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">3D_U_TILE</code> N, T
+								</td>
+                  <td>
+									Modifie le nombre de tuiles sur U du 3D_PLANE numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">3D_V_TILE</code> N, T
+								</td>
+                <td>
+                  Modifie le nombre de tuiles sur V du 3D_PLANE numéro N.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+        <h3><a name="b1.5"></a>1.5 – Fonctions d&rsquo;un objet 3D (dans un SCENE3D)</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">Pour toutes les fonctions, N est le numéro de l&rsquo;objet 3D.</span>
+          </p>
+          <p>
+            <span class="text-large"><a name="b1.5.1"></a>1.5.1 – Position</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">O3D_X_POSITION</code>(N)
+								</td>
+                <td>
+                  Retourne la position en X de l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">O3D_Y_POSITION</code>(N)
+								</td>
+                <td>
+                  Retourne la position en Y de l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">O3D_Z_POSITION(</code>N)
+								</td>
+                <td>
+                  Retourne la position en Z de l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+       </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.5.2"></a>1.5.2 – Angles de rotation</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">O3D_X_ROTATE(</code>N)
+								</td>
+                <td>
+                  Retourne (en degrés) l&rsquo;angle de rotation de l&rsquo;objet 3D numéro N autour de son propre axe des X.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">O3D_Y_ROTATE</code>(N)
+								</td>
+                <td>
+                  Retourne (en degrés) l&rsquo;angle de rotation de l&rsquo;objet 3D numéro N autour de son propre axe des Y.
+								</td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">O3D_Z_ROTATE(</code>N)
+								</td>
+                <td>
+                  Retourne (en degrés) l&rsquo;angle de rotation de l&rsquo;objet 3D numéro N autour de son propre axe des Z.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>
+              <span class="text-large">Les angles retournés par les fonctions sont exprimés en degrés.</span>
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.5.3"></a>1.5.3 – Coefficients d&rsquo;échelle</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+									<code class="kw">O3D_X_SCALE(</code>N)
+								</td>
+                  <td>
+									Retourne le coefficient d&rsquo;échelle de l&rsquo;objet 3D numéro N sur son propre axe des X.
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">O3D_Y_SCALE</code>(N)
+								</td>
+                <td>
+									Retourne le coefficient d&rsquo;échelle de l&rsquo;objet 3D numéro N sur son propre axe des Y.
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">O3D_Z_SCALE(</code>N)
+								</td>
+                <td>
+									Retourne le coefficient d&rsquo;échelle de l&rsquo;objet 3D numéro N sur son propre axe des Z.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p>
+              Si la valeur retournée est &gt; 1, il y a eu dilatation<br>
+              Si la valeur retournée est &lt; 1, il y a eu contraction<br>
+              Si la valeur retournée est = 1, il n&rsquo;y a eu aucune modification
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.5.4"></a>1.5.4 – Collision</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+									<code class="kw">O3D_COLLISION</code>(N1, N2)
+								</td>
+                <td>
+									Retourne 1 si les objets 3D de numéro N1 et N2 sont en collision, 0 sinon.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b1.5.5"></a>1.5.5 – Divers</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+									<code class="kw">O3D_OBJECT_EXISTS</code>(N)
+								</td>
+                <td>
+									Retourne 1 si l&rsquo;objet 3D numéro N existe, 0 sinon.
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">O3D_OBJECT_TYPE</code>(N)
+								</td>
+                <td>
+									Retourne le type de l&rsquo;objet 3D numéro N.
+								</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+          <br>
+          <p>
+            Le type d&rsquo;un objet 3D est codé comme suit :
+          </p>
+          <blockquote style="border-left: none;">
+              <p>
+                <b>
+                &nbsp;1 = 3D_CUBE<br>
+                &nbsp;2 = 3D_BOX<br>
+                &nbsp;3 = 3D_SPHERE<br>
+                &nbsp;4 = 3D_CONE<br>
+                &nbsp;5 = 3D_TORUS<br>
+                &nbsp;6 = 3D_CYLINDER<br>
+                &nbsp;7 = 3D_DODECAHEDRON<br>
+                &nbsp;8 = 3D_TEAPOT<br>
+                &nbsp;9 = 3D_TEXT<br>
+                10 = 3D_LINE<br>
+                11 = 3D_MESH<br>
+                12 = 3D_ACTOR<br>
+                14 = 3D_SKYBOX<br>
+                15 = 3D_TERRAIN<br>
+                16 = 3D_PLANE
+                </b>
+              </p>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p><h3><a name="b1.6"></a>1.6 – BROUILLARD (DANS UN SCENE3D)</h3></p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+									<code class="kw">FOG_ON</code>
+								</td>
+                <td>
+									Démarre l&rsquo;effet de brouillard dans l&rsquo;objet cible 3D (SCENE3D).
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">FOG_OFF</code>
+								</td>
+                <td>
+									Arrête l&rsquo;effet de brouillard dans l&rsquo;objet cible 3D (SCENE3D).
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">FOG_COLOR</code> R, G, B
+								</td>
+                <td>
+									Modifie la couleur du brouillard dans l&rsquo;objet cible 3D (SCENE3D).
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">FOG_DISTANCE_MIN</code> D
+								</td>
+                <td>
+									Modifie la distance minimale du brouillard dans l&rsquo;objet cible 3D (SCENE3D).
+								</td>
+              </tr>
+              <tr>
+                <td>
+									<code class="kw">FOG_DISTANCE_MAX</code> D
+								</td>
+              <td>
+									Modifie la distance maximale du brouillard dans l&rsquo;objet cible 3D (SCENE3D).
+								</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      </blockquote>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 01 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

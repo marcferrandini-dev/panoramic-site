@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GRID_COLUMN_INSERT N,C — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction GRID_COLUMN_INSERT N,C du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>GRID_COLUMN_INSERT N,C</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      GRID_COLUMN_INSERT N,C
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      INSERE LA COLONNE C DANS LE GRID NUMÃ‰RO N
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>ParamÃ¨tres: 2</li>
+      <li>Groupe: Objets SystÃ¨me</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande GRID_COLUMN_INSERT N,C insÃ¨re une colonne en position C dans l'objet GRID numÃ©ro N
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        GRID_COLUMN_INSERT N,C
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>N = numÃ©ro de l'objet systÃ¨me (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>C = numÃ©ro de colonne (entier ou rÃ©el) de l'objet systÃ¨me GRID.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>La commande GRID_COLUMN_INSERT est utilisÃ©e pour insÃ©rer une colonne dans un GRID.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
+      <li>Si le numÃ©ro N excÃ¨de le nombre maximum permis d'objets systÃ¨mes.</li>
+      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
+      <li>Si l'objet numÃ©ro N n'existe pas.</li>
+      <li>Si le numÃ©ro N n'est pas le numÃ©ro d'un objet systÃ¨me : GRID.</li>
+      <li>Si la valeur C est infÃ©rieure ou Ã©gale Ã  0.</li>
+      <li>Si la valeur C + 1 est supÃ©rieure au nombre de colonnes du GRID numÃ©ro N.</li>
+      <li>Si la valeur C n'est pas une expression correcte.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>grid 1:' crÃ©e un GRID</p>
+              <p>' le positionner</p>
+              <p>top 1,10:left 1,10</p>
+              <p>' le dimensionner</p>
+              <p>width 1,350:height 1,150</p>
+              <p>' remplir le GRID avec 5 lignes et 5 colonnes</p>
+              <p>grid_write 1,1,1,"Cellule 1,1"</p>
+              <p>grid_write 1,1,2,"Cellule 1,2"</p>
+              <p>grid_write 1,1,3,"Cellule 1,3"</p>
+              <p>grid_write 1,1,4,"Cellule 1,4"</p>
+              <p>grid_write 1,1,5,"Cellule 1,5"</p>
+              <p>grid_write 1,2,1,"Cellule 2,1"</p>
+              <p>grid_write 1,2,2,"Cellule 2,2"</p>
+              <p>grid_write 1,2,3,"Cellule 2,3"</p>
+              <p>grid_write 1,2,4,"Cellule 2,4"</p>
+              <p>grid_write 1,2,5,"Cellule 2,5"</p>
+              <p>grid_write 1,3,1,"Cellule 3,1"</p>
+              <p>grid_write 1,3,2,"Cellule 3,2"</p>
+              <p>grid_write 1,3,3,"Cellule 3,3"</p>
+              <p>grid_write 1,3,4,"Cellule 3,4"</p>
+              <p>grid_write 1,3,5,"Cellule 3,5"</p>
+              <p>grid_write 1,4,1,"Cellule 4,1"</p>
+              <p>grid_write 1,4,2,"Cellule 4,2"</p>
+              <p>grid_write 1,4,3,"Cellule 4,3"</p>
+              <p>grid_write 1,4,4,"Cellule 4,4"</p>
+              <p>grid_write 1,4,5,"Cellule 4,5"</p>
+              <p>grid_write 1,5,1,"Cellule 5,1"</p>
+              <p>grid_write 1,5,2,"Cellule 5,2"</p>
+              <p>grid_write 1,5,3,"Cellule 5,3"</p>
+              <p>grid_write 1,5,4,"Cellule 5,4"</p>
+              <p>grid_write 1,5,5,"Cellule 5,5"</p>
+              <p>wait 1000:' attendre 1 seconde</p>
+              <p>' insÃ©rer la colonne nÂ° 3</p>
+              <p>grid_column_insert 1,3</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./GRID.html" class="related-link">GRID</a></p>
+      <p><a href="./GRID_CLEAR.html" class="related-link">GRID_CLEAR</a></p>
+      <p><a href="./GRID_COLUMN.html" class="related-link">GRID_COLUMN</a></p>
+      <p>GRID_COLUMN()</p>
+      <p><a href="./GRID_COLUMN_DELETE.html" class="related-link">GRID_COLUMN_DELETE</a></p>
+      <p><a href="./GRID_COLUMN_FIXED.html" class="related-link">GRID_COLUMN_FIXED</a></p>
+      <p>GRID_COLUMN_FIXED()</p>
+      <p><a href="./GRID_COLUMN_SIZING_OFF.html" class="related-link">GRID_COLUMN_SIZING_OFF</a></p>
+      <p><a href="./GRID_COLUMN_SIZING_ON.html" class="related-link">GRID_COLUMN_SIZING_ON</a></p>
+      <p><a href="./GRID_COLUMN_WIDTH.html" class="related-link">GRID_COLUMN_WIDTH</a></p>
+      <p>GRID_COLUMN_WIDTH()</p>
+      <p><a href="./GRID_FIXED_COLOR.html" class="related-link">GRID_FIXED_COLOR</a></p>
+      <p><a href="./GRID_LOAD.html" class="related-link">GRID_LOAD</a></p>
+      <p><a href="./GRID_ONE_COLUMN_WIDTH.html" class="related-link">GRID_ONE_COLUMN_WIDTH</a></p>
+      <p>GRID_ONE_COLUMN_WIDTH()</p>
+      <p><a href="./GRID_ONE_ROW_HEIGHT.html" class="related-link">GRID_ONE_ROW_HEIGHT</a></p>
+      <p>GRID_ONE_ROW_HEIGHT()</p>
+      <p>GRID_READ$()</p>
+      <p><a href="./GRID_ROW.html" class="related-link">GRID_ROW</a></p>
+      <p>GRID_ROW()</p>
+      <p><a href="./GRID_ROW_DELETE.html" class="related-link">GRID_ROW_DELETE</a></p>
+      <p><a href="./GRID_ROW_FIXED.html" class="related-link">GRID_ROW_FIXED</a></p>
+      <p>GRID_ROW_FIXED()</p>
+      <p><a href="./GRID_ROW_HEIGHT.html" class="related-link">GRID_ROW_HEIGHT</a></p>
+      <p>GRID_ROW_HEIGHT()</p>
+      <p><a href="./GRID_ROW_INSERT.html" class="related-link">GRID_ROW_INSERT</a></p>
+      <p><a href="./GRID_ROW_SIZING_OFF.html" class="related-link">GRID_ROW_SIZING_OFF</a></p>
+      <p><a href="./GRID_ROW_SIZING_ON.html" class="related-link">GRID_ROW_SIZING_ON</a></p>
+      <p><a href="./GRID_SAVE.html" class="related-link">GRID_SAVE</a></p>
+      <p><a href="./GRID_WRITE.html" class="related-link">GRID_WRITE</a></p>
+      <p>GRID_X_TO_COLUMN()</p>
+      <p>GRID_Y_TO_ROW()</p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

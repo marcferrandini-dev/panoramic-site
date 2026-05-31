@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PANORAMIC - Langage de programmation simple et puissant</title>
+  <meta name="description" content="PANORAMIC est un langage de programmation puissant, facile et simple pour créer vos propres applications Windows, Android et macOS en BASIC.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link active">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link active">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>Créez vos applications Windows<br>en toute simplicité</h1>
+        <p>PANORAMIC est un langage de programmation puissant, convivial et gratuit. Il utilise la syntaxe du célèbre langage BASIC pour mettre le développement à la portée de tous.</p>
+        <div class="hero-actions">
+          <a href="./telechargements.html" class="btn btn-primary">Télécharger PANORAMIC</a>
+          <a href="./documentation.html" class="btn btn-secondary">Explorer la Documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Presentation Section -->
+    <section class="my-section">
+      <div class="container grid grid-2">
+        <div class="glass-card flex-center" style="flex-direction: column; text-align: left; align-items: flex-start;">
+          <h2>Qu'est-ce que PANORAMIC ?</h2>
+          <p><strong>PANORAMIC</strong> est un logiciel portable, utilisable directement depuis une clé USB sans aucune installation préalable.</p>
+          <p>Son champ d'activité est extrêmement vaste : objets système, lecture de sons et musiques, rendu d'images, films, dessins 2D, gestion de sprites pour jeux vidéo, mondes 3D avec caméras et lumières, fichiers texte, pilotage de feuilles Excel, et bien plus encore.</p>
+          <p>Il possède actuellement un catalogue impressionnant de <strong>735 instructions</strong> et permet la génération d'exécutables (EXE) pour distribuer vos créations de manière autonome.</p>
+        </div>
+        
+        <div class="glass-card" style="display: flex; flex-direction: column; justify-content: center;">
+          <div class="feature-icon flex-center">💡</div>
+          <h3>Compatible Windows Moderne</h3>
+          <p>Les versions freeware de PANORAMIC sont légères, sûres et entièrement fonctionnelles sur toutes les versions de Windows, de Windows XP à Windows 11.</p>
+          <div style="margin-top: 1.5rem;">
+            <a href="./tutoriels.html" class="btn btn-accent">Débuter le premier tutoriel</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Code Examples Section -->
+    <section class="my-section" style="background-color: rgba(255, 255, 255, 0.01); border-top: 1px solid var(--border-glass); border-bottom: 1px solid var(--border-glass);">
+      <div class="container">
+        <div style="text-align: center; margin-bottom: 4rem;">
+          <h2>Incroyablement facile à utiliser</h2>
+          <p style="max-width: 600px; margin: 0 auto;">Quelques lignes de BASIC suffisent pour donner vie à vos projets visuels ou 3D. Jugez par vous-même :</p>
+        </div>
+
+        <div class="grid grid-3">
+          
+          <!-- Example 1 -->
+          <div class="glass-card">
+            <h3>1. Créer un bouton</h3>
+            <p>Seulement 2 lignes pour créer un bouton avec un texte explicatif :</p>
+            
+            <div class="code-editor">
+              <div class="editor-header">
+                <span class="editor-title">bouton.bas</span>
+                <button class="editor-copy"><span>Copier</span></button>
+              </div>
+              <pre><code><span class="kw">button</span> <span class="num">1</span>
+<span class="kw">caption</span> <span class="num">1</span>, <span class="str">"Mon bouton"</span></code></pre>
+            </div>
+            
+            <div class="flex-center" style="margin-top: 1rem; border-radius: 8px; overflow: hidden; background: #0b0f19; padding: 1rem; border: 1px solid var(--border-glass);">
+              <img src="./assets/images/exemple_BUTTON.jpg" alt="Aperçu Bouton" style="max-width: 100%; border-radius: 4px;">
+            </div>
+          </div>
+
+          <!-- Example 2 -->
+          <div class="glass-card">
+            <h3>2. Rendre un bouton cliquable</h3>
+            <p>Seulement 3 lignes pour créer un bouton explicatif qui exécute un programme quand on clique dessus :</p>
+            
+            <div class="code-editor">
+              <div class="editor-header">
+                <span class="editor-title">clic.bas</span>
+                <button class="editor-copy"><span>Copier</span></button>
+              </div>
+              <pre><code><span class="kw">button</span> <span class="num">1</span>
+<span class="kw">caption</span> <span class="num">1</span>, <span class="fn">Mon bouton</span>
+<span class="kw">on_click</span> <span class="num">1</span>, <span>program</span></code></pre>
+            </div>
+            
+            <div class="flex-center" style="margin-top: 1rem; border-radius: 8px; overflow: hidden; background: #0b0f19; padding: 1rem; border: 1px solid var(--border-glass);">
+              <img src="./assets/images/exemple_BUTTON_2.jpg" alt="Aperçu Action Bouton" style="max-width: 100%; border-radius: 4px;">
+            </div>
+          </div>
+
+          <!-- Example 3 -->
+          <div class="glass-card">
+            <h3>3. Un monde 3D en 2 lignes</h3>
+            <p>Créez instantanément un espace 3D avec une théière (teapot) modélisée :</p>
+            
+            <div class="code-editor">
+              <div class="editor-header">
+                <span class="editor-title">teapot3d.bas</span>
+                <button class="editor-copy"><span>Copier</span></button>
+              </div>
+              <pre><code><span class="kw">scene3d</span> <span class="num">1</span>
+<span class="kw">teapot3d</span> <span class="num">1</span></code></pre>
+            </div>
+            
+            <div class="flex-center" style="margin-top: 1rem; border-radius: 8px; overflow: hidden; background: #0b0f19; padding: 1rem; border: 1px solid var(--border-glass);">
+              <img src="./assets/images/exemple_THEIERE.jpg" alt="Aperçu Théière 3D" style="max-width: 100%; border-radius: 4px;">
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SECTION: Objets système (single column, image) -->
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card" style="text-align: center; padding: 2rem;">
+          <h2>PANORAMIC peut gérer de nombreux objets système, par exemple :</h2>
+          <div style="margin-top: 1.5rem;">
+            <img src="./assets/images/objets_systeme.jpg" alt="Objets système gérés par PANORAMIC" style="max-width: 100%; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Communication & Capabilities Section -->
+    <section class="my-section">
+      <div class="container grid grid-2">
+        
+        <div class="glass-card">
+          <div class="feature-icon flex-center">⚡</div>
+          <h3>Communication avec l'extérieur</h3>
+          <p>PANORAMIC ne s'arrête pas au visuel. Il communique aisément avec les ports matériels (liaisons série USB,  RS-232, ports parallèles) et permet d'importer et appeler n'importe quelle DLL Windows externe.</p>
+          <p>Cela en fait un outil fantastique pour piloter du matériel électronique, des capteurs, ou intégrer des APIs système avancées.</p>
+        </div>
+
+        <div class="glass-card">
+          <div class="feature-icon flex-center">👥</div>
+          <h3>La Communauté PANORAMIC</h3>
+          <p>Pour encourager l'apprentissage, découvrez les sites de passionnés et rejoignez notre forum officiel. Vous y trouverez des centaines d'exemples de code source, de l'aide pour vos projets et des échanges constructifs.</p>
+          <ul style="margin: 1rem 0; padding-left: 1.25rem; display: flex; flex-direction: column; gap: 0.5rem;">
+            <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">💬 Forum Officiel des Passionnés ↗</a></li>
+            <li><a href="./programmes.html">📂 Répertoire des Réalisations Communes</a></li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

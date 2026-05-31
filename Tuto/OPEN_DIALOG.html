@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC 
+  : UTILISER UN OPEN_DIALOG</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p align="left">Ce 
+  qu'il faut savoir faire pour utiliser l'objet syst&egrave;me <b>OPEN_DIALOG</b>.</p>
+<p align="left">&nbsp;</p>
+<h2>Choix 
+  d'un fichier</h2>
+<p align="left">L'objet 
+  syst&egrave;me <b>OPEN_DIALOG</b> est un objet 
+  invisible, dont le r&ocirc;le est de <b>choisir</b> un fichier donn&eacute; 
+  dans l'arborescence des fichiers et des r&eacute;pertoires des supports disponibles 
+  (disque dur, disquette, cl&eacute; USB, ...)</p>
+<p align="left">Cet 
+  objet ne devient <b>visible et utilisable</b> que lors de l'ex&eacute;cution 
+  de la commande <b>FILE_NAME$(N)</b> qui retourne 
+  <b>le nom du fichier choisi</b> ou bien <b>le caract&egrave;re soulign&eacute;</b>, 
+  N &eacute;tant le num&eacute;ro de l' <b>OPEN_DIALOG</b> 
+  utilis&eacute;.</p>
+<ul>
+  <li>La commande 
+    <b>FILE_NAME$(N)</b> retourne <b>le nom du fichier 
+    choisi</b> si l'utilisateur a cliqu&eacute; sur OUVRIR<b>.</b></li>
+  <li>La commande 
+    <b>FILE_NAME$(N)</b> retourne <b>le caract&egrave;re 
+    soulign&eacute;</b> si l'utilisateur a cliqu&eacute; sur ANNULER<b>.</b></li>
+</ul>
+<p align="left">L'usage 
+  de la commande <b>FILE_NAME$(N)</b> est donc en 
+  principe associ&eacute;e &agrave; un test du r&eacute;sultat avec le caract&egrave;re 
+  soulign&eacute; &quot;_&quot; :</p>
+<table width="62%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        a$ : rem 
+        on d&eacute;finit une variable string</b></p>
+      <p>&nbsp;</p>
+      <p><b>open_dialog 
+        1 : rem cr&eacute;ation de l'objet syst&egrave;me 
+        num&eacute;ro 1</b></p>
+      <p><b>a$=file_name$(1) 
+        : rem utilisation de l'open_dialog 1 pour 
+        choisir un fichier</b></p>
+      <p>&nbsp;</p>
+      <p><b>if 
+        a$&lt;&gt; &quot;_&quot; then - - - : rem 
+        un fichier a &eacute;t&eacute; choisi</b></p>
+      <p><b>if 
+        a$= &quot;_&quot; then - - - : rem 
+        aucun fichier n'a &eacute;t&eacute; choisi</b></p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>Filtrage 
+  des noms de fichier</h2>
+<p align="left">Au 
+  lieu de visualiser tous les fichiers avec un <b>OPEN_DIALOG</b>, 
+  on peut se limiter &agrave; un certain type, d&eacute;fini par l'extension du 
+  fichier.</p>
+<p align="left">La 
+  commande <b>FILTER</b> permet de ne visualiser 
+  dans un  <b>OPEN_DIALOG</b> que les fichiers ayant 
+  une certaine extension. Elle permet en outre d'afficher un commentaire qui est 
+  visible dans la partie &quot;Type&quot; de l' <b>OPEN_DIALOG</b></p>
+<p align="left">Exemple 
+  : on ne recherche que les fichiers texte (dont l'extension est TXT) :</p>
+<table width="71%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>dim 
+        a$ : rem 
+        on d&eacute;finit une variable string</b></p>
+      <p>&nbsp;</p>
+      <p><b>open_dialog 
+        1 : rem cr&eacute;ation de l'objet syst&egrave;me 
+        num&eacute;ro 1</b></p>
+      <p><b>filter 
+        1,&quot;fichiers texte|*.txt&quot;: rem on 
+        se limite aux fichiers se terminant par &quot;txt&quot; </b></p>
+      <p><b>a$=file_name$(1) 
+        : rem utilisation de l'open_dialog 1 pour 
+        choisir un fichier TEXTE (.txt) </b></p>
+      <p>&nbsp;</p>
+      <p><b>if 
+        a$&lt;&gt; &quot;_&quot; then - - - : rem 
+        un fichier a &eacute;t&eacute; choisi</b></p>
+      <p><b>if 
+        a$= &quot;_&quot; then - - - : rem 
+        aucun fichier n'a &eacute;t&eacute; choisi</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>Utilisation 
+  d'un fichier choisi par un OPEN_DIALOG</h2>
+<p align="left">Un 
+  <b>OPEN_DIALOG</b> sert &agrave; choisir un <b>nom 
+  de fichier</b>.</p>
+<p align="left">Avec 
+  le nom du fichier choisi, on peut par exemple remplir un objet syst&egrave;me 
+  par la commande <b>FILE_LOAD</b>(nom de fichier).</p>
+<p align="left">Exemple 
+  : on remplit un <b>MEMO</b> avec un fichier texte 
+  qui est choisi par un <b>OPEN_DIALOG</b> :</p>
+<table width="64%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        a$ : rem 
+        on d&eacute;finit une variable string</b></p>
+      <p>&nbsp;</p>
+      <p><b>open_dialog 
+        1 : rem cr&eacute;ation de l'objet syst&egrave;me 
+        num&eacute;ro 1</b></p>
+      <p><b>filter 
+        1,&quot;fichiers texte|*.txt&quot;: rem on 
+        se limite aux fichiers se terminant par &quot;txt&quot;</b></p>
+      <p><b>memo 
+        2 : rem cr&eacute;ation de l'objet syst&egrave;me 
+        num&eacute;ro 2</b></p>
+      <p><b>a$=file_name$(1) 
+        : rem utilisation de l'open_dialog 1 pour 
+        choisir un fichier TEXTE</b></p>
+      <p><b>if 
+        a$&lt;&gt; &quot;_&quot; then file_load(a$) 
+        : rem on remplit le memo avec le fichier 
+        TEXTE choisi</b></p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 5 Juin 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

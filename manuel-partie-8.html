@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 8 : Événements Système - PANORAMIC</title>
+  <meta name="description" content="Prise en charge fine des interruptions clavier, déplacements de souris, et timers système.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+  <style>
+    .vertical-headers th, .vertical-headers td {
+      vertical-align: bottom;
+      text-align: center;
+    }
+    .vertical-text {
+      writing-mode: vertical-rl;
+      transform: rotate(180deg);
+      white-space: nowrap;
+      text-align: left;
+      display: inline-block;
+      padding: 12px 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      letter-spacing: 0.5px;
+    }
+    .table-container {
+      overflow-x: auto;
+      width: 100%;
+      margin: 1.5rem 0;
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 8 : Événements Système</h1>
+        <p>Prise en charge fine des interruptions clavier, déplacements de souris, et timers système.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="top"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Evénements et objets système</h1></div><br>
+      <blockquote style="border-left: none;">
+        <p>
+          <h3>Objets système et événements possibles :</h3>
+        </p>
+      </blockquote>
+      <div class="table-container">
+      <table class="vertical-headers">
+        <thead>
+          <tr>
+            <td><div align="center"><b>OBJET SYSTEME</b></div></td>
+            <td><div class="vertical-text">ON_CLICK</div></td>
+            <td><div class="vertical-text">ON_DOUBLE_CLICK</div></td>
+            <td><div class="vertical-text">ON_CHANGE</div></td>
+            <td><div class="vertical-text">ON_KEY_UP</div></td>
+            <td><div class="vertical-text">ON_KEY_DOWN</div></td>
+            <td><div class="vertical-text">ON_MOUSE_MOVE</div></td>
+            <td><div class="vertical-text">ON_MOUSE_UP</div></td>
+            <td><div class="vertical-text">ON_MOUSE_DOWN</div></td>
+          </tr>
+        </thead> 
+        <tboby> 
+          <tr>
+            <td>ALPHA</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>BUTTON</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>BUTTON_PICTURE</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>CHART</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>CHECK</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>COMBO</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>CONTAINER</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>CONTAINER_OPTION</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>CONTAINER_TAB</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>DIGIT1</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>DLIST</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>EDIT</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>FORM</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>GRID</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>HVIEWER</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>IMAGE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>LED1</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>LIST</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>MAIN_MENU</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>MAIN_MENU_POP</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>MEMO</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>MEMO_RICH</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>MOVIE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>OPEN_DIALOG</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>OPEN_DIALOG_PIC</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>OPTION</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>PANEL</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>PICTURE</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>PROGRESS_BAR</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>SAVE_DIALOG</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>SAVE_DIALOG_PIC</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>SCENE2D</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>SCENE3D</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>SCROLL_BAR</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>SHAPE</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>SOUND</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>SPIN</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>SUB_MENU</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>SWITCH1</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>SYNEDIT</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td>TAB</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+            <td><div align="center">X</div></td>
+          </tr>
+          <tr>
+            <td>TRACK_BAR</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td><div align="center">X</div></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><div align="center"><b>OBJET SYSTEME</b></div></td>
+            <td><div class="vertical-text">ON_CLICK</div></td>
+            <td><div class="vertical-text">ON_DOUBLE_CLICK</div></td>
+            <td><div class="vertical-text">ON_CHANGE</div></td>
+            <td><div class="vertical-text">ON_KEY_UP</div></td>
+            <td><div class="vertical-text">ON_KEY_DOWN</div></td>
+            <td><div class="vertical-text">ON_MOUSE_MOVE</div></td>
+            <td><div class="vertical-text">ON_MOUSE_UP</div></td>
+            <td><div class="vertical-text">ON_MOUSE_DOWN</div></td>
+          </tr>
+        </tbody>
+      </table>
+      </div>
+      <br><br>
+
+      <blockquote style="border-left: none;">
+        <p><h3>Spécifique pour FORM et TAB :</h3></p>
+        <blockquote style="border-left: none;">
+          <table>
+            <thead>
+              <tr>
+                <td><div align="center"><b>OBJET SYSTEME</b></div></td>
+                <td><div align="center"><b>ON_ACTIVATE</b></div></td>
+                <td><div align="center"><b>ON_CLOSE</b></div></td>
+                <td><div align="center"><b>ON_MOVE</b></div></td>
+                <td><div align="center"><b>ON_SHOW</b></div></td>
+                <td><div align="center"><b>ON_RESIZE</b></div></td>
+              </tr>
+            </thead>  
+            <tbody>  
+              <tr>
+                <td>FORM</td>
+                <td><div align="center">X</div></td>
+                <td><div align="center">X</div></td>
+                <td><div align="center">X</div></td>
+                <td><div align="center">X</div></td>
+                <td><div align="center">X</div></td>
+              </tr>
+              <tr>
+                <td>TAB</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td>&nbsp;</td>
+                <td><div align="center">X</div></td>
+                <td><div align="center"></div></td>
+                </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      <br><br>
+
+      <blockquote style="border-left: none;">
+        <p><h3>Spécifique pour TIMER :</h3></p>
+        <blockquote style="border-left: none;">
+          <table>
+            <thead>
+              <tr>
+                <td><div align="center"><b>OBJET SYSTEME</b></div></td>
+                <td><div align="center"><b>ON_TIMER</b></div></td>
+              </tr>
+            </thead>
+            <tbody>  
+              <tr>
+                <td>TIMER</td>
+                <td><div align="center">X</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      <br><br>
+      
+      <blockquote style="border-left: none;">
+        <p><h3>Spécifique pour SERIAL :</h3></p>
+        <blockquote style="border-left: none;">
+          <table>
+            <thead>
+              <tr>
+                <td><div align="center"><b>OBJET SYSTEME</b></div></td>
+                <td><div align="center"><b>ON_RECEIVE</b></div></td>
+              </tr>
+            </thead>
+            <tbody>  
+              <tr>
+                <td>SERIAL</td>
+                <td><div align="center">X</div></td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      <br>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 01 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

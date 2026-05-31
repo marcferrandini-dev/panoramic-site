@@ -1,0 +1,1511 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ - Conseils et Astuces PANORAMIC</title>
+  <meta name="description" content="Découvrez notre guide complet de FAQ, conseils et astuces sur PANORAMIC : structure de code, création 3D, manipulation d'objets GUI, audio/vidéo et DLL.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+  <style>
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .faq-sidebar {
+      position: sticky;
+      top: 6rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+    .faq-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+    }
+    .faq-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-bright);
+    }
+    .faq-tab-btn.active {
+      background: var(--btn-primary-bg);
+      color: white;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+    .category-heading {
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    
+    /* Code block styling specifically inside accordion */
+    .accordion-content-inner .code-editor {
+      margin: 1rem 0;
+    }
+    .accordion-content-inner blockquote {
+      border-left: 4px solid var(--accent);
+      padding-left: 1rem;
+      margin: 1rem 0;
+      font-style: italic;
+      color: var(--text-muted);
+    }
+    .accordion-content-inner p {
+      margin-bottom: 0.75rem;
+      line-height: 1.6;
+    }
+    
+    @media (max-width: 968px) {
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .faq-sidebar {
+        position: static;
+        flex-direction: row;
+        overflow-x: auto;
+        padding: 0.75rem;
+        gap: 0.5rem;
+      }
+      .faq-tab-btn {
+        white-space: nowrap;
+        padding: 0.5rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link active">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link active">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Foire Aux Questions & Conseils</h1>
+        <p>Retrouvez toutes les explications techniques, conseils et astuces officiels pour programmer efficacement avec PANORAMIC.</p>
+      </div>
+    </section>
+
+    <!-- FAQ Layout with sidebar tabs -->
+    <section class="container" style="margin-bottom: 5rem;">
+      <div class="faq-layout">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="faq-sidebar">
+          <button class="faq-tab-btn active" data-target="cat-generalites">1. Généralités</button>
+          <button class="faq-tab-btn" data-target="cat-monde3d">2. Monde 3D</button>
+          <button class="faq-tab-btn" data-target="cat-objets">3. Objets GUI</button>
+          <button class="faq-tab-btn" data-target="cat-multimedia">4. Multimédia</button>
+          <button class="faq-tab-btn" data-target="cat-divers">5. Divers</button>
+        </aside>
+        
+        <!-- Content Sections -->
+        <div class="faq-content-area">
+          
+    <div class="faq-category-section" id="cat-generalites" style="display: block;">
+      <h2 class="category-heading">1 - Généralités</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>1.1 - Quelle est la structure d'un programme ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>La structure 
+        conseillée d'un programme est la suivante 
+        :</P>
+      <p>1 - Déclaration 
+        : LABEL et DIM</P>
+      <p>2 - Programme 
+        principal : définition des composants (objets), calculs, comportement, 
+        END</P>
+      <p>3 - Traitement 
+        d'événements</P>
+      <p>Exemple : création 
+        d'un bouton qui affiche "Cliquez sur moi", puis 
+        "Salut!" quand on a cliqué sur lui.</P>
+       
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>rem 
+            déclaration 
+            des étiquettes utilisées
+
+            LABEL 
+            clk
+
+            
+
+          rem 
+            déclaration 
+            des variables utilisées
+
+            DIM 
+            A$
+
+            
+
+          rem 
+            --- PROGRAMME PRINCIPAL ---
+
+            A$ = "Cliquez sur moi"
+
+            rem 
+            création 
+            d'un OBJET
+
+            button 
+            1
+
+            rem 
+            lui donner 
+            un petit texte (son "intitulé")
+
+            caption 
+            1,a$
+
+            rem 
+            définir 
+            le traitement quand il est cliqué
+
+            on_click 
+            1,clk
+
+            
+
+          rem 
+            --- 
+            FIN DU PROGRAMME PRINCIPAL ---
+
+            end
+
+          rem 
+            --- 
+            TRAITEMENT DES éVéNEMENTS---
+
+            Clk :
+
+            caption 1,"Salut!"
+
+            return</code></pre>
+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+    <div class="faq-category-section" id="cat-monde3d" style="display: none;">
+      <h2 class="category-heading">2 - Monde 3D</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.1 - Comment créer un monde 3D ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>1 - Tout 
+        d'abord, créez un objet pour visualiser votre monde 3D avec le 
+        mot-clé scene3d 
+        et lui donner 
+        un numéro :</P>
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>scene3d 
+            1</code></pre>
+</div>
+      <p> Une caméra 
+        3D et une lumière 3D sont alors automatiquement créés 
+        avec votre scene3d 
+        et maintenant 
+        vous pouvez les utiliser (pour les positionner et viser un point avec 
+        la caméra)</P>
+       
+      <p>2 - Placer des objets dans votre monde 3D</P>
+       
+      <p>Vous pouvez 
+        créer des objets 3D prédéterminés (3d_box, 
+        3d_cube, 
+        3d_cone, 
+        3d_torus, 
+        3d_sphere, 
+        3d_cylinder, 
+        3d_text, 
+        3d_teapot, 
+        3d_dodecahedron) 
+        ou des objets 3D formatés :  3d_mesh 
+        (en "3DS" 
+        format de Studio 3D Max) ou  3d_actor 
+        (en 
+        "MD2", format de Quake).</P>
+       
+      <p>Avec le mot-clé correspondant, vous lui donnez un numéro 
+        3D :</P>
+       
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>3d_teapot 
+            1</code></pre>
+</div>
+       
+      <p>3 - Vous pouvez alors les déplacer, les dimensionner, les faire 
+        tourner, les colorer, leur donner une texture...</P>
+      <p></P>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.2 - Comment avoir un monde 3D emplissant tout l'espace disponible ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Créer un monde 3D :</P>
+       
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>scene3D 
+            1
+
+          Lui donner 
+          tout l'espace disponible dans FORM numéro 0 
+          full_space 
+            1</code></pre>
+</div>
+       
+      <p>Remarque : pour donner tout l'espace de l'écran à FORM 
+        numéro 0 :</P>
+       
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>full_space 
+            0</code></pre>
+</div>
+       
+      <p>En combinant les 2 commandes, vous avez un monde 3D prenant tout l'écran 
+        :</P>
+       
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>full_space 
+            0 : rem 
+            FORM0 prend tout l'espace sur l'écran
+
+            scene3D 
+            1
+
+            full_space 
+            1 : rem 
+            SCENE3D prend tout l'espace sur FORM0</code></pre>
+</div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.3 - Comment avoir deux mondes 3D avec des objets 3D ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p> Utilisez 
+        3D_TARGET_IS 
+        pour désigner 
+        le récepteur d'objet 3D</P>
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>scene3d 
+            1 : 
+            rem 
+            créer 
+            le premier monde 3D
+
+            scene3d 
+            2 : 
+            rem 
+            créer 
+            le deuxième monde 3D
+
+            left 
+            2,210 
+            : rem 
+            le positionner 
+            (autrement il recouvre le premier)
+
+            3d_teapot 
+            1 : 
+            rem 
+            créer 
+            le premier objet 3D dans le premier monde 3D
+
+            3d_target_is 
+            2 : 
+            rem 
+            assigner 
+            le deuxième monde 3D comme le récepteur de commandes 
+            3D
+
+            3d_teapot 
+            2 : 
+            rem 
+            créer 
+            le deuxième objet 3D dans le deuxième monde 3D</code></pre>
+</div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.4 - Comment colorer le fond d'un monde 3D ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>Utilisez 
+        le numéro N du scene3D (le monde 3D a été créé 
+        par la commande scene3d 
+        N) dans la 
+        commande color 
+        :</P>
+      
+<div class="code-editor">
+  <div class="editor-header">
+    <div class="editor-buttons">
+      <span class="editor-dot dot-red">
+      <span class="editor-dot dot-yellow">
+      <span class="editor-dot dot-green">
+    </div>
+    <span class="editor-title">code.bas
+    <button class="editor-copy"><span>Copier</button>
+  </div>
+  <p><code>color 
+            N, Rouge, 
+            Vert, Bleu</code></pre>
+</div>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.5 - Comment utiliser des rotations 3D ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>3D_X_rotate, 
+        3D_Y_rotate, 3D_Z_rotate sont 
+        relatifs aux axes propres de l'objet.</P>
+       
+      <p>Les axes propres de l'objet 3D sont les axes qui étaient parallèles 
+        aux axes du monde quand l'objet 3D a été créé.</P>
+      <p>Les angles de rotation sont exprimés par rapport à la position 
+        d'origine:</P>
+      
+      <p>3D_X_rotate 
+        N,30 : rem positionne l'objet 3D N à 30&deg; par rapport à 
+        sa position d'origine</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.6 - Comment déplacer un objet 3D ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Tous les 
+        objets 3D sont créés à la position (0,0,0).</P>
+      <p>Pour déplacer 
+        un objet 3D, utilisez les commandes : 3d_x_position, 
+        3d_y_position, 
+        3d_z_position</P>
+       
+      <p>Exemple :</P>
+       
+      <blockquote> 
+        <p>rem 
+          la sphère 
+          n&deg;1 avec rayon=2 est créée en (0,0,0)<br>
+          3d_sphere 
+          1,2 
+          </p>
+        <p>rem 
+          la déplacer 
+          en (5,6,7)<br>
+          3d_x_position 
+          1,5<br>
+          3d_y_position 
+          1,6<br>
+          3d_z_position 
+          1,7</p>
+      </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.7 - Comment utiliser un objet 3D créé dans le format 3DS (3D Studio Max) ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <blockquote> 
+        <p>rem 
+           créez 
+          un scene3D (monde 3D)<br>
+          scene3d 
+          1 : 
+          rem 
+          1 est le 
+          numéro d'objet</p>
+      </blockquote>
+      <blockquote> 
+        <p>rem 
+           créez 
+          un objet "maillé"<br>
+          3d_mesh 
+          1 : 
+          rem 
+          1 est le 
+          numéro d'objet 3D 
+          </p>
+        <p>rem 
+           chargez 
+          votre fichier dans l'objet 3D numéro 1<br>
+          3d_load_object 
+          1,"MonObjet.3ds"</p>
+      </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>2.8 - Comment utiliser un objet 3D créé dans le format MD2 (Quake) ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <blockquote> 
+        <p>rem 
+           créez 
+          un scene3D (monde 3D)<br>
+          scene3d 
+          1 : 
+          rem 
+          1 est le 
+          numéro d'objet</p>
+        <p> rem 
+           créez 
+          un objet3D "acteur"<br>
+          3d_actor 
+          1 : 
+          rem 
+          1 est le 
+          numéro d'objet 3D</p>
+        <p> rem 
+           chargez 
+          votre fichier dans l'objet 3D numéro 1<br>
+          3d_load_object 
+          1,"MonObjet.md2"</p>
+      </blockquote>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+    <div class="faq-category-section" id="cat-objets" style="display: none;">
+      <h2 class="category-heading">3 - Objets</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.1 - Comment colorer le fond d'un FORM ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>Utiliser 
+        le numéro N du FORM dans la 
+        commande 
+        color 
+        (0 
+        pour le FORM de Base, ou N pour un FORM créé par la commande 
+        form 
+        N) :</P>
+      <DIR> 
+        <p>color 
+          N, Rouge, 
+          Vert, Bleu</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.2 - Il est conseillé de faire une pause après la coloration d'un FORM</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              conseillé de faire une pause 
+        après la coloration d'un FORM</B> :</P>
+      <DIR> 
+        <p>rem 
+          mettre le 
+          fond en couleur blanche<br>
+          color 
+          0,255,255,255 
+          : display</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.3 - Comment colorer le fond d'une image ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>Une image 
+        a été créée par la commande picture 
+        N . Utilisez 
+        le numéro N dans la 
+        commande color 
+        :</P>
+      <DIR> 
+        <p>color 
+          N, Rouge, 
+          Vert, Bleu</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.4 - Comment créer un MENU ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Voir l'exemple suivant :</P>
+       
+      <DIR> 
+        <p>rem 
+          créer 
+          l'objet "menu principal"<br>
+          main_menu 
+          1</p>
+        <p> rem 
+          créer 
+          2 "sous menus" au même niveau (fils de l'objet numéro 
+          1)<br>
+          sub_menu 
+          2 : 
+          caption 
+          2,"Fichier" 
+          : parent 
+          2,1<br>
+          sub_menu 
+          3 : 
+          caption 
+          3,"Edition" 
+          : parent 
+          3,1</p>
+        <p> rem 
+          créer 
+          3 "sous-menus" fils de l'objet numéro 2<br>
+          sub_menu 
+          4 : 
+          caption 
+          4,"Ouvrir" 
+          : parent 
+          4,2<br>
+          sub_menu 
+          5 : 
+          caption 
+          5,"Sauvegarder" 
+          : parent 
+          5,2<br>
+          sub_menu 
+          6 : 
+          caption 
+          6,"Quitter" 
+          : parent 
+          6,2</p>
+        <p> rem 
+          créer 
+          3 "sous-menus" fils de l'objet numéro 3<br>
+          sub_menu 
+          7 : 
+          caption 
+          7,"Copier" 
+          : parent 
+          7,3<br>
+          sub_menu 
+          8 : 
+          caption 
+          8,"Coller" 
+          : parent 
+          8,3<br>
+          sub_menu 
+          9 : 
+          caption 
+          9, 
+          "Défaire" : parent 
+          9, 3</p>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.5 - Comment utiliser LEFT, TOP, WIDTH, HEIGHT ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>left 
+        et 
+        top 
+        sont utilisés 
+        pour positionner un objet sur son père (son conteneur).</P>
+      <p>width 
+        et 
+        height 
+        sont utilisés 
+        pour dimensionner un objet.</P>
+      <p></P>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.6 - Comment placer un BUTTON (ou un autre objet) sur un autre FORM que FORM numéro 0 ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              <p>Première possibilité :</P>
+       
+      <DIR> 
+        <p>form 
+          3 : 
+          rem 
+          créer 
+          un autre FORM (numéro 3)<br>
+          button 
+          1 : 
+          rem 
+          créer un BUTTON (numéro 1)<br>
+          parent 
+          1,3 : 
+          rem 
+          le BUTTON va sur son père (le container) : FORM numéro 
+          3</P>
+      </DIR>
+      
+      <p>Deuxième possibilité :</P>
+       
+      <DIR> 
+        <p>form 
+          3 : 
+          rem 
+          créer 
+          un autre FORM (numéro 3)<br>
+          command_target_is 
+          3 : 
+          rem 
+          toutes les commandes vont sur l'objet numéro 3<br>
+          button 
+          1 : 
+          rem 
+          créer un BUTTON : il va sur sur FORM numéro 3</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.7 - Comment placer un MENU sur un autre FORM que FORM numéro 0 ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>form 
+          3 : 
+          rem 
+          créer 
+          une autre forme (numéro 3)<br>
+          command_to 
+          3 : rem 
+          toutes les commandes vont sur l'objet numéro 3<br>
+          main_menu 
+          1 : rem 
+          créer un menu sur FORM numéro 3<br>
+          caption 
+          1,"Menu" : rem lui donner un 
+          caption le rend visible</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.8 - Comment utiliser un OPEN_DIALOG pour choisir un fichier ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>Un open_dialog 
+        est créé 
+        par la 
+        commande open_dialog 
+        N et est utilisé 
+        par la 
+        commande file_name$ 
+        (N), N étant 
+        le numéro de 
+        l'open_dialog.</P>
+      <p> Comme 
+        file_name$ 
+        retourne soit 
+        le nom du fichier choisi par l'utilisateur, soit le caractère souligné 
+        "_" si aucun fichier n'est choisi, la valeur rendue doit être 
+        stockée dans une variable string puis comparée à 
+        "_".</P>
+      <DIR> 
+        <p>dim 
+          a$ 
+          : rem 
+          déclarer une variable string</P>
+        <p>open_dialog 
+          1 : 
+          rem 
+          créer 
+          un open_dialog<br>
+          a$=file_name$(1) 
+          : rem 
+           choisir 
+          un nom de fichier avec l'open_dialog numéro 1<br>
+          if 
+          a$ &lt;&gt; "_" then 
+          - - - : 
+          rem 
+          si a$ contient 
+          un nom de fichier, alors - - -</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.9 - Comment sauvegarder un MEMO dans un fichier avec SAVE_DIALOG ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>Un save_dialog 
+        est créé 
+        par la 
+        commande save_dialog 
+        N et est utilisé 
+        par la 
+        commande file_name$(N), 
+        N étant le numéro du  
+        save_dialog.</P>
+      <DIR> save_dialog 
+        1 : 
+        rem 
+        créer 
+        un save_dialog<br>
+        memo 
+        2 : 
+        rem 
+        créer 
+        un memo</DIR>
+      <blockquote> 
+        <p> rem 
+          pour sauvegarder le contenu du memo 
+          avec 
+          le save_dialog<br>
+          file_save 
+          2,file_name$(1)</p>
+      </blockquote>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.10 - Comment charger une image avec un fichier dont le nom absolu est dans a$ ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>dim 
+          a$ : 
+          rem déclarer 
+          une variable string</p>
+        <p>picture 
+          1 : rem 
+          créer une image<br>
+          a$="c:\MyPicture.bmp" 
+          : rem définir le nom du fichier<br>
+          file_load 
+          1,a$ : rem the file is loaded in the picture 
+        </p>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.11 - Comment charger une image avec un fichier choisi par un OPEN_DIALOG ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>dim 
+          a$ : 
+          rem déclarer 
+          une variable string</P>
+        <p>picture 
+          1 : rem 
+          créer une image<br>
+          open_dialog 
+          2 : rem 
+          créer un open_dialog<br>
+          a$=file_name$ 
+          (2) : rem 
+          active l'open_dialog numéro 2<br>
+          if 
+          a$ &lt;&gt; "_" then 
+          file_load 
+          1,a$ : rem 
+          si un fichier est choisi, le charger dans l'image</P>
+        Rappel : la 
+        fonction file_name$ 
+        retourne le caractère souligné "_" si aucun fichier 
+        n'a été choisi par l'utilisateur. C'est pourquoi il faut 
+        comparer la valeur de a$ avec "_" : if a$ &lt;&gt; "_"</DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.12 - Comment charger un MEMO avec un fichier choisi par un OPEN_DIALOG ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>dim 
+          a$ : 
+          rem déclarer 
+          une variable string</P>
+        <p>memo 
+          1 : rem 
+          créer un memo<br>
+          open_dialog 
+          2 : rem 
+          créer un open_dialog<br>
+          a$ = 
+          file_name$(2) 
+          : rem activer 
+          l'open_dialog<br>
+          if 
+          a$ &lt;&gt; "_" then file_load 
+          1,a$ : rem 
+          si un fichier est choisi, le charger dans le memo</P>
+        Rappel : la 
+        fonction file_name$ 
+        retourne le caractère souligné "_" si aucun fichier 
+        n'a été choisi par l'utilisateur. C'est pourquoi il faut 
+        comparer la valeur de a$ avec "_" : if a$ &lt;&gt; "_"</DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.13 - CAPTION est possible seulement avec BUTTON, OPTION, CHECK, ALPHA ou FORM</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>caption 
+          N,"Salut" 
+          : rem 
+          N doit être 
+          un numéro de button, d''option, de check, d'alpha ou de form</P>
+      </DIR>
+      <p> Cette commande 
+        sur un autre type d'objet produit une erreur.</p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.14 - TEXT est possible seulement avec EDIT ou COMBO</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              COMBO</B> 
+      <DIR> 
+        <p>text 
+          N,"Salut" 
+          : rem 
+          N doit être 
+          le numéro d'un EDIT ou d'un COMBO</P>
+      </DIR>
+       
+      <p>Cette commande sur un autre type d'objet produit une erreur.</P>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>3.15 - Comment utiliser les barres ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <p>Il y a 3 
+        sortes de barres : track_bar, 
+        scroll_bar 
+        et 
+        progress_bar.</P>
+       
+      <p>- Pour lire la position du curseur :</P>
+       
+      <DIR> 
+        <p> A=position(N) 
+          : rem 
+          N est le 
+          numéro de l'objet barre.</P>
+      </DIR>
+       
+      <p>- Pour changer la position de curseur :</P>
+       
+      <DIR> 
+        <p>position 
+          N, P : 
+          rem 
+          P est la 
+          position à prendre par le curseur de la barre numéro N.</P>
+      </DIR>
+       
+      <p>Quand vous 
+        créez des barres, elles ont des valeurs standards pour le minimum 
+        et le maximum.</P>
+      <p>- Pour changer 
+        la valeur minimale :</P>
+       
+      <DIR> 
+        <p>min 
+          N,M : 
+          rem 
+           M est la 
+          valeur minimale, N est le numéro de l'objet barre.</P>
+      </DIR>
+       
+      <p>- Pour changer la valeur maximale :</P>
+       
+      <DIR> 
+        <p>max 
+          N,M 
+          : rem 
+           M est la 
+          valeur maximale, N est le numéro de l'objet barre.</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+    <div class="faq-category-section" id="cat-multimedia" style="display: none;">
+      <h2 class="category-heading">4 - Multimédia</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>4.1 - Comment charger et jouer un fichier de musique MIDI ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>sound 
+          1 : 
+          rem 
+          créer 
+          un son<br>
+          file_load 
+          1,"file.mid" 
+          : rem 
+          charger 
+          un fichier<br>
+          play 
+          1 : 
+          rem 
+          le jouer</p>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>4.2 - Comment charger et jouer un WAV (son) ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              un 
+      fichier son WAV ?</B> 
+      <DIR> 
+        <p>sound 
+          1 : 
+          rem 
+          créer 
+          un son<br>
+          file_load 
+          1,"file.wav" 
+          : rem 
+          charger 
+          un fichier<br>
+          play 
+          1 : 
+          rem 
+          le jouer</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>4.3 - Comment charger et jouer un fichier de musique MP3 ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>sound 
+          1 : 
+          rem 
+          créer 
+          un son<br>
+          file_load 
+          1,"fichier.mp3" 
+          : rem 
+          charger 
+          un fichier<br>
+          play 
+          1 : 
+          rem 
+          le jouer</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>4.4 - Comment charger et jouer un film avec un fichier dont le nom absolu est dans a$</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B> 
+      <DIR> 
+        <p>dim 
+          a$ : 
+          rem déclarer 
+          une variable string</p>
+        <p>a$="c:\MonFilm.avi" 
+          : rem définir le nom du fichier<br>
+          movie 
+          1 : 
+          rem 
+          créer 
+          un film<br>
+          file_load 
+          1,a$ : 
+          rem 
+          charger 
+          le fichier<br>
+          play 
+          1 : 
+          rem 
+          le jouer</p>
+      </DIR>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+          
+    <div class="faq-category-section" id="cat-divers" style="display: none;">
+      <h2 class="category-heading">5 - Divers</h2>
+      <div class="accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>5.1 - Comment utiliser des fonctions mathématiques manquantes ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B></p>
+      <p>tangente(x) 
+        = SIN(x) / COS(x)<B> </B></p>
+      <B><p> - &gt; utiliser SIN(X) 
+        / COS(X)</P>
+      </B> 
+      <p>ArcSin(x) = ArcTan(x/sqr(1-sqr(x)))</P>
+       
+      <p><b>-&gt; 
+        utiliser ATN(X/SQR(1-SQR(X)))</b></p>
+      <p>ArcCos(x) 
+        = ArcTan(sqr(1-sqr(x)) /x)</p>
+      <p><b>-&gt; 
+        utiliser ATN(SQR(1-SQR(X))/X)</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>5.2 - Comment utiliser INKEY$ ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B></p>
+      <p>Voir l'exemple 
+        suivant : </p>
+      <blockquote>
+        <p>dim 
+          a$<br>
+          label 
+          loop</p>
+        <p>loop:<br>
+          a$=inkey$<br>
+          if 
+          a$="" then 
+          goto 
+          loop</p>
+        </blockquote>
+      <DIR> 
+        <p>rem 
+          ici, a$ 
+          contient la touche qui a été enfoncée</P>
+      </DIR>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>5.3 - Comment utiliser les sous-programmes ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B></p>
+      <p> Un sous-programme 
+        est un groupe de commandes qui peut être traités un certain 
+        nombre de fois. </p>
+      <p>Un sous-programme 
+        commence par un LABEL (que l'on doit déclarer 
+        par le mot clé LABEL) 
+        et finit par RETURN.</P>
+      <p>Quand RETURN 
+        est exécuté, l'exécution de programme retourne à 
+        la commande immédiatement après la commande GOSUB.</P>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span>5.4 - Comment utiliser les événements ?</span>
+            <svg class="accordion-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="accordion-content">
+            <div class="accordion-content-inner">
+              </B></p>
+      <p>Quand un 
+        événement (clic, changement) arrive sur un objet, vous définissez 
+        dans un sous-programme les commandes à traiter pour répondre 
+        à l'événement.</p>
+      
+<p>Un sous-programme commence par un LABEL 
+        et se termine par RETURN.</P>
+      <p>Attention : Certains événements ne sont pas possibles avec 
+        certains objets !</P>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 6 : Fichiers et Répertoires - PANORAMIC</title>
+  <meta name="description" content="Gestion du stockage physique local : lecture/écriture dans des fichiers, création de dossiers.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 6 : Fichiers et Répertoires</h1>
+        <p>Gestion du stockage physique local : lecture/écriture dans des fichiers, création de dossiers.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="TOP"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Fichiers et répertoires</h1></div>
+      <br><br>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <p>
+              1 – <a href="#b1">Lecture et écriture avec des fichiers</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                1.1 – <a href="#b1.1">Commandes et fonctions sur les fichiers texte</a><br>
+                1.2 – <a href="#b1.2">Commandes et fonctions sur les fichiers binaires</a>
+              </p>
+            </blockquote>
+            <p>
+              2 – <a href="#b2">Gestion des fichiers</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                2.1 – <a href="#b2.1">Manipulation</a><br>
+                2.2 – <a href="#b2.2">Attributs</a><br>
+                2.3 – <a href="#b2.3">Extraction</a>
+              </p>
+            </blockquote>
+            <p>
+              3 – <a href="#b3">Gestion des répertoires</a>
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <br>
+      <p>
+        <h2><a name="b1"></a>1 – Lecture et écriture avec des fichiers</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p><span class="text-large">On peut utiliser :</span><br><br>
+          <ul>
+            <li>
+              des fichiers textes, qui sont des fichiers séquentiels (les données sont lues ou écrites les unes après les autres) et qui contiennent du texte et des indications de fin de ligne (séparations entre chaînes de caractères),
+            </li>
+            <br><br>
+            <li>
+            des fichiers binaires, qui sont des fichiers à accès directs (une donnée peut être lue ou écrite n&rsquo;importe où) et qui contiennent n&rsquo;importe quelle valeur.
+            </li>
+          </ul>
+        </p>
+        <br>
+        <br>
+        <p>
+          <h3><a name="b1.1"></a>1.1 – Commandes et fonctions sur les fichiers texte</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Un fichier texte peut être ouvert pour la lecture ou pour l&rsquo;écriture et peut être fermé.<br>
+            Lorsqu&rsquo;un fichier est ouvert pour l&rsquo;écriture, il est créé s&rsquo;il n&rsquo;existait pas. S&rsquo;il existait, il est détruit puis recréé (son contenu est perdu).<br>
+            Pour écrire à la fin d&rsquo;un fichier existant, il faut utiliser la commande <code class="kw">FILE_OPEN_APPEND</code>.<br>
+            Une ligne ou une partie de ligne peut être écrit ou lu.<br>
+            On peut aussi lire ou écrire un nombre déterminé de caractères.<br>
+            Il est possible de gérer 5 fichiers simultanément.
+          </p>
+          <br>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  								<code class="kw">FILE_OPEN_READ</code> N, Nom_de_fichier
+  							</td>
+                <td>
+  								Ouvre le fichier texte en lecture.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_OPEN_WRITE</code> N, Nom_de_fichier
+  							</td>
+                <td>
+  								Crée le fichier texte en écriture.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_OPEN_APPEND</code> N, Nom_de_fichier
+  							</td>
+                <td>
+  								Ouvre le fichier texte en écriture pour y écrire à la fin.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_CLOSE</code> N
+  							</td>
+                <td>
+  								Ferme le fichier texte numéro N.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_READ</code> N, V$
+  							</td>
+                <td>
+  								Litla variable V$ du fichier texte.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_READBUF</code> N, V$, C
+  							</td>
+                <td>
+  								Lit C caractères du fichier texte et les met dans la variable V$.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_READLN</code> N, V$
+  							</td>
+                <td>
+  								Lit la ligne V$ du fichier texte.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_WRITE</code> N, V$
+  							</td>
+                <td>
+  								Écrit V$ dans le fichier texte.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_WRITEBUF</code> N, E, C
+  							</td>
+                <td>
+  								Écrit C caractères du string E dans le fichier texte.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_WRITELN</code> N, V$
+  							</td>
+                <td>
+  								Écrit V$ puis un code « ligne suivante » dans le fichier texte.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_EOF</code>(N)
+  							</td>
+                <td>
+  								Retourne 1 si la fin du fichier est atteinte, 0 sinon.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_READLN$</code>(N)
+  							</td>
+                <td>
+  								 Retourne la ligne courante du fichier texte numéro N.
+  							</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p><span class="text-large">N = numéro de fichier</span></p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.2"></a>1.2 – Commandes et fonctions sur les fichiers binaires</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>Un fichier binaire peut être ouvert pour la lecture ou pour l&rsquo;écriture et peut être fermé.<br>
+          Il est possible de modifier le pointeur courant par la commande <code class="kw">FILEBIN_POSITION</code> et de le lire par la fonction <code class="kw">FILEBIN_POS</code>.<br>
+          Il est possible de gérer 5 fichiers simultanément.</p>
+          <br>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_OPEN_READ</code> N, Nom_de_fichier
+  							</td>
+                <td>
+  								Ouvre le fichier binaire en lecture.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_OPEN_WRITE</code> N, Nom_de_fichier
+  							</td>
+                <td>
+  								Ouvre le fichier binaire en écriture.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_CLOSE</code> N
+  							</td>
+                <td>
+  								Ferme le fichier binaire numéro N.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_READ</code> N, V
+  							</td>
+                <td>
+  								Lit un octet du fichier binaire et place la valeur dans la variable V.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_WRITE</code> N, V
+  							</td>
+                <td>
+  								Ecrit un octet dans le fichier binaire.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_POSITION</code> N, P
+  							</td>
+                <td>
+  								Modifie la position courante P du fichier binaire numéro N.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_POS</code>(N)
+  							</td>
+                <td>
+  								Retourne la position courante dans le fichier binaire numéro N.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_SIZE</code>(N)
+  							</td>
+                <td>
+  								Retourne le nombre d&rsquo;octets (taille) du fichier binaire numéro N.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_HEXA_READ</code> N, C, V$
+  							</td>
+                <td>
+  								Lit C octets dans le fichier binaire numéro N et stocke les valeurs dans la variable V$.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_HEXA_WRITE</code> N, C, S
+  							</td>
+                <td>
+  								Ecrit C octets dans le fichier binaire numéro N, les données à écrire sont dans l&rsquo;expression chaîne de caractères S.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_BLOCK_READ</code> N, C, V%(P)
+  							</td>
+                <td>
+  								Lit C octets dans le fichier binaire numéro N et stocke les valeurs dans le tableau V% à partir de l&rsquo;indice P.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_BLOCK_WRITE</code> N, C, V%(P)
+  							</td>
+                <td>
+  								Ecrit C octets dans le fichier binaire numéro N, les données à écrire sont dans le tableau V% à partir de l&rsquo;indice P.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_READ</code>(N)
+  							</td>
+                <td>
+  								Retourne un octet lu dans le fichier binaire numéro N.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILEBIN_HEXA_READ$</code>(N,C)
+  							</td>
+                <td>
+  								Retourne C octets lus dans le fichier binaire numéro N.
+  							</td>
+              </tr>
+            </tbody>
+          </table>
+          <blockquote style="border-left: none;">
+            <p><span class="text-large">N = numéro de fichier</span></p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <p><h2><a name="b2"></a>2 – Gestion des fichiers</h2>
+      <hr noshade size="1" color="666666"></p>
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b2.1"></a>2.1 – Manipulation</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Un fichier peut être renommé, supprimé, copié, déplacé.<br>
+            Son existence peut être testée.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  								<code class="kw">FILE_EXISTS</code>(Nom)
+  							</td>
+                <td>
+  								Retourne 1 si le fichier « Nom » existe, 0 sinon.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_DELETE</code> Nom
+  							</td>
+                <td>
+  								Supprime le fichier « Nom ». 
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_RENAME</code> Nom1, Nom2
+  							</td>
+                <td>
+  								Renomme le fichier « Nom1 » en « Nom2 ».
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_COPY</code> F1, F2
+  							</td>
+                <td>
+  								Recopie le fichier existant F1 dans le nouveau fichier F2.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_MOVE</code> F1, F2 
+  							</td>
+                <td>
+  								Déplace le fichier existant F1 dans le nouveau fichier F2.
+  							</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b2.2"></a>2.2 – Attributs</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>Les attributs d&rsquo;un fichier peuvent être modifiés.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  								<code class="kw">FILE_ARCHIVE</code>(F)
+  							</td>
+                <td>
+  								Positionne l&rsquo;attribut « archive » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_ARCHIVE_OFF</code>(F)
+  							</td>
+                <td>
+  								Retire l&rsquo;attribut « archive » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_HIDE</code>(F)
+  							</td>
+                <td>
+  								Positionne l&rsquo;attribut « caché » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_HIDE_OFF</code>(F)
+  							</td>
+                <td>
+  								Retire l&rsquo;attribut « caché » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_READ_ONLY</code>(F)
+  							</td>
+                <td>
+  								Positionne l&rsquo;attribut « lecture seule » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_READ_ONLY_OFF</code>(F)
+  							</td>
+                <td>
+  								Retire l&rsquo;attribut « lecture seule » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_SYSTEM</code>(F)
+  							</td>
+                <td>
+  								Positionne l&rsquo;attribut « système » du fichier F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_SYSTEM_OFF</code>(F)
+  							</td>
+                <td>
+  								Retire l&rsquo;attribut « système » du fichier F.
+  							</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b2.3"></a>2.3 – Extraction</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Des choses peuvent être extraites à partir du nom absolu d&rsquo;un fichier.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  								<code class="kw">FILE_EXTRACT_DISK$</code>(F)
+  							</td>
+                <td>
+  								Retourne un nom de disque à partir de F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_EXTRACT_EXTENSION$</code>(F)
+  							</td>
+                <td>
+  								Retourne une extension de fichier à partir de F
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_EXTRACT_NAME$</code>(F)
+  							</td>
+                <td>
+  								Retourne un nom de fichier à partir de F.
+  							</td>
+              </tr>
+              <tr>
+                <td>
+  								<code class="kw">FILE_EXTRACT_PATH$</code>(F)
+  							</td>
+                <td>
+  								Retourne un chemin à partir de F
+  							</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <br>
+      <p><h2><a name="b3"></a>3 – Gestion des répertoires</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <br>
+          <p>Un répertoire peut être créé.</p>
+          <p>L&rsquo;existance d&rsquo;un répertoire peut être testée.</p>
+          <p>Le répertoire actuel peut être modifié et son nom est disponible dans une variable système.</p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  DIR_EXISTS(Nom)
+                </td>
+                <td>
+                  Retourne 1 si le répertoire « Nom » existe, 0 sinon.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  DIR_CURRENT$
+                </td>
+                <td>
+                  Retourne le nom du répertoire actuel.                  
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  DIR_CHANGE Nom
+                </td>
+                <td>
+                  &quot;Nom&quot; devient le répertoire courant.
+                </td>
+              </tr>
+              <tr> 
+                <td>
+                  DIR_MAKE Nom
+                </td>
+                <td>
+                  Le répertoire &quot;Nom&quot; est créé.
+                </td>
+              </tr>
+              <tr> 
+                <td>
+                  DIR_REMOVE Nom
+                </td>
+                <td>
+                  Supprime le répertoire vide &quot;Nom&quot;.
+                </td>
+              </tr>
+              <tr> 
+                <td>
+                  RMDIR Nom
+                </td>
+                <td>
+                  Supprime le répertoire vide &quot;Nom&quot;.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  FILE_FIND_FIRST$ 
+                </td>
+                <td>
+                  Retourne le nom du premier fichier trouvé dans le répertoire courant et commence à rechercher les noms de fichiers.
+                </td>
+              </tr>
+              <tr> 
+                <td>
+                  FILE_FIND_NEXT$ 
+                </td>
+                <td>
+                  Renvoie le nom du fichier suivant dans le répertoire courant.
+                </td>
+              </tr>
+              <tr> 
+                <td>
+                  FILE_FIND_CLOSE 
+                </td>
+                <td>
+                  Met fin à la recherche de noms de fichiers avec FILE_FIND_FIRST$ et FILE_FIND_NEXT$ et libère la ressource.
+                </td>
+              </tr>
+            </table>
+           </blockquote>
+         </blockquote>
+       </blockquote>
+      </blockquote>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 06 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

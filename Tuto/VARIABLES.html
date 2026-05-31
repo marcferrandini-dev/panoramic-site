@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  LES VARIABLES</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p><h2><b>Les variables.</b></h2></p>
+<p>Une variable, c'est 
+  un nom qu'on donne à une portion de mémoire de l'ordinateur, pour y stocker 
+  une valeur.<br>
+  Cette mémoire peut être lue et écrite; et on peut bien sûr écrire et lire plusieurs 
+  fois dans cette mémoire.<br>
+  </p>
+<p>Lorqu'on veut créer 
+  une variable, on utilise le mot-clé <b>DIM</b> 
+  qui fait deux choses:<br>
+  - il réserve un espace de la mémoire (DIMENSION),<br>
+  - il donne un NOM à cette mémoire.<br>
+  <br>
+  Et ensuite, on peut écrire une valeur ou le résultat d'un calcul dans cette 
+  mémoire, et la lire, autant de fois qu'on veut.</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        x%<br>
+        rem réserve de la mémoire<br>
+        rem nomme cette mémoire x%<br>
+        rem le symbole % veut dire que la variable 
+        est un entier (elle ne contient pas de partie fractionnaire)</b></p>
+    </td>
+  </tr>
+</table>
+<p>Voici un code qui 
+  déclare la variable x%, qui fait successivement plusieurs calculs dans x% et 
+  qui imprime à chaque fois le contenu de x%:</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>rem 
+        x% : rem on réserve un espace de la mémoire, 
+        qu'on appelle x%<br>
+        <br>
+        x%=6+7-3 : rem on met la valeur 10 dans cette 
+        mémoire nommée x% <br>
+        print x% : rem 
+        on lit cette mémoire et on affiche son contenu à l'écran<br>
+        <br>
+        x%=4 : rem on utilise à nouveau la même mémoire 
+        x% pour y mettre 4 <br>
+        print x% : rem 
+        il s'affiche 4 à l'écran<br>
+        <br>
+        x%=x%+1 : rem on utilise cette fois x% en 
+        lecture puis en écriture:<br>
+        rem 1 - on prend sa valeur : 4,<br>
+        rem 2 - on lui ajoute 1,<br>
+        rem 3 - et on stocke le résultat obtenu dans 
+        x%<br>
+        print x%:rem 
+        il s'affiche 5 à l'écran<br>
+        <br>
+        end : rem c'est 
+        fini!</b></p>
+    </td>
+  </tr>
+</table>
+<p>Source de l'exemple 
+  -&gt; <a href="Sources/Variable_01.html">Variable_01.bas</a></p>
+<p>En r&eacute;sum&eacute;:<br>
+  <br>
+  <b>une variable est un espace qu'on réserve en mémoire, et auquel on donne un 
+  nom,<br>
+  - pour y stocker des valeurs ou des résultats de calculs (c'est l'écriture),<br>
+  - pour ensuite réutiliser ce qu'on y a stocké (c'est la lecture).</b></p>
+<div class="tuto-separator"></div>
+<h2>Les 
+  types de variables.</h2>
+<p align="left">Il 
+  y a 3 types de variables: string, enti&egrave;re et r&eacute;elle.</p>
+<p align="left">- 
+  les variables string contiennent des textes. Le nom d'une variable string doit 
+  se terminer par $</p>
+<p align="left">- 
+  les variables r&eacute;elles et enti&egrave;res contiennent des nombres.</p>
+<p align="left">- 
+  une variable enti&egrave;re contient un nombre sans virgule. Le nom d'une variable 
+  enti&egrave;re doit se terminer par %</p>
+<p align="left">- 
+  une variable r&eacute;elle contient un nombre avec ou sans virgule.</p>
+<p align="left">Attention 
+  : En PANORAMIC, comme dans la plupart des langages, on &eacute;crit un POINT 
+  &agrave; la place d'une VIRGULE !</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        x%, y, z$ : rem on réserve des espaces dans 
+        la mémoire<br>
+        <br>
+        x% = 6 : rem on met la valeur 6 dans la variable 
+        enti&egrave;re x%</b></p>
+      <p><b> y = 10.5 
+        : rem on met la valeur 10.5 dans la variable 
+        r&eacute;elle y<br>
+        </b></p>
+      <p><b>z$ = &quot;un 
+        petit texte&quot; : rem on met un texte dans 
+        la variable string z$</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">Ainsi, 
+  dans un listing, la simple lecture d'un nom de variable nous renseigne sur son 
+  type:</p>
+<p align="left">- 
+  la variable est termin&eacute;e par $ : elle contient une chaine de caract&egrave;res</p>
+<p align="left">- 
+  la variable est termin&eacute;e par le caract&egrave;re % : elle contient un 
+  nombre entier (sans virgule)</p>
+<p align="left">- 
+  la variable ne se termine ni par $ ni par % : elle contient un nombre qui a 
+  peut-&ecirc;tre une virgule (nombre r&eacute;el)</p>
+<div class="tuto-separator"></div>
+<h2>Les 
+  tableaux de variables.</h2>
+<p align="left">Il 
+  est parfois int&eacute;ressant d'utiliser des structures comme variables. Par 
+  exemple, en math&eacute;matique, on utilise souvent des variables avec indice. 
+  En Basic, une variable qui poss&egrave;de un indice, s'appelle un TABLEAU.</p>
+<p align="left">Lorsqu'on 
+  d&eacute;clare un tableau de variable, on utilise DIM, mais dans ce cas, pour 
+  bien indiquer qu'on d&eacute;clare un tableau, on indique entre parenth&egrave;ses 
+  le nombre d'&eacute;l&eacute;ments maximal que ce tableau peut contenir.</p>
+<p align="left">Exemple:</p>
+<table width="9%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>DIM</b><b> 
+        A(20)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">Les 
+  tableaux s'utilisent de la m&ecirc;me fa&ccedil;on que les variables dites simples, 
+  mais une variable d'un tableau est toujours suivie de son indice entre paranth&egrave;ses. 
+  L'indice peut bien s&ucirc;r &ecirc;tre un nombre, une autre variable ou une 
+  expression. Il faut toutefois noter qu'un indice est toujours un entier.</p>
+<p align="left">L'indice 
+  d'une variable est tout simplement la position de cette variable dans le tableau.</p>
+<p align="left">ATTENTION: 
+  la premi&egrave;re position dans un tableau est la position 0<br>
+  Par cons&eacute;quent, <b>DIM</b><b> 
+  A(20)</b> d&eacute;clare 
+  en fait un tableau de variables r&eacute;elles &agrave; 21 &eacute;l&eacute;ments. 
+  En effet, il s'agit bien de 21 &eacute;l&eacute;ments car le premier &eacute;l&eacute;ment 
+  est <b>A(0).</b> Le dernier et vingt et uni&egrave;me &eacute;l&eacute;ment 
+  &eacute;tant <b>A(20).<br>
+  </b>Le tableau est un tableau de r&eacute;els car le nom n'est suivi ni par 
+  le caract&egrave;re $, ni par le caract&egrave;re %</p>
+<p align="left">Pour 
+  d&eacute;clarer des tableaux d'entiers et de chaines de caract&egrave;res, on 
+  utilise la m&ecirc;me convention que pour les variables:</p>
+<p align="left">- 
+  le nom est termin&eacute; par $ : c'est un tableau de chaines de caract&egrave;res</p>
+<p align="left">- 
+  le nom est termin&eacute; par le caract&egrave;re % : c'est un tableau de nombres 
+  entiers (sans virgule)</p>
+<p align="left">- 
+  le nomne se termine ni par $ ni par % : c'est un tableau de nombres qui ont 
+  peut-&ecirc;tre une virgule (nombres r&eacute;els)</p>
+<p align="left">Enfin, 
+  on peut d&eacute;clarer 
+  des tableaux &agrave; 1 dimension <b>DIM</b><b> 
+  Prix%(50)</b> 
+  ou &agrave; 2 dimensions <b>DIM</b><b> 
+  Courbe(20,40)</b></p>
+<p align="left">Exemple 
+  d'utilisation de tableaux de variables:</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>dim 
+        x%(10), y(5), z$(50), i: rem on d&eacute;clare 
+        les variables<br>
+        <br>
+        x%(3) = 6 : rem on met la valeur 6 dans la 
+        variable enti&egrave;re x%(3)</b></p>
+      <p><b> y(x%(3)) 
+        = 10.5 : rem on met la valeur 10.5 dans la 
+        variable r&eacute;elle y(6), car x%(3) vaut 6<br>
+        </b></p>
+      <p><b>z$(10) 
+        = &quot;un &quot;</b></p>
+      <p><b>z$(11) 
+        = &quot;petit &quot;</b></p>
+      <p><b>z$(12) 
+        = &quot;texte&quot;</b></p>
+      <p><b>i= 10</b></p>
+      <p><b>print 
+        z$(i)+z$(i+1)+z$(i+2) : rem il s'affiche 
+        &quot;un petit texte&quot;</b></p>
+      <p>&nbsp;</p>
+      </td>
+  </tr>
+</table>
+<p align="left">Source 
+  de l'exemple -&gt; Variable_02.bas</p>
+<div class="tuto-separator"></div>
+<p><h2><b>Remarque 
+  sur la d&eacute;claration:</b></h2></p>
+<p>Une variable ou 
+  un label peuvent être déclarés n'importe où dans le source. C'est là une grande 
+  souplesse du Basic.</p>
+<p> Cependant, il 
+  ne faut pas exécuter une deuxième fois la m&ecirc;me déclaration. Il y aura 
+  alors une erreur du type "VARIABLE DEJA DEFINIE" ou "LABEL DEJA DEFINI" car 
+  une variable ou un label doivent être déclarés <b>AVANT</b> leur utilisation. 
+  C'est pourquoi il est conseillé de commencer le source par les déclarations.</p>
+<p><b>DIM</b><b> 
+  variables &agrave; d&eacute;clarer </b></p>
+<p><b>LABEL 
+  labels &agrave; d&eacute;clarer</b></p>
+<p><b>corps du programme</b></p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 13 janvier 2009</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

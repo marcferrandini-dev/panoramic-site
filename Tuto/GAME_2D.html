@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC 
+  : CREER UN JEU 2D</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p align="left">Ce 
+  qu'il faut savoir faire pour cr&eacute;er un jeu en 2D:</p>
+<div class="tuto-separator"></div>
+<h2>Lecture 
+  du clavier</h2>
+<p align="left">L'un 
+  des moyens pour le joueur d'agir sur le d&eacute;roulement du jeu est le clavier. 
+  Il faut d&eacute;terminer sur quelle touche du clavier le joueur est en train 
+  d'appuyer.</p>
+<p align="left">La 
+  variable syst&egrave;me <b>SCANCODE</b> donne le 
+  code de la touche du clavier qui est enfonc&eacute;e. Une variable syst&egrave;me 
+  &quot;pr&eacute;-existe&quot; : elle n'a pas besoin d'&ecirc;tre d&eacute;finie 
+  par <b>DIM</b>, contrairement aux autres variables.</p>
+<p align="left">Si 
+  on veut utiliser les touches fl&eacute;ch&eacute;es du clavier (par exemple 
+  pour d&eacute;placer quelque chose sur l'&eacute;cran), on fera:</p>
+<table width="48%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>dim 
+        v : rem 
+        on d&eacute;finit une variable v</b></p>
+      <p><b>v=scancode 
+        : rem lecture du clavier, code mis dans v</b></p>
+      <p><b>if 
+        v=37 then - - - : rem 
+        37=code de FLECHE GAUCHE</b></p>
+      <p><b>if 
+        v=38 then - - - : rem 
+        38=code de FLECHE HAUT</b></p>
+      <p><b>if 
+        v=39 then - - - : rem 
+        39=code de FLECHE DROITE</b></p>
+      <p><b>if 
+        v=40 then - - - : rem 
+        40=code de FLECHE BAS</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>Utilisation 
+  d'un son</h2>
+<p align="left">Pour 
+  utiliser un son, il faut cr&eacute;er un objet <b>SOUND</b>, 
+  lui affecter un num&eacute;ro d'objet, charger un fichier son avec la commande 
+   <b>FILE_LOAD</b>. Le son est alors jou&eacute; 
+  par la commande <b>PLAY</b>.</p>
+<p align="left">Exemple 
+  : &agrave; chaque fois qu'on appuie sur la touche ESPACE du clavier, on joue 
+  le son du fichier BOOM.wav:</p>
+<table width="68%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>dim 
+        v : rem on d&eacute;finit une variable v</b></p>
+      <p><b>label 
+        recommence : rem 
+        on d&eacute;finit un label (marquage d'un point du programme)</b></p>
+      <p><b>sound 
+        1 : rem 
+        cr&eacute;ation d'un son auquel on affecte le num&eacute;ro 1</b></p>
+      <p><b>file_load 
+        1,&quot;boom.wav&quot; : rem 
+        chargement du fichier son dans l'objet num&eacute;ro 1</b></p>
+      <p><b>recommence:</b></p>
+      <p><b>v=scancode 
+        : rem 
+        lecture du clavier</b></p>
+      <p><b>if 
+        v=32 then play 
+        1 : rem 
+        si touche espace enfonc&eacute;e, on joue le son (objet num&eacute;ro 
+        1)</b></p>
+      <p><b>wait</b><b> 
+        100 : rem 
+        on attend 100 millisecondes</b></p>
+      <p><b>goto 
+        recommence : rem 
+        on recommence</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>Affichage 
+  d'une image mobile sur une image de fond</h2>
+<p align="left">Un 
+  jeu en 2D est constitu&eacute; d'une <b>image de fond</b>, sur laquelle &eacute;voluent 
+  d'autres images, les <b>SPRITES</b>. Un <b>SPRITE</b> 
+  poss&egrave;de la particularit&eacute; de pouvoir se d&eacute;placer SANS perturber 
+  l'image de fond.</p>
+<p align="left">L'objet 
+   <b>SCENE2D</b> est sp&eacute;cialis&eacute; pour 
+  afficher une <b>image de fond</b> et pour y visualiser des <b>SPRITES</b>.</p>
+<p align="left">- 
+  On charge l'objet <b>SCENE2D</b> avec une image 
+  de fond par la commande  <b>FILE_LOAD</b>.</p>
+<p align="left">- 
+  On charge une image dans un <b>SPRITE</b> par la 
+  commande  <b>SPRITE_FILE_LOAD</b>.</p>
+<p align="left">- 
+  On d&eacute;place les <b>SPRITES</b> sur l'image 
+  de fond par les commandes <b>SPRITE_X_POSITION</b>, 
+  <b>SPRITE_Y_POSITION</b>, ou <b>SPRITE_POSITION.</b></p>
+<p align="left">- 
+  On d&eacute;truit un <b>SPRITE</b> par la commande 
+  <b>SPRITE_DELETE</b>, on le rend invisible par 
+  <b>SPRITE_HIDE</b> et on le rend &agrave; nouveau 
+  visible par <b>SPRITE_SHOW</b>.</p>
+<p align="left">&nbsp;</p>
+<p align="left">Voici 
+  un exemple de base sur l'utilisation de <b>SCENE2D</b> 
+  et de <b>SPRITES</b> :</p>
+<table width="62%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>scene2d 
+        1 : rem on crée un monde 2D (objet numéro 
+        1)</b></p>
+      <p><b>file_load 
+        1,"ville.bmp" : rem on charge une image de 
+        fond </b></p>
+      <p><b>sprite 
+        1 : rem on crée un SPRITE (objet SPRITE numéro 
+        1)</b></p>
+      <p><b>sprite_file_load 
+        1,"envahisseur.bmp" : rem on charge une image 
+        dans le SPRITE</b></p>
+      <p><b> sprite_position 
+        1,10,20 : rem on positionne le SPRITE sur 
+        le SCENE2D</b></p>
+      <p><b>sprite_hide 
+        1 : rem on le rend invisible</b></p>
+      <p><b>wait 
+        1000 : rem on attend 1 seconde</b></p>
+      <p><b>sprite_show 
+        1 : rem on le rend visible</b></p>
+      <p><b>wait 
+        1000 : rem on attend 1 seconde</b></p>
+      <p><b>sprite_delete 
+        1 : rem 
+        on détruit le SPRITE</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<p align="left">&nbsp;</p>
+<p align="left">Toute 
+  la base pour cr&eacute;er un jeu en 2D est donn&eacute;e sur cette page : on 
+  combine le mouvement des <b>SPRITES</b> 
+   avec le clavier 
+  (<b>SCANCODE</b>) et on y ajoute des sons (<b>SOUND</b>, 
+   <b>FILE_LOAD</b> et <b>PLAY</b>).</p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 5 Juin 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

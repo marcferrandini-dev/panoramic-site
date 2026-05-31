@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  MANIPULER LES STRINGS</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p><h2><b>Sommaire</b></h2></p>
+<p><a href="#s1">Qu'est-ce 
+  qu'un &quot;string&quot;?</a></p>
+<p><a href="#s2">Le 
+  BASIC et les cha&icirc;nes de caract&egrave;res: 2 choses &agrave; savoir</a></p>
+<p><a href="#s3">Les 
+  fonctions qui extraient quelques caract&egrave;res d'une cha&icirc;ne de caract&egrave;res</a></p>
+<p><a href="#s4">La 
+  fonction qui compte le nombre de caract&egrave;res d'une cha&icirc;ne de caract&egrave;res</a></p>
+<p><a href="#s5">Les 
+  fonctions qui mettent une cha&icirc;ne de caract&egrave;res en majuscule ou 
+  en nimuscule</a></p>
+<p><a href="#s6">Les 
+  fonctions qui retirent les blancs &agrave; droite ou &agrave; gauche d'une cha&icirc;ne 
+  de caract&egrave;res</a></p>
+<p><a href="#s7">Les 
+  fonctions qui cr&eacute;ent une cha&icirc;ne de caract&egrave;res</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s1"></a>Qu'est-ce 
+  qu'un &quot;string&quot;?</h2>
+<p align="left">String 
+  est le terme anglais pour d&eacute;signer une cha&icirc;ne de caract&egrave;res, 
+  c'est &agrave; dire un texte de quelques mots.</p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s2"></a>Le 
+  BASIC et les cha&icirc;nes de caract&egrave;res: 2 choses &agrave; savoir</h2>
+<p align="left">Il 
+  y a deux choses essentielles &agrave; savoir pour manipuler les cha&icirc;nes 
+  de caract&egrave;res en BASIC:</p>
+<p align="left">1 
+  - Une chaine de caract&egrave;res doit TOUJOURS &ecirc;tre d&eacute;limit&eacute;es 
+  par des guillemets.</p>
+<p align="left">&quot;Boujour&quot; 
+  est une cha&icirc;ne de caract&egrave;res compr&eacute;hensible par le langage 
+  BASIC.</p>
+<p align="left">&nbsp;</p>
+<p align="left">Si 
+  on ex&eacute;cute le source suivant:</p>
+<table width="68%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print 
+        &quot;Bonjour !&quot; : rem on affiche 
+        le texte &agrave; l'&eacute;cran</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">On 
+  obtient comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/bonjour.gif" width="187" height="104"></p>
+<p align="left">&nbsp;</p>
+<p align="left">2 
+  - Toute variable qui contient une cha&icirc;ne de caract&egrave;res ou toute 
+  fonction qui retourne une cha&icirc;ne de caract&egrave;res (donc, qui se pr&eacute;sente, 
+  au niveau s&eacute;mantique comme une cha&icirc;ne de caract&egrave;res) se 
+  termine par le caract&egrave;re DOLLAR.</p>
+<p align="left">Si 
+  on ex&eacute;cute le source suivant:</p>
+<table width="68%" border="1">
+  <tr> 
+    <td><b>dim 
+      a$ : rem on d&eacute;finit une variable &quot;string&quot;</b> 
+      <p><b>a$ 
+        = &quot;Bonjour !&quot; : rem on affecte 
+        la variable avec une cha&icirc;ne de caract&egrave;res</b></p>
+      <p><b>print 
+        a$ : rem on affiche le contenu de 
+        a$</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left"> Le 
+  r&eacute;sultat est exactement le m&ecirc;me (la diff&eacute;rence c'est qu'on 
+  imprime le contenu d'une variable au lieu du texte lui-m&ecirc;me):</p>
+<p align="left"><img src="TUTOPICT/bonjour.gif" width="187" height="104"></p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s3"></a>Les 
+  fonctions qui extraient quelques caract&egrave;res d'une cha&icirc;ne de caract&egrave;res</h2>
+<p align="left">Rappel: 
+  toute fonction qui retourne une cha&icirc;ne de caract&egrave;re se termine 
+  par DOLLAR.</p>
+<p align="left">Les 
+  fonctions qui extraient des caract&egrave;res d'une cha&icirc;ne de caract&egrave;res 
+  sont:</p>
+<p align="left"><b>RIGHT$</b></p>
+<p align="left"><b>LEFT$</b></p>
+<p align="left"><b>MID$</b></p>
+<p align="left">&nbsp;</p>
+<h2>Extraction 
+  de la partie DROITE d'une cha&icirc;ne de caract&egrave;res: RIGHT$</h2>
+<p align="left">La 
+  fonction <b>RIGHT$</b><b>(A$, N) </b>extrait 
+  les N caract&egrave;res &agrave; droite de la cha&icirc;ne de caract&egrave;res 
+  contenue dans A$.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="38%" border="1">
+  <tr> 
+    <td><b> </b><b> 
+      </b><b> 
+      </b> 
+      <p><b>print 
+         right$(&quot;CHAINE&quot;,2) : rem 
+        on affiche les 2 caract&egrave;res &agrave; droite</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/right_dollar.gif" width="180" height="88"></p>
+<p align="left">&nbsp;</p>
+<h2>Extraction 
+  de la partie GAUCHE d'une cha&icirc;ne de caract&egrave;res: LEFT$</h2>
+<p align="left">La 
+  fonction <b>LEFT$</b><b>(A$, N) </b>extrait 
+  les N caract&egrave;res &agrave; gauche de la cha&icirc;ne de caract&egrave;res 
+  contenue dans A$.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="38%" border="1">
+  <tr> 
+    <td><b> </b><b> 
+      </b><b> 
+      </b> 
+      <p><b>print 
+         left$(&quot;CHAINE&quot;,3) : rem 
+        on affiche les 3 caract&egrave;res &agrave; gauche</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/left_dollar.gif" width="209" height="108"></p>
+<p align="left">&nbsp;</p>
+<h2>Extraction 
+  d'une partie d'une cha&icirc;ne de caract&egrave;res: MID$</h2>
+<p align="left">La 
+  fonction <b>MID$</b><b>(A$, P, N) </b>extrait 
+  les N caract&egrave;res &agrave; partir de la position P de la cha&icirc;ne 
+  de caract&egrave;res contenue dans A$.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="42%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print 
+         mid$(&quot;CHAINE&quot;,2,4) : rem 
+        on affiche 4 caract&egrave;res &agrave; partir du 2&egrave;me</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/mid_dollar.gif" width="202" height="98"></p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s4"></a>La 
+  fonction qui compte le nombre de caract&egrave;res d'une cha&icirc;ne de caract&egrave;res: 
+  LEN </h2>
+<p align="left">Comme 
+  cette fonction retourne un nombre et non pas une une cha&icirc;ne de caract&egrave;re, 
+  elle ne se termine pas par DOLLAR !</p>
+<p align="left">La 
+  fonction <b>LEN</b><b>(A$) </b>retourne 
+  le nombre de caract&egrave;res de la cha&icirc;ne contenue dans A$.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print 
+         len(</b><b>&quot;Bonjour 
+        !&quot;)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/len.gif" width="179" height="76"></p>
+<p align="left">car 
+  Bonjour ! contient bien 9 caract&egrave;res : le blanc entre le r et le point 
+  d'exclamation est un caract&egrave;re.</p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s5"></a>Les 
+  fonctions qui mettent une cha&icirc;ne de caract&egrave;res en majuscule ou 
+  en minuscule</h2>
+<p align="left">Les 
+  fonctions qui mettent une cha&icirc;ne de caract&egrave;re en majuscule ou en 
+  minuscule sont:</p>
+<p align="left"><b>UPPER$</b></p>
+<p align="left"><b>LOWER$</b></p>
+<p align="left">&nbsp;</p>
+<h2>Mise 
+  en majuscule d'une cha&icirc;ne de caract&egrave;res: UPPER$</h2>
+<p align="left">La 
+  fonction <b>UPPER$</b><b>(A$) </b>retourne 
+  en majuscule la cha&icirc;ne de caract&egrave;res qui est contenue dans A$.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print</b><b> 
+        </b><b> 
+         upper$(&quot;Bonjour !&quot;)</b></p>
+      </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/upper_dollar.gif" width="212" height="83"></p>
+<h2>Mise 
+  en minuscule d'une cha&icirc;ne de caract&egrave;res: LOWER$</h2>
+<p align="left">La 
+  fonction <b>LOWER$</b><b>(A$) </b>retourne 
+  en minuscule la cha&icirc;ne de caract&egrave;res qui est contenue dans A$.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print 
+         lower$(&quot;BONjour !&quot;)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/lower_dollar.gif" width="199" height="88"></p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s6"></a>Les 
+  fonctions qui retirent des blancs &agrave; droite ou &agrave; gauche d'une cha&icirc;ne 
+  de caract&egrave;res</h2>
+<p align="left">Les 
+  fonctions qui retirent des blancs &agrave; droite ou &agrave; gauche d'une cha&icirc;ne 
+  de caract&egrave;re sont:</p>
+<p align="left"><b>RTRIM$</b></p>
+<p align="left"><b>LTRIM$</b></p>
+<p align="left"><b>TRIM$</b></p>
+<p align="left">&nbsp;</p>
+<h2>Retirer 
+  les blancs &agrave; DROITE d'une cha&icirc;ne de caract&egrave;res: RTRIM$</h2>
+<p align="left">La 
+  fonction <b>RTRIM$</b><b>(A$) </b>retourne 
+  une cha&icirc;ne de caract&egrave;res qui est la cha&icirc;ne contenue dans 
+  A$ sans les blancs &agrave; droite.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        a$</b> </p>
+      <p><b>a$ 
+        = </b><b> 
+         rtrim$(&quot;Bonjour ! &quot;)</b></p>
+      </td>
+  </tr>
+</table>
+<p align="left">met 
+  dans a$ la cha&icirc;ne de caract&egrave;res <b>&quot;Bonjour 
+  !&quot;</b> 
+  (sans blanc &agrave; droite)</p>
+<h2>Retirer 
+  les blancs &agrave; GAUCHE d'une cha&icirc;ne de caract&egrave;res: LTRIM$</h2>
+<p align="left">La 
+  fonction <b>LTRIM$</b><b>(A$) </b>retourne 
+  une cha&icirc;ne de caract&egrave;res qui est la cha&icirc;ne contenue dans 
+  A$ sans les blancs &agrave; gauche.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        a$</b> </p>
+      <p><b>a$ 
+        = </b><b> 
+         ltrim$(&quot; Bonjour !&quot;)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">met 
+  dans a$ la cha&icirc;ne de caract&egrave;res <b>&quot;Bonjour 
+  !&quot;</b> 
+  (sans blanc &agrave; gauche)</p>
+<h2>Retirer 
+  les blancs &agrave; DROITE et &agrave; GAUCHE d'une cha&icirc;ne de caract&egrave;res: 
+  TRIM$</h2>
+<p align="left">La 
+  fonction <b>TRIM$</b><b>(A$) </b>retourne 
+  une cha&icirc;ne de caract&egrave;res qui est la cha&icirc;ne contenue dans 
+  A$ sans les blancs &agrave; droite et &agrave; gauche.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        a$</b> </p>
+      <p><b>a$ 
+        = </b><b> 
+         trim$(&quot; Bonjour ! &quot;)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">met 
+  dans a$ la cha&icirc;ne de caract&egrave;res <b>&quot;Bonjour 
+  !&quot;</b> 
+  (sans blanc ni &agrave; droite ni &agrave; gauche)</p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<h2><a name="s7"></a>Les 
+  fonctions qui cr&eacute;ent une cha&icirc;ne de caract&egrave;res</h2>
+<p align="left">Les 
+  fonctions qui cr&eacute;ent une cha&icirc;ne de caract&egrave;re sont:</p>
+<p align="left"><b>STRING$</b></p>
+<p align="left"><b>STR$</b></p>
+<p align="left"><b>CHR$</b></p>
+<p align="left">&nbsp;</p>
+<h2>Cr&eacute;er 
+  une cha&icirc;ne de caract&egrave;res compos&eacute;e de N caract&egrave;res 
+  identiques: STRING$</h2>
+<p align="left">La 
+  fonction <b>STRING$</b><b>(10,&quot;A&quot;) </b>retourne 
+  une cha&icirc;ne de caract&egrave;res compos&eacute;e de 10 fois le caract&egrave;re 
+  &quot;A&quot;.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print 
+        </b><b> 
+        </b><b> 
+         string$(40,&quot;#&quot;)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/string_dollar.gif" width="344" height="92"></p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<p align="left">&nbsp;</p>
+<h2>Transformer 
+  un nombre en cha&icirc;ne de caract&egrave;res: STR$</h2>
+<p align="left">La 
+  fonction <b>STR$</b><b>(A) </b>retourne 
+  une cha&icirc;ne de caract&egrave;res correspondant au nombre contenu dans la 
+  variable A.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>dim 
+        a</b></p>
+      <p><b>a 
+        = 20 + 30</b></p>
+      <p><b>print 
+        </b><b> 
+        </b><b> 
+         str$(a)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/str_dollar.gif" width="173" height="67"></p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<p align="left">&nbsp;</p>
+<h2>Obtenir 
+  un caract&egrave;re dont on connait le code ASCII: CHR$</h2>
+<p align="left">La 
+  fonction <b>CHR$</b><b>(N) </b>retourne 
+  un caract&egrave;re correspondant au code ASCII N.</p>
+<p align="left">Cet 
+  exemple:</p>
+<table width="20%" border="1">
+  <tr> 
+    <td> 
+      <p><b>print 
+        </b><b> 
+        </b><b> 
+         chr$(65)</b></p>
+    </td>
+  </tr>
+</table>
+<p align="left">donne 
+  comme r&eacute;sultat:</p>
+<p align="left"><img src="TUTOPICT/chr_dollar.gif" width="199" height="86"></p>
+<p align="left">car 
+  65 est le code ASCII de A</p>
+<p align="left"><a href="#haut">Haut 
+  de la page</a></p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 12 novembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

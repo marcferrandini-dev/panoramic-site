@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC 
+  : CREER UN MENU</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<p align="left">Ce 
+  qu'il faut savoir pour cr&eacute;er un menu:</p>
+<div class="tuto-separator"></div>
+<h2>Objets 
+  MAIN_MENU et SUB_MENU</h2>
+<p align="left">Un 
+  menu est un syst&egrave;me hierarchique, compos&eacute; d'un objet syst&egrave;me 
+  principal <b>MAIN_MENU</b>, qui est invisible, 
+  auquel sont rattach&eacute;s des objets syst&egrave;me <b>SUB_MENU</b>, 
+  par la commande <b>PARENT</b>.</p>
+<p align="left">Les 
+  objets syst&egrave;me <b>SUB_MENU</b> sont des 
+  objets visibles. Les libell&eacute;s s'affichant sur les menus sont obtenus 
+  par la commande <b>CAPTION</b> sur un objet <b>SUB_MENU</b>.</p>
+<p align="left">Lorsqu'on 
+  relie un <b>SUB_MENU</b> &agrave; un <b>MAIN_MENU</b>, 
+  on obtient un menu de premier niveau, c'est &agrave; dire qu'on peut cliquer 
+  directement.</p>
+<p align="left">Lorsqu'on 
+  relie un <b>SUB_MENU</b> &agrave; un <b>SUB_MENU</b>, 
+  on obtient un menu de niveau inf&eacute;rieur, c'est &agrave; dire accessible 
+  par un click sur le niveau sup&eacute;rieur.</p>
+<div class="tuto-separator"></div>
+<h2>Utilisation 
+  d'un menu</h2>
+<p align="left">Lorsqu'on 
+  clique sur un &eacute;l&eacute;ment d'un menu (de niveau quelconque), il y a 
+  2 mani&egrave;res d'ex&eacute;cuter une action :</p>
+<p align="left">- 
+  on teste directement que le menu a &eacute;t&eacute; cliqu&eacute; par la fonction 
+  <b>CLICKED(N)</b> dans laquelle N est le num&eacute;ro 
+  du <b>SUB_MENU</b>.</p>
+<p align="left">Cette 
+  fonction, qui n'est pas particuli&egrave;re aux menus, m&eacute;morise un click 
+  sur un objet : elle rend 1 si on a cliqu&eacute; sur un objet et 0 sinon. De 
+  plus, s'il y a eu un click, sa valeur est r&eacute;initialis&eacute; apr&egrave;s 
+  la lecture. Si la valeur est 1, elle est alors r&eacute;initialis&eacute;e &agrave; 
+  0 pour prendre en compte un nouveau click sur l'objet.</p>
+<p align="left">- 
+  on pr&eacute;voit dans le programme qu'un bout de programme, d&eacute;fini par 
+  un <b>LABEL</b> sera ex&eacute;cut&eacute; &agrave; 
+  chaque fois que le <b>SUB_MENU</b> sera cliqu&eacute;.</p>
+<p align="left"><b>ON_CLICK(N),abc</b> 
+  : tout click sur l'objet num&eacute;ro N provoquera l'ex&eacute;cution de la 
+  partie du programme commen&ccedil;ant par &quot;abc&quot;.</p>
+<div class="tuto-separator"></div>
+<h2>Cr&eacute;ation 
+  d'un premier niveau de menu</h2>
+<p align="left">On 
+  se cr&eacute;e un premier niveau de menu, c'est &agrave; dire un menu toujours 
+  visible, constitu&eacute; de 2 parties : &quot;Fichier&quot; et &quot;Edition&quot; 
+  :</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>main_menu 
+        1: rem 
+        on cr&eacute;e un menu principal (objet syst&egrave;me num&eacute;ro 1)</b></p>
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        2 : rem on cr&eacute;e un sous-menu (objet 
+        syst&egrave;me num&eacute;ro 2)</b></p>
+      <p><b>parent 
+        2,1 : rem qui est reli&eacute; au menu principal 
+        (1) pour se mettre au 1er niveau</b></p>
+      <p><b> caption 
+        2,&quot;Fichier&quot; : rem ce sous-menu 
+        affiche &quot;Fichier&quot;</b></p>
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        3 : rem on cr&eacute;e un autre sous-menu 
+        (objet syst&egrave;me num&eacute;ro 3)</b></p>
+      <p><b>parent 
+        3,1 : rem qui est reli&eacute; au menu principal 
+        (1) pour se mettre au 1er niveau</b></p>
+      <p><b> caption 
+        3,&quot;Edition&quot; : rem ce sous-menu 
+        affiche &quot;Edition&quot;</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>Cr&eacute;ation 
+  d'un second niveau de menu</h2>
+<p align="left">On 
+  veut maintenant que lorsqu'on clique sur le premier niveau &quot;Fichier&quot;, 
+  il s'affiche un second niveau constitu&eacute; de &quot;Ouvrir&quot; et de &quot;Sauvegarder&quot;, 
+  et que lorsqu'on clique sur le premier niveau &quot;Edition&quot;, il s'affiche 
+  un autre second niveau constitu&eacute; de &quot;Couper&quot;, &quot;Copier&quot;, 
+  &quot;Coller&quot;.</p>
+<p align="left"> On 
+  compl&egrave;te l'exemple pr&eacute;c&eacute;dent par :</p>
+<table width="68%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        4 : rem on cr&eacute;e un sous-menu (objet 
+        syst&egrave;me num&eacute;ro 4)</b></p>
+      <p><b>parent 
+        4,2 : rem qui est reli&eacute; au sous-menu 
+        num&eacute;ro 2 (celui qui affiche &quot;Fichier&quot;)</b></p>
+      <p><b> caption 
+        4,&quot;Ouvrir&quot; : rem ce sous-menu affiche 
+        &quot;Ouvrir&quot;</b></p>
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        5 : rem on cr&eacute;e un sous-menu (objet 
+        syst&egrave;me num&eacute;ro 5)</b></p>
+      <p><b>parent 
+        5,2 : rem qui est reli&eacute; au sous-menu 
+        num&eacute;ro 2 (celui qui affiche &quot;Fichier&quot;)</b></p>
+      <p><b> caption 
+        5,&quot;Sauvegarder&quot; : rem ce sous-menu 
+        affiche &quot;Sauvegarder&quot;</b></p>
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        6 : rem on cr&eacute;e un sous-menu (objet 
+        syst&egrave;me num&eacute;ro 6)</b></p>
+      <p><b>parent 
+        6,3 : rem qui est reli&eacute; au sous-menu 
+        num&eacute;ro 3 (celui qui affiche &quot;Edition&quot;)</b></p>
+      <p><b> caption 
+        6,&quot;Couper&quot; : rem ce sous-menu affiche 
+        &quot;Couper&quot;</b></p>
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        7 : rem on cr&eacute;e un sous-menu (objet 
+        syst&egrave;me num&eacute;ro 6)</b></p>
+      <p><b>parent 
+        7,3 : rem qui est reli&eacute; au sous-menu 
+        num&eacute;ro 3 (celui qui affiche &quot;Edition&quot;)</b></p>
+      <p><b> caption 
+        7,&quot;Copier&quot; : rem ce sous-menu affiche 
+        &quot;Copier&quot;</b></p>
+      <p>&nbsp;</p>
+      <p><b>sub_menu 
+        8 : rem on cr&eacute;e un sous-menu (objet 
+        syst&egrave;me num&eacute;ro 6)</b></p>
+      <p><b>parent 
+        8,3 : rem qui est reli&eacute; au sous-menu 
+        num&eacute;ro 3 (celui qui affiche &quot;Edition&quot;)</b></p>
+      <p><b> caption 
+        8,&quot;Coller&quot; : rem ce sous-menu affiche 
+        &quot;Coller&quot;</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>Affectation 
+  d'une partie de programme au click sur un sous-menu</h2>
+<p align="left">On 
+  veut qu'&agrave; chaque fois qu'on clique sur Coller, on ex&eacute;cute la partie 
+  de programme qui commence par &quot;collage&quot;.</p>
+<p align="left">&quot;collage&quot; 
+  est un <b>LABEL</b>. On le d&eacute;finit par le 
+  mot-cl&eacute; <b>LABEL</b>.</p>
+<p align="left">Par 
+  la commande <b>on_click</b> 8,collage, on indique 
+  qu'&agrave; chaque fois qu'on cliquera sur l'objet syst&egrave;me num&eacute;ro 
+  8 (c'est &agrave; dire le sous-menu qui affiche &quot;Coller&quot;), on ex&eacute;cutera 
+  la partie du programme marqu&eacute;e par le <b>LABEL</b> 
+  collage.</p>
+<p align="left"><b>Remarque</b> 
+  : cette m&eacute;thode (affecter une partie du programme &agrave; un &eacute;v&eacute;nement 
+  &quot;click&quot;) n'est pas sp&eacute;cifique &agrave; un sous-menu : elle 
+  est valable pour tout objet visible.</p>
+<table width="68%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p><b>label 
+        collage : rem on crée une marque</b></p>
+      <p><b>on_click 
+        8,collage : rem &agrave; chaque click sur 
+        l'objet 8 on ex&eacute;cute &agrave; partir de la marque </b></p>
+      <p><b>end 
+        : rem fin du programme principal</b></p>
+      <p>&nbsp;</p>
+      <p><b>collage:</b></p>
+      <p><b> print 
+        &quot;on a cliqu&eacute; sur l'objet Coller&quot;</b></p>
+      <p><b>return 
+        : rem fin de ce qu'on ex&eacute;cute &agrave; 
+        chaque click sur &quot;Coller&quot;</b></p>
+      </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<p><h2><b>Test si on a 
+  cliqu&eacute; sur un sous-menu</b></h2></p>
+<p align="left">L'autre 
+  mani&egrave;re de r&eacute;agir &agrave; un click sur un objet (donc &agrave; 
+  un click sur un sous-menu) est de tester la m&eacute;morisation d'un click par 
+  <b>CLICKED</b>.</p>
+<p align="left">On 
+  veut par exemple afficher le texte &quot;on a cliqu&eacute; sur Copier&quot; 
+  si on a cliqu&eacute; sur l'objet num&eacute;ro 7 (sous-menu qui affiche &quot;Copier).</p>
+<p align="left">Cette 
+  m&eacute;thode elle est valable pour tout objet visible.</p>
+<table width="48%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>if 
+        clicked(7)=1 then 
+        print &quot;on a cliqu&eacute; sur Copier&quot;</b></p>
+      <p><b> rem 
+        ici, clicked(7) vaut 0 car r&eacute;initialis&eacute; apr&egrave;s lecture</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 5 Juin 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

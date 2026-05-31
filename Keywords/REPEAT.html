@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REPEAT — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction REPEAT du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>REPEAT</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      REPEAT
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      EXÃ‰CUTE L'INSTRUCTION OU LE GROUPE D'INSTRUCTIONS SUIVANTES JUSQU'A LA COMMANDE "UNTIL"
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>ParamÃ¨tre: 0</li>
+      <li>Groupe: Structures</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande est une partie de la boucle REPEAT/UNTIL et est utilisÃ©e pour dÃ©finir la fin des instructions Ã  exÃ©cuter quand la condition logique est vraie.
+      </p>
+      <p>
+        Tant que la condition est vraie, toutes les instructions jusqu'Ã  REPEAT sont exÃ©cutÃ©es. Autrement, l'exÃ©cution saute Ã  l'instruction juste aprÃ¨s UNTIL.
+      </p>
+      <p>
+        La "condition" est une expression logique simple (construite avec des comparateurs >, <, > =, < >, =...) ou une expression complexe combinÃ©e avec des opÃ©rateurs logiques AND, OR, NOT et des parenthÃ¨ses. Seul le rÃ©sultat (Vrai ou Faux) est utilisÃ© pour exÃ©cuter ou non une instruction ou un groupe d'instructions.
+      </p>
+      <p>
+        Remarque importante: comme le test sur la condition de bouclage est effectuÃ© lors de la commande UNTIL, toutes les instructions entre REPEAT et UNTIL sont donc exÃ©cutÃ©es au moins une fois.
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        REPEAT
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>dans:</li>
+      <li>REPEAT</li>
+      <li> Instruction(s)</li>
+      <li>UNTIL C</li>
+      <li>C: expression logique.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>REPEAT est utilisÃ©, en association avec UNTIL, pour rÃ©pÃ©ter une instruction ou un groupe d'instructions selon une condition logique.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si C n'est pas une expression logique correcte.</li>
+      <li>S'il n'y a pas de UNTIL aprÃ¨s REPEAT.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>dim a</p>
+              <p>a=0</p>
+              <p>' imprime tous les chiffres de 0 Ã  9</p>
+              <p>repeat</p>
+              <p> print a</p>
+              <p> a=a+1</p>
+              <p>until a=10</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./WHILE.html" class="related-link">WHILE</a></p>
+      <p><a href="./END_WHILE.html" class="related-link">END_WHILE</a></p>
+      <p><a href="./IF.html" class="related-link">IF</a></p>
+      <p><a href="./THEN.html" class="related-link">THEN</a></p>
+      <p><a href="./ELSE.html" class="related-link">ELSE</a></p>
+      <p><a href="./END_IF.html" class="related-link">END_IF</a></p>
+      <p><a href="./UNTIL.html" class="related-link">UNTIL</a></p>
+      <p><a href="./AND.html" class="related-link">AND</a></p>
+      <p><a href="./OR.html" class="related-link">OR</a></p>
+      <p><a href="./NOT.html" class="related-link">NOT</a></p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC 
+  : SCENE3D ET SES OBJETS3D</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p align="left">Pour 
+  faire quelque chose en 3D, il faut tout d'abord cr&eacute;er une fen&ecirc;tre 
+  qui permettra de visualiser le &quot;monde 3D&quot;.</p>
+<p align="left">Cela 
+  se fait en cr&eacute;ant un objet syst&egrave;me <b>SCENE3D</b> 
+  suivi de son num&eacute;ro d'objet.</p>
+<p align="left">Et 
+  le plus difficile est fait, car cet objet syst&egrave;me contient automatiquement 
+  2 objets 3D indispensables:</p>
+<p align="left">- 
+  une cam&eacute;ra 3D qui est l'oeil par lequel on voit le monde 3D: la fen&ecirc;tre 
+  <b>SCENE3D</b> visualise en permanence le monde 
+  3D vu par cette cam&eacute;ra,<br>
+  - une lumi&egrave;re 
+  3D, qui &eacute;claire le monde 3D.</p>
+<p align="left">Il 
+  n'y a pas besoin de cr&eacute;er ces objets! Cela se fait tout seul!</p>
+<div class="tuto-separator"></div>
+<h2>L'objet 
+  SCENE3D</h2>
+<p align="left">Comme 
+  tout objet syst&egrave;me visible, un <b>SCENE3D</b> 
+  peut &ecirc;tre positionn&eacute; sur le FORM qui le contient, par <b>TOP</b> 
+  et <b>LEFT, </b>et &ecirc;tre dimensionn&eacute; 
+  par <b>HEIGHT</b> et <b>WIDTH</b>, 
+  et a toute une gamme de commandes qui s'appliquent.</p>
+<p align="left">Une 
+  commande importante est la commande <b>COLOR</b>, 
+  qui, de mani&egrave;re g&eacute;n&eacute;rale permet de colorer les objets syst&egrave;me. 
+  Dans le cas pr&eacute;sent d'un <b>SCENE3D</b>, 
+  la commande <b>COLOR</b> est la mani&egrave;re 
+  de donner <b>un fond color&eacute; au monde 3D</b>.</p>
+<p align="left">De 
+  plus, cet objet a des commandes sp&eacute;cifiques: <b>AXES_SHOW</b> 
+  et <b>AXES_HIDE</b> permettent de visualiser ou 
+  non les 3 axes partant de l'origine, avec un code de couleur:</p>
+<p align="left">- 
+  l'axe des X est de couleur ROUGE,<br>
+  - l'axe des Y est de couleur VERT,<br>
+  - l'axe des Z est de couleur BLEU.</p>
+<p align="left">Pour 
+  se souvenir de ce code, c'est tr&egrave;s facile, il suffit de penser &agrave; 
+  RVB, qui est une expression r&eacute;pandue pour dire Rouge/Vert/Bleu et qui 
+  est le sens du codage des couleurs pour les objets syst&egrave;me, et d'y associer 
+  mentalement les axes X/Y/Z.</p>
+<p align="left">On 
+  peut bien s&ucirc;r cr&eacute;er plusieurs <b>SCENE3D</b> 
+  sur le m&ecirc;me <b>FORM</b><b>. O</b>n aura ainsi 
+  plusieurs mondes 3D compl&egrave;tement ind&eacute;pendants.</p>
+<div class="tuto-separator"></div>
+<h2>L'objet 
+  CAMERA 3D</h2>
+<p align="left">Cet 
+  objet indispensable, est donc l'oeil par lequel on voit le monde 3D. Lorqu'un 
+  <b>SCENE3D</b> est cr&eacute;&eacute;, la cam&eacute;ra 
+  est positionn&eacute;e en (0,0,5) et vise l'origine (0,0,0).</p>
+<p align="left">La 
+  cam&eacute;ra 3D peut &ecirc;tre positionn&eacute;e en X,Y,Z par les commandes:<br>
+   <b>CAM_X_POSITION N,X</b> pour l'axe des X uniquement, 
+  <b><br>
+  </b> 
+   <b>CAM_Y_POSITION N,Y</b> pour l'axe des Y uniquement, 
+  <br>
+  <b>CAM_Z_POSITION N,Z</b> pour l'axe des Z uniquement,<br>
+  <b>CAM_POSITION N,X,Y,Z</b> si on veut la positionner 
+  en m&ecirc;me temps sur les 3 coordonn&eacute;es X,Y,Z, <br>
+  commandes dans lesquelles N repr&eacute;sente le num&eacute;ro du <b>SCENE3D</b> 
+  auquel la cam&eacute;ra 3D appartient.</p>
+<p align="left">La 
+  cam&eacute;ra 3D peut viser un point quelconque d&eacute;fini par ses coordonn&eacute;es 
+  en X,Y,Z par les commandes:<br>
+   <b>POINT_X_POSITION N,X</b> pour l'axe des X uniquement,<b><br>
+  </b> 
+   <b>POINT</b><b>_Y_POSITION 
+  N,Y</b> pour l'axe des Y uniquement,<br>
+  <b>POINT</b><b>_Z_POSITION 
+  N,Z</b> pour l'axe des Z uniquement,<br>
+  <b>POINT</b><b>_POSITION 
+  N,X,Y,Z</b> si on veut lui faire viser un point en une seule fois. <br>
+  commandes dans lesquelles N repr&eacute;sente le num&eacute;ro du <b>SCENE3D</b> 
+  auquel la cam&eacute;ra 3D appartient.</p>
+<div class="tuto-separator"></div>
+<h2>L'objet 
+  LUMIERE 3D</h2>
+<p align="left">Cet 
+  objet tout aussi indispensable que la cam&eacute;ra, &eacute;claire le monde 
+  3D. Lorqu'un <b>SCENE3D</b> est cr&eacute;&eacute;, 
+  la lumi&egrave;re est positionn&eacute;e au m&ecirc;me endroit que la cam&eacute;ra, 
+  c'est &agrave; dire en (0,0,5).</p>
+<p>La lumi&egrave;re 
+  3D peut &ecirc;tre positionn&eacute;e en X,Y,Z par les commandes:<br>
+   <b>LIGHT_X_POSITION N,X</b> pour l'axe des X uniquement, 
+  <b><br>
+  </b> 
+   <b>LIGHT</b><b>_Y_POSITION 
+  N,Y</b> pour l'axe des Y uniquement, <br>
+  <b>LIGHT</b><b>_Z_POSITION 
+  N,Z</b> pour l'axe des Z uniquement, <br>
+  commandes dans lesquelles N repr&eacute;sente le num&eacute;ro du <b>SCENE3D</b> 
+  auquel la lumi&egrave;re 3D appartient.</p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 23 septembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

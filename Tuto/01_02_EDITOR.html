@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  PRISE EN MAIN DE L'EDITOR</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p><h2><b>A QUOI SERT 
+  PANORAMIC_EDITOR?</b></h2></p>
+<p>En gros, avec PANORAMIC_EDITOR, 
+  vous pouvez modifier votre code source, l'ex&eacute;cuter et cr&eacute;er un 
+  ex&eacute;cutable ou une application. </p>
+<p>Vous pouvez :</p>
+<p>- Soit cr&eacute;er 
+  enti&egrave;rement votre code source dans PANORAMIC_EDITOR,</p>
+<p>- Soit cr&eacute;er 
+  votre source avec n'importe quel &eacute;diteur ou traitement de texte, l'enregistrer 
+  en format texte avec l'extension.bas, puis le charger dans PANORAMIC_EDITOR 
+  (commande File / Load),</p>
+<p>- Soit r&eacute;cup&eacute;rer 
+  le fichier.bas g&eacute;n&eacute;r&eacute; par PANORAMIC_IDE pour le compl&eacute;ter.</p>
+<p>Dans tous les cas, 
+  vous pouvez le tester en l'ex&eacute;cutant : RUN, ou F9 ou click sur l'icone 
+  &eacute;clair.</p>
+<div class="tuto-separator"></div>
+<p><h2><b>ECRITURE D'UN 
+  PETIT PROGRAMME</b></h2></p>
+<p>Pour mettre tout 
+  cela en pratique et se faire la main, nous allons &eacute;crire un tout petit 
+  programme (1 seule ligne) mais qui est un grand classique,  
+  auquel les anglo-saxons ont m&ecirc;me donn&eacute; un nom : le &quot;Hello 
+  world&quot;, qu'on pourrait traduire par &quot;Bonjour tout le monde&quot;, 
+  et qui constiste &agrave; faire imprimer un message de bienvenue.</p>
+<p align="left">Pour 
+  respecter cette tradition, nous allons donc faire notre &quot;Bonjour tout le 
+  monde&quot; avec <b>PANORAMIC</b>.</p>
+<p>1 - On lance <b>PANORAMIC_EDITOR</b>.</p>
+<p>On 
+  obtient cette fen&ecirc;tre:</p>
+<p><b> 
+  </b></p>
+<p align="center"><img src="TUTOPICT/01_01_EDITOR.png" width="797" height="598"></p>
+<p align="left">&nbsp;</p>
+<p align="left">2 
+  - On tape une ligne de code.</p>
+<p align="left">A 
+  c&ocirc;t&eacute; du 1, il y a un curseur clignotant: c'est l&agrave; qu'on 
+  va taper une ligne de source: <b>print &quot;Salut&quot;</b></p>
+<p align="left">On 
+  voit que <b>print</b> est color&eacute; en bleu, 
+  cela veut dire que 
+  <b>PANORAMIC</b> 
+  a compris ce mot, car il fait partie de son vocabulaire.</p>
+<p align="left">&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_01_PRINT_SALUT.png" width="209" height="117"></p>
+<p align="left">&nbsp;</p>
+<p align="left">3 
+  - on ex&eacute;cute le code.</p>
+<p align="left">Et 
+  maintenant, on va <b>EXECUTER</b> ce programme.<br>
+  Pour cela on clique sur l'icone qui repr&eacute;sente un &eacute;clair rouge.<br>
+  On obtient une fen&ecirc;tre dans laquelle il est &eacute;crit Salut. Un fen&ecirc;tre 
+  a &eacute;t&eacute; cr&eacute;&eacute;e et notre <b>print</b> 
+  a fait &eacute;crire le texte &quot;Salut&quot; dans cette fen&ecirc;tre. </p>
+<p align="left">Ca 
+  y est, on a &eacute;crit et ex&eacute;cut&eacute; notre premier programme en 
+   
+  <b>PANORAMIC.</b></p>
+<p align="left">&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_01_EXECUTION.png" width="596" height="478"></p>
+<p align="left">&nbsp;</p>
+<p align="left">4 
+  - Cr&eacute;ation d'un ex&eacute;cutable</p>
+<p align="left">On 
+  va m&ecirc;me aller un peu plus loin: on va cr&eacute;er un ex&eacute;cutable. 
+  Comme &ccedil;a, on n'aura plus besoin de 
+  <b>PANORAMIC</b><b>_EDITOR</b> 
+  pour l'ex&eacute;cuter.<br>
+  Dans le menu 
+  Fichier, on choisit Ex&eacute;cutable:</p>
+<p align="center"><img src="TUTOPICT/01_01_FICHIER.png" width="190" height="232" align="top"></p>
+<p align="left">Une 
+  fen&ecirc;tre &quot;Enregistrer sous&quot; appara&icirc;t et nous demande de 
+  donner un nom &agrave; cet ex&eacute;cutable et d'indiquer o&ugrave; l'enregistrer.<br>
+   Apr&egrave;s 
+  avoir tap&eacute; par exemple comme nom de fichier &quot;programme1&quot;, et 
+  apr&egrave;s avoir choisi l'endroit o&ugrave; le mettre dans l'arborescence 
+  des fichiers du disque dur, 
+  on clique sur le bouton Enregistrer:</p>
+<p align="center"><img src="TUTOPICT/01_01_ENREGISTRER.png" width="455" height="61"></p>
+<p align="left">On 
+  ferme <b>PANORAMIC</b><b>_EDITOR.</b></p>
+<p align="left"><b>Et 
+  on va essayer l'ex&eacute;cutable qu'on vient de cr&eacute;er.</b></p>
+<p align="left">On 
+  lance par exemple l'explorateur Windows, on ouvre le r&eacute;pertoire o&ugrave; 
+  on vient d'enregistrer ce fichier. On remarque qu'il s'appelle programme1.exe 
+  : <i>l'extension .exe a &eacute;t&eacute; ajout&eacute;e automatiquement pour 
+  bien montrer que c'est un ex&eacute;cutable.</i></p>
+<p align="left">On 
+  double-clique dessus et, O MIRACLE!, la fen&ecirc;tre qui contient Salut appara&icirc;t.</p>
+<p align="left">Cette 
+  fois, on a notre premier programme ex&eacute;cutable &eacute;crit en  
+  <b>PANORAMIC.</b></p>
+<p align="left">Cet 
+  ex&eacute;cutable est <b>COMPLETEMENT INDEPENDANT</b>: il n'a besoin de rien 
+  d'autre pour s'ex&eacute;cuter. Aucune DLL de quoi que ce soit, aucune biblioth&egrave;que. 
+  Rien. On 
+  double-clique dessus ET C'EST TOUT! On 
+  peut le d&eacute;placer, le mettre dans un autre r&eacute;pertoire, sur une 
+  cl&eacute; USB, sur un CD-ROM. D&egrave;s qu'on veut l'ex&eacute;cuter, on double-clique 
+  sur son nom.</p>
+<p align="left">Pratique, 
+  non?</p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 24 septembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

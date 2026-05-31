@@ -1,0 +1,4169 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 2 : Les Objets Système - PANORAMIC</title>
+  <meta name="description" content="Création et manipulation des composants graphiques (GUI) : fenêtres, boutons, zones de saisie, menus déroulants.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 2 : Les Objets Système</h1>
+        <p>Création et manipulation des composants graphiques (GUI) : fenêtres, boutons, zones de saisie, menus déroulants.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="top"></a>
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Les objets système</h1></div>
+      <br><br>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <p>
+              1 – <a href="#b1">Création d&rsquo;objets système</a>
+            </p>
+            <blockquote style="border-left: none;">
+              1.1 – <a href="#b1.1">Création d&rsquo;objets système classiques</a><br>
+              1.2 – <a href="#b1.2">Création d&rsquo;objets système Listes</a><br>
+              1.3 – <a href="#b1.3">Création d&rsquo;objet système SCENE2D et SCENE3D</a><br>
+              1.4 – <a href="#b1.4">Création d&rsquo;objets système Multimédia</a><br>
+              1.5 – <a href="#b1.5">Création d&rsquo;objets système Choix</a><br>
+              1.6 – <a href="#b1.6">Création d&rsquo;objets système Menu</a><br>
+              1.7 – <a href="#b1.7">Création d&rsquo;objets système Barres</a><br>
+              1.8 – <a href="#b1.8">Création d&rsquo;objets système Dialogue</a><br>
+              1.9 – <a href="#b1.9">Création d&rsquo;un objet système Horloge</a><br>
+              1.10 – <a href="#b1.10">Création d&rsquo;objets système Conteneur</a><br>
+              1.11 – <a href="#b1.11">Création d&rsquo;objets système Electronique</a><br>
+              1.12 – <a href="#b1.12">Taille des objets système créés</a><br>
+              1.13 – <a href="#b1.13">Paramètres des objets Barre</a><br>
+              1.14 – <a href="#b1.14">Nombre d&rsquo;objets système</a><br>
+              1.15 – <a href="#b1.15">Numéros d&rsquo;objets système particuliers</a>
+            </blockquote>
+            <p>
+              2 – <a href="#b2">Commandes sur les objets système créés</a>
+            </p>
+            <blockquote style="border-left: none;">
+              2.1 – <a href="#b2.1">Commandes communes</a>
+              <blockquote style="border-left: none;">
+                <p>
+                  2.1.1 – <a href="#b2.1.1">Position</a><br>
+                  2.1.2 – <a href="#b2.1.2">Taille</a><br>
+                  2.1.3 – <a href="#b2.1.3">Activité</a><br>
+                  2.1.4 – <a href="#b2.1.4">Visibilité</a><br>
+                  2.1.5 – <a href="#b2.1.5">Texte bulle</a><br>
+                  2.1.6 – <a href="#b2.1.6">Commandes diverses</a><br>
+                  2.1.7 – <a href="#b2.1.7">Evénements</a><br>
+                  2.1.8 – <a href="#b2.1.8">Police de caractères</a><br>
+                  2.1.9 – <a href="#b2.1.9">Curseur</a>
+                </p>
+              </blockquote>
+                2.2 – <a href="#b2.2">Commandes spécifiques sur les objets système créés</a>
+                <blockquote style="border-left: none;">
+                <p>
+                  2.2.1 – <a href="#b2.2.1">Axes et réception des commandes : SCENE3D</a><br>
+                  2.2.2 – <a href="#b2.2.2">Commandes spécifiques sur un objet FORM</a><br>
+                  2.2.3 – <a href="#b2.2.3">Commandes spécifiques sur un objet Barre : TRACK_BAR, SCROLL_BAR, PROGRESS_BAR</a><br>
+                  2.2.4 – <a href="#b2.2.4">Commandes spécifiques sur un objet SPIN</a><br>
+                  2.2.5 – <a href="#b2.2.5">Commandes spécifiques sur un objet Dialogue : OPEN_DIALOG, SAVE_DIALOG</a><br>
+                  2.2.6 – <a href="#b2.2.6">Jouer un objet Multimédia : SOUND, MOVIE</a><br>
+                  2.2.7 – <a href="#b2.2.7">Gérer le contenu d&rsquo;un objet Liste : MEMO, COMBO, LIST, DLIST</a><br>
+                  2.2.8 – <a href="#b2.2.8">Réception des commandes de dessin : FORM, PICTURE</a><br>
+                  2.2.9 – <a href="#b2.2.9">Texte à visualiser : EDIT, COMBO</a><br>
+                  2.2.10 – <a href="#b2.2.10">Intitulé d&rsquo;un objet : BUTTON, ALPHA, FORM, CHECK, OPTION, SUB_MENU</a><br>
+                  2.2.11 – <a href="#b2.2.11">Chargement d&rsquo;un fichier : MEMO, COMBO, LIST, PICTURE, SOUND, MOVIE</a><br>
+                  2.2.12 – <a href="#b2.2.12">Sauvegarde dans un fichier : MEMO, COMBO, LIST, DLIST, PICTURE, IMAGE, SCENE2D</a><br>
+                  2.2.13 – <a href="#b2.2.13">Source des données : EDIT, COMBO, FORM</a><br>
+                  2.2.14 – <a href="#b2.2.14">Réception des PRINT : SCENE3D, EDIT, MEMO, COMBO, FORM, LIST, PICTURE</a><br>
+                  2.2.15 – <a href="#b2.2.15">Réception des commandes SPRITE : SCENE2D</a><br>
+                  2.2.16 – <a href="#b2.2.16">Tri dans un objet List : COMBO, LIST, DLIST</a><br>
+                  2.2.17 – <a href="#b2.2.17">Dimensionnement de l&rsquo;image visualisée : PICTURE et SCENE2D</a><br>
+                  2.2.18 – <a href="#b2.2.18">Focus d&rsquo;entrée</a><br>
+                  2.2.19 – <a href="#b2.2.19">Barres de défilement d&rsquo;un MEMO</a><br>
+                  2.2.20 – <a href="#b2.2.20">Presse-papier système</a><br>
+                  2.2.21 – <a href="#b2.2.21">Etat des CHECK et OPTION</a><br>
+                  2.2.22 – <a href="#b2.2.22">Traitement d&rsquo;image sur un PICTURE</a><br>
+                  2.2.23 – <a href="#b2.2.23">Rendre secret le texte d&rsquo;un EDIT</a><br>
+                  2.2.24 – <a href="#b2.2.24">Sélection du texte d&rsquo;un EDIT, un MEMO, un COMBO, un SPIN</a><br>
+                  2.2.25 – <a href="#b2.2.25">Commandes spécifiques à un GRID</a><br>
+                  2.2.26 – <a href="#b2.2.26">Utilisation d&rsquo;un TIMER</a><br>
+                  2.2.27 – <a href="#b2.2.27">Sauvegarde instantanée</a>
+                </p>
+              </blockquote>
+              2.3 – <a href="#b2.3">Fonctions sur les objets système créés</a>
+              <blockquote style="border-left: none;">
+                <p>
+                  2.3.1 – <a href="#b2.3.1">Position</a><br>
+                  2.3.2 – <a href="#b2.3.2">Taille</a><br>
+                  2.3.3 – <a href="#b2.3.3">Sur un objet Liste : MEMO, COMBO, LIST, DLIST</a><br>
+                  2.3.4 – <a href="#b2.3.4">Position du curseur : TRACK_BAR, SCROLL_BAR, PROGRESS_BAR</a><br>
+                  2.3.5 – <a href="#b2.3.5">Valeur d&rsquo;un SPIN</a><br>
+                  2.3.6 – <a href="#b2.3.6">Fichier choisi : OPEN_DIALOG, SAVE_DIALOG</a><br>
+                  2.3.7 – <a href="#b2.3.7">Etat : CHECK, OPTION</a><br>
+                  2.3.8 – <a href="#b2.3.8">Sélection d&rsquo;une ligne : COMBO, LIST</a><br>
+                  2.3.9 – <a href="#b2.3.9">Texte affiché : EDIT, MEMO, COMBO</a><br>
+                  2.3.10 – <a href="#b2.3.10">Click sur un objet</a><br>
+                  2.3.11 – <a href="#b2.3.11">Intitulé : BUTTON, ALPHA, FORM, CHECK, OPTION, SUB_MENU</a><br>
+                  2.3.12 – <a href="#b2.3.12">Couleur d&rsquo;un pixel dans un PICTURE</a><br>
+                  2.3.13 – <a href="#b2.3.13">Texte sélectionné dans un EDIT, un MEMO, un COMBO, un SPIN</a><br>
+                  2.3.14 – <a href="#b2.3.14">Visibilité</a><br>
+                  2.3.15 – <a href="#b2.3.15">Activité</a><br>
+                  2.3.16 – <a href="#b2.3.16">Objet GRID</a><br>
+                  2.3.17 – <a href="#b2.3.17">Position du curseur</a><br>
+                  2.3.18 – <a href="#b2.3.18">Objet</a><br>
+                  2.3.19 – <a href="#b2.3.19">Taille d&rsquo;un texte</a>
+                </p>
+              </blockquote>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <br>
+      <p>
+        <h2><a name="b1"></a>1 – Création d&rsquo;objets système</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Un objet système est un objet créé par le Système d&rsquo;Exploitation (Microsoft Windows, Linux, Android ou MAC OS X).
+        </p>
+        <p>
+          Il y a 2 sortes d&rsquo;objets système : les objets visibles et les objets invisibles.
+        </p>
+        <p>
+          Un objet système est caractérisé par un numéro allant de 1 à 9999.
+        </p>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.1"></a>1.1 – Création d&rsquo;objets système classiques</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr >
+                <td>
+                  <p>
+                    <code class="kw">ALPHA</code> N
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Crée un objet<code class="kw"> ALPHA</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> ALPHA</code> est utilisé pour visualiser un texte statique que l&rsquo;utilisateur ne peut pas changer (avec la commande <code class="kw">CAPTION</code>).
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">ALPHA</code>:
+                  </p>
+                  – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                  – Obtenir le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                  – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                  – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                  – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                  – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                  – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <code class="kw">BUTTON</code>&nbsp;N
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Crée un objet<code class="kw"> BUTTON</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> BUTTON</code> est utilisé pour lancer une commande (avec la commande <code class="kw">ON_CLICK</code> ou la fonction <code class="kw">CLICKED</code>) quand il est cliqué.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">BUTTON</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Obtenir le texte visualisé : <code class="kw">CAPTION$()</code><br><br>
+                    – Exécuter quelque chose quand il est cliqué: <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <code class="kw">BUTTON_PICTURE</code>&nbsp;N
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Crée un objet<code class="kw"> BUTTON_PICTURE</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> BUTTON_PICTURE</code> est utilisé pour afficher une image (par <code class="kw">FILE_LOAD</code> ou en dessinant avec les commandes 2D) et un texte (par la commande <code class="kw">CAPTION</code>), et pour déclencher une action (avec la commande <code class="kw">ON_CLICK</code> ou la fonction <code class="kw">CLICKED</code>) quand il est cliqué.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">BUTTON_PICTURE</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Obtenir le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                    – Charger un fichier contenant une image (BMP ou JPG) : <code class="kw">FILE_LOAD</code><br><br>
+                    – Envoie les commandes à l&rsquo;objet lui-même : <code class="kw">BUTTON_PICTURE_TARGET_IS_OBJECT</code><br>
+                    – Envoie les commandes à l&rsquo;image : <code class="kw">BUTTON_PICTURE_TARGET_IS_PICTURE</code><br><br>
+                    – Place l&rsquo;image en haut : <code class="kw">PICTURE_TOP</code><br>
+                    – Place l&rsquo;image en bas : <code class="kw">PICTURE_BOTTOM</code><br>
+                    – Place l&rsquo;image à droite : <code class="kw">PICTURE_RIGHT</code><br>
+                    – Place l&rsquo;image à gauche : <code class="kw">PICTURE_LEFT</code><br><br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <code class="kw">FORM</code>&nbsp;N
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Crée un objet<code class="kw"> FORM</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> FORM</code> est utilisé pour visualiser une fenêtre avec des composants (autres objets système).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">FORM</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$</code><br>
+                    – Modifier la bordure : <code class="kw">BORDER_HIDE</code>, <code class="kw">BORDER_SMALL</code>, <code class="kw">BORDER_NORMAL</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK&lt;</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée: <code class="kw">ON_MOUSE_MOVE </code><br>
+                    – Exécuter quelque chose quand il est fermé : <code class="kw">ON_CLOSE</code><br>
+                    – Exécuter quelque chose quand il est bougé : <code class="kw">ON_MOVE</code><br>
+                    – Exécuter quelque chose quand il est redimensionné : <code class="kw">ON_RESIZE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <code class="kw">GRID</code>&nbsp;N
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    Crée un objet<code class="kw"> GRID</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> GRID</code> est un tableau de cellules organisé en lignes et colonnes.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">GRID</code> :
+                  </p>
+                  <p>
+                    – Lire une valeur : <code class="kw">GRID_READ$()</code><br>
+                    – Ecrire une valeur : <code class="kw">GRID_WRITE</code><br>
+                    – Définir le nombre de colonnes : <code class="kw">GRID_COLUMN</code><br>
+                    – Définir la largeur des colonnes : <code class="kw">GRID_COLUMN_WIDTH</code><br>
+                    – Définir la largeur d&rsquo;une colonne : <code class="kw">GRID_ONE_COLUMN_WIDTH</code><br>
+                    – Autoriser l&rsquo;ajustement manuel des colonnes : <code class="kw">GRID_COLUMN_SIZING_ON</code><br>
+                    – Interdire l&rsquo;ajustement manuel des colonnes : <code class="kw">GRID_COLUMN_SIZING_OFF</code><br>
+                    – Définir le nombre de colonnes fixes : <code class="kw">GRID_COLUMN_FIXED</code><br>
+                    – Définir le nombre de lignes : <code class="kw">GRID_ROW</code><br>
+                    – Définir la hauteur des lignes : <code class="kw">GRID_ROW_HEIGHT</code><br>
+                    – Définir la hauteur d&rsquo;une ligne : <code class="kw">GRID_ONE_ROW_HEIGHT</code><br>
+                    – Autoriser l&rsquo;ajustement manuel des lignes : <code class="kw">GRID_ROW_SIZING_ON</code><br>
+                    – Interdire l&rsquo;ajustement manuel des lignes : <code class="kw">GRID_ROW_SIZING_OFF</code><br>
+                    – Définir le nombre de lignes fixes : <code class="kw">GRID_ROW_FIXED</code><br>
+                    – Changer la couleur des parties fixes : <code class="kw">GRID_FIXED_COLOR</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">MEMO</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> MEMO</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> MEMO</code> est utilisé pour visualiser une zone où l&rsquo;utilisateur peut entrer ou modifier des lignes multiples de texte.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">MEMO</code> :<br><br>
+                    – Obtenir le nombre de lignes : <code class="kw">COUNT()</code><br>
+                    – Ajouter un fichier : <code class="kw">FILE_ADD</code><br>
+                    – Charger un fichier : <code class="kw">FILE_LOAD</code><br>
+                    – Sauvegarder les lignes dans un fichier : <code class="kw">FILE_SAVE</code><br>
+                    – Ajouter une ligne : <code class="kw">ITEM_ADD</code><br>
+                    – Insérer une ligne : <code class="kw">ITEM_INSERT</code><br>
+                    – Supprimer une ligne : <code class="kw">ITEM_DELETE</code><br>
+                    – Sélectionner une ligne : <code class="kw">ITEM_SELECT</code><br>
+                    – Lire une ligne : <code class="kw">ITEM_READ$()</code><br>
+                    – Affecter une barre de défilement horizontale : <code class="kw">BAR_HORIZONTAL</code><br>
+                    – Affecter une barre de défilement verticale : <code class="kw">BAR_VERTICAL</code><br>
+                    – Affecter deux barres de défilement : <code class="kw">BAR_BOTH</code><br>
+                    – Retirer les barres de défilement : <code class="kw">BAR_NONE</code><br>
+                    – Rendre secret le texte : <code class="kw">SECRET_ON</code><br>
+                    – Rendre visible le texte : <code class="kw">SECRET_OFF</code><br>
+                    – Sélectionner un texte : <code class="kw">SELECT_TEXT</code><br>
+                    – Lire le texte sélectionné : <code class="kw">SELECT_READ$</code><br>
+                    – Positionner le curseur : <code class="kw">CARET_POSITION</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand il est modifié : <code class="kw">ON_CHANGE</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">MEMO_RICH</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> MEMO_RICH</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> MEMO_RICH</code> est utilisé pour visualiser une zone où l&rsquo;utilisateur peut entrer ou modifier des lignes multiples de texte avec des styles et des couleurs.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">MEMO_RICH</code> :<br>
+                    <br>
+                    – Obtenir le nombre de lignes : <code class="kw">COUNT()</code><br>
+                    – Ajouter un fichier : <code class="kw">FILE_ADD</code><br>
+                    – Charger un fichier : <code class="kw">FILE_LOAD</code><br>
+                    – Sauvegarder les lignes dans un fichier : <code class="kw">FILE_SAVE</code><br>
+                    – Ajouter une ligne : <code class="kw">ITEM_ADD</code><code class="kw"></code><br>
+                    – Insérer une ligne : <code class="kw">ITEM_INSERT</code><br>
+                    – Supprimer une ligne : <code class="kw">ITEM_DELETE</code><br>
+                    – Sélectionner une ligne : <code class="kw">ITEM_SELECT</code><br>
+                    – Lire une ligne : <code class="kw">ITEM_READ$()</code><br>
+                    – Affecter une barre de défilement horizontale : <code class="kw">BAR_HORIZONTAL<br></code>
+                    – Affecter une barre de défilement verticale : <code class="kw">BAR_VERTICAL</code><br>
+                    – Affecter deux barres de défilement : <code class="kw">BAR_BOTH</code><br>
+                    – Retirer les barres de défilement : <code class="kw">BAR_NONE</code><br>
+                    – Rendre secret le texte : <code class="kw">SECRET_ON</code><br>
+                    – Rendre visible le texte : <code class="kw">SECRET_OFF</code><br>
+                    – Sélectionner un texte : <code class="kw">SELECT_TEXT</code><br>
+                    – Lire le texte sélectionné : <code class="kw">SELECT_READ$</code><br>
+                    – Positionner le curseur : <code class="kw">CARET_POSITION</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SHAPE</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SHAPE</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SHAPE</code> un objet dont on peut modifier la forme.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SHAPE</code> :
+                  </p>
+                  <p>
+                    – Devient un cercle : <code class="kw">SHAPE_CIRCLE</code><br>
+                    – Devient une ellipse : <code class="kw">SHAPE_ELLIPSE</code><br>
+                    – Devient un rectangle : <code class="kw">SHAPE_RECTANGLE</code><br>
+                    – Devient un rectangle à bords arrondis : <code class="kw">SHAPE_RECTANGLE_ROUNDED</code><br>
+                    – Devient un carré : <code class="kw">SHAPE_SQUARE</code><br>
+                    – Devient un carré à bords arrondis : <code class="kw">SHAPE_SQUARE_ROUNDED</code><br>
+                     <br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SPIN</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SPIN</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SPIN</code> est utilisé pour visualiser une valeur entière et fournir un moyen pour incrémenter ou décrémenter rapidement cette valeur.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SPIN</code> :
+                  </p>
+                  <p>
+                    – Lire la valeur : <code class="kw">POSITION()</code><br>
+                    – Mettre une valeur : <code class="kw">POSITION</code><br>
+                    – Mettre la valeur minimale : <code class="kw">MIN</code><br>
+                    – Mettre la valeur maximale : <code class="kw">MAX</code><br>
+                    – Sélectionner un texte : <code class="kw">SELECT_TEXT</code><br>
+                    – Lire le texte sélectionné : <code class="kw">SELECT_READ$</code><br>
+                    – Positionner le curseur : <code class="kw">CARET_POSITION</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SYNEDIT</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SYNEDIT</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SYNEDIT</code> est utilisé pour visualiser une zone où l&rsquo;utilisateur peut entrer et modifier du source Panoramic avec une coloration syntaxique et avec des aides (copier, coller, rechercher) au traitement de texte.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SYNEDIT</code> :
+                  </p>
+                  <p>
+                    – Envoie les commandes aux commentaires : <code class="kw">SYNEDIT_TARGET_IS_COMMENT</code><br>
+                    – Envoie les commandes aux numéros de ligne : <code class="kw">SYNEDIT_TARGET_IS_GUTTER</code><br>
+                    – Envoie les commandes aux mots-clés : <code class="kw">SYNEDIT_TARGET_IS_KEYWORD</code><br>
+                    – Envoie les commandes à l&rsquo;objet lui-même : <code class="kw">SYNEDIT_TARGET_IS_OBJECT</code><br>
+                    – Envoie les commandes aux strings : <code class="kw">SYNEDIT_TARGET_IS_STRING</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand il est modifié : <code class="kw">ON_CHANGE</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.2"></a>1.2 – Création d&rsquo;objets système Listes</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">COMBO</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> COMBO</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> COMBO</code> est utilisé pour combiner les fonctions de <code class="kw">EDIT</code> et de <code class="kw">LIST</code> : une liste de choix est visualisée, l&rsquo;utilisateur peut taper un texte ou peut choisir une ligne de la liste.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">COMBO</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">TEXT</code><br>
+                    – Lire le texte entré par l&rsquo;utilisateur : <code class="kw">TEXT$()</code><br>
+                    – Obtenir le nombre de lignes : <code class="kw">COUNT()</code><br>
+                    – Ajouter un fichier texte : <code class="kw">FILE_ADD</code><br>
+                    – Charger un fichier texte : <code class="kw">FILE_LOAD</code><br>
+                    – Sauvegarder les lignes dans un fichier texte : <code class="kw">FILE_SAVE</code><br>
+                    – Ajouter une ligne : <code class="kw">ITEM_ADD</code><br>
+                    – Insérer une ligne : <code class="kw">ITEM_INSERT</code><br>
+                    – Supprimer une ligne : <code class="kw">ITEM_DELETE</code><br>
+                    – Lire une ligne : <code class="kw">ITEM_READ$()</code><br>
+                    – Lire la ligne sélectionnée par l&rsquo;utilisateur : <code class="kw">ITEM_INDEX$()</code><br>
+                    – Lire le rang de la ligne sélectionnée : <code class="kw">ITEM_INDEX()</code><br>
+                    – Tout effacer : <code class="kw">CLEAR</code><br>
+                    – Ajouter la liste des polices disponibles : <code class="kw">FONT_NAMES_ADD</code><br>
+                    – Charger la liste des polices disponibles : <code class="kw">FONT_NAMES_LOAD</code><br>
+                    – Sélectionner un texte : <code class="kw">SELECT_TEXT</code><br>
+                    – Lire le texte sélectionné : <code class="kw">SELECT_READ$</code><br>
+                    – Positionner le curseur : <code class="kw">CARET_POSITION</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><code class="kw"></code><br>
+                    – Exécuter quelque chose quand il est modifié : <code class="kw">ON_CHANGE</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">DLIST</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> DLIST</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> DLIST</code><b> n&rsquo;est pas visible</b>. Il est utilisé pour traiter une liste d&rsquo;articles (strings).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">DLIST</code> :
+                  </p>
+                  <p>
+                    – Obtenir le nombre d&rsquo;articles : <code class="kw">COUNT()</code><br>
+                    – Ajouter un fichier texte : <code class="kw">FILE_ADD</code><br>
+                    – Charger un fichier texte : <code class="kw">FILE_LOAD</code><br>
+                    – Sauvegarder les articles : <code class="kw">FILE_SAVE</code><br>
+                    – Ajouter un article : <code class="kw">ITEM_ADD</code><br>
+                    – Insérer un article : <code class="kw">ITEM_INSERT</code><br>
+                    – Supprimer un article : <code class="kw">ITEM_DELETE</code><br>
+                    – Lire un article : <code class="kw">ITEM_READ$()</code><br>
+                    – Tout effacer : <code class="kw">CLEAR</code><br>
+                    – Ajouter la liste des polices disponibles : <code class="kw">FONT_NAMES_ADD</code><br>
+                    – Charger la liste des polices disponibles : <code class="kw">FONT_NAMES_LOAD</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">EDIT</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> EDIT</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> EDIT</code> est utilisé pour visualiser un secteur où l&rsquo;utilisateur peut entrer ou modifier une ligne simple de texte.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur <code class="kw">un EDIT</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">TEXT</code><br>
+                    – Lire le texte entré par l&rsquo;utilisateur : <code class="kw">TEXT$()</code><br>
+                    – Tout effacer : <code class="kw">CLEAR</code><br>
+                    – Ajouter la liste des polices disponibles : <code class="kw">FONT_NAMES_ADD</code><br>
+                    – Charger la liste des polices disponibles : <code class="kw">FONT_NAMES_LOAD</code><br>
+                    – Sélectionner un texte : <code class="kw">SELECT_TEXT</code><br>
+                    – Lire le texte sélectionné : <code class="kw">SELECT_READ$</code><br>
+                    – Positionner le curseur : <code class="kw">CARET_POSITION</code><br>
+                         <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand il est modifié : <code class="kw">ON_CHANGE</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche estrelâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">LIST</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> LIST</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> LIST</code> est utilisé pour visualiser une liste de choix dont l&rsquo;utilisateur peut choisir une ligne.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">LIST</code> :
+                  </p>
+                  <p>
+                    – Obtenir le nombre de lignes : <code class="kw">COUNT()</code><br>
+                    – Ajouter un fichier texte : <code class="kw">FILE_ADD</code><br>
+                    – Charger un fichier texte : <code class="kw">FILE_LOAD</code><br>
+                    – Sauvegarder les lignes dans un fichier texte : <code class="kw">FILE_SAVE</code><br>
+                    – Ajouter une ligne : <code class="kw">ITEM_ADD</code><br>
+                    – Insérer une ligne : <code class="kw">ITEM_INSERT</code><br>
+                    – Supprimer une ligne : <code class="kw">ITEM_DELETE</code><br>
+                    – Lire une ligne : <code class="kw">ITEM_READ$()</code><br>
+                    – Lire la ligne sélectionnée par l&rsquo;utilisateur : <code class="kw">ITEM_INDEX$()</code><br>
+                    – Lire le rang de la ligne sélectionnée : <code class="kw">ITEM_INDEX()</code><br>
+                    – Tout effacer : <code class="kw">CLEAR</code><br>
+                    – Ajouter la liste des polices disponibles : <code class="kw">FONT_NAMES_ADD</code><br>
+                    – Charger la liste des polices disponibles : <code class="kw">FONT_NAMES_LOAD</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><code class="kw"></code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN></code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.3"></a>1.3 – Création d&rsquo;objet système SCENE2D et SCENE3D</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SCENE2D</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet <code class="kw">SCENE2D</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un <code class="kw">SCENE2D</code> est utilisé pour visualiser une image de fond pour des <code class="kw">SPRITE</code>s.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SCENE2D</code> :
+                  </p>
+                  <p>
+                    – Lire la position de la souris : <code class="kw">MOUSE_X_POSITION()</code>, <code class="kw">MOUSE_Y_POSITION()</code><br>
+                    – Le rendre « cible » des <code class="kw">SPRITE</code>s : <code class="kw">SPRITE_TARGET_IS</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SCENE3D</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SCENE3D</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SCENE3D</code> est utilisé pour manipuler un Monde 3D avec une lumière, une caméra et des objets 3D qui peuvent être animés, déplacés, tournés, déformés, colorés, texturés, supprimés, cachés, visualisés&#8230;
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SCENE3D</code> :<br>
+                  </p>
+                  <p>
+                    – Cacher ou visualiser les axes 3D : <code class="kw">AXES_HIDE</code>, <code class="kw">AXES_SHOW</code><br>
+                    – Lire la position de la souris: <code class="kw">MOUSE_X_POSITION()</code>, <code class="kw">MOUSE_Y_POSITION()</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.4"></a>1.4 – Création d&rsquo;objets systèmes Multimédia</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CHART</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> CHART</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> CHART</code> est une zone où l&rsquo;utilisateur peut visualiser des représentations graphiques.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">CHART</code> :<br>
+                    <br>
+                    – Affiche un nouvel élément : <code class="kw">ITEM_ADD</code><br>
+                    – Affiche les données sous forme de barres : <code class="kw">CHART_BAR</code><br>
+                    – Affiche les données sous forme de ligne : <code class="kw">CHART_LINE</code><br>
+                    – Affiche les données sous forme de points : <code class="kw">CHART_POINT</code><br>
+                   <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">HVIEWER</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> HVIEWER</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> HVIEWER</code> est utilisé pour visualiser un fichier au format HTML (avec la commande FILE_LOAD).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">HVIEWER</code> :
+                  </p>
+                  <p>
+                    – Charger un fichier : <code class="kw">FILE_LOAD</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">IMAGE</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> IMAGE</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> IMAGE</code> contient une image en mémoire. Cette image en mémoire peut être obtenue par un fichier ou par saisie d&rsquo;écran. Elle est utilisée pour la visualiser directement sur l&rsquo;écran, servir d&rsquo;image à un <code class="kw">SPRITE</code>, servir de texture à un objet 3D.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">IMAGE</code> :
+                  </p>
+                  <p>
+                    – Charger un fichier : <code class="kw">IMAGE_LOAD</code><br>
+                    – Capturer une partie d&rsquo;écran : <code class="kw">2D_IMAGE_COPY</code><br>
+                    – Coller l&rsquo;image sur l&rsquo;écran : <code class="kw">2D_IMAGE_PASTE</code><br>
+                    – Utiliser l&rsquo;image comme SPRITE : <code class="kw">SPRITE_IMAGE_LOAD</code><br>
+                    – Utiliser l&rsquo;image comme texture d&rsquo;un objet 3D : <code class="kw">3D_IMAGE_TEXTURE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MOVIE</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> MOVIE</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> MOVIE</code> est utilisé pour jouer une vidéo multimédia.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">MOVIE</code> :<br>
+                    <br>
+                    – Charger un fichier : <code class="kw">FILE_LOAD</code><br>
+                    – Jouer le film : <code class="kw">PLAY</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">PICTURE</code>&nbsp;N
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> PICTURE</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> PICTURE</code> est utilisé pour visualiser un fichier bitmap BMP ou JPG (avec la commande <code class="kw">FILE_LOAD</code>).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">PICTURE</code> :
+                  </p>
+                  <p>
+                    – Charger un fichier : <code class="kw">FILE_LOAD</code><br>
+                    – Lire la position de la souris : <code class="kw">MOUSE_X_POSITION()</code>, <code class="kw">MOUSE_Y_POSITION()</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SOUND</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SOUND</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SOUND</code> est utilisé pour jouer un fichier son (WAV, MP3).
+                  </p>
+                  <p>
+                    Un <code class="kw">SOUND</code> est un objet <b>non-visible</b>.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SOUND</code> :
+                  </p>
+                  <p>
+                    – Charger un fichier : <code class="kw">FILE_LOAD</code><br>
+                    – Jouer le son : <code class="kw">PLAY</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>    
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.5"></a>1.5 – Création d&rsquo;objets système Choix</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">CHECK</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> CHECK</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> CHECK</code> est utilisé pour présenter un choix binaire à l&rsquo;utilisateur (Oui/non, Vrai/faux, « Marche/Arrêt »&#8230;).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">CHECK</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                    – Lire le statut : <code class="kw">CHECKED</code>()<br>
+                    – Le cocher : <code class="kw">MARK_ON</code><br>
+                    – Le décocher : <code class="kw">MARK_OFF</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">OPTION</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> OPTION</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> OPTION</code> est utilisé pour visualiser un choix avec d&rsquo;autres options où seulement un choix est disponible (seulement un <code class="kw">OPTION</code> est valide à tout moment).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">OPTION</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                    – Lire l&rsquo;état : <code class="kw">CHECKED()</code><br>
+                    – Le cocher : <code class="kw">MARK_ON/</code><br>
+                    – Le décocher : <code class="kw">MARK_OFF</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche est enfoncée : <code class="kw">ON_KEY_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche est relâchée : <code class="kw">ON_KEY_UP</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.6"></a>1.6 – Création d&rsquo; objets système Menu</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">MAIN_MENU</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> MAIN_MENU </code><b>invisible</b> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> MAIN_MENU</code> est utilisé pour concevoir une barre de menu et ses menus déroulants accompagnant (avec la commande <code class="kw">SUB_MENU</code>) sur une forme.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">MAIN_MENU_POP</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> MAIN_MENU_POP</code><b> invisible</b> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> MAIN_MENU_POP</code> est utilisé pour concevoir un menu et ses menus déroulants accompagnant (avec la commande <code class="kw">SUB_MENU</code>) sur une forme lors d&rsquo;un clic droit.
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SUB_MENU</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SUB_MENU</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SUB_MENU</code> est utilisé pour concevoir les menus déroulants dérivés d&rsquo;un <code class="kw">MAIN_MENU</code> ou d&rsquo;un <code class="kw">MAIN_MENU_POP</code> sur un FORM.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SUB_MENU</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué: <code class="kw">ON_CLICK</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.7"></a>1.7 – Création d&rsquo;objets système Barres</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">PROGRESS_BAR</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> PROGRESS_BAR</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> PROGRESS_BAR</code> est utilisé pour visualiser un indicateur de progrès.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un<code class="kw"> PROGRESS_BAR</code> :
+                  </p>
+                  <p>
+                    – Lire la position de la barre : <code class="kw">POSITION()</code><br>
+                    – Mettre la barre à une position : <code class="kw">POSITION</code><br>
+                    – Mettre la valeur minimale : <code class="kw">MIN</code><br>
+                    – Mettre la valeur maximale : <code class="kw">MAX</code><br>
+                    – Le positionner verticalement ou horizontalement : <code class="kw">VERTICAL</code>, <code class="kw">HORIZONTAL</code><br>
+                    <br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SCROLL_BAR</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SCROLL_BAR</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SCROLL_BAR</code> est utilisé pour déplacer une valeur par incréments dans une gamme de valeurs définie par <code class="kw">MIN</code> et <code class="kw">MAX</code>, avec un curseur carré.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SCROLL_BAR</code> :
+                  </p>
+                  <p>
+                    – Lire la position du curseur : <code class="kw">POSITION()</code><br>
+                    – Mettre le curseur à une position : <code class="kw">POSITION</code><br>
+                    – Mettre la valeur minimale : <code class="kw">MIN</code><br>
+                    – Mettre la valeur maximale : <code class="kw">MAX</code><br>
+                    – Le positionner verticalement ou horizontalement : <code class="kw">VERTICAL</code>, <code class="kw">HORIZONTAL</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est modifié : <code class="kw">ON_CHANGE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">TRACK_BAR</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> TRACK_BAR</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> TRACK_BAR</code> est utilisé pour déplacer une valeur par incréments dans une gamme de valeurs définie par <code class="kw">MIN</code> et <code class="kw">MAX</code>.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">TRACK_BAR</code> :
+                  </p>
+                  <p>
+                    – Lire la position du curseur : <code class="kw">POSITION()</code><br>
+                    – Mettre le curseur à une position : <code class="kw">POSITION</code><br>
+                    – Mettre la valeur minimale : <code class="kw">MIN</code><br>
+                    – Mettre la valeur maximale : <code class="kw">MAX</code><br>
+                    – Le positionner verticalement ou horizontalement : <code class="kw">VERTICAL</code>, <code class="kw">HORIZONTAL</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est modifié : <code class="kw">ON_CHANGE</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <h3><a name="b1.8"></a>1.8 – Création d&rsquo;objets système Dialogue</h3>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">Ces objets ne sont pas visibles.</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">OPEN_DIALOG</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> OPEN_DIALOG</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> OPEN_DIALOG</code> est utilisé pour ouvrir une boîte de chargement de fichier, qui permet de choisir un nom de fichier avec la fonction <code class="kw">FILE_NAME$()</code>.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">OPEN_DIALOG</code> :
+                  </p>
+                  <p>
+                    – Lire le nom de fichier choisi par l&rsquo;utilisateur : <code class="kw">FILE_NAME$()</code>
+                  </p>
+                  <p>
+                    <b>Remarque : </b>l&rsquo;appel de la fonction <code class="kw">FILE_NAME$</code> est le seul moyen pour lancer l&rsquo;ouverture d&rsquo;un<code class="kw"> OPEN_DIALOG.</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SAVE_DIALOG</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SAVE_DIALOG</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SAVE_DIALOG</code> est utilisé pour ouvrir une boîte de sauvegarde de fichier, qui permet de choisir un nom de fichier avec la fonction <code class="kw">FILE_NAME$()</code>.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">SAVE_DIALOG</code> :
+                  </p>
+                  <p>
+                    – Lire le nom de fichier choisi par l&rsquo;utilisateur : <code class="kw">FILE_NAME$()</code>
+                  </p>
+                  <p>
+                    <b>Remarque :</b> l&rsquo;appel de la fonction <code class="kw">FILE_NAME$</code> est le seul moyen pour lancer l&rsquo;ouverture d&rsquo;un<code class="kw"> SAVE_DIALOG.</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">OPEN_DIALOG_PIC</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> OPEN_DIALOG_PIC</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> OPEN_DIALOG_PIC</code> est utilisé pour ouvrir une boîte de chargement de fichier, qui permet de choisir un nom de fichier avec la fonction <code class="kw">FILE_NAME$()</code>. Le fichier graphique sélectionné est visualisé.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">OPEN_DIALOG</code> :
+                  </p>
+                  <p>
+                    – Lire le nom de fichier choisi par l&rsquo;utilisateur : <code class="kw">FILE_NAME$()</code>
+                  </p>
+                  <p>
+                    <b>Remarque :</b> l&rsquo;appel de la fonction <code class="kw">FILE_NAME$</code> est le seul moyen pour lancer l&rsquo;ouverture d&rsquo;un<code class="kw"> OPEN_DIALOG_PIC.</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SAVE_DIALOG_PIC</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SAVE_DIALOG_PIC</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                  Un objet<code class="kw"> SAVE_DIALOG_PIC</code> est utilisé pour ouvrir une boîte de sauvegarde de fichier, qui permet de choisir un nom de fichier avec la fonction <code class="kw">FILE_NAME$()</code>. Le fichier graphique sélectionné est visualisé.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">SAVE_DIALOG</code> :
+                  </p>
+                  <p>
+                    – Lire le nom de fichier choisi par l&rsquo;utilisateur : <code class="kw">FILE_NAME$()</code>
+                  </p>
+                  <p>
+                    <b>Remarque :</b> l&rsquo;appel de la fonction <code class="kw">FILE_NAME$</code> est le seul moyen pour lancer l&rsquo;ouverture d&rsquo;un<code class="kw"> SAVE_DIALOG_PIC.</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.9"></a>1.9 – Création d&rsquo;un objet système Horloge</h3>
+        </p>
+        <blockquote style="border-left: none;">  
+          <p><span class="text-large">Cet objet n&rsquo;est pas visible.</span></p>
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">TIMER</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> TIMER</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> TIMER</code> est utilisé pour effectuer périodiquement un sous-programme.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">TIMER</code> :
+                  </p>
+                  <p>
+                    – Exécuter un sous-programme quand il se déclenche : <code class="kw">ON_TIMER</code><br>
+                    – Le rendre actif : <code class="kw">TIMER_ON</code><br>
+                    – Le rendre inactif : <code class="kw">TIMER_OFF</code><br>
+                    – Rendre inactifs tous les TIMERs : <code class="kw">TIMER_OFF_ALL</code><br>
+                    – Changer la période de déclenchement : <code class="kw">TIMER_INTERVAL</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+  
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+        <h3><a name="b1.10"></a>1.10 – Création d&rsquo;objets système Conteneur</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">CONTAINER</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> CONTAINER</code> et lui affecte le numéro N.
+                  </p>
+                  <p>Un objet <code class="kw">CONTAINER</code> est utilisé pour contenir des objets système. Il possède une ligne de contour.
+                  </p>
+                  <p>Commande spécifique sur un <code class="kw">CONTAINER</code> :
+                  </p>
+                  <p>
+                    – Intégrer un objet système : <code class="kw">PARENT</code><br>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                   <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">CONTAINER_OPTION</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> CONTAINER_OPTION</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> CONTAINER_OPTION</code> ne contient que des objets <code class="kw">OPTIONs</code>. Ces <code class="kw">OPTIONs</code> sont alors automatiquement groupés : quand l&rsquo;utilisateur coche un <code class="kw">OPTION</code>, tous les autres sont décochés. Deux <code class="kw">OPTIONs</code> ne peuvent être cochés en même temps. Un <code class="kw">OPTION</code> appartient à un <code class="kw">CONTAINER_OPTION</code> avec la commande <code class="kw">PARENT</code>.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">CONTAINER_OPTION</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">PANEL</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> PANEL</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> PANEL</code> est utilisé pour contenir des objets système. Il ne possède pas de contour.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">PANEL</code> :
+                  </p>
+                  <p>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">CONTAINER_TAB</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> CONTAINER_TAB</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw">CONTAINER_TAB</code> est utilisé pour contenir des onglets <code class="kw">TAB</code>.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">CONTAINER_TAB</code> :
+                  </p>
+                  <p>
+                    – Intégrer un objet <code class="kw">TAB</code> : <code class="kw">PARENT</code><br>
+                     <br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">TAB</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> TAB</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw">TAB </code>est un onglet d&rsquo;un <code class="kw">CONTAINER_TAB</code>.
+                  </p>
+                  <p>
+                    Commande spécifique sur un <code class="kw">TAB</code> :
+                  </p>
+                  <p>
+                    – Intégrer un objet système : <code class="kw">PARENT</code><br>
+                    – Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Visualiser un <code class="kw">TAB</code> d&rsquo;un <code class="kw">CONTAINER_TAB</code> : <code class="kw">MARK_ON</code><br>
+                    – Lire le texte visualisé : <code class="kw">CAPTION$()</code><br>
+                    – Tester si un <code class="kw">TAB</code> est visualisé ou pas : <code class="kw">CHECKED()</code><br>
+                    – Numéro du <code class="kw">TAB</code> visualisé : <code class="kw">NUMBER_SHOW</code><br>
+                     <br>
+                    – Exécuter quelque chose quand il est visualisé : <code class="kw">ON_SHOW</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE </code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.11"></a>1.11 – Création d&rsquo;objets système Electronique</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><p>
+                    <code class="kw">DIGIT1</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> DIGIT1</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet <code class="kw">DIGIT1</code> est utilisé pour visualiser un chiffre ou un chiffre et un point pour simuler un appareil électronique.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">DIGIT1</code> :<br>
+                    <br>
+                    – Visualiser un texte : <code class="kw">CAPTION</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">LED1</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> LED1</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> LED1</code> visualise une petite lumière (Light-Emitting Diode) qu&rsquo;on peut allumer, éteindre et colorer.
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">LED1</code> :
+                  </p>
+                  <p>
+                    – Allumer : <code class="kw">MARK_ON</code><br>
+                    – Eteindre : <code class="kw">MARK_OFF</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td><p>
+                    <code class="kw">SWITCH1</code>&nbsp;N
+                  </p>
+                </td>
+                <td><p>
+                    Crée un objet<code class="kw"> SWITCH1</code> et lui affecte le numéro N.
+                  </p>
+                  <p>
+                    Un objet<code class="kw"> SWITCH1</code> est utilisé pour pour que l&rsquo;utilisateur puisse entrer une information binaire (ON ou OFF).
+                  </p>
+                  <p>
+                    Commandes spécifiques sur un <code class="kw">SWITCH1</code> :
+                  </p>
+                  <p>– Visualiser un texte : <code class="kw">CAPTION</code><br>
+                    – Lire le statut : <code class="kw">CHECKED</code><br>
+                    <br>
+                    – Exécuter quelque chose quand il est cliqué : <code class="kw">ON_CLICK</code><br>
+                    – Exécuter quelque chose quand il est double cliqué : <code class="kw">ON_DOUBLE_CLICK</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est pressée : <code class="kw">ON_MOUSE_DOWN</code><br>
+                    – Exécuter quelque chose quand une touche de la souris est relâchée : <code class="kw">ON_MOUSE_UP</code><br>
+                    – Exécuter quelque chose quand la souris est bougée : <code class="kw">ON_MOUSE_MOVE</code>
+                  </p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b1.12"></a>1.12 – Taille des objets système créés</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">Quand il est créé, un objet système visible prend une taille standard :</span>
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>  <div align="center"><b>OBJET</b>
+                  </td>
+                  <td>  <div align="center"><b>LARGEUR</b></div>
+                  </td>
+                  <td>  <div align="center"><b>HAUTEUR</b> </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">ALPHA</code>
+                  </td>
+                  <td>  <div align="center">65</div>
+                  </td>
+                  <td>  <div align="center">17</div>
+                  </td>
+                </tr>
+                  <tr>
+                  <td>  <code class="kw">BUTTON</code>
+                  </td>
+                  <td>  <div align="center">75</div>
+                  </td>
+                  <td>  <div align="center">25</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">BUTTON_PICTURE</code>
+                  </td>
+                  <td>  <div align="center">75</div>
+                  </td>
+                  <td>  <div align="center">25</div>
+                  </td>
+                </tr>
+                  <tr>
+                  <td>  <code class="kw">CHART</code>
+                  </td>
+                  <td>  <div align="center">551</div>
+                  </td>
+                  <td>  <div align="center">420</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">CHECK</code>
+                  </td>
+                  <td>  <div align="center">97</div>
+                  </td>
+                  <td>  <div align="center">17</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">COMBO</code>
+                  </td>
+                  <td>  <div align="center">145</div>
+                  </td>
+                  <td>  <div align="center">21</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">CONTAINER</code>
+                  </td>
+                  <td>  <div align="center">185</div>
+                  </td>
+                  <td>  <div align="center">105</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">CONTAINER_OPTION</code>
+                  </td>
+                  <td>  <div align="center">185</div>
+                  </td>
+                  <td>  <div align="center">105</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">CONTAINER_TAB</code>
+                  </td>
+                  <td>  <div align="center">289</div>
+                  </td>
+                  <td>  <div align="center">193</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">DIGIT1</code>
+                  </td>
+                  <td>  <div align="center">50</div>
+                  </td>
+                  <td>  <div align="center">80</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">EDIT</code>
+                  </td>
+                  <td>  <div align="center">121</div>
+                  </td>
+                  <td>  <div align="center">21</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">FORM</code>
+                  </td>
+                  <td>  <div align="center">320</div>
+                  </td>
+                  <td>  <div align="center">240</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">GRID</code>
+                  </td>
+                  <td>  <div align="center">320</div>
+                  </td>
+                  <td>  <div align="center">120</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">HVIEWER</code>
+                  </td>
+                  <td>  <div align="center">185</div>
+                  </td>
+                  <td>  <div align="center">105</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">LED1</code>
+                  </td>
+                  <td>  <div align="center">22</div>
+                  </td>
+                  <td>  <div align="center">22</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">LIST</code>
+                  </td>
+                  <td>  <div align="center">121</div>
+                  </td>
+                  <td>  <div align="center">97</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">MEMO</code>
+                  </td>
+                  <td>  <div align="center">185</div>
+                  </td>
+                  <td>  <div align="center">89</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">MEMO_RICH</code>
+                  </td>
+                  <td>  <div align="center">185</div>
+                  </td>
+                  <td>  <div align="center">89</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">MOVIE</code>
+                  </td>
+                  <td>  <div align="center">100</div>
+                  </td>
+                  <td>  <div align="center">80</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">OPTION</code>
+                  </td>
+                  <td>  <div align="center">113</div>
+                  </td>
+                  <td>  <div align="center">17</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">PANEL</code>
+                  </td>
+                  <td>  <div align="center">185</div>
+                  </td>
+                  <td>  <div align="center">105</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">PICTURE</code>
+                  </td>
+                  <td>  <div align="center">105</div>
+                  </td>
+                  <td>  <div align="center">105</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">PROGRESS_BAR</code>
+                  </td>
+                  <td>  <div align="center">150</div>
+                  </td>
+                  <td>  <div align="center">17</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SCENE2D</code>
+                  </td>
+                  <td>  <div align="center">200</div>
+                  </td>
+                  <td>  <div align="center">200</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SCENE3D</code>
+                  </td>
+                  <td>  <div align="center">200</div>
+                  </td>
+                  <td>  <div align="center">200</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SCROLL_BAR</code>
+                  </td>
+                  <td>  <div align="center">121</div>
+                  </td>
+                  <td>  <div align="center">17</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SHAPE</code>
+                  </td>
+                  <td>  <div align="center">65</div>
+                  </td>
+                  <td>  <div align="center">65</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SPIN</code>
+                  </td>
+                  <td>  <div align="center">121</div>
+                  </td>
+                  <td>  <div align="center">22</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SWITCH1</code>
+                  </td>
+                  <td>  <div align="center">75</div>
+                  </td>
+                  <td>  <div align="center">25</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SYNEDIT</code>
+                  </td>
+                  <td>  <div align="center">418</div>
+                  </td>
+                  <td>  <div align="center">211</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">TRACK_BAR</code>
+                  </td>
+                  <td>  <div align="center">150</div>
+                  </td>
+                  <td>  <div align="center">45</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+          <p>
+            Remarque : la taille d&rsquo;un objet système peut être modifiée par les commandes <code class="kw">WIDTH</code> et <code class="kw">HEIGHT</code>
+          </p>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <h3><a name="b1.13"></a>1.13 – Paramètres des objets Barre</h3>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">Quand il est créé, un objet barre a des paramètres standards :</span>
+          </p>
+          <blockquote style="border-left: none;">  
+            <table>
+              <tbody>
+                <tr>
+                  <td>  <div align="center"><b>OBJET BARRE</b>
+                  </td>
+                  <td>  <div align="center"><b>MIN</b></div>
+                  </td>
+                  <td>  <div align="center"><b>MAX</b> </div>
+                  </td>
+                  <td>  <div align="center"><b>POSITION</b></div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">PROGRESS_BAR</code>
+                  </td>
+                  <td>  <div align="center">0</div>
+                  </td>
+                  <td>  <div align="center">100</div>
+                  </td>
+                  <td>  <div align="center">0</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">SCROLL_BAR</code>
+                  </td>
+                  <td>  <div align="center">0</div>
+                  </td>
+                  <td>  <div align="center">100</div>
+                  </td>
+                  <td>  <div align="center">0</div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>  <code class="kw">TRACK_BAR</code>
+                  </td>
+                  <td>  <div align="center">0</div>
+                  </td>
+                  <td>  <div align="center">10</div>
+                  </td>
+                  <td>  <div align="center">0</div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+          <p>
+            Remarque : les paramètres peuvent être modifiés par les commandes <code class="kw">MIN</code>, <code class="kw">MAX</code> et <code class="kw"> POSITION</code>
+          </p>
+        </blockquote>  
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.14"></a>1.14 – Nombre d&rsquo;objets système</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">NUMBER_OBJECTS</code>
+                </td>
+                <td>Retourne le <b>nombre</b> d&rsquo;objets système.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.15"></a>1.15 – Numéros d&rsquo;objets système particuliers</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">NUMBER_PRINT_TARGET</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système qui est la<b> « cible » des impressions</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_2D_TARGET</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système qui est la<b> « cible » des commandes 2D</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_COMMAND_TARGET</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système qui est la <b>« cible » des commandes</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_INPUT_SOURCE</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système qui est la <b>« source » des entrées</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_SPRITE_TARGET</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système qui est la <b>« cible » des commandes sur les SPRITEs</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_3D_TARGET</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système qui est la <b>« cible » des commandes 3D.</b>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_ACTIVATE</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système (FORM) qui est <b>activé.</b>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_SHOW</code>
+                </td>
+                <td>Retourne le numéro de l&rsquo;objet système (FORM) qui est <b>montré.</b>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OBJECT_INTERNAL</code>(N)
+                </td>
+                <td>Retourne le numéro <b>interne</b> de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <br>
+      <p>
+        <h2><a name="b2"></a>2 – Commandes sur les objets système créés</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">  
+        <br>
+        <p>
+          <h3>La plupart des commandes utilisent le numéro associé à un objet.</h3>
+        </p>
+        <br>
+        <p>
+          <h3><a name="b2.1"></a>2.1 – Commandes communes</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b2.1.1"></a>2.1.1 – Position</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">TOP</code>&nbsp;N,V
+                </td>
+                <td>Positionne le <b>bord supérieur</b> de l&rsquo;objet numéro N à V pixels de son parent (le conteneur).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">LEFT</code>&nbsp;N,V
+                </td>
+                <td>Positionne le <b>bord gauche</b> de l&rsquo;objet numéro N à V pixels de son parent (le conteneur).
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.2"></a>2.1.2 – Taille</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">HEIGHT</code>&nbsp;N,V
+                </td>
+                <td>Met la <b>hauteur</b> de l&rsquo;objet numéro N à V pixels.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">WIDTH</code>&nbsp;N,V
+                </td>
+                <td>Met la <b>largeur</b> de l&rsquo;objet numéro N à V pixels.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.3"></a>2.1.3 – Activité</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">ACTIVE</code>&nbsp;N
+                </td>
+                <td>Rend l&rsquo;objet N <b>actif</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">INACTIVE</code>&nbsp;N
+                </td>
+                <td>Rend l&rsquo;objet N <b>inactif</b>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.4"></a>2.1.4 – Visibilité</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">HIDE</code>&nbsp;N
+                  </td>
+                <td>Rend l&rsquo;objet N <b>invisible</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SHOW</code>&nbsp;N
+                </td>
+                <td>Rend l&rsquo;objet N <b>visible</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">HIDE_ALL</code>
+                </td>
+                <td>Rend <b>invisible</b> tous les objets.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SHOW_ALL</code>
+                </td>
+                <td>Rend v<b>isible</b> tous les objets.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SHOW_MODAL</code>&nbsp;N
+                </td>
+                <td><b>Visualise</b> le <code class="kw">FORM</code> numéro N et le rend <b>modal</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CREATE_HIDE</code>
+                </td>
+                <td>Les objets créés seront <b>invisibles</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CREATE_SHOW</code>
+                </td>
+                <td>Les objets créés seront <b>visibles</b>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.5"></a>2.1.5 – Texte bulle</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">HINT</code>&nbsp;N,T
+                  </td>
+                  <td>  <b>Définit</b> T comme <b>texte bulle</b> de l&rsquo;objet numéro N.
+                  </td>
+                </tr>
+                <tr>
+                <td><code class="kw">HINT_HIDE</code>&nbsp;N
+                </td>
+                <td><b>Inactive</b> la visualisation du <b>texte bulle</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>      
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b2.1.6"></a>2.1.6 – Commandes diverses</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">COLOR</code>&nbsp;N,R,G,B
+                </td>
+                <td><b>Colore</b> l&rsquo;objet numéro N (par les composantes rouge, vert, bleu).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">DELETE</code>&nbsp;N
+                </td>
+                  <td>  <b>Supprime</b> l&rsquo;objet numéro N.
+                  </td>
+                </tr>
+                <tr>
+                  <td><code class="kw">DELETE_ALL</code>
+                </td>
+                <td><b>Supprime</b> tous les objets.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FULL_SPACE</code>&nbsp;N
+                </td>
+                <td>L&rsquo;objet numéro N <b>prend tout l&rsquo;espace disponible</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">PARENT</code>&nbsp;N,M
+                </td>
+              <td>                Etablit un lien : l&rsquo;objet numéro M est le <b>père</b> de l&rsquo;objet numéro N.
+              </td>
+            </tr>
+           </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.7"></a>2.1.7 – Evénements</span>
+          </p>
+          <p>
+            Un événement est une modification faite sur un objet système, par exemple quand l&rsquo;utilisateur clique sur un bouton.<br>
+            Dans le cas où un événement arrive, on peut faire exécuter automatiquement une partie du programme.<br>
+            La partie du programme à exécuter doit commencer par un LABEL et se terminer par le mot-clé RETURN.
+          </p>
+          <br>
+          <p>
+            Activation d&rsquo;un événement :
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">ON_ACTIVATE</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;objet système numéro N (<code class="kw">FORM</code>) est <b>activé</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_CLICK</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;objet système numéro N est <b>cliqué</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_CLOSE</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;objet système numéro N (<code class="kw">FORM</code>) est <b>fermé</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_CHANGE</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;objet système numéro N est <b>modifié</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_DOUBLE_CLICK</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;objet système numéro N est <b>double-cliqué</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_KEY_DOWN</code>&nbsp;N,L
+                </td>
+                <td> Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>presse</b> une touche, l&rsquo;objet système numéro N ayant le focus.
+                 </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_KEY_UP</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>relâche</b> une touche, l&rsquo;objet système numéro N ayant le focus.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_SHOW</code>&nbsp;N,L
+                </td>
+                <td>                 Exécute le programme à partir du label L quand l&rsquo;objet système numéro N (<code class="kw">FORM</code>) est <b>montré</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_TIMER</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;objet système <code class="kw">TIMER</code> numéro N <b>se déclenche</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_MOUSE_DOWN</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>presse</b> une touche de la <b>souris</b> au dessus de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_MOUSE_UP</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>relâche</b> une touche de la <b>souris</b> au dessus de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_MOUSE_MOVE</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>bouge</b> la <b>souris</b> au dessus de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_MOVE</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>bouge</b> l&rsquo;objet système numéro N (<code class="kw">FORM</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_RESIZE</code>&nbsp;N,L
+                </td>
+                <td>Exécute le programme à partir du label L quand l&rsquo;utilisateur <b>redimensionne</b> l&rsquo;objet système numéro N (<code class="kw">FORM</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ON_USER_EVENT</code>&nbsp;L
+                </td>
+                <td>Exécute le programme à partir du label L quand un <b>événement utilisateur est déclenché.</b>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">USER_EVENT_LPARAM</code>
+                </td>
+                <td>Donnée « long » associée à un événement utilisateur.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">USER_EVENT_WPARAM</code>
+                </td>
+                <td>Donnée « word » associée à un événement utilisateur.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>
+            Désactivation d&rsquo;un événement :
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">OFF_ACTIVATE</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « activate » quand l&rsquo;objet système numéro N (<code class="kw">FORM</code>) est <b>activé</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_CLICK</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « click » quand l&rsquo;objet système numéro N est <b>cliqué</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_CLOSE</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « close » quand l&rsquo;objet système numéro N c est <b>fermé</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_CHANGE</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « change » quand l&rsquo;objet système numéro N est <b>changé</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_DOUBLE_CLICK</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « double_click » quand l&rsquo;objet système numéro N est <b>double-cliqué</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_KEY_DOWN</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « key_down » quand l&rsquo;utilisateur <b>presse</b> une touche, l&rsquo;objet système numéro N ayant le focus.
+                </td>
+              </tr>
+                <tr>
+                <td><code class="kw">OFF_KEY_UP</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « key_up » quand l&rsquo;utilisateur <b>relâche</b> une touche, l&rsquo;objet système numéro N ayant le focus.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_SHOW</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « show » quand l&rsquo;objet système numéro N (<code class="kw">FORM</code>) est <b>montré</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_MOUSE_DOWN</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « mouse_down » quand l&rsquo;utilisateur <b>presse</b> une touche de la <b>souris</b> au dessus de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_MOUSE_UP</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « mouse_up » quand l&rsquo;utilisateur <b>relâche</b> une touche de la <b>souris</b> au dessus de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_MOUSE_MOVE</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « mouse_move » quand l&rsquo;utilisateur <b>bouge</b> la <b>souris</b> au dessus de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_MOVE</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « move » quand l&rsquo;utilisateur <b>bouge</b> l&rsquo;objet système numéro N (<code class="kw">FORM</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_RESIZE</code>&nbsp;N
+                </td>
+                <td><b>Ignore</b> l&rsquo;événement « resize » quand l&rsquo;utilisateur <b>redimensionne</b> l&rsquo;objet système numéro N (<code class="kw">FORM</code>).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OFF_USER_EVENT</code>
+                </td>
+                <td><b>Ignore</b> les événements utilisateur.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>Divers :</p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CLICKED</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N a été <b>cliqué</b>, 0 sinon.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">DOUBLE_CLICKED</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N a été <b>double-cliqué</b>, 0 sinon.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">KEY_DOWN_CODE</code>
+                </td>
+                <td>Retourne le <b>code</b> de la touche que l&rsquo;utilisateur <b>presse.</b>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">KEY_UP_CODE</code>
+                </td>
+                <td>Retourne le <b>code</b> de la touche que l&rsquo;utilisateur <b>relâche</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">KEY_DOWN_SPECIAL</code>
+                </td>
+                <td>Retourne le <b>code</b> de la touche <b>spéciale</b> (CTRL, SHIFT ou ALT) que l&rsquo;utilisateur <b>presse</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">KEY_UP_SPECIAL</code>
+                </td>
+                <td>Retourne le <b>code</b> de la touche <b>spéciale</b> (CTRL, SHIFT ou ALT) que l&rsquo;utilisateur <b>relâche</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_CLICK</code>
+                </td>
+                <td>                 Variable système, numéro du <b>dernier objet cliqué</b> (-1 à l&rsquo;initialisation).
+               </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_DOUBLE_CLICK</code>
+                </td>
+                <td>                 Variable système, numéro du <b>dernier objet double-cliqué</b> (-1 à l&rsquo;initialisation).
+               </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_CHANGE</code>
+                </td>
+                <td>Variable système, numéro du <b>dernier objet changé</b> (-1 à l&rsquo;initialisation).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_KEY_UP</code>
+                </td>
+                <td>Variable système, numéro du <b>dernier objet</b> sur lequel <b>une touche a été relâchée</b> (-1 à l&rsquo;initialisation).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_KEY_DOWN</code>
+                </td>
+                <td>Variable système, numéro du <b>dernier objet</b> sur lequel <b>une touche a été enfoncée</b> (-1 à l&rsquo;initialisation).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NUMBER_EVENTS</code>
+                </td>
+                <td>Retourne le <b>nombre</b> d&rsquo;<b>événements</b> dans la <b>liste d&rsquo;attente</b> des événements.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.8"></a>2.1.8 – Police de caractères</span>
+          </p>
+          <p>
+            Il est possible de choisir la police, la taille, la couleur et le style des caractères visualisés par un objet système.<br>
+            (Style = combinaison des attributs: gras, italique, souligné, rayé).<br>
+            La liste des polices installée dans votre système peut être chargée dans un objet de type « liste » : <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">LIST</code>.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">FONT_NAME</code>&nbsp;N,F
+                </td>
+                <td>Définit la <b>police</b> des caractères visualisés par l&rsquo;objet numéro N, par le nom de la police F.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_SIZE</code>&nbsp;N,S
+                </td>
+                <td>Définit la <b>taille</b> des caractères visualisés par l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_COLOR</code>&nbsp;N,R,G,B
+                </td>
+                <td>Définit la <b>couleur</b> (composantes rouge, vert, bleu) des caractères visualisés par l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_NAMES_ADD</code>&nbsp;N
+                </td>
+                <td>Ajoute la <b>liste</b> des polices disponibles à l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_NAMES_LOAD</code>&nbsp;N
+                </td>
+                <td>Remplit l&rsquo;objet numéro N avec la <b>liste</b> des polices disponibles.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_BOLD</code>&nbsp;N
+                </td>
+                <td>Ajoute le style « <b>gras</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_BOLD_OFF</code>&nbsp;N
+                </td>
+                <td>Retire le style « <b>gras</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_ITALIC</code>&nbsp;N
+                </td>
+                <td>Ajoute le style « <b>italique</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_ITALIC_OFF</code>&nbsp;N
+                </td>
+                <td>Retire le style « <b>italique</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_UNDERLINE</code>&nbsp;N
+                </td>
+                <td>Ajoute le style « <b>souligné</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_UNDERLINE_OFF</code>&nbsp;N
+                </td>
+                <td>Retire le style « <b>souligné</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_STRIKE</code>&nbsp;N
+                </td>
+                <td>Ajoute le style « <b>rayé</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FONT_STRIKE_OFF</code>&nbsp;N
+                </td>
+                <td>Retire le style « <b>rayé</b> » au style de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.1.9"></a>2.1.9 – Curseur</span>
+          </p>
+          <p>
+            Il est possible de changer ou de cacher le curseur sur un objet système.<br>
+            Le curseur est piloté par la souris.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CURSOR_ARROW</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>flèche</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_BEAM</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>I majuscule</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_CROSS</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>croix</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_DEFAULT</code>&nbsp;N
+                </td>
+                <td>Visualise le curseur<b>par défaut</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_HELP</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>point d&rsquo;interrogation</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_HIDE</code>&nbsp;N
+                </td>
+                <td><b>Cache</b> le curseur sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_NOPARKING</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>panneau d&rsquo;interdiction de stationner</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_HOURGLASS</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>sablier</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CURSOR_POINT</code>&nbsp;N
+                </td>
+                <td>Visualise un curseur en forme de <b>main</b> sur l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p>
+          <h3><a name="b2.2"></a>2.2 – Commandes spécifiques sur les objets systèmes créés</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <br>
+          <p>
+            <span class="text-large">La plupart des commandes utilisent le numéro associé à un objet.</span>
+          </p>
+          <br>
+          <p>
+            <span class="text-large"><a name="b2.2.1"></a>2.2.1 – Axes et réception des commandes : <code class="kw">SCENE3D</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">AXES_HIDE</code>
+                </td>
+                <td>Rend invisibles les axes 3D de l&rsquo;objet récepteur des commandes « 3D ».
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">AXES_SHOW</code>
+                </td>
+                <td>Rend visibles les axes 3D de l&rsquo;objet récepteur des commandes « 3D ».
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">3D_TARGET_IS</code>&nbsp;N
+                </td>
+                <td>Désigne le <code class="kw">SCENE3D</code> numéro N comme récepteur des commandes « 3D ».
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.2"></a>2.2.2 – Commandes spécifiques sur un objet<code class="kw"> FORM</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">BORDER_HIDE</code>&nbsp;N
+                </td>
+                <td><b>Cache</b> la <b>bordure</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">BORDER_NORMAL</code>&nbsp;N
+                </td>
+                <td>Affecte une <b>bordure normale</b> à l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">BORDER_SMALL</code>&nbsp;N
+                </td>
+                <td>Affecte une <b>bordure</b> de <b>taille réduite</b> à l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">COMMAND_TARGET_IS</code>&nbsp;N
+                </td>
+                <td>Désigne le <code class="kw">FORM</code> numéro N comme le <b>récepteur</b> de toutes les commandes.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">TO_BACKGROUND</code>&nbsp;N
+                </td>
+                <td>Fait passer le <code class="kw">FORM</code> numéro N en <b>arrière-plan</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">TO_FOREGROUND</code>&nbsp;N
+                </td>
+                <td>Fait passer le <code class="kw">FORM</code> numéro N au <b>premier plan</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MINIMIZE</code>&nbsp;N
+                </td>
+                <td><b>Iconise</b> le <code class="kw">FORM</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MAXIMIZE</code>&nbsp;N
+                </td>
+                <td><b>Maximise</b> la taille du <code class="kw">FORM</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">NORMAL</code>&nbsp;N
+                </td>
+                <td><b>Retour à la taille</b> qu&rsquo;avait le <code class="kw">FORM</code> numéro N <b>avant</b> une commande <code class="kw">MINIMIZE</code> ou <code class="kw">MAXIMIZE.</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.3"></a>2.2.3 – Commandes spécifiques sur les objets Barre : <code class="kw">TRACK_BAR</code>, <code class="kw">SCROLL_BAR</code>, <code class="kw">PROGRESS_BAR</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">HORIZONTAL</code>&nbsp;N
+                </td>
+                <td>Met l&rsquo;objet barre numéro N en position <b>horizontale</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">VERTICAL</code>&nbsp;N
+                </td>
+                <td>Met l&rsquo;objet barre numéro N en position <b>verticale</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MAX</code>&nbsp;N,V
+                </td>
+                <td>Définit la valeur <b>maximale</b> V de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MIN</code>&nbsp;N,V
+                </td>
+                <td>Définit la valeur <b>minimale</b> V de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">POSITION</code>&nbsp;N,V
+                </td>
+                <td>Met le <b>curseur</b> de la barre numéro N en <b>position</b> V.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.4"></a>2.2.4 – Commandes spécifiques sur les objets <code class="kw">SPIN</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">MAX</code>&nbsp;N,V
+                </td>
+                <td>Définit la valeur <b>maximale</b> V de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MIN</code>&nbsp;N,V
+                </td>
+                <td>Définit la valeur <b>minimale</b> V de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">POSITION</code>&nbsp;N,V
+                </td>
+                <td>Met la <b>valeur</b> de l&rsquo;objet numéro N à V.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.5"></a>2.2.5 – Commandes spécifiques sur un objet Dialogue : <code class="kw">OPEN_DIALOG,</code><code class="kw"> SAVE_DIALOG</code><code class="kw">, OPEN_DIALOG_PIC,</code> <code class="kw"> SAVE_DIALOG_PIC</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">FILTER</code>&nbsp;N,T
+                </td>
+                <td>                Met un <b>filtre</b> (T=type de Fichier et commentaire) à l&rsquo;objet numéro N.
+              </td>
+              </tr>
+              <tr>
+                <td><code class="kw">DIR_DIALOG</code>&nbsp;N,D
+                </td>
+                <td>Le <b>répertoire courant</b> de l&rsquo;objet système numéro N devient le répertoire D.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FILE_DIALOG</code>&nbsp;N,F$
+                </td>
+                <td>Le <b>nom de fichier F$</b> est proposé à l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.6"></a>2.2.6 – Jouer un objet Multimédia : <code class="kw">SOUND</code>, <code class="kw">MOVIE</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">PLAY</code>&nbsp;N
+                </td>
+                <td><b>Joue</b> l&rsquo;objet numéro N (son ou film).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">PLAY_WAIT</code>&nbsp;N
+                </td>
+                <td><b>Joue</b> l&rsquo;objet numéro N (son ou film) et <b>attend la fin</b>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.7"></a>2.2.7 – Gérer le contenu d&rsquo;un objet Liste : <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">LIST</code>, <code class="kw">DLIST</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CLEAR</code>&nbsp;N
+                </td>
+                <td><b>Efface</b> le contenu de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">FILE_ADD</code>&nbsp;N,F
+                </td>
+                <td><b>Ajoute</b> le contenu du <b>fichier</b> F à l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ITEM_ADD</code>&nbsp;N,T
+                </td>
+                <td><b>Ajoute</b> l&rsquo;article T à l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ITEM_DELETE</code>&nbsp;N,L
+                </td>
+                <td><b>Supprime</b> l&rsquo;article à la ligne L de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ITEM_INSERT</code>&nbsp;N,L,T
+                </td>
+                <td><b>Insère</b> l&rsquo;article T après la ligne L dans l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ITEM_SELECT</code>&nbsp;N,L
+                </td>
+                <td><b>Sélectionne</b> la ligne L de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.8"></a>2.2.8 – Réception des commandes de dessin : <code class="kw">FORM</code>, <code class="kw">PICTURE</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">2D_TARGET_IS</code>&nbsp;N
+                </td>
+                <td>Désigne l&rsquo;objet numéro N comme le récepteur de toutes les commandes « 2D ».
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.9"></a>2.2.9 – Texte à visualiser : <code class="kw">EDIT</code>, <code class="kw">COMBO</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">TEXT</code>&nbsp;N,T
+                </td>
+                <td>Définit le texte T à visualiser sur l&rsquo; objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.10"></a>2.2.10 – Intitulé d&rsquo;un objet : <code class="kw">BUTTON</code>, <code class="kw">ALPHA</code>, <code class="kw">FORM</code>, <code class="kw">CHECK</code>, <code class="kw">OPTION</code>, <code class="kw">SUB_MENU</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CAPTION</code>&nbsp;N,T
+                </td>
+                <td>Définit le texte T comme l&rsquo;intitulé de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.11"></a>2.2.11 – Chargement d&rsquo;un fichier : <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">LIST, PICTURE, SOUND, MOVIE</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">FILE_LOAD</code>&nbsp;N,F
+                </td>
+                <td>Charge le fichier F dans l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.12"></a>2.2.12 – Sauvegarde dans un fichier : <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">LIST</code>, <code class="kw">DLIST, PICTURE, IMAGE, SCENE2D</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">FILE_SAVE</code>&nbsp;N,F
+                </td>
+                <td>Sauve le contenu de l&rsquo;objet numéro N dans le fichier F.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large"><a name="b2.2.13"></a>2.2.13 – Source des données : <code class="kw">EDIT</code>, <code class="kw">COMBO</code>, <code class="kw">FORM</code></span>
+          </p>
+          <p>
+            Un objet peut servir d&rsquo;entrée pour la commande Basic : « <code class="kw">INPUT</code> Variable », à la place du clavier.<br>
+            Dans ce cas, Variable contiendra les données déjà visualisées par l&rsquo;objet.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">INPUT_SOURCE_IS</code>&nbsp;N
+                </td>
+                <td>Désigne l&rsquo;objet numéro N comme la source de données pour une commande d&rsquo;entrée <code class="kw">INPUT.</code>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.14"></a>2.2.14 – Réception des PRINT : <code class="kw">SCENE3D</code>, <code class="kw">EDIT</code>, <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">FORM</code>, <code class="kw">LIST</code>, <code class="kw">PICTURE</code></span>
+          </p>
+          <p>
+            Un objet peut servir de sortie pour la commande Basic : « <code class="kw">PRINT</code>« , à la place de l&rsquo;écran.<br>
+            Dans ce cas, l&rsquo;objet contiendra le résultat de la commande <code class="kw">PRINT</code>.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">PRINT_TARGET_IS</code>&nbsp;N
+                </td>
+                <td>Désigne l&rsquo;objet numéro N comme le récepteur des commandes d&rsquo;impression « <code class="kw">PRINT</code>« .
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.15"></a>2.2.15 – Réception des commandes SPRITE : <code class="kw">SCENE2D</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SPRITE_TARGET_IS</code>&nbsp;N
+                </td>
+                <td>Désigne le <code class="kw">SCENE2D</code> numéro N comme récepteur des commandes « SPRITE ».
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Le <code class="kw">SCENE2D</code> qui est désigné comme « cible » va recevoir tous les nouveaux <code class="kw">SPRITE</code>s (les anciens n&rsquo;étant pas touchés par cette commande).<br>
+            Cette commande est inutile s&rsquo;il n&rsquo;y a qu&rsquo;un seul <code class="kw">SCENE2D</code>. Par contre, dans le cas où il y a plusieurs <code class="kw">SCENE2D</code>s, elle permet de créer des <code class="kw">SPRITE</code>s dans plusieurs <code class="kw">SCENE2D</code>s.
+          </p>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.16"></a>2.2.16 – Tri dans un objet List : <code class="kw">COMBO</code>, <code class="kw">LIST</code>, <code class="kw">DLIST</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SORT</code> N
+                </td>
+                <td>Trie par ordre alphabétique tous les articles (items) de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SORT_ON</code>&nbsp;N
+                </td>
+                <td>Démarre le tri automatique de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SORT_OFF</code>&nbsp;N
+                </td>
+                <td>Arrête le tri automatique de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.17"></a>2.2.17 – Dimensionnement de l&rsquo;image visualisée : <code class="kw">PICTURE</code> et <code class="kw">SCENE2D</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">STRETCH_ON</code>&nbsp;N
+                </td>
+                <td>Redimensionne automatiquement l&rsquo;image visualisée par l&rsquo;objet système numéro N à la forme de cet objet.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">STRETCH_OFF</code>&nbsp;N
+                </td>
+                <td>Arrête le redimensionnement automatique de l&rsquo;image visualisée par l&rsquo;objet système numéro N. L&rsquo;image visualisée reprend sa forme propre.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.18"></a>2.2.18 – Focus d&rsquo;entrée</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td height="19">
+                  <code class="kw">SET_FOCUS</code>&nbsp;N
+                </td>
+                <td height="19">
+                  Donne le <b>focus d&rsquo;entrée</b> à l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.19"></a>2.2.19 – Barres de défilement d&rsquo;un MEMO</span>
+          </p>
+          <p>
+            Un <code class="kw">MEMO</code> peut avoir des barres de défilement horizontale et verticale
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">BAR_HORIZONTAL</code>&nbsp;N
+                </td>
+                <td>Affecte une barre de défilement <b>horizontale</b> à l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">BAR_VERTICAL</code>&nbsp;N
+                </td>
+                <td>Affecte une barre de défilement <b>verticale</b> à l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">BAR_BOTH</code>&nbsp;N
+                </td>
+                <td>Affecte des barres de défilement <b>horizontale et verticale</b> à l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">BAR_NONE</code>&nbsp;N
+                </td>
+                <td><b>Retire</b> toute barre de défilement à l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+         </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.20"></a>2.2.20 – Presse-papier système</span>
+          </p>
+          <p>
+            Le texte d&rsquo;un <code class="kw">MEMO</code> ou l&rsquo;image d&rsquo;un <code class="kw">PICTURE</code> ou d&rsquo;un <code class="kw">IMAGE</code> peuvent être échangés avec le contenu du presse-papier du système d&rsquo;exploitation.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CLIPBOARD_COPY</code>&nbsp;N
+                </td>
+                <td><b>Copie</b> dans le presse-papier le <b>texte sélectionné</b> ou l&rsquo;<b>image</b> de l&rsquo;objet système numéro N: <b>texte</b> d&rsquo;un <code class="kw">MEMO</code> ou <b>image</b> d&rsquo;un <code class="kw">PICTURE</code> ou d&rsquo;un<code class="kw"> IMAGE</code>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CLIPBOARD_PASTE</code>&nbsp;N
+                </td>
+                <td><b>Colle</b> le <b>texte</b> ou l&rsquo;<b>image</b> du presse-papier dans l&rsquo;objet système numéro N: <b>texte</b> dans un <code class="kw">MEMO</code> ou <b>image</b> dans un <code class="kw">PICTURE</code> ou dans un<code class="kw"> IMAGE</code>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CLIPBOARD_CUT</code>&nbsp;N
+                </td>
+                <td><b>Copie</b> dans le presse-papier puis <b>efface</b> le <b>texte sélectionné</b> dans l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Remarque : la commande <code class="kw">CLIPBOARD_CUT</code> n&rsquo;est applicable que pour un <code class="kw">MEMO</code>.
+          </p>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.21"></a>2.2.21 – Etat des <code class="kw">CHECK</code> et <code class="kw">OPTION</code></span>
+          </p>
+          <p>
+            L&rsquo;état d&rsquo;un <code class="kw">CHECK</code> ou d&rsquo;un <code class="kw">OPTION</code> peut être positionné.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">MARK_ON</code>&nbsp;N
+                </td>
+                <td><b>Coche</b> l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">MARK_OFF</code>&nbsp;N
+                </td>
+                <td><b>Décoche</b> l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+         </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.22"></a>2.2.22 – Traitement d&rsquo;image sur un <code class="kw">PICTURE</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">BRIGHTNESS</code>&nbsp;N,V
+                </td>
+                <td>Modifie la <b>luminosité</b> de l&rsquo;image du <code class="kw">PICTURE</code> N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CONTRAST</code>&nbsp;N,V
+                </td>
+                <td>Modifie le <b>contraste</b> de l&rsquo;image du <code class="kw">PICTURE</code> N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GAMMA</code>&nbsp;N,V
+                </td>
+                <td>Modifie le <b>gamma</b> de l&rsquo;image du <code class="kw">PICTURE</code> N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Pour ces 3 commandes, V doit être entre -128 et 127 à chaque fois qu&rsquo;une commande est exécutée :<br>
+            <ul>
+              <li>si V = 0, l&rsquo;image reste inchangée,</li>
+              <li>si V &lt; 0, sa luminosité ou son contraste ou son gamma diminue,</li>
+              <li>si V &gt; 0, sa luminosité ou son contraste ou son gamma augmente.</li>
+            </ul>
+          </p>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.23"></a>2.2.23 – Rendre secret le texte d&rsquo;un <code class="kw">EDIT</code></span>
+          </p>
+          <p>
+            Le texte d&rsquo;un <code class="kw">EDIT</code> peut être remplacé par des étoiles.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SECRET_ON</code>&nbsp;N
+                </td>
+                <td><b>Affiche</b> les caractères de l&rsquo;<code class="kw">EDIT</code> de numéro N sous forme d&rsquo;<b>étoiles</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">SECRET_OFF</code>&nbsp;N
+                </td>
+                <td><b>Affiche</b> <b>en clair</b> les caractères de l&rsquo;<code class="kw">EDIT</code> de numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.24"></a>2.2.24 – Sélection du texte d&rsquo;un <code class="kw">EDIT</code>, un <code class="kw">MEMO</code>, un <code class="kw">COMBO</code>, un <code class="kw">SPIN</code></span>
+          </p>
+          <p>
+            Dans un <code class="kw">EDIT</code>, d&rsquo;un <code class="kw">MEMO</code>, d&rsquo;un <code class="kw">COMBO</code>, d&rsquo;un <code class="kw">SPIN </code>le texte peut être sélectionné, et le curseur peut être positionné.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SELECT_TEXT</code>&nbsp;N,C,P
+                </td>
+                <td><b>Sélectionne</b> C caractères à partir de la position P dans l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">CARET_POSITION</code>&nbsp;N,P
+                </td>
+                <td><b>Positionne</b> le <b>curseur</b> après le Pème caractère de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.25"></a>2.2.25 – Commandes spécifiques à un <code class="kw">GRID</code></span>
+          </p>
+          <p>
+            On peut modifier l&rsquo;aspect d&rsquo;un <code class="kw">GRID</code> et écrire dans une cellule.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">GRID_COLUMN</code>&nbsp;N,C
+                </td>
+                <td>Définit le <b>nombre de colonnes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_COLUMN_FIXED</code>&nbsp;N,F
+                </td>
+                <td>Définit le <b>nombre de colonnes fixes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_COLUMN_WIDTH</code>&nbsp;N,W
+                </td>
+                <td>Définit la <b>largeur des colonnes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_COLUMN_SIZING_ON</code>&nbsp;N
+                </td>
+                <td>Les <b>colonnes</b> du <code class="kw">GRID</code> numéro N peuvent être <b>ajustées manuellement</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_COLUMN_SIZING_OFF</code>&nbsp;N
+                </td>
+                <td>Les <b>colonnes</b> du <code class="kw">GRID</code> numéro N ne peuvent <b>pas</b> être <b>ajustées manuellement</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW</code>&nbsp;N,R
+                </td>
+                <td>Définit le <b>nombre de lignes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW_HEIGHT</code>&nbsp;N,H
+                </td>
+                <td>Définit la <b>hauteur des lignes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW_FIXED</code>&nbsp;N,F
+                </td>
+                <td>Définit le<b> nombre de lignes fixes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW_SIZING_ON</code>&nbsp;N
+                </td>
+                <td>Les <b>lignes</b> du <code class="kw">GRID</code> numéro N peuvent être <b>ajustées manuellement</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW_SIZING_OFF</code>&nbsp;N
+                </td>
+                <td>Les <b>lignes</b> du <code class="kw">GRID</code> numéro N ne peuvent <b>pas</b> être <b>ajustées manuellement</b>.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_FIXED_COLOR</code>&nbsp;N,R,G,B
+                </td>
+                <td>Définition de la<b> couleur (R,G,B) des parties fixes</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_WRITE</code>&nbsp;N,R,C,S
+                </td>
+                <td><b>Ecrit</b> le contenu de S dans la cellule (R,C) du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ONE_COLUMN_WIDTH</code>&nbsp;N,C,V
+                </td>
+                <td>Définit à <b>V pixels</b> la <b>largeur</b> de la <b>colonne numéro C</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ONE_ROW_HEIGHT</code>&nbsp;N,R,V
+                </td>
+                <td>Définit à <b>V pixels</b> la <b>hauteur</b> de la <b>ligne numéro R</b> du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_COLUMN_INSERT</code>&nbsp;N,C
+                </td>
+                <td><b>Insère la colonne</b> C dans l&rsquo;objet <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW_INSERT</code>&nbsp;N,R
+                </td>
+                <td><b>Insère la ligne</b> R dans l&rsquo;objet <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_ROW_DELETE</code>&nbsp;N,R
+                </td>
+                <td><b>Supprime la ligne</b> R du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_COLUMN_DELETE</code>&nbsp;N,C
+                </td>
+                <td><b>Supprime la colonne</b> C du <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_LOAD</code>&nbsp;N,F
+                </td>
+                <td><b>Charge le fichier F</b> dans le <code class="kw">GRID</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_SAVE</code>&nbsp;N,R,C,F
+                </td>
+                <td><b>Sauvegarde</b> le <code class="kw">GRID</code> numéro N dans le fichier F, de la ligne 1 à R et de la colonne 1 à C.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_CLEAR</code>&nbsp;N,R,C
+                </td>
+                <td><b>Efface</b> les cellules du <code class="kw">GRID</code> numéro N de la ligne 1 à R et de la colonne 1 à C.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.26"></a>2.2.26 – Utilisation d&rsquo;un <code class="kw">TIMER</code></span>
+          </p>
+          <p>
+            L&rsquo;activité d&rsquo;un <code class="kw">TIMER</code> peut être modifiée.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">TIMER_INTERVAL</code>&nbsp;N,T
+                </td>
+                <td><b>Change</b> la période de déclenchement T (en millisecondes) de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">TIMER_ON</code>&nbsp;N
+                </td>
+                <td><b>Rend</b> actif l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">TIMER_OFF</code>&nbsp;N
+                </td>
+                <td><b>Rend</b> inactif l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">TIMER_OFF_ALL</code>
+                </td>
+                <td> <b>Rend</b> inactifs tous les objets <code class="kw">TIMER</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.2.27"></a>2.2.27 – Sauvegarde instantanée</span>
+          </p>
+          <p>
+            Les objets <code class="kw">PICTURE, IMAGE, SCENE2D</code> peuvent avoir leur contenu sauvegardé.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SNAPSHOT</code>&nbsp;N,F
+                </td>
+                <td><b>Sauvegarde </b> le contenu de l&rsquo;objet numéro N dans le fichier F.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <br>
+        <p><h3><a name="b2.3"></a>2.3 – Fonctions sur les objets système créés</h3></p>
+        <blockquote style="border-left: none;">
+          <p>
+            <span class="text-large">Toutes les fonctions utilisent le numéro associé à l&rsquo;objet système.</span>
+          </p>
+          <p>
+            <span class="text-large"><a name="b2.3.1"></a>2.3.1 – Position</span>
+          </p>
+          <p>
+            Pour les objets : <code class="kw">SCENE3D</code>, <code class="kw">BUTTON</code>, <code class="kw">EDIT</code>, <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">ALPHA</code>, <code class="kw">FORM, </code><code class="kw">LIST</code>, <code class="kw">PICTURE</code>, <code class="kw">CHECK</code>, <code class="kw">OPTION</code>, <code class="kw">MOVIE</code>, <code class="kw">TRACK_BAR</code>, <code class="kw">SCROLL_BAR</code>, <code class="kw">PROGRESS_BAR</code>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">TOP</code>(N)
+                </td>
+                <td>Retourne le <b>nombre de pixels</b> entre le <b>bord supérieur</b> de l&rsquo;objet numéro N et son parent (le conteneur).
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">LEFT</code>(N)
+                </td>
+                <td>Retourne le <b>nombre de pixels</b> entre le <b>bord gauche</b> de l&rsquo;objet numéro N et son parent (le conteneur).
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.2"></a>2.3.2 – Taille</span>
+          </p>
+          <p>
+            Pour les objets: <code class="kw">SCENE3D</code>, <code class="kw">BUTTON</code>, <code class="kw">EDIT</code>, <code class="kw">MEMO</code>, <code class="kw">COMBO</code>, <code class="kw">ALPHA</code>, <code class="kw">FORM, </code><code class="kw">LIST</code>, <code class="kw">PICTURE</code>, <code class="kw">CHECK</code>, <code class="kw">OPTION</code>, <code class="kw">MOVIE</code>, <code class="kw">TRACK_BAR</code>, <code class="kw">SCROLL_BAR</code>, <code class="kw">PROGRESS_BAR</code>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">WIDTH</code>(N)
+                </td>
+                <td>Retourne la <b>largeur</b> de l&rsquo;objet numéro N en pixels.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">HEIGHT</code>(N)
+                </td>
+                <td>Retourne la <b>hauteur</b> de l&rsquo;objet numéro N en pixels.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">WIDTH_CLIENT</code>(N)
+                </td>
+                <td>Retourne la <b>largeur utile</b> de l&rsquo;objet numéro N en pixels.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">HEIGHT</code>_CLIENT(N)
+                </td>
+                <td>Retourne la <b>hauteur utile</b> de l&rsquo;objet numéro N en pixels.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.3"></a>2.3.3 – Sur un objet Liste : MEMO, COMBO, LIST, DLIST</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">COUNT</code>(N)
+                </td>
+                <td>Retourne le <b>nombre de lignes</b> (articles) de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ITEM_READ$</code>(N, L)
+                </td>
+                <td> Retourne la <b>ligne</b> numéro L de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.4"></a>2.3.4 – Position du curseur: TRACK_BAR, SCROLL_BAR, PROGRESS_BAR</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">POSITION</code>(N)
+                </td>
+                <td>Retourne la <b>position</b> du curseur de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.5"></a>2.3.5 – Valeur d&rsquo;un SPIN</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">POSITION</code>(N)
+                </td>
+                <td>Retourne la <b>valeur</b> de l&rsquo;objet <code class="kw">SPIN</code> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.6"></a>2.3.6 – Fichier choisi : OPEN_DIALOG, SAVE_DIALOG</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">FILE_NAME$</code>(N)
+                </td>
+                <td>Retourne le <b>nom du fichier</b> choisi par l&rsquo;utilisateur de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.7"></a>2.3.7 – Etat: CHECK, OPTION</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CHECKED</code>(N)
+                </td>
+                <td>Retourne l&rsquo;<b>état</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.8"></a>2.3.8 – Sélection d&rsquo;une ligne : COMBO, LIST</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">ITEM_INDEX$</code>(N)
+                </td>
+                <td>Retourne la <b>ligne sélectionnée</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">ITEM_INDEX</code>(N)
+                </td>
+                <td>Retourne le <b>numéro de la ligne sélectionnée</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.9"></a>2.3.9 – Texte affiché: EDIT, MEMO, COMBO</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">TEXT$</code>(N)
+                </td>
+                <td>Retourne le <b>texte</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.10"></a>2.3.10 – Click sur un objet (SCENE3D, BUTTON, EDIT, MEMO, COMBO, ALPHA, FORM, LIST, PICTURE, CHECK, OPTION, SUB_MENU)</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CLICKED</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N a été <b>cliqué</b>, 0 sinon.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.11"></a>2.3.11 – Intitulé : BUTTON, ALPHA, FORM, CHECK, OPTION, SUB_MENU</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CAPTION$</code>(N)
+                </td>
+                <td>Retourne l&rsquo;<b>intitulé</b> de l&rsquo;objet numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.12"></a>2.3.12 – Couleur d&rsquo;un pixel dans un PICTURE</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">COLOR_PIXEL_BLUE</code>(N,X,Y)
+                </td>
+                <td>Retourne la <b>composante bleue </b>de la couleur du pixel (X,Y) dans le <code class="kw">PICTURE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">COLOR_PIXEL_GREEN</code>(N,X,Y)
+                </td>
+                <td>Retourne la <b>composante verte </b>de la couleur du pixel (X,Y) dans le <code class="kw">PICTURE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">COLOR_PIXEL_RED</code>(N,X,Y)
+                </td>
+                <td>Retourne la <b>composante rouge </b>de la couleur du pixel (X,Y) dans le <code class="kw">PICTURE</code> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.13"></a>2.3.13 – Texte sélectionné dans un <code class="kw">EDIT</code>, un <code class="kw">MEMO</code>, un <code class="kw">COMBO</code>, un <code class="kw">SPIN</code></span>
+          </p>
+          <p>
+            Dans un <code class="kw">EDIT</code>, un <code class="kw">MEMO</code>, un <code class="kw">COMBO</code>, un <code class="kw">SPIN, </code>le texte sélectionné par l&rsquo;utilisateur ou par programme peut être lu.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SELECT_READ$</code>(N)
+                </td>
+                <td>Retourne le texte <b>sélectionné</b> dans l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.14"></a>2.3.14 – Visibilité</span>
+          </p>
+          <p>
+            Pour tous les objets système sauf: <code class="kw">MAIN_MENU</code>, <code class="kw">SOUND</code>, <code class="kw">OPEN_DIALOG</code>, <code class="kw">SAVE_DIALOG</code>, <code class="kw">DLIST, TIMER</code>.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">SHOW</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N est <b>visible</b>, 0 sinon.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">HIDE</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N est <b>caché</b>, 0 sinon.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.15"></a>2.3.15 – Activité</span>
+          </p>
+          <p>
+            Pour tous les objets système sauf: <code class="kw">MAIN_MENU</code>, <code class="kw">SOUND</code>, <code class="kw">OPEN_DIALOG</code>, <code class="kw">SAVE_DIALOG</code>, <code class="kw">DLIST</code>.
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">ACTIVE</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N est <b>actif</b>, 0 sinon.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">INACTIVE</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N est <b>inactif</b>, 0 sinon.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.16"></a>2.3.16 – Objet <code class="kw">GRID</code></span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">GRID_READ$</code>(N,R,C)
+                </td>
+                <td>Retourne le contenu de la <b>cellule</b> (R,C) du <b>GRID</b> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_X_TO_COLUMN</code>(N,X)
+                </td>
+                <td>Retourne le<b> numéro de colonne</b> du <b>GRID</b> numéro N à partir de la <b>coordonnée X.</b>
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">GRID_Y_TO_ROW</code>(N,Y)
+                </td>
+                <td>Retourne le <b>numéro de ligne</b> du <b>GRID</b> numéro N à partir de la <b>coordonnée Y.</b>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.17"></a>2.3.17 – Position du curseur</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">CARET_POSITION</code>(N)
+                </td>
+                <td>Retourne la position du curseur de l&rsquo;objet <b>EDIT</b> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.18"></a>2.3.18 – Objets</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">OBJECT_EXISTS</code>(N)
+                </td>
+                <td>Retourne 1 si l&rsquo;objet système numéro N <b>existe</b>, 0 sinon.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OBJECT_PARENT</code>(N)
+                </td>
+                <td>Retourne le<b> numéro du parent</b> de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">OBJECT_TYPE</code>(N)
+                </td>
+                <td>Retourne le <b>type</b> de l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>
+            <span class="text-large">Le type d&rsquo;un objet système est codé comme suit :</span></p>
+          <blockquote style="border-left: none;">
+            <blockquote style="border-left: none;">
+              <p>
+                <b>
+                &nbsp;1 = SCENE3D<br>
+                &nbsp;2 = BUTTON<br>
+                &nbsp;3 = EDIT<br>
+                &nbsp;4 = MEMO<br>
+                &nbsp;5 = COMBO <br>
+                &nbsp;6 = ALPHA<br>
+                &nbsp;7 = FORM<br>
+                &nbsp;8 = LIST<br>
+                &nbsp;9 = PICTURE<br>
+                10 = CHECK<br>
+                11 = OPTION<br>
+                12 = MAIN_MENU<br>
+                13 = SUB_MENU<br>
+                14 = SOUND<br>
+                15 = MOVIE<br>
+                16 = TRACK_BAR<br>
+                17 = OPEN_DIALOG<br>
+                18 = SAVE_DIALOG<br>
+                19 = SCROLL_BAR<br>
+                20 = PROGRESS_BAR <br>
+                21 = SPIN<br>
+                22 = GRID<br>
+                23 = CONTAINER<br>
+                24 = MEMO_RICH<br>
+                25 = BUTTON_PICTURE<br>
+                26 = DLIST<br>
+                27 = SCENE2D<br>
+                28 = TIMER<br>
+                29 = PANEL<br>
+                31 = MAIN_MENU_POP<br>
+                32 = CONTAINER_OPTION<br>
+                33 = OPEN_DIALOG_PIC<br>
+                34 = SAVE_DIALOG_PIC<br>
+                35 = SHAPE<br>
+                36 = HVIEWER<br>
+                37 = SERIAL<br>
+                38 = LED1<br>
+                39 = DIGIT1<br>
+                23 = CONTAINER<br>
+                40 = SWITCH1<br>
+                41 = IMAGE<br>
+                42 = CONTAINER_TAB<br>
+                43 = TAB<br>
+                46 = SYNEDIT<br>
+                47 = CHART
+                </b>
+              </p>
+            </blockquote>          
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">    
+          <p>
+            <span class="text-large"><a name="b2.3.19"></a>2.3.19 – Taille d&rsquo;un texte</span>
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td><code class="kw">TEXT_HEIGHT</code>(T,N)
+                </td>
+                <td>Retourne la <b>hauteur du texte</b> T <b>s&rsquo;il</b> était visualisé par l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td><code class="kw">TEXT_WIDTH</code>(T,N)
+                </td>
+                <td>Retourne la <b>largeur du texte</b> T <b>s&rsquo;il</b> était visualisé par l&rsquo;objet système numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>
+            Ces fonctions sont pour des objets du type : <code class="kw">FORM</code>, <code class="kw">COMBO</code>, <code class="kw">ALPHA</code>, <code class="kw">LIST</code>, <code class="kw">PICTURE</code>, <code class="kw">GRID</code>.
+          </p>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+    </blockquote>
+    <br>
+    <hr noshade size="1" color="666666">
+    <p align="center"><i>Contenu créé par Jack. Mise à jour le 08 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

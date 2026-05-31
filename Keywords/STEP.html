@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>(FOR V=S TO E) STEP T — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction (FOR V=S TO E) STEP T du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>(FOR V=S TO E) STEP T</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      (FOR V=S TO E) STEP T
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      DÃ‰FINIT LE PAS D'UNE BOUCLE "FOR"
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Directive</li>
+      <li>ParamÃ¨tre: 1</li>
+      <li>Groupe: Structures</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande "FOR V=S TO E STEP T" est le dÃ©but d'un groupe d'instructions qui se termine avec NEXT, et qui utilise la variable V comme un compteur.
+      </p>
+      <p>
+        La premiÃ¨re fois, le compteur V est initialisÃ© avec la valeur de dÃ©part S (V vaut S).
+      </p>
+      <p>
+        Quand NEXT est exÃ©cutÃ©, le compteur V est augmentÃ© de T et ensuite le groupe d'instructions entre FOR et NEXT est exÃ©cutÃ© de nouveau seulement si V est infÃ©rieur ou Ã©gal Ã  E.
+      </p>
+      <p>
+        Autrement, si V est plus grand que E, il y a saut de l'exÃ©cution Ã  l'instruction suivant NEXT.
+      </p>
+      <p>
+        Remarque: pour commencer par une valeur de dÃ©part S plus grande que la valeur de fin, on utilise la valeur -1 comme pas.
+      </p>
+      <p>
+        Exemple: FOR V=10 TO 1 STEP -1
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        FOR V=S TO E STEP T
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>V = variable utilisÃ©e comme compteur</li>
+      <li>S = valeur de dÃ©but</li>
+      <li>E = valeur de fin</li>
+      <li>T = valeur du pas</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>STEP est utilisÃ© associÃ© Ã  FOR, TO et NEXT, pour faire "une boucle", qui est un groupe d'instructions Ã  exÃ©cuter plusieurs fois. Le nombre de fois est dÃ©fini par les valeurs de dÃ©part et de fin. Le pas entre chaque fois est dÃ©fini par T.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si V n'est pas un nom de variable correct</li>
+      <li>Si S n'est pas une expression correcte</li>
+      <li>Si E n'est pas une expression correcte</li>
+      <li>Si T n'est pas une expression correcte</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>' affiche les premiers nombres impairs</p>
+              <p>dim i</p>
+              <p>for i=1 to 10 step 2</p>
+              <p>print i</p>
+              <p>next i</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./FOR.html" class="related-link">FOR</a></p>
+      <p><a href="./TO.html" class="related-link">TO</a></p>
+      <p><a href="./NEXT.html" class="related-link">NEXT</a></p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

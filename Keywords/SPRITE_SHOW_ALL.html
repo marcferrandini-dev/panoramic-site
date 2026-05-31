@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SPRITE_SHOW_ALL — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction SPRITE_SHOW_ALL du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>SPRITE_SHOW_ALL</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      SPRITE_SHOW_ALL
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      REND VISIBLES TOUS LES SPRITES
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>Paramètre: 0</li>
+      <li>Groupe: SPRITE</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande SPRITE_SHOW_ALL rend visibles tous les SPRITEs.
+      </p>
+      <p>
+        Remarque : l'état normal d'un SPRITE à la création est d'être visible.
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        SPRITE_SHOW_ALL
+      </font>
+    </b></font></p>
+
+    
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>La commande est utilisée pour rendre visibles tous les SPRITEs.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Rien.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>' créer un monde 2D numéro 1</p>
+              <p>scene2d 1</p>
+              <p>' charger une image de fond</p>
+              <p>file_load 1,"ville.bmp"</p>
+              <p>' créer deux SPRITEs</p>
+              <p>sprite 1:sprite 2</p>
+              <p>' placer le SPRITE N°2</p>
+              <p>sprite_x_position 2,100</p>
+              <p>' charger une image dans les SPRITE</p>
+              <p>sprite_file_load 1,"envahisseur.bmp"</p>
+              <p>sprite_file_load 2,"envahisseur.bmp"</p>
+              <p>' attendre 1 seconde</p>
+              <p>wait 1000</p>
+              <p>' les rendre invisibles</p>
+              <p>sprite_hide_all</p>
+              <p>' attendre 1 seconde</p>
+              <p>wait 1000</p>
+              <p>' les rendre visibles</p>
+              <p>sprite_show_all</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./SPRITE_HIDE_ALL.html" class="related-link">SPRITE_HIDE_ALL</a></p>
+      <p><a href="./SPRITE_HIDE.html" class="related-link">SPRITE_HIDE</a></p>
+      <p><a href="./SPRITE_SHOW.html" class="related-link">SPRITE_SHOW</a></p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

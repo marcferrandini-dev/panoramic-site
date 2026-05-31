@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXCEL_FILE_OPEN N,F — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction EXCEL_FILE_OPEN N,F du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>EXCEL_FILE_OPEN N,F</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      EXCEL_FILE_OPEN N,F
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      OUVRE LE FICHIER (FEUILLE) EXISTANT F ET LUI DONNE LE NUMÃ‰RO N COMME RÃ‰FÃ‰RENCE
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>ParamÃ¨tres: 2</li>
+      <li>Groupe: Excel</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande EXCEL_FILE_OPEN N,F ouvre un fichier existant avec le logiciel Microsoft Excel, s'il est en fonction.
+      </p>
+      <p>
+        N est le numÃ©ro du fichier EXCEL sur lequel portent les commandes : c'est le fichier cible.
+      </p>
+      <p>
+        F est son nom.
+      </p>
+      <p>
+        Un fichier est une feuille dans le vocabulaire Excel. Il est possible d'ouvrir plusieurs feuilles simultanÃ©ment: elles sont identifiÃ©es par leur numÃ©ro.
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        EXCEL_FILE_OPEN N,F
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>N = numÃ©ro de fichier Excel (entier ou rÃ©el). Doit Ãªtre plus grand que 0 et infÃ©rieur ou Ã©gal au nombre maximum permis de fichiers Excel.</li>
+      <li>F = chemin du fichier (chaÃ®ne de caractÃ¨res) Ã  ouvrir.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>La commande est utilisÃ©e pour ouvrir une feuille existante avec Microsoft Excel.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si le logiciel Excel n'est pas lancÃ©.</li>
+      <li>Si le numÃ©ro N n'est pas une expression correcte.</li>
+      <li>Si le numÃ©ro N excÃ¨de le maximum de fichiers permis.</li>
+      <li>Si le numÃ©ro N est infÃ©rieur ou Ã©gal Ã  0.</li>
+      <li>Si le fichier numÃ©ro N est en cours d'utilisation.</li>
+      <li>Si F n'est pas une expression correcte.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>' lancer le logiciel Excel</p>
+              <p>excel_start</p>
+              <p>' attendre 5 secondes</p>
+              <p>wait 5000</p>
+              <p>' ouvrir un fichier existant</p>
+              <p>excel_file_open 1,"MonFichier.xls"</p>
+              <p>' attendre 5 secondes</p>
+              <p>wait 5000</p>
+              <p>' fermer ce fichier</p>
+              <p>excel_file_close 1</p>
+              <p>' arrÃªter le logiciel Excel</p>
+              <p>excel_stop</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./EXCEL_START.html" class="related-link">EXCEL_START</a></p>
+      <p><a href="./EXCEL_STOP.html" class="related-link">EXCEL_STOP</a></p>
+      <p><a href="./EXCEL_FILE_NEW.html" class="related-link">EXCEL_FILE_NEW</a></p>
+      <p><a href="./EXCEL_FILE_CLOSE.html" class="related-link">EXCEL_FILE_CLOSE</a></p>
+      <p><a href="./EXCEL_WRITE.html" class="related-link">EXCEL_WRITE</a></p>
+      <p>EXCEL_READ$()</p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

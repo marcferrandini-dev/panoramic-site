@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 4 : Scene2D et Sprites - PANORAMIC</title>
+  <meta name="description" content="Création de scènes graphiques 2D animées, déplacements d'images et collisions de sprites.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 4 : Scene2D et Sprites</h1>
+        <p>Création de scènes graphiques 2D animées, déplacements d'images et collisions de sprites.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="top"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">SCENE2D et SPRITES</h1></div>
+      <br>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <p>
+              1 – <a href="#b1">Gestion des sprites</a>
+            </p>
+            <blockquote style="border-left: none;">
+              1.1 – <a href="#b1.1">Créer</a><br>
+              1.2 – <a href="#b1.2">Charger une image</a><br>
+              1.3 – <a href="#b1.3">Charger un texte</a><br>
+              1.4 – <a href="#b1.4">Traitement d&rsquo;image</a><br>
+              1.5 – <a href="#b1.5">Supprimer</a><br>
+              1.6 – <a href="#b1.6">Visualiser ou cacher</a><br>
+              1.7 – <a href="#b1.7">Positionner</a><br>
+              1.8 – <a href="#b1.8">Mise à l&rsquo;échelle</a><br>
+              1.9 – <a href="#b1.9">Obtenir la position</a><br>
+              1.10 – <a href="#b1.10">Divers</a>
+            </blockquote>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <br>
+      <p>
+        <h2><a name="b1"></a>1 – Gestion des sprites</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Un <code class="kw">SPRITE</code> est une image qui peut être déplacée sur un <code class="kw">SCENE2D</code> sans le perturber, et dont la couleur noire est dite transparente.
+        </p>
+        <p>
+          Un <code class="kw">SPRITE</code> doit être créé.
+        </p>
+        <p>
+          Quand il existe, il peut alors recevoir une image (au format BMP), être déplacé, agrandi, caché, visualisé à nouveau, détruit.
+        </p>
+        <p>
+          Pour toutes les commandes suivantes, N est le numéro du <code class="kw">SPRITE</code>.
+        </p>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.1"></a>1.1 – Créer</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE</code>&nbsp;N
+                </td>
+                <td>
+                  Crée le <code class="kw">SPRITE</code> numéro N dans le <code class="kw">SCENE2D</code> « cible »
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_CREATE_SHOW</code>
+                </td>
+                <td>
+                  Les prochains <code class="kw">SPRITE</code>s créés seront visibles
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_CREATE_HIDE</code>
+                </td>
+                <td>
+                  Les prochains <code class="kw">SPRITE</code>s créés ne seront pas visibles
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <br>
+          <p>
+            Le <code class="kw">SCENE2D</code> « cible » est l&rsquo;objet système qui visualise des <code class="kw">SPRITE</code>s.
+          </p>
+          C&rsquo;est :
+          <ul>
+            <li>
+              le seul <code class="kw">SCENE2D</code> existant dans le cas où il n&rsquo;y a qu&rsquo;un seul <code class="kw">SCENE2D</code> ;
+            </li>
+            <li>
+              le premier <code class="kw">SCENE2D</code> créé dans le cas où il y a plusieurs <code class="kw">SCENE2Ds</code> et qu&rsquo;aucun n&rsquo;a été désigné comme « cible » ;
+            </li>
+            <li>
+              le <code class="kw">SCENE2D</code> qui a été désigné comme « cible » par une commande <code class="kw">SPRITE_TARGET_IS</code> dans le cas où il y a plusieurs <code class="kw">SCENE2D</code>.
+            </li>
+          </ul>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.2"></a>1.2 – Charger une image</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_FILE_LOAD</code>&nbsp;N,F
+                </td>
+                <td>
+                  Charge dans le <code class="kw">SPRITE</code> numéro N l&rsquo;image (BMP) contenue dans le fichier F
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_IMAGE_LOAD</code>&nbsp;N1,N2
+                </td>
+                <td>
+                  Charge dans le <code class="kw">SPRITE</code> numéro N1 l&rsquo;image contenue dans l&rsquo;objet système de numéro N2.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+          Le fichier F est défini soit par un chemin absolu, soit en relatif au répertoire courant.
+          </p>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.3"></a>1.3 – Charger un texte</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_TEXT</code>&nbsp;N,T
+                </td>
+                <td>
+                  Le <code class="kw">SPRITE</code> numéro N affiche le texte T.<br>
+                  Le texte est visualisé avec la police, la taille, la couleur et le style définis pour le <code class="kw">SCENE2D</code>. 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.4"></a>1.4 – Traitement d&rsquo;image</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_BRIGHTNESS</code>&nbsp;N,V
+                </td>
+                <td>
+                  Modifie la luminosité du <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_CONTRAST</code>&nbsp;N,V
+                </td>
+                <td>
+                  Modifie le contraste du <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_GAMMA</code>&nbsp;N,V
+                </td>
+                <td>
+                  Modifie le gamma du <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            Pour ces 3 commandes, V doit être entre -128 et 127.
+          </p>
+          A chaque fois qu&rsquo;une commande est exécutée :
+          <ul>  
+            <li>si V = 0, l&rsquo;image reste inchangée ;</li>
+            <li>si V &lt; 0, sa luminosité ou son contraste ou son gamma diminue ;</li>
+            <li>si V &gt; 0, sa luminosité ou son contraste ou son gamma augmente.</li>
+          </ul>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.5"></a>1.5 – Supprimer</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_DELETE</code>&nbsp;N
+                </td>
+                <td>
+                  Supprime le <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.6"></a>1.6 – Visualiser ou cacher</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_SHOW</code>&nbsp;N
+                </td>
+                <td>
+                  Visualise le <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_HIDE</code>&nbsp;N
+                </td>
+                <td>
+                  Cache le <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_SHOW_ALL</code>
+                </td>
+                <td>
+                  Visualise tous les <code class="kw">SPRITE</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_HIDE_ALL</code>
+                </td>
+                <td>
+                  Cache tous les <code class="kw">SPRITE</code>.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            L&rsquo;état par défaut d&rsquo;un <code class="kw">SPRITE</code> à sa création est: visible.
+          </p>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.7"></a>1.7 – Positionner</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_X_POSITION</code>&nbsp;N,X
+                </td>
+                <td>
+                  Positionne en X le <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_Y_POSITION</code>&nbsp;N,Y
+                </td>
+                <td>
+                  Positionne en Y le <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_POSITION</code>&nbsp;N,X,Y
+                </td>
+                <td>
+                  Positionne en X et Y le <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <p>
+            La position d&rsquo;un <code class="kw">SPRITE</code> est celle du coin supérieur gauche de son image, elle est exprimée en pixels.
+          </p>
+          <p>
+            Les coordonnées X et Y sont situées sur le <code class="kw">SCENE2D</code> auquel le <code class="kw">SPRITE</code> appartient, et sont des coordonnées « écran » :
+          </p>
+          <ul>
+            <li>l&rsquo;origine (0,0) est le coin supérieur gauche du <code class="kw">SCENE2D</code></li>
+            <li>l&rsquo;axe des X est un axe horizontal partant de l&rsquo;origine: X devient de plus en plus positif lorsqu&rsquo;on se déplace vers la droite.</li>
+            <li>l&rsquo;axe des Y est un axe vertical partant de l&rsquo;origine: Y devient de plus en plus positif lorsqu&rsquo;on se déplace vers le bas.
+            </li>
+          </ul>
+        </blockquote>
+      </blockquote>  
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.8"></a>1.8 – Mise à l&rsquo;échelle</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_X_SCALE</code>&nbsp;N,CX
+                </td>
+                <td>
+                  Fait rétrécir ou dilater la largeur du <code class="kw">SPRITE</code> numéro N.<br>
+                  Rétrécir si CX &lt;1, dilater si CX &gt; 1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_Y_SCALE</code>&nbsp;N,CY
+                </td>
+                <td>
+                  Fait rétrécir ou dilater la hauteur du <code class="kw">SPRITE</code> numéro N.<br>
+                  Rétrécir si CY &lt;1, dilater si CY &gt; 1
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_SCALE</code>&nbsp;N,CX,CY
+                </td>
+                <td>
+                  Fait rétrécir ou dilater la largeur et la hauteur du <code class="kw">SPRITE</code> numéro N. 
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.9"></a>1.9 – Obtenir la position</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_X_POSITION</code>(N)
+                </td>
+                <td>
+                  Retourne la position en X (coordonnée sur X) du <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_Y_POSITION</code>(N)
+                </td>
+                <td>
+                  Retourne la position en Y (coordonnée sur Y) du <code class="kw">SPRITE</code> numéro N.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>  
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.10"></a>1.10 – Divers</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">NUMBER_SPRITES</code>
+                </td>
+                <td>
+                  Retourne le nombre de <code class="kw">SPRITEs</code>.
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">SPRITE_EXISTS</code>(N)
+                </td>
+                <td>
+                  Retourne 1 si le <code class="kw">SPRITE</code> numéro N existe, 0 sinon.
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      </blockquote>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 08 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

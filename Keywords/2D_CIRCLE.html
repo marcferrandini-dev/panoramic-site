@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>2D_CIRCLE X,Y,R — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction 2D_CIRCLE X,Y,R du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>2D_CIRCLE X,Y,R</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      2D_CIRCLE X,Y,R
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      DESSINE UN CERCLE DE CENTRE (X,Y) ET DE RAYON R
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>Paramètres: 3</li>
+      <li>Groupe: Dessin</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande 2D_CIRCLE X,Y,R dessine sur l'objet système "cible 2D" (c'est à dire sélectionné par 2D_TARGET_IS), un cercle de centre (X,Y) et de rayon R.
+      </p>
+      <p>
+        X, Y et R sont exprimés en pixels et l'origine des coordonnées (0,0) est le coin supérieur gauche de l'objet système.
+      </p>
+      <p>
+        La ligne prend la couleur de tracé sélectionnée par 2D_PEN_COLOR, la largeur de tracé sélectionnée par 2D_PEN_WIDTH et le cercle est rempli par la couleur de remplissage sélectionnée par 2D_FILL_COLOR.
+      </p>
+      <p>
+        Par défaut, la couleur de tracé est le noir, la largeur de tracé est de 1 pixel, la couleur de remplissage est la couleur du fond et l'objet système "cible 2D" est : FORM numéro 0.
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        2D_CIRCLE X,Y,R
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>X = valeur de la composante X (entier ou réel) du centre.</li>
+      <li>Y = valeur de la composante Y (entier ou réel) du centre.</li>
+      <li>R = valeur (entier ou réel) du rayon.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>La commande 2D_CIRCLE est utilisée pour dessiner un cercle.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si X ou Y ou R ne sont pas des expressions correctes.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>' dessine un cercle : centre (100,100), rayon = 50 pixels</p>
+              <p>2d_circle 100,100,50</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./2D_ARC.html" class="related-link">2D_ARC</a></p>
+      <p><a href="./2D_RECTANGLE.html" class="related-link">2D_RECTANGLE</a></p>
+      <p><a href="./2D_ELLIPSE.html" class="related-link">2D_ELLIPSE</a></p>
+      <p><a href="./2D_LINE.html" class="related-link">2D_LINE</a></p>
+      <p><a href="./2D_POLY_FROM.html" class="related-link">2D_POLY_FROM</a></p>
+      <p><a href="./2D_POLY_TO.html" class="related-link">2D_POLY_TO</a></p>
+      <p><a href="./2D_PEN_COLOR.html" class="related-link">2D_PEN_COLOR</a></p>
+      <p><a href="./2D_PEN_DASH.html" class="related-link">2D_PEN_DASH</a></p>
+      <p><a href="./2D_PEN_DASH_DOT.html" class="related-link">2D_PEN_DASH_DOT</a></p>
+      <p><a href="./2D_PEN_DASH_DOT_DOT.html" class="related-link">2D_PEN_DASH_DOT_DOT</a></p>
+      <p><a href="./2D_PEN_DOT.html" class="related-link">2D_PEN_DOT</a></p>
+      <p><a href="./2D_PEN_SOLID.html" class="related-link">2D_PEN_SOLID</a></p>
+      <p><a href="./2D_PEN_WIDTH.html" class="related-link">2D_PEN_WIDTH</a></p>
+      <p><a href="./2D_FILL_COLOR.html" class="related-link">2D_FILL_COLOR</a></p>
+      <p><a href="./2D_FILL_CROSS.html" class="related-link">2D_FILL_CROSS</a></p>
+      <p><a href="./2D_FILL_DIAGONAL_CROSS.html" class="related-link">2D_FILL_DIAGONAL_CROSS</a></p>
+      <p><a href="./2D_FILL_DIAGONAL_DOWN.html" class="related-link">2D_FILL_DIAGONAL_DOWN</a></p>
+      <p><a href="./2D_FILL_DIAGONAL_UP.html" class="related-link">2D_FILL_DIAGONAL_UP</a></p>
+      <p><a href="./2D_FILL_HORIZONTAL.html" class="related-link">2D_FILL_HORIZONTAL</a></p>
+      <p><a href="./2D_FILL_SOLID.html" class="related-link">2D_FILL_SOLID</a></p>
+      <p><a href="./2D_FILL_VERTICAL.html" class="related-link">2D_FILL_VERTICAL</a></p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,569 @@
+/* ==========================================================================
+   KEYWORD DETAIL PAGES CUSTOM STYLES
+   Modern dark-mode tech aesthetics, 100% responsive, custom micro-animations
+   ========================================================================== */
+
+/* Google Fonts Imports */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --font-sans: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: 'Fira Code', 'JetBrains Mono', Courier, monospace;
+
+  /* Harmonious Dark Palette */
+  --bg-main: #090d16;
+  --bg-card: rgba(17, 24, 39, 0.75);
+  --bg-card-hover: rgba(31, 41, 55, 0.85);
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(99, 102, 241, 0.4);
+
+  /* Primary Neon Colors */
+  --primary: #6366f1;         /* Neon Indigo */
+  --primary-glow: rgba(99, 102, 241, 0.25);
+  --secondary: #06b6d4;       /* Neon Cyan */
+  --secondary-glow: rgba(6, 182, 212, 0.2);
+  --accent: #f97316;          /* Orange Accent */
+  
+  /* Text colors */
+  --text-main: #cbd5e1;       /* Light grey for readability */
+  --text-bright: #ffffff;     /* Bright white for titles */
+  --text-muted: #64748b;      /* Dark grey for secondary info */
+  --code-bg: #0b0f19;
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Light Mode Overrides */
+:root[data-theme="light"] {
+  --bg-main: #f8fafc;
+  --bg-card: rgba(255, 255, 255, 0.85);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  --border-glass: rgba(0, 0, 0, 0.1);
+  --border-focus: rgba(99, 102, 241, 0.5);
+
+  --primary-glow: rgba(99, 102, 241, 0.15);
+  --secondary-glow: rgba(6, 182, 212, 0.15);
+
+  --text-main: #334155;
+  --text-bright: #0f172a;
+  --text-muted: #64748b;
+
+  --code-bg: #f1f5f9;
+}
+
+/* ==========================================
+   HARD RESET - Override ALL browser defaults
+   ========================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Nuke ALL blockquote borders — Jack uses them only for indentation */
+blockquote,
+blockquote blockquote,
+blockquote blockquote blockquote {
+  all: unset !important;
+  display: block !important;
+  margin: 0.5rem 0 0.5rem 1.25rem !important;
+  padding: 0 !important;
+}
+
+blockquote p {
+  margin-bottom: 0.6rem !important;
+  font-size: 0.97rem !important;
+  line-height: 1.7 !important;
+  color: var(--text-main) !important;
+}
+
+
+/* Keyword page layout (header/footer from style.css) */
+.keyword-section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.keyword-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+.keyword-breadcrumb a {
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.keyword-breadcrumb a:hover {
+  color: var(--primary);
+}
+
+.keyword-breadcrumb span[aria-hidden="true"] {
+  opacity: 0.5;
+}
+
+/* ==========================================
+   GLOBAL CONTENT CONTAINER OVERRIDE
+   Styles the retro Calibri wrapper as a premium card
+   ========================================== */
+.keyword-page > font[face="Calibri"],
+.keyword-page > font {
+  display: block !important;
+  background: var(--bg-card) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border: 1px solid var(--border-glass) !important;
+  border-radius: 16px !important;
+  padding: 3.5rem 3rem !important;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 40px rgba(99, 102, 241, 0.04) !important;
+  max-width: 900px !important;
+  margin: 1rem auto 4rem auto !important;
+}
+
+/* Main Keyword Title */
+font[size="6"], 
+font[color="#323296"] {
+  font-family: var(--font-mono) !important;
+  font-size: 2.35rem !important;
+  font-weight: 700 !important;
+  display: block !important;
+  text-align: center !important;
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.75rem !important;
+  letter-spacing: -0.02em !important;
+  background: var(--text-bright) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 30px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* Subtitle Description */
+p[align="center"] > font[size="4"] {
+  font-size: 1.1rem !important;
+  color: var(--secondary) !important;
+  font-weight: 500 !important;
+  display: block !important;
+  text-align: center !important;
+  margin-bottom: 2rem !important;
+  line-height: 1.6 !important;
+  max-width: 800px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+p[align="center"] > font[size="4"] b {
+  font-size: 1.05rem !important;
+  font-weight: 500 !important;
+  color: var(--text-main) !important;
+  letter-spacing: 0.02em !important;
+  line-height: 1.6 !important;
+}
+
+/* ==========================================
+   METADATA INFO BLOCK (Top Badges Dashboard)
+   ========================================== */
+.keyword-page > font > p > b > ul,
+.keyword-page > font > ul:first-of-type {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  gap: 0.75rem !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  margin: 2rem 0 !important;
+  list-style: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.keyword-page > font > p > b > ul li,
+.keyword-page > font > ul:first-of-type li {
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid var(--border-glass) !important;
+  border-radius: 8px !important;
+  padding: 0.45rem 1.15rem !important;
+  font-size: 0.88rem !important;
+  color: var(--text-main) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.5rem !important;
+  margin: 0 !important;
+  padding-left: 1.15rem !important;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1) !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.keyword-page > font > p > b > ul li:hover,
+.keyword-page > font > ul:first-of-type li:hover {
+  border-color: rgba(99, 102, 241, 0.3) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  transform: translateY(-1px) !important;
+}
+
+.keyword-page > font > p > b > ul li::before,
+.keyword-page > font > ul:first-of-type li::before {
+  content: "" !important;
+  display: none !important;
+}
+
+.keyword-page > font > p > b > ul li b,
+.keyword-page > font > ul:first-of-type li b {
+  color: var(--secondary) !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 500 !important;
+}
+
+/* ==========================================
+   VERTICAL LISTS (Syntax Parameters, Errors...)
+   ========================================== */
+.keyword-page > font > ul:empty,
+.keyword-page > font > ul:not(:has(li)) {
+  display: none !important;
+}
+
+.keyword-page > font > ul {
+  list-style: none !important;
+  padding: 1.5rem !important;
+  background: rgba(255, 255, 255, 0.015) !important;
+  border: 1px solid var(--border-glass) !important;
+  border-radius: 12px !important;
+  margin: 1.25rem 0 !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.65rem !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+}
+
+.keyword-page > font > ul li {
+  margin-bottom: 0 !important;
+  color: var(--text-main) !important;
+  font-size: 0.95rem !important;
+  position: relative !important;
+  padding-left: 1.5rem !important;
+}
+
+.keyword-page > font > ul li::before {
+  content: "→" !important;
+  color: var(--secondary) !important;
+  position: absolute !important;
+  left: 0 !important;
+  font-weight: bold !important;
+  font-family: var(--font-mono) !important;
+}
+
+.keyword-page > font > ul li b {
+  color: var(--primary) !important;
+  font-weight: 600 !important;
+}
+
+/* ==========================================
+   SECTION HEADINGS (ACTION, SYNTAXE, UTILISATION...)
+   Clean bold text, no box, no border-left
+   ========================================== */
+.keyword-page > font > p:not([align="center"]) > font[size="4"] b,
+.keyword-page > font > p:not([align="center"]) > b > font[size="4"],
+.keyword-page > font > p:not([align="center"]) > font[size="4"] {
+  font-size: 0.8rem !important;
+  color: var(--secondary) !important;
+  border: none !important;
+  border-left: none !important;
+  background: none !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline-block !important;
+  margin-top: 2.5rem !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em !important;
+  text-transform: uppercase !important;
+  font-family: var(--font-sans) !important;
+}
+
+/* Draw a subtle separator line above each section heading paragraph */
+.keyword-page > font > p:not([align="center"]):has(> font[size="4"]) {
+  border-top: 1px solid var(--border-glass) !important;
+  padding-top: 1.5rem !important;
+  margin-top: 1.5rem !important;
+}
+
+/* Subtitle description (centered, plain text) */
+p[align="center"] > font[size="4"],
+p[align="center"] > font[size="4"] b {
+  border: none !important;
+  border-left: none !important;
+  padding: 0 !important;
+  background: none !important;
+  border-radius: 0 !important;
+  text-transform: none !important;
+  letter-spacing: normal !important;
+  margin-top: 0 !important;
+  display: block !important;
+  text-align: center !important;
+  font-size: 1.05rem !important;
+  color: var(--text-main) !important;
+  font-weight: 500 !important;
+  line-height: 1.6 !important;
+}
+
+/* ==========================================
+   SYNTAX SIGNATURE BADGE
+   ========================================== */
+font[color="#FF0000"] {
+  color: var(--secondary) !important;
+  font-family: var(--font-mono) !important;
+  background: rgba(6, 182, 212, 0.08) !important;
+  border: 1px solid rgba(6, 182, 212, 0.2) !important;
+  padding: 0.2rem 0.65rem !important;
+  border-radius: 6px !important;
+  font-size: 0.95rem !important;
+  font-weight: 500 !important;
+  display: inline-block !important;
+  margin-left: 0.5rem !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+/* ==========================================
+   DESCRIPTIVE TEXT BLOCKS (Blockquotes)
+   ========================================== */
+blockquote {
+  border-left: none !important;
+  margin: 1rem 0 !important;
+  padding-left: 1.5rem !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+blockquote p {
+  margin-bottom: 0.75rem !important;
+  font-size: 0.98rem !important;
+}
+
+/* ==========================================
+   CODE EXAMPLES (Simulated Code Editor)
+   ========================================== */
+blockquote > div {
+  position: relative !important;
+  margin: 1.5rem 0 !important;
+}
+
+blockquote table {
+  width: 100% !important;
+  background-color: var(--code-bg) !important;
+  border: 1px solid var(--border-glass) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+  border-collapse: collapse !important;
+  position: relative !important;
+}
+
+/* simulated title header tab */
+blockquote table::before {
+  content: "Exemple de Code PANORAMIC" !important;
+  display: block !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border-bottom: 1px solid var(--border-glass) !important;
+  padding: 0.5rem 1.25rem !important;
+  color: var(--text-muted) !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.78rem !important;
+  font-weight: 500 !important;
+}
+
+blockquote table td {
+  padding: 1.5rem !important;
+  border: none !important;
+}
+
+blockquote table td font[face="Consolas"] {
+  font-family: var(--font-mono) !important;
+  color: var(--text-bright) !important;
+  font-size: 0.95rem !important;
+  display: block !important;
+  line-height: 1.65 !important;
+}
+
+blockquote table td font[face="Consolas"] p {
+  margin-bottom: 0.25rem !important;
+}
+
+/* Clean retro font overrides */
+font[face="Calibri"] {
+  font-family: var(--font-sans) !important;
+  color: var(--text-main) !important;
+}
+
+/* ==========================================
+   COPY BUTTON (Code examples)
+   ========================================== */
+.copy-btn {
+  position: absolute !important;
+  top: 0.32rem !important;
+  right: 0.6rem !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.35rem !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: var(--text-muted) !important;
+  padding: 0.25rem 0.55rem !important;
+  border-radius: 5px !important;
+  font-family: var(--font-sans) !important;
+  font-size: 0.72rem !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+  z-index: 10 !important;
+  opacity: 0.75 !important;
+  letter-spacing: 0.02em !important;
+}
+
+.copy-btn:hover {
+  background: rgba(99, 102, 241, 0.15) !important;
+  border-color: rgba(99, 102, 241, 0.4) !important;
+  color: var(--text-bright) !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 10px rgba(99, 102, 241, 0.15) !important;
+}
+
+.copy-btn:active {
+  transform: scale(0.96) !important;
+}
+
+.copy-btn.copied {
+  background: rgba(16, 185, 129, 0.15) !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  color: #10b981 !important;
+  opacity: 1 !important;
+  box-shadow: 0 0 10px rgba(16, 185, 129, 0.15) !important;
+}
+
+.copy-btn svg {
+  transition: transform 0.2s ease !important;
+}
+
+.copy-btn:hover svg {
+  transform: scale(1.05) !important;
+}
+
+/* ==========================================
+   RELATED KEYWORDS CLOUD (EN RAPPORT)
+   ========================================== */
+.keyword-page > font > p:nth-last-of-type(2) + blockquote,
+.keyword-page > font > blockquote:last-of-type {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 0.5rem !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 1.5rem 0 3rem 0 !important;
+  border-radius: 0 !important;
+}
+
+.keyword-page > font > p:nth-last-of-type(2) + blockquote p,
+.keyword-page > font > blockquote:last-of-type p {
+  margin: 0 !important;
+  display: inline-block !important;
+  color: var(--secondary) !important;
+  font-family: var(--font-mono) !important;
+  background: rgba(6, 182, 212, 0.05) !important;
+  border: 1px solid rgba(6, 182, 212, 0.15) !important;
+  padding: 0.35rem 0.75rem !important;
+  border-radius: 6px !important;
+  font-size: 0.88rem !important;
+  transition: var(--transition-smooth) !important;
+}
+
+.keyword-page > font > p:nth-last-of-type(2) + blockquote p a,
+.keyword-page > font > blockquote:last-of-type p a,
+.keyword-page > font > p:nth-last-of-type(2) + blockquote a,
+.keyword-page > font > blockquote:last-of-type a {
+  color: inherit !important;
+  font-family: inherit !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  font-size: inherit !important;
+  display: inline !important;
+}
+
+.keyword-page > font > p:nth-last-of-type(2) + blockquote p:hover,
+.keyword-page > font > blockquote:last-of-type p:hover {
+  background: var(--primary-glow) !important;
+  border-color: var(--primary) !important;
+  color: var(--text-bright) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 4px 12px var(--primary-glow) !important;
+}
+
+/* ==========================================
+   SEPARATORS AND FOOTER
+   ========================================== */
+hr {
+  border: 0 !important;
+  height: 1px !important;
+  background: linear-gradient(90deg, transparent, var(--border-glass), transparent) !important;
+  margin: 3rem 0 2rem 0 !important;
+}
+
+p[align="center"] i {
+  color: var(--text-muted) !important;
+  font-size: 0.85rem !important;
+}
+
+/* Responsive Overrides */
+@media (max-width: 768px) {
+  .keyword-page > font[face="Calibri"],
+  .keyword-page > font {
+    padding: 2rem 1.5rem !important;
+  }
+  
+  font[size="6"], 
+  font[color="#323296"] {
+    font-size: 1.85rem !important;
+  }
+  
+  .keyword-page > font > ul {
+    padding: 1rem !important;
+  }
+}
+
+/* ==========================================
+   EN RAPPORT — Related keyword links
+   ========================================== */
+a.related-link {
+  display: inline-block !important;
+  color: var(--secondary) !important;
+  font-family: var(--font-mono) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  background: rgba(6, 182, 212, 0.07) !important;
+  border: 1px solid rgba(6, 182, 212, 0.25) !important;
+  border-radius: 6px !important;
+  padding: 0.2rem 0.65rem !important;
+  text-decoration: none !important;
+  letter-spacing: 0.03em !important;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease, transform 0.15s ease !important;
+}
+
+a.related-link:hover {
+  background: rgba(6, 182, 212, 0.18) !important;
+  border-color: var(--secondary) !important;
+  color: #fff !important;
+  transform: translateY(-1px) !important;
+  text-decoration: none !important;
+}
+
+
+

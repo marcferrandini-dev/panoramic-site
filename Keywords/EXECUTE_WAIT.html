@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr" data-keyword-shell="true">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXECUTE_WAIT F [Pi] — Documentation PANORAMIC</title>
+  <meta name="description" content="Documentation de l'instruction EXECUTE_WAIT F [Pi] du langage de programmation PANORAMIC.">
+  <link rel="icon" href="../assets/images/logo.png" type="image/png">
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section keyword-section">
+      <div class="container">
+        <nav class="keyword-breadcrumb" aria-label="Fil d'Ariane">
+          <a href="../documentation.html">Documentation</a>
+          <span aria-hidden="true">/</span>
+          <a href="../manuel-a-z.html">Index A-Z</a>
+          <span aria-hidden="true">/</span>
+          <span>EXECUTE_WAIT F [Pi]</span>
+        </nav>
+        <div class="keyword-page">
+<font face="Calibri" color="#333333" size="3">
+    
+    <p align="center"><font color="#323296" size="6">
+      EXECUTE_WAIT F [Pi]
+    </font></p>
+    
+    <p align="center"><font size="4"><b>
+      EXÃ‰CUTE LE FICHIER F AVEC DES PARAMETRES OPTIONNELS ET ATTEND LA FIN
+    </b></font></p>
+    <br>
+    <p><b><ul>
+      <li>Type: Commande</li>
+      <li>ParamÃ¨tres: n</li>
+      <li>Groupe: SystÃ¨me</li>
+    </ul></b></p>
+
+    <br>
+    <p><font size="4"><b>
+      ACTION
+    </b></font></p>
+
+    <blockquote>
+      <p>
+        La commande EXECUTE_WAIT F exÃ©cute le fichier F et attend la fin. F est le nom absolu ou relatif du fichier Ã  exÃ©cuter ou le nom d'une URL. Dans ce cas, le nom doit commencer par "http://" et la commande EXECUTE_WAIT utilise le navigateur internet par dÃ©faut. Par exemple pour visualiser le forum de PANORAMIC, la commande est:
+      </p>
+      <p>
+        execute_wait "http://panoramic.free-boards.net"
+      </p>
+      <p>
+        Le nom absolu du fichier est le nom complet, par rapport Ã  la racine du systÃ¨me de fichier (ex: "c:\temp\file.exe").
+      </p>
+      <p>
+        Le nom relatif est le nom du fichier par rapport au rÃ©pertoire courant (ex: "file.exe" ou "/file.exe" ou "\file.exe").
+      </p>
+      <p>
+        La commande peut passer un ou plusieurs paramÃ¨tres au fichier exÃ©cutable F. Les paramÃ¨tres doivent Ãªtre sÃ©parÃ©s du nom de l'exÃ©cutable par le caractÃ¨re |. Les paramÃ¨tres sont sÃ©parÃ©s par des espaces.
+      </p>
+      <p>
+        Exemple : EXECUTE_WAIT "Make_exe.exe|-e source.bas" lance l'exÃ©cutable "Make_exe.exe" et lui passe 2 paramÃ¨tres "-e" et "source.bas".
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><font size="4"><b>
+      SYNTAXE :
+      <font color="#FF0000">
+        EXECUTE_WAIT F / EXECUTE_WAIT F Pi
+      </font>
+    </b></font></p>
+
+    <ul>
+      <li>SYNTAXE 1:</li>
+      <li>EXECUTE_WAIT F</li>
+      <li>F = nom absolu ou relatif du fichier.</li>
+      <li>SYNTAXE 2:</li>
+      <li>EXECUTE_WAIT F P1 P2 ...</li>
+      <li>F = nom absolu ou relatif du fichier.</li>
+      <li>Pi = paramÃ¨tre.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      UTILISATION
+    </font></b></p>
+
+    <ul>
+      <li>La commande EXECUTE_WAIT est utilisÃ©e pour exÃ©cuter un fichier et attendre la fin.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      ERREUR
+    </font></b></p>
+
+    <ul>
+      <li>Si F n'est pas un nom correct de fichier.</li>
+    </ul>
+
+    <br>
+
+    <p><b><font size="4">
+      EXEMPLE
+    </font></b></p>
+
+    <blockquote>
+      <p>
+        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
+          <tr>
+            <td><left><font face="Consolas">
+              <p>' lancer le programme prg.exe</p>
+              <p>execute_wait "prg.exe"</p>
+              <p>' lancer le programme prog.exe et lui passer un paramÃ¨tre</p>
+              <p>execute_wait "prog.exe 50"</p>
+            </font></left></td>
+          </tr>
+        </table>
+      </p>
+    </blockquote>
+
+    <br>
+
+    <p><b><font size="4">
+      EN RAPPORT
+    </font></b></p>
+
+    <blockquote>
+      <p><a href="./EXECUTE.html" class="related-link">EXECUTE</a></p>
+    </blockquote>
+  </font>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="../assets/js/keyword-copy.js"></script>
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

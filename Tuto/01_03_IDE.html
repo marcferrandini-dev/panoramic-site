@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  PRISE EN MAIN DE L'IDE</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<h2>A 
+  QUOI SERT PANORAMIC_IDE ?</h2>
+<p>IDE veut dire &quot;Integrated 
+  Development Environment&quot; c'est &agrave; dire en bon fran&ccedil;ais: &quot;Environnement 
+  de D&eacute;veloppement Int&eacute;gr&eacute;&quot;, soit EDI en abr&eacute;g&eacute;.</p>
+<p><b>PANORAMIC_IDE</b> 
+  sert &agrave; cr&eacute;er l'interface graphique de votre application, &agrave; 
+  taper et &agrave; modifier votre code source, &agrave; l'ex&eacute;cuter et 
+  &agrave; cr&eacute;er un ex&eacute;cutable.</p>
+<p><b>PANORAMIC_IDE</b> 
+  vous permet de placer et de redimensionner avec la souris les objets directement 
+  sur votre feuille (<b>FORM)</b> et que vous trouvez 
+  dans le bandeau. Vous cr&eacute;er ainsi directement votre interface utilisateur, 
+  telle qu'elle sera &agrave; l'ex&eacute;cution.</p>
+<p>Pour cela, vous 
+  cliquez dans le bandeau sur l'objet que vous avez choisi (par exemple <b>BUTTON</b>), 
+  puis vous cliquez sur votre <b>FORM</b> : un objet 
+   <b>BUTTON</b> se cr&eacute;e &agrave; l'endroit 
+  que vous avez choisi.</p>
+<p>Ensuite, par un 
+  &quot;Glisser-D&eacute;poser&quot;, vous le mettez l&agrave; o&ugrave; vous 
+  voulez, si toutefois vous voulez le mettre ailleurs. La m&ecirc;me technique 
+  du &quot;Glisser-D&eacute;poser&quot; sur les 8 poign&eacute;es qui entourent 
+  ce bouton permettent de le redimensionner. Toutes les modifications que vous 
+  effectuez se retrouvent dans l'inspecteur d'objet.</p>
+<p>L'inspecteur d'objet 
+  est une sorte de rappel des propri&eacute;t&eacute;s d'un objet, mais toute 
+  modification que vous ferez dans cet inspecteur d'objet s'effectueront sur l'objet 
+  lui-m&ecirc;me. Ainsi vous pouvez d&eacute;placer un objet &agrave; la souris 
+  pour le mettre l&agrave; ou vous voulez sur la feuille, ou vous modifiez ses 
+  propri&eacute;t&eacute;s <b>top</b> et <b>left</b> 
+  dans l'inspecteur d'objets, le r&eacute;sultat est identique.</p>
+<p>Vous pouvez taper 
+  votre code principal dans la fen&ecirc;tre appropri&eacute;e.</p>
+<p>Pour taper du code 
+  correspondant aux &eacute;v&eacute;nements d'un objet, faites un clic gauche 
+  sur cet objet. Si l'objet accepte plusieurs types d'&eacute;v&eacute;nements, 
+  cocher l'&eacute;v&eacute;nement choisi dans la fen&ecirc;tre (ON_CLICK ou ON_CHANGE).</p>
+<p>Vous pouvez essayer 
+  votre code directement (RUN, ou F9 ou click sur l'icone &eacute;clair) ou compiler 
+  votre application.</p>
+<p>Une fonction de 
+  transfert du source vers <b>PANORAMIC_EDITOR</b> est pr&eacute;vue.</p>
+<div class="tuto-separator"></div>
+<p><h2><b>ECRITURE D'UN 
+  PETIT PROGRAMME</b></h2></p>
+<p>Pour mettre tout 
+  cela en pratique et se faire la main, nous allons &eacute;crire un tout petit 
+  programme (1 seule ligne) qui visualise une fen&ecirc;tre avec un bouton. Lorsqu'on 
+  clique sur ce bouton, il affiche OK.</p>
+<p>1 - On lance <b>PANORAMIC_IDE</b>.</p>
+<p>On obtient 3 fen&ecirc;tres. 
+  Le d&eacute;tail sera pour plus tard.<br>
+  Pour le moment, sachez que la fen&ecirc;tre du haut permet de choisir les objets 
+  que nous allons disposer sur la fen&ecirc;tre en bas &agrave; droite. Cette 
+  fen&ecirc;tre, en bas &agrave; droite, est notre espace de travail: tous les 
+  objets que nous allons y d&eacute;poser seront utilisables dans notre programme. 
+  Cette fen&ecirc;tre est un objet de type Form, elle a automatiquement le num&eacute;ro 
+  0, c'est pourquoi elle est appel&eacute;e Form 0.</p>
+<p>Cette fen&ecirc;tre 
+  est bien s&ucirc;r d&eacute;pla&ccedil;able &agrave; la souris et redimensionnable.<br>
+  De m&ecirc;me, les objets qu'on y d&eacute;pose sont d&eacute;pla&ccedil;ables 
+  &agrave; la souris et redimensionnables grace &agrave; des poign&eacute;es de 
+  redimensionnement.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_03_FR_IDE.png" width="849" height="668"></p>
+<p>&nbsp;</p>
+<p>2 - Dans la fen&ecirc;tre 
+  PANORAMIC ADVANCED IDE, on choisit un objet Bouton: on clique sur BUTTON de 
+  l'onglet Standard. D'ailleurs, il s'affiche &quot;Le Prochain Objet est un Button&quot;:</p>
+<p>&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_03_FR_CHOICE.png" width="236" height="177"></p>
+<p>&nbsp;</p>
+<p>3 - Sur la fen&ecirc;tre 
+  de travail, on clique &agrave; un endroit, et un bouton apparait &agrave; ce 
+  m&ecirc;me endroit. Si on clique alors sur le bouton, des petits carr&eacute;s 
+  noirs apparaissent: ce sont les poign&eacute;es de redimensionnement dont je 
+  parlais tout &agrave; l'heure.</p>
+<p>&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_03_BUTTON.png" width="246" height="209"></p>
+<p>&nbsp;</p>
+<p>4 - On fait un 
+  click DROIT sur ce bouton. Une fen&ecirc;tre appara&icirc;t. Dans cette fen&ecirc;tre, 
+  on va d&eacute;crire ce qui se passera lorsque, plus tard, &agrave; l'ex&eacute;cution 
+  du programme on cliquera sur le bouton.</p>
+<p>Dans cette fen&ecirc;tre 
+  on tape la seule ligne qui composera le source de notre programme: caption 1,&quot;OK&quot;<br>
+  Signification 
+  de cette ligne: on affecte le libell&eacute; &quot;OK&quot; au bouton num&eacute;ro 
+  1.<br>
+  En effet, le bouton est l'objet num&eacute;ro 1 (chaque objet a son num&eacute;ro). 
+  Pour affecter un libell&eacute; &agrave; un objet, la commande est <b>CAPTION</b>. 
+  Pour faire agir une commande sur un objet, on indique le num&eacute;ro de l'objet 
+  (1 ici).</p>
+<p>Par cons&eacute;quent, 
+  lorsqu'on cliquera sur le bouton, le bouton affichera &quot;OK&quot;. Ce n'est 
+  pas plus compliqu&eacute; que cela.</p>
+<p><br>
+  </p>
+<p align="center"><img src="TUTOPICT/01_03_FR_LEFT_CLICK.png" width="353" height="164"></p>
+<p>&nbsp;</p>
+<p>5 - Ca y est, le 
+  programme est termin&eacute;. On va l'ex&eacute;cuter.</p>
+<div class="tuto-separator"></div>
+<p><h2><b>EXECUTION DU 
+  PETIT PROGRAMME</b></h2></p>
+<p> Pour l'ex&eacute;cuter 
+  on a 3 possibilit&eacute;s, toutes &eacute;quivalentes:</p>
+<blockquote>
+  <p>on appuye sur 
+    la touche F9,<br>
+    ou on clique sur l'ic&ocirc;ne qui visualise un petit &eacute;clair,<br>
+    ou on clique sur Execute du menu.</p>
+</blockquote>
+<p>La fen&ecirc;tre 
+  principale apparait:</p>
+<p>&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_03_EXECUTE.png" width="270" height="239"></p>
+<p>&nbsp;</p>
+<p>Quand on clique 
+  sur ce bouton, il affiche OK:</p>
+<p>&nbsp;</p>
+<p align="center"><img src="TUTOPICT/01_03_CLICK.png" width="267" height="233"></p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 23 septembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

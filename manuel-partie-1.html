@@ -1,0 +1,2089 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 1 : Le Langage de Référence - PANORAMIC</title>
+  <meta name="description" content="Variables, constantes, expressions arithmétiques et logiques, boucles, conditions et gestion des sous-programmes.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 1 : Le Langage de Référence</h1>
+        <p>Variables, constantes, expressions arithmétiques et logiques, boucles, conditions et gestion des sous-programmes.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="top"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Le langage de référence</h1></div>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <br><br>
+            <p>
+              1 – <a href="#b1">Généralités du langage</a>
+            </p>
+            <blockquote style="border-left: none;">
+              1.1 – <a href="#b1.1">Vocabulaire</a><br>
+              1.2 – <a href="#b1.2">Règles d&rsquo;utilisation</a>
+              <blockquote style="border-left: none;">
+                <p>
+                  1.2.1 – <a href="#b1.2.1">Numérotation</a><br>
+                  1.2.2 – <a href="#b1.2.2">Commandes</a><br>
+                  1.2.3 – <a href="#b1.2.3">Parenthèses</a><br>
+                  1.2.4 – <a href="#b1.2.4">Commandes et numéro d&rsquo;objet</a><br>
+                  1.2.5 – <a href="#b1.2.5">Fonctions et numéro d&rsquo;un objet</a><br>
+                  1.2.6 – <a href="#b1.2.6">Cible des commandes de dessin 2D</a>
+                </p>
+              </blockquote>
+                1.3 – <a href="#b1.3">Variables</a><br>
+                1.4 – <a href="#b1.4">Tableaux de variables</a>
+            </blockquote>
+            <p>
+              2 – <a href="#b2">Fonctions du langage BASIC</a>
+            </p>
+            <blockquote style="border-left: none;">
+              2.1 – <a href="#b2.1">Fonctions mathématiques</a><br>
+              2.2 – <a href="#b2.2">Fonctions Logiques</a><br>
+              2.3 – <a href="#b2.3">Fonctions String</a><br>
+              2.4 – <a href="#b2.4">Conversions string / nombre</a><br>
+              2.5 – <a href="#b2.5">Fonctions logiques binaires</a><br>
+              2.6 – <a href="#b2.6">Ecran</a><br>
+              2.7 – <a href="#b2.7">Lecture et écriture en mémoire</a><br>
+              2.8 – <a href="#b2.7">Séparateur décimal pour les nombres réels</a></p>
+            </blockquote>
+            <p>
+              3 – <a href="#b3">Commandes du langage BASIC</a>
+            </p>
+            <blockquote style="border-left: none;">
+              3.1 – <a href="#b3.1">Structures</a><br>
+              3.2 – <a href="#b3.2">Label / Goto / Gosub</a><br>
+              3.3 – <a href="#b3.3">Sous-programmes</a><br>
+              3.4 – <a href="#b3.4">Fonctions</a><br>
+              3.5 – <a href="#b3.5">Commentaires</a><br>
+              3.6 – <a href="#b3.6">Fin de l&rsquo;exécution</a><br>
+              3.7 – <a href="#b3.7">Heure et Date</a><br>
+              3.8 – <a href="#b3.8">Commandes système</a><br>
+              3.9 – <a href="#b3.9">Données à l&rsquo;intérieur du programme</a><br>
+              3.10 – <a href="#b3.10">Données entrées au clavier</a><br>
+              3.11 – <a href="#b3.11">Impression : Print</a><br>
+              3.12 – <a href="#b3.12">Variables and labels</a><br>
+              3.13 – <a href="#b3.13">Numéro de ligne courante</a></p>
+            </blockquote>  
+          </blockquote>
+        </blockquote>
+        <br>
+        <br>
+        <p>
+          <span class="text-large">
+            Ce logiciel est appelé <B>PANORAMIC</B> parce que c&rsquo;est un langage BASIC « universel », utilisable dans des domaines différents :
+          </span>
+        </p>
+        <ul type="circle">
+          <li><p><b>Monde 3D :</b> charge des objets MD2 et 3DS, des objets 3D primaires, les gère (en position, en taille, en couleur, en texture, &#8230;), pilote une lumière 3D et une caméra 3D.</p></li>
+
+          <li><p><b>Monde 2D :</b> permet de déplacer des SPRITES sur un arrière plan.</p></li>
+          
+          <li><p><b>Manipule (charge et joue) des objets multimédia :</b> sons,  musiques, images, films.</p></li>
+          
+          <li><p><b>Dessine en 2D :</b> cercles, rectangles, ellipses, arcs, lignes, polylignes, points.</p></li>
+          
+          <li><p><b>Crée et manipule des objets système (de Windows) :</b> bouton, liste, combobox, barres, &#8230;</p></li>
+          
+          <li><p><b>Manipule des fichiers texte sur le disque :</b> lire, écrire, créer&#8230;</p></li>
+          
+          <li><p><b>Pilote le logiciel Excel.</b></p></li>
+          
+          <li><p><b>Permet le calcul mathématique :</b> log, exp,  sin, cos&#8230;</p></li>
+          
+          <li><p>Etc.</p></li>
+        </ul>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <p><h2><a name="b1"></a>1 – Généralités du langage</h2>
+
+      <hr noshade size="1" color="666666"></p>
+
+      <blockquote style="border-left: none;">
+        <p><b>PANORAMIC</b> utilise la syntaxe classique du BASIC.<br>
+
+          <br>        
+
+          N&rsquo;est pas sensible à la casse : <code class="kw">NexT</code> et <code class="kw">nEXt</code> ont la même signification.<br>
+
+          <br>        
+
+          <code class="kw">REM</code> (ou apostrophe) pour les remarques : les caractères après le mot clé <code class="kw">REM</code> ne sont pas évalués.<br>
+
+          <br>        
+
+          Des espaces peuvent être insérés partout sauf à l&rsquo;intérieur d&rsquo;un mot clé ou d&rsquo;un nom de variable.<br>
+
+          <br>        
+
+          Toutes les variables doivent être définies par <code class="kw">DIM</code>, sauf les variables système (par exemple <code class="kw">TIME$</code>, <code class="kw">DATE$</code>, <code class="kw">DIR_CURRENT$</code>).<br>
+
+          <br>
+
+          Plusieurs commandes peuvent être écrites sur la même ligne, dans ce cas elles sont séparées par « : »<br>
+
+          <br>
+
+          Possède des mots-clés de type : déclaration (<code class="kw">DATA</code>,&#8230;), commandes (<code class="kw">PRINT</code>,&#8230;), fonctions (<code class="kw">SIN</code>(30),&#8230;), variables système (<code class="kw">TIME$</code>,&#8230;), opérateurs (<code class="kw">AND</code>,&#8230;).<br>
+
+          <br>
+
+          Une commande peut avoir jusqu&rsquo;à 5 paramètres.<br>
+
+          <br>        
+
+          Le point « . » est le séparateur décimal pour les nombres.<br>
+
+          <br>        
+
+          Si une erreur arrive lors de l&rsquo;exécution, une fenêtre explicative est visualisée et le programme s&rsquo;arrête.</p>
+        </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b1.1"></a>1.1 – Vocabulaire</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            <b>OBJET SYSTEME :</b> objet du Système d&rsquo;Exploitation : <code class="kw">BUTTON</code>, <code class="kw">FORM</code>, <code class="kw">COMBO</code>, <code class="kw">SCENE3D</code>, &#8230;<br>
+
+            <br>      
+
+            <b>CIBLE :</b> l&rsquo;objet qui reçoit toutes les commandes.<br>
+
+            <br>  
+
+            <b>CIBLE 2D :</b> l&rsquo;objet (comme <code class="kw">FORM</code> ou <code class="kw">PICTURE)</code> qui est désigné pour recevoir toutes les commandes 2D.<br>
+
+            <br>
+
+            <b>CIBLE 3D</b> : l&rsquo;objet (un <code class="kw">SCENE3D</code> parmi plusieurs <code class="kw">SCENE3D</code>) désigné pour recevoir toutes les commandes 3D.<br>
+
+            <br>
+
+            <b>OBJET 3D :</b> élément d&rsquo;un <code class="kw">SCENE3D</code> (<code class="kw">3D_SPHERE</code>, <code class="kw">3D_CONE</code>, <code class="kw">3D_THORUS</code>, etc.).<br>
+
+            <br>
+
+            <b>OBJET SPRITE :</b> image qui peut être déplacée sur un arrière plan (<code class="kw">SCENE2D</code>) sans le perturber.<br>
+
+            <br>
+
+            <b>COMMANDE :</b> un ordre à exécuter immédiatement.<br>
+
+            <br>
+
+            <b>FONCTION :</b> une expression qui retourne une valeur. Elle est appelée avec un ou plusieurs paramètres. Exemple : <code class="kw">SQR</code>(2) retourne 1.414&#8230;<br>
+
+            <br>
+
+            <b>DECLARATION :</b> mot clé utilisé pour déclarer quelque chose (une étiquette, une variable,&#8230;).<br>
+
+            <br>
+
+            <b>VARIABLE SYSTEME :</b> variable non définie par l&rsquo;utilisateur, mais utilisée pour sa valeur propre (<code class="kw">TIME$</code>, <code class="kw">DATE$</code>&#8230;)<br>
+
+            <br>
+
+            <b>SOUS-PROGRAMME :</b> groupe de commandes qui commence par un <code class="kw">LABEL</code> et qui se termine par <code class="kw">RETURN</code> et qui peut être appelé un certain nombre de fois.
+          </p>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">  
+        
+        <p><h3><a name="b1.2"></a>1.2 – Règles d&rsquo;utilisation</h3></p>
+        
+        <blockquote style="border-left: none;">      
+          <p><span class="text-large"><a name="b1.2.1"></a>1.2.1 – Numérotation</span></p>
+          <blockquote style="border-left: none;">
+            <p>
+              Chaque objet système (<code class="kw">BUTTON</code>, <code class="kw">LIST</code>, <code class="kw">FORM</code>, &#8230;) doit être créé avec un numéro associé. Ce numéro est utilisé pour toute commande appliquée sur cet objet.
+            </p>
+            <p>
+              Chaque objet 3D doit être créé avec un numéro associé. Ce numéro est utilisé pour toute commande 3D appliquée sur cet objet.
+            </p>
+            <p>
+              Chaque objet SPRITE doit être créé avec un numéro associé. Ce numéro est utilisé pour toute commande SPRITE appliquée sur cet objet.
+            </p>
+            <p>
+              Les numéros d&rsquo;OBJETS SYSTEME, les numéros d&rsquo;OBJETS 3D et les numéros de SPRITES sont indépendants (aucun rapport) : un OBJET 3D peut porter un numéro utilisé par un OBJET SYSTEME ou un OBJET SPRITE.
+            </p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+        <p><span class="text-large"><a name="b1.2.2"></a>1.2.2 – Commandes</span></p>
+          <blockquote style="border-left: none;">
+            <p>Les commandes sont regroupées par famille.</p>
+            <p><i>Exemple :</i></p>
+            <ul>
+              <li>Chaque commande sur un objet 3D commence par <b>3D</b> : <code class="kw">3D_X_POSITION</code>, <code class="kw">3D_Z_POSITION</code>, &#8230;</li>
+
+              <li>Chaque commande pour dessiner commence par <b>2D</b> : <code class="kw">2D_CIRCLE</code>, <code class="kw">2D_PEN_COLOR</code>, &#8230;</li>
+
+              <li>Chaque commande sur un objet SPRITE commence par <b> SPRITE</b> : <code class="kw">SPRITE_POSITION</code>, <code class="kw">SPRITE_HIDE</code>, &#8230;</li>
+            </ul>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p><span class="text-large"><a name="b1.2.3"></a>1.2.3 – Parenthèses</span></p>
+          <blockquote style="border-left: none;">
+            <p>Une fonction a des parenthèses : <code class="kw">SIN</code>(x), <code class="kw">WIDTH</code>(N)</p>
+            <p>Une commande n&rsquo;a aucune parenthèse.</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p><span class="text-large"><a name="b1.2.4"></a>1.2.4 – Commandes et numéro d&rsquo;objet</span></p>
+          <blockquote style="border-left: none;">
+            <p>Toute commande sur un objet SYSTEME utilise le numéro de cet objet SYSTEME.</p>
+            <p>Toute commande sur un objet 3D utilise le numéro de cet objet 3D.</p>
+            <p>Toute commande sur un objet SPRITE utilise le numéro de cet objet SPRITE.</p>
+        </blockquote>
+        </blockquote>
+      </blockquote>
+    
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+    
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p><span class="text-large"><a name="b1.2.5"></a>1.2.5 – Fonctions et numéro d&rsquo;objet</span></p>
+          <blockquote style="border-left: none;">
+            <p>Toute fonction sur un objet SYSTEME utilise le numéro de cet objet SYSTEME.</p>
+            <p>Toute fonction sur un objet 3D utilise le numéro de cet objet 3D.</p>
+            <p>Toute fonction sur un objet SPRITE utilise le numéro de cet objet SPRITE.</p>
+        </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <p><span class="text-large"><a name="b1.2.6"></a>1.2.6 – Cible des commandes de dessin 2D</span></p>
+          <blockquote style="border-left: none;">
+            <p>Les commandes de dessin 2D (pour dessiner sur un objet) ne se réfèrent pas à un numéro d&rsquo;objet, mais s&rsquo;appliquent à l&rsquo;objet « cible 2D ».</p>
+            <p>L&rsquo;objet « cible 2D » est FORM numéro 0 par défaut.</p>
+            <p>Pour changer d&rsquo;objet « cible 2D », utiliser la commande « <code class="kw">2D_TARGET_IS N</code>« . N sera le nouvel objet « cible 2D ».</p>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b1.3"></a>1.3 – Variables</h3></p>
+        <blockquote style="border-left: none;">
+          <p>Il y a 3 types de variables :</p>
+          <ul>
+            <li>Réel</li>
+            <li>Entier (le nom est suivi par %)</li>
+            <li>String (le nom est suivi par $)</li>
+          </ul>
+          <p><b>a%</b> est un entier (a% = 14)<br>
+            <b>b$</b> est un string (b$ = « Salut »)<br>
+            <b>d</b> est réel (d = 12.8953)</p>
+            <p>Toutes les variables (simples et tableaux) doivent être définies par <code class="kw">DIM</code> :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  <code class="kw">DIM</code> Abc, I%, Name$(20)
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <p>Un nom de variable contient des lettres, des chiffres, le caractère souligné (_) et peut se terminer par % ou $. Le premier caractère ne peut pas être un nombre.</p>
+          <p>Une variable peut être libérée par la commande <code class="kw">FREE</code>.</p>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b1.4"></a>1.4 – Tableaux de variables</h3></p>
+        <blockquote style="border-left: none;">
+          <p>On utilise <code class="kw">DIM</code> pour définir un tableau de variable (entier, réel ou string).</p>
+          <p><code class="kw">DIM</code> a$(20) crée un tableau de strings de 21 éléments. Le premier élément est a$(0), le dernier est a$(20).</p>
+          <p>Pour libérer un tableau de variable, utiliser <code class="kw">FREE</code> sans indiquer le nombre d&rsquo;éléments : <code class="kw">DIM</code> a$(20) : <code class="kw">FREE</code> a$</p>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>    
+      <p><h2><a name="b2"></a>2 – Fonctions du BASIC</h2>
+      <hr noshade size="1" color="666666"></p>
+
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b2.1"></a>2.1 – Mathematical functions</h3></p>
+        <blockquote style="border-left: none;">
+          <p>Les fonctions mathématiques classiques du BASIC sont disponibles :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">ABS</code>(X)
+                  </td>
+                  <td>
+                    Retourne la valeur absolue de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">ACOS</code>(X)
+                  </td>
+                  <td>
+                    Retourne l&rsquo;arc cosinus de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">ASIN</code>(X)
+                  </td>
+                  <td>
+                    Retourne l&rsquo;arc sinus de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">ATN</code>(X)
+                  </td>
+                  <td>
+                    Retourne l&rsquo;arc tangente de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">COS</code>(X)
+                  </td>
+                  <td>
+                    Retourne le cosinus de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DEGREES</code>
+                  </td>
+                  <td>
+                    Les angles sont exprimés en degrés.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DEGREE_TO_RADIAN</code>(X)
+                  </td>
+                  <td>
+                    Retourne la valeur en radians de l&rsquo;angle X exprimé en degrés.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EVEN</code>(X)
+                  </td>
+                  <td>
+                    Retourne 1 si X est pair, 0 sinon.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EXP(X)</code>
+                  </td>
+                  <td>
+                    Retourne l&rsquo;exponentielle de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">FRAC</code>(X)
+                  </td>
+                  <td>
+                    Retourne la partie fractionnaire de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">HCOS</code>(X)
+                  </td>
+                  <td>
+                    Retourne le cosinus hyperbolique de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">HEX</code>(V$)
+                  </td>
+                  <td>
+                    Retourne une valeur décimale à partir d&rsquo;une valeur hexadécimale V$.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">HEX$</code>(V)
+                  </td>
+                  <td>
+                    Retourne une valeur hexadécimale à partir d&rsquo;une valeur décimale V.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">HSIN</code>(X)
+                  </td>
+                  <td>
+                    Retourne le sinus hyperbolique de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">HTAN</code>(X)
+                  </td>
+                  <td>
+                    Retourne la tangente hyperbolique de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INT</code>(X)
+                  </td>
+                  <td>
+                    Retourne la partie entière de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LOG</code>(X)
+                  </td>
+                  <td>
+                    Retourne le logarithme népérien (de base e) de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LOG10</code>(X)
+                  </td>
+                  <td>
+                    Retourne le logarithme en base 10 de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LOG2</code>(X)
+                  </td>
+                  <td>
+                    Retourne le logarithme en base 2 de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">MAX</code>(X,Y)
+                  </td>
+                  <td>
+                    Retourne le plus grand de X et Y.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">MIN</code>(X,Y)
+                  </td>
+                  <td>
+                    Retourne le plus petit de X et Y.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">MOD</code>(X,Y)
+                  </td>
+                  <td>
+                    Retourne le modulo de X et Y.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">ODD</code>(X)
+                  </td>
+                  <td>
+                    Retourne 1 si X est impair, 0 sinon.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PI</code>
+                  </td>
+                  <td>
+                    Retourne 3.1415926535897932384626433832795
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">POWER</code>(X, Y)
+                  </td>
+                  <td>
+                    Retourne X élevé à la puissance Y.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RADIANS</code>
+                  </td>
+                  <td>
+                    Les angles sont exprimés en radians.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RADIAN_TO_DEGREE</code>(X)
+                  </td>
+                  <td>
+                    Retourne la valeur en degrés de l&rsquo;angle X exprimé en radians.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RND</code>(X)
+                  </td>
+                  <td>
+                    Retourne une valeur aléatoire entre 0 et X, mais non égale à X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">SGN</code>(X)
+                  </td>
+                  <td>
+                    Retourne le signe de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">SIN</code>(X)
+                  </td>
+                  <td>
+                    Retourne le sinus de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">SQR</code>(X)
+                  </td>
+                  <td>
+                    Retourne la racine carrée de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">TAN</code>(X)
+                  </td>
+                  <td>
+                    Retourne la tangente de X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">WRAP_VALUE</code>(A)
+                  </td>
+                  <td>
+                    Retourne une valeur de l&rsquo;angle A dans l&rsquo;intervalle 0-360.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b2.2"></a>2.2 – Fonctions logiques</h3></p>
+        <blockquote style="border-left: none;">
+          <p>
+            Les fonctions logiques classiques du BASIC sont disponibles : <code class="kw">AND</code>, <code class="kw">OR</code>, <code class="kw">NOT</code>
+          </p>
+          <p>Les parenthèses peuvent être utilisées.</p>
+          <p>Ces fonctions sont utilisées dans une expression <code class="kw">IF</code>, <code class="kw">WHILE</code> ou <code class="kw">UNTIL</code> et le résultat de l&rsquo;évaluation est « VRAI » ou « FAUX ».</p>
+          <blockquote style="border-left: none;">
+            <caption><i>&nbsp;Exemple :</i></caption>
+            <table>
+              <tr>
+                <td><code class="kw">IF</code> ((A&gt;1) <code class="kw">OR</code> ((B+3&lt;C-4))) <code class="kw">AND</code> (D&lt;&gt;6 <code class="kw">OR NOT</code>(A&lt;B)) <code class="kw">THEN</code> &#8230;</td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <p>Les comparateurs suivants peuvent être utilisés avec des valeurs numériques :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td align="center">
+                    =
+                  </td>
+                  <td>
+                    égal à
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    &gt;
+                  </td>
+                  <td>
+                    plus grand que, supérieur à
+                  </td>
+                </tr>
+                <tr>
+                  <td align="center">
+                    &lt;
+                  </td>
+                  <td>
+                    plus petit que, inférieur à
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &lt;= ou =&lt;
+                  </td>
+                  <td>
+                    inférieur ou égal à
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &gt;= ou =&gt;
+                  </td>
+                  <td>
+                  supérieur ou égal à
+                </td>
+                </tr>
+                <tr>
+                  <td>
+                    &gt;&lt; ou &lt;&gt;
+                  </td>
+                  <td>
+                    non égal à, différent de
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+          <br>
+          <p>Seuls les comparateurs suivants peuvent être utilisés pour comparer des strings :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td align="center">
+                    =
+                  </td>
+                  <td>
+                    égal à
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    &gt;&lt; ou &lt;&gt;
+                  </td>
+                  <td>
+                    non égal à, différent de
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <h3><a name="b2.3"></a>2.3 – Fonctions string</h3>
+        <blockquote style="border-left: none;">
+          <p>Les fonctions « string » classiques du BASIC sont disponibles :</p>
+          <blockquote style="border-left: none;">      
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">LEFT$</code>(A$,N)
+                  </td>
+                  <td>
+                    Retourne les N premiers caractères du string A$ (caractères à gauche).
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RIGHT$</code>(A$,N)
+                  </td>
+                  <td>
+                    Retourne les N derniers caractères du string A$ (caractères à droite).
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LEN(</code>A$)
+                  </td>
+                  <td>
+                    Retourne la longueur du string A$ (soit le nombre de caractères).
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">STRING$</code>(N,C$)
+                  </td>
+                  <td>
+                    Retourne un string contenant N fois le caractère C$.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">MID$</code>(A$,4,2)
+                  </td>
+                  <td>
+                    Retourne les 2 caractères du string A$ à partir du 4ème caractère.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">UPPER$</code>(A$)
+                  </td>
+                  <td>
+                    Retourne le string constitué de A$ en majuscules.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LOWER$</code>(A$)
+                  </td>
+                <td>
+                  Retourne le string constitué de A$ en minuscules.
+                </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">TRIM$</code>(A$)
+                  </td>
+                  <td>
+                    Retourne le string constitué de A$ sans les blancs à droite et à gauche.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LTRIM$</code>(A$)
+                  </td>
+                  <td>
+                    Retourne le string constitué de A$ sans les blancs à gauche.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RTRIM$</code>(A$)
+                  </td>
+                  <td>
+                    Retourne le string constitué de A$ sans les blancs à droite.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">NUMERIC</code>(A$)
+                  </td>
+                  <td>
+                    Retourne 1 si le string A$ représente une valeur numérique, 0 sinon.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INSTR</code>(A$,B$)
+                  </td>
+                  <td>
+                    Retourne la position du premier caractère de B$ dans A$.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INSTR_LAST</code>(A$,B$)
+                  </td>
+                  <td>
+                    Retourne la position dans la chaine de caractères A$ de la dernière occurence de la chaine de caractères B$.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INSTR_POS</code>(A$,B$,P)
+                  </td>
+                  <td>
+                    Retourne la position de la chaine de caractères B$ dans la chaine de caractères A$ à partir de la position P.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INSTR_RIGHT</code>(A$,B$)
+                  </td>
+                  <td>
+                    Retourne la position dans la chaine de caractères A$ du premier caractère de la chaine de caractères B$, à partir de la fin.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INSERT$</code>(A$,B$,P)
+                  </td>
+                  <td>
+                    Retourne un string formé de A$ avec B$ inséré en position P.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">REVERSE$</code>(A$)
+                  </td>
+                  <td>
+                    Retourne la chaîne de caractères dans laquelle l&rsquo;ordre des caractères de A$ est inversé.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RIGHT_POS$</code>(A$,P)
+                  </td>
+                  <td>
+                    Retourne une chaine de caractères composée de la chaine de caractères A$ à partir de la position P.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      <blockquote style="border-left: none;">
+        
+      <p><h3><a name="b2.4"></a>2.4 – Conversions strings / nombre</h3></p>
+      <blockquote style="border-left: none;">
+        <p>Les fonctions de conversion classiques du BASIC sont disponibles:</p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+                  <code class="kw">VAL</code>(« 123.4 »)
+                </td>
+                <td>
+                  Convertit le string « 123.4 » en sa valeur réelle 123.4
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">STR$</code>(123.4)
+                </td>
+                <td>
+                  Convertit la valeur réelle 123.4 en un string « 123.4 »
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">ASC</code>(A$)
+                </td>
+                <td>
+                  Retourne le code ASCII du premier caractère d&rsquo;A$
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <code class="kw">CHR$</code>(V)
+                </td>
+                <td>
+                  Retourne le caractère correspondant au code ASCII V
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+    
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+        
+        <p><h3><a name="b2.5"></a>2.5 – Fonctions logiques binaires</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">BIN_AND</code>(V1,V2)
+                  </td>
+                  <td>
+                    Retourne la valeur du « ET » binaire logique entre V1 et V2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BIN_OR</code>(V1,V2)
+                  </td>
+                  <td>
+                    Retourne la valeur du « OU » binaire logique entre V1 et V2
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BIN_XOR</code>(V1,V2)
+                  </td>
+                  <td>
+                    Retourne la valeur du « OU EXCUSIF » binaire logique entre V1 et V2
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b2.6"></a>2.6 – Ecran</h3></p>
+        <blockquote style="border-left: none;">
+          <p>Des variables système donnent les dimensions de l&rsquo;écran en pixels :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">SCREEN_X</code>
+                  </td>
+                  <td>
+                    Retourne la largeur de l&rsquo;écran en pixels.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">SCREEN_Y</code>
+                  </td>
+                  <td>
+                    Retourne la hauteur de l&rsquo;écran en pixels.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b2.7"></a>2.7 – Lecture et écriture en mémoire</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">PEEK</code>(A)
+                  </td>
+                  <td>
+                    Retourne la valeur (octet de 0 à 255) de l&rsquo;adresse A.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PEEK16</code>(A)
+                  </td>
+                  <td>
+                    Retourne le contenu (valeur sur 16 bits de 0 à 65535) des adresses A et A+1.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PEEK32</code>(A)
+                  </td>
+                  <td>
+                    Retourne le contenu (valeur sur 32 bits de 0 à 4294967295) des adresses A, A+1, A+2 et A+3.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">POKE</code>&nbsp;A,V
+                  </td>
+                  <td>
+                    Ecrit la valeur V (octet de 0 à 255) à l&rsquo;adresse A.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">POKE16</code>&nbsp;A,V
+                  </td>
+                  <td>
+                    Ecrit la valeur de 16 bits V (octet de 0 à 255) aux adresses A et A+1.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">POKE32</code>&nbsp;A,V
+                  </td>
+                  <td>
+                    Ecrit la valeur de 32 bits V (octet de 0 à 4294967295) aux adresses A, A+1, A+2 et A+3.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">POKE_NORMAL</code>
+                  </td>
+                  <td>
+                    Les commandes <code class="kw">POKE16</code>&nbsp;A,V et <code class="kw">POKE32</code>&nbsp;A,V écrivent V avec le poids fort de V à l&rsquo;adresse A.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">POKE_REVERSE</code>
+                  </td>
+                  <td>Les commandes <code class="kw">POKE16</code>&nbsp;A,V et <code class="kw">POKE32</code>&nbsp;A,V écrivent V avec le poids faible de V à l&rsquo;adresse A.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PEEK_NORMAL</code>
+                  </td>
+                  <td>
+                    Les fonctions <code class="kw">PEEK16(</code>A<code class="kw">)</code> et <code class="kw">PEEK32(</code>A<code class="kw">)</code> retournent une valeur dont le poids fort est à l&rsquo;adresse A.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PEEK_REVERSE</code>
+                  </td>
+                  <td>
+                    Les fonctions <code class="kw">PEEK16(</code>A<code class="kw">)</code> et <code class="kw">PEEK32(</code>A<code class="kw">)</code> retournent une valeur dont le poids faible est à l&rsquo;adresse A.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b2.8"></a>2.8 – Séparateur décimal pour les nombres réels</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">SEPARATOR_IS_COMMA</code>
+                  </td>
+                  <td>
+                    Le séparateur décimal pour les nombres réels est la virgule.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">SEPARATOR_IS_POINT</code>
+                  </td>
+                  <td>
+                    Le séparateur décimal pour les nombres réels est le point.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br><br>
+      <p><h2><a name="b3"></a>3 – Commandes du langage BASIC</h2>
+      <hr noshade size="1" color="666666"></p>
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.1"></a>3.1 – Structures</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">IF</code> Condition <code class="kw">THEN</code> Instructions
+                  </td>
+                  <td>
+                    Exécute « Instructions » si « Condition » est Vraie.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">IF</code> Condition<br>
+                    &nbsp; &nbsp; Groupe d&rsquo;Instructions<br>
+                    <code class="kw">END_IF</code>
+                  </td>
+                  <td>
+                    Exécute « Groupe d&rsquo;Instructions » si « Condition » est Vraie.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">IF</code> Condition<br>
+                    &nbsp; &nbsp; Groupe d&rsquo;Instructions A<br>
+                    <code class="kw">ELSE</code><br>
+                    &nbsp; &nbsp; Groupe d&rsquo;Instructions B<br>
+                    <code class="kw">END_IF</code>
+                  </td>
+                  <td>Exécute « Groupe d&rsquo;Instructions A » si « Condition » est Vraie, sinon, exécute « Groupe d&rsquo;Instructions B ».</td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">FOR</code> V = Expression1 <code class="kw">TO</code> Expression2<br>
+                    &nbsp; &nbsp; Groupe d&rsquo;Instructions<br>
+                    <code class="kw">NEXT</code> V
+                  </td>
+                  <td>
+                    Exécute « Groupe d&rsquo;Instructions » pour V variant de la valeur Expression1 à la valeur Expression2.
+                    <br>
+                    <p>
+                      Un <code class="kw">STEP</code> est disponible pour la boucle <code class="kw">FOR</code> / <code class="kw">NEXT</code> : il définit l&rsquo;incrément de la variable.
+                    </p>
+                    <p>
+                      Une commande <code class="kw">EXIT_FOR</code> permet de sortir de la boucle <code class="kw">FOR</code> / <code class="kw">NEXT</code>.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">WHILE</code> Condition<br>
+                    &nbsp; &nbsp; Groupe d&rsquo;Instructions<br>
+                    <code class="kw">END_WHILE</code>
+                  </td>
+                  <td>
+                    Exécute « Groupe d&rsquo;Instructions » tant que « Condition » est Vraie.
+                    <p>
+                      Une commande <code class="kw">EXIT_WHILE</code> permet de sortir de la boucle <code class="kw">WHILE</code> / <code class="kw">END_WHILE</code>.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">REPEAT</code><br>
+                    &nbsp; &nbsp; Groupe d&rsquo;Instructions<br>
+                    <code class="kw">UNTIL </code>Condition>
+                  </td>
+                  <td>
+                    Exécute « Groupe d&rsquo;Instructions » jusqu&rsquo;à ce que « Condition » soit Vraie.
+                    <p>
+                      Une commande <code class="kw">EXIT_REPEAT</code> permet de sortir de la boucle <code class="kw">REPEAT</code> / <code class="kw">UNITL</code>.
+                    </p>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">SELECT</code> Expression<br>
+                    &nbsp; &nbsp; <code class="kw">CASE</code> Valeur Numérique<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; Groupe d&rsquo;Instructions<br>
+                    &nbsp; &nbsp; <code class="kw">CASE</code> Valeur Numérique<br>
+                    &nbsp; &nbsp; &nbsp; &nbsp; Groupe d&rsquo;Instructions<br>
+                    &nbsp; &nbsp; &#8211; &#8211; &#8211; &#8211;<br>
+                    <code class="kw">END_SELECT</code>
+                  </td>
+                  <td>
+                    Exécute « Groupe d&rsquo;Instructions » après le <code class="kw">CASE</code> dont la Valeur Numérique correspond au résultat de l&rsquo;évaluation de Expression.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EXIT_FOR</code>
+                  </td>
+                  <td>
+                    Dans une boucle FOR/NEXT, va exécuter l&rsquo;instruction juste après <code class="kw">NEXT</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EXIT_REPEAT</code>
+                  </td>
+                  <td>
+                    Dans une boucle REPEAT/UNTIL, va exécuter l&rsquo;instruction juste après <code class="kw">UNTIL</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EXIT_WHILE</code>
+                  </td>
+                  <td>
+                    Dans une boucle WHILE/END_WHILE, va exécuter l&rsquo;instruction juste après  <code class="kw">END_WHILE</code>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.2"></a>3.2 – Label / Goto / Gosub</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">LABEL</code>&nbsp;NOM
+                  </td>
+                  <td>
+                    Déclaration d&rsquo;un label (un label est un point du programme qui reçoit un nom, c&rsquo;est soit le début d&rsquo;un sous-programme ou simplement un point à atteindre par un <code class="kw">GOTO</code>).
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    NOM :
+                  </td>
+                  <td>
+                    Label (nom donné à un point du programme).
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">GOTO</code>&nbsp;NOM
+                  </td>
+                  <td>
+                    Exécute la partie du programme qui commence par le label NOM.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">GOSUB</code>&nbsp;NOM
+                  </td>
+                  <td>
+                    Exécute le sous-programme qui commence par le label NOM.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RETURN</code>
+                  </td>
+                  <td>
+                    Fin de sous-programme.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      <blockquote style="border-left: none;">
+    
+      <p><h3><a name="b3.3"></a>3.3 – Sous-programmes</h3></p>
+        <blockquote style="border-left: none;">
+          <p>Le sous-programme ABC est appelé par son nom :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  ABC()
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <p>Il est défini par <code class="kw">SUB</code> :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">SUB</code> ABC()<br>
+                  &nbsp; instructions<br>
+                  <code class="kw">END_SUB</code>
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <p>On peut lui passer un ou plusieurs paramètres :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  IMPRIME(2)<br>
+                  <br>
+                  <code class="kw">SUB</code> IMPRIME(V)<br>
+                  <code class="kw">&nbsp; PRINT</code> V<br>
+                  <code class="kw">END_SUB</code>
+                  
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br>
+          <br>
+          <p>Il est possible par <code class="kw">DIM_LOCAL</code>, de définir des variables localisées à un sous-programme.</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">SUB </code>ABC(P1,P2,&#8230;)
+                  </td>
+                  <td>
+                    Commence le sous-programme ABC avec les paramètres P1, P2, &#8230;
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">END_SUB</code>
+                  </td>
+                  <td>
+                    Termine un sous-programme.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EXIT_SUB</code>
+                  </td>
+                  <td>
+                    Termine un sous-programme sans exécuter <code class="kw">END_SUB</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DIM_LOCAL</code>
+                  </td>
+                  <td>
+                    Définit une ou plusieurs variables à l&rsquo;intérieur d&rsquo;un sous-programme.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>    
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p>
+          <h3><a name="b3.4"></a>3.4 – Fonctions</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>La fonction ABC est utilisée dans une expression :</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  A = 2 * ABC(6)
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br><br>
+          <p>
+            Elle est définie par <code class="kw">FNC</code> et retourne une valeur par <code class="kw">RESULT</code>:
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tr>
+                <td>
+                  
+                  <code class="kw">FNC</code> ABC(X)<br>
+                  &nbsp; instructions<br>
+                  &nbsp; <code class="kw">RESULT</code> 5 * X<br>
+                  <code class="kw">END_FNC</code>
+                  
+                </td>
+              </tr>
+            </table>
+          </blockquote>
+          <br><br>
+          <p>Il est possible par <code class="kw">DIM_LOCAL</code>, de définir des variables localisées à une fonction.</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">FNC</code> ABC(P1,P2,&#8230;)
+                  </td>
+                  <td>
+                    Commence la fonction ABC avec les paramètres P1, P2, &#8230;
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">END_FNC</code>
+                  </td>
+                  <td>
+                    Termine une fonction.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">EXIT_FNC</code>
+                  </td>
+                  <td>
+                    Termine une fonction sans exécuter <code class="kw">END_FNC</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RESULT</code>
+                  </td>
+                  <td>
+                    Retourne la valeur de la fonction.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DIM_LOCAL</code>
+                  </td>
+                  <td>
+                    Définit une ou plusieurs variables à l&rsquo;intérieur d&rsquo;une fonction.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.5"></a>3.5 – Comment</h3></p>
+        <blockquote style="border-left: none;">  
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">REM</code> ou <code class="kw"><b>&lsquo;</b></code> (apostrophe)
+                  </td>
+                  <td>
+                    Introduit un commentaire dans le programme (ne fait rien).
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.6"></a>3.6 – Fin de l&rsquo;exécution</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">END</code>
+                  </td>
+                  <td>
+                    Termine le programme principal qui s&rsquo;arrête et se met en attente des événements.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">STOP</code>
+                  </td>
+                  <td>
+                    Arrêt de l&rsquo;exécution du programme. Affiche le numéro de la ligne source.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">TERMINATE</code>
+                  </td>
+                  <td>
+                    Le programme s&rsquo;arrête, libère la mémoire : tout disparaît.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw"><b>&nbsp; :</b></code>
+                  </td>
+                  <td>
+                    Sépare des instructions sur la même ligne.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <h3><a name="b3.7"></a>3.7 – Date et Heure</h3>
+        <blockquote style="border-left: none;">
+          <p>Ces variables système sont prédéterminées (pas besoin de les définir).</p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">TIME$</code>
+                  </td>
+                  <td>
+                    Retourne l&rsquo;heure actuelle.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    DATE$
+                  </td>
+                  <td>
+                    Retourne la date actuelle.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DATE_YEAR</code>
+                  </td>
+                  <td>
+                    Retourne l&rsquo;année actuelle.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DATE_MONTH</code>
+                  </td>
+                  <td>
+                    Retourne le mois actuel.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">DATE_DAY</code>
+                  </td>
+                  <td>
+                    Retourne le jour actuel.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    TIME_HOUR
+                  </td>
+                  <td>
+                    Retourne l&rsquo;heure actuelle.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">TIME_MINUTE</code>
+                  </td>
+                  <td>
+                    Retourne la minute actuelle.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">TIME_SECOND</code>
+                  </td>
+                  <td>
+                    Retourne la seconde actuelle.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.8"></a>3.8 – Commandes Système</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">WAIT</code> N
+                  </td>
+                  <td>
+                    Pause de N millisecondes (0 &lt;= N &lt;= 30000). Le programme est arrêté jusqu&rsquo;à ce que le temps soit écoulé. Aucun événement n&rsquo;est pris en compte.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PAUSE</code> N
+                  </td>
+                  <td>
+                    Pause de N millisecondes (0 &lt;= N &lt;= 30000). Le programme est arrêté jusqu&rsquo;à ce que le temps soit écoulé. Cependant, tous les traitements en attente (événements) sont effectués.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    DISPLAY
+                  </td>
+                  <td>
+                    Met à jour et visualise une scène 3D ou une représentation 2D puis reprend l&rsquo;exécution du programme.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BEEP</code>
+                  </td>
+                  <td>
+                    Emet un son bref.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BEEP_ERROR</code>
+                  </td>
+                  <td>
+                    Emet le son système d&rsquo;une erreur.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BEEP_EXCLAMATION</code>
+                  </td>
+                  <td>
+                    Emet le son système d&rsquo;une exclamation.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BEEP_INFORMATION</code>
+                  </td>
+                  <td>
+                    Emet le son système d&rsquo;une information.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">BEEP_QUESTION</code>
+                  </td>
+                  <td>
+                    Emet le son système d&rsquo;une question.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.9"></a>3.9 – Données à l&rsquo;intérieur du programme</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">  
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">DATA</code> 10, 34, 71
+                  </td>
+                  <td>
+                    Valeurs définies dans le fichier source.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">READ</code> a
+                  </td>
+                  <td>
+                    Lire une valeur dans une ligne <code class="kw">DATA</code>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RESTORE</code>
+                  </td>
+                  <td>
+                    Force la lecture des données à la première valeur <code class="kw">DATA</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">RESTORE_LABEL</code>
+                  </td>
+                  <td>
+                    Force la lecture des données (<code class="kw">DATA</code>) à partir du label L.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.10"></a>3.10 – Données entrées au clavier</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT</code> V
+                  </td>
+                  <td>
+                    La variable V est affectée avec ce qui a été tapé au clavier, lors de l&rsquo;appui sur ENTER.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    INKEY$
+                  </td>
+                  <td>
+                    Lecture d&rsquo;un caractère en cours de frappe au clavier, puis continue l&rsquo;exécution.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+          <br>
+          <p>
+            La commande <code class="kw">INPUT</code> a des options :
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT_MARK_ON</code>
+                  </td>
+                  <td>
+                    Affiche un point d&rsquo;interrogation lors d&rsquo;une commande <code class="kw">INPUT</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT_MARK_OFF</code>
+                  </td>
+                  <td>
+                    N&rsquo;affiche pas de point d&rsquo;interrogation lors d&rsquo;une commande <code class="kw">INPUT</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT_REDO_ON</code>
+                  </td>
+                  <td>
+                    Exécute à nouveau la commande <code class="kw">INPUT</code> si aucune valeur lue.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT_REDO_OFF</code>
+                  </td>
+                  <td>
+                    Ne ré-exécute pas la commande <code class="kw">INPUT</code> si aucune valeur lue.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT_VISIBLE_ON</code>
+                  </td>
+                  <td>
+                    Affiche les caractères saisis lors d&rsquo;une commande <code class="kw">INPUT</code>.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">INPUT_VISIBLE_OFF</code>
+                  </td>
+                  <td>
+                    N&rsquo;affiche pas les caractères saisis lors d&rsquo;une commande <code class="kw">INPUT</code>.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <br>
+          </blockquote>
+          <p>
+            Par défaut, le comportement de la commande <code class="kw">INPUT</code> est :
+          </p>
+          <ul>
+            <li><code class="kw">INPUT_REDO_OFF</code> : si aucune valeur n&rsquo;est rentrée (seulement la touche RETURN), il n&rsquo;y a pas de nouvelle demande et la variable contiendra :</li>
+            <ul>
+              <li>0 si c&rsquo;est une variable numérique ;</li>
+              <li>la chaine vide («  ») si c&rsquo;est une variable string.</li>
+            </ul>
+            <li><code class="kw">INPUT_MARK_OFF</code> : il n&rsquo;y a pas d&rsquo;affichage de point d&rsquo;interrogation.</li>
+            <li><code class="kw">INPUT_VISIBLE_ON</code> : il y a affichage des caractères saisis.</li>
+          </ul>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <h3><a name="b3.11"></a>3.11 – Impression</h3>
+        <blockquote style="border-left: none;">
+          <p>
+            C&rsquo;est le <code class="kw">PRINT</code> classique du BASIC pour afficher sur un objet système un texte ou la valeur d&rsquo;une expression.
+          </p>
+          <p>
+            <code class="kw">PRINT</code> V peut être utilisé, <code class="kw">PRINT</code> « Salut » peut être utilisé.
+          </p>
+          <p>
+            Le point-virgule « <b>;</b> » peut être utilisé pour accoler les impressions. Exemple : <code class="kw">PRINT</code> « NOMBRE = »<b>;</b> N
+          </p>
+          <p>
+            Par défaut, <code class="kw">PRINT</code> s&rsquo;effectue sur <code class="kw">FORM</code> numéro 0, mais un autre objet peut être désigné comme cible pour l&rsquo;impression par <code class="kw">PRINT_TARGET_IS</code>.
+          </p>
+          <p>
+            Il est possible d&rsquo;imprimer dans un objet système à un endroit déterminé en X et Y par <code class="kw">PRINT_LOCATE</code>.
+          </p>
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">PRINT</code>
+                  </td>
+                  <td>
+                    Va à la ligne suivante (imprime une ligne vide).
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PRINT</code> variable ou expression
+                  </td>
+                  <td>
+                    Imprime le résultat sur l&rsquo;écran ou dans l&rsquo;objet cible.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PRINT_LOCATE</code> X, Y
+                  </td>
+                  <td>
+                    Définit l&rsquo;endroit du prochain <code class="kw">PRINT</code> en X et Y.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PRINT_X_LOCATE</code> X
+                  </td>
+                  <td>
+                    Définit l&rsquo;endroit du prochain <code class="kw">PRINT</code> en X.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">PRINT_Y_LOCATE</code> Y
+                  </td>
+                  <td>
+                    Définit l&rsquo;endroit du prochain <code class="kw">PRINT</code> en Y.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.12"></a>3.12 – Variables and labels</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    <code class="kw">NUMBER_VARIABLES</code>
+                  </td>
+                  <td>
+                    Retourne le nombre de variables créées et prédéfinies.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">VARIABLE</code>(T)
+                  </td>
+                  <td>
+                    Retourne 1 si le string T représente une variable déclarée, 0 sinon.
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <code class="kw">LABEL</code>(T)
+                  </td>
+                  <td>
+                    Retourne 1 si le string T représente un LABEL existant, 0 sinon.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <blockquote style="border-left: none;">
+        <p><h3><a name="b3.13"></a>3.13 – Numéro de ligne courante</h3></p>
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <table>
+              <tbody>
+                <tr>
+                  <td>
+                    NUMBER_CURRENT_LINE
+                  </td>
+                  <td>
+                    Retourne le numéro de la ligne courante.
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      </blockquote>
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 06 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

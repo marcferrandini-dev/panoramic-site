@@ -1,0 +1,1516 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manuel - Partie 7 : Système (Disques, Excel, Souris, DLL, ...) - PANORAMIC</title>
+  <meta name="description" content="Opérations disques, pilotage de feuilles Excel, événements souris, appels de DLL externes.">
+  
+  <!-- CSS Link -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link active">Documentation</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+          <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main id="main">
+    
+    <!-- Hero Header -->
+    <section class="hero" style="padding: 6rem 0 3rem;">
+      <div class="container">
+        <h1>Manuel - Partie 7 : Système (Disques, Excel, Souris, DLL, ...)</h1>
+        <p>Opérations disques, pilotage de feuilles Excel, événements souris, appels de DLL externes.</p>
+        <div style="margin-top: 1.5rem;">
+          <a href="./documentation.html" class="btn btn-secondary" style="font-size: 0.9rem; padding: 0.5rem 1rem;">➔ Retour au menu de documentation</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Manual Content Section -->
+    <section class="container" style="margin-bottom: 4rem;">
+      <div class="glass-card" style="padding: 2.5rem 2rem;">
+        <div class="manual-content">
+          <!-- Default font applied to entire page  -->
+    <!-- “Size” can only take value 3.        -->
+      
+
+      <a name="TOP"></a>
+      
+      <div style="text-align: center; margin-bottom: 3rem;"><h1 style="font-size: 2.5rem; background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; display: inline-block;">Système
+          
+          <br>
+          <h3>(Disques, Excel, Souris, Messages, MIDI, DLL, &#8230;)</h3></h1></div>
+      <br>
+      <blockquote style="border-left: none;">
+        <blockquote style="border-left: none;">
+          <blockquote style="border-left: none;">
+            <p>
+              1 – <a href="#b1">Gestion des disques</a><br>
+              2 – <a href="#b2">Gestion d&rsquo;Excel</a><br>
+              3 – <a href="#b3">Position de la souris et événements de souris</a><br>
+              4 – <a href="#b4">Fenêtre message</a>
+            </p>
+            <blockquote style="border-left: none;">
+              <p>
+                4.1 – <a href="#b4.1">Texte simple</a><br>
+                4.2 – <a href="#b4.2">Message à acquitter</a><br>
+                4.3 – <a href="#b4.3">Message à répondre par oui ou par non</a><br>
+                4.4 – <a href="#b4.4">Message de saisie</a><br>
+                4.5 – <a href="#b4.5">Titre</a>
+              </p>
+            </blockquote>
+            <p>
+              5 – <a href="#b5">Exécuter un programme externe</a><br>
+              6 – <a href="#b6">Réception des paramètres passés</a><br>
+              7 – <a href="#b7">Notes individuelles en MIDI</a><br>
+              8 – <a href="#b8">Appel d&rsquo;une fonction de DLL</a><br>
+              9 – <a href="#b9">Utiliser le port parallèle d&rsquo;entrées-sorties</a><br>
+              10 – <a href="#b10">Utiliser le port série d&rsquo;entrées-sorties</a><br>
+              11 – <a href="#b11">Chainer un programme source</a><br>
+              12 – <a href="#b12">Gestion des erreurs</a><br>
+              13 – <a href="#b13">Gestion du presse-papier</a><br>
+              14 – <a href="#b14">Archivage</a><br>
+              15 – <a href="#b15">Mail</a><br>
+              16 – <a href="#b16">Informations sur le système</a><br>
+              17 – <a href="#b17">Creer des fichiers executables autonomes</a>
+            </p>
+            <br>
+          </blockquote>
+        </blockquote>
+      </blockquote>
+      <br>
+      <p>
+        <h2><a name="b1"></a>1 – Gestion des disques</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Des informations sur les disques peuvent être obtenues.
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">DISK_EXISTS</code>(D) 
+  						</td>
+              <td>
+  							Retourne 1 si le disque D existe, 0 sinon.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DISK_KILO_FREE</code>(D) 
+  						</td>
+              <td>
+  							Retourne l&rsquo;espace disponible sur le disque D.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DISK_KILO_SIZE</code>(D)  
+  						</td>
+              <td>
+  							Retourne la taille du disque D.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b2"></a>2 – Gestion d&rsquo;Excel</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Excel peut être lancé, arrêté. (<em>Excel est un logiciel Microsoft protégé par le droit d&rsquo;auteur</em>).<br>
+          Une nouvelle feuille (fichier) peut être créée.<br>
+          Il est possible de lire ou écrire dans n&rsquo;importe quelle cellule d&rsquo;un fichier.<br>
+          Il est possible d&rsquo;ouvrir plusieurs feuilles (fichiers) par la commande <code class="kw">EXCEL_FILE_NEW.</code>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_START</code>
+  						</td>
+              <td>
+  							Démarre Microsoft Excel (si installé sur le système).
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_STOP</code>
+  						</td>
+              <td>
+  							Arrête Microsoft Excel. 
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_FILE_NEW</code> N 
+  						</td>
+              <td>
+  							Crée un nouveau fichier Excel numéro N (crée une nouvelle feuille).
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_FILE_OPEN</code> N, « Nom » 
+  						</td>
+              <td>
+  							Ouvre le fichier Excel Nom et lui attribue le numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_FILE_CLOSE</code> N
+  						</td>
+              <td>
+  							Ferme le fichier Excel numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_WRITE</code> Cellule, T
+  						</td>
+              <td>
+  							Écrit T dans une cellule Excel.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXCEL_READ$</code> (Cellule)
+  						</td>
+              <td>
+  							Retourne le contenu d&rsquo;une cellule Excel.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b3"></a>3 – Position de la souris et événements de souris</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour connaître en temps réel la position de curseur de la souris sur un objet système et l&rsquo;état des touches.<br>
+          La position origine (X=0, Y=0) est la position du coin supérieur gauche de l&rsquo;objet.<br>
+          L&rsquo;objet utilisé est un <code class="kw">SCENE3D</code> ou un <code class="kw">PICTURE</code> (aucune commande sur un objet d&rsquo;un autre type).
+        </p>
+        <p>
+          Ces mots-clés sont conçus pour développer beaucoup de jeux 2D et 3D !
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_X_POSITION</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en X de la souris sur l&rsquo;objet numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_Y_POSITION</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en Y de la souris sur l&rsquo;objet numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_RIGHT_DOWN</code>(N)
+  						</td>
+              <td>
+  							Retourne 1 si le bouton droit de la souris est enfoncé sur l&rsquo;objet numéro N, 0 sinon, puis remet cette valeur à 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_LEFT_DOWN</code>(N)
+  						</td>
+              <td>
+  							Retourne 1 si le bouton gauche de la souris est enfoncé sur l&rsquo;objet numéro N, 0 sinon, puis remet cette valeur à 0.
+  						</td>
+            </tr>
+            <tr>
+              <td> <code class="kw">MOUSE_RIGHT_UP</code>(N)
+  						</td>
+              <td> Retourne 1 si le bouton droit de la souris est relâché sur l&rsquo;objet numéro N, 0 sinon, puis remet cette valeur à 0.
+  						</td>
+            </tr>
+            <tr>
+              <td> <code class="kw">MOUSE_LEFT_UP</code>(N)
+  						</td>
+              <td> Retourne 1 si le bouton gauche de la souris est relâché sur l&rsquo;objet numéro N, 0 sinon, puis remet cette valeur à 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_X_RIGHT_DOWN</code>(N)
+  						</td>
+              <td> Retourne la position en X de la souris quand le bouton droit de la souris est enfoncé sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_RIGHT_DOWN(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_Y_RIGHT_DOWN</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en Y de la souris quand le bouton droit de la souris est enfoncé sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_RIGHT_DOWN(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_X_LEFT_DOWN</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en X de la souris quand le bouton gauche de la souris est enfoncé sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_LEFT_DOWN(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_Y_LEFT_DOWN</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en Y de la souris quand le bouton gauche de la souris est enfoncé sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_LEFT_DOWN(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_X_RIGHT_UP</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en X de la souris quand le bouton droit de la souris est relâché sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_RIGHT_UP(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_Y_RIGHT_UP</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en Y de la souris quand le bouton droit de la souris est relaché sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_RIGHT_UP(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_X_LEFT_UP</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en X de la souris quand le bouton gauche de la souris est relâché sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_LEFT_UP(N)</code> vaut 0.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MOUSE_Y_LEFT_UP</code>(N)
+  						</td>
+              <td>
+  							Retourne la position en Y de la souris quand le bouton gauche de la souris est relâché sur l&rsquo;objet numéro N. Sans objet si <code class="kw">MOUSE_LEFT_UP(N)</code> vaut 0.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b4"></a>4 – Fenêtre message</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour visualiser un texte dans une fenêtre à valider ou pour attendre une saisie de l&rsquo;utilisateur.
+        </p>
+        <p>
+          Remarque : le programme est arrêté pendant l&rsquo;affichage de la fenêtre (il attend la réponse) et reprend aussitôt que l&rsquo;utilisateur ferme la fenêtre-message.
+        </p>
+        <br>
+        <p>
+          <h3><a name="b4.1"></a>4.1 – Texte simple</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  							  <code class="kw">MESSAGE</code> T
+  						  </td>
+                <td>
+  							  Visualise la ligne de texte T dans une fenêtre.
+  						  </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+        <br>
+        <br>
+        <p>
+          <h3><a name="b4.2"></a>4.2 – Message à acquitter</h3>
+        </p>
+        <blockquote style="border-left: none;">
+        <p>
+          Fonctions affichant une fenêtre à 1 bouton et qui retourne :
+        </p>
+        <ul>
+          <li>
+            0 quand l&rsquo;utilisateur ferme la fenêtre en cliquant sur l&rsquo;icône de fermeture (croix rouge) ;
+          </li>
+          <li>
+            1 quand l&rsquo;utilisateur ferme la fenêtre en cliquant sur le bouton OK.
+          </li>
+        </ul>
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+							  <code class="kw">MESSAGE_CONFIRMATION_OK()</code>
+						  </td>
+              <td>
+							  Visualise un message de confirmation à acquitter (fenêtre avec un texte, un point d&rsquo;interrogation et un bouton) 
+						  </td>
+            </tr>
+            <tr>
+              <td>
+							  <code class="kw">MESSAGE_ERROR_OK()</code>
+						  </td>
+              <td>
+							  Visualise un message d&rsquo;erreur à acquitter (fenêtre avec un texte, un panneau rouge d&rsquo;erreur et un bouton) 
+						  </td>
+            </tr>
+            <tr>
+              <td>
+							  <code class="kw">MESSAGE_INFORMATION_OK()</code>
+						  </td>
+              <td>
+							  Visualise un message d&rsquo;information à acquitter (fenêtre avec un texte, un grand « I » et un bouton)
+						  </td>
+            </tr>
+            <tr>
+              <td>
+							   <code class="kw">MESSAGE_WARNING_OK()</code>
+						  </td>
+              <td>
+							  Visualise un message d&rsquo;avertissement à acquitter (fenêtre avec un texte, un point d&rsquo;exclamation et un bouton)
+						  </td>
+            </tr>
+          </tbody>
+        </table>
+        </blockquote>
+        <br>
+        <br>
+        <p>
+          <h3><a name="b4.3"></a>4.3 – Message à répondre par oui ou par non</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            Fonctions affichant une fenêtre à 2 boutons et qui retournent :
+          </p>
+            <ul>
+              <li>
+                0 quand l&rsquo;utilisateur ferme la fenêtre en cliquant sur l&rsquo;icône de fermeture (croix rouge) ;
+              </li>
+              <li>
+                1 quand l&rsquo;utilisateur ferme la fenêtre en cliquant sur le bouton YES ;
+              </li>
+              <li>
+                2 quand l&rsquo;utilisateur ferme la fenêtre en cliquant sur le bouton NO.
+              </li>
+            </ul>  
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  							  <code class="kw">MESSAGE_CONFIRMATION_YES_NO()</code>
+  						  </td>
+                <td>
+  							  Visualise un message de confirmation en demandant de répondre par oui ou par non (fenêtre avec un texte, un point d&rsquo;interrogation et deux boutons) 
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <code class="kw">MESSAGE_ERROR_YES_NO()</code>
+  						  </td>
+                <td>
+  							  Visualise un message d&rsquo;erreur en demandant de répondre par oui ou par non (fenêtre avec un texte, un panneau rouge d&rsquo;erreur et deux boutons) 
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <code class="kw">MESSAGE_INFORMATION_YES_NO()</code>
+  						  </td>
+                <td>
+  							  Visualise un message d&rsquo;information en demandant de répondre par oui ou par non (fenêtre avec un texte, un grand « I » et deux boutons) 
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <code class="kw">MESSAGE_WARNING_YES_NO()</code>
+  						  </td>
+                <td>
+  							  Visualise un message d&rsquo;avertissement en demandant de répondre par oui ou par non (fenêtre avec un texte, un point d&rsquo;exclamation et deux boutons)
+  						  </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+        <br>
+        <br>
+        <p>
+          <h3><a name="b4.4"></a>4.4 – Message de saisie</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  							  <code class="kw">MESSAGE_INPUT()</code>
+  						  </td>
+                <td>
+  							  Visualise un message de saisie contenant un <code class="kw">caption</code>, un <code class="kw">ALPHA</code>, un <code class="kw">EDIT</code> et deux boutons. La réponse est lue dans <code class="kw">MESSAGE_TEXT$().</code>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  						  	<code class="kw">MESSAGE_INPUT$()</code>
+  						  </td>
+                <td>
+  							  Visualise un message de saisie contenant un <code class="kw">caption</code>, un <code class="kw">ALPHA</code>, un <code class="kw">EDIT</code> et deux boutons. La réponse retournée par la fonction.
+  						  </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>  
+        <br>
+        <br>
+        <p>
+          <h3><a name="b4.5"></a>4.5 – Titre</h3>
+        </p>
+        <blockquote style="border-left: none;">
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  							<code class="kw">APPLICATION_TITLE</code> T
+  						</td>
+                <td>
+  							Donne un titre à l&rsquo;application et aux fenêtres MESSAGE.
+  						</td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <p>
+        <h2><a name="b5"></a>5 – Exécuter un programme externe</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Il est possible d&rsquo;exécuter un programme externe en lui passant des paramètres.<br>
+          Le programme appelant peut attendre ou pas la fin de l&rsquo;exécution du programme appelé.
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">EXECUTE </code>« c:\MonPrg.exe »
+  						</td>
+              <td>
+  							Exécute le programme « c:\MonPrg.exe ».
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXECUTE </code>« c:\MonPrg.exe <b>|</b> 30 5&Prime;
+  						</td>
+              <td>
+  							Exécute le programme « c:\MonPrg.exe » et lui passe les paramètres 30 et 5.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXECUTE_WAIT </code>« c:\MonPrg.exe »
+  						</td>
+              <td>
+  							Exécute le programme « c:\MonPrg.exe » et attend la fin.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">EXECUTE_WAIT </code>« c:\MonPrg.exe <b>|</b> 30 5&Prime;
+  						</td>
+              <td>
+  							Exécute le programme « c:\MonPrg.exe » en lui passant les paramètres 30 et 5 et attend la fin.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b6"></a>6 – Réception des paramètres passés</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour utiliser les paramètres passés lors de l&rsquo;appel de l&rsquo;exécutable (EXE) :
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">PARAM_NUMBER</code>
+  						</td>
+              <td>
+  							Variable système qui retourne le nombre de paramètres passés lors de l&rsquo;appel.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">PARAM_VALUE$</code>(N)
+  						</td>
+              <td>
+  							Retourne la valeur du Nème paramètre passé lors de l&rsquo;appel.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <p>
+        <h2><a name="b7"></a>7 – Notes individuelles en MIDI</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour jouer des notes individuelles sur la carte son, il faut d&rsquo;abord allouer des ressources par <code class="kw">MIDI_ON</code>.<br>
+          Les notes sont jouées par <code class="kw">MIDI_PLAY</code>. Le volume peut être modifié par <code class="kw">MIDI_VOLUME</code>.<br>
+          Quand les notes ont été jouées, on libère les ressources par <code class="kw">MIDI_OFF</code> :
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">MIDI_ON</code>
+  						</td>
+              <td>
+  							Démarre l&rsquo;utilisation individuelle des notes sur la sortie MIDI.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MIDI_PLAY </code>N, T
+  						</td>
+              <td>
+  							Joue la note N de type T sur la sortie MIDI.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MIDI_VOLUME </code>V 
+  						</td>
+              <td>
+  							Modifie le volume des notes jouées sur la sortie MIDI.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">MIDI_OFF</code>
+  						</td>
+              <td>
+  							Arrête l&rsquo;utilisation individuelle des notes sur la sortie MIDI.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+        <p>
+          Dans la commande <code class="kw">MIDI_PLAY</code> N, T<br>
+          N représente la note avec la convention MIDI ( 60 = Do, 62 = Ré, &#8230;) et T représente sa durée.
+        </p>
+        <blockquote style="border-left: none;">
+          <p>
+            T est la durée de la note, de 0 à 11, définie comme suit :
+          </p>
+          <table>
+            <tbody>
+              <tr>
+                <td>
+  							  <div align="center"><b>T</b></div>
+  						  </td>
+                <td>
+  							  <div align="center"><b>Note</b></div>
+  						  </td>
+                <td>
+  							  <div align="center"><b>Durée en millisecondes</b></div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">0 </div>
+  						  </td>
+                <td>
+  							  <div align="center">ronde</div>
+  						  </td>
+                <td>
+  							  <div align="center">4000 </div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">1 </div>
+  						  </td>
+                <td>
+  							  <div align="center">ronde pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">6000 </div>
+  						  </td></tr>
+              <tr>
+                <td>
+  							  <div align="center">2</div>
+  						  </td>
+                <td>
+  							  <div align="center">blanche</div>
+  						  </td>
+                <td>
+  							  <div align="center">2000</div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">3 </div>
+  						  </td>
+                <td>
+  							  <div align="center">blanche pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">3000</div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">4</div>
+  						  </td>
+                <td>
+  							  <div align="center">noire</div>
+  						  </td>
+                <td>
+  							  <div align="center">1000</div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">5</div>
+  						  </td>
+                <td>
+  							  <div align="center">noire pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">1500</div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">6 </div>
+  						  </td>
+                <td>
+  							  <div align="center">croche pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">500 </div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">7</div>
+  						  </td>
+                <td>
+  							  <div align="center">ronde pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">750 </div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">8</div>
+  						  </td>
+                <td>
+  							  <div align="center">double croche</div>
+  						  </td>
+                <td>
+  							  <div align="center">250</div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">9</div>
+  						  </td>
+                <td>
+  							  <div align="center">double croche pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">375 </div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">10 </div>
+  						  </td>
+                <td>
+  							  <div align="center">triple croche</div>
+  						  </td>
+                <td>
+  							  <div align="center">125 </div>
+  						  </td>
+              </tr>
+              <tr>
+                <td>
+  							  <div align="center">11</div>
+  						  </td>
+                <td>
+  							  <div align="center">triple croche pointée</div>
+  						  </td>
+                <td>
+  							  <div align="center">188</div>
+  						  </td>
+              </tr>
+            </tbody>
+          </table>
+        </blockquote>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b8"></a>8 – Appel d&rsquo;une fonction de la DLL</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour appeler une fonction contenue dans une DLL (Dynamic Link Library c&rsquo;est à dire « bibliothèque de liens dynamiques »),<br>
+          il faut d&rsquo;abord charger la DLL en mémoire par <code class="kw">DLL_ON</code>.<br>
+          Les appels de fonctions se font par des commandes <code class="kw">DLL_CALL n</code>, n étant le nombre de paramètres.<br>
+          Quand la DLL n&rsquo;est plus utile, la place qu&rsquo;elle occupait en mémoire peut être libérée par <code class="kw">DLL_OFF</code>.
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">DLL_ON</code> D
+  						</td>
+              <td>
+  							Chargement en mémoire de la DLL D.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL0</code>(F)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée sans aucun paramètre.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL1</code>(F, P1)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée avec 1 paramètre.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL2</code>(F, P1, P2)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée avec 2 paramètres.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL3</code>(F, P1, P2, P3)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée avec 3 paramètres.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL4</code>(F, P1, P2, P3, P4)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée avec 4 paramètres.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL5</code>(F, P1, P2, P3, P4, P5)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée avec 5 paramètres.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_CALL6</code>(F, P1, P2, P3, P4, P5, P6)
+  						</td>
+              <td>
+  							Retourne la valeur fournie par la fonction F, appelée avec 6 paramètres.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">DLL_OFF</code>
+  						</td>
+              <td>
+  							Libère la mémoire.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <p>
+          Pour certaines fonctions il peut être utile de passer en paramètre l&rsquo;adresse d&rsquo;une variable ou le handle d&rsquo;un objet système :
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">ADR</code>(V) 
+  						</td>
+              <td>
+  							Retourne l&rsquo;adresse de la variable V.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">HANDLE</code>(N) 
+  						</td>
+              <td>
+  							Retourne le handle de l&rsquo;objet système numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">HANDLE_CANVAS</code>(N) 
+  						</td>
+              <td>
+  							Retourne le handle de la zone graphique de l&rsquo;objet système numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">HANDLE_FORM</code>(T$) 
+  						</td>
+              <td>
+  							Retourne le handle du <code class="kw">FORM</code> ayant T$ comme titre.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">HANDLE_APPLICATION</code>
+  						</td>
+              <td>
+  							Retourne le handle de l&rsquo;application courante.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <p>
+        <h2><a name="b9"></a>9 – Utiliser le port parallèle d&rsquo;entrées-sorties</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour utiliser la prise imprimante comme moyen d&rsquo;entrée-sortie.<br>
+          Toute séquence d&rsquo;utilisation du port parallèle doit commencer par la commande <code class="kw">PARALLEL_ON</code> et se terminer par <code class="kw">PARALLEL_OFF</code>.<br>
+          La DLL inpout.dl<span id="UNKNOWN_WORD">l est nécessaire.</span>
+        </p>
+        <p>
+          En général, le port parallèle a ses sorties en 888 et ses entrées en 890.
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">PARALLEL_ON</code>
+  						</td>
+              <td>
+  							Début d&rsquo;une séquence d&rsquo;utilisation du port parallèle.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">PARALLEL_OUT</code> N, V
+  						</td>
+              <td>
+  							Envoie la valeur V sur le port parallèle N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">PARALLEL_INP</code>(N)
+  						</td>
+              <td>
+  							Retourne la valeur lue sur le port parallèle N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">PARALLEL_OFF</code>
+  						</td>
+              <td>
+  							Fin d&rsquo;une séquence d&rsquo;utilisation du port parallèle.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b10"></a>10 – Utiliser le port série d&rsquo;entrées-sorties</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Pour utiliser la prise série comme moyen d&rsquo;entrée-sortie.<br>
+          Toute séquence d&rsquo;utilisation du port série doit commencer par la création d&rsquo;un objet <code class="kw">SERIAL</code>.
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL</code> N 
+  						</td>
+              <td>
+  							Crée un objet système <code class="kw">SERIAL</code> et lui donne le numéro N comme référence.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_BAUDRATE</code> N,R
+  						</td>
+              <td>
+  							Définit la vitesse en Bauds R de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_CLOSE</code> N
+  						</td>
+              <td>
+  							 Arrête les échanges de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_DATABITS</code> N,D
+  						</td>
+              <td>
+  							Définit le nombre de bits de donnée D de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_OPEN</code> N
+  						</td>
+              <td>
+  							Démarre les échanges de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_PARITY</code> N,P
+  						</td>
+              <td>
+  							Définit les bits de parité P de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_PORT</code> N,P
+  						</td>
+              <td>
+  							Définit le numéro de port de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_STOPBITS</code> N,S
+  						</td>
+              <td>
+  							Définit le nombre de bits de stop S de la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_WRITE</code> N,V$
+  						</td>
+              <td>
+  							Envoie la chaine de caractères V$ sur la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ON_RECEIVE</code> N,L
+  						</td>
+              <td>
+  							 Exécute le programme à partir du label L quand un caractère est reçu sur la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_READ$</code>(N)
+  						</td>
+              <td>
+  							 Lit les caractères reçus sur la liaison série numéro N.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SERIAL_PORT_EXISTS</code>(X)
+  						</td>
+              <td>
+  							 Retourne 1 si le port série numéro X existe, 0 sinon.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b11"></a>11 – Chaîner un programme source</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Il est possible de charger puis d&rsquo;exécuter un programme source.
+        </p>
+        <p>
+          Dans ce cas, toutes les variables utilisées et tous les objets système, 3D, SPRITE sont détruits.
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">CHAIN</code> F
+  						</td>
+              <td>
+  							Enchaîne le source contenu dans le fichier F.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b12"></a>12 – Gestion des erreurs</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          <span class="text-large">Mode TRACE : examiner l&rsquo;exécution dans un fichier de traçage.</span>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">TRACE_ON</code> F
+  						</td>
+              <td>
+  							Démarre le mode trace et crée le fichier texte F.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">TRACE_OFF</code>
+  						</td>
+              <td>
+  							Arrête le mode trace et ferme le fichier texte F.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <p>
+          <span class="text-large">Saut en cas d&rsquo;erreur.</span>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">ON_ERROR_GOTO</code> L
+  						</td>
+              <td>
+  							Si erreur, saute à la partie du programme qui commence par « L: »
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">OFF_ERROR_GOTO</code>
+  						</td>
+              <td>
+  							Annule la commande <code class="kw">ON_ERROR_GOTO.</code>
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+        <br>
+        <br>
+        <p>
+          <span class="text-large">Description d&rsquo;erreur.</span>
+        </p>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">ERROR_FRENCH</code>
+  						</td>
+              <td>
+  							Choisit le français comme langue de description d&rsquo;erreur.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ERROR_ENGLISH</code>
+  						</td>
+              <td>
+  							Choisit l&rsquo;anglais comme langue de description d&rsquo;erreur.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ERROR_LINE</code>
+  						</td>
+              <td>
+  							Retourne le numéro de ligne de l&rsquo;erreur.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ERROR_NUMBER</code>
+  						</td>
+              <td>
+  							Retourne le numéro de l&rsquo;erreur.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ERROR_TYPE$</code>
+  						</td>
+              <td>
+  							Retourne le type de l&rsquo;erreur.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b13"></a>13 – Gestion du presse-papier</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">CLIPBOARD_STRING_COPY </code>S
+  						</td>
+              <td>
+  							Copie dans le presse-papier l&rsquo; expression string S.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							V$=<code class="kw">CLIPBOARD_STRING_PASTE</code>
+  						</td>
+              <td>
+  							Colle le texte du presse-papier dans la variable string V$.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b14"></a>14 – Archivage</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">ARCHIVER_ON</code>
+  						</td>
+              <td>
+  							Démarre l&rsquo;archiveur.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ARCHIVER_OFF</code>
+  						</td>
+              <td>
+  							Arrête l&rsquo;archiveur.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ARCHIVER_ADD</code> D, F 
+  						</td>
+              <td>
+  							Archive les fichiers du répertoire D dans le fichier F.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ARCHIVER_EXTRACT</code> F, D
+  						</td>
+              <td>
+  							Extrait le fichier archive F dans le répertoire D.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b15"></a>15 – Mail</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">MAIL_SEND</code> A,S,B 
+  						</td>
+              <td>
+  							Envoie un e-mail d&rsquo;objet S et de texte B à l&rsquo;adresse A.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b16"></a>16 – Informations sur le système</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <br>
+        <table>
+          <tbody>
+            <tr>
+              <td>
+  							<code class="kw">VERSION$</code>
+  						</td>
+              <td>
+  							Retourne la version de Panoramic.
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">SYSTEM$</code>
+  						</td>
+              <td>
+  							Retourne le système actuellement utilisé (Windows, Android, MACOS).
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">ENVIRONMENT$</code>
+  						</td>
+              <td>
+  							Retourne l&rsquo;environnement utilisé (Classic, Multiplf).
+  						</td>
+            </tr>
+            <tr>
+              <td>
+  							<code class="kw">NUMBER_TICKS</code>
+  						</td>
+              <td>
+  							Retourne le nombre de millisecondes écoulées depuis le démarrage du système.
+  						</td>
+            </tr>
+          </tbody>
+        </table>
+      </blockquote>
+      
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+      
+      <br>
+      <p>
+        <h2><a name="b17"></a>17 – Créer des fichiers exécutables autonomes</h2>
+        <hr noshade size="1" color="666666">
+      </p>
+      <blockquote style="border-left: none;">
+        <p>
+          Fichier / Exécutable (exe) : crée un fichier exécutable autonome (.EXE).
+        </p>
+        <p>
+          Fichier / Application (exe) : crée un fichier exécutable autonome (.EXE) contenant vos fichiers TXT, JPG et BMP (application)
+        </p>
+        <p>
+          Pour utiliser de tels fichiers, il n&rsquo;est pas nécessaire de posséder PANORAMIC.
+        </p>
+        <p>
+          Vous pouvez distribuer librement vos propres fichiers exécutables autonomes sans aucune redevance.
+        </p>
+      </blockquote>
+
+      <p align="right"><small><a href="#top">Haut de page</a></small></p>
+
+      <br>
+      <hr noshade size="1" color="666666"></p>
+      <p align="center"><i>Contenu créé par Jack. Mise à jour le 01 mars 2025</i></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

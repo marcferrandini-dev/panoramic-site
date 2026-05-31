@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  ADAPTATION D'UN SOURCE D'UN AUTE BASIC</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p align="left">Voici 
+  la m&eacute;thode que je propose pour transformer un ancien source &eacute;crit 
+  en Basic</p>
+<div class="tuto-separator"></div>
+<p align="left"><b>1 
+  - Faire apparaitre les LABELS</b></p>
+<p align="left">Les 
+  sources poss&egrave;daient un num&eacute;ro pour chaque ligne, A l'&eacute;poque, 
+  c'&eacute;tait obligatoire.<br>
+  Aujourd'hui, on a besoin uniquement de rep&eacute;rer deux types de lignes:</p>
+<p align="left">- 
+  celles qui sont le d&eacute;but d'un sous-programme, et qui sont appel&eacute;es 
+  par GOSUB,<br>
+  - celles 
+  auxquelles on acc&egrave;de par un GOTO.</p>
+<p align="left">Pour 
+  cela, &agrave; chaque fois qu'on trouve GOTO n ou GOSUB n, on fait deux choses:<br>
+  - on replace n par Ln dans GOTO n et GOSUB n qui deviennent respectivement GOTO 
+  Ln et GOSUB Ln,<br>
+  - on remplace le 
+  num&eacute;ro de ligne n par Ln:</p>
+<p align="left">A 
+  chaque fois qu'on rencontre un THEN n on le remplace par THEN GOTO n</p>
+<div class="tuto-separator"></div>
+<p align="left"><b>2 
+  - Eliminer les num&eacute;ros de ligne</b></p>
+<p align="left">Ensuite, 
+  on &eacute;limine tous les num&eacute;ros de lignes, devenus inutiles.</p>
+<div class="tuto-separator"></div>
+<p align="left"><b>3 
+  - D&eacute;clarer les LABELS</b></p>
+<p align="left">On 
+  d&eacute;clare alors les labels.</p>
+<div class="tuto-separator"></div>
+<p align="left"><b>4 
+  - Adapter &agrave; la syntaxe de PANORAMIC</b></p>
+<p align="left">Puis 
+  on adapte le source obtenu &agrave; PANORAMIC  
+  par exemple:</p>
+<p align="left">- 
+  Les lignes du type INPUT "TEXTE";C sont remplac&eacute;es par des lignes du 
+  type PRINT "TEXTE": PRINT C</p>
+<p align="left">- 
+  Les lignes du type PRINT "TEXTE";I sont remplac&eacute;es par des lignes du 
+  type PRINT "TEXTE "+STR$(I)</p>
+<p align="left">- 
+  PRINT N$(Z(I)); : PRINT S(Z(I)) est chang&eacute;e en PRINT N$(Z(I)) + STR$(S(Z(I)))</p>
+<p align="left">- 
+  RESTORE 1026 est chang&eacute; en RESTORE</p>
+<div class="tuto-separator"></div>
+<p><b>5 - D&eacute;clarer 
+  les variables</b></p>
+<p align="left">On 
+  d&eacute;clare les variables utilis&eacute;es.</p>
+<div class="tuto-separator"></div>
+<p align="left"><b>6 
+  - Essayer d'ex&eacute;cuter et corriger de fa&ccedil;on it&eacute;rative, jusqu'&agrave; 
+  obtenir une ex&eacute;cution parfaite</b></p>
+<p align="left">On 
+  le lance et &ccedil;a ne marche pas !</p>
+<p align="left">Car 
+  il y a encore quelques adaptations &agrave; faire, qu'on ne voit qu'&agrave; 
+  l'ex&eacute;cution.</p>
+<p>Par exemple, un 
+  END pour 
+  le programme principal doit &ecirc;tre ajout&eacute; AVANT un sous programme, 
+  sinon celui-ci s'ex&eacute;cute puis il y aura l'erreur &quot;RETURN SANS GOSUB&quot; 
+  &agrave; la tentative de l'ex&eacute;cution du RETURN. </p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 10 novembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

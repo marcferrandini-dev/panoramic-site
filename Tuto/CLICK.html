@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  CLICKED ET ON_CLICK</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p align="left">Il 
+  y a 2 possibilit&eacute;s pour traiter l'&eacute;v&eacute;nement &quot;Il y 
+  a eu un clic de souris sur un objet&quot;:</p>
+<div class="tuto-separator"></div>
+<h2>Objets 
+  sensibles &agrave; un clic de souris</h2>
+<p align="left">Seuls 
+  les objets visibles et pour lesquels un clic a un sens sont sensibles &agrave; 
+  un clic de souris:</p>
+<p align="left"><b>BUTTON</b></p>
+<p align="left"><b>EDIT</b></p>
+<p align="left"><b>MEMO</b></p>
+<p align="left"><b>LIST</b></p>
+<p align="left"><b>COMBO</b></p>
+<p align="left"><b>ALPHA</b></p>
+<p align="left"><b>OPTION</b></p>
+<p align="left"><b>CHECK</b></p>
+<p align="left"><b>SCENE3D</b></p>
+<p align="left"><b>FORM</b></p>
+<p align="left"><b>PICTURE</b></p>
+<p align="left"><b>SUB_MENU</b></p>
+<div class="tuto-separator"></div>
+<h2>Utilisation 
+  d'un clic de souris</h2>
+<p align="left">Lorsqu'on 
+  clique sur un objet, il y a 2 mani&egrave;res d'exploiter le fait qu'on a cliqu&eacute; 
+  sur l'objet:</p>
+<p align="left">Premi&egrave;re 
+  m&eacute;thode:</p>
+<p align="left">On 
+  teste directement par la fonction <b>CLICKED(N)</b> 
+  que l'objet syst&egrave;me num&eacute;ro N a &eacute;t&eacute; cliqu&eacute; 
+  .</p>
+<p align="left">Cette 
+  fonction rend 1 si on a cliqu&eacute; sur l' objet num&eacute;ro N et 0 sinon.<br>
+  Sa particularit&eacute; est qu'elle m&eacute;morise un clic sur un objet: si 
+  elle est appel&eacute;e longtemps apr&egrave;s le clic, elle donnera quand m&ecirc;me 
+  le r&eacute;sultat &quot;1&quot;.<br>
+  De plus, s'il y a eu un clic, sa valeur est r&eacute;initialis&eacute; apr&egrave;s 
+  la lecture. Si la valeur est 1, elle est alors r&eacute;initialis&eacute;e &agrave; 
+  0 pour prendre en compte un nouveau clic sur l'objet.</p>
+<p align="left">La 
+  fonction <b>CLICKED(N)</b> permet de tester en 
+  mode s&eacute;quentiel s'il y a eu un click sur l'objet de num&eacute;ro N.<br>
+  Le mode s&eacute;quentiel est une technique de programmation qui permet de tout 
+  controler par le programme et de tester par le programme si des &eacute;v&eacute;nements 
+  ont eu lieu.</p>
+<p align="left">&nbsp;</p>
+<p align="left">Deuxi&egrave;me 
+  m&eacute;thode:</p>
+<p align="left">On 
+  &eacute;crit un sous-programme, d&eacute;fini par un <b>LABEL</b> 
+  (et se terminant par <b>RETURN</b> comme tout sous-programme) 
+  qui sera ex&eacute;cut&eacute; &agrave; chaque fois que l'objet syst&egrave;me 
+  sera cliqu&eacute;.<br>
+  Avec cette autre technique de programmation, appel&eacute;e programmation &eacute;v&eacute;nementielle, 
+  on d&eacute;finit dans un sous-programme ce qui se passe quand un &eacute;v&eacute;nement 
+  arrive, en l'occurence, le clic sur un objet syst&egrave;me et c'est le syst&egrave;me 
+  d'exploitation (Windows) qui fera ex&eacute;cuter ce sous-programme quand l'&eacute;v&eacute;nement 
+  arrivera.</p>
+<p align="left">Pour 
+  relier ce sous-programme &agrave; l'objet syst&egrave;me, on utilise la commande 
+  <b>ON_CLICK(N) 
+  , abc</b></p>
+<p align="left"> <b>ON_CLICK(N) 
+  , abc</b> signifie : tout clic sur l'objet num&eacute;ro N provoquera l'ex&eacute;cution 
+  de la partie du programme commen&ccedil;ant par &quot;abc&quot;.</p>
+<div class="tuto-separator"></div>
+<p>On va effectuer 
+  la m&ecirc;me action, mais en utilisant les deux m&eacute;thodes possibles:</p>
+<p><b>On 
+  va par exemple afficher dans le bandeau de la fen&ecirc;tre &quot;on a cliqu&eacute;&quot; 
+  lorsqu'on clique sur un bouton</b>.</p>
+<div class="tuto-separator"></div>
+<h2>M&eacute;thode 
+  s&eacute;quentielle: on teste l'&eacute;v&eacute;nement par programme avec CLICKED</h2>
+<p align="left">On 
+  cr&eacute;e d'abord le bouton : <b>BUTTON</b> <b>1</b></p>
+<p align="left">Comme 
+  on doit tester continuellement l'&eacute;tat du bouton par <b>CLICKED</b> 
+  on va mettre cette commande dans une boucle <b>WHILE</b>.</p>
+<table width="68%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>button 
+        1 : rem on cr&eacute;e un bouton (objet syst&egrave;me 
+        num&eacute;ro 1)</b></p>
+      <p><b>while 
+        clicked(1) 
+        = 0 : rem tant qu'on n'a pas cliqu&eacute; 
+        sur le bouton</b></p>
+      <p><b>wait 
+        100 : rem on fait 100 millisecondes 
+        de pause...</b></p>
+      <p><b> end_while 
+        : rem on retourne tester l'&eacute;tat du 
+        bouton...</b></p>
+      <p>&nbsp;</p>
+      <p><b>caption 
+        0 , &quot;on a cliqu&eacute;&quot; : rem 
+        on affiche un texte dans le bandeau de la fen&ecirc;tre</b></p>
+      <p>&nbsp;</p>
+    </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<h2>M&eacute;thode 
+  &eacute;v&eacute;nementielle: on affecte un sous-programme &agrave; un &eacute;v&eacute;nement</h2>
+<p align="left">A 
+  chaque fois qu'on clique sur un bouton, on va ex&eacute;cuter la partie de programme 
+  qui commence par exemple par &quot;clique&quot;.<br>
+  &quot;clique&quot; 
+  est un <b>LABEL</b>. On le d&eacute;finit par le 
+  mot-cl&eacute; <b>LABEL</b>.</p>
+<p align="left">On 
+  cr&eacute;e un bouton: <b>BUTTON</b> <b>1</b></p>
+<p align="left">Puis 
+  par la commande <b>on_click</b> 1,clique</p>
+<p align="left"> on 
+  indique qu'&agrave; chaque fois qu'on cliquera sur l'objet syst&egrave;me num&eacute;ro 
+  1 (c'est &agrave; dire le bouton), on ex&eacute;cutera la partie du programme 
+  marqu&eacute;e par le <b>LABEL</b> clique.</p>
+<table width="68%" border="1" height="344">
+  <tr> 
+    <td> 
+      <p>&nbsp;</p>
+      <p><b>label 
+        clique : rem on crée une marque (un &quot;label&quot; 
+        en anglais)</b></p>
+      <p>&nbsp;</p>
+      <p><b>button 
+        1 : rem on cr&eacute;e un bouton (objet syst&egrave;me 
+        num&eacute;ro 1)</b></p>
+      <p><b>on_click 
+        1,clique : rem &agrave; chaque clic sur l'objet 
+        1 on ex&eacute;cute &agrave; partir de &quot;clique&quot; </b></p>
+      <p><b>end 
+        : rem fin du programme principal</b></p>
+      <p>&nbsp;</p>
+      <p><b>clique:</b></p>
+      <p><b> caption 
+        0 , &quot;on a cliqu&eacute;&quot; : rem 
+        on affiche un texte dans le bandeau de la fen&ecirc;tre</b></p>
+      <p><b>return 
+        : rem fin du sous-programme</b></p>
+      <p>&nbsp; </p>
+      </td>
+  </tr>
+</table>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 10 novembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>

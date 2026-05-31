@@ -1,0 +1,80 @@
+extrait d'Antigravity
+Voici ce qu'il se passe : La commande python -m http.server détermine le type des fichiers en lisant le registre de Windows. Il arrive très souvent que sous Windows, les fichiers .css soient déclarés comme du simple texte (text/plain) au lieu du type correct (text/css). Conséquence : Google Chrome reçoit le CSS mais refuse de l'appliquer pour des raisons de sécurité strictes, laissant votre page avec du HTML pur.
+
+Pour corriger cela de façon définitive, j'ai effectué une modification pour vous : J'ai ajouté la configuration base: './' dans votre fichier vite.config.js et j'ai reconstruit le dossier dist (npm run build).
+
+Grâce à cela, tous les chemins vers vos fichiers CSS, JavaScript et images sont devenus "relatifs". Vous avez désormais deux solutions beaucoup plus simples :
+
+Solution 1 (La plus rapide) : Vous n'avez même plus besoin de serveur ! Vous pouvez simplement double-cliquer sur le fichier index.html présent dans le dossier dist depuis votre explorateur de fichiers. Le site s'ouvrira et fonctionnera parfaitement avec tout son design.
+
+Solution 2 (La plus adaptée au projet) : Si vous souhaitez tout de même utiliser un serveur web local, utilisez plutôt l'outil intégré à votre projet Vite qui gère parfaitement les types de fichiers. À la racine de votre projet (et non dans dist), tapez la commande suivante :
+
+bash
+
+
+npm run preview
+Cela démarrera un serveur web local optimisé sur un port (généralement http://localhost:4173/) sans le moindre bug d'affichage !
+
+19:39
+
+
+
+Merci ! 
+J'ai quelques textes à modifier. Dois-je modifier les fichiers dans "dist" ou bien dans site_2 ?
+20:18
+
+
+Vous devez toujours modifier les fichiers dans site_2 (à la racine de votre projet) !
+
+Voici pourquoi :
+
+Le dossier site_2 contient vos fichiers sources originaux. C'est ici que vous travaillez.
+Le dossier dist (pour distribution) est un dossier généré automatiquement par l'outil de construction (Vite). Il est recréé ou écrasé à chaque fois que vous exécutez la commande npm run build.
+Si vous modifiez directement un fichier dans dist, vos modifications seront définitivement perdues la prochaine fois que vous (ou moi) lancerez la commande de construction.
+
+La bonne méthode est donc :
+
+Modifiez les textes dans vos fichiers HTML situés à la racine (site_2/index.html, site_2/documentation.html, etc.).
+Pour tester pendant que vous tapez, vous pouvez utiliser la commande npm run dev.
+Une fois vos modifications terminées, lancez la commande npm run build pour générer la version finale à jour dans le dossier dist.
+Si vous avez besoin d'aide pour faire ces modifications de texte, n'hésitez pas à me dire dans quels fichiers et ce que vous souhaitez changer, je peux m'en charger !
+
+************************************************************************************************************************
+
+1ère possibilité :
+
+Ouvrir invite de commande dans le dossier parent de <DIST>
+
+npm run preview
+
+puis dans Chrome :
+
+http://localhost:4173/
+
+Après les modifications des fichiers souhaités reconstruire le dossier DIST :
+
+
+
+
+
+
+
+
+
+2ème possibilité :
+
+Python doit avoir été installé préalablement
+
+Ouvrir Invite de command
+Se positionner dans le dossier racine du site WEB : cd ...
+Exécuter la ligne suivante :
+
+python -m http.server 8000
+
+
+Dans Chrome, tapez la commande suivante pour visualiser le site WEB en local
+
+http://localhost:8000
+
+
+

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutoriel PANORAMIC</title>
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <script src="../assets/js/theme-init.js"></script>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+  <!-- Drawer Overlay -->
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <!-- Mobile Navigation Drawer -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="../index.html" class="nav-link">Accueil</a></li>
+      <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+      <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <!-- Header Section -->
+  <header>
+    <div class="container nav-container">
+      <a href="../index.html" class="logo">
+        <img src="../assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+      
+      <!-- Desktop Navigation Menu -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="../index.html" class="nav-link">Accueil</a></li>
+          <li><a href="../documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="../tutoriels.html" class="nav-link active">Tutoriels</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="../telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <!-- Mobile Navigation Hamburger Button -->
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="my-section">
+      <div class="container">
+        <div class="glass-card tuto-content">
+
+<h1 class="tuto-title">PANORAMIC: 
+  LES LABELS</h1>
+<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
+  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
+<div class="tuto-separator"></div>
+<p align="left"><b><h2>Généralités:</h2><br>
+  </b><br>
+  Un LABEL est un endroit du source auquel on donne un nom.<br>
+  Un LABEL doit être déclaré.<br>
+  Un LABEL est aussi utilisé comme le début d'un sous-programme.<br>
+  Dans le source, le nom d'un LABEL se termine par deux-points.</p>
+<div class="tuto-separator"></div>
+<p align="left"><b><h2>Utilisation:</h2></b><br>
+  <br>
+  On utilise un LABEL de 3 manières:<br>
+  - par un <b>GOTO</b> pour aller exécuter le source 
+  à l'endroit désiré,<br>
+  - par un <b>GOSUB</b> pour aller exécuter un sous-programme,<br>
+  - automatiquement, par l'exécution d'un sous-programme à chaque fois qu'un événement 
+  arrive.</p>
+<div class="tuto-separator"></div>
+<p> <h2><b>Exemple 1 - 
+  LABEL utilisé avec un GOTO</b></h2><br>
+  </p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>rem 
+        on déclare le LABEL<br>
+        label ici<br>
+        <br>
+        print "on 
+        commence"<br>
+        goto ici<br>
+        print "cette 
+        ligne n'est pas ex&eacute;cut&eacute;e"<br>
+        ici:<br>
+        print "on 
+        est arrivé"<br>
+        <br>
+        end</b></p>
+    </td>
+  </tr>
+</table>
+<p>Source de l'exemple 
+  -&gt; <a href="Sources/Label_01.html">Label_01.bas</a></p>
+<p>à l'exécution, 
+  on obtient:</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>on commence<br>
+        on est arrivé</b></p>
+    </td>
+  </tr>
+</table>
+<p>car la ligne:</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b> print 
+        "cette ligne 
+        n'est pas ex&eacute;cut&eacute;e"</b></p>
+    </td>
+  </tr>
+</table>
+<p>n'a pas &eacute;t&eacute; 
+  exécutée.</p>
+<div class="tuto-separator"></div>
+<p><b><h2>Exemple 
+  2 - LABEL utilisé avec un GOSUB</h2><br>
+  </b><br>
+  Le LABEL est alors le nom du sous-programme qui est appelé par 
+  <b>GOSUB</b></p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>rem 
+        on déclare le LABEL<br>
+        label imprime<br>
+        dim i<br>
+        i=1<br>
+        gosub imprime<br>
+        i=2<br>
+        gosub imprime<br>
+        i=3<br>
+        gosub imprime<br>
+        end<br>
+        <br>
+        imprime:<br>
+        print i<br>
+        return</b></p>
+    </td>
+  </tr>
+</table>
+<p>Source de l'exemple 
+  -&gt; <a href="Sources/Label_02.html">Label_02.bas</a></p>
+<p>à l'exécution, 
+  on obtient:</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>1</b><br>
+        <b>2<br>
+        3</b></p>
+    </td>
+  </tr>
+</table>
+<p> Rappel: un sous-programme 
+  se termine par <b>RETURN</b>.</p>
+<div class="tuto-separator"></div>
+<p><h2><b>Exemple 3 - 
+  LABEL utilisé avec un traitement d'événement</b></h2></p>
+<p> Le LABEL est encore 
+  dans ce cas le nom du sous-programme mais il n'y a plus de <b>GOSUB</b> 
+  car il est appelé automatiquement à chaque fois que l'événement arrive.</p>
+<table width="63%" border="1" height="48">
+  <tr> 
+    <td> 
+      <p><b>rem 
+        on déclare le LABEL<br>
+        label imprime<br>
+        dim i<br>
+        <br>
+        rem on crée un bouton (objet système qui 
+        prendra le numéro 1)<br>
+        button 1<br>
+        rem on lui met un "intitulé" (ce n'est pas 
+        indispensable)<br>
+        caption 1,"Cliquez"<br>
+        rem on exécutera imprime à chaque fois qu'on clique dessus<br>
+        on_click 1,imprime</b></p>
+      <p><b> end</b></p>
+      <p><b>imprime:<br>
+        i=i+1<br>
+        rem on affiche dans le bandeau de la fenêtre 
+        <br>
+        caption 0,"on a cliqué "+str$(i)+" 
+        fois sur le bouton"<br>
+        return</b></p>
+    </td>
+  </tr>
+</table>
+<p>Source de l'exemple 
+  -&gt; <a href="Sources/Label_03.html">Label_03.bas</a> </p>
+<p>à l'exécution, 
+  à chaque fois qu'on clique sur le bouton, le sous-programme commen&ccedil;ant 
+  par le LABEL <b>imprime</b> s'ex&eacute;cute.<br>
+  il s'affiche dans le bandeau de la fenêtre FORM0: <b>on a cliqué N fois sur 
+  le bouton</b></p>
+<p> Le sous-programme 
+  est appelé automatiquement, c'est le traitement de l'événement "<b>clique sur 
+  le bouton numéro 1</b>".</p>
+<p> Rappel : les variables 
+  sont initialisées automatiquement à ZERO lors de leur déclaration par <b>DIM</b>.<br>
+  Il n'est donc pas nécessaire de faire i=0<br>
+  De même, une variable string est initialisée à "" (la chaîne vide). </p>
+<div class="tuto-separator"></div>
+<p><h2><b>Remarque 
+  sur la d&eacute;claration:</b></h2></p>
+<p>Une variable ou 
+  un label peuvent être déclarés n'importe où dans le source. C'est là une grande 
+  souplesse du Basic.<br>
+  Cependant, il ne faut pas exécuter une deuxième fois la déclaration. Il y aura 
+  alors une erreur du type "VARIABLE DEJA DEFINIE" ou "LABEL DEJA DEFINI"<br>
+  Une variable ou un label doivent être déclarés <b>AVANT</b> leur utilisation. 
+  C'est pourquoi il est conseillé de commencer le source par les déclarations.</p>
+<p><b>DIM</b><b> 
+  variables &agrave; d&eacute;clarer </b></p>
+<p><b>LABEL 
+  labels &agrave; d&eacute;clarer</b></p>
+<div class="tuto-separator"></div>
+<blockquote> 
+  <blockquote> 
+    <p>Mise &agrave; 
+      jour : 10 novembre 2008</p>
+  </blockquote>
+</blockquote>
+
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="../documentation.html">Documentation</a></li>
+          <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC. Site entièrement migré de WordPress vers du vrai code pur HTML/CSS/JS.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="../assets/js/main.js"></script>
+</body>
+</html>
