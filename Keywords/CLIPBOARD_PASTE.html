@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction CLIPBOARD_PASTE N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -143,29 +143,25 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label copy</p>
-              <p>memo 1:' créer un MEMO</p>
-              <p>memo 2:' créer un autre MEMO</p>
-              <p>top 2,100</p>
-              <p>item_add 1,"ligne 1":' lui ajouter une ligne</p>
-              <p>caption 0,"sélectionner cette ligne puis cliquez sur FORM0"</p>
-              <p>on_click 0,copy</p>
-              <p>end</p>
-              <p>copy:</p>
-              <p>clipboard_copy 1</p>
-              <p>clipboard_paste 2</p>
-              <p>caption 0,"recopié dans le deuxième MEMO"</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">CLIPBOARD_PASTE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label copy
+memo 1:' créer un MEMO
+memo 2:' créer un autre MEMO
+top 2,100
+item_add 1,"ligne 1":' lui ajouter une ligne
+caption 0,"sélectionner cette ligne puis cliquez sur FORM0"
+on_click 0,copy
+end
+copy:
+clipboard_copy 1
+clipboard_paste 2
+caption 0,"recopié dans le deuxième MEMO"
+return</code></pre>
+    </div>
 
     <br>
 
@@ -212,7 +208,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

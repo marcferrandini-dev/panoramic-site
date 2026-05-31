@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction 2D_IMAGE_PASTE N,X,Y du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -151,25 +151,21 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' multiplie les boutons!</p>
-              <p>button 1:caption 1,"Faux bouton"</p>
-              <p>top 1,10:left 1,10</p>
-              <p>image 2</p>
-              <p>' capture d'image</p>
-              <p>2d_image_copy 2,0,0,100,100</p>
-              <p>' restitution d'image</p>
-              <p>2d_image_paste 2,80,0</p>
-              <p>caption 1,"Vrai bouton"</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">2D_IMAGE_PASTE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' multiplie les boutons!
+button 1:caption 1,"Faux bouton"
+top 1,10:left 1,10
+image 2
+' capture d'image
+2d_image_copy 2,0,0,100,100
+' restitution d'image
+2d_image_paste 2,80,0
+caption 1,"Vrai bouton"</code></pre>
+    </div>
 
     <br>
 
@@ -216,7 +212,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

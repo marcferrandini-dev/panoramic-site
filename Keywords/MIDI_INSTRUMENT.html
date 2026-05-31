@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction MIDI_INSTRUMENT N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -171,52 +171,48 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label joue</p>
-              <p>midi_on</p>
-              <p>print "5 notes"</p>
-              <p>print "                 joué par un xylophone"</p>
-              <p>midi_instrument 13</p>
-              <p>gosub joue</p>
-              <p>print "                      par un harmonica"</p>
-              <p>midi_instrument 22</p>
-              <p>gosub joue</p>
-              <p>print "                      par une guitare"</p>
-              <p>midi_instrument 24</p>
-              <p>gosub joue</p>
-              <p>print "                      par un violon"</p>
-              <p>midi_instrument 40</p>
-              <p>gosub joue</p>
-              <p>print "                      par une flute"</p>
-              <p>midi_instrument 73</p>
-              <p>gosub joue</p>
-              <p>print "                      par une cornemuse"</p>
-              <p>midi_instrument 109</p>
-              <p>gosub joue</p>
-              <p>print "                      par des oiseaux"</p>
-              <p>midi_instrument 123</p>
-              <p>gosub joue</p>
-              <p>print "                      par des sonneries de téléphone"</p>
-              <p>midi_instrument 124</p>
-              <p>gosub joue</p>
-              <p>midi_off</p>
-              <p>end</p>
-              <p>joue:</p>
-              <p>midi_play 60,6</p>
-              <p>midi_play 62,6</p>
-              <p>midi_play 64,6</p>
-              <p>midi_play 65,6</p>
-              <p>midi_play 67,6</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">MIDI_INSTRUMENT.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label joue
+midi_on
+print "5 notes"
+print "                 joué par un xylophone"
+midi_instrument 13
+gosub joue
+print "                      par un harmonica"
+midi_instrument 22
+gosub joue
+print "                      par une guitare"
+midi_instrument 24
+gosub joue
+print "                      par un violon"
+midi_instrument 40
+gosub joue
+print "                      par une flute"
+midi_instrument 73
+gosub joue
+print "                      par une cornemuse"
+midi_instrument 109
+gosub joue
+print "                      par des oiseaux"
+midi_instrument 123
+gosub joue
+print "                      par des sonneries de téléphone"
+midi_instrument 124
+gosub joue
+midi_off
+end
+joue:
+midi_play 60,6
+midi_play 62,6
+midi_play 64,6
+midi_play 65,6
+midi_play 67,6
+return</code></pre>
+    </div>
 
     <br>
 
@@ -265,7 +261,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

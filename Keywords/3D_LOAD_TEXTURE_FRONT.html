@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction 3D_LOAD_TEXTURE_FRONT N,F du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -149,32 +149,28 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer un monde 3D</p>
-              <p>scene3d 1</p>
-              <p>' créer un 3D_SKYBOX</p>
-              <p>3d_skybox 1</p>
-              <p>' lui donner une texture basse</p>
-              <p>3d_load_texture_bottom 1,"bottom.bmp"</p>
-              <p>' lui donner une texture haute</p>
-              <p>3d_load_texture_top 1,"top.bmp"</p>
-              <p>' lui donner une texture avant</p>
-              <p>3d_load_texture_front 1,"front.bmp"</p>
-              <p>' lui donner une texture arrière</p>
-              <p>3d_load_texture_back 1,"back.bmp"</p>
-              <p>' lui donner une texture droite</p>
-              <p>3d_load_texture_right 1,"right.bmp"</p>
-              <p>' lui donner une texture gauche</p>
-              <p>3d_load_texture_left 1,"left.bmp"</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">3D_LOAD_TEXTURE_FRONT.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer un monde 3D
+scene3d 1
+' créer un 3D_SKYBOX
+3d_skybox 1
+' lui donner une texture basse
+3d_load_texture_bottom 1,"bottom.bmp"
+' lui donner une texture haute
+3d_load_texture_top 1,"top.bmp"
+' lui donner une texture avant
+3d_load_texture_front 1,"front.bmp"
+' lui donner une texture arrière
+3d_load_texture_back 1,"back.bmp"
+' lui donner une texture droite
+3d_load_texture_right 1,"right.bmp"
+' lui donner une texture gauche
+3d_load_texture_left 1,"left.bmp"</code></pre>
+    </div>
 
     <br>
 
@@ -225,7 +221,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

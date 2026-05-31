@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction TRIGGER_KEY_DOWN N,C,S du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -170,26 +170,21 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label keydown</p>
-              <p>edit 1</p>
-              <p>on_key_down 1,keydown</p>
-              <p>wait 1000</p>
-              <p>trigger_key_down 1,65,1</p>
-              <p>end</p>
-              <p>keydown:</p>
-              <p>caption 0,"KEY DOWN fait: "+CHR$(key_down_code)+" "+STR$(key_down_special)</p>
-              <p>return</p>
-              <p></p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">TRIGGER_KEY_DOWN.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label keydown
+edit 1
+on_key_down 1,keydown
+wait 1000
+trigger_key_down 1,65,1
+end
+keydown:
+caption 0,"KEY DOWN fait: "+CHR$(key_down_code)+" "+STR$(key_down_special)
+return</code></pre>
+    </div>
 
     <br>
 
@@ -236,7 +231,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

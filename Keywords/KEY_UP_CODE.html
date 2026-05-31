@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction KEY_UP_CODE du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -137,27 +137,23 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' déclarer un label</p>
-              <p>label enter_key</p>
-              <p>' un EDIT est créé</p>
-              <p>edit 1:set_focus 1</p>
-              <p>' chaque fois qu'une touche est relâchée dans l'EDIT, exécuter à partir du label "enter_key"</p>
-              <p>on_key_up 1,enter_key</p>
-              <p>end: ' le programme principal est fini</p>
-              <p>enter_key:</p>
-              <p>' treatment of event</p>
-              <p>if key_up_code=13 then caption 0,"ENTER est relaché"</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">KEY_UP_CODE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' déclarer un label
+label enter_key
+' un EDIT est créé
+edit 1:set_focus 1
+' chaque fois qu'une touche est relâchée dans l'EDIT, exécuter à partir du label "enter_key"
+on_key_up 1,enter_key
+end: ' le programme principal est fini
+enter_key:
+' treatment of event
+if key_up_code=13 then caption 0,"ENTER est relaché"
+return</code></pre>
+    </div>
 
     <br>
 
@@ -207,7 +203,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

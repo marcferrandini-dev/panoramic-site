@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction CAM_Y_POSITION Y du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -140,22 +140,18 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer un monde 3D</p>
-              <p>scene3d 1</p>
-              <p>' créer un objet 3D (une théière)</p>
-              <p>3d_teapot 1</p>
-              <p>' placer la caméra 3D en Y</p>
-              <p>cam_y_position 2.7</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">CAM_Y_POSITION.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer un monde 3D
+scene3d 1
+' créer un objet 3D (une théière)
+3d_teapot 1
+' placer la caméra 3D en Y
+cam_y_position 2.7</code></pre>
+    </div>
 
     <br>
 
@@ -207,7 +203,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

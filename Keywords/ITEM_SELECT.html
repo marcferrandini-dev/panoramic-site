@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction ITEM_SELECT N,L du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -152,26 +152,22 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer un LIST</p>
-              <p>list 1</p>
-              <p>' remplir le LIST avec 3 lignes</p>
-              <p>item_add 1,"c'est la ligne 1"</p>
-              <p>item_add 1,"c'est la ligne 2"</p>
-              <p>item_add 1,"c'est la ligne 3"</p>
-              <p>' attendre pendant 1 seconde</p>
-              <p>wait 1000</p>
-              <p>' sélectionner la deuxième ligne</p>
-              <p>item_select 1,2</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">ITEM_SELECT.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer un LIST
+list 1
+' remplir le LIST avec 3 lignes
+item_add 1,"c'est la ligne 1"
+item_add 1,"c'est la ligne 2"
+item_add 1,"c'est la ligne 3"
+' attendre pendant 1 seconde
+wait 1000
+' sélectionner la deuxième ligne
+item_select 1,2</code></pre>
+    </div>
 
     <br>
 
@@ -229,7 +225,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

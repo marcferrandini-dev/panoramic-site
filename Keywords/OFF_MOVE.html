@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction OFF_MOVE N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -143,26 +143,22 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label move</p>
-              <p>dim c%</p>
-              <p>caption 0,"Bougez FORM0 avec la souris"</p>
-              <p>on_move 0, move</p>
-              <p>end</p>
-              <p>move:</p>
-              <p>c%=c%+1</p>
-              <p>caption 0,"bougé "+str$(c%)+" foiss"</p>
-              <p>if c%>10 then off_move 0</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">OFF_MOVE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label move
+dim c%
+caption 0,"Bougez FORM0 avec la souris"
+on_move 0, move
+end
+move:
+c%=c%+1
+caption 0,"bougé "+str$(c%)+" foiss"
+if c%&gt;10 then off_move 0
+return</code></pre>
+    </div>
 
     <br>
 
@@ -208,7 +204,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

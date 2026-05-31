@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction FULL_SPACE N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -143,28 +143,24 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer un BUTTON</p>
-              <p>button 1</p>
-              <p>' lui donner un intitulé</p>
-              <p>caption 1,"Hello"</p>
-              <p>' attendre 1 seconde</p>
-              <p>wait 1000</p>
-              <p>' lui donner tout l'espace disponible de FORM0</p>
-              <p>full_space 1</p>
-              <p>' attendre 1 seconde</p>
-              <p>wait 1000</p>
-              <p>' revenir à sa taille initiale</p>
-              <p>width 1,75:height 1,25</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">FULL_SPACE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer un BUTTON
+button 1
+' lui donner un intitulé
+caption 1,"Hello"
+' attendre 1 seconde
+wait 1000
+' lui donner tout l'espace disponible de FORM0
+full_space 1
+' attendre 1 seconde
+wait 1000
+' revenir à sa taille initiale
+width 1,75:height 1,25</code></pre>
+    </div>
 
     <br>
 
@@ -213,7 +209,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

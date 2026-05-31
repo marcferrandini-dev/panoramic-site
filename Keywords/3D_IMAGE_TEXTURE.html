@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction 3D_IMAGE_TEXTURE N1,N2 du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -147,36 +147,32 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' trace un dessin</p>
-              <p>2d_pen_width 3</p>
-              <p>2d_pen_color 0,0,250</p>
-              <p>2d_poly_from 10,10</p>
-              <p>2d_poly_to 20,30</p>
-              <p>2d_poly_to 40,5</p>
-              <p>2d_poly_to 40,60</p>
-              <p>2d_poly_to 60,20</p>
-              <p>2d_poly_to 100,110</p>
-              <p>2d_poly_to 150,20</p>
-              <p>' capture le dessin</p>
-              <p>image 2</p>
-              <p>2d_image_copy 2,0,0,160,160</p>
-              <p>' créer un monde 3D</p>
-              <p>scene3d 1:full_space 1</p>
-              <p>' créer une sphère</p>
-              <p>3d_sphere 1,2</p>
-              <p>' on lui donne le dessin comme texture</p>
-              <p>3d_image_texture 1,2</p>
-              <p>3d_y_rotate 1,90</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">3D_IMAGE_TEXTURE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' trace un dessin
+2d_pen_width 3
+2d_pen_color 0,0,250
+2d_poly_from 10,10
+2d_poly_to 20,30
+2d_poly_to 40,5
+2d_poly_to 40,60
+2d_poly_to 60,20
+2d_poly_to 100,110
+2d_poly_to 150,20
+' capture le dessin
+image 2
+2d_image_copy 2,0,0,160,160
+' créer un monde 3D
+scene3d 1:full_space 1
+' créer une sphère
+3d_sphere 1,2
+' on lui donne le dessin comme texture
+3d_image_texture 1,2
+3d_y_rotate 1,90</code></pre>
+    </div>
 
     <br>
 
@@ -225,7 +221,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

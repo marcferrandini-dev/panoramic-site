@@ -346,113 +346,15 @@ blockquote p {
   font-size: 0.98rem !important;
 }
 
-/* ==========================================
-   CODE EXAMPLES (Simulated Code Editor)
-   ========================================== */
-blockquote > div {
-  position: relative !important;
-  margin: 1.5rem 0 !important;
-}
-
-blockquote table {
-  width: 100% !important;
-  background-color: var(--code-bg) !important;
-  border: 1px solid var(--border-glass) !important;
-  border-radius: 12px !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
-  border-collapse: collapse !important;
-  position: relative !important;
-}
-
-/* simulated title header tab */
-blockquote table::before {
-  content: "Exemple de Code PANORAMIC" !important;
-  display: block !important;
-  background: rgba(255, 255, 255, 0.03) !important;
-  border-bottom: 1px solid var(--border-glass) !important;
-  padding: 0.5rem 1.25rem !important;
-  color: var(--text-muted) !important;
-  font-family: var(--font-sans) !important;
-  font-size: 0.78rem !important;
-  font-weight: 500 !important;
-}
-
-blockquote table td {
-  padding: 1.5rem !important;
-  border: none !important;
-}
-
-blockquote table td font[face="Consolas"] {
-  font-family: var(--font-mono) !important;
-  color: var(--text-bright) !important;
-  font-size: 0.95rem !important;
-  display: block !important;
-  line-height: 1.65 !important;
-}
-
-blockquote table td font[face="Consolas"] p {
-  margin-bottom: 0.25rem !important;
-}
-
 /* Clean retro font overrides */
 font[face="Calibri"] {
   font-family: var(--font-sans) !important;
   color: var(--text-main) !important;
 }
 
-/* ==========================================
-   COPY BUTTON (Code examples)
-   ========================================== */
-.copy-btn {
-  position: absolute !important;
-  top: 0.32rem !important;
-  right: 0.6rem !important;
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 0.35rem !important;
-  background: rgba(255, 255, 255, 0.05) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  color: var(--text-muted) !important;
-  padding: 0.25rem 0.55rem !important;
-  border-radius: 5px !important;
-  font-family: var(--font-sans) !important;
-  font-size: 0.72rem !important;
-  font-weight: 500 !important;
-  cursor: pointer !important;
-  transition: all 0.2s ease !important;
-  z-index: 10 !important;
-  opacity: 0.75 !important;
-  letter-spacing: 0.02em !important;
-}
-
-.copy-btn:hover {
-  background: rgba(99, 102, 241, 0.15) !important;
-  border-color: rgba(99, 102, 241, 0.4) !important;
-  color: var(--text-bright) !important;
-  opacity: 1 !important;
-  box-shadow: 0 0 10px rgba(99, 102, 241, 0.15) !important;
-}
-
-.copy-btn:active {
-  transform: scale(0.96) !important;
-}
-
-.copy-btn.copied {
-  background: rgba(16, 185, 129, 0.15) !important;
-  border-color: rgba(16, 185, 129, 0.4) !important;
-  color: #10b981 !important;
-  opacity: 1 !important;
-  box-shadow: 0 0 10px rgba(16, 185, 129, 0.15) !important;
-}
-
-.copy-btn svg {
-  transition: transform 0.2s ease !important;
-}
-
-.copy-btn:hover svg {
-  transform: scale(1.05) !important;
+/* Code examples use .code-editor from style.css */
+.keyword-page .code-editor {
+  margin: 1.5rem 0 2rem !important;
 }
 
 /* ==========================================

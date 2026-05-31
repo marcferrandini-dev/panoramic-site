@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction FOG_DISTANCE_MIN D du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -141,29 +141,25 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>scene3d 1:full_space 1</p>
-              <p>3d_sphere 1,10</p>
-              <p>3d_z_position 1,-500</p>
-              <p>wait 1000</p>
-              <p>fog_on:caption 0,"FOG_ON"</p>
-              <p>wait 1000</p>
-              <p>fog_off:caption 0,"FOG_OFF"</p>
-              <p>wait 1000</p>
-              <p>fog_on</p>
-              <p>fog_color 220,220,220</p>
-              <p>fog_distance_max 700</p>
-              <p>fog_distance_min 5</p>
-              <p>caption 0,"FOG_ON"</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">FOG_DISTANCE_MIN.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>scene3d 1:full_space 1
+3d_sphere 1,10
+3d_z_position 1,-500
+wait 1000
+fog_on:caption 0,"FOG_ON"
+wait 1000
+fog_off:caption 0,"FOG_OFF"
+wait 1000
+fog_on
+fog_color 220,220,220
+fog_distance_max 700
+fog_distance_min 5
+caption 0,"FOG_ON"</code></pre>
+    </div>
 
     <br>
 
@@ -212,7 +208,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

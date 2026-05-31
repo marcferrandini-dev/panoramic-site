@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction OFF_ACTIVATE N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -147,41 +147,37 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label active0,active1</p>
-              <p>dim k0%,k1%</p>
-              <p>k0%=0</p>
-              <p>k1%=0</p>
-              <p>height 0,200:width 0,300</p>
-              <p>alpha 10:top 10,20:left 10,20:caption 10, "Cliquez sur ce FORM"</p>
-              <p>form 1:left 1,310:height 1,200:width 1,300</p>
-              <p>alpha 11:parent 11,1:top 11,20:left 11,20</p>
-              <p>on_activate 0,active0</p>
-              <p>on_activate 1,active1</p>
-              <p>end</p>
-              <p>active0:</p>
-              <p>k0%=k0%+1</p>
-              <p>caption 0, "nombre d'activations: "+str$(k0%)+" : "+str$(NUMBER_ACTIVATE)</p>
-              <p>caption 10, ""</p>
-              <p>caption 11, "Cliquez sur ce FORM"</p>
-              <p>off_activate 0</p>
-              <p>return</p>
-              <p>active1:</p>
-              <p>k1%=k1%+1</p>
-              <p>caption 1, "nombre d'activations: "+str$(k1%)+" : "+str$(NUMBER_ACTIVATE)</p>
-              <p>caption 10, "Cliquez sur ce FORM"</p>
-              <p>caption 11, ""</p>
-              <p>off_activate 1</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">OFF_ACTIVATE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label active0,active1
+dim k0%,k1%
+k0%=0
+k1%=0
+height 0,200:width 0,300
+alpha 10:top 10,20:left 10,20:caption 10, "Cliquez sur ce FORM"
+form 1:left 1,310:height 1,200:width 1,300
+alpha 11:parent 11,1:top 11,20:left 11,20
+on_activate 0,active0
+on_activate 1,active1
+end
+active0:
+k0%=k0%+1
+caption 0, "nombre d'activations: "+str$(k0%)+" : "+str$(NUMBER_ACTIVATE)
+caption 10, ""
+caption 11, "Cliquez sur ce FORM"
+off_activate 0
+return
+active1:
+k1%=k1%+1
+caption 1, "nombre d'activations: "+str$(k1%)+" : "+str$(NUMBER_ACTIVATE)
+caption 10, "Cliquez sur ce FORM"
+caption 11, ""
+off_activate 1
+return</code></pre>
+    </div>
 
     <br>
 
@@ -227,7 +223,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction DIR_MAKE D du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -157,20 +157,16 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer le répertoire "abcd" dans le répertoire courant</p>
-              <p>dir_make "abcd"</p>
-              <p>' créer le répertoire "c:\aaaa"</p>
-              <p>dir_make "c:\aaaa"</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">DIR_MAKE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer le répertoire "abcd" dans le répertoire courant
+dir_make "abcd"
+' créer le répertoire "c:\aaaa"
+dir_make "c:\aaaa"</code></pre>
+    </div>
 
     <br>
 
@@ -218,7 +214,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

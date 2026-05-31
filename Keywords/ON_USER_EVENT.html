@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction ON_USER_EVENT L du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -141,26 +141,22 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label event_handler</p>
-              <p>print handle(0)</p>
-              <p>on_user_event event_handler</p>
-              <p>dll_on "MyDLL.dll"</p>
-              <p>print dll_call1("USER_EVENT",handle(0))</p>
-              <p>dll_off</p>
-              <p>end</p>
-              <p>event_handler:</p>
-              <p>message "événement déclenché par USER_EVENT de la DLL"</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">ON_USER_EVENT.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label event_handler
+print handle(0)
+on_user_event event_handler
+dll_on "MyDLL.dll"
+print dll_call1("USER_EVENT",handle(0))
+dll_off
+end
+event_handler:
+message "événement déclenché par USER_EVENT de la DLL"
+return</code></pre>
+    </div>
 
     <br>
 
@@ -208,7 +204,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction SYNEDIT_TARGET_IS_GUTTER du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -134,45 +134,41 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>dim i%,posit,c</p>
-              <p>label target</p>
-              <p>synedit 1:full_space 1</p>
-              <p>item_add 1,"print 123456"</p>
-              <p>item_add 1,"2D_CIRCLE 10,20,30"</p>
-              <p>item_add 1,"' ceci est un commentaire"</p>
-              <p>item_add 1,"print "+chr$(34)+"ceci est une chaîne de caractères"+chr$(34)</p>
-              <p>for i%=0 to 12:gosub target:wait 1000:next i%</p>
-              <p>end</p>
-              <p>target:</p>
-              <p>' mots-clés</p>
-              <p>if c=0 then synedit_target_is_keyword:font_color 1,255,0,0</p>
-              <p>if c=1 then font_italic 1</p>
-              <p>if c=2 then font_bold 1</p>
-              <p>if c=3 then font_bold_off 1</p>
-              <p>if c=4 then font_italic_off 1</p>
-              <p>' strings</p>
-              <p>if c=5 then synedit_target_is_string:font_color 1,0,255,0</p>
-              <p>if c=6 then font_italic 1</p>
-              <p>if c=7 then font_underline 1</p>
-              <p>' commentaires</p>
-              <p>if c=8 then synedit_target_is_comment:font_color 1,200,200,200</p>
-              <p>if c=9 then font_strike 1</p>
-              <p>' gouttière</p>
-              <p>if c=10 then synedit_target_is_gutter:font_size 1,16:font_color 1,0,255,0</p>
-              <p>if c=11 then hide 1</p>
-              <p>if c=12 then synedit_target_is_object:font_size 1,16</p>
-              <p>c=c+1</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">SYNEDIT_TARGET_IS_GUTTER.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim i%,posit,c
+label target
+synedit 1:full_space 1
+item_add 1,"print 123456"
+item_add 1,"2D_CIRCLE 10,20,30"
+item_add 1,"' ceci est un commentaire"
+item_add 1,"print "+chr$(34)+"ceci est une chaîne de caractères"+chr$(34)
+for i%=0 to 12:gosub target:wait 1000:next i%
+end
+target:
+' mots-clés
+if c=0 then synedit_target_is_keyword:font_color 1,255,0,0
+if c=1 then font_italic 1
+if c=2 then font_bold 1
+if c=3 then font_bold_off 1
+if c=4 then font_italic_off 1
+' strings
+if c=5 then synedit_target_is_string:font_color 1,0,255,0
+if c=6 then font_italic 1
+if c=7 then font_underline 1
+' commentaires
+if c=8 then synedit_target_is_comment:font_color 1,200,200,200
+if c=9 then font_strike 1
+' gouttière
+if c=10 then synedit_target_is_gutter:font_size 1,16:font_color 1,0,255,0
+if c=11 then hide 1
+if c=12 then synedit_target_is_object:font_size 1,16
+c=c+1
+return</code></pre>
+    </div>
 
     <br>
 
@@ -222,7 +218,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

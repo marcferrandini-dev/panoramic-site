@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction GRID_ROW_DELETE N,R du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -152,50 +152,46 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>grid 1:' crée un GRID</p>
-              <p>' le positionner</p>
-              <p>top 1,10:left 1,10</p>
-              <p>' le dimensionner</p>
-              <p>width 1,350:height 1,150</p>
-              <p>' remplir le GRID avec 5 lignes et 5 colonnes</p>
-              <p>grid_write 1,1,1,"Cellule 1,1"</p>
-              <p>grid_write 1,1,2,"Cellule 1,2"</p>
-              <p>grid_write 1,1,3,"Cellule 1,3"</p>
-              <p>grid_write 1,1,4,"Cellule 1,4"</p>
-              <p>grid_write 1,1,5,"Cellule 1,5"</p>
-              <p>grid_write 1,2,1,"Cellule 2,1"</p>
-              <p>grid_write 1,2,2,"Cellule 2,2"</p>
-              <p>grid_write 1,2,3,"Cellule 2,3"</p>
-              <p>grid_write 1,2,4,"Cellule 2,4"</p>
-              <p>grid_write 1,2,5,"Cellule 2,5"</p>
-              <p>grid_write 1,3,1,"Cellule 3,1"</p>
-              <p>grid_write 1,3,2,"Cellule 3,2"</p>
-              <p>grid_write 1,3,3,"Cellule 3,3"</p>
-              <p>grid_write 1,3,4,"Cellule 3,4"</p>
-              <p>grid_write 1,3,5,"Cellule 3,5"</p>
-              <p>grid_write 1,4,1,"Cellule 4,1"</p>
-              <p>grid_write 1,4,2,"Cellule 4,2"</p>
-              <p>grid_write 1,4,3,"Cellule 4,3"</p>
-              <p>grid_write 1,4,4,"Cellule 4,4"</p>
-              <p>grid_write 1,4,5,"Cellule 4,5"</p>
-              <p>grid_write 1,5,1,"Cellule 5,1"</p>
-              <p>grid_write 1,5,2,"Cellule 5,2"</p>
-              <p>grid_write 1,5,3,"Cellule 5,3"</p>
-              <p>grid_write 1,5,4,"Cellule 5,4"</p>
-              <p>grid_write 1,5,5,"Cellule 5,5"</p>
-              <p>wait 1000:' attendre 1 seconde</p>
-              <p>' détruire la ligne n° 3</p>
-              <p>grid_row_delete 1,3</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">GRID_ROW_DELETE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>grid 1:' crée un GRID
+' le positionner
+top 1,10:left 1,10
+' le dimensionner
+width 1,350:height 1,150
+' remplir le GRID avec 5 lignes et 5 colonnes
+grid_write 1,1,1,"Cellule 1,1"
+grid_write 1,1,2,"Cellule 1,2"
+grid_write 1,1,3,"Cellule 1,3"
+grid_write 1,1,4,"Cellule 1,4"
+grid_write 1,1,5,"Cellule 1,5"
+grid_write 1,2,1,"Cellule 2,1"
+grid_write 1,2,2,"Cellule 2,2"
+grid_write 1,2,3,"Cellule 2,3"
+grid_write 1,2,4,"Cellule 2,4"
+grid_write 1,2,5,"Cellule 2,5"
+grid_write 1,3,1,"Cellule 3,1"
+grid_write 1,3,2,"Cellule 3,2"
+grid_write 1,3,3,"Cellule 3,3"
+grid_write 1,3,4,"Cellule 3,4"
+grid_write 1,3,5,"Cellule 3,5"
+grid_write 1,4,1,"Cellule 4,1"
+grid_write 1,4,2,"Cellule 4,2"
+grid_write 1,4,3,"Cellule 4,3"
+grid_write 1,4,4,"Cellule 4,4"
+grid_write 1,4,5,"Cellule 4,5"
+grid_write 1,5,1,"Cellule 5,1"
+grid_write 1,5,2,"Cellule 5,2"
+grid_write 1,5,3,"Cellule 5,3"
+grid_write 1,5,4,"Cellule 5,4"
+grid_write 1,5,5,"Cellule 5,5"
+wait 1000:' attendre 1 seconde
+' détruire la ligne n° 3
+grid_row_delete 1,3</code></pre>
+    </div>
 
     <br>
 
@@ -272,7 +268,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction FILE_READLN N,V du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -144,36 +144,32 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>dim a$</p>
-              <p>' choisir un répertoire</p>
-              <p>dir_is_shared_downloads</p>
-              <p>' détruire le fichier s'il existe</p>
-              <p>if file_exists("mon_fichier.txt")=1 then file_delete "mon_fichier.txt"</p>
-              <p>' créer un fichier et l'ouvrir pour écrire</p>
-              <p>file_open_write 1,"mon_fichier.txt"</p>
-              <p>' écrire 2 lignes dans ce fichier</p>
-              <p>file_writeln 1, "Salut"</p>
-              <p>file_writeln 1, "tout le monde!"</p>
-              <p>' le fermer</p>
-              <p>file_close 1</p>
-              <p>' ouvir ce fichier texte en lecture</p>
-              <p>file_open_read 1,"mon_fichier.txt"</p>
-              <p>' imprimer toutes ses lignes</p>
-              <p>while file_eof(1) <> 1</p>
-              <p> file_readln 1,a$:print a$</p>
-              <p>end_while</p>
-              <p>' le fermer</p>
-              <p>file_close 1</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">FILE_READLN.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$
+' choisir un répertoire
+dir_is_shared_downloads
+' détruire le fichier s'il existe
+if file_exists("mon_fichier.txt")=1 then file_delete "mon_fichier.txt"
+' créer un fichier et l'ouvrir pour écrire
+file_open_write 1,"mon_fichier.txt"
+' écrire 2 lignes dans ce fichier
+file_writeln 1, "Salut"
+file_writeln 1, "tout le monde!"
+' le fermer
+file_close 1
+' ouvir ce fichier texte en lecture
+file_open_read 1,"mon_fichier.txt"
+' imprimer toutes ses lignes
+while file_eof(1) &lt;&gt; 1
+ file_readln 1,a$:print a$
+end_while
+' le fermer
+file_close 1</code></pre>
+    </div>
 
     <br>
 
@@ -229,7 +225,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

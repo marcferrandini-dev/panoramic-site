@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction SORT_OFF N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -143,32 +143,28 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer un LIST</p>
-              <p>list 1</p>
-              <p>' lui ajouter 3 articles</p>
-              <p>item_add 1,"BBB"</p>
-              <p>item_add 1,"CCC"</p>
-              <p>item_add 1,"AAA"</p>
-              <p>' démarrer le tri automatique</p>
-              <p>sort_on 1</p>
-              <p>' ajouter un article</p>
-              <p>item_add 1,"ABC"</p>
-              <p>' l'ordre est : AAA,ABC,BBB,CCC</p>
-              <p>' arrêter le tri automatique</p>
-              <p>sort_off 1</p>
-              <p>' ajouter un article</p>
-              <p>item_add 1,"ABD"</p>
-              <p>' l'ordre est : AAA,ABC,BBB,CCC,ABD</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">SORT_OFF.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer un LIST
+list 1
+' lui ajouter 3 articles
+item_add 1,"BBB"
+item_add 1,"CCC"
+item_add 1,"AAA"
+' démarrer le tri automatique
+sort_on 1
+' ajouter un article
+item_add 1,"ABC"
+' l'ordre est : AAA,ABC,BBB,CCC
+' arrêter le tri automatique
+sort_off 1
+' ajouter un article
+item_add 1,"ABD"
+' l'ordre est : AAA,ABC,BBB,CCC,ABD</code></pre>
+    </div>
 
     <br>
 
@@ -215,7 +211,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

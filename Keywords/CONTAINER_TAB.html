@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction CONTAINER_TAB du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -154,23 +154,19 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>container_tab 1 : ' crée un support (le container)</p>
-              <p>tab 2 : ' crée une page (onglet)</p>
-              <p>parent 2,1 : ' on attache cette page au support</p>
-              <p>caption 2,"Onglet 1" : ' titre pour la première page</p>
-              <p>tab 3 : ' crée une nouvelle page</p>
-              <p>parent 3,1 : ' on attache cette page au support</p>
-              <p>caption 3,"Onglet 2" : ' titre pour la deuxième page</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">CONTAINER_TAB.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>container_tab 1 : ' crée un support (le container)
+tab 2 : ' crée une page (onglet)
+parent 2,1 : ' on attache cette page au support
+caption 2,"Onglet 1" : ' titre pour la première page
+tab 3 : ' crée une nouvelle page
+parent 3,1 : ' on attache cette page au support
+caption 3,"Onglet 2" : ' titre pour la deuxième page</code></pre>
+    </div>
 
     <br>
 
@@ -217,7 +213,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

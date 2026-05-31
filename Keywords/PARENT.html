@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction PARENT N,M du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -169,29 +169,25 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' création d'un menu</p>
-              <p>main_menu 1</p>
-              <p>' créer 2 SUB_MENU au même niveau</p>
-              <p>sub_menu 2 : caption 2"Fichier" : parent 2,1</p>
-              <p>sub_menu 3 : caption 3,"Edition" : parent 3,1</p>
-              <p>' créer 3 SUB_MENU à SUB_MENU 2 (Fichiers)</p>
-              <p>sub_menu 4 : caption 4,"Ouvir" : parent 4,2</p>
-              <p>sub_menu 5 : caption 5,"Sauver" : parent 5,2</p>
-              <p>sub_menu 6 : caption 6,"Quitter" : parent 6,2</p>
-              <p>' créer 3 SUB_MENU à SUB_MENU 3 (Edition)</p>
-              <p>sub_menu 7 : caption 7,"Copier" : parent 7,3</p>
-              <p>sub_menu 8 : caption 8,"Coller" : parent 8,3</p>
-              <p>sub_menu 9 : caption 9,"Défaire" : parent 9,3</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">PARENT.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' création d'un menu
+main_menu 1
+' créer 2 SUB_MENU au même niveau
+sub_menu 2 : caption 2"Fichier" : parent 2,1
+sub_menu 3 : caption 3,"Edition" : parent 3,1
+' créer 3 SUB_MENU à SUB_MENU 2 (Fichiers)
+sub_menu 4 : caption 4,"Ouvir" : parent 4,2
+sub_menu 5 : caption 5,"Sauver" : parent 5,2
+sub_menu 6 : caption 6,"Quitter" : parent 6,2
+' créer 3 SUB_MENU à SUB_MENU 3 (Edition)
+sub_menu 7 : caption 7,"Copier" : parent 7,3
+sub_menu 8 : caption 8,"Coller" : parent 8,3
+sub_menu 9 : caption 9,"Défaire" : parent 9,3</code></pre>
+    </div>
 
     <br>
 
@@ -237,7 +233,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

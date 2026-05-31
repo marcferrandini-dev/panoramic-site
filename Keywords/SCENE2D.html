@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction SCENE2D N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -151,23 +151,19 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' crée un SCENE2D avec la position et les dimensions par défaut </p>
-              <p>scene2D 1</p>
-              <p>' charge une image de fond</p>
-              <p>file_load 1,"Mon monde 2D.bmp"</p>
-              <p>' change les dimensions du SCENE2D</p>
-              <p>width 1,600</p>
-              <p>height 1,400</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">SCENE2D.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' crée un SCENE2D avec la position et les dimensions par défaut 
+scene2D 1
+' charge une image de fond
+file_load 1,"Mon monde 2D.bmp"
+' change les dimensions du SCENE2D
+width 1,600
+height 1,400</code></pre>
+    </div>
 
     <br>
 
@@ -219,7 +215,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

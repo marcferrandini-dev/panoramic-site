@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction OFF_CLICK N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -147,35 +147,31 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' déclarer 2 labels</p>
-              <p>label click1,click2</p>
-              <p>' un BUTTON est créé</p>
-              <p>button 1:top 1,60:width 1,200</p>
-              <p>caption 1,"clique 2 fois"</p>
-              <p>' chaque fois que le BUTTON est cliqué, exécuter à partir du label "click1"</p>
-              <p>on_click 1, click1</p>
-              <p>end: ' le programme principal est fini</p>
-              <p>click1:</p>
-              <p>caption 1,"cliqué pour la première fois"</p>
-              <p>wait 250</p>
-              <p>off_click 1</p>
-              <p>on_click 1, click2</p>
-              <p>return</p>
-              <p>click2:</p>
-              <p>caption 1,"cliqué pour la deuxième fois"</p>
-              <p>wait 250</p>
-              <p>terminate</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">OFF_CLICK.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' déclarer 2 labels
+label click1,click2
+' un BUTTON est créé
+button 1:top 1,60:width 1,200
+caption 1,"clique 2 fois"
+' chaque fois que le BUTTON est cliqué, exécuter à partir du label "click1"
+on_click 1, click1
+end: ' le programme principal est fini
+click1:
+caption 1,"cliqué pour la première fois"
+wait 250
+off_click 1
+on_click 1, click2
+return
+click2:
+caption 1,"cliqué pour la deuxième fois"
+wait 250
+terminate
+return</code></pre>
+    </div>
 
     <br>
 
@@ -221,7 +217,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

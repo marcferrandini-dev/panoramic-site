@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction FILE_WRITE N,S du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -153,22 +153,18 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' ouvir un fichier en écriture</p>
-              <p>file_open_write 1,"mon_fichier.txt"</p>
-              <p>' écrire une donnée</p>
-              <p>file_write 1, "Salut!"</p>
-              <p>' le fermer</p>
-              <p>file_close 1</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">FILE_WRITE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' ouvir un fichier en écriture
+file_open_write 1,"mon_fichier.txt"
+' écrire une donnée
+file_write 1, "Salut!"
+' le fermer
+file_close 1</code></pre>
+    </div>
 
     <br>
 
@@ -224,7 +220,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

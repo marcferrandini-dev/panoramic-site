@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction OFF_RESIZE N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -143,26 +143,22 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label resize</p>
-              <p>dim c%</p>
-              <p>caption 0,"Redimensionne FORM0 avec la souris"</p>
-              <p>on_resize 0, resize</p>
-              <p>end</p>
-              <p>resize:</p>
-              <p>c%=c%+1</p>
-              <p>caption 0,"redimensionné "+str$(c%)+" fois"</p>
-              <p>if c%>10 then off_resize 0</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">OFF_RESIZE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label resize
+dim c%
+caption 0,"Redimensionne FORM0 avec la souris"
+on_resize 0, resize
+end
+resize:
+c%=c%+1
+caption 0,"redimensionné "+str$(c%)+" fois"
+if c%&gt;10 then off_resize 0
+return</code></pre>
+    </div>
 
     <br>
 
@@ -208,7 +204,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

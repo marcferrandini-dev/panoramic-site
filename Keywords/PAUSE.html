@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction PAUSE N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -138,21 +138,17 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>dim i</p>
-              <p>print "visualiser les chiffres de 1 à 10 chaque seconde"</p>
-              <p>for i=1 to 10</p>
-              <p> print i:pause 1000</p>
-              <p>next i</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">PAUSE.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim i
+print "visualiser les chiffres de 1 à 10 chaque seconde"
+for i=1 to 10
+ print i:pause 1000
+next i</code></pre>
+    </div>
 
     <br>
 
@@ -199,7 +195,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

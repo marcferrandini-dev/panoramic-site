@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction SPRITE_DELETE_ALL du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -137,38 +137,34 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>' créer un monde 2D numéro 1</p>
-              <p>scene2d 1</p>
-              <p>' charger une image de fond</p>
-              <p>file_load 1,"ville.bmp"</p>
-              <p>' créer un SPRITE numéro 1</p>
-              <p>sprite 1</p>
-              <p>' charger une image dans le SPRITE 1</p>
-              <p>sprite_file_load 1,"envahisseur.bmp"</p>
-              <p>' positionner le SPRITE sur le SCENE2D</p>
-              <p>sprite_x_position 1,10</p>
-              <p>sprite_y_position 1,10</p>
-              <p>' créer un SPRITE numéro 2</p>
-              <p>sprite 2</p>
-              <p>' charger une image dans le SPRITE 2</p>
-              <p>sprite_file_load 2,"envahisseur.bmp"</p>
-              <p>' positionner le SPRITE sur le SCENE2D</p>
-              <p>sprite_x_position 2,100</p>
-              <p>sprite_y_position 2,100</p>
-              <p>' attendre 1 seconde</p>
-              <p>wait 1000</p>
-              <p>' détruire tous les SPRITES</p>
-              <p>sprite_delete_all</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">SPRITE_DELETE_ALL.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>' créer un monde 2D numéro 1
+scene2d 1
+' charger une image de fond
+file_load 1,"ville.bmp"
+' créer un SPRITE numéro 1
+sprite 1
+' charger une image dans le SPRITE 1
+sprite_file_load 1,"envahisseur.bmp"
+' positionner le SPRITE sur le SCENE2D
+sprite_x_position 1,10
+sprite_y_position 1,10
+' créer un SPRITE numéro 2
+sprite 2
+' charger une image dans le SPRITE 2
+sprite_file_load 2,"envahisseur.bmp"
+' positionner le SPRITE sur le SCENE2D
+sprite_x_position 2,100
+sprite_y_position 2,100
+' attendre 1 seconde
+wait 1000
+' détruire tous les SPRITES
+sprite_delete_all</code></pre>
+    </div>
 
     <br>
 
@@ -215,7 +211,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction CHECKED_OPTION(N) du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -140,32 +140,28 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label select</p>
-              <p>' créer un CONTAINER_OPTION avec 4 OPTIONs</p>
-              <p>container_option 10</p>
-              <p>caption 10,"Selectionnez une OPTION"</p>
-              <p>option 50:parent 50,10:top 50,20:left 50,20:caption 50,"Option 50"</p>
-              <p>option 60:parent 60,10:top 60,40:left 60,20:caption 60,"Option 60"</p>
-              <p>option 65:parent 65,10:top 65,60:left 65,20:caption 65,"Option 65"</p>
-              <p>option 70:parent 70,10:top 70,80:left 70,20:caption 70,"Option 70"</p>
-              <p>on_click 50,select</p>
-              <p>on_click 60,select</p>
-              <p>on_click 65,select</p>
-              <p>on_click 70,select</p>
-              <p>end</p>
-              <p>select:</p>
-              <p>caption 0,str$(checked_option(10))+" est sélectionné"</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">CHECKED_OPTION().bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label select
+' créer un CONTAINER_OPTION avec 4 OPTIONs
+container_option 10
+caption 10,"Selectionnez une OPTION"
+option 50:parent 50,10:top 50,20:left 50,20:caption 50,"Option 50"
+option 60:parent 60,10:top 60,40:left 60,20:caption 60,"Option 60"
+option 65:parent 65,10:top 65,60:left 65,20:caption 65,"Option 65"
+option 70:parent 70,10:top 70,80:left 70,20:caption 70,"Option 70"
+on_click 50,select
+on_click 60,select
+on_click 65,select
+on_click 70,select
+end
+select:
+caption 0,str$(checked_option(10))+" est sélectionné"
+return</code></pre>
+    </div>
 
     <br>
 
@@ -212,7 +208,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

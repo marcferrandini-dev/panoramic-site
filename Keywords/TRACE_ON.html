@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction TRACE_ON F du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -157,23 +157,19 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>dim a%,b%</p>
-              <p>trace_on "test.txt"</p>
-              <p>a%=1</p>
-              <p>b%=1</p>
-              <p>trace_off</p>
-              <p>a%=2</p>
-              <p>end</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">TRACE_ON.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a%,b%
+trace_on "test.txt"
+a%=1
+b%=1
+trace_off
+a%=2
+end</code></pre>
+    </div>
 
     <br>
 
@@ -219,7 +215,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

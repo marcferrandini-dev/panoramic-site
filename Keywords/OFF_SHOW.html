@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction OFF_SHOW N du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -147,33 +147,29 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>label show,click</p>
-              <p>dim k%</p>
-              <p>k%=0</p>
-              <p>button 1:width 1,200:top 1,20:left 1,20:caption 1, "Cliquez pour cacher ce FORM"</p>
-              <p>on_show 0, show</p>
-              <p>on_click 1, click</p>
-              <p>end</p>
-              <p>show:</p>
-              <p>k%=k%+1</p>
-              <p>caption 0, "nombre de SHOWs: "+str$(k%)</p>
-              <p>off_show 0</p>
-              <p>return</p>
-              <p>click:</p>
-              <p>hide 0</p>
-              <p>wait 1000</p>
-              <p>show 0</p>
-              <p>return</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">OFF_SHOW.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label show,click
+dim k%
+k%=0
+button 1:width 1,200:top 1,20:left 1,20:caption 1, "Cliquez pour cacher ce FORM"
+on_show 0, show
+on_click 1, click
+end
+show:
+k%=k%+1
+caption 0, "nombre de SHOWs: "+str$(k%)
+off_show 0
+return
+click:
+hide 0
+wait 1000
+show 0
+return</code></pre>
+    </div>
 
     <br>
 
@@ -219,7 +215,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>

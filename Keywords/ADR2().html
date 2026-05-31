@@ -7,7 +7,7 @@
   <meta name="description" content="Documentation de l'instruction ADR2(V) du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
-  <link rel="stylesheet" href="./keyword-style.css?v=10">
+  <link rel="stylesheet" href="./keyword-style.css?v=11">
   <script src="../assets/js/theme-init.js"></script>
 </head>
 <body>
@@ -142,31 +142,27 @@
       EXEMPLE
     </font></b></p>
 
-    <blockquote>
-      <p>
-        <table  width="800" bgcolor="#F0F0F0" border="0" cellspacing="1" cellpadding="20" >
-          <tr>
-            <td><left><font face="Consolas">
-              <p>dim a%(4,3),b$(4,3),c(4,3)</p>
-              <p>dim adrs%,adrc%,copy,i%</p>
-              <p>a%(2,1)=10:b$(2,1)="Hello":c(4,1)=18.18</p>
-              <p>adrs%=adr2(a%,2,1):' adresse de a%(2,1)</p>
-              <p>peek_reverse:' car Windows est du type Big Endian</p>
-              <p>print peek32(adrs%):' affiche le contenu de a%(2,1) soit 10</p>
-              <p>adrs%=adr2(b$,2,1):' adresse de b$(2,1)</p>
-              <p>' affiche les 5 caractères de la chaine b$(2,1)</p>
-              <p>print chr$(peek(adrs%))+chr$(peek(adrs%+2))+chr$(peek(adrs%+4))+chr$(peek(adrs%+6))+chr$(peek(adrs%+8))</p>
-              <p>adrs%=adr2(c,4,1):' adresse de c(4,1)</p>
-              <p>copy=0.0</p>
-              <p>adrc%=adr(copy):' adresse de copy</p>
-              <p>' par des peek et poke, on recopie c(4,1) dans copy</p>
-              <p>for i%=0 to 7:poke adrc%+i%,peek(adrs%+i%):next i%:' un réel est codé sur 8 octets</p>
-              <p>print copy:' affiche 18.18</p>
-            </font></left></td>
-          </tr>
-        </table>
-      </p>
-    </blockquote>
+    <div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">ADR2().bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a%(4,3),b$(4,3),c(4,3)
+dim adrs%,adrc%,copy,i%
+a%(2,1)=10:b$(2,1)="Hello":c(4,1)=18.18
+adrs%=adr2(a%,2,1):' adresse de a%(2,1)
+peek_reverse:' car Windows est du type Big Endian
+print peek32(adrs%):' affiche le contenu de a%(2,1) soit 10
+adrs%=adr2(b$,2,1):' adresse de b$(2,1)
+' affiche les 5 caractères de la chaine b$(2,1)
+print chr$(peek(adrs%))+chr$(peek(adrs%+2))+chr$(peek(adrs%+4))+chr$(peek(adrs%+6))+chr$(peek(adrs%+8))
+adrs%=adr2(c,4,1):' adresse de c(4,1)
+copy=0.0
+adrc%=adr(copy):' adresse de copy
+' par des peek et poke, on recopie c(4,1) dans copy
+for i%=0 to 7:poke adrc%+i%,peek(adrs%+i%):next i%:' un réel est codé sur 8 octets
+print copy:' affiche 18.18</code></pre>
+    </div>
 
     <br>
 
@@ -214,7 +210,6 @@
     </div>
   </footer>
 
-  <script src="../assets/js/keyword-copy.js"></script>
   <script type="module" src="../assets/js/main.js"></script>
 </body>
 </html>
