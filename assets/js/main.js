@@ -4,7 +4,14 @@
  * scroll indicators, documentation live search and FAQ category tabs.
  */
 
+import { highlightCodeBlocks } from './panoramic-highlighter.js';
+
 document.addEventListener('DOMContentLoaded', () => {
+  // ==========================================
+  // 0. PANORAMIC code syntax highlighting
+  // ==========================================
+  highlightCodeBlocks();
+
   // ==========================================
   // 1. Sticky Header & Scroll Effects
   // ==========================================
