@@ -64,8 +64,6 @@
 
 <h1 class="tuto-title">PANORAMIC: 
   LES VARIABLES</h1>
-<h2 class="tuto-breadcrumb"><a href="../index.html">PAGE 
-  PRINCIPALE </a>/<a href="../tutoriels.html">PAGE TUTORIELS</a></h2>
 <div class="tuto-separator"></div>
 <p><h2><b>Les variables.</b></h2></p>
 <p>Une variable, c'est 
@@ -87,7 +85,10 @@
         <span class="editor-title">tutoriel.bas</span>
         <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
       </div>
-      <pre><code>dim x%<br> rem réserve de la mémoire<br> rem nomme cette mémoire x%<br> rem le symbole % veut dire que la variable est un entier (elle ne contient pas de partie fractionnaire)</code></pre>
+      <pre><code>dim x%
+rem réserve de la mémoire
+rem nomme cette mémoire x%
+rem le symbole % veut dire que la variable est un entier (elle ne contient pas de partie fractionnaire)</code></pre>
     </div>
 <p>Voici un code qui 
   déclare la variable x%, qui fait successivement plusieurs calculs dans x% et 
@@ -97,7 +98,21 @@
         <span class="editor-title">tutoriel.bas</span>
         <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
       </div>
-      <pre><code>rem x% : rem on réserve un espace de la mémoire, qu'on appelle x%<br> <br> x%=6+7-3 : rem on met la valeur 10 dans cette mémoire nommée x% <br> print x% : rem on lit cette mémoire et on affiche son contenu à l'écran<br> <br> x%=4 : rem on utilise à nouveau la même mémoire x% pour y mettre 4 <br> print x% : rem il s'affiche 4 à l'écran<br> <br> x%=x%+1 : rem on utilise cette fois x% en lecture puis en écriture:<br> rem 1 - on prend sa valeur : 4,<br> rem 2 - on lui ajoute 1,<br> rem 3 - et on stocke le résultat obtenu dans x%<br> print x%:rem il s'affiche 5 à l'écran<br> <br> end : rem c'est fini!</code></pre>
+      <pre><code>rem x% : rem on réserve un espace de la mémoire, qu'on appelle x%
+
+x%=6+7-3 : rem on met la valeur 10 dans cette mémoire nommée x%
+print x% : rem on lit cette mémoire et on affiche son contenu à l'écran
+
+x%=4 : rem on utilise à nouveau la même mémoire x% pour y mettre 4
+print x% : rem il s'affiche 4 à l'écran
+
+x%=x%+1 : rem on utilise cette fois x% en lecture puis en écriture:
+rem 1 - on prend sa valeur : 4,
+rem 2 - on lui ajoute 1,
+rem 3 - et on stocke le résultat obtenu dans x%
+print x%:rem il s'affiche 5 à l'écran
+
+end : rem c'est fini!</code></pre>
     </div>
 <p>Source de l'exemple 
   -&gt; <a href="Sources/Variable_01.html">Variable_01.bas</a></p>
@@ -130,8 +145,10 @@
         <span class="editor-title">tutoriel.bas</span>
         <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
       </div>
-      <pre><code>dim x%, y, z$ : rem on réserve des espaces dans la mémoire<br> <br> x% = 6 : rem on met la valeur 6 dans la variable entière x%
-y = 10.5 : rem on met la valeur 10.5 dans la variable réelle y<br>
+      <pre><code>dim x%, y, z$ : rem on réserve des espaces dans la mémoire
+
+x% = 6 : rem on met la valeur 6 dans la variable entière x%
+y = 10.5 : rem on met la valeur 10.5 dans la variable réelle y
 z$ = "un petit texte" : rem on met un texte dans la variable string z$</code></pre>
     </div>
 <p align="left">Ainsi, 
@@ -205,8 +222,11 @@ z$ = "un petit texte" : rem on met un texte dans la variable string z$</code></p
         <span class="editor-title">tutoriel.bas</span>
         <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
       </div>
-      <pre><code>dim x%(10), y(5), z$(50), i: rem on déclare les variables<br> <br> x%(3) = 6 : rem on met la valeur 6 dans la variable entière x%(3)
-y(x%(3)) = 10.5 : rem on met la valeur 10.5 dans la variable réelle y(6), car x%(3) vaut 6<br>
+      <pre><code>dim x%(10), y(5), z$(50), i: rem on déclare les variables
+
+x%(3) = 6 : rem on met la valeur 6 dans la variable entière x%(3)
+y(x%(3)) = 10.5 : rem on met la valeur 10.5 dans la variable réelle y(6), car x%(3) vaut 6
+
 z$(10) = "un "
 z$(11) = "petit "
 z$(12) = "texte"

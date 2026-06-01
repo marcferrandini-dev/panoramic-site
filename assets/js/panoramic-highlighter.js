@@ -86,12 +86,16 @@ function tokenizeCode(text) {
 }
 
 function highlightLine(line) {
-  const remMatch = line.match(/^(\s*)rem\b(.*)$/i);
-  if (remMatch) {
-    return escapeHtml(remMatch[1]) + span('kw', 'rem') + span('com', remMatch[2]);
+  // Full-line REM comment
+  const remLineMatch = line.match(/^(\s*)rem\b(.*)$/i);
+  if (remLineMatch) {
+    return escapeHtml(remLineMatch[1]) + span('kw', 'rem') + span('com', remLineMatch[2]);
   }
 
+  // Scan for comment delimiters: ' (apostrophe) or : rem (colon-rem)
+  // respecting double-quoted strings
   let commentIndex = -1;
+  let commentType = null; // 'apostrophe' or 'rem'
   let inString = false;
 
   for (let i = 0; i < line.length; i++) {
@@ -99,10 +103,32 @@ function highlightLine(line) {
       inString = !inString;
     } else if (line[i] === "'" && !inString) {
       commentIndex = i;
+      commentType = 'apostrophe';
       break;
+    } else if (!inString && line[i] === ':') {
+      // Found colon outside string — check if `rem` follows
+      let j = i + 1;
+      while (j < line.length && /[\s]/.test(line[j])) j++;
+      if (j < line.length && line.slice(j, j + 3).toLowerCase() === 'rem') {
+        const afterRem = j + 3;
+        if (afterRem >= line.length || !/[a-zA-Z0-9_$#]/.test(line[afterRem])) {
+          commentIndex = j;
+          commentType = 'rem';
+          break;
+        }
+      }
     }
   }
 
+  // Handle inline REM comment (keyword "rem" + comment text)
+  if (commentType === 'rem') {
+    const codePart = line.slice(0, commentIndex);
+    const remKw = line.slice(commentIndex, commentIndex + 3);
+    const afterPart = line.slice(commentIndex + 3);
+    return tokenizeCode(codePart) + span('kw', remKw) + span('com', afterPart);
+  }
+
+  // Handle apostrophe comment or no comment
   const codePart = commentIndex >= 0 ? line.slice(0, commentIndex) : line;
   const commentPart = commentIndex >= 0 ? line.slice(commentIndex) : '';
 
