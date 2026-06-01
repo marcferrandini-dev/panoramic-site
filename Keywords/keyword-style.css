@@ -269,7 +269,7 @@ p[align="center"] > font[size="4"] b {
 .keyword-page > font > p:not([align="center"]) > font[size="4"] b,
 .keyword-page > font > p:not([align="center"]) > b > font[size="4"],
 .keyword-page > font > p:not([align="center"]) > font[size="4"] {
-  font-size: 0.8rem !important;
+  font-size: 1.25rem !important;
   color: var(--secondary) !important;
   border: none !important;
   border-left: none !important;
