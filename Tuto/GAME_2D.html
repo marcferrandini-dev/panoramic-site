@@ -84,31 +84,18 @@
 <p align="left">Si 
   on veut utiliser les touches fl&eacute;ch&eacute;es du clavier (par exemple 
   pour d&eacute;placer quelque chose sur l'&eacute;cran), on fera:</p>
-<table width="48%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>dim 
-        v : rem 
-        on d&eacute;finit une variable v</b></p>
-      <p><b>v=scancode 
-        : rem lecture du clavier, code mis dans v</b></p>
-      <p><b>if 
-        v=37 then - - - : rem 
-        37=code de FLECHE GAUCHE</b></p>
-      <p><b>if 
-        v=38 then - - - : rem 
-        38=code de FLECHE HAUT</b></p>
-      <p><b>if 
-        v=39 then - - - : rem 
-        39=code de FLECHE DROITE</b></p>
-      <p><b>if 
-        v=40 then - - - : rem 
-        40=code de FLECHE BAS</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim v : rem on définit une variable v
+v=scancode : rem lecture du clavier, code mis dans v
+if v=37 then - - - : rem 37=code de FLECHE GAUCHE
+if v=38 then - - - : rem 38=code de FLECHE HAUT
+if v=39 then - - - : rem 39=code de FLECHE DROITE
+if v=40 then - - - : rem 40=code de FLECHE BAS</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>Utilisation 
   d'un son</h2>
@@ -120,40 +107,21 @@
 <p align="left">Exemple 
   : &agrave; chaque fois qu'on appuie sur la touche ESPACE du clavier, on joue 
   le son du fichier BOOM.wav:</p>
-<table width="68%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>dim 
-        v : rem on d&eacute;finit une variable v</b></p>
-      <p><b>label 
-        recommence : rem 
-        on d&eacute;finit un label (marquage d'un point du programme)</b></p>
-      <p><b>sound 
-        1 : rem 
-        cr&eacute;ation d'un son auquel on affecte le num&eacute;ro 1</b></p>
-      <p><b>file_load 
-        1,&quot;boom.wav&quot; : rem 
-        chargement du fichier son dans l'objet num&eacute;ro 1</b></p>
-      <p><b>recommence:</b></p>
-      <p><b>v=scancode 
-        : rem 
-        lecture du clavier</b></p>
-      <p><b>if 
-        v=32 then play 
-        1 : rem 
-        si touche espace enfonc&eacute;e, on joue le son (objet num&eacute;ro 
-        1)</b></p>
-      <p><b>wait</b><b> 
-        100 : rem 
-        on attend 100 millisecondes</b></p>
-      <p><b>goto 
-        recommence : rem 
-        on recommence</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim v : rem on définit une variable v
+label recommence : rem on définit un label (marquage d'un point du programme)
+sound 1 : rem création d'un son auquel on affecte le numéro 1
+file_load 1,"boom.wav" : rem chargement du fichier son dans l'objet numéro 1
+recommence:
+v=scancode : rem lecture du clavier
+if v=32 then play 1 : rem si touche espace enfoncée, on joue le son (objet numéro 1)
+wait 100 : rem on attend 100 millisecondes
+goto recommence : rem on recommence</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>Affichage 
   d'une image mobile sur une image de fond</h2>
@@ -184,40 +152,22 @@
 <p align="left">Voici 
   un exemple de base sur l'utilisation de <b>SCENE2D</b> 
   et de <b>SPRITES</b> :</p>
-<table width="62%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>scene2d 
-        1 : rem on crée un monde 2D (objet numéro 
-        1)</b></p>
-      <p><b>file_load 
-        1,"ville.bmp" : rem on charge une image de 
-        fond </b></p>
-      <p><b>sprite 
-        1 : rem on crée un SPRITE (objet SPRITE numéro 
-        1)</b></p>
-      <p><b>sprite_file_load 
-        1,"envahisseur.bmp" : rem on charge une image 
-        dans le SPRITE</b></p>
-      <p><b> sprite_position 
-        1,10,20 : rem on positionne le SPRITE sur 
-        le SCENE2D</b></p>
-      <p><b>sprite_hide 
-        1 : rem on le rend invisible</b></p>
-      <p><b>wait 
-        1000 : rem on attend 1 seconde</b></p>
-      <p><b>sprite_show 
-        1 : rem on le rend visible</b></p>
-      <p><b>wait 
-        1000 : rem on attend 1 seconde</b></p>
-      <p><b>sprite_delete 
-        1 : rem 
-        on détruit le SPRITE</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>scene2d 1 : rem on crée un monde 2D (objet numéro 1)
+file_load 1,"ville.bmp" : rem on charge une image de fond
+sprite 1 : rem on crée un SPRITE (objet SPRITE numéro 1)
+sprite_file_load 1,"envahisseur.bmp" : rem on charge une image dans le SPRITE
+sprite_position 1,10,20 : rem on positionne le SPRITE sur le SCENE2D
+sprite_hide 1 : rem on le rend invisible
+wait 1000 : rem on attend 1 seconde
+sprite_show 1 : rem on le rend visible
+wait 1000 : rem on attend 1 seconde
+sprite_delete 1 : rem on détruit le SPRITE</code></pre>
+    </div>
 <p align="left">&nbsp;</p>
 <p align="left">Toute 
   la base pour cr&eacute;er un jeu en 2D est donn&eacute;e sur cette page : on 
@@ -243,14 +193,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>

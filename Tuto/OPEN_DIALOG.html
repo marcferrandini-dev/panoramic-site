@@ -95,29 +95,17 @@
   de la commande <b>FILE_NAME$(N)</b> est donc en 
   principe associ&eacute;e &agrave; un test du r&eacute;sultat avec le caract&egrave;re 
   soulign&eacute; &quot;_&quot; :</p>
-<table width="62%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        a$ : rem 
-        on d&eacute;finit une variable string</b></p>
-      <p>&nbsp;</p>
-      <p><b>open_dialog 
-        1 : rem cr&eacute;ation de l'objet syst&egrave;me 
-        num&eacute;ro 1</b></p>
-      <p><b>a$=file_name$(1) 
-        : rem utilisation de l'open_dialog 1 pour 
-        choisir un fichier</b></p>
-      <p>&nbsp;</p>
-      <p><b>if 
-        a$&lt;&gt; &quot;_&quot; then - - - : rem 
-        un fichier a &eacute;t&eacute; choisi</b></p>
-      <p><b>if 
-        a$= &quot;_&quot; then - - - : rem 
-        aucun fichier n'a &eacute;t&eacute; choisi</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$ : rem on définit une variable string
+open_dialog 1 : rem création de l'objet système numéro 1
+a$=file_name$(1) : rem utilisation de l'open_dialog 1 pour choisir un fichier
+if a$<> "_" then - - - : rem un fichier a été choisi
+if a$= "_" then - - - : rem aucun fichier n'a été choisi</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>Filtrage 
   des noms de fichier</h2>
@@ -132,34 +120,18 @@
   visible dans la partie &quot;Type&quot; de l' <b>OPEN_DIALOG</b></p>
 <p align="left">Exemple 
   : on ne recherche que les fichiers texte (dont l'extension est TXT) :</p>
-<table width="71%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>dim 
-        a$ : rem 
-        on d&eacute;finit une variable string</b></p>
-      <p>&nbsp;</p>
-      <p><b>open_dialog 
-        1 : rem cr&eacute;ation de l'objet syst&egrave;me 
-        num&eacute;ro 1</b></p>
-      <p><b>filter 
-        1,&quot;fichiers texte|*.txt&quot;: rem on 
-        se limite aux fichiers se terminant par &quot;txt&quot; </b></p>
-      <p><b>a$=file_name$(1) 
-        : rem utilisation de l'open_dialog 1 pour 
-        choisir un fichier TEXTE (.txt) </b></p>
-      <p>&nbsp;</p>
-      <p><b>if 
-        a$&lt;&gt; &quot;_&quot; then - - - : rem 
-        un fichier a &eacute;t&eacute; choisi</b></p>
-      <p><b>if 
-        a$= &quot;_&quot; then - - - : rem 
-        aucun fichier n'a &eacute;t&eacute; choisi</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$ : rem on définit une variable string
+open_dialog 1 : rem création de l'objet système numéro 1
+filter 1,"fichiers texte|*.txt": rem on se limite aux fichiers se terminant par "txt"
+a$=file_name$(1) : rem utilisation de l'open_dialog 1 pour choisir un fichier TEXTE (.txt)
+if a$<> "_" then - - - : rem un fichier a été choisi
+if a$= "_" then - - - : rem aucun fichier n'a été choisi</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>Utilisation 
   d'un fichier choisi par un OPEN_DIALOG</h2>
@@ -172,32 +144,18 @@
 <p align="left">Exemple 
   : on remplit un <b>MEMO</b> avec un fichier texte 
   qui est choisi par un <b>OPEN_DIALOG</b> :</p>
-<table width="64%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        a$ : rem 
-        on d&eacute;finit une variable string</b></p>
-      <p>&nbsp;</p>
-      <p><b>open_dialog 
-        1 : rem cr&eacute;ation de l'objet syst&egrave;me 
-        num&eacute;ro 1</b></p>
-      <p><b>filter 
-        1,&quot;fichiers texte|*.txt&quot;: rem on 
-        se limite aux fichiers se terminant par &quot;txt&quot;</b></p>
-      <p><b>memo 
-        2 : rem cr&eacute;ation de l'objet syst&egrave;me 
-        num&eacute;ro 2</b></p>
-      <p><b>a$=file_name$(1) 
-        : rem utilisation de l'open_dialog 1 pour 
-        choisir un fichier TEXTE</b></p>
-      <p><b>if 
-        a$&lt;&gt; &quot;_&quot; then file_load(a$) 
-        : rem on remplit le memo avec le fichier 
-        TEXTE choisi</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$ : rem on définit une variable string
+open_dialog 1 : rem création de l'objet système numéro 1
+filter 1,"fichiers texte|*.txt": rem on se limite aux fichiers se terminant par "txt"
+memo 2 : rem création de l'objet système numéro 2
+a$=file_name$(1) : rem utilisation de l'open_dialog 1 pour choisir un fichier TEXTE
+if a$<> "_" then file_load(a$) : rem on remplit le memo avec le fichier TEXTE choisi</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <blockquote> 
   <blockquote> 
@@ -216,14 +174,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>

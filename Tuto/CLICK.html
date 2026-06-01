@@ -148,31 +148,17 @@
 <p align="left">Comme 
   on doit tester continuellement l'&eacute;tat du bouton par <b>CLICKED</b> 
   on va mettre cette commande dans une boucle <b>WHILE</b>.</p>
-<table width="68%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>button 
-        1 : rem on cr&eacute;e un bouton (objet syst&egrave;me 
-        num&eacute;ro 1)</b></p>
-      <p><b>while 
-        clicked(1) 
-        = 0 : rem tant qu'on n'a pas cliqu&eacute; 
-        sur le bouton</b></p>
-      <p><b>wait 
-        100 : rem on fait 100 millisecondes 
-        de pause...</b></p>
-      <p><b> end_while 
-        : rem on retourne tester l'&eacute;tat du 
-        bouton...</b></p>
-      <p>&nbsp;</p>
-      <p><b>caption 
-        0 , &quot;on a cliqu&eacute;&quot; : rem 
-        on affiche un texte dans le bandeau de la fen&ecirc;tre</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>button 1 : rem on crée un bouton (objet système numéro 1)
+while clicked(1) = 0 : rem tant qu'on n'a pas cliqué sur le bouton
+wait 100 : rem on fait 100 millisecondes de pause...
+end_while : rem on retourne tester l'état du bouton...
+caption 0 , "on a cliqué" : rem on affiche un texte dans le bandeau de la fenêtre</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>M&eacute;thode 
   &eacute;v&eacute;nementielle: on affecte un sous-programme &agrave; un &eacute;v&eacute;nement</h2>
@@ -190,33 +176,19 @@
   indique qu'&agrave; chaque fois qu'on cliquera sur l'objet syst&egrave;me num&eacute;ro 
   1 (c'est &agrave; dire le bouton), on ex&eacute;cutera la partie du programme 
   marqu&eacute;e par le <b>LABEL</b> clique.</p>
-<table width="68%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>label 
-        clique : rem on crée une marque (un &quot;label&quot; 
-        en anglais)</b></p>
-      <p>&nbsp;</p>
-      <p><b>button 
-        1 : rem on cr&eacute;e un bouton (objet syst&egrave;me 
-        num&eacute;ro 1)</b></p>
-      <p><b>on_click 
-        1,clique : rem &agrave; chaque clic sur l'objet 
-        1 on ex&eacute;cute &agrave; partir de &quot;clique&quot; </b></p>
-      <p><b>end 
-        : rem fin du programme principal</b></p>
-      <p>&nbsp;</p>
-      <p><b>clique:</b></p>
-      <p><b> caption 
-        0 , &quot;on a cliqu&eacute;&quot; : rem 
-        on affiche un texte dans le bandeau de la fen&ecirc;tre</b></p>
-      <p><b>return 
-        : rem fin du sous-programme</b></p>
-      <p>&nbsp; </p>
-      </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label clique : rem on crée une marque (un "label" en anglais)
+button 1 : rem on crée un bouton (objet système numéro 1)
+on_click 1,clique : rem à chaque clic sur l'objet 1 on exécute à partir de "clique"
+end : rem fin du programme principal
+clique:
+caption 0 , "on a cliqué" : rem on affiche un texte dans le bandeau de la fenêtre
+return : rem fin du sous-programme</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <blockquote> 
   <blockquote> 
@@ -235,14 +207,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>

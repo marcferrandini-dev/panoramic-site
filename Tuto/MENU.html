@@ -118,37 +118,19 @@
   se cr&eacute;e un premier niveau de menu, c'est &agrave; dire un menu toujours 
   visible, constitu&eacute; de 2 parties : &quot;Fichier&quot; et &quot;Edition&quot; 
   :</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>main_menu 
-        1: rem 
-        on cr&eacute;e un menu principal (objet syst&egrave;me num&eacute;ro 1)</b></p>
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        2 : rem on cr&eacute;e un sous-menu (objet 
-        syst&egrave;me num&eacute;ro 2)</b></p>
-      <p><b>parent 
-        2,1 : rem qui est reli&eacute; au menu principal 
-        (1) pour se mettre au 1er niveau</b></p>
-      <p><b> caption 
-        2,&quot;Fichier&quot; : rem ce sous-menu 
-        affiche &quot;Fichier&quot;</b></p>
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        3 : rem on cr&eacute;e un autre sous-menu 
-        (objet syst&egrave;me num&eacute;ro 3)</b></p>
-      <p><b>parent 
-        3,1 : rem qui est reli&eacute; au menu principal 
-        (1) pour se mettre au 1er niveau</b></p>
-      <p><b> caption 
-        3,&quot;Edition&quot; : rem ce sous-menu 
-        affiche &quot;Edition&quot;</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>main_menu 1: rem on crée un menu principal (objet système numéro 1)
+sub_menu 2 : rem on crée un sous-menu (objet système numéro 2)
+parent 2,1 : rem qui est relié au menu principal (1) pour se mettre au 1er niveau
+caption 2,"Fichier" : rem ce sous-menu affiche "Fichier"
+sub_menu 3 : rem on crée un autre sous-menu (objet système numéro 3)
+parent 3,1 : rem qui est relié au menu principal (1) pour se mettre au 1er niveau
+caption 3,"Edition" : rem ce sous-menu affiche "Edition"</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>Cr&eacute;ation 
   d'un second niveau de menu</h2>
@@ -160,63 +142,27 @@
   &quot;Coller&quot;.</p>
 <p align="left"> On 
   compl&egrave;te l'exemple pr&eacute;c&eacute;dent par :</p>
-<table width="68%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        4 : rem on cr&eacute;e un sous-menu (objet 
-        syst&egrave;me num&eacute;ro 4)</b></p>
-      <p><b>parent 
-        4,2 : rem qui est reli&eacute; au sous-menu 
-        num&eacute;ro 2 (celui qui affiche &quot;Fichier&quot;)</b></p>
-      <p><b> caption 
-        4,&quot;Ouvrir&quot; : rem ce sous-menu affiche 
-        &quot;Ouvrir&quot;</b></p>
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        5 : rem on cr&eacute;e un sous-menu (objet 
-        syst&egrave;me num&eacute;ro 5)</b></p>
-      <p><b>parent 
-        5,2 : rem qui est reli&eacute; au sous-menu 
-        num&eacute;ro 2 (celui qui affiche &quot;Fichier&quot;)</b></p>
-      <p><b> caption 
-        5,&quot;Sauvegarder&quot; : rem ce sous-menu 
-        affiche &quot;Sauvegarder&quot;</b></p>
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        6 : rem on cr&eacute;e un sous-menu (objet 
-        syst&egrave;me num&eacute;ro 6)</b></p>
-      <p><b>parent 
-        6,3 : rem qui est reli&eacute; au sous-menu 
-        num&eacute;ro 3 (celui qui affiche &quot;Edition&quot;)</b></p>
-      <p><b> caption 
-        6,&quot;Couper&quot; : rem ce sous-menu affiche 
-        &quot;Couper&quot;</b></p>
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        7 : rem on cr&eacute;e un sous-menu (objet 
-        syst&egrave;me num&eacute;ro 6)</b></p>
-      <p><b>parent 
-        7,3 : rem qui est reli&eacute; au sous-menu 
-        num&eacute;ro 3 (celui qui affiche &quot;Edition&quot;)</b></p>
-      <p><b> caption 
-        7,&quot;Copier&quot; : rem ce sous-menu affiche 
-        &quot;Copier&quot;</b></p>
-      <p>&nbsp;</p>
-      <p><b>sub_menu 
-        8 : rem on cr&eacute;e un sous-menu (objet 
-        syst&egrave;me num&eacute;ro 6)</b></p>
-      <p><b>parent 
-        8,3 : rem qui est reli&eacute; au sous-menu 
-        num&eacute;ro 3 (celui qui affiche &quot;Edition&quot;)</b></p>
-      <p><b> caption 
-        8,&quot;Coller&quot; : rem ce sous-menu affiche 
-        &quot;Coller&quot;</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>sub_menu 4 : rem on crée un sous-menu (objet système numéro 4)
+parent 4,2 : rem qui est relié au sous-menu numéro 2 (celui qui affiche "Fichier")
+caption 4,"Ouvrir" : rem ce sous-menu affiche "Ouvrir"
+sub_menu 5 : rem on crée un sous-menu (objet système numéro 5)
+parent 5,2 : rem qui est relié au sous-menu numéro 2 (celui qui affiche "Fichier")
+caption 5,"Sauvegarder" : rem ce sous-menu affiche "Sauvegarder"
+sub_menu 6 : rem on crée un sous-menu (objet système numéro 6)
+parent 6,3 : rem qui est relié au sous-menu numéro 3 (celui qui affiche "Edition")
+caption 6,"Couper" : rem ce sous-menu affiche "Couper"
+sub_menu 7 : rem on crée un sous-menu (objet système numéro 6)
+parent 7,3 : rem qui est relié au sous-menu numéro 3 (celui qui affiche "Edition")
+caption 7,"Copier" : rem ce sous-menu affiche "Copier"
+sub_menu 8 : rem on crée un sous-menu (objet système numéro 6)
+parent 8,3 : rem qui est relié au sous-menu numéro 3 (celui qui affiche "Edition")
+caption 8,"Coller" : rem ce sous-menu affiche "Coller"</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <h2>Affectation 
   d'une partie de programme au click sur un sous-menu</h2>
@@ -236,26 +182,18 @@
   : cette m&eacute;thode (affecter une partie du programme &agrave; un &eacute;v&eacute;nement 
   &quot;click&quot;) n'est pas sp&eacute;cifique &agrave; un sous-menu : elle 
   est valable pour tout objet visible.</p>
-<table width="68%" border="1" height="344">
-  <tr> 
-    <td> 
-      <p><b>label 
-        collage : rem on crée une marque</b></p>
-      <p><b>on_click 
-        8,collage : rem &agrave; chaque click sur 
-        l'objet 8 on ex&eacute;cute &agrave; partir de la marque </b></p>
-      <p><b>end 
-        : rem fin du programme principal</b></p>
-      <p>&nbsp;</p>
-      <p><b>collage:</b></p>
-      <p><b> print 
-        &quot;on a cliqu&eacute; sur l'objet Coller&quot;</b></p>
-      <p><b>return 
-        : rem fin de ce qu'on ex&eacute;cute &agrave; 
-        chaque click sur &quot;Coller&quot;</b></p>
-      </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>label collage : rem on crée une marque
+on_click 8,collage : rem à chaque click sur l'objet 8 on exécute à partir de la marque
+end : rem fin du programme principal
+collage:
+print "on a cliqué sur l'objet Coller"
+return : rem fin de ce qu'on exécute à chaque click sur "Coller"</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <p><h2><b>Test si on a 
   cliqu&eacute; sur un sous-menu</b></h2></p>
@@ -268,19 +206,14 @@
   si on a cliqu&eacute; sur l'objet num&eacute;ro 7 (sous-menu qui affiche &quot;Copier).</p>
 <p align="left">Cette 
   m&eacute;thode elle est valable pour tout objet visible.</p>
-<table width="48%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>if 
-        clicked(7)=1 then 
-        print &quot;on a cliqu&eacute; sur Copier&quot;</b></p>
-      <p><b> rem 
-        ici, clicked(7) vaut 0 car r&eacute;initialis&eacute; apr&egrave;s lecture</b></p>
-      <p>&nbsp;</p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>if clicked(7)=1 then print "on a cliqué sur Copier"
+rem ici, clicked(7) vaut 0 car réinitialisé après lecture</code></pre>
+    </div>
 <div class="tuto-separator"></div>
 <blockquote> 
   <blockquote> 
@@ -299,14 +232,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>

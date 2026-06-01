@@ -82,52 +82,23 @@
   <br>
   Et ensuite, on peut écrire une valeur ou le résultat d'un calcul dans cette 
   mémoire, et la lire, autant de fois qu'on veut.</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        x%<br>
-        rem réserve de la mémoire<br>
-        rem nomme cette mémoire x%<br>
-        rem le symbole % veut dire que la variable 
-        est un entier (elle ne contient pas de partie fractionnaire)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim x%<br> rem réserve de la mémoire<br> rem nomme cette mémoire x%<br> rem le symbole % veut dire que la variable est un entier (elle ne contient pas de partie fractionnaire)</code></pre>
+    </div>
 <p>Voici un code qui 
   déclare la variable x%, qui fait successivement plusieurs calculs dans x% et 
   qui imprime à chaque fois le contenu de x%:</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>rem 
-        x% : rem on réserve un espace de la mémoire, 
-        qu'on appelle x%<br>
-        <br>
-        x%=6+7-3 : rem on met la valeur 10 dans cette 
-        mémoire nommée x% <br>
-        print x% : rem 
-        on lit cette mémoire et on affiche son contenu à l'écran<br>
-        <br>
-        x%=4 : rem on utilise à nouveau la même mémoire 
-        x% pour y mettre 4 <br>
-        print x% : rem 
-        il s'affiche 4 à l'écran<br>
-        <br>
-        x%=x%+1 : rem on utilise cette fois x% en 
-        lecture puis en écriture:<br>
-        rem 1 - on prend sa valeur : 4,<br>
-        rem 2 - on lui ajoute 1,<br>
-        rem 3 - et on stocke le résultat obtenu dans 
-        x%<br>
-        print x%:rem 
-        il s'affiche 5 à l'écran<br>
-        <br>
-        end : rem c'est 
-        fini!</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>rem x% : rem on réserve un espace de la mémoire, qu'on appelle x%<br> <br> x%=6+7-3 : rem on met la valeur 10 dans cette mémoire nommée x% <br> print x% : rem on lit cette mémoire et on affiche son contenu à l'écran<br> <br> x%=4 : rem on utilise à nouveau la même mémoire x% pour y mettre 4 <br> print x% : rem il s'affiche 4 à l'écran<br> <br> x%=x%+1 : rem on utilise cette fois x% en lecture puis en écriture:<br> rem 1 - on prend sa valeur : 4,<br> rem 2 - on lui ajoute 1,<br> rem 3 - et on stocke le résultat obtenu dans x%<br> print x%:rem il s'affiche 5 à l'écran<br> <br> end : rem c'est fini!</code></pre>
+    </div>
 <p>Source de l'exemple 
   -&gt; <a href="Sources/Variable_01.html">Variable_01.bas</a></p>
 <p>En r&eacute;sum&eacute;:<br>
@@ -154,25 +125,15 @@
 <p align="left">Attention 
   : En PANORAMIC, comme dans la plupart des langages, on &eacute;crit un POINT 
   &agrave; la place d'une VIRGULE !</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        x%, y, z$ : rem on réserve des espaces dans 
-        la mémoire<br>
-        <br>
-        x% = 6 : rem on met la valeur 6 dans la variable 
-        enti&egrave;re x%</b></p>
-      <p><b> y = 10.5 
-        : rem on met la valeur 10.5 dans la variable 
-        r&eacute;elle y<br>
-        </b></p>
-      <p><b>z$ = &quot;un 
-        petit texte&quot; : rem on met un texte dans 
-        la variable string z$</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim x%, y, z$ : rem on réserve des espaces dans la mémoire<br> <br> x% = 6 : rem on met la valeur 6 dans la variable entière x%
+y = 10.5 : rem on met la valeur 10.5 dans la variable réelle y<br>
+z$ = "un petit texte" : rem on met un texte dans la variable string z$</code></pre>
+    </div>
 <p align="left">Ainsi, 
   dans un listing, la simple lecture d'un nom de variable nous renseigne sur son 
   type:</p>
@@ -196,14 +157,13 @@
   bien indiquer qu'on d&eacute;clare un tableau, on indique entre parenth&egrave;ses 
   le nombre d'&eacute;l&eacute;ments maximal que ce tableau peut contenir.</p>
 <p align="left">Exemple:</p>
-<table width="9%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>DIM</b><b> 
-        A(20)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>DIM A(20)</code></pre>
+    </div>
 <p align="left">Les 
   tableaux s'utilisent de la m&ecirc;me fa&ccedil;on que les variables dites simples, 
   mais une variable d'un tableau est toujours suivie de son indice entre paranth&egrave;ses. 
@@ -240,34 +200,19 @@
   Courbe(20,40)</b></p>
 <p align="left">Exemple 
   d'utilisation de tableaux de variables:</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p>&nbsp;</p>
-      <p><b>dim 
-        x%(10), y(5), z$(50), i: rem on d&eacute;clare 
-        les variables<br>
-        <br>
-        x%(3) = 6 : rem on met la valeur 6 dans la 
-        variable enti&egrave;re x%(3)</b></p>
-      <p><b> y(x%(3)) 
-        = 10.5 : rem on met la valeur 10.5 dans la 
-        variable r&eacute;elle y(6), car x%(3) vaut 6<br>
-        </b></p>
-      <p><b>z$(10) 
-        = &quot;un &quot;</b></p>
-      <p><b>z$(11) 
-        = &quot;petit &quot;</b></p>
-      <p><b>z$(12) 
-        = &quot;texte&quot;</b></p>
-      <p><b>i= 10</b></p>
-      <p><b>print 
-        z$(i)+z$(i+1)+z$(i+2) : rem il s'affiche 
-        &quot;un petit texte&quot;</b></p>
-      <p>&nbsp;</p>
-      </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim x%(10), y(5), z$(50), i: rem on déclare les variables<br> <br> x%(3) = 6 : rem on met la valeur 6 dans la variable entière x%(3)
+y(x%(3)) = 10.5 : rem on met la valeur 10.5 dans la variable réelle y(6), car x%(3) vaut 6<br>
+z$(10) = "un "
+z$(11) = "petit "
+z$(12) = "texte"
+i= 10
+print z$(i)+z$(i+1)+z$(i+2) : rem il s'affiche "un petit texte"</code></pre>
+    </div>
 <p align="left">Source 
   de l'exemple -&gt; Variable_02.bas</p>
 <div class="tuto-separator"></div>
@@ -304,14 +249,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>

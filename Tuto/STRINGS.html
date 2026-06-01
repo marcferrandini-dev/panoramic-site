@@ -107,15 +107,13 @@
 <p align="left">&nbsp;</p>
 <p align="left">Si 
   on ex&eacute;cute le source suivant:</p>
-<table width="68%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print 
-        &quot;Bonjour !&quot; : rem on affiche 
-        le texte &agrave; l'&eacute;cran</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print "Bonjour !" : rem on affiche le texte à l'écran</code></pre>
+    </div>
 <p align="left">On 
   obtient comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/bonjour.gif" width="187" height="104"></p>
@@ -127,19 +125,14 @@
   termine par le caract&egrave;re DOLLAR.</p>
 <p align="left">Si 
   on ex&eacute;cute le source suivant:</p>
-<table width="68%" border="1">
-  <tr> 
-    <td><b>dim 
-      a$ : rem on d&eacute;finit une variable &quot;string&quot;</b> 
-      <p><b>a$ 
-        = &quot;Bonjour !&quot; : rem on affecte 
-        la variable avec une cha&icirc;ne de caract&egrave;res</b></p>
-      <p><b>print 
-        a$ : rem on affiche le contenu de 
-        a$</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>a$ = "Bonjour !" : rem on affecte la variable avec une chaîne de caractères
+print a$ : rem on affiche le contenu de a$</code></pre>
+    </div>
 <p align="left"> Le 
   r&eacute;sultat est exactement le m&ecirc;me (la diff&eacute;rence c'est qu'on 
   imprime le contenu d'une variable au lieu du texte lui-m&ecirc;me):</p>
@@ -167,17 +160,13 @@
   contenue dans A$.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="38%" border="1">
-  <tr> 
-    <td><b> </b><b> 
-      </b><b> 
-      </b> 
-      <p><b>print 
-         right$(&quot;CHAINE&quot;,2) : rem 
-        on affiche les 2 caract&egrave;res &agrave; droite</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print right$("CHAINE",2) : rem on affiche les 2 caractères à droite</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/right_dollar.gif" width="180" height="88"></p>
@@ -190,17 +179,13 @@
   contenue dans A$.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="38%" border="1">
-  <tr> 
-    <td><b> </b><b> 
-      </b><b> 
-      </b> 
-      <p><b>print 
-         left$(&quot;CHAINE&quot;,3) : rem 
-        on affiche les 3 caract&egrave;res &agrave; gauche</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print left$("CHAINE",3) : rem on affiche les 3 caractères à gauche</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/left_dollar.gif" width="209" height="108"></p>
@@ -213,15 +198,13 @@
   de caract&egrave;res contenue dans A$.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="42%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print 
-         mid$(&quot;CHAINE&quot;,2,4) : rem 
-        on affiche 4 caract&egrave;res &agrave; partir du 2&egrave;me</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print mid$("CHAINE",2,4) : rem on affiche 4 caractères à partir du 2ème</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/mid_dollar.gif" width="202" height="98"></p>
@@ -239,15 +222,13 @@
   le nombre de caract&egrave;res de la cha&icirc;ne contenue dans A$.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print 
-         len(</b><b>&quot;Bonjour 
-        !&quot;)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print len("Bonjour !")</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/len.gif" width="179" height="76"></p>
@@ -273,15 +254,13 @@
   en majuscule la cha&icirc;ne de caract&egrave;res qui est contenue dans A$.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print</b><b> 
-        </b><b> 
-         upper$(&quot;Bonjour !&quot;)</b></p>
-      </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print upper$("Bonjour !")</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/upper_dollar.gif" width="212" height="83"></p>
@@ -292,14 +271,13 @@
   en minuscule la cha&icirc;ne de caract&egrave;res qui est contenue dans A$.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print 
-         lower$(&quot;BONjour !&quot;)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print lower$("BONjour !")</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/lower_dollar.gif" width="199" height="88"></p>
@@ -324,17 +302,14 @@
   A$ sans les blancs &agrave; droite.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        a$</b> </p>
-      <p><b>a$ 
-        = </b><b> 
-         rtrim$(&quot;Bonjour ! &quot;)</b></p>
-      </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$
+a$ = rtrim$("Bonjour ! ")</code></pre>
+    </div>
 <p align="left">met 
   dans a$ la cha&icirc;ne de caract&egrave;res <b>&quot;Bonjour 
   !&quot;</b> 
@@ -347,17 +322,14 @@
   A$ sans les blancs &agrave; gauche.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        a$</b> </p>
-      <p><b>a$ 
-        = </b><b> 
-         ltrim$(&quot; Bonjour !&quot;)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$
+a$ = ltrim$(" Bonjour !")</code></pre>
+    </div>
 <p align="left">met 
   dans a$ la cha&icirc;ne de caract&egrave;res <b>&quot;Bonjour 
   !&quot;</b> 
@@ -371,17 +343,14 @@
   A$ sans les blancs &agrave; droite et &agrave; gauche.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        a$</b> </p>
-      <p><b>a$ 
-        = </b><b> 
-         trim$(&quot; Bonjour ! &quot;)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a$
+a$ = trim$(" Bonjour ! ")</code></pre>
+    </div>
 <p align="left">met 
   dans a$ la cha&icirc;ne de caract&egrave;res <b>&quot;Bonjour 
   !&quot;</b> 
@@ -406,16 +375,13 @@
   &quot;A&quot;.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print 
-        </b><b> 
-        </b><b> 
-         string$(40,&quot;#&quot;)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print string$(40,"#")</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/string_dollar.gif" width="344" height="92"></p>
@@ -430,20 +396,15 @@
   variable A.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>dim 
-        a</b></p>
-      <p><b>a 
-        = 20 + 30</b></p>
-      <p><b>print 
-        </b><b> 
-        </b><b> 
-         str$(a)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>dim a
+a = 20 + 30
+print str$(a)</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/str_dollar.gif" width="173" height="67"></p>
@@ -457,16 +418,13 @@
   un caract&egrave;re correspondant au code ASCII N.</p>
 <p align="left">Cet 
   exemple:</p>
-<table width="20%" border="1">
-  <tr> 
-    <td> 
-      <p><b>print 
-        </b><b> 
-        </b><b> 
-         chr$(65)</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print chr$(65)</code></pre>
+    </div>
 <p align="left">donne 
   comme r&eacute;sultat:</p>
 <p align="left"><img src="TUTOPICT/chr_dollar.gif" width="199" height="86"></p>
@@ -492,14 +450,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>

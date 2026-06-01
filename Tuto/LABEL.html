@@ -86,26 +86,13 @@
 <p> <h2><b>Exemple 1 - 
   LABEL utilisé avec un GOTO</b></h2><br>
   </p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>rem 
-        on déclare le LABEL<br>
-        label ici<br>
-        <br>
-        print "on 
-        commence"<br>
-        goto ici<br>
-        print "cette 
-        ligne n'est pas ex&eacute;cut&eacute;e"<br>
-        ici:<br>
-        print "on 
-        est arrivé"<br>
-        <br>
-        end</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>rem on déclare le LABEL<br> label ici<br> <br> print "on commence"<br> goto ici<br> print "cette ligne n'est pas exécutée"<br> ici:<br> print "on est arrivé"<br> <br> end</code></pre>
+    </div>
 <p>Source de l'exemple 
   -&gt; <a href="Sources/Label_01.html">Label_01.bas</a></p>
 <p>à l'exécution, 
@@ -119,15 +106,13 @@
   </tr>
 </table>
 <p>car la ligne:</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b> print 
-        "cette ligne 
-        n'est pas ex&eacute;cut&eacute;e"</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>print "cette ligne n'est pas exécutée"</code></pre>
+    </div>
 <p>n'a pas &eacute;t&eacute; 
   exécutée.</p>
 <div class="tuto-separator"></div>
@@ -136,27 +121,13 @@
   </b><br>
   Le LABEL est alors le nom du sous-programme qui est appelé par 
   <b>GOSUB</b></p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>rem 
-        on déclare le LABEL<br>
-        label imprime<br>
-        dim i<br>
-        i=1<br>
-        gosub imprime<br>
-        i=2<br>
-        gosub imprime<br>
-        i=3<br>
-        gosub imprime<br>
-        end<br>
-        <br>
-        imprime:<br>
-        print i<br>
-        return</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>rem on déclare le LABEL<br> label imprime<br> dim i<br> i=1<br> gosub imprime<br> i=2<br> gosub imprime<br> i=3<br> gosub imprime<br> end<br> <br> imprime:<br> print i<br> return</code></pre>
+    </div>
 <p>Source de l'exemple 
   -&gt; <a href="Sources/Label_02.html">Label_02.bas</a></p>
 <p>à l'exécution, 
@@ -178,33 +149,15 @@
 <p> Le LABEL est encore 
   dans ce cas le nom du sous-programme mais il n'y a plus de <b>GOSUB</b> 
   car il est appelé automatiquement à chaque fois que l'événement arrive.</p>
-<table width="63%" border="1" height="48">
-  <tr> 
-    <td> 
-      <p><b>rem 
-        on déclare le LABEL<br>
-        label imprime<br>
-        dim i<br>
-        <br>
-        rem on crée un bouton (objet système qui 
-        prendra le numéro 1)<br>
-        button 1<br>
-        rem on lui met un "intitulé" (ce n'est pas 
-        indispensable)<br>
-        caption 1,"Cliquez"<br>
-        rem on exécutera imprime à chaque fois qu'on clique dessus<br>
-        on_click 1,imprime</b></p>
-      <p><b> end</b></p>
-      <p><b>imprime:<br>
-        i=i+1<br>
-        rem on affiche dans le bandeau de la fenêtre 
-        <br>
-        caption 0,"on a cliqué "+str$(i)+" 
-        fois sur le bouton"<br>
-        return</b></p>
-    </td>
-  </tr>
-</table>
+<div class="code-editor">
+      <div class="editor-header">
+        <span class="editor-title">tutoriel.bas</span>
+        <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
+      </div>
+      <pre><code>rem on déclare le LABEL<br> label imprime<br> dim i<br> <br> rem on crée un bouton (objet système qui prendra le numéro 1)<br> button 1<br> rem on lui met un "intitulé" (ce n'est pas indispensable)<br> caption 1,"Cliquez"<br> rem on exécutera imprime à chaque fois qu'on clique dessus<br> on_click 1,imprime
+end
+imprime:<br> i=i+1<br> rem on affiche dans le bandeau de la fenêtre <br> caption 0,"on a cliqué "+str$(i)+" fois sur le bouton"<br> return</code></pre>
+    </div>
 <p>Source de l'exemple 
   -&gt; <a href="Sources/Label_03.html">Label_03.bas</a> </p>
 <p>à l'exécution, 
@@ -251,14 +204,22 @@
     <div class="container footer-grid">
       <div class="footer-info">
         <h4>PANORAMIC</h4>
-        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows.</p>
+        <p>Un langage de programmation Basic moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
       </div>
       <div class="footer-links">
         <h4>Ressources</h4>
         <ul>
           <li><a href="../documentation.html">Documentation</a></li>
           <li><a href="../tutoriels.html">Tutoriels</a></li>
+          <li><a href="../faq.html">FAQ</a></li>
           <li><a href="../telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="../mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
         </ul>
       </div>
     </div>
