@@ -12,6 +12,101 @@
   <!-- Favicon -->
   <link rel="icon" href="./assets/images/logo.png" type="image/png">
   <script src="./assets/js/theme-init.js"></script>
+  <style>
+    .faq-layout {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+    .faq-sidebar {
+      position: sticky;
+      top: 6rem;
+      background: var(--bg-glass);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-glass);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      max-height: calc(100vh - 8rem);
+      overflow-y: auto;
+    }
+    .faq-tab-btn {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      padding: 0.5rem 0.75rem;
+      border-radius: 8px;
+      text-align: left;
+      cursor: pointer;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      font-size: 0.85rem;
+    }
+    .faq-tab-btn:hover {
+      background: rgba(255, 255, 255, 0.05);
+      color: var(--text-bright);
+    }
+    .faq-tab-btn.active {
+      background: var(--btn-primary-bg);
+      color: white;
+      box-shadow: 0 4px 12px rgba(99, 102, 241, 0.2);
+    }
+    .category-heading {
+      font-size: 1.8rem;
+      margin-bottom: 0rem;
+      background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: bold;
+    }
+    .accordion-content-inner {
+      margin-top: 1.5rem;
+    }
+    .accordion-content-inner ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .accordion-content-inner ul li {
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border-glass);
+      line-height: 1.6;
+    }
+    .accordion-content-inner ul li:last-child {
+      border-bottom: none;
+    }
+    .accordion-content-inner ul li a {
+      color: var(--text-bright);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .accordion-content-inner ul li a:hover {
+      color: var(--accent);
+    }
+    @media (max-width: 968px) {
+      .faq-layout {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+      .faq-sidebar {
+        position: static;
+        flex-direction: row;
+        flex-wrap: wrap;
+        overflow-x: auto;
+        padding: 0.75rem;
+        gap: 0.5rem;
+        max-height: none;
+      }
+      .faq-tab-btn {
+        white-space: nowrap;
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <a href="#main" class="skip-link">Aller au contenu principal</a>
@@ -78,102 +173,135 @@
       </div>
     </section>
 
-    <!-- Manual Content Section -->
-    <section class="container" style="margin-bottom: 4rem;">
-      <div class="glass-card" style="padding: 2.5rem 2rem;">
-        <div class="manual-content">
-          <h2 class="wp-block-heading has-text-align-center" style="font-style:normal;font-weight:400">MANUEL DE REFERENCE par thème</h2>
-
-
-
-<h3>Référence</h3>
-<ul>
-<li><a href="./Keywords/CHAIN.html" ><b>CHAIN F</b></a> : charge le fichier source F puis l&rsquo;exécute</li>
-<li><a href="./Keywords/DATA.html" ><b>DATA</b></a> : déclaration contenant une série de données, à lire par « read »</li>
+    <!-- Manual Content Section with Sidebar -->
+    <section class="container" style="margin-bottom: 5rem;">
+      <div class="faq-layout">
+        
+        <!-- Sidebar Navigation -->
+        <aside class="faq-sidebar">
+          <button class="faq-tab-btn active" data-target="cat-reference">1. Référence</button>
+          <button class="faq-tab-btn" data-target="cat-structures">2. Structures</button>
+          <button class="faq-tab-btn" data-target="cat-mathematiques">3. Mathématiques</button>
+          <button class="faq-tab-btn" data-target="cat-chaines">4. Chaines de caractères</button>
+          <button class="faq-tab-btn" data-target="cat-fichiers">5. Fichiers</button>
+          <button class="faq-tab-btn" data-target="cat-repertoires">6. Répertoires</button>
+          <button class="faq-tab-btn" data-target="cat-fichiers-texte">7. Fichiers Texte</button>
+          <button class="faq-tab-btn" data-target="cat-fichiers-binaires">8. Fichiers Binaires</button>
+          <button class="faq-tab-btn" data-target="cat-police">9. Police</button>
+          <button class="faq-tab-btn" data-target="cat-souris">10. Souris</button>
+          <button class="faq-tab-btn" data-target="cat-systeme">11. Système</button>
+          <button class="faq-tab-btn" data-target="cat-evenements">12. Evénements</button>
+          <button class="faq-tab-btn" data-target="cat-messages">13. Messages</button>
+          <button class="faq-tab-btn" data-target="cat-midi">14. MIDI</button>
+          <button class="faq-tab-btn" data-target="cat-objets-systeme">15. Objets Système</button>
+          <button class="faq-tab-btn" data-target="cat-dessin">16. Dessin</button>
+          <button class="faq-tab-btn" data-target="cat-objets-3d">17. Objets 3D</button>
+          <button class="faq-tab-btn" data-target="cat-sprite">18. SPRITE</button>
+          <button class="faq-tab-btn" data-target="cat-entrees-sorties">19. Entrées-Sorties</button>
+          <button class="faq-tab-btn" data-target="cat-excel">20. Excel</button>
+          <button class="faq-tab-btn" data-target="cat-dll">21. DLL</button>
+          <button class="faq-tab-btn" data-target="cat-directives">22. Directives</button>
+        </aside>
+        
+        <!-- Content Sections -->
+        <div class="faq-content-area">
+          
+    <div class="faq-category-section" id="cat-reference" style="display: block;">
+      <h2 class="category-heading">1 - Référence</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/CHAIN.html" ><b>CHAIN F</b></a> : charge le fichier source F puis l'exécute</li>
+<li><a href="./Keywords/DATA.html" ><b>DATA</b></a> : déclaration contenant une série de données, à lire par « read »</li>
 <li><a href="./Keywords/DIM.html" ><b>DIM V</b></a> : définit une ou plusieurs variables</li>
-<li><a href="./Keywords/DIM_LOCAL.html" ><b>DIM_LOCAL V</b></a> : définit une ou plusieurs variables à l&rsquo;intérieur d&rsquo;un sous-programme</li>
-<li><a href="./Keywords/DISPLAY.html" ><b>DISPLAY</b></a> : suspend l&rsquo;exécution du programme pour mettre à jour l&rsquo;écran</li>
+<li><a href="./Keywords/DIM_LOCAL.html" ><b>DIM_LOCAL V</b></a> : définit une ou plusieurs variables à l'intérieur d'un sous-programme</li>
+<li><a href="./Keywords/DISPLAY.html" ><b>DISPLAY</b></a> : suspend l'exécution du programme pour mettre à jour l'écran</li>
 <li><a href="./Keywords/END.html" ><b>END</b></a> : termine le programme principal</li>
-<li><a href="./Keywords/ERROR_ENGLISH.html" ><b>ERROR_ENGLISH</b></a> : choisit l&rsquo;anglais comme langue de description d&rsquo;erreur</li>
-<li><a href="./Keywords/ERROR_FRENCH.html" ><b>ERROR_FRENCH</b></a> : choisit le français comme langue de description d&rsquo;erreur</li>
-<li><a href="./Keywords/ERROR_LINE.html" ><b>ERROR_LINE</b></a> : retourne le numéro de ligne de l&rsquo;erreur</li>
-<li><a href="./Keywords/ERROR_NUMBER.html" ><b>ERROR_NUMBER</b></a> : retourne le numéro de l&rsquo;erreur</li>
-<li><a href="./Keywords/ERROR_TYPE%24.html" ><b>ERROR_TYPE$</b></a> : retourne le type de l&rsquo;erreur</li>
+<li><a href="./Keywords/ERROR_ENGLISH.html" ><b>ERROR_ENGLISH</b></a> : choisit l'anglais comme langue de description d'erreur</li>
+<li><a href="./Keywords/ERROR_FRENCH.html" ><b>ERROR_FRENCH</b></a> : choisit le français comme langue de description d'erreur</li>
+<li><a href="./Keywords/ERROR_LINE.html" ><b>ERROR_LINE</b></a> : retourne le numéro de ligne de l'erreur</li>
+<li><a href="./Keywords/ERROR_NUMBER.html" ><b>ERROR_NUMBER</b></a> : retourne le numéro de l'erreur</li>
+<li><a href="./Keywords/ERROR_TYPE%24.html" ><b>ERROR_TYPE$</b></a> : retourne le type de l'erreur</li>
 <li><a href="./Keywords/FREE.html" ><b>FREE V</b></a> : libère la variable V</li>
-<li><a href="./Keywords/GOSUB.html" ><b>GOSUB L</b></a> : saute au sous-programme qui commence par « L: »</li>
-<li><a href="./Keywords/GOTO.html" ><b>GOTO L</b></a> : saute à la partie du programme qui commence par « L: »</li>
-<li><a href="./Keywords/LABEL.html" ><b>LABEL L</b></a> : définit un ou plusieurs « label » dans le programme</li>
+<li><a href="./Keywords/GOSUB.html" ><b>GOSUB L</b></a> : saute au sous-programme qui commence par « L: »</li>
+<li><a href="./Keywords/GOTO.html" ><b>GOTO L</b></a> : saute à la partie du programme qui commence par « L: »</li>
+<li><a href="./Keywords/LABEL.html" ><b>LABEL L</b></a> : définit un ou plusieurs « label » dans le programme</li>
 <li><a href="./Keywords/LABEL().html" ><b>LABEL(V)</b></a> : retourne 1 si V représente un LABEL existant, 0 sinon</li>
 <li><a href="./Keywords/NUMBER_CURRENT_LINE.html" ><b>NUMBER_CURRENT_LINE</b></a> : retourne le numéro de la ligne courante</li>
 <li><a href="./Keywords/NUMBER_VARIABLES.html" ><b>NUMBER_VARIABLES</b></a> : retourne le nombre de variables</li>
 <li><a href="./Keywords/OFF_ERROR_GOTO.html" ><b>OFF_ERROR_GOTO</b></a> : annule la commande ON_ERROR_GOTO</li>
-<li><a href="./Keywords/ON_ERROR_GOTO.html" ><b>ON_ERROR_GOTO L</b></a> : si erreur, saute à la partie du programme qui commence par « L: »</li>
-<li><a href="./Keywords/PARAM_NUMBER.html" ><b>PARAM_NUMBER</b></a> : retourne le nombre de paramètres passés à l&rsquo;application</li>
-<li><a href="./Keywords/PARAM_VALUE%24().html" ><b>PARAM_VALUE$(N)</b></a> : retourne le Nième paramètre passé à l&rsquo;application</li>
-<li><a href="./Keywords/PEEK().html" ><b>PEEK(A)</b></a> : retourne la valeur (octet de 0 à 255) de l&rsquo;adresse A</li>
-<li><a href="./Keywords/POKE.html" ><b>POKE A,V</b></a> : écrit la valeur V (octet de 0 à 255) à l&rsquo;adresse A</li>
-<li><a href="./Keywords/PRINT.html" ><b>PRINT E</b></a> : écrit l&rsquo;expression E à l&rsquo;intérieur d&rsquo;un objet système</li>
+<li><a href="./Keywords/ON_ERROR_GOTO.html" ><b>ON_ERROR_GOTO L</b></a> : si erreur, saute à la partie du programme qui commence par « L: »</li>
+<li><a href="./Keywords/PARAM_NUMBER.html" ><b>PARAM_NUMBER</b></a> : retourne le nombre de paramètres passés à l'application</li>
+<li><a href="./Keywords/PARAM_VALUE%24().html" ><b>PARAM_VALUE$(N)</b></a> : retourne le Nième paramètre passé à l'application</li>
+<li><a href="./Keywords/PEEK().html" ><b>PEEK(A)</b></a> : retourne la valeur (octet de 0 à 255) de l'adresse A</li>
+<li><a href="./Keywords/POKE.html" ><b>POKE A,V</b></a> : écrit la valeur V (octet de 0 à 255) à l'adresse A</li>
+<li><a href="./Keywords/PRINT.html" ><b>PRINT E</b></a> : écrit l'expression E à l'intérieur d'un objet système</li>
 <li><a href="./Keywords/PRINT_LOCATE.html" ><b>PRINT_LOCATE X,Y</b></a> : définit la position en X et Y de la prochaine impression par la commande print</li>
 <li><a href="./Keywords/PRINT_X_LOCATE.html" ><b>PRINT_X_LOCATE X</b></a> : définit la position en X de la prochaine impression par la commande print</li>
 <li><a href="./Keywords/PRINT_Y_LOCATE.html" ><b>PRINT_Y_LOCATE Y</b></a> : définit la position en Y de la prochaine impression par la commande print</li>
-<li><a href="./Keywords/READ.html" ><b>READ V</b></a> : stocke dans la variable V la valeur trouvée dans une déclaration « DATA »</li>
+<li><a href="./Keywords/READ.html" ><b>READ V</b></a> : stocke dans la variable V la valeur trouvée dans une déclaration « DATA »</li>
 <li><a href="./Keywords/REM.html" ><b>REM C</b></a> : permet le commentaire C</li>
-<li><a href="./Keywords/RESTORE.html" ><b>RESTORE</b></a> : force la lecture des données à partir de la première déclaration « DATA »</li>
+<li><a href="./Keywords/RESTORE.html" ><b>RESTORE</b></a> : force la lecture des données à partir de la première déclaration « DATA »</li>
 <li><a href="./Keywords/RETURN.html" ><b>RETURN</b></a> : termine un sous-programme</li>
-<li><a href="./Keywords/STOP.html" ><b>STOP</b></a> : arrête l&rsquo;exécution du programme et visualise une fenêtre à acquitter</li>
-<li><a href="./Keywords/TERMINATE.html" ><b>TERMINATE</b></a> : arrête définitivement l&rsquo;exécution du programme et libère la mémoire</li>
+<li><a href="./Keywords/STOP.html" ><b>STOP</b></a> : arrête l'exécution du programme et visualise une fenêtre à acquitter</li>
+<li><a href="./Keywords/TERMINATE.html" ><b>TERMINATE</b></a> : arrête définitivement l'exécution du programme et libère la mémoire</li>
 <li><a href="./Keywords/TRACE_OFF.html" ><b>TRACE_OFF</b></a> : arrête le mode trace et ferme le fichier texte</li>
 <li><a href="./Keywords/TRACE_ON.html" ><b>TRACE_ON F</b></a> : démarre le mode trace et crée le fichier texte F</li>
 <li><a href="./Keywords/VARIABLE().html" ><b>VARIABLE(V)</b></a> : retourne 1 si V$ représente une variable déclarée, 0 sinon</li>
 </ul>
-
-<h3>Structures</h3>
-
-<ul>
-<li><a href="./Keywords/AND.html" ><b>AND</b></a> : effectue un « et » logique entre deux expressions logiques</li>
-<li><a href="./Keywords/CASE.html" ><b>CASE V</b></a> : présente un groupe d&rsquo;instructions à exécuter si l&rsquo;expression évaluée par « SELECT » correspond à la valeur V</li>
-<li><a href="./Keywords/ELSE.html" ><b>ELSE</b></a> : exécute l&rsquo;instruction ou le groupe d&rsquo;instructions suivantes si la condition est fausse</li>
-<li><a href="./Keywords/END_IF.html" ><b>END_IF</b></a> : termine l&rsquo;instruction ou le groupe d&rsquo;instructions à exécuter à partir de la commande « IF »</li>
-<li><a href="./Keywords/END_SELECT.html" ><b>END_SELECT</b></a> : termine une structure initiée par « SELECT »</li>
+      </div>
+    </div>
+          
+    <div class="faq-category-section" id="cat-structures" style="display: none;">
+      <h2 class="category-heading">2 - Structures</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/AND.html" ><b>AND</b></a> : effectue un « et » logique entre deux expressions logiques</li>
+<li><a href="./Keywords/CASE.html" ><b>CASE V</b></a> : présente un groupe d'instructions à exécuter si l'expression évaluée par « SELECT » correspond à la valeur V</li>
+<li><a href="./Keywords/ELSE.html" ><b>ELSE</b></a> : exécute l'instruction ou le groupe d'instructions suivantes si la condition est fausse</li>
+<li><a href="./Keywords/END_IF.html" ><b>END_IF</b></a> : termine l'instruction ou le groupe d'instructions à exécuter à partir de la commande « IF »</li>
+<li><a href="./Keywords/END_SELECT.html" ><b>END_SELECT</b></a> : termine une structure initiée par « SELECT »</li>
 <li><a href="./Keywords/END_SUB.html" ><b>END_SUB</b></a> : termine un sous-programme</li>
-<li><a href="./Keywords/END_WHILE.html" ><b>END_WHILE</b></a> : termine l&rsquo;instruction ou le groupe d&rsquo;instructions à exécuter à partir de la commande « WHILE »</li>
-<li><a href="./Keywords/EXIT_FOR.html" ><b>EXIT_FOR</b></a> : dans une boucle FOR/NEXT, va exécuter l&rsquo;instruction juste après NEXT</li>
-<li><a href="./Keywords/EXIT_REPEAT.html" ><b>EXIT_REPEAT</b></a> : dans une boucle REPEAT/UNTIL, va exécuter l&rsquo;instruction juste après UNTIL</li>
+<li><a href="./Keywords/END_WHILE.html" ><b>END_WHILE</b></a> : termine l'instruction ou le groupe d'instructions à exécuter à partir de la commande « WHILE »</li>
+<li><a href="./Keywords/EXIT_FOR.html" ><b>EXIT_FOR</b></a> : dans une boucle FOR/NEXT, va exécuter l'instruction juste après NEXT</li>
+<li><a href="./Keywords/EXIT_REPEAT.html" ><b>EXIT_REPEAT</b></a> : dans une boucle REPEAT/UNTIL, va exécuter l'instruction juste après UNTIL</li>
 <li><a href="./Keywords/EXIT_SUB.html" ><b>EXIT_SUB</b></a> : termine un sous-programme sans exécuter END_SUB</li>
-<li><a href="./Keywords/EXIT_WHILE.html" ><b>EXIT_WHILE</b></a> : dans une boucle WHILE/END_WHILE, va exécuter l&rsquo;instruction juste après END_WHILE</li>
+<li><a href="./Keywords/EXIT_WHILE.html" ><b>EXIT_WHILE</b></a> : dans une boucle WHILE/END_WHILE, va exécuter l'instruction juste après END_WHILE</li>
 <li><a href="./Keywords/FOR.html" ><b>FOR V=S TO E</b></a> : définit une boucle avec la variable V utilisée comme compteur de S à E</li>
-<li><a href="./Keywords/IF.html" ><b>IF C</b></a> : exécute l&rsquo;instruction ou le groupe d&rsquo;instructions suivantes si la condition C est vraie</li>
-<li><a href="./Keywords/NEXT.html" ><b>NEXT V</b></a> : termine une boucle « FOR » qui utilise la variable V comme compteur</li>
-<li><a href="./Keywords/NOT.html" ><b>NOT</b></a> : effectue la négation logique d&rsquo;une expression logique</li>
-<li><a href="./Keywords/OR.html" ><b>OR</b></a> : effectue un « ou » logique entre deux expressions logiques</li>
-<li><a href="./Keywords/REPEAT.html" ><b>REPEAT</b></a> : exécute l&rsquo;instruction ou le groupe d&rsquo;instructions suivantes jusqu&rsquo;à la commande « UNTIL »</li>
-<li><a href="./Keywords/SELECT.html" ><b>SELECT E</b></a> : évalue l&rsquo;expression E et exécute après l&rsquo;instruction CASE qui correspond à la valeur</li>
-<li><a href="./Keywords/STEP.html" ><b>(FOR V=S TO E) STEP T</b></a> : définit le pas d&rsquo;une boucle « FOR »</li>
+<li><a href="./Keywords/IF.html" ><b>IF C</b></a> : exécute l'instruction ou le groupe d'instructions suivantes si la condition C est vraie</li>
+<li><a href="./Keywords/NEXT.html" ><b>NEXT V</b></a> : termine une boucle « FOR » qui utilise la variable V comme compteur</li>
+<li><a href="./Keywords/NOT.html" ><b>NOT</b></a> : effectue la négation logique d'une expression logique</li>
+<li><a href="./Keywords/OR.html" ><b>OR</b></a> : effectue un « ou » logique entre deux expressions logiques</li>
+<li><a href="./Keywords/REPEAT.html" ><b>REPEAT</b></a> : exécute l'instruction ou le groupe d'instructions suivantes jusqu'à la commande « UNTIL »</li>
+<li><a href="./Keywords/SELECT.html" ><b>SELECT E</b></a> : évalue l'expression E et exécute après l'instruction CASE qui correspond à la valeur</li>
+<li><a href="./Keywords/STEP.html" ><b>(FOR V=S TO E) STEP T</b></a> : définit le pas d'une boucle « FOR »</li>
 <li><a href="./Keywords/SUB.html" ><b>SUB T</b></a> : commence le sous-programme T</li>
-<li><a href="./Keywords/THEN.html" ><b>THEN</b></a> : exécute l&rsquo;instruction ou le groupe d&rsquo;instructions suivantes si la condition C est vraie</li>
-<li><a href="./Keywords/TO.html" ><b>(FOR V=S) TO E</b></a> : définit la valeur finale de la variable V dans une boucle « FOR »</li>
-<li><a href="./Keywords/UNTIL.html" ><b>UNTIL C</b></a> : ré-exécute l&rsquo;instruction ou le groupe d&rsquo;instructions depuis REPEAT jusqu&rsquo;à ce que la condition C est vraie</li>
-<li><a href="./Keywords/WHILE.html" ><b>WHILE C</b></a> : exécute l&rsquo;instruction suivante ou le groupe d&rsquo;instructions suivantes jusqu&rsquo;au END_WHILE tant que la condition C est vraie</li>
+<li><a href="./Keywords/THEN.html" ><b>THEN</b></a> : exécute l'instruction ou le groupe d'instructions suivantes si la condition C est vraie</li>
+<li><a href="./Keywords/TO.html" ><b>(FOR V=S) TO E</b></a> : définit la valeur finale de la variable V dans une boucle « FOR »</li>
+<li><a href="./Keywords/UNTIL.html" ><b>UNTIL C</b></a> : ré-exécute l'instruction ou le groupe d'instructions depuis REPEAT jusqu'à ce que la condition C est vraie</li>
+<li><a href="./Keywords/WHILE.html" ><b>WHILE C</b></a> : exécute l'instruction suivante ou le groupe d'instructions suivantes jusqu'au END_WHILE tant que la condition C est vraie</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Mathématiques</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-mathematiques" style="display: none;">
+      <h2 class="category-heading">3 - Mathématiques</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/ABS().html" ><b>ABS(V)</b></a> : retourne la valeur absolue de V</li>
-<li><a href="./Keywords/ACOS().html" ><b>ACOS(V)</b></a> : retourne l&rsquo;arc cosinus de V</li>
-<li><a href="./Keywords/ADR().html" ><b>ADR(V)</b></a> : retourne l&rsquo;adresse de la variable V</li>
-<li><a href="./Keywords/ASIN().html" ><b>ASIN(V)</b></a> : retourne l&rsquo;arc sinus de V</li>
-<li><a href="./Keywords/ATN().html" ><b>ATN(V)</b></a> : retourne l&rsquo;arc tangente de V</li>
-<li><a href="./Keywords/BIN_AND().html" ><b>BIN_AND(V1,V2)</b></a> : retourne le « et » logique binaire entre les valeurs V1 et V2</li>
-<li><a href="./Keywords/BIN_OR().html" ><b>BIN_OR(V1,V2)</b></a> : retourne le « ou » logique binaire entre les valeurs V1 et V2</li>
-<li><a href="./Keywords/BIN_XOR().html" ><b>BIN_XOR(V1,V2)</b></a> : retourne le « ou exclusif » logique binaire entre les valeurs V1 et V2</li>
+<li><a href="./Keywords/ACOS().html" ><b>ACOS(V)</b></a> : retourne l'arc cosinus de V</li>
+<li><a href="./Keywords/ADR().html" ><b>ADR(V)</b></a> : retourne l'adresse de la variable V</li>
+<li><a href="./Keywords/ASIN().html" ><b>ASIN(V)</b></a> : retourne l'arc sinus de V</li>
+<li><a href="./Keywords/ATN().html" ><b>ATN(V)</b></a> : retourne l'arc tangente de V</li>
+<li><a href="./Keywords/BIN_AND().html" ><b>BIN_AND(V1,V2)</b></a> : retourne le « et » logique binaire entre les valeurs V1 et V2</li>
+<li><a href="./Keywords/BIN_OR().html" ><b>BIN_OR(V1,V2)</b></a> : retourne le « ou » logique binaire entre les valeurs V1 et V2</li>
+<li><a href="./Keywords/BIN_XOR().html" ><b>BIN_XOR(V1,V2)</b></a> : retourne le « ou exclusif » logique binaire entre les valeurs V1 et V2</li>
 <li><a href="./Keywords/COS().html" ><b>COS(V)</b></a> : retourne le cosinus de V</li>
 <li><a href="./Keywords/EVEN().html" ><b>EVEN(V)</b></a> : retourne 1 si V est pair, 0 sinon</li>
-<li><a href="./Keywords/EXP().html" ><b>EXP(V)</b></a> : retourne l&rsquo;exponentielle de V</li>
+<li><a href="./Keywords/EXP().html" ><b>EXP(V)</b></a> : retourne l'exponentielle de V</li>
 <li><a href="./Keywords/FRAC().html" ><b>FRAC(V)</b></a> : retourne la partie fractionnaire de V</li>
 <li><a href="./Keywords/HCOS().html" ><b>HCOS(V)</b></a> : retourne le cosinus hyperbolique de V</li>
-<li><a href="./Keywords/HEX%24().html" ><b>HEX$(V)</b></a> : retourne une valeur hexadécimale à partir d&rsquo;une valeur décimale V</li>
-<li><a href="./Keywords/HEX().html" ><b>HEX(V)</b></a> : retourne une valeur décimale à partir d&rsquo;une valeur hexadécimale V</li>
+<li><a href="./Keywords/HEX%24().html" ><b>HEX$(V)</b></a> : retourne une valeur hexadécimale à partir d'une valeur décimale V</li>
+<li><a href="./Keywords/HEX().html" ><b>HEX(V)</b></a> : retourne une valeur décimale à partir d'une valeur hexadécimale V</li>
 <li><a href="./Keywords/HSIN().html" ><b>HSIN(V)</b></a> : retourne le sinus hyperbolique de V</li>
 <li><a href="./Keywords/HTAN().html" ><b>HTAN(V)</b></a> : retourne la tangente hyperbolique de V</li>
 <li><a href="./Keywords/INT().html" ><b>INT(V)</b></a> : retourne la partie entière de V</li>
@@ -191,12 +319,15 @@
 <li><a href="./Keywords/SIN().html" ><b>SIN(V)</b></a> : retourne le sinus de V</li>
 <li><a href="./Keywords/SQR().html" ><b>SQR(V)</b></a> : retourne la racine carrée de V</li>
 <li><a href="./Keywords/TAN().html" ><b>TAN(V)</b></a> : retourne la tangente de V</li>
-<li><a href="./Keywords/WRAP_VALUE().html" ><b>WRAP_VALUE(A)</b></a> : retourne une valeur de l&rsquo;angle A dans l&rsquo;intervalle 0-360</li>
+<li><a href="./Keywords/WRAP_VALUE().html" ><b>WRAP_VALUE(A)</b></a> : retourne une valeur de l'angle A dans l'intervalle 0-360</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Chaines de caractères</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-chaines" style="display: none;">
+      <h2 class="category-heading">4 - Chaines de caractères</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/ASC().html" ><b>ASC(S)</b></a> : retourne le code ASCII du premier caractère du string S</li>
 <li><a href="./Keywords/CHR%24().html" ><b>CHR$(N)</b></a> : retourne le caractère correspondant au code ASCII N</li>
 <li><a href="./Keywords/INSERT%24().html" ><b>INSERT$(S1,S2,P)</b></a> : retourne une chaine constituée de S2 insérée dans S1 en position P</li>
@@ -207,7 +338,7 @@
 <li><a href="./Keywords/LOWER%24().html" ><b>LOWER$(S)</b></a> : retourne le string obtenu en convertissant le string S en minuscules</li>
 <li><a href="./Keywords/LTRIM%24().html" ><b>LTRIM$(S)</b></a> : retourne le string obtenu en retirant les blancs à gauche du string S</li>
 <li><a href="./Keywords/MID%24().html" ><b>MID$(S,P,N)</b></a> : retourne les N caractères du string S à partir de la position P</li>
-<li><a href="./Keywords/REVERSE%24().html" ><b>REVERSE$(S)</b></a> : retourne la chaîne de caractères S avec l&rsquo;ordre des caractères inversé</li>
+<li><a href="./Keywords/REVERSE%24().html" ><b>REVERSE$(S)</b></a> : retourne la chaîne de caractères S avec l'ordre des caractères inversé</li>
 <li><a href="./Keywords/RIGHT%24().html" ><b>RIGHT$(S,N)</b></a> : retourne les N derniers caractères du string S</li>
 <li><a href="./Keywords/RIGHT_POS%24().html" ><b>RIGHT_POS$(S,P) </b></a> : retourne une chaine de caractères composée de la chaine de caractères S à partir de la position P</li>
 <li><a href="./Keywords/RTRIM%24().html" ><b>RTRIM$(S)</b></a> : retourne le string obtenu en retirant les blancs à droite du string S</li>
@@ -217,12 +348,15 @@
 <li><a href="./Keywords/UPPER%24().html" ><b>UPPER$(S)</b></a> : retourne le string obtenu en convertissant le string S en majuscules</li>
 <li><a href="./Keywords/VAL().html" ><b>VAL(S)</b></a> : retourne le nombre correspondant au string S</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Fichiers</h3>
-
-<ul>
-<li><a href="./Keywords/FILE_ARCHIVE.html" ><b>FILE_ARCHIVE F</b></a> : positionne l&rsquo;attribut « archive » du fichier F</li>
-<li><a href="./Keywords/FILE_ARCHIVE_OFF.html" ><b>FILE_ARCHIVE_OFF F</b></a> : retire l&rsquo;attribut « archive » du fichier F</li>
+    <div class="faq-category-section" id="cat-fichiers" style="display: none;">
+      <h2 class="category-heading">5 - Fichiers</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/FILE_ARCHIVE.html" ><b>FILE_ARCHIVE F</b></a> : positionne l'attribut « archive » du fichier F</li>
+<li><a href="./Keywords/FILE_ARCHIVE_OFF.html" ><b>FILE_ARCHIVE_OFF F</b></a> : retire l'attribut « archive » du fichier F</li>
 <li><a href="./Keywords/FILE_COPY.html" ><b>FILE_COPY F1,F2</b></a> : recopie le fichier existant F1 dans le nouveau fichier F2</li>
 <li><a href="./Keywords/FILE_DELETE.html" ><b>FILE_DELETE F</b></a> : détruit le fichier F</li>
 <li><a href="./Keywords/FILE_EXISTS().html" ><b>FILE_EXISTS(F)</b></a> : retourne 1 si le fichier F existe, 0 sinon</li>
@@ -233,19 +367,22 @@
 <li><a href="./Keywords/FILE_FIND_CLOSE.html" ><b>FILE_FIND_CLOSE</b></a> : termine les actions FILE_FIND_FIRST$ et FILE_FIND_NEXT$ sur le répertoire courant</li>
 <li><a href="./Keywords/FILE_FIND_FIRST%24.html" ><b>FILE_FIND_FIRST$</b></a> : retourne le nom du premier fichier du répertoire courant</li>
 <li><a href="./Keywords/FILE_FIND_NEXT%24.html" ><b>FILE_FIND_NEXT$</b></a> : retourne le nom du fichier suivant du répertoire courant</li>
-<li><a href="./Keywords/FILE_HIDE.html" ><b>FILE_HIDE F</b></a> : positionne l&rsquo;attribut « caché » du fichier F</li>
-<li><a href="./Keywords/FILE_HIDE_OFF.html" ><b>FILE_HIDE_OFF F</b></a> : retire l&rsquo;attribut « caché » du fichier F</li>
+<li><a href="./Keywords/FILE_HIDE.html" ><b>FILE_HIDE F</b></a> : positionne l'attribut « caché » du fichier F</li>
+<li><a href="./Keywords/FILE_HIDE_OFF.html" ><b>FILE_HIDE_OFF F</b></a> : retire l'attribut « caché » du fichier F</li>
 <li><a href="./Keywords/FILE_MOVE.html" ><b>FILE_MOVE F1,F2</b></a> : déplace le fichier existant F1 dans le nouveau fichier F2</li>
-<li><a href="./Keywords/FILE_READ_ONLY.html" ><b>FILE_READ_ONLY F</b></a> : positionne l&rsquo;attribut « lecture seule » du fichier F</li>
-<li><a href="./Keywords/FILE_READ_ONLY_OFF.html" ><b>FILE_READ_ONLY_OFF F</b></a> : retire l&rsquo;attribut « lecture seule » du fichier F</li>
+<li><a href="./Keywords/FILE_READ_ONLY.html" ><b>FILE_READ_ONLY F</b></a> : positionne l'attribut « lecture seule » du fichier F</li>
+<li><a href="./Keywords/FILE_READ_ONLY_OFF.html" ><b>FILE_READ_ONLY_OFF F</b></a> : retire l'attribut « lecture seule » du fichier F</li>
 <li><a href="./Keywords/FILE_RENAME.html" ><b>FILE_RENAME F1,F2</b></a> : donne au fichier F1 le nouveau nom F2</li>
-<li><a href="./Keywords/FILE_SYSTEM.html" ><b>FILE_SYSTEM F</b></a> : positionne l&rsquo;attribut « système » du fichier F</li>
-<li><a href="./Keywords/FILE_SYSTEM_OFF.html" ><b>FILE_SYSTEM_OFF F</b></a> : retire l&rsquo;attribut « système » du fichier F</li>
+<li><a href="./Keywords/FILE_SYSTEM.html" ><b>FILE_SYSTEM F</b></a> : positionne l'attribut « système » du fichier F</li>
+<li><a href="./Keywords/FILE_SYSTEM_OFF.html" ><b>FILE_SYSTEM_OFF F</b></a> : retire l'attribut « système » du fichier F</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Répertoires</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-repertoires" style="display: none;">
+      <h2 class="category-heading">6 - Répertoires</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/DIR_CHANGE.html" ><b>DIR_CHANGE D</b></a> : le répertoire courant devient le répertoire D</li>
 <li><a href="./Keywords/DIR_CURRENT%24.html" ><b>DIR_CURRENT$</b></a> : retourne le répertoire courant</li>
 <li><a href="./Keywords/DIR_EXISTS().html" ><b>DIR_EXISTS(D)</b></a> : retourne 1 si le répertoire D existe, 0 sinon</li>
@@ -253,33 +390,39 @@
 <li><a href="./Keywords/DIR_REMOVE.html" ><b>DIR_REMOVE D</b></a> : détruit le répertoire vide D</li>
 <li><a href="./Keywords/RMDIR.html" ><b>RMDIR D</b></a> : détruit le répertoire vide D</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Fichiers Texte</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-fichiers-texte" style="display: none;">
+      <h2 class="category-heading">7 - Fichiers Texte</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/FILE_CLOSE.html" ><b>FILE_CLOSE N</b></a> : ferme le fichier texte numéro N</li>
 <li><a href="./Keywords/FILE_EOF().html" ><b>FILE_EOF(N)</b></a> : retourne 1 si la position courante est au delà du dernier caractère du fichier texte numéro N, 0 sinon</li>
 <li><a href="./Keywords/FILE_OPEN_APPEND.html" ><b>FILE_OPEN_APPEND N,S</b></a> : ouvre un fichier texte pour y écrire après sa dernière ligne, avec le numéro N et le nom S</li>
 <li><a href="./Keywords/FILE_OPEN_READ.html" ><b>FILE_OPEN_READ N,S</b></a> : ouvre un fichier texte en lecture, avec le numéro N et le nom S</li>
 <li><a href="./Keywords/FILE_OPEN_WRITE.html" ><b>FILE_OPEN_WRITE N,S</b></a> : crée un fichier texte en écriture, avec le numéro N et le nom S</li>
-<li><a href="./Keywords/FILE_READ.html" ><b>FILE_READ N,V</b></a> : lit le fichier texte numéro N jusqu&rsquo;au séparateur suivant et stocke le contenu dans la variable V</li>
+<li><a href="./Keywords/FILE_READ.html" ><b>FILE_READ N,V</b></a> : lit le fichier texte numéro N jusqu'au séparateur suivant et stocke le contenu dans la variable V</li>
 <li><a href="./Keywords/FILE_READBUF.html" ><b>FILE_READBUF N,V,C</b></a> : lit C caractères du fichier texte numéro N et les stocke dans la variable V</li>
 <li><a href="./Keywords/FILE_READLN.html" ><b>FILE_READLN N,V</b></a> : lit la ligne courante du fichier texte numéro N et la stocke dans la variable S</li>
 <li><a href="./Keywords/FILE_READLN%24().html" ><b>FILE_READLN$(N)</b></a> : retourne la ligne courante du fichier texte numéro N</li>
 <li><a href="./Keywords/FILE_WRITE.html" ><b>FILE_WRITE N,S</b></a> : écrit la donnée S dans le fichier texte numéro N</li>
-<li><a href="./Keywords/FILE_WRITEBUF.html" ><b>FILE_WRITEBUF N,E,C</b></a> : écrit C caractères de l&rsquo;expression E dans le fichier texte numéro N</li>
+<li><a href="./Keywords/FILE_WRITEBUF.html" ><b>FILE_WRITEBUF N,E,C</b></a> : écrit C caractères de l'expression E dans le fichier texte numéro N</li>
 <li><a href="./Keywords/FILE_WRITELN.html" ><b>FILE_WRITELN N,S</b></a> : écrit la ligne S dans le fichier texte numéro N</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Fichiers Binaires</h3>
-
-<ul>
-<li><a href="./Keywords/FILEBIN_BLOCK_READ.html" ><b>FILEBIN_BLOCK_READ N,C,V%(P)</b></a> : lit C octets dans le fichier binaire numéro N et stocke les valeurs dans le tableau V% à partir de l&rsquo;indice P</li>
-<li><a href="./Keywords/FILEBIN_BLOCK_WRITE.html" ><b>FILEBIN_BLOCK_WRITE N,C,V%(P)</b></a> : écrit C octets dans le fichier binaire numéro N, les données à écrire sont dans le tableau V% à partir de l&rsquo;indice P</li>
+    <div class="faq-category-section" id="cat-fichiers-binaires" style="display: none;">
+      <h2 class="category-heading">8 - Fichiers Binaires</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/FILEBIN_BLOCK_READ.html" ><b>FILEBIN_BLOCK_READ N,C,V%(P)</b></a> : lit C octets dans le fichier binaire numéro N et stocke les valeurs dans le tableau V% à partir de l'indice P</li>
+<li><a href="./Keywords/FILEBIN_BLOCK_WRITE.html" ><b>FILEBIN_BLOCK_WRITE N,C,V%(P)</b></a> : écrit C octets dans le fichier binaire numéro N, les données à écrire sont dans le tableau V% à partir de l'indice P</li>
 <li><a href="./Keywords/FILEBIN_CLOSE.html" ><b>FILEBIN_CLOSE N</b></a> : ferme le fichier binaire numéro N</li>
 <li><a href="./Keywords/FILEBIN_HEXA_READ.html" ><b>FILEBIN_HEXA_READ N,C,V$</b></a> : lit C octets dans le fichier binaire numéro N et stocke les valeurs dans la variable V</li>
 <li><a href="./Keywords/FILEBIN_HEXA_READ%24().html" ><b>FILEBIN_HEXA_READ$(N,C)</b></a> : retourne C octets lus dans le fichier binaire numéro N</li>
-<li><a href="./Keywords/FILEBIN_HEXA_WRITE.html" ><b>FILEBIN_HEXA_WRITE N,C,S</b></a> : écrit C octets dans le fichier binaire numéro N, les données à écrire sont dans l&rsquo;expression chaîne de caractères S</li>
+<li><a href="./Keywords/FILEBIN_HEXA_WRITE.html" ><b>FILEBIN_HEXA_WRITE N,C,S</b></a> : écrit C octets dans le fichier binaire numéro N, les données à écrire sont dans l'expression chaîne de caractères S</li>
 <li><a href="./Keywords/FILEBIN_OPEN_READ.html" ><b>FILEBIN_OPEN_READ N,S</b></a> : ouvre un fichier binaire en lecture, avec le numéro N et le nom S</li>
 <li><a href="./Keywords/FILEBIN_OPEN_WRITE.html" ><b>FILEBIN_OPEN_WRITE N,S</b></a> : crée un fichier binaire en écriture, avec le numéro N et le nom S</li>
 <li><a href="./Keywords/FILEBIN_POS().html" ><b>FILEBIN_POS(N)</b></a> : retourne la position courante dans le fichier binaire numéro N</li>
@@ -289,63 +432,72 @@
 <li><a href="./Keywords/FILEBIN_SIZE().html" ><b>FILEBIN_SIZE(N)</b></a> : retourne la taille du fichier binaire numéro N</li>
 <li><a href="./Keywords/FILEBIN_WRITE.html" ><b>FILEBIN_WRITE N,E</b></a> : écrit un octet E dans le fichier binaire numéro N</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Police</h3>
-
-<ul>
-<li><a href="./Keywords/FONT_BOLD.html" ><b>FONT_BOLD N</b></a> : ajoute le style « gras » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_BOLD_OFF.html" ><b>FONT_BOLD_OFF N</b></a> : retire le style « gras » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_COLOR.html" ><b>FONT_COLOR N,R,G,B</b></a> : définit la couleur des caractères visualisés par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_ITALIC.html" ><b>FONT_ITALIC N</b></a> : ajoute le style « italique » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_ITALIC_OFF.html" ><b>FONT_ITALIC_OFF N</b></a> : retire le style « italique » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_NAME.html" ><b>FONT_NAME N,S</b></a> : définit la police des caractères visualisés par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_NAMES_ADD.html" ><b>FONT_NAMES_ADD N</b></a> : ajoute la liste des polices disponibles à l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_NAMES_LOAD.html" ><b>FONT_NAMES_LOAD N</b></a> : remplit l&rsquo;objet système numéro N avec la liste des polices disponibles</li>
-<li><a href="./Keywords/FONT_SIZE.html" ><b>FONT_SIZE N,S</b></a> : définit la taille des caractères visualisés par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_STRIKE.html" ><b>FONT_STRIKE N</b></a> : ajoute le style « rayé » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_STRIKE_OFF.html" ><b>FONT_STRIKE_OFF N</b></a> : retire le style « rayé » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_UNDERLINE.html" ><b>FONT_UNDERLINE N</b></a> : ajoute le style « souligné » au style de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FONT_UNDERLINE_OFF.html" ><b>FONT_UNDERLINE_OFF N</b></a> : retire le style « souligné » au style de l&rsquo;objet système numéro N</li>
+    <div class="faq-category-section" id="cat-police" style="display: none;">
+      <h2 class="category-heading">9 - Police</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/FONT_BOLD.html" ><b>FONT_BOLD N</b></a> : ajoute le style « gras » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_BOLD_OFF.html" ><b>FONT_BOLD_OFF N</b></a> : retire le style « gras » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_COLOR.html" ><b>FONT_COLOR N,R,G,B</b></a> : définit la couleur des caractères visualisés par l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_ITALIC.html" ><b>FONT_ITALIC N</b></a> : ajoute le style « italique » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_ITALIC_OFF.html" ><b>FONT_ITALIC_OFF N</b></a> : retire le style « italique » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_NAME.html" ><b>FONT_NAME N,S</b></a> : définit la police des caractères visualisés par l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_NAMES_ADD.html" ><b>FONT_NAMES_ADD N</b></a> : ajoute la liste des polices disponibles à l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_NAMES_LOAD.html" ><b>FONT_NAMES_LOAD N</b></a> : remplit l'objet système numéro N avec la liste des polices disponibles</li>
+<li><a href="./Keywords/FONT_SIZE.html" ><b>FONT_SIZE N,S</b></a> : définit la taille des caractères visualisés par l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_STRIKE.html" ><b>FONT_STRIKE N</b></a> : ajoute le style « rayé » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_STRIKE_OFF.html" ><b>FONT_STRIKE_OFF N</b></a> : retire le style « rayé » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_UNDERLINE.html" ><b>FONT_UNDERLINE N</b></a> : ajoute le style « souligné » au style de l'objet système numéro N</li>
+<li><a href="./Keywords/FONT_UNDERLINE_OFF.html" ><b>FONT_UNDERLINE_OFF N</b></a> : retire le style « souligné » au style de l'objet système numéro N</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Souris</h3>
-
-<ul>
-<li><a href="./Keywords/MOUSE_LEFT_DOWN().html" ><b>MOUSE_LEFT_DOWN(N)</b></a> : retourne 1 si le bouton gauche de la souris est enfoncé sur l&rsquo;objet système numéro N, 0 sinon</li>
-<li><a href="./Keywords/MOUSE_LEFT_UP().html" ><b>MOUSE_LEFT_UP(N)</b></a> : retourne 1 si le bouton gauche de la souris est relâché sur l&rsquo;objet système numéro N, 0 sinon</li>
-<li><a href="./Keywords/MOUSE_RIGHT_DOWN().html" ><b>MOUSE_RIGHT_DOWN(N)</b></a> : retourne 1 si le bouton droit de la souris est enfoncé sur l&rsquo;objet système numéro N, 0 sinon</li>
-<li><a href="./Keywords/MOUSE_RIGHT_UP().html" ><b>MOUSE_RIGHT_UP(N)</b></a> : retourne 1 si le bouton droit de la souris est relâché sur l&rsquo;objet système numéro N, 0 sinon</li>
-<li><a href="./Keywords/MOUSE_X_LEFT_DOWN().html" ><b>MOUSE_X_LEFT_DOWN(N)</b></a> : retourne la position en X de la souris lorsque le bouton gauche est enfoncé sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_X_LEFT_UP().html" ><b>MOUSE_X_LEFT_UP(N)</b></a> : retourne la position en X de la souris lorsque le bouton gauche est relâché sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_X_POSITION().html" ><b>MOUSE_X_POSITION(N)</b></a> : retourne la position en X de la souris sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_X_RIGHT_DOWN().html" ><b>MOUSE_X_RIGHT_DOWN(N)</b></a> : retourne la position en X de la souris lorsque le bouton droit est enfoncé sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_X_RIGHT_UP().html" ><b>MOUSE_X_RIGHT_UP(N)</b></a> : retourne la position en X de la souris lorsque le bouton droit est relâché sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_Y_LEFT_DOWN().html" ><b>MOUSE_Y_LEFT_DOWN(N)</b></a> : retourne la position en Y de la souris lorsque le bouton gauche est enfoncé sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_Y_LEFT_UP().html" ><b>MOUSE_Y_LEFT_UP(N)</b></a> : retourne la position en Y de la souris lorsque le bouton gauche est relâché sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_Y_POSITION().html" ><b>MOUSE_Y_POSITION(N)</b></a> : retourne la position en Y de la souris sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_Y_RIGHT_DOWN().html" ><b>MOUSE_Y_RIGHT_DOWN(N)</b></a> : retourne la position en Y de la souris lorsque le bouton droit est enfoncé sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MOUSE_Y_RIGHT_UP().html" ><b>MOUSE_Y_RIGHT_UP(N)</b></a> : retourne la position en Y de la souris lorsque le bouton droit est relâché sur l&rsquo;objet système numéro N</li>
+    <div class="faq-category-section" id="cat-souris" style="display: none;">
+      <h2 class="category-heading">10 - Souris</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/MOUSE_LEFT_DOWN().html" ><b>MOUSE_LEFT_DOWN(N)</b></a> : retourne 1 si le bouton gauche de la souris est enfoncé sur l'objet système numéro N, 0 sinon</li>
+<li><a href="./Keywords/MOUSE_LEFT_UP().html" ><b>MOUSE_LEFT_UP(N)</b></a> : retourne 1 si le bouton gauche de la souris est relâché sur l'objet système numéro N, 0 sinon</li>
+<li><a href="./Keywords/MOUSE_RIGHT_DOWN().html" ><b>MOUSE_RIGHT_DOWN(N)</b></a> : retourne 1 si le bouton droit de la souris est enfoncé sur l'objet système numéro N, 0 sinon</li>
+<li><a href="./Keywords/MOUSE_RIGHT_UP().html" ><b>MOUSE_RIGHT_UP(N)</b></a> : retourne 1 si le bouton droit de la souris est relâché sur l'objet système numéro N, 0 sinon</li>
+<li><a href="./Keywords/MOUSE_X_LEFT_DOWN().html" ><b>MOUSE_X_LEFT_DOWN(N)</b></a> : retourne la position en X de la souris lorsque le bouton gauche est enfoncé sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_X_LEFT_UP().html" ><b>MOUSE_X_LEFT_UP(N)</b></a> : retourne la position en X de la souris lorsque le bouton gauche est relâché sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_X_POSITION().html" ><b>MOUSE_X_POSITION(N)</b></a> : retourne la position en X de la souris sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_X_RIGHT_DOWN().html" ><b>MOUSE_X_RIGHT_DOWN(N)</b></a> : retourne la position en X de la souris lorsque le bouton droit est enfoncé sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_X_RIGHT_UP().html" ><b>MOUSE_X_RIGHT_UP(N)</b></a> : retourne la position en X de la souris lorsque le bouton droit est relâché sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_Y_LEFT_DOWN().html" ><b>MOUSE_Y_LEFT_DOWN(N)</b></a> : retourne la position en Y de la souris lorsque le bouton gauche est enfoncé sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_Y_LEFT_UP().html" ><b>MOUSE_Y_LEFT_UP(N)</b></a> : retourne la position en Y de la souris lorsque le bouton gauche est relâché sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_Y_POSITION().html" ><b>MOUSE_Y_POSITION(N)</b></a> : retourne la position en Y de la souris sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_Y_RIGHT_DOWN().html" ><b>MOUSE_Y_RIGHT_DOWN(N)</b></a> : retourne la position en Y de la souris lorsque le bouton droit est enfoncé sur l'objet système numéro N</li>
+<li><a href="./Keywords/MOUSE_Y_RIGHT_UP().html" ><b>MOUSE_Y_RIGHT_UP(N)</b></a> : retourne la position en Y de la souris lorsque le bouton droit est relâché sur l'objet système numéro N</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Système</h3>
-
-<ul>
-<li><a href="./Keywords/2D_TARGET_IS.html" ><b>2D_TARGET_IS N</b></a> : désigne l&rsquo;objet système numéro N (FORM ou PICTURE) comme récepteur des commandes « 2D »</li>
-<li><a href="./Keywords/3D_TARGET_IS.html" ><b>3D_TARGET_IS N</b></a> : désigne l&rsquo;objet SCENE3D numéro N qui recevra les commandes « 3D »</li>
-<li><a href="./Keywords/APPLICATION_TITLE.html" ><b>APPLICATION_TITLE T</b></a> : donne un titre à l&rsquo;application et aux fenêtres MESSAGE</li>
+    <div class="faq-category-section" id="cat-systeme" style="display: none;">
+      <h2 class="category-heading">11 - Système</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/2D_TARGET_IS.html" ><b>2D_TARGET_IS N</b></a> : désigne l'objet système numéro N (FORM ou PICTURE) comme récepteur des commandes « 2D »</li>
+<li><a href="./Keywords/3D_TARGET_IS.html" ><b>3D_TARGET_IS N</b></a> : désigne l'objet SCENE3D numéro N qui recevra les commandes « 3D »</li>
+<li><a href="./Keywords/APPLICATION_TITLE.html" ><b>APPLICATION_TITLE T</b></a> : donne un titre à l'application et aux fenêtres MESSAGE</li>
 <li><a href="./Keywords/ARCHIVER_ADD.html" ><b>ARCHIVER_ADD D,F</b></a> : archive les fichiers du répertoire D dans le fichier F</li>
 <li><a href="./Keywords/ARCHIVER_EXTRACT.html" ><b>ARCHIVER_EXTRACT F,D</b></a> : extrait le fichier archive F dans le répertoire D</li>
-<li><a href="./Keywords/ARCHIVER_OFF.html" ><b>ARCHIVER_OFF</b></a> : arrête l&rsquo;archiveur</li>
-<li><a href="./Keywords/ARCHIVER_ON.html" ><b>ARCHIVER_ON</b></a> : démarre l&rsquo;archiveur</li>
+<li><a href="./Keywords/ARCHIVER_OFF.html" ><b>ARCHIVER_OFF</b></a> : arrête l'archiveur</li>
+<li><a href="./Keywords/ARCHIVER_ON.html" ><b>ARCHIVER_ON</b></a> : démarre l'archiveur</li>
 <li><a href="./Keywords/BEEP.html" ><b>BEEP</b></a> : émet un son bref</li>
-<li><a href="./Keywords/BEEP_ERROR.html" ><b>BEEP_ERROR</b></a> : émet le son système d&rsquo;une erreur</li>
-<li><a href="./Keywords/BEEP_EXCLAMATION.html" ><b>BEEP_EXCLAMATION</b></a> : émet le son système d&rsquo;une exclamation</li>
-<li><a href="./Keywords/BEEP_INFORMATION.html" ><b>BEEP_INFORMATION</b></a> : émet le son système d&rsquo;une information</li>
-<li><a href="./Keywords/BEEP_QUESTION.html" ><b>BEEP_QUESTION</b></a> : émet le son système d&rsquo;une question</li>
-<li><a href="./Keywords/CLIPBOARD_COPY.html" ><b>CLIPBOARD_COPY N</b></a> : copie dans le presse-papier le texte sélectionné ou l&rsquo;image provenant de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CLIPBOARD_CUT.html" ><b>CLIPBOARD_CUT N</b></a> : copie dans le presse-papier puis efface le texte sélectionné dans l&rsquo;objet système numéro N (MEMO)</li>
-<li><a href="./Keywords/CLIPBOARD_PASTE.html" ><b>CLIPBOARD_PASTE N</b></a> : colle le texte ou l&rsquo;image du presse-papier dans l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CLIPBOARD_STRING_COPY.html" ><b>CLIPBOARD_STRING_COPY S</b></a> : copie dans le presse-papier l&rsquo;expression chaine de caractères S</li>
+<li><a href="./Keywords/BEEP_ERROR.html" ><b>BEEP_ERROR</b></a> : émet le son système d'une erreur</li>
+<li><a href="./Keywords/BEEP_EXCLAMATION.html" ><b>BEEP_EXCLAMATION</b></a> : émet le son système d'une exclamation</li>
+<li><a href="./Keywords/BEEP_INFORMATION.html" ><b>BEEP_INFORMATION</b></a> : émet le son système d'une information</li>
+<li><a href="./Keywords/BEEP_QUESTION.html" ><b>BEEP_QUESTION</b></a> : émet le son système d'une question</li>
+<li><a href="./Keywords/CLIPBOARD_COPY.html" ><b>CLIPBOARD_COPY N</b></a> : copie dans le presse-papier le texte sélectionné ou l'image provenant de l'objet système numéro N</li>
+<li><a href="./Keywords/CLIPBOARD_CUT.html" ><b>CLIPBOARD_CUT N</b></a> : copie dans le presse-papier puis efface le texte sélectionné dans l'objet système numéro N (MEMO)</li>
+<li><a href="./Keywords/CLIPBOARD_PASTE.html" ><b>CLIPBOARD_PASTE N</b></a> : colle le texte ou l'image du presse-papier dans l'objet système numéro N</li>
+<li><a href="./Keywords/CLIPBOARD_STRING_COPY.html" ><b>CLIPBOARD_STRING_COPY S</b></a> : copie dans le presse-papier l'expression chaine de caractères S</li>
 <li><a href="./Keywords/CLIPBOARD_STRING_PASTE%24.html" ><b>CLIPBOARD_STRING_PASTE$</b></a> : retourne le texte du presse-papier</li>
 <li><a href="./Keywords/DATE%24.html" ><b>DATE$</b></a> : retourne la date actuelle</li>
 <li><a href="./Keywords/DISK_EXISTS().html" ><b>DISK_EXISTS(D)</b></a> : retourne 1 si le disque D existe, 0 sinon</li>
@@ -353,148 +505,160 @@
 <li><a href="./Keywords/DISK_KILO_SIZE().html" ><b>DISK_KILO_SIZE(D)</b></a> : retourne la taille du disque D en kilo-octets</li>
 <li><a href="./Keywords/EXECUTE.html" ><b>EXECUTE F [Pi]</b></a> : exécute le fichier F avec des paramètres optionnels</li>
 <li><a href="./Keywords/EXECUTE_WAIT.html" ><b>EXECUTE_WAIT F [Pi]</b></a> : exécute le fichier F avec des paramètres optionnels et attend la fin</li>
-<li><a href="./Keywords/HANDLE().html" ><b>HANDLE(N)</b></a> : retourne le handle de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/HANDLE_CANVAS().html" ><b>HANDLE_CANVAS(N)</b></a> : retourne le handle de la zone graphique de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/HANDLE_FORM().html" ><b>HANDLE_FORM(T)</b></a> : retourne le handle d&rsquo;un FORM (PANORAMIC ou pas) dont on connait le titre (caption)</li>
+<li><a href="./Keywords/HANDLE().html" ><b>HANDLE(N)</b></a> : retourne le handle de l'objet système numéro N</li>
+<li><a href="./Keywords/HANDLE_CANVAS().html" ><b>HANDLE_CANVAS(N)</b></a> : retourne le handle de la zone graphique de l'objet système numéro N</li>
+<li><a href="./Keywords/HANDLE_FORM().html" ><b>HANDLE_FORM(T)</b></a> : retourne le handle d'un FORM (PANORAMIC ou pas) dont on connait le titre (caption)</li>
 <li><a href="./Keywords/INKEY%24.html" ><b>INKEY$</b></a> : lit une touche du clavier</li>
-<li><a href="./Keywords/INPUT.html" ><b>INPUT V</b></a> : lit les touches du clavier ou les caractères d&rsquo;un objet système et les stocke dans la variable V</li>
-<li><a href="./Keywords/INPUT_MARK_OFF.html" ><b>INPUT_MARK_OFF</b></a> : n&rsquo;affiche pas de point d&rsquo;interrogation lors d&rsquo;une commande INPUT</li>
-<li><a href="./Keywords/INPUT_MARK_ON.html" ><b>INPUT_MARK_ON</b></a> : affiche un point d&rsquo;interrogation lors d&rsquo;une commande INPUT</li>
+<li><a href="./Keywords/INPUT.html" ><b>INPUT V</b></a> : lit les touches du clavier ou les caractères d'un objet système et les stocke dans la variable V</li>
+<li><a href="./Keywords/INPUT_MARK_OFF.html" ><b>INPUT_MARK_OFF</b></a> : n'affiche pas de point d'interrogation lors d'une commande INPUT</li>
+<li><a href="./Keywords/INPUT_MARK_ON.html" ><b>INPUT_MARK_ON</b></a> : affiche un point d'interrogation lors d'une commande INPUT</li>
 <li><a href="./Keywords/INPUT_REDO_OFF.html" ><b>INPUT_REDO_OFF</b></a> : ne ré-exécute pas la commande INPUT si aucune valeur lue</li>
 <li><a href="./Keywords/INPUT_REDO_ON.html" ><b>INPUT_REDO_ON</b></a> : exécute à nouveau la commande INPUT si aucune valeur lue</li>
-<li><a href="./Keywords/INPUT_SOURCE_IS.html" ><b>INPUT_SOURCE_IS N</b></a> : désigne l&rsquo;objet système numéro N comme source des données</li>
-<li><a href="./Keywords/INPUT_VISIBLE_OFF.html" ><b>INPUT_VISIBLE_OFF</b></a> : n&rsquo;affiche pas les caractères saisis lors d&rsquo;une commande INPUT</li>
-<li><a href="./Keywords/INPUT_VISIBLE_ON.html" ><b>INPUT_VISIBLE_ON</b></a> : affiche les caractères saisis lors d&rsquo;une commande INPUT</li>
-<li><a href="./Keywords/NUMBER_2D_TARGET.html" ><b>NUMBER_2D_TARGET</b></a> : retourne le numéro de l&rsquo;objet système qui est la « cible » des commandes 2D</li>
-<li><a href="./Keywords/NUMBER_3D_TARGET.html" ><b>NUMBER_3D_TARGET</b></a> : retourne le numéro de l&rsquo;objet système qui est la « cible » des commandes 3D</li>
-<li><a href="./Keywords/NUMBER_COMMAND_TARGET.html" ><b>NUMBER_COMMAND_TARGET</b></a> : retourne le numéro de l&rsquo;objet système qui est la « cible » des commandes</li>
-<li><a href="./Keywords/NUMBER_INPUT_SOURCE.html" ><b>NUMBER_INPUT_SOURCE</b></a> : retourne le numéro de l&rsquo;objet système qui est la « source » des entrées</li>
-<li><a href="./Keywords/NUMBER_PRINT_TARGET.html" ><b>NUMBER_PRINT_TARGET</b></a> : retourne le numéro de l&rsquo;objet système qui est la « cible » des impressions</li>
-<li><a href="./Keywords/NUMBER_SPRITE_TARGET.html" ><b>NUMBER_SPRITE_TARGET</b></a> : retourne le numéro de l&rsquo;objet système qui est la « cible » des commandes sur les SPRITEs</li>
+<li><a href="./Keywords/INPUT_SOURCE_IS.html" ><b>INPUT_SOURCE_IS N</b></a> : désigne l'objet système numéro N comme source des données</li>
+<li><a href="./Keywords/INPUT_VISIBLE_OFF.html" ><b>INPUT_VISIBLE_OFF</b></a> : n'affiche pas les caractères saisis lors d'une commande INPUT</li>
+<li><a href="./Keywords/INPUT_VISIBLE_ON.html" ><b>INPUT_VISIBLE_ON</b></a> : affiche les caractères saisis lors d'une commande INPUT</li>
+<li><a href="./Keywords/NUMBER_2D_TARGET.html" ><b>NUMBER_2D_TARGET</b></a> : retourne le numéro de l'objet système qui est la « cible » des commandes 2D</li>
+<li><a href="./Keywords/NUMBER_3D_TARGET.html" ><b>NUMBER_3D_TARGET</b></a> : retourne le numéro de l'objet système qui est la « cible » des commandes 3D</li>
+<li><a href="./Keywords/NUMBER_COMMAND_TARGET.html" ><b>NUMBER_COMMAND_TARGET</b></a> : retourne le numéro de l'objet système qui est la « cible » des commandes</li>
+<li><a href="./Keywords/NUMBER_INPUT_SOURCE.html" ><b>NUMBER_INPUT_SOURCE</b></a> : retourne le numéro de l'objet système qui est la « source » des entrées</li>
+<li><a href="./Keywords/NUMBER_PRINT_TARGET.html" ><b>NUMBER_PRINT_TARGET</b></a> : retourne le numéro de l'objet système qui est la « cible » des impressions</li>
+<li><a href="./Keywords/NUMBER_SPRITE_TARGET.html" ><b>NUMBER_SPRITE_TARGET</b></a> : retourne le numéro de l'objet système qui est la « cible » des commandes sur les SPRITEs</li>
 <li><a href="./Keywords/PAUSE.html" ><b>PAUSE N</b></a> : attend N millisecondes, mais le programme reste actif</li>
-<li><a href="./Keywords/PRINT_TARGET_IS.html" ><b>PRINT_TARGET_IS N</b></a> : désigne l&rsquo;objet système numéro N comme le récepteur des impressions</li>
+<li><a href="./Keywords/PRINT_TARGET_IS.html" ><b>PRINT_TARGET_IS N</b></a> : désigne l'objet système numéro N comme le récepteur des impressions</li>
 <li><a href="./Keywords/SCANCODE.html" ><b>SCANCODE</b></a> : retourne le code de la touche actuellement enfoncée (du clavier ou de la souris)</li>
-<li><a href="./Keywords/SCREEN_X.html" ><b>SCREEN_X</b></a> : retourne la largeur de l&rsquo;écran en pixels</li>
-<li><a href="./Keywords/SCREEN_Y.html" ><b>SCREEN_Y</b></a> : retourne la hauteur de l&rsquo;écran en pixels</li>
+<li><a href="./Keywords/SCREEN_X.html" ><b>SCREEN_X</b></a> : retourne la largeur de l'écran en pixels</li>
+<li><a href="./Keywords/SCREEN_Y.html" ><b>SCREEN_Y</b></a> : retourne la hauteur de l'écran en pixels</li>
 <li><a href="./Keywords/SEPARATOR_IS_COMMA.html" ><b>SEPARATOR_IS_COMMA</b></a> : le séparateur décimal pour les nombres réels est la virgule</li>
 <li><a href="./Keywords/SEPARATOR_IS_POINT.html" ><b>SEPARATOR_IS_POINT</b></a> : le séparateur décimal pour les nombres réels est le point</li>
-<li><a href="./Keywords/SET_FOCUS.html" ><b>SET_FOCUS N</b></a> : donne le focus à l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/TIME%24.html" ><b>TIME$</b></a> : retourne l&rsquo;heure actuelle</li>
+<li><a href="./Keywords/SET_FOCUS.html" ><b>SET_FOCUS N</b></a> : donne le focus à l'objet système numéro N</li>
+<li><a href="./Keywords/TIME%24.html" ><b>TIME$</b></a> : retourne l'heure actuelle</li>
 <li><a href="./Keywords/WAIT.html" ><b>WAIT N</b></a> : attend N millisecondes</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Evénements</h3>
-
-<ul>
-<li><a href="./Keywords/KEY_DOWN_CODE.html" ><b>KEY_DOWN_CODE</b></a> : retourne le code de la touche que l&rsquo;utilisateur presse</li>
-<li><a href="./Keywords/KEY_DOWN_SPECIAL.html" ><b>KEY_DOWN_SPECIAL</b></a> : retourne le code de la touche spéciale que l&rsquo;utilisateur presse</li>
-<li><a href="./Keywords/KEY_UP_CODE.html" ><b>KEY_UP_CODE</b></a> : retourne le code de la touche que l&rsquo;utilisateur relâche</li>
-<li><a href="./Keywords/KEY_UP_SPECIAL.html" ><b>KEY_UP_SPECIAL</b></a> : retourne le code de la touche spéciale que l&rsquo;utilisateur relâche</li>
+    <div class="faq-category-section" id="cat-evenements" style="display: none;">
+      <h2 class="category-heading">12 - Evénements</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/KEY_DOWN_CODE.html" ><b>KEY_DOWN_CODE</b></a> : retourne le code de la touche que l'utilisateur presse</li>
+<li><a href="./Keywords/KEY_DOWN_SPECIAL.html" ><b>KEY_DOWN_SPECIAL</b></a> : retourne le code de la touche spéciale que l'utilisateur presse</li>
+<li><a href="./Keywords/KEY_UP_CODE.html" ><b>KEY_UP_CODE</b></a> : retourne le code de la touche que l'utilisateur relâche</li>
+<li><a href="./Keywords/KEY_UP_SPECIAL.html" ><b>KEY_UP_SPECIAL</b></a> : retourne le code de la touche spéciale que l'utilisateur relâche</li>
 <li><a href="./Keywords/NUMBER_CHANGE.html" ><b>NUMBER_CHANGE</b></a> : retourne le numéro du dernier objet modifié</li>
 <li><a href="./Keywords/NUMBER_CLICK.html" ><b>NUMBER_CLICK</b></a> : retourne le numéro du dernier objet cliqué</li>
 <li><a href="./Keywords/NUMBER_DOUBLE_CLICK.html" ><b>NUMBER_DOUBLE_CLICK</b></a> : retourne le numéro du dernier objet système double-cliqué</li>
-<li><a href="./Keywords/NUMBER_EVENTS.html" ><b>NUMBER_EVENTS</b></a> : retourne le nombre d&rsquo;événements en attente</li>
+<li><a href="./Keywords/NUMBER_EVENTS.html" ><b>NUMBER_EVENTS</b></a> : retourne le nombre d'événements en attente</li>
 <li><a href="./Keywords/NUMBER_KEY_DOWN.html" ><b>NUMBER_KEY_DOWN</b></a> : retourne le numéro du dernier objet sur lequel une touche a été enfoncée</li>
 <li><a href="./Keywords/NUMBER_KEY_UP.html" ><b>NUMBER_KEY_UP</b></a> : retourne le numéro du dernier objet sur lequel une touche a été relachée</li>
-<li><a href="./Keywords/OFF_ACTIVATE.html" ><b>OFF_ACTIVATE N</b></a> : ignore l&rsquo;événement « activate » quand l&rsquo;objet système numéro N (FORM) est activé</li>
-<li><a href="./Keywords/OFF_CHANGE.html" ><b>OFF_CHANGE N</b></a> : ignore l&rsquo;événement « change » quand l&rsquo;objet système numéro N est modifié</li>
-<li><a href="./Keywords/OFF_CLICK.html" ><b>OFF_CLICK N</b></a> : ignore l&rsquo;événement « click » quand l&rsquo;objet système numéro N est cliqué</li>
-<li><a href="./Keywords/OFF_CLOSE.html" ><b>OFF_CLOSE N</b></a> : ignore le traitement d&rsquo;événement « close » quand l&rsquo;objet système numéro N (FORM) est fermé</li>
-<li><a href="./Keywords/OFF_DOUBLE_CLICK.html" ><b>OFF_DOUBLE_CLICK N</b></a> : ignore l&rsquo;événement « double clic » quand l&rsquo;objet système numéro N est double-cliqué</li>
-<li><a href="./Keywords/OFF_KEY_DOWN.html" ><b>OFF_KEY_DOWN N</b></a> : ignore l&rsquo;événement « key_down » quand l&rsquo;utilisateur presse une touche et que l&rsquo;objet système numéro N a le focus</li>
-<li><a href="./Keywords/OFF_KEY_UP.html" ><b>OFF_KEY_UP N</b></a> : ignore l&rsquo;événement « key_up » quand l&rsquo;utilisateur relache une touche et que l&rsquo;objet système numéro N a le focus</li>
-<li><a href="./Keywords/OFF_SHOW.html" ><b>OFF_SHOW N</b></a> : ignore l&rsquo;événement « show » quand l&rsquo;objet système numéro N (FORM) est visualisé</li>
-<li><a href="./Keywords/ON_ACTIVATE.html" ><b>ON_ACTIVATE N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;objet système numéro N (FORM) est activé</li>
-<li><a href="./Keywords/ON_CHANGE.html" ><b>ON_CHANGE N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;objet système numéro N a « changé »</li>
-<li><a href="./Keywords/ON_CLICK.html" ><b>ON_CLICK N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;objet système numéro N est cliqué</li>
-<li><a href="./Keywords/ON_CLOSE.html" ><b>ON_CLOSE N,L</b></a> : exécute le programme à partir du label L avant que l&rsquo;objet système numéro N (FORM) se ferme</li>
-<li><a href="./Keywords/ON_DOUBLE_CLICK.html" ><b>ON_DOUBLE_CLICK N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;objet système numéro N est double-cliqué</li>
-<li><a href="./Keywords/ON_KEY_DOWN.html" ><b>ON_KEY_DOWN N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;utilisateur presse une touche et que l&rsquo;objet système numéro N a le focus</li>
-<li><a href="./Keywords/ON_KEY_UP.html" ><b>ON_KEY_UP N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;utilisateur relache une touche et que l&rsquo;objet système numéro N a le focus</li>
-<li><a href="./Keywords/ON_SHOW.html" ><b>ON_SHOW N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;objet système numéro N (FORM) est visualisé</li>
-<li><a href="./Keywords/ON_TIMER.html" ><b>ON_TIMER N,L</b></a> : exécute le programme à partir du label L quand l&rsquo;objet système numéro N se déclenche</li>
+<li><a href="./Keywords/OFF_ACTIVATE.html" ><b>OFF_ACTIVATE N</b></a> : ignore l'événement « activate » quand l'objet système numéro N (FORM) est activé</li>
+<li><a href="./Keywords/OFF_CHANGE.html" ><b>OFF_CHANGE N</b></a> : ignore l'événement « change » quand l'objet système numéro N est modifié</li>
+<li><a href="./Keywords/OFF_CLICK.html" ><b>OFF_CLICK N</b></a> : ignore l'événement « click » quand l'objet système numéro N est cliqué</li>
+<li><a href="./Keywords/OFF_CLOSE.html" ><b>OFF_CLOSE N</b></a> : ignore le traitement d'événement « close » quand l'objet système numéro N (FORM) est fermé</li>
+<li><a href="./Keywords/OFF_DOUBLE_CLICK.html" ><b>OFF_DOUBLE_CLICK N</b></a> : ignore l'événement « double clic » quand l'objet système numéro N est double-cliqué</li>
+<li><a href="./Keywords/OFF_KEY_DOWN.html" ><b>OFF_KEY_DOWN N</b></a> : ignore l'événement « key_down » quand l'utilisateur presse une touche et que l'objet système numéro N a le focus</li>
+<li><a href="./Keywords/OFF_KEY_UP.html" ><b>OFF_KEY_UP N</b></a> : ignore l'événement « key_up » quand l'utilisateur relache une touche et que l'objet système numéro N a le focus</li>
+<li><a href="./Keywords/OFF_SHOW.html" ><b>OFF_SHOW N</b></a> : ignore l'événement « show » quand l'objet système numéro N (FORM) est visualisé</li>
+<li><a href="./Keywords/ON_ACTIVATE.html" ><b>ON_ACTIVATE N,L</b></a> : exécute le programme à partir du label L quand l'objet système numéro N (FORM) est activé</li>
+<li><a href="./Keywords/ON_CHANGE.html" ><b>ON_CHANGE N,L</b></a> : exécute le programme à partir du label L quand l'objet système numéro N a « changé »</li>
+<li><a href="./Keywords/ON_CLICK.html" ><b>ON_CLICK N,L</b></a> : exécute le programme à partir du label L quand l'objet système numéro N est cliqué</li>
+<li><a href="./Keywords/ON_CLOSE.html" ><b>ON_CLOSE N,L</b></a> : exécute le programme à partir du label L avant que l'objet système numéro N (FORM) se ferme</li>
+<li><a href="./Keywords/ON_DOUBLE_CLICK.html" ><b>ON_DOUBLE_CLICK N,L</b></a> : exécute le programme à partir du label L quand l'objet système numéro N est double-cliqué</li>
+<li><a href="./Keywords/ON_KEY_DOWN.html" ><b>ON_KEY_DOWN N,L</b></a> : exécute le programme à partir du label L quand l'utilisateur presse une touche et que l'objet système numéro N a le focus</li>
+<li><a href="./Keywords/ON_KEY_UP.html" ><b>ON_KEY_UP N,L</b></a> : exécute le programme à partir du label L quand l'utilisateur relache une touche et que l'objet système numéro N a le focus</li>
+<li><a href="./Keywords/ON_SHOW.html" ><b>ON_SHOW N,L</b></a> : exécute le programme à partir du label L quand l'objet système numéro N (FORM) est visualisé</li>
+<li><a href="./Keywords/ON_TIMER.html" ><b>ON_TIMER N,L</b></a> : exécute le programme à partir du label L quand l'objet système numéro N se déclenche</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Messages</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-messages" style="display: none;">
+      <h2 class="category-heading">13 - Messages</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/MESSAGE.html" ><b>MESSAGE T</b></a> : visualise une fenêtre avec un texte à acquitter</li>
-<li><a href="./Keywords/MESSAGE_CONFIRMATION_OK().html" ><b>MESSAGE_CONFIRMATION_OK(T)</b></a> : visualise une fenêtre avec un texte, un point d&rsquo;interrogation et un bouton</li>
-<li><a href="./Keywords/MESSAGE_CONFIRMATION_YES_NO().html" ><b>MESSAGE_CONFIRMATION_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un point d&rsquo;interrogation et deux boutons</li>
-<li><a href="./Keywords/MESSAGE_ERROR_OK().html" ><b>MESSAGE_ERROR_OK(T)</b></a> : visualise une fenêtre avec un texte, un panneau rouge d&rsquo;erreur et un bouton</li>
-<li><a href="./Keywords/MESSAGE_ERROR_YES_NO().html" ><b>MESSAGE_ERROR_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un panneau rouge d&rsquo;erreur et deux boutons</li>
-<li><a href="./Keywords/MESSAGE_INFORMATION_OK().html" ><b>MESSAGE_INFORMATION_OK(T)</b></a> : visualise une fenêtre avec un texte, un grand « I » et un bouton</li>
-<li><a href="./Keywords/MESSAGE_INFORMATION_YES_NO().html" ><b>MESSAGE_INFORMATION_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un grand « I » et deux boutons</li>
+<li><a href="./Keywords/MESSAGE_CONFIRMATION_OK().html" ><b>MESSAGE_CONFIRMATION_OK(T)</b></a> : visualise une fenêtre avec un texte, un point d'interrogation et un bouton</li>
+<li><a href="./Keywords/MESSAGE_CONFIRMATION_YES_NO().html" ><b>MESSAGE_CONFIRMATION_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un point d'interrogation et deux boutons</li>
+<li><a href="./Keywords/MESSAGE_ERROR_OK().html" ><b>MESSAGE_ERROR_OK(T)</b></a> : visualise une fenêtre avec un texte, un panneau rouge d'erreur et un bouton</li>
+<li><a href="./Keywords/MESSAGE_ERROR_YES_NO().html" ><b>MESSAGE_ERROR_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un panneau rouge d'erreur et deux boutons</li>
+<li><a href="./Keywords/MESSAGE_INFORMATION_OK().html" ><b>MESSAGE_INFORMATION_OK(T)</b></a> : visualise une fenêtre avec un texte, un grand « I » et un bouton</li>
+<li><a href="./Keywords/MESSAGE_INFORMATION_YES_NO().html" ><b>MESSAGE_INFORMATION_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un grand « I » et deux boutons</li>
 <li><a href="./Keywords/MESSAGE_INPUT%24().html" ><b>MESSAGE_INPUT$(T1,T2,T3)</b></a> : visualise une fenêtre de caption T1, un ALPHA de caption T2, un EDIT visualisant T3 et deux boutons</li>
 <li><a href="./Keywords/MESSAGE_INPUT().html" ><b>MESSAGE_INPUT(T1,T2,T3)</b></a> : visualise une fenêtre de caption T1, un ALPHA de caption T2, un EDIT visualisant T3 et deux boutons</li>
-<li><a href="./Keywords/MESSAGE_TEXT%24.html" ><b>MESSAGE_TEXT$</b></a> : contient le texte de l&rsquo;EDIT de MESSAGE_INPUT()</li>
-<li><a href="./Keywords/MESSAGE_WARNING_OK().html" ><b>MESSAGE_WARNING_OK(T)</b></a> : visualise une fenêtre avec un texte, un point d&rsquo;exclamation et un bouton</li>
-<li><a href="./Keywords/MESSAGE_WARNING_YES_NO().html" ><b>MESSAGE_WARNING_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un point d&rsquo;exclamation et deux boutons</li>
+<li><a href="./Keywords/MESSAGE_TEXT%24.html" ><b>MESSAGE_TEXT$</b></a> : contient le texte de l'EDIT de MESSAGE_INPUT()</li>
+<li><a href="./Keywords/MESSAGE_WARNING_OK().html" ><b>MESSAGE_WARNING_OK(T)</b></a> : visualise une fenêtre avec un texte, un point d'exclamation et un bouton</li>
+<li><a href="./Keywords/MESSAGE_WARNING_YES_NO().html" ><b>MESSAGE_WARNING_YES_NO(T)</b></a> : visualise une fenêtre avec un texte, un point d'exclamation et deux boutons</li>
 </ul>
+      </div>
+    </div>
 
-<h3>MIDI</h3>
-
-<ul>
-<li><a href="./Keywords/MIDI_INSTRUMENT.html" ><b>MIDI_INSTRUMENT N</b></a> : l&rsquo;instrument MIDI utilisé est l&rsquo;instrument numéro N</li>
-<li><a href="./Keywords/MIDI_OFF.html" ><b>MIDI_OFF</b></a> : arrête l&rsquo;utilisation individuelle des notes sur la sortie MIDI</li>
-<li><a href="./Keywords/MIDI_ON.html" ><b>MIDI_ON</b></a> : démarre l&rsquo;utilisation individuelle des notes sur la sortie MIDI</li>
+    <div class="faq-category-section" id="cat-midi" style="display: none;">
+      <h2 class="category-heading">14 - MIDI</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/MIDI_INSTRUMENT.html" ><b>MIDI_INSTRUMENT N</b></a> : l'instrument MIDI utilisé est l'instrument numéro N</li>
+<li><a href="./Keywords/MIDI_OFF.html" ><b>MIDI_OFF</b></a> : arrête l'utilisation individuelle des notes sur la sortie MIDI</li>
+<li><a href="./Keywords/MIDI_ON.html" ><b>MIDI_ON</b></a> : démarre l'utilisation individuelle des notes sur la sortie MIDI</li>
 <li><a href="./Keywords/MIDI_PLAY.html" ><b>MIDI_PLAY N,T</b></a> : joue la note N de type T sur la sortie MIDI</li>
 <li><a href="./Keywords/MIDI_VOLUME.html" ><b>MIDI_VOLUME V</b></a> : modifie le volume des notes jouées sur la sortie MIDI</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Objets Système</h3>
-
-<ul>
-<li><a href="./Keywords/ACTIVE.html" ><b>ACTIVE N</b></a> : rend actif l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/ACTIVE().html" ><b>ACTIVE(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N est actif, 0 sinon</li>
-<li><a href="./Keywords/AXES_HIDE.html" ><b>AXES_HIDE</b></a> : rend invisibles les axes 3D de l&rsquo;objet cible 3D (SCENE3D)</li>
-<li><a href="./Keywords/AXES_SHOW.html" ><b>AXES_SHOW</b></a> : rend visibles les axes 3D de l&rsquo;objet cible 3D (SCENE3D)</li>
-<li><a href="./Keywords/BAR_BOTH.html" ><b>BAR_BOTH N</b></a> : affecte deux barres de défilement (horizontale et verticale) à l&rsquo;objet système numéro N (MEMO)</li>
-<li><a href="./Keywords/BAR_HORIZONTAL.html" ><b>BAR_HORIZONTAL N</b></a> : affecte une barre de défilement horizontale à l&rsquo;objet système numéro N (MEMO)</li>
-<li><a href="./Keywords/BAR_NONE.html" ><b>BAR_NONE N</b></a> : retire toute barre de défilement (horizontale et verticale) à l&rsquo;objet système numéro N (MEMO)</li>
-<li><a href="./Keywords/BAR_VERTICAL.html" ><b>BAR_VERTICAL N</b></a> : affecte une barre de défilement verticale à l&rsquo;objet système numéro N (MEMO)</li>
-<li><a href="./Keywords/BORDER_HIDE.html" ><b>BORDER_HIDE N</b></a> : cache la bordure de l&rsquo;objet système numéro N (FORM)</li>
-<li><a href="./Keywords/BORDER_NORMAL.html" ><b>BORDER_NORMAL N</b></a> : visualise la bordure normale de l&rsquo;objet système numéro N (FORM)</li>
-<li><a href="./Keywords/BORDER_SMALL.html" ><b>BORDER_SMALL N</b></a> : visualise la bordure de l&rsquo;objet système numéro N (FORM) avec une taille réduite</li>
-<li><a href="./Keywords/BRIGHTNESS.html" ><b>BRIGHTNESS N,V</b></a> : modifie la luminosité de l&rsquo;objet système numéro N (PICTURE)</li>
-<li><a href="./Keywords/CAPTION.html" ><b>CAPTION N,T</b></a> : définit le texte T comme l&rsquo;intitulé de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CAPTION%24().html" ><b>CAPTION$(N)</b></a> : retourne l&rsquo;intitulé de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CARET_POSITION.html" ><b>CARET_POSITION N,P</b></a> : positionne le curseur de l&rsquo;objet système numéro N à la position P</li>
-<li><a href="./Keywords/CARET_POSITION().html" ><b>CARET_POSITION(N)</b></a> : retourne la position du curseur de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CHECKED().html" ><b>CHECKED(N)</b></a> : retourne l&rsquo;état de l&rsquo;objet système numéro N (coché/activé)</li>
-<li><a href="./Keywords/CLEAR.html" ><b>CLEAR N</b></a> : efface le contenu de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CLICKED().html" ><b>CLICKED(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N a été cliqué, 0 sinon</li>
-<li><a href="./Keywords/COLOR.html" ><b>COLOR N,R,G,B</b></a> : définit la couleur de l&rsquo;objet système numéro N (Rouge,Vert,Bleu)</li>
-<li><a href="./Keywords/COLOR_PIXEL_BLUE().html" ><b>COLOR_PIXEL_BLUE(N,X,Y)</b></a> : retourne la composante primaire bleue d&rsquo;un pixel de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/COLOR_PIXEL_GREEN().html" ><b>COLOR_PIXEL_GREEN(N,X,Y)</b></a> : retourne la composante primaire verte d&rsquo;un pixel de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/COLOR_PIXEL_RED().html" ><b>COLOR_PIXEL_RED(N,X,Y)</b></a> : retourne la composante primaire rouge d&rsquo;un pixel de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/COMMAND_TARGET_IS.html" ><b>COMMAND_TARGET_IS N</b></a> : désigne l&rsquo;objet système numéro N comme récepteur des commandes</li>
-<li><a href="./Keywords/CONTRAST.html" ><b>CONTRAST N,V</b></a> : modifie le contraste de l&rsquo;objet système numéro N (PICTURE)</li>
-<li><a href="./Keywords/COUNT().html" ><b>COUNT(N)</b></a> : retourne le nombre d&rsquo;articles de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_ARROW.html" ><b>CURSOR_ARROW N</b></a> : visualise un curseur en forme de flèche sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_BEAM.html" ><b>CURSOR_BEAM N</b></a> : visualise un curseur en forme de I majuscule sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_CROSS.html" ><b>CURSOR_CROSS N</b></a> : visualise un curseur en forme de croix sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_DEFAULT.html" ><b>CURSOR_DEFAULT N</b></a> : visualise le curseur par défaut sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_HELP.html" ><b>CURSOR_HELP N</b></a> : visualise un curseur en forme de point d&rsquo;interrogation sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_HIDE.html" ><b>CURSOR_HIDE N</b></a> : cache le curseur sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_HOURGLASS.html" ><b>CURSOR_HOURGLASS N</b></a> : visualise un curseur en forme de sablier sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_NOPARKING.html" ><b>CURSOR_NOPARKING N</b></a> : visualise un curseur en forme de panneau d&rsquo;interdiction de stationner sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/CURSOR_POINT.html" ><b>CURSOR_POINT N</b></a> : visualise un curseur en forme de main sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/DELETE.html" ><b>DELETE N</b></a> : supprime l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/DIR_DIALOG.html" ><b>DIR_DIALOG N,D</b></a> : le répertoire courant de l&rsquo;objet système numéro N devient le répertoire D</li>
-<li><a href="./Keywords/DOUBLE_CLICKED().html" ><b>DOUBLE_CLICKED(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N a été double-cliqué, 0 sinon</li>
-<li><a href="./Keywords/FILE_ADD.html" ><b>FILE_ADD N,F</b></a> : ajoute le contenu du fichier F à l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FILE_LOAD.html" ><b>FILE_LOAD N,F</b></a> : remplit l&rsquo;objet système numéro N avec le contenu du fichier F</li>
-<li><a href="./Keywords/FILE_NAME%24().html" ><b>FILE_NAME$(N)</b></a> : retourne le nom de fichier donné par l&rsquo;objet système numéro N (OPEN_DIALOG ou SAVE_DIALOG)</li>
-<li><a href="./Keywords/FILE_SAVE.html" ><b>FILE_SAVE N,F</b></a> : enregistre le contenu de l&rsquo;objet système numéro N dans le fichier F</li>
-<li><a href="./Keywords/FILTER.html" ><b>FILTER N, T</b></a> : définit le filtre T (type de fichier et commentaire) appliqué par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/FULL_SPACE.html" ><b>FULL_SPACE N</b></a> : l&rsquo;objet système numéro N prend tout l&rsquo;espace disponible</li>
-<li><a href="./Keywords/GAMMA.html" ><b>GAMMA N,V</b></a> : modifie le gamma de l&rsquo;objet système numéro N (PICTURE)</li>
+    <div class="faq-category-section" id="cat-objets-systeme" style="display: none;">
+      <h2 class="category-heading">15 - Objets Système</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/ACTIVE.html" ><b>ACTIVE N</b></a> : rend actif l'objet système numéro N</li>
+<li><a href="./Keywords/ACTIVE().html" ><b>ACTIVE(N)</b></a> : retourne 1 si l'objet système numéro N est actif, 0 sinon</li>
+<li><a href="./Keywords/AXES_HIDE.html" ><b>AXES_HIDE</b></a> : rend invisibles les axes 3D de l'objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/AXES_SHOW.html" ><b>AXES_SHOW</b></a> : rend visibles les axes 3D de l'objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/BAR_BOTH.html" ><b>BAR_BOTH N</b></a> : affecte deux barres de défilement (horizontale et verticale) à l'objet système numéro N (MEMO)</li>
+<li><a href="./Keywords/BAR_HORIZONTAL.html" ><b>BAR_HORIZONTAL N</b></a> : affecte une barre de défilement horizontale à l'objet système numéro N (MEMO)</li>
+<li><a href="./Keywords/BAR_NONE.html" ><b>BAR_NONE N</b></a> : retire toute barre de défilement (horizontale et verticale) à l'objet système numéro N (MEMO)</li>
+<li><a href="./Keywords/BAR_VERTICAL.html" ><b>BAR_VERTICAL N</b></a> : affecte une barre de défilement verticale à l'objet système numéro N (MEMO)</li>
+<li><a href="./Keywords/BORDER_HIDE.html" ><b>BORDER_HIDE N</b></a> : cache la bordure de l'objet système numéro N (FORM)</li>
+<li><a href="./Keywords/BORDER_NORMAL.html" ><b>BORDER_NORMAL N</b></a> : visualise la bordure normale de l'objet système numéro N (FORM)</li>
+<li><a href="./Keywords/BORDER_SMALL.html" ><b>BORDER_SMALL N</b></a> : visualise la bordure de l'objet système numéro N (FORM) avec une taille réduite</li>
+<li><a href="./Keywords/BRIGHTNESS.html" ><b>BRIGHTNESS N,V</b></a> : modifie la luminosité de l'objet système numéro N (PICTURE)</li>
+<li><a href="./Keywords/CAPTION.html" ><b>CAPTION N,T</b></a> : définit le texte T comme l'intitulé de l'objet système numéro N</li>
+<li><a href="./Keywords/CAPTION%24().html" ><b>CAPTION$(N)</b></a> : retourne l'intitulé de l'objet système numéro N</li>
+<li><a href="./Keywords/CARET_POSITION.html" ><b>CARET_POSITION N,P</b></a> : positionne le curseur de l'objet système numéro N à la position P</li>
+<li><a href="./Keywords/CARET_POSITION().html" ><b>CARET_POSITION(N)</b></a> : retourne la position du curseur de l'objet système numéro N</li>
+<li><a href="./Keywords/CHECKED().html" ><b>CHECKED(N)</b></a> : retourne l'état de l'objet système numéro N (coché/activé)</li>
+<li><a href="./Keywords/CLEAR.html" ><b>CLEAR N</b></a> : efface le contenu de l'objet système numéro N</li>
+<li><a href="./Keywords/CLICKED().html" ><b>CLICKED(N)</b></a> : retourne 1 si l'objet système numéro N a été cliqué, 0 sinon</li>
+<li><a href="./Keywords/COLOR.html" ><b>COLOR N,R,G,B</b></a> : définit la couleur de l'objet système numéro N (Rouge,Vert,Bleu)</li>
+<li><a href="./Keywords/COLOR_PIXEL_BLUE().html" ><b>COLOR_PIXEL_BLUE(N,X,Y)</b></a> : retourne la composante primaire bleue d'un pixel de l'objet système numéro N</li>
+<li><a href="./Keywords/COLOR_PIXEL_GREEN().html" ><b>COLOR_PIXEL_GREEN(N,X,Y)</b></a> : retourne la composante primaire verte d'un pixel de l'objet système numéro N</li>
+<li><a href="./Keywords/COLOR_PIXEL_RED().html" ><b>COLOR_PIXEL_RED(N,X,Y)</b></a> : retourne la composante primaire rouge d'un pixel de l'objet système numéro N</li>
+<li><a href="./Keywords/COMMAND_TARGET_IS.html" ><b>COMMAND_TARGET_IS N</b></a> : désigne l'objet système numéro N comme récepteur des commandes</li>
+<li><a href="./Keywords/CONTRAST.html" ><b>CONTRAST N,V</b></a> : modifie le contraste de l'objet système numéro N (PICTURE)</li>
+<li><a href="./Keywords/COUNT().html" ><b>COUNT(N)</b></a> : retourne le nombre d'articles de l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_ARROW.html" ><b>CURSOR_ARROW N</b></a> : visualise un curseur en forme de flèche sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_BEAM.html" ><b>CURSOR_BEAM N</b></a> : visualise un curseur en forme de I majuscule sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_CROSS.html" ><b>CURSOR_CROSS N</b></a> : visualise un curseur en forme de croix sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_DEFAULT.html" ><b>CURSOR_DEFAULT N</b></a> : visualise le curseur par défaut sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_HELP.html" ><b>CURSOR_HELP N</b></a> : visualise un curseur en forme de point d'interrogation sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_HIDE.html" ><b>CURSOR_HIDE N</b></a> : cache le curseur sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_HOURGLASS.html" ><b>CURSOR_HOURGLASS N</b></a> : visualise un curseur en forme de sablier sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_NOPARKING.html" ><b>CURSOR_NOPARKING N</b></a> : visualise un curseur en forme de panneau d'interdiction de stationner sur l'objet système numéro N</li>
+<li><a href="./Keywords/CURSOR_POINT.html" ><b>CURSOR_POINT N</b></a> : visualise un curseur en forme de main sur l'objet système numéro N</li>
+<li><a href="./Keywords/DELETE.html" ><b>DELETE N</b></a> : supprime l'objet système numéro N</li>
+<li><a href="./Keywords/DIR_DIALOG.html" ><b>DIR_DIALOG N,D</b></a> : le répertoire courant de l'objet système numéro N devient le répertoire D</li>
+<li><a href="./Keywords/DOUBLE_CLICKED().html" ><b>DOUBLE_CLICKED(N)</b></a> : retourne 1 si l'objet système numéro N a été double-cliqué, 0 sinon</li>
+<li><a href="./Keywords/FILE_ADD.html" ><b>FILE_ADD N,F</b></a> : ajoute le contenu du fichier F à l'objet système numéro N</li>
+<li><a href="./Keywords/FILE_LOAD.html" ><b>FILE_LOAD N,F</b></a> : remplit l'objet système numéro N avec le contenu du fichier F</li>
+<li><a href="./Keywords/FILE_NAME%24().html" ><b>FILE_NAME$(N)</b></a> : retourne le nom de fichier donné par l'objet système numéro N (OPEN_DIALOG ou SAVE_DIALOG)</li>
+<li><a href="./Keywords/FILE_SAVE.html" ><b>FILE_SAVE N,F</b></a> : enregistre le contenu de l'objet système numéro N dans le fichier F</li>
+<li><a href="./Keywords/FILTER.html" ><b>FILTER N, T</b></a> : définit le filtre T (type de fichier et commentaire) appliqué par l'objet système numéro N</li>
+<li><a href="./Keywords/FULL_SPACE.html" ><b>FULL_SPACE N</b></a> : l'objet système numéro N prend tout l'espace disponible</li>
+<li><a href="./Keywords/GAMMA.html" ><b>GAMMA N,V</b></a> : modifie le gamma de l'objet système numéro N (PICTURE)</li>
 <li><a href="./Keywords/GRID_CLEAR.html" ><b>GRID_CLEAR N,R,C</b></a> : efface les cellules du GRID numéro N de la ligne 1 à R et de la colonne 1 à C</li>
 <li><a href="./Keywords/GRID_COLUMN.html" ><b>GRID_COLUMN N,C</b></a> : définit le nombre de colonnes du GRID numéro N</li>
 <li><a href="./Keywords/GRID_COLUMN_DELETE.html" ><b>GRID_COLUMN_DELETE N,C</b></a> : supprime la colonne C du GRID numéro N</li>
 <li><a href="./Keywords/GRID_COLUMN_FIXED.html" ><b>GRID_COLUMN_FIXED N,F</b></a> : définit le nombre de colonnes fixes du GRID numéro N</li>
-<li><a href="./Keywords/GRID_COLUMN_INSERT.html" ><b>GRID_COLUMN_INSERT N,C</b></a> : insère la colonne C dans l&rsquo;objet GRID numéro N</li>
+<li><a href="./Keywords/GRID_COLUMN_INSERT.html" ><b>GRID_COLUMN_INSERT N,C</b></a> : insère la colonne C dans l'objet GRID numéro N</li>
 <li><a href="./Keywords/GRID_COLUMN_SIZING_OFF.html" ><b>GRID_COLUMN_SIZING_OFF N</b></a> : les colonnes du GRID numéro N ne peuvent pas être ajustées manuellement</li>
 <li><a href="./Keywords/GRID_COLUMN_SIZING_ON.html" ><b>GRID_COLUMN_SIZING_ON N</b></a> : les colonnes du GRID numéro N peuvent être ajustées manuellement</li>
 <li><a href="./Keywords/GRID_COLUMN_WIDTH.html" ><b>GRID_COLUMN_WIDTH N,W</b></a> : définit la largeur des colonnes du GRID numéro N</li>
@@ -507,83 +671,86 @@
 <li><a href="./Keywords/GRID_ROW_DELETE.html" ><b>GRID_ROW_DELETE N,R</b></a> : supprime la ligne R du GRID numéro N</li>
 <li><a href="./Keywords/GRID_ROW_FIXED.html" ><b>GRID_ROW_FIXED N,F</b></a> : définit le nombre de lignes fixes du GRID numéro N</li>
 <li><a href="./Keywords/GRID_ROW_HEIGHT.html" ><b>GRID_ROW_HEIGHT N,H</b></a> : définit la hauteur des lignes du GRID numéro N</li>
-<li><a href="./Keywords/GRID_ROW_INSERT.html" ><b>GRID_ROW_INSERT N,R</b></a> : insère la ligne R dans l&rsquo;objet GRID numéro N</li>
+<li><a href="./Keywords/GRID_ROW_INSERT.html" ><b>GRID_ROW_INSERT N,R</b></a> : insère la ligne R dans l'objet GRID numéro N</li>
 <li><a href="./Keywords/GRID_ROW_SIZING_OFF.html" ><b>GRID_ROW_SIZING_OFF N</b></a> : les lignes du GRID numéro N ne peuvent pas être ajustées manuellement</li>
 <li><a href="./Keywords/GRID_ROW_SIZING_ON.html" ><b>GRID_ROW_SIZING_ON N</b></a> : les lignes du GRID numéro N peuvent être ajustées manuellement</li>
 <li><a href="./Keywords/GRID_SAVE.html" ><b>GRID_SAVE N,R,C,F</b></a> : sauvegarde le GRID numéro N dans le fichier F, de la ligne 1 à R et de la colonne 1 à C</li>
 <li><a href="./Keywords/GRID_WRITE.html" ><b>GRID_WRITE N,R,C,S</b></a> : écrit le contenu de S dans la cellule (R,C) du GRID numéro N</li>
 <li><a href="./Keywords/GRID_X_TO_COLUMN().html" ><b>GRID_X_TO_COLUMN(N,X)</b></a> : retourne le numéro de colonne du GRID numéro N à partir de la coordonnée X</li>
 <li><a href="./Keywords/GRID_Y_TO_ROW().html" ><b>GRID_Y_TO_ROW(N,Y)</b></a> : retourne le numéro de ligne du GRID numéro N à partir de la coordonnée Y</li>
-<li><a href="./Keywords/HEIGHT.html" ><b>HEIGHT N,V</b></a> : définit la hauteur de l&rsquo;objet système numéro N à V pixels</li>
-<li><a href="./Keywords/HEIGHT().html" ><b>HEIGHT(N)</b></a> : retourne la hauteur en pixels de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/HIDE.html" ><b>HIDE N</b></a> : rend invisible l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/HIDE().html" ><b>HIDE(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N est caché, 0 sinon</li>
-<li><a href="./Keywords/HINT.html" ><b>HINT N,T</b></a> : définit le texte bulle T de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/HINT_HIDE.html" ><b>HINT_HIDE N</b></a> : rend inactive la visualisation du texte bulle de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/HORIZONTAL.html" ><b>HORIZONTAL N</b></a> : met la barre de l&rsquo;objet système numéro N en position horizontale</li>
-<li><a href="./Keywords/INACTIVE.html" ><b>INACTIVE N</b></a> : rend inactif l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/INACTIVE().html" ><b>INACTIVE(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N n&rsquo;est pas actif, 0 sinon</li>
-<li><a href="./Keywords/ITEM_ADD.html" ><b>ITEM_ADD N,T</b></a> : ajoute l&rsquo;article T à l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/ITEM_DELETE.html" ><b>ITEM_DELETE N,L</b></a> : supprime l&rsquo;article à la ligne L de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/ITEM_INDEX%24().html" ><b>ITEM_INDEX$(N)</b></a> : retourne l&rsquo;article sélectionné de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/ITEM_INDEX().html" ><b>ITEM_INDEX(N)</b></a> : retourne le rang de l&rsquo;article sélectionné de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/ITEM_INSERT.html" ><b>ITEM_INSERT N,L,T</b></a> : insère l&rsquo;article T après la ligne L dans l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/ITEM_READ%24().html" ><b>ITEM_READ$(N,L)</b></a> : retourne l&rsquo;article numéro L de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/LEFT.html" ><b>LEFT N,V</b></a> : positionne le bord gauche de l&rsquo;objet système numéro N à V pixels de son parent</li>
-<li><a href="./Keywords/LEFT().html" ><b>LEFT(N)</b></a> : retourne le nombre de pixels entre le bord gauche de l&rsquo;objet système numéro N et son parent</li>
-<li><a href="./Keywords/MARK_OFF.html" ><b>MARK_OFF N</b></a> : décoche l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MARK_ON.html" ><b>MARK_ON N</b></a> : coche/active l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/MAX.html" ><b>MAX N,V</b></a> : définit la valeur maximale V de l&rsquo;objet système numéro N</li>
+<li><a href="./Keywords/HEIGHT.html" ><b>HEIGHT N,V</b></a> : définit la hauteur de l'objet système numéro N à V pixels</li>
+<li><a href="./Keywords/HEIGHT().html" ><b>HEIGHT(N)</b></a> : retourne la hauteur en pixels de l'objet système numéro N</li>
+<li><a href="./Keywords/HIDE.html" ><b>HIDE N</b></a> : rend invisible l'objet système numéro N</li>
+<li><a href="./Keywords/HIDE().html" ><b>HIDE(N)</b></a> : retourne 1 si l'objet système numéro N est caché, 0 sinon</li>
+<li><a href="./Keywords/HINT.html" ><b>HINT N,T</b></a> : définit le texte bulle T de l'objet système numéro N</li>
+<li><a href="./Keywords/HINT_HIDE.html" ><b>HINT_HIDE N</b></a> : rend inactive la visualisation du texte bulle de l'objet système numéro N</li>
+<li><a href="./Keywords/HORIZONTAL.html" ><b>HORIZONTAL N</b></a> : met la barre de l'objet système numéro N en position horizontale</li>
+<li><a href="./Keywords/INACTIVE.html" ><b>INACTIVE N</b></a> : rend inactif l'objet système numéro N</li>
+<li><a href="./Keywords/INACTIVE().html" ><b>INACTIVE(N)</b></a> : retourne 1 si l'objet système numéro N n'est pas actif, 0 sinon</li>
+<li><a href="./Keywords/ITEM_ADD.html" ><b>ITEM_ADD N,T</b></a> : ajoute l'article T à l'objet système numéro N</li>
+<li><a href="./Keywords/ITEM_DELETE.html" ><b>ITEM_DELETE N,L</b></a> : supprime l'article à la ligne L de l'objet système numéro N</li>
+<li><a href="./Keywords/ITEM_INDEX%24().html" ><b>ITEM_INDEX$(N)</b></a> : retourne l'article sélectionné de l'objet système numéro N</li>
+<li><a href="./Keywords/ITEM_INDEX().html" ><b>ITEM_INDEX(N)</b></a> : retourne le rang de l'article sélectionné de l'objet système numéro N</li>
+<li><a href="./Keywords/ITEM_INSERT.html" ><b>ITEM_INSERT N,L,T</b></a> : insère l'article T après la ligne L dans l'objet système numéro N</li>
+<li><a href="./Keywords/ITEM_READ%24().html" ><b>ITEM_READ$(N,L)</b></a> : retourne l'article numéro L de l'objet système numéro N</li>
+<li><a href="./Keywords/LEFT.html" ><b>LEFT N,V</b></a> : positionne le bord gauche de l'objet système numéro N à V pixels de son parent</li>
+<li><a href="./Keywords/LEFT().html" ><b>LEFT(N)</b></a> : retourne le nombre de pixels entre le bord gauche de l'objet système numéro N et son parent</li>
+<li><a href="./Keywords/MARK_OFF.html" ><b>MARK_OFF N</b></a> : décoche l'objet système numéro N</li>
+<li><a href="./Keywords/MARK_ON.html" ><b>MARK_ON N</b></a> : coche/active l'objet système numéro N</li>
+<li><a href="./Keywords/MAX.html" ><b>MAX N,V</b></a> : définit la valeur maximale V de l'objet système numéro N</li>
 <li><a href="./Keywords/MAXIMIZE.html" ><b>MAXIMIZE N</b></a> : maximise la taille du FORM numéro N</li>
-<li><a href="./Keywords/MIN.html" ><b>MIN N,V</b></a> : définit la valeur minimale V de l&rsquo;objet système numéro N</li>
+<li><a href="./Keywords/MIN.html" ><b>MIN N,V</b></a> : définit la valeur minimale V de l'objet système numéro N</li>
 <li><a href="./Keywords/MINIMIZE.html" ><b>MINIMIZE N</b></a> : minimise la taille du FORM numéro N</li>
 <li><a href="./Keywords/NORMAL.html" ><b>NORMAL N</b></a> : revient à la taille normale du FORM numéro N</li>
 <li><a href="./Keywords/NUMBER_ACTIVATE.html" ><b>NUMBER_ACTIVATE</b></a> : numéro du dernier objet système activé (FORM)</li>
-<li><a href="./Keywords/NUMBER_OBJECTS.html" ><b>NUMBER_OBJECTS</b></a> : retourne le nombre d&rsquo;objets système</li>
+<li><a href="./Keywords/NUMBER_OBJECTS.html" ><b>NUMBER_OBJECTS</b></a> : retourne le nombre d'objets système</li>
 <li><a href="./Keywords/NUMBER_SHOW.html" ><b>NUMBER_SHOW</b></a> : numéro du dernier objet système visible (FORM ou TAB)</li>
-<li><a href="./Keywords/OBJECT_EXISTS().html" ><b>OBJECT_EXISTS(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N existe, 0 sinon</li>
-<li><a href="./Keywords/OBJECT_INTERNAL().html" ><b>OBJECT_INTERNAL(N)</b></a> : retourne un numéro interne généré à la création de l&rsquo;objet système de numéro N</li>
-<li><a href="./Keywords/PARENT().html" ><b>OBJECT_PARENT(N)</b></a> : retourne le numéro du parent de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/OBJECT_TYPE().html" ><b>OBJECT_TYPE(N)</b></a> : retourne le type de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/PARENT.html" ><b>PARENT N,M</b></a> : définit l&rsquo;objet système numéro M comme le père de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/PLAY.html" ><b>PLAY N</b></a> : joue le contenu de l&rsquo;objet système numéro N (SOUND ou MOVIE)</li>
-<li><a href="./Keywords/PLAY_WAIT.html" ><b>PLAY_WAIT N</b></a> : joue le contenu de l&rsquo;objet système numéro N (SOUND ou MOVIE) et attend la fin</li>
-<li><a href="./Keywords/POSITION.html" ><b>POSITION N,V</b></a> : définit la position du curseur de l&rsquo;objet système numéro N</li>
+<li><a href="./Keywords/OBJECT_EXISTS().html" ><b>OBJECT_EXISTS(N)</b></a> : retourne 1 si l'objet système numéro N existe, 0 sinon</li>
+<li><a href="./Keywords/OBJECT_INTERNAL().html" ><b>OBJECT_INTERNAL(N)</b></a> : retourne un numéro interne généré à la création de l'objet système de numéro N</li>
+<li><a href="./Keywords/PARENT().html" ><b>OBJECT_PARENT(N)</b></a> : retourne le numéro du parent de l'objet système numéro N</li>
+<li><a href="./Keywords/OBJECT_TYPE().html" ><b>OBJECT_TYPE(N)</b></a> : retourne le type de l'objet système numéro N</li>
+<li><a href="./Keywords/PARENT.html" ><b>PARENT N,M</b></a> : définit l'objet système numéro M comme le père de l'objet système numéro N</li>
+<li><a href="./Keywords/PLAY.html" ><b>PLAY N</b></a> : joue le contenu de l'objet système numéro N (SOUND ou MOVIE)</li>
+<li><a href="./Keywords/PLAY_WAIT.html" ><b>PLAY_WAIT N</b></a> : joue le contenu de l'objet système numéro N (SOUND ou MOVIE) et attend la fin</li>
+<li><a href="./Keywords/POSITION.html" ><b>POSITION N,V</b></a> : définit la position du curseur de l'objet système numéro N</li>
 <li><a href="./Keywords/POSITION().html" ><b>POSITION(N)</b></a> : retourne la position du curseur de la barre numéro N</li>
-<li><a href="./Keywords/SECRET_OFF.html" ><b>SECRET_OFF N</b></a> : l&rsquo;objet système numéro N affiche son texte en clair</li>
-<li><a href="./Keywords/SECRET_ON.html" ><b>SECRET_ON N</b></a> : l&rsquo;objet système numéro N affiche son texte sous forme d&rsquo;étoiles</li>
-<li><a href="./Keywords/SELECT_READ%24().html" ><b>SELECT_READ$(N)</b></a> : retourne le texte sélectionné de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/SELECT_TEXT.html" ><b>SELECT_TEXT N,P,C</b></a> : sélectionne C caractères à partir de la position P dans l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/SHOW.html" ><b>SHOW N</b></a> : rend visible l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/SHOW().html" ><b>SHOW(N)</b></a> : retourne 1 si l&rsquo;objet système numéro N est visible, 0 sinon</li>
-<li><a href="./Keywords/SORT.html" ><b>SORT N</b></a> : trie le contenu de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/SORT_OFF.html" ><b>SORT_OFF N</b></a> : arrête le tri automatique de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/SORT_ON.html" ><b>SORT_ON N</b></a> : démarre le tri automatique de l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/STRETCH_OFF.html" ><b>STRETCH_OFF N</b></a> : arrête le redimensionnement automatique de l&rsquo;image visualisée par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/STRETCH_ON.html" ><b>STRETCH_ON N</b></a> : démarre le redimensionnement automatique de l&rsquo;image visualisée par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/TEXT.html" ><b>TEXT N,T</b></a> : définit le texte T que l&rsquo;objet système numéro N visualise</li>
-<li><a href="./Keywords/TEXT%24().html" ><b>TEXT$(N)</b></a> : retourne le texte visualisé par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/TEXT_HEIGHT().html" ><b>TEXT_HEIGHT(T,N)</b></a> : retourne la hauteur du texte T s&rsquo;il était visualisé par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/TEXT_WIDTH().html" ><b>TEXT_WIDTH(T,N)</b></a> : retourne la largeur du texte T s&rsquo;il était visualisé par l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/TIMER_INTERVAL.html" ><b>TIMER_INTERVAL N,P</b></a> : change la période de déclenchement de l&rsquo;objet système TIMER numéro N</li>
-<li><a href="./Keywords/TIMER_OFF.html" ><b>TIMER_OFF N</b></a> : rend inactif l&rsquo;objet système TIMER numéro N</li>
+<li><a href="./Keywords/SECRET_OFF.html" ><b>SECRET_OFF N</b></a> : l'objet système numéro N affiche son texte en clair</li>
+<li><a href="./Keywords/SECRET_ON.html" ><b>SECRET_ON N</b></a> : l'objet système numéro N affiche son texte sous forme d'étoiles</li>
+<li><a href="./Keywords/SELECT_READ%24().html" ><b>SELECT_READ$(N)</b></a> : retourne le texte sélectionné de l'objet système numéro N</li>
+<li><a href="./Keywords/SELECT_TEXT.html" ><b>SELECT_TEXT N,P,C</b></a> : sélectionne C caractères à partir de la position P dans l'objet système numéro N</li>
+<li><a href="./Keywords/SHOW.html" ><b>SHOW N</b></a> : rend visible l'objet système numéro N</li>
+<li><a href="./Keywords/SHOW().html" ><b>SHOW(N)</b></a> : retourne 1 si l'objet système numéro N est visible, 0 sinon</li>
+<li><a href="./Keywords/SORT.html" ><b>SORT N</b></a> : trie le contenu de l'objet système numéro N</li>
+<li><a href="./Keywords/SORT_OFF.html" ><b>SORT_OFF N</b></a> : arrête le tri automatique de l'objet système numéro N</li>
+<li><a href="./Keywords/SORT_ON.html" ><b>SORT_ON N</b></a> : démarre le tri automatique de l'objet système numéro N</li>
+<li><a href="./Keywords/STRETCH_OFF.html" ><b>STRETCH_OFF N</b></a> : arrête le redimensionnement automatique de l'image visualisée par l'objet système numéro N</li>
+<li><a href="./Keywords/STRETCH_ON.html" ><b>STRETCH_ON N</b></a> : démarre le redimensionnement automatique de l'image visualisée par l'objet système numéro N</li>
+<li><a href="./Keywords/TEXT.html" ><b>TEXT N,T</b></a> : définit le texte T que l'objet système numéro N visualise</li>
+<li><a href="./Keywords/TEXT%24().html" ><b>TEXT$(N)</b></a> : retourne le texte visualisé par l'objet système numéro N</li>
+<li><a href="./Keywords/TEXT_HEIGHT().html" ><b>TEXT_HEIGHT(T,N)</b></a> : retourne la hauteur du texte T s'il était visualisé par l'objet système numéro N</li>
+<li><a href="./Keywords/TEXT_WIDTH().html" ><b>TEXT_WIDTH(T,N)</b></a> : retourne la largeur du texte T s'il était visualisé par l'objet système numéro N</li>
+<li><a href="./Keywords/TIMER_INTERVAL.html" ><b>TIMER_INTERVAL N,P</b></a> : change la période de déclenchement de l'objet système TIMER numéro N</li>
+<li><a href="./Keywords/TIMER_OFF.html" ><b>TIMER_OFF N</b></a> : rend inactif l'objet système TIMER numéro N</li>
 <li><a href="./Keywords/TIMER_OFF_ALL.html" ><b>TIMER_OFF_ALL</b></a> : rend inactifs tous les objets système de type TIMER</li>
-<li><a href="./Keywords/TIMER_ON.html" ><b>TIMER_ON N</b></a> : rend actif l&rsquo;objet système TIMER numéro N</li>
-<li><a href="./Keywords/TO_BACKGROUND.html" ><b>TO_BACKGROUND N</b></a> : met en arrière plan l&rsquo;objet système numéro N (FORM)</li>
-<li><a href="./Keywords/TO_FOREGROUND.html" ><b>TO_FOREGROUND N</b></a> : met au premier plan l&rsquo;objet système numéro N (FORM)</li>
-<li><a href="./Keywords/TOP.html" ><b>TOP N,V</b></a> : positionne le bord haut de l&rsquo;objet système numéro N à V pixels de son parent</li>
-<li><a href="./Keywords/TOP().html" ><b>TOP(N)</b></a> : retourne le nombre de pixels entre le bord supérieur de l&rsquo;objet système numéro N et son parent</li>
-<li><a href="./Keywords/TRIGGER_CLICK.html" ><b>TRIGGER_CLICK N</b></a> : simule l&rsquo;événement ON_CLICK sur l&rsquo;objet système numéro N</li>
-<li><a href="./Keywords/VERTICAL.html" ><b>VERTICAL N</b></a> : met l&rsquo;objet système numéro N en position verticale</li>
-<li><a href="./Keywords/WIDTH.html" ><b>WIDTH N,V</b></a> : définit la largeur de l&rsquo;objet système numéro N à V pixels</li>
-<li><a href="./Keywords/WIDTH().html" ><b>WIDTH(N)</b></a> : retourne la largeur en pixels de l&rsquo;objet système numéro N</li>
+<li><a href="./Keywords/TIMER_ON.html" ><b>TIMER_ON N</b></a> : rend actif l'objet système TIMER numéro N</li>
+<li><a href="./Keywords/TO_BACKGROUND.html" ><b>TO_BACKGROUND N</b></a> : met en arrière plan l'objet système numéro N (FORM)</li>
+<li><a href="./Keywords/TO_FOREGROUND.html" ><b>TO_FOREGROUND N</b></a> : met au premier plan l'objet système numéro N (FORM)</li>
+<li><a href="./Keywords/TOP.html" ><b>TOP N,V</b></a> : positionne le bord haut de l'objet système numéro N à V pixels de son parent</li>
+<li><a href="./Keywords/TOP().html" ><b>TOP(N)</b></a> : retourne le nombre de pixels entre le bord supérieur de l'objet système numéro N et son parent</li>
+<li><a href="./Keywords/TRIGGER_CLICK.html" ><b>TRIGGER_CLICK N</b></a> : simule l'événement ON_CLICK sur l'objet système numéro N</li>
+<li><a href="./Keywords/VERTICAL.html" ><b>VERTICAL N</b></a> : met l'objet système numéro N en position verticale</li>
+<li><a href="./Keywords/WIDTH.html" ><b>WIDTH N,V</b></a> : définit la largeur de l'objet système numéro N à V pixels</li>
+<li><a href="./Keywords/WIDTH().html" ><b>WIDTH(N)</b></a> : retourne la largeur en pixels de l'objet système numéro N</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Dessin</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-dessin" style="display: none;">
+      <h2 class="category-heading">16 - Dessin</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/2D_CIRCLE.html" ><b>2D_CIRCLE X,Y,R</b></a> : dessine un cercle de centre (X,Y) et de rayon R</li>
-<li><a href="./Keywords/2D_CLEAR.html" ><b>2D_CLEAR</b></a> : efface le contenu de l&rsquo;objet système cible 2D</li>
+<li><a href="./Keywords/2D_CLEAR.html" ><b>2D_CLEAR</b></a> : efface le contenu de l'objet système cible 2D</li>
 <li><a href="./Keywords/2D_FILL_COLOR.html" ><b>2D_FILL_COLOR R,G,B</b></a> : définit la couleur de remplissage des figures 2D_CIRCLE et 2D_RECTANGLE</li>
 <li><a href="./Keywords/2D_FILL_CROSS.html" ><b>2D_FILL_CROSS</b></a> : définit le motif de remplissage des figures: lignes en croix</li>
 <li><a href="./Keywords/2D_FILL_DIAGONAL_CROSS.html" ><b>2D_FILL_DIAGONAL_CROSS</b></a> : définit le motif de remplissage des figures: lignes croisées diagonales</li>
@@ -594,9 +761,9 @@
 <li><a href="./Keywords/2D_FILL_ON.html" ><b>2D_FILL_ON</b></a> : les formes futures 2D_CIRCLE et 2D_RECTANGLE seront remplies avec la couleur définie par 2D_FILL_COLOR</li>
 <li><a href="./Keywords/2D_FILL_SOLID.html" ><b>2D_FILL_SOLID</b></a> : définit le motif de remplissage des figures: plein</li>
 <li><a href="./Keywords/2D_FILL_VERTICAL.html" ><b>2D_FILL_VERTICAL</b></a> : définit le motif de remplissage des figures: lignes verticales</li>
-<li><a href="./Keywords/2D_FLOOD.html" ><b>2D_FLOOD X,Y,R,G,B</b></a> : peint une surface à partir d&rsquo;un point</li>
-<li><a href="./Keywords/2D_IMAGE_COPY.html" ><b>2D_IMAGE_COPY N,X1,Y1,X2,Y2</b></a> : copie la zone définie par les points (X1,Y1) et (X2,Y2) dans l&rsquo;IMAGE numéro N</li>
-<li><a href="./Keywords/2D_IMAGE_PASTE.html" ><b>2D_IMAGE_PASTE N,X,Y</b></a> : recopie l&rsquo;image de l&rsquo;objet numéro N vers le point (X,Y)</li>
+<li><a href="./Keywords/2D_FLOOD.html" ><b>2D_FLOOD X,Y,R,G,B</b></a> : peint une surface à partir d'un point</li>
+<li><a href="./Keywords/2D_IMAGE_COPY.html" ><b>2D_IMAGE_COPY N,X1,Y1,X2,Y2</b></a> : copie la zone définie par les points (X1,Y1) et (X2,Y2) dans l'IMAGE numéro N</li>
+<li><a href="./Keywords/2D_IMAGE_PASTE.html" ><b>2D_IMAGE_PASTE N,X,Y</b></a> : recopie l'image de l'objet numéro N vers le point (X,Y)</li>
 <li><a href="./Keywords/2D_LINE.html" ><b>2D_LINE X1,Y1,X2,Y2</b></a> : dessine une ligne entre les points (X1,Y1) et (X2,Y2)</li>
 <li><a href="./Keywords/2D_PEN_COLOR.html" ><b>2D_PEN_COLOR R,G,B</b></a> : définit la couleur du tracé</li>
 <li><a href="./Keywords/2D_PEN_DASH.html" ><b>2D_PEN_DASH</b></a> : définit le style du tracé: série de traits</li>
@@ -606,108 +773,115 @@
 <li><a href="./Keywords/2D_PEN_SOLID.html" ><b>2D_PEN_SOLID</b></a> : définit le style du tracé: plein</li>
 <li><a href="./Keywords/2D_PEN_WIDTH.html" ><b>2D_PEN_WIDTH W</b></a> : définit la largeur du tracé</li>
 <li><a href="./Keywords/2D_POINT.html" ><b>2D_POINT X,Y</b></a> : dessine le point (X,Y)</li>
-<li><a href="./Keywords/2D_POLY_FROM.html" ><b>2D_POLY_FROM X,Y</b></a> : définit la position actuelle du tracé d&rsquo;une ligne ou d&rsquo;une polyline</li>
+<li><a href="./Keywords/2D_POLY_FROM.html" ><b>2D_POLY_FROM X,Y</b></a> : définit la position actuelle du tracé d'une ligne ou d'une polyline</li>
 <li><a href="./Keywords/2D_POLY_TO.html" ><b>2D_POLY_TO X,Y</b></a> : dessine une ligne de la position actuelle vers (X,Y), puis (X,Y) devient la position actuelle</li>
 <li><a href="./Keywords/2D_RECTANGLE.html" ><b>2D_RECTANGLE X1,Y1,X2,Y2</b></a> : dessine un rectangle entre les 2 points (X1,Y1) et (X2,Y2)</li>
-<li><a href="./Keywords/CLS.html" ><b>CLS</b></a> : efface le contenu de l&rsquo;objet système cible 2D (comme 2d_clear)</li>
+<li><a href="./Keywords/CLS.html" ><b>CLS</b></a> : efface le contenu de l'objet système cible 2D (comme 2d_clear)</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Objets 3D</h3>
-<ul>
+    <div class="faq-category-section" id="cat-objets-3d" style="display: none;">
+      <h2 class="category-heading">17 - Objets 3D</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/3D_ACTOR.html" ><b>3D_ACTOR N</b></a> : crée un acteur (objet 3D au format MD2) et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_BOX.html" ><b>3D_BOX N,W,H,D</b></a> : crée une boîte avec la largeur W, la hauteur H, la profondeur D et lui donne le numéro N comme référence</li>
-<li><a href="./Keywords/3D_CHAIN.html" ><b>3D_CHAIN N,P</b></a> : chaîne l&rsquo;objet 3D numéro N à l&rsquo;objet 3D numéro P</li>
-<li><a href="./Keywords/3D_CHAIN_BREAK.html" ><b>3D_CHAIN_BREAK N,P</b></a> : rompt le chaînage de l&rsquo;objet 3D numéro N à l&rsquo;objet 3D numéro P</li>
-<li><a href="./Keywords/3D_COLLISION_AS_CUBE.html" ><b>3D_COLLISION_AS_CUBE N</b></a> : pour les collisions, l&rsquo;objet 3D numéro N se comporte comme son cube englobant</li>
-<li><a href="./Keywords/3D_COLLISION_AS_ELLIPSOID.html" ><b>3D_COLLISION_AS_ELLIPSOID N</b></a> : pour les collisions, l&rsquo;objet 3D numéro N se comporte comme son ellipsoïde englobant</li>
-<li><a href="./Keywords/3D_COLLISION_AS_FACES.html" ><b>3D_COLLISION_AS_FACES N</b></a> : pour les collisions, l&rsquo;objet 3D numéro N utilise ses faces</li>
-<li><a href="./Keywords/3D_COLLISION_AS_POINT.html" ><b>3D_COLLISION_AS_POINT N</b></a> : pour les collisions, l&rsquo;objet 3D numéro N est un point</li>
-<li><a href="./Keywords/3D_COLLISION_AS_SPHERE.html" ><b>3D_COLLISION_AS_SPHERE N</b></a> : pour les collisions, l&rsquo;objet 3D numéro N se comporte comme sa sphère englobante</li>
-<li><a href="./Keywords/3D_COLOR.html" ><b>3D_COLOR N,R,G,B</b></a> : modifie la couleur de l&rsquo;objet 3D numéro N</li>
+<li><a href="./Keywords/3D_CHAIN.html" ><b>3D_CHAIN N,P</b></a> : chaîne l'objet 3D numéro N à l'objet 3D numéro P</li>
+<li><a href="./Keywords/3D_CHAIN_BREAK.html" ><b>3D_CHAIN_BREAK N,P</b></a> : rompt le chaînage de l'objet 3D numéro N à l'objet 3D numéro P</li>
+<li><a href="./Keywords/3D_COLLISION_AS_CUBE.html" ><b>3D_COLLISION_AS_CUBE N</b></a> : pour les collisions, l'objet 3D numéro N se comporte comme son cube englobant</li>
+<li><a href="./Keywords/3D_COLLISION_AS_ELLIPSOID.html" ><b>3D_COLLISION_AS_ELLIPSOID N</b></a> : pour les collisions, l'objet 3D numéro N se comporte comme son ellipsoïde englobant</li>
+<li><a href="./Keywords/3D_COLLISION_AS_FACES.html" ><b>3D_COLLISION_AS_FACES N</b></a> : pour les collisions, l'objet 3D numéro N utilise ses faces</li>
+<li><a href="./Keywords/3D_COLLISION_AS_POINT.html" ><b>3D_COLLISION_AS_POINT N</b></a> : pour les collisions, l'objet 3D numéro N est un point</li>
+<li><a href="./Keywords/3D_COLLISION_AS_SPHERE.html" ><b>3D_COLLISION_AS_SPHERE N</b></a> : pour les collisions, l'objet 3D numéro N se comporte comme sa sphère englobante</li>
+<li><a href="./Keywords/3D_COLOR.html" ><b>3D_COLOR N,R,G,B</b></a> : modifie la couleur de l'objet 3D numéro N</li>
 <li><a href="./Keywords/3D_CONE.html" ><b>3D_CONE N,H,R</b></a> : crée un CONE avec la hauteur H et le rayon R et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_CUBE.html" ><b>3D_CUBE N,S</b></a> : crée un CUBE de côté S et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_CYLINDER.html" ><b>3D_CYLINDER N,H,TR,LR</b></a> : crée un CYLINDRE de hauteur H, de rayon du côté haut TR, de rayon du côté bas LR et lui donne le numéro N comme référence</li>
-<li><a href="./Keywords/3D_DELETE.html" ><b>3D_DELETE N</b></a> : supprime l&rsquo;objet 3D numéro N</li>
+<li><a href="./Keywords/3D_DELETE.html" ><b>3D_DELETE N</b></a> : supprime l'objet 3D numéro N</li>
 <li><a href="./Keywords/3D_DELETE_ALL.html" ><b>3D_DELETE_ALL</b></a> : supprime tous les objets 3D</li>
 <li><a href="./Keywords/3D_DODECAHEDRON.html" ><b>3D_DODECAHEDRON N</b></a> : crée un DODECAHEDRE et lui donne le numéro N comme référence</li>
-<li><a href="./Keywords/3D_HIDE.html" ><b>3D_HIDE N</b></a> : rend invisible l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/3D_IMAGE_TEXTURE.html" ><b>3D_IMAGE_TEXTURE N1,N2</b></a> : applique sur l&rsquo;objet 3D numéro N1 la texture de l&rsquo;objet IMAGE numéro N2</li>
+<li><a href="./Keywords/3D_HIDE.html" ><b>3D_HIDE N</b></a> : rend invisible l'objet 3D numéro N</li>
+<li><a href="./Keywords/3D_IMAGE_TEXTURE.html" ><b>3D_IMAGE_TEXTURE N1,N2</b></a> : applique sur l'objet 3D numéro N1 la texture de l'objet IMAGE numéro N2</li>
 <li><a href="./Keywords/3D_LINE.html" ><b>3D_LINE N,X,Y,Z</b></a> : crée une LIGNE 3D à partir du point (X,Y,Z) et lui donne le numéro N comme référence, ou ajoute le point (X,Y,Z) à une LIGNE 3D existante</li>
-<li><a href="./Keywords/3D_LINE_WIDTH.html" ><b>3D_LINE_WIDTH N,W</b></a> : définit la largeur de l&rsquo;objet 3D_LINE numéro N</li>
-<li><a href="./Keywords/3D_LOAD_OBJECT.html" ><b>3D_LOAD_OBJECT N,F</b></a> : applique sur l&rsquo;objet 3D numéro N la structure décrite dans le fichier F (format MD2 ou 3DS)</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE.html" ><b>3D_LOAD_TEXTURE N,F</b></a> : applique sur l&rsquo;objet 3D numéro N la texture dans le fichier F</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE_BACK.html" ><b>3D_LOAD_TEXTURE_BACK N,F</b></a> : applique sur la face arrière de l&rsquo;objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE_BOTTOM.html" ><b>3D_LOAD_TEXTURE_BOTTOM N,F</b></a> : applique sur la face basse de l&rsquo;objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE_FRONT.html" ><b>3D_LOAD_TEXTURE_FRONT N,F</b></a> : applique sur la face avant de l&rsquo;objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE_LEFT.html" ><b>3D_LOAD_TEXTURE_LEFT N,F</b></a> : applique sur la face gauche de l&rsquo;objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE_RIGHT.html" ><b>3D_LOAD_TEXTURE_RIGHT N,F</b></a> : applique sur la face droite de l&rsquo;objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
-<li><a href="./Keywords/3D_LOAD_TEXTURE_TOP.html" ><b>3D_LOAD_TEXTURE_TOP N,F</b></a> : applique sur la face haute de l&rsquo;objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LINE_WIDTH.html" ><b>3D_LINE_WIDTH N,W</b></a> : définit la largeur de l'objet 3D_LINE numéro N</li>
+<li><a href="./Keywords/3D_LOAD_OBJECT.html" ><b>3D_LOAD_OBJECT N,F</b></a> : applique sur l'objet 3D numéro N la structure décrite dans le fichier F (format MD2 ou 3DS)</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE.html" ><b>3D_LOAD_TEXTURE N,F</b></a> : applique sur l'objet 3D numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE_BACK.html" ><b>3D_LOAD_TEXTURE_BACK N,F</b></a> : applique sur la face arrière de l'objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE_BOTTOM.html" ><b>3D_LOAD_TEXTURE_BOTTOM N,F</b></a> : applique sur la face basse de l'objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE_FRONT.html" ><b>3D_LOAD_TEXTURE_FRONT N,F</b></a> : applique sur la face avant de l'objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE_LEFT.html" ><b>3D_LOAD_TEXTURE_LEFT N,F</b></a> : applique sur la face gauche de l'objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE_RIGHT.html" ><b>3D_LOAD_TEXTURE_RIGHT N,F</b></a> : applique sur la face droite de l'objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
+<li><a href="./Keywords/3D_LOAD_TEXTURE_TOP.html" ><b>3D_LOAD_TEXTURE_TOP N,F</b></a> : applique sur la face haute de l'objet 3D_SKYBOX numéro N la texture dans le fichier F</li>
 <li><a href="./Keywords/3D_MESH.html" ><b>3D_MESH N</b></a> : crée un objet maillé (objet 3D au format 3DS) et lui donne le numéro N comme référence</li>
-<li><a href="./Keywords/3D_MOVE.html" ><b>3D_MOVE N,D</b></a> : bouge l&rsquo;objet 3D numéro N de la distance D dans sa direction de pointage</li>
+<li><a href="./Keywords/3D_MOVE.html" ><b>3D_MOVE N,D</b></a> : bouge l'objet 3D numéro N de la distance D dans sa direction de pointage</li>
 <li><a href="./Keywords/3D_PLANE.html" ><b>3D_PLANE N</b></a> : crée un objet 3D plan et lui donne le numéro N comme référence</li>
-<li><a href="./Keywords/3D_POINT_OBJECT.html" ><b>3D_POINT_OBJECT N,P</b></a> : pointe l&rsquo;objet 3D numéro N vers l&rsquo;objet 3D numéro P</li>
-<li><a href="./Keywords/3D_POSITION.html" ><b>3D_POSITION N,X,Y,Z</b></a> : modifie la position en (X,Y,Z) de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/3D_ROTATE.html" ><b>3D_ROTATE N,X,Y,Z</b></a> : fait tourner l&rsquo;objet 3D numéro N autour de ses axes</li>
-<li><a href="./Keywords/3D_SCALE.html" ><b>3D_SCALE N,CX,CY,CZ</b></a> : fait rétrécir ou dilater l&rsquo;objet 3D numéro N le long de ses axes</li>
-<li><a href="./Keywords/3D_SHOW.html" ><b>3D_SHOW N</b></a> : rend visible l&rsquo;objet 3D numéro N</li>
+<li><a href="./Keywords/3D_POINT_OBJECT.html" ><b>3D_POINT_OBJECT N,P</b></a> : pointe l'objet 3D numéro N vers l'objet 3D numéro P</li>
+<li><a href="./Keywords/3D_POSITION.html" ><b>3D_POSITION N,X,Y,Z</b></a> : modifie la position en (X,Y,Z) de l'objet 3D numéro N</li>
+<li><a href="./Keywords/3D_ROTATE.html" ><b>3D_ROTATE N,X,Y,Z</b></a> : fait tourner l'objet 3D numéro N autour de ses axes</li>
+<li><a href="./Keywords/3D_SCALE.html" ><b>3D_SCALE N,CX,CY,CZ</b></a> : fait rétrécir ou dilater l'objet 3D numéro N le long de ses axes</li>
+<li><a href="./Keywords/3D_SHOW.html" ><b>3D_SHOW N</b></a> : rend visible l'objet 3D numéro N</li>
 <li><a href="./Keywords/3D_SKYBOX.html" ><b>3D_SKYBOX N</b></a> : crée un SKYBOX et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_SPHERE.html" ><b>3D_SPHERE N,R</b></a> : crée une SPHERE de rayon R et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_TEAPOT.html" ><b>3D_TEAPOT N</b></a> : crée une THÉIÈRE et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_TEXT.html" ><b>3D_TEXT N,T</b></a> : crée un TEXTE 3D et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/3D_TEXT_CHANGE.html" ><b>3D_TEXT_CHANGE N,S</b></a> : modifie le texte visualisé dans un texte 3D</li>
 <li><a href="./Keywords/3D_TORUS.html" ><b>3D_TORUS N,OR,IR</b></a> : crée un TORE de rayon extérieur OR et de rayon intérieur IR et lui donne le numéro N comme référence</li>
-<li><a href="./Keywords/3D_TRANSPARENT.html" ><b>3D_TRANSPARENT N,T</b></a> : modifie la transparence (de 0 à 255) de l&rsquo;objet 3D numéro N</li>
+<li><a href="./Keywords/3D_TRANSPARENT.html" ><b>3D_TRANSPARENT N,T</b></a> : modifie la transparence (de 0 à 255) de l'objet 3D numéro N</li>
 <li><a href="./Keywords/3D_U_TILE.html" ><b>3D_U_TILE N,T</b></a> : modifie le nombre de tuiles sur U du 3D_PLANE numéro N</li>
 <li><a href="./Keywords/3D_V_TILE.html" ><b>3D_V_TILE N,T</b></a> : modifie le nombre de tuiles sur V du 3D_PLANE numéro N</li>
-<li><a href="./Keywords/3D_X_POSITION.html" ><b>3D_X_POSITION N,X</b></a> : modifie la coordonnée en X de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/3D_X_ROTATE.html" ><b>3D_X_ROTATE N,X</b></a> : fait tourner l&rsquo;objet 3D numéro N de X degrés autour de son axe X</li>
-<li><a href="./Keywords/3D_X_SCALE.html" ><b>3D_X_SCALE N,CX</b></a> : fait rétrécir ou dilater l&rsquo;objet 3D numéro N de CX le long de son axe X</li>
-<li><a href="./Keywords/3D_Y_POSITION.html" ><b>3D_Y_POSITION N,Y</b></a> : modifie la coordonnée en Y de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/3D_Y_ROTATE.html" ><b>3D_Y_ROTATE N,Y</b></a> : fait tourner l&rsquo;objet 3D numéro N de Y degrés autour de son axe Y</li>
-<li><a href="./Keywords/3D_Y_SCALE.html" ><b>3D_Y_SCALE N,CY</b></a> : fait rétrécir ou dilater l&rsquo;objet 3D numéro N de CY le long de son axe Y</li>
-<li><a href="./Keywords/3D_Z_POSITION.html" ><b>3D_Z_POSITION N,Z</b></a> : modifie la coordonnée en Z de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/3D_Z_ROTATE.html" ><b>3D_Z_ROTATE N,Z</b></a> : fait tourner l&rsquo;objet 3D numéro N de Z degrés autour de son axe Z</li>
-<li><a href="./Keywords/3D_Z_SCALE.html" ><b>3D_Z_SCALE N,CZ</b></a> : fait rétrécir ou dilater l&rsquo;objet 3D numéro N de CZ le long de son axe Z</li>
+<li><a href="./Keywords/3D_X_POSITION.html" ><b>3D_X_POSITION N,X</b></a> : modifie la coordonnée en X de l'objet 3D numéro N</li>
+<li><a href="./Keywords/3D_X_ROTATE.html" ><b>3D_X_ROTATE N,X</b></a> : fait tourner l'objet 3D numéro N de X degrés autour de son axe X</li>
+<li><a href="./Keywords/3D_X_SCALE.html" ><b>3D_X_SCALE N,CX</b></a> : fait rétrécir ou dilater l'objet 3D numéro N de CX le long de son axe X</li>
+<li><a href="./Keywords/3D_Y_POSITION.html" ><b>3D_Y_POSITION N,Y</b></a> : modifie la coordonnée en Y de l'objet 3D numéro N</li>
+<li><a href="./Keywords/3D_Y_ROTATE.html" ><b>3D_Y_ROTATE N,Y</b></a> : fait tourner l'objet 3D numéro N de Y degrés autour de son axe Y</li>
+<li><a href="./Keywords/3D_Y_SCALE.html" ><b>3D_Y_SCALE N,CY</b></a> : fait rétrécir ou dilater l'objet 3D numéro N de CY le long de son axe Y</li>
+<li><a href="./Keywords/3D_Z_POSITION.html" ><b>3D_Z_POSITION N,Z</b></a> : modifie la coordonnée en Z de l'objet 3D numéro N</li>
+<li><a href="./Keywords/3D_Z_ROTATE.html" ><b>3D_Z_ROTATE N,Z</b></a> : fait tourner l'objet 3D numéro N de Z degrés autour de son axe Z</li>
+<li><a href="./Keywords/3D_Z_SCALE.html" ><b>3D_Z_SCALE N,CZ</b></a> : fait rétrécir ou dilater l'objet 3D numéro N de CZ le long de son axe Z</li>
 <li><a href="./Keywords/CAM_MOVE.html" ><b>CAM_MOVE N,D</b></a> : bouge la caméra de la distance D dans sa direction de pointage</li>
-<li><a href="./Keywords/CAM_PITCH.html" ><b>CAM_PITCH A</b></a> : tourne la caméra autour de son axe X de l&rsquo;angle A (en degrés)</li>
+<li><a href="./Keywords/CAM_PITCH.html" ><b>CAM_PITCH A</b></a> : tourne la caméra autour de son axe X de l'angle A (en degrés)</li>
 <li><a href="./Keywords/CAM_POSITION.html" ><b>CAM_POSITION X,Y,Z</b></a> : modifie la position en (X,Y,Z) de la caméra 3D</li>
-<li><a href="./Keywords/CAM_ROLL.html" ><b>CAM_ROLL A</b></a> : tourne la caméra autour de son axe Z de l&rsquo;angle A (en degrés)</li>
-<li><a href="./Keywords/CAM_TURN.html" ><b>CAM_TURN A</b></a> : tourne la caméra autour de son axe Y de l&rsquo;angle A (en degrés)</li>
+<li><a href="./Keywords/CAM_ROLL.html" ><b>CAM_ROLL A</b></a> : tourne la caméra autour de son axe Z de l'angle A (en degrés)</li>
+<li><a href="./Keywords/CAM_TURN.html" ><b>CAM_TURN A</b></a> : tourne la caméra autour de son axe Y de l'angle A (en degrés)</li>
 <li><a href="./Keywords/CAM_X_POSITION.html" ><b>CAM_X_POSITION X</b></a> : modifie la coordonnée en X de la caméra 3D</li>
 <li><a href="./Keywords/CAM_Y_POSITION.html" ><b>CAM_Y_POSITION Y</b></a> : modifie la coordonnée en Y de la caméra 3D</li>
 <li><a href="./Keywords/CAM_Z_POSITION.html" ><b>CAM_Z_POSITION Z</b></a> : modifie la coordonnée en Z de la caméra 3D</li>
-<li><a href="./Keywords/FOG_COLOR.html" ><b>FOG_COLOR R,G,B</b></a> : modifie la couleur du brouillard dans l&rsquo;objet cible 3D (SCENE3D)</li>
-<li><a href="./Keywords/FOG_DISTANCE_MAX.html" ><b>FOG_DISTANCE_MAX D</b></a> : modifie la distance maximale du brouillard dans l&rsquo;objet cible 3D (SCENE3D)</li>
-<li><a href="./Keywords/FOG_DISTANCE_MIN.html" ><b>FOG_DISTANCE_MIN D</b></a> : modifie la distance minimale du brouillard dans l&rsquo;objet cible 3D (SCENE3D)</li>
-<li><a href="./Keywords/FOG_OFF.html" ><b>FOG_OFF</b></a> : arrête l&rsquo;effet de brouillard dans l&rsquo;objet cible 3D (SCENE3D)</li>
-<li><a href="./Keywords/FOG_ON.html" ><b>FOG_ON</b></a> : démarre l&rsquo;effet de brouillard dans l&rsquo;objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/FOG_COLOR.html" ><b>FOG_COLOR R,G,B</b></a> : modifie la couleur du brouillard dans l'objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/FOG_DISTANCE_MAX.html" ><b>FOG_DISTANCE_MAX D</b></a> : modifie la distance maximale du brouillard dans l'objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/FOG_DISTANCE_MIN.html" ><b>FOG_DISTANCE_MIN D</b></a> : modifie la distance minimale du brouillard dans l'objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/FOG_OFF.html" ><b>FOG_OFF</b></a> : arrête l'effet de brouillard dans l'objet cible 3D (SCENE3D)</li>
+<li><a href="./Keywords/FOG_ON.html" ><b>FOG_ON</b></a> : démarre l'effet de brouillard dans l'objet cible 3D (SCENE3D)</li>
 <li><a href="./Keywords/LIGHT_POSITION.html" ><b>LIGHT_POSITION X,Y,Z</b></a> : modifie la position en (X,Y,Z) de la lumière 3D</li>
 <li><a href="./Keywords/LIGHT_X_POSITION.html" ><b>LIGHT_X_POSITION X</b></a> : modifie la coordonnée en X de la lumière 3D</li>
 <li><a href="./Keywords/LIGHT_Y_POSITION.html" ><b>LIGHT_Y_POSITION Y</b></a> : modifie la coordonnée en Y de la lumière 3D</li>
 <li><a href="./Keywords/LIGHT_Z_POSITION.html" ><b>LIGHT_Z_POSITION Z</b></a> : modifie la coordonnée en Z de la lumière 3D</li>
-<li><a href="./Keywords/NUMBER_3D_OBJECTS.html" ><b>NUMBER_3D_OBJECTS</b></a> : retourne le nombre d&rsquo;objets 3D</li>
+<li><a href="./Keywords/NUMBER_3D_OBJECTS.html" ><b>NUMBER_3D_OBJECTS</b></a> : retourne le nombre d'objets 3D</li>
 <li><a href="./Keywords/O3D_COLLISION().html" ><b>O3D_COLLISION(N1,N2)</b></a> : retourne 1 si les objets 3D numéros N1 et N2 sont en collision, 0 sinon</li>
-<li><a href="./Keywords/O3D_OBJECT_EXISTS().html" ><b>O3D_OBJECT_EXISTS(N)</b></a> : retourne 1 si l&rsquo;objet 3D numéro N existe, 0 sinon</li>
-<li><a href="./Keywords/O3D_OBJECT_TYPE().html" ><b>O3D_OBJECT_TYPE(N)</b></a> : retourne le type de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/O3D_X_POSITION().html" ><b>O3D_X_POSITION(N)</b></a> : retourne la position sur l&rsquo;axe X de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/O3D_X_ROTATE().html" ><b>O3D_X_ROTATE(N)</b></a> : retourne l&rsquo;angle de rotation de l&rsquo;objet 3D numéro N autour de son axe X</li>
-<li><a href="./Keywords/O3D_X_SCALE().html" ><b>O3D_X_SCALE(N)</b></a> : retourne le coefficient d&rsquo;échelle de l&rsquo;objet 3D numéro N le long de son axe X</li>
-<li><a href="./Keywords/O3D_Y_POSITION().html" ><b>O3D_Y_POSITION(N)</b></a> : retourne la position sur l&rsquo;axe Y de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/O3D_Y_ROTATE().html" ><b>O3D_Y_ROTATE(N)</b></a> : retourne l&rsquo;angle de rotation de l&rsquo;objet 3D numéro N autour de son axe Y</li>
-<li><a href="./Keywords/O3D_Y_SCALE().html" ><b>O3D_Y_SCALE(N)</b></a> : retourne le coefficient d&rsquo;échelle de l&rsquo;objet 3D numéro N le long de son axe Y</li>
-<li><a href="./Keywords/O3D_Z_POSITION().html" ><b>O3D_Z_POSITION(N)</b></a> : retourne la position sur l&rsquo;axe Z de l&rsquo;objet 3D numéro N</li>
-<li><a href="./Keywords/O3D_Z_ROTATE().html" ><b>O3D_Z_ROTATE(N)</b></a> : retourne l&rsquo;angle de rotation de l&rsquo;objet 3D numéro N autour de son axe Z</li>
-<li><a href="./Keywords/O3D_Z_SCALE().html" ><b>O3D_Z_SCALE(N)</b></a> : retourne le coefficient d&rsquo;échelle de l&rsquo;objet 3D numéro N le long de son axe Z</li>
-<li><a href="./Keywords/POINT_OBJECT.html" ><b>POINT_OBJECT N</b></a> : pointe la caméra vers l&rsquo;objet 3D numéro N</li>
+<li><a href="./Keywords/O3D_OBJECT_EXISTS().html" ><b>O3D_OBJECT_EXISTS(N)</b></a> : retourne 1 si l'objet 3D numéro N existe, 0 sinon</li>
+<li><a href="./Keywords/O3D_OBJECT_TYPE().html" ><b>O3D_OBJECT_TYPE(N)</b></a> : retourne le type de l'objet 3D numéro N</li>
+<li><a href="./Keywords/O3D_X_POSITION().html" ><b>O3D_X_POSITION(N)</b></a> : retourne la position sur l'axe X de l'objet 3D numéro N</li>
+<li><a href="./Keywords/O3D_X_ROTATE().html" ><b>O3D_X_ROTATE(N)</b></a> : retourne l'angle de rotation de l'objet 3D numéro N autour de son axe X</li>
+<li><a href="./Keywords/O3D_X_SCALE().html" ><b>O3D_X_SCALE(N)</b></a> : retourne le coefficient d'échelle de l'objet 3D numéro N le long de son axe X</li>
+<li><a href="./Keywords/O3D_Y_POSITION().html" ><b>O3D_Y_POSITION(N)</b></a> : retourne la position sur l'axe Y de l'objet 3D numéro N</li>
+<li><a href="./Keywords/O3D_Y_ROTATE().html" ><b>O3D_Y_ROTATE(N)</b></a> : retourne l'angle de rotation de l'objet 3D numéro N autour de son axe Y</li>
+<li><a href="./Keywords/O3D_Y_SCALE().html" ><b>O3D_Y_SCALE(N)</b></a> : retourne le coefficient d'échelle de l'objet 3D numéro N le long de son axe Y</li>
+<li><a href="./Keywords/O3D_Z_POSITION().html" ><b>O3D_Z_POSITION(N)</b></a> : retourne la position sur l'axe Z de l'objet 3D numéro N</li>
+<li><a href="./Keywords/O3D_Z_ROTATE().html" ><b>O3D_Z_ROTATE(N)</b></a> : retourne l'angle de rotation de l'objet 3D numéro N autour de son axe Z</li>
+<li><a href="./Keywords/O3D_Z_SCALE().html" ><b>O3D_Z_SCALE(N)</b></a> : retourne le coefficient d'échelle de l'objet 3D numéro N le long de son axe Z</li>
+<li><a href="./Keywords/POINT_OBJECT.html" ><b>POINT_OBJECT N</b></a> : pointe la caméra vers l'objet 3D numéro N</li>
 <li><a href="./Keywords/POINT_POSITION.html" ><b>POINT_POSITION X,Y,Z</b></a> : modifie la position en (X,Y,Z) du point visé par la caméra 3D</li>
 <li><a href="./Keywords/POINT_X_POSITION.html" ><b>POINT_X_POSITION X</b></a> : modifie la coordonnée en X du point visé par la caméra 3D</li>
 <li><a href="./Keywords/POINT_Y_POSITION.html" ><b>POINT_Y_POSITION Y</b></a> : modifie la coordonnée en Y du point visé par la caméra 3D</li>
 <li><a href="./Keywords/POINT_Z_POSITION.html" ><b>POINT_Z_POSITION Z</b></a> : modifie la coordonnée en Z du point visé par la caméra 3D</li>
 </ul>
+      </div>
+    </div>
 
-<h3>SPRITE</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-sprite" style="display: none;">
+      <h2 class="category-heading">18 - SPRITE</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/NUMBER_SPRITES.html" ><b>NUMBER_SPRITES</b></a> : retourne le nombre de SPRITES</li>
 <li><a href="./Keywords/SPRITE.html" ><b>SPRITE N</b></a> : crée un SPRITE et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/SPRITE_CREATE_HIDE.html" ><b>SPRITE_CREATE_HIDE</b></a> : les prochains SPRITEs créés ne seront pas visibles</li>
@@ -715,15 +889,15 @@
 <li><a href="./Keywords/SPRITE_DELETE.html" ><b>SPRITE_DELETE N</b></a> : supprime le SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_DELETE_ALL.html" ><b>SPRITE_DELETE_ALL</b></a> : supprime tous les SPRITES</li>
 <li><a href="./Keywords/SPRITE_EXISTS().html" ><b>SPRITE_EXISTS(N)</b></a> : retourne 1 si le SPRITE numéro N existe, 0 sinon</li>
-<li><a href="./Keywords/SPRITE_FILE_LOAD.html" ><b>SPRITE_FILE_LOAD N,F</b></a> : charge l&rsquo;image du fichier F (format BMP) dans le SPRITE numéro N</li>
+<li><a href="./Keywords/SPRITE_FILE_LOAD.html" ><b>SPRITE_FILE_LOAD N,F</b></a> : charge l'image du fichier F (format BMP) dans le SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_HIDE.html" ><b>SPRITE_HIDE N</b></a> : rend invisible le SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_HIDE_ALL.html" ><b>SPRITE_HIDE_ALL</b></a> : rend invisibles tous les SPRITEs</li>
-<li><a href="./Keywords/SPRITE_IMAGE_LOAD.html" ><b>SPRITE_IMAGE_LOAD N1,N2</b></a> : charge l&rsquo;image de l&rsquo;objet numéro N2 dans le SPRITE numéro N1</li>
+<li><a href="./Keywords/SPRITE_IMAGE_LOAD.html" ><b>SPRITE_IMAGE_LOAD N1,N2</b></a> : charge l'image de l'objet numéro N2 dans le SPRITE numéro N1</li>
 <li><a href="./Keywords/SPRITE_POSITION.html" ><b>SPRITE_POSITION N,X,Y</b></a> : modifie les coordonnées X et Y du SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_SCALE.html" ><b>SPRITE_SCALE N,CX,CY</b></a> : fait rétrécir ou dilater la largeur et la hauteur du SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_SHOW.html" ><b>SPRITE_SHOW N</b></a> : rend visible le SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_SHOW_ALL.html" ><b>SPRITE_SHOW_ALL</b></a> : rend visibles tous les SPRITEs</li>
-<li><a href="./Keywords/SPRITE_TARGET_IS.html" ><b>SPRITE_TARGET_IS N</b></a> : désigne l&rsquo;objet numéro N (SCENE2D) comme récepteur des SPRITES</li>
+<li><a href="./Keywords/SPRITE_TARGET_IS.html" ><b>SPRITE_TARGET_IS N</b></a> : désigne l'objet numéro N (SCENE2D) comme récepteur des SPRITES</li>
 <li><a href="./Keywords/SPRITE_X_POSITION.html" ><b>SPRITE_X_POSITION N,X</b></a> : modifie la coordonnée en X du SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_X_POSITION().html" ><b>SPRITE_X_POSITION(N)</b></a> : retourne la coordonnée en X du SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_X_SCALE.html" ><b>SPRITE_X_SCALE N,CX</b></a> : fait rétrécir ou dilater la largeur du SPRITE numéro N</li>
@@ -731,20 +905,26 @@
 <li><a href="./Keywords/SPRITE_Y_POSITION().html" ><b>SPRITE_Y_POSITION(N)</b></a> : retourne la coordonnée en Y du SPRITE numéro N</li>
 <li><a href="./Keywords/SPRITE_Y_SCALE.html" ><b>SPRITE_Y_SCALE N,CY</b></a> : fait rétrécir ou dilater la hauteur du SPRITE numéro N</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Entrées-Sorties</h3>
-
-<ul>
-<li><a href="./Keywords/MAIL_SEND.html" ><b>MAIL_SEND A,S,B</b></a> : envoie un e-mail d&rsquo;objet S et de texte B à l&rsquo;adresse A</li>
-<li><a href="./Keywords/PARALLEL_INP().html" ><b>PARALLEL_INP(A)</b></a> : retourne la valeur lue sur le port parallèle d&rsquo;adresse A</li>
-<li><a href="./Keywords/PARALLEL_OFF.html" ><b>PARALLEL_OFF</b></a> : arrête les opérations d&rsquo;entrées-sorties sur port parallèle</li>
-<li><a href="./Keywords/PARALLEL_ON.html" ><b>PARALLEL_ON</b></a> : démarre les opérations d&rsquo;entrées-sorties sur port parallèle</li>
-<li><a href="./Keywords/PARALLEL_OUT.html" ><b>PARALLEL_OUT A,D</b></a> : écrit la donnée D sur le port parallèle d&rsquo;adresse A</li>
+    <div class="faq-category-section" id="cat-entrees-sorties" style="display: none;">
+      <h2 class="category-heading">19 - Entrées-Sorties</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/MAIL_SEND.html" ><b>MAIL_SEND A,S,B</b></a> : envoie un e-mail d'objet S et de texte B à l'adresse A</li>
+<li><a href="./Keywords/PARALLEL_INP().html" ><b>PARALLEL_INP(A)</b></a> : retourne la valeur lue sur le port parallèle d'adresse A</li>
+<li><a href="./Keywords/PARALLEL_OFF.html" ><b>PARALLEL_OFF</b></a> : arrête les opérations d'entrées-sorties sur port parallèle</li>
+<li><a href="./Keywords/PARALLEL_ON.html" ><b>PARALLEL_ON</b></a> : démarre les opérations d'entrées-sorties sur port parallèle</li>
+<li><a href="./Keywords/PARALLEL_OUT.html" ><b>PARALLEL_OUT A,D</b></a> : écrit la donnée D sur le port parallèle d'adresse A</li>
 </ul>
+      </div>
+    </div>
 
-<h3>Excel</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-excel" style="display: none;">
+      <h2 class="category-heading">20 - Excel</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/EXCEL_FILE_CLOSE.html" ><b>EXCEL_FILE_CLOSE N</b></a> : ferme le fichier (feuille) numéro N par Microsoft Excel</li>
 <li><a href="./Keywords/EXCEL_FILE_NEW.html" ><b>EXCEL_FILE_NEW N</b></a> : crée un nouveau fichier (feuille) et lui donne le numéro N comme référence</li>
 <li><a href="./Keywords/EXCEL_FILE_OPEN.html" ><b>EXCEL_FILE_OPEN N,F</b></a> : ouvre le fichier (feuille) existant F et lui donne le numéro N comme référence</li>
@@ -753,10 +933,13 @@
 <li><a href="./Keywords/EXCEL_STOP.html" ><b>EXCEL_STOP</b></a> : arrête Microsoft Excel</li>
 <li><a href="./Keywords/EXCEL_WRITE.html" ><b>EXCEL_WRITE S1,S2</b></a> : écrit S2 dans la cellule S1 de la feuille courante avec Microsoft Excel</li>
 </ul>
+      </div>
+    </div>
 
-<h3>DLL</h3>
-
-<ul>
+    <div class="faq-category-section" id="cat-dll" style="display: none;">
+      <h2 class="category-heading">21 - DLL</h2>
+      <div class="accordion-content-inner">
+        <ul>
 <li><a href="./Keywords/DLL_CALL0().html" ><b>DLL_CALL0(F)</b></a> : appelle la fonction F de la DLL en mémoire, sans paramètre</li>
 <li><a href="./Keywords/DLL_CALL1().html" ><b>DLL_CALL1(F,P1)</b></a> : appelle la fonction F de la DLL en mémoire, avec 1 paramètre</li>
 <li><a href="./Keywords/DLL_CALL2().html" ><b>DLL_CALL2(F,P1,P2)</b></a> : appelle la fonction F de la DLL en mémoire, avec 2 paramètres</li>
@@ -767,18 +950,20 @@
 <li><a href="./Keywords/DLL_OFF.html" ><b>DLL_OFF</b></a> : libère la mémoire utilisée par une DLL</li>
 <li><a href="./Keywords/DLL_ON.html" ><b>DLL_ON D</b></a> : charge la DLL D en mémoire</li>
 </ul>
-
-<h3>Directives</h3>
-<ul>
-<li><a href="./Keywords/%23INCLUDE.html" ><b>#INCLUDE « F »</b></a> : inclut le fichier F dans le code</li>
-</ul>
-
-
-
-<p class="wp-block-paragraph"></p>
-</div>
-        </div>
       </div>
+    </div>
+
+    <div class="faq-category-section" id="cat-directives" style="display: none;">
+      <h2 class="category-heading">22 - Directives</h2>
+      <div class="accordion-content-inner">
+        <ul>
+<li><a href="./Keywords/%23INCLUDE.html" ><b>#INCLUDE « F »</b></a> : inclut le fichier F dans le code</li>
+</ul>
+      </div>
+    </div>
+
+        </div><!-- /faq-content-area -->
+      </div><!-- /faq-layout -->
     </section>
 
   </main>
@@ -814,5 +999,12 @@
 
   <!-- Scripts -->
   <script type="module" src="./assets/js/main.js"></script>
+  <script>
+    document.querySelectorAll('.faq-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        setTimeout(() => window.scrollTo({ top: 0, behavior: 'smooth' }), 0);
+      });
+    });
+  </script>
 </body>
 </html>
