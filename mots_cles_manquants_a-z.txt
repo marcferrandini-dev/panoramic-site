@@ -1,0 +1,31 @@
+# Mots-clés absents de manuel-a-z.html (comparé à liste_mots_cles.txt)
+# Date de vérification : 01/06/2026
+
+======================================================================
+RÉSULTAT
+======================================================================
+✅ manuel-a-z.html est COMPLET à 100 %.
+
+Les 2 entrées "manquantes" signalées par le script sont en réalité
+des doublons / problèmes d'encodage dans liste_mots_cles.txt pour
+le même mot-clé #INCLUDE.
+
+======================================================================
+DÉTAIL DES 2 FAUX MANQUANTS
+======================================================================
+
+1) %23INCLUDE (ligne 2 de liste_mots_cles.txt)
+   → manuel-a-z.html référence déjà %23INCLUDE.html (décodé en #INCLUDE)
+   → La ligne 1 de liste_mots_cles.txt contient déjà #INCLUDE
+   → %23INCLUDE est un doublon (encodage URL de #)
+
+2) ﻿#INCLUDE (dernière ligne de liste_mots_cles.txt, avec BOM UTF-8)
+   → Caractère BOM (U+FEFF) en début de ligne
+   → manuel-a-z.html référence déjà %23INCLUDE.html
+   → Il s'agit d'un artefact d'encodage dans le fichier liste
+
+======================================================================
+CONCLUSION
+======================================================================
+Tous les 747 mots-clés de référence sont bien présents dans manuel-a-z.html.
+Aucun mot-clé n'est réellement manquant.

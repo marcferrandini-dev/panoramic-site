@@ -1,0 +1,894 @@
+PLAN DU SITE PANORAMIC
+======================
+
+URL de base : https://www.panoramic-language.fr (ou équivalent local)
+
+────────────────────────────────────────────────────────────
+1. PAGES PRINCIPALES (navigation header)
+────────────────────────────────────────────────────────────
+
+  index.html
+  ├── Accueil du site PANORAMIC
+  │   Présentation du langage, exemples de code (bouton, clic, théière 3D),
+  │   objets système, communication externe, communauté.
+
+  documentation.html
+  ├── Hub de la documentation officielle
+  │   Accès aux manuels de référence et aux 9 chapitres thématiques.
+
+  tutoriels.html
+  ├── Hub des tutoriels et guides pas à pas
+  │   7 catégories : bases, syntaxe, GUI, événements, 3D, hardware, projets.
+
+  faq.html
+  ├── Foire Aux Questions & Conseils
+  │   5 catégories : Généralités, Monde 3D, Objets GUI, Multimédia, Divers.
+
+  programmes.html
+  ├── Réalisations de la Communauté
+  │   Galerie de 330+ programmes avec recherche, liens vers le forum.
+
+  telechargements.html
+  ├── Téléchargements de PANORAMIC (versions freeware, ressources).
+
+  mentions-legales.html
+  ├── Mentions légales du site.
+
+  [Lien externe] https://panoramic.1fr1.net/
+  └── Forum officiel d'entraide communautaire.
+
+
+────────────────────────────────────────────────────────────
+2. DOCUMENTATION — Manuels de Référence
+────────────────────────────────────────────────────────────
+
+  manuel-a-z.html
+  ├── Manuel de référence de A à Z
+  │   Moteur de recherche parmi les 735 instructions PANORAMIC.
+  │   Chaque instruction a sa page dédiée dans Keywords/ (voir section 5).
+
+  manuel-theme.html
+  ├── Manuel de référence par thèmes
+  │   Instructions regroupées par catégories fonctionnelles.
+
+
+────────────────────────────────────────────────────────────
+3. DOCUMENTATION — Le Manuel par Chapitres (9 parties)
+────────────────────────────────────────────────────────────
+
+  manuel-partie-1.html   → Chapitre 1 : Le Langage de Référence
+  │   (variables, constantes, expressions, boucles, conditions, sous-programmes)
+
+  manuel-partie-2.html   → Chapitre 2 : Les Objets Système
+  │   (GUI : forms, boutons, zones de saisie, menus déroulants)
+
+  manuel-partie-3.html   → Chapitre 3 : Le Dessin 2D
+  │   (formes géométriques, couleurs, épaisseurs de tracé)
+
+  manuel-partie-4.html   → Chapitre 4 : Scene2D et Sprites
+  │   (scènes 2D animées, calques, déplacements, collisions)
+
+  manuel-partie-5.html   → Chapitre 5 : Scene3D et Objets 3D
+  │   (espaces 3D, lumières, caméras, maillages, textures)
+
+  manuel-partie-6.html   → Chapitre 6 : Fichiers & Répertoires
+  │   (lecture/écriture fichiers texte et binaires, dossiers)
+
+  manuel-partie-7.html   → Chapitre 7 : Système & Communication
+  │   (disques, Excel, MIDI, souris, appels DLL externes)
+
+  manuel-partie-8.html   → Chapitre 8 : Événements Système
+  │   (interruptions clavier, souris, redimensionnement, timers)
+
+  manuel-partie-9.html   → Chapitre 9 : Conseils & Astuces
+  │   (bonnes pratiques, optimisation du code BASIC)
+
+
+────────────────────────────────────────────────────────────
+4. TUTORIELS — Guides pas à pas
+────────────────────────────────────────────────────────────
+
+  Tuto/01_01_BASE.html         → 1.1 La base de la base (fonctionnement du compilateur)
+  Tuto/01_02_EDITOR.html       → 1.2 Rôle de PANORAMIC_EDITOR (éditeur de texte)
+  Tuto/01_03_IDE.html          → 1.3 Rôle de PANORAMIC_IDE (environnement complet)
+
+  Tuto/VARIABLES.html          → 2.1 Les variables (données numériques et chaînes)
+  Tuto/LABEL.html              → 2.2 Les labels (sauts et sous-programmes)
+  Tuto/STRINGS.html            → 2.3 Manipuler les chaînes de caractères
+
+  Tuto/OBJET.html              → 3.1 Créer un objet GUI (boutons, zones de texte)
+  Tuto/MENU.html               → 3.2 Créer un menu déroulant
+  Tuto/OPEN_DIALOG.html        → 3.3 Utiliser OPEN_DIALOG (chargement de fichiers)
+
+  Tuto/CLICK.html              → 4.1 Gérer l'événement ON_CLICK
+  Tuto/PRINT_TARGET.html       → 4.2 Imprimer avec PRINT (affichage texte)
+
+  Tuto/BASE3D.html             → 5.1 SCENE3D et objets 3D (univers 3D temps réel)
+
+  (Section 6 : Entrées/Sorties & Matériel — lien direct vers le forum)
+
+  Tuto/GAME_2D.html            → 7.1 Créer un jeu 2D (sprites, collisions, contrôles)
+  Tuto/ADAPTATION_BASIC.html   → 7.2 Migration depuis QBasic vers Windows moderne
+
+
+────────────────────────────────────────────────────────────
+5. KEYWORDS — Référence des 746 instructions
+────────────────────────────────────────────────────────────
+
+  Keywords/#INCLUDE.html
+  Keywords/%23INCLUDE.html
+  Keywords/2D_ARC.html
+  Keywords/2D_CIRCLE.html
+  Keywords/2D_CLEAR.html
+  Keywords/2D_ELLIPSE.html
+  Keywords/2D_FILL_COLOR.html
+  Keywords/2D_FILL_CROSS.html
+  Keywords/2D_FILL_DIAGONAL_CROSS.html
+  Keywords/2D_FILL_DIAGONAL_DOWN.html
+  Keywords/2D_FILL_DIAGONAL_UP.html
+  Keywords/2D_FILL_HORIZONTAL.html
+  Keywords/2D_FILL_OFF.html
+  Keywords/2D_FILL_ON.html
+  Keywords/2D_FILL_SOLID.html
+  Keywords/2D_FILL_VERTICAL.html
+  Keywords/2D_FLOOD.html
+  Keywords/2D_IMAGE_COPY.html
+  Keywords/2D_IMAGE_PASTE.html
+  Keywords/2D_LINE.html
+  Keywords/2D_PEN_COLOR.html
+  Keywords/2D_PEN_DASH.html
+  Keywords/2D_PEN_DASH_DOT.html
+  Keywords/2D_PEN_DASH_DOT_DOT.html
+  Keywords/2D_PEN_DOT.html
+  Keywords/2D_PEN_SOLID.html
+  Keywords/2D_PEN_WIDTH.html
+  Keywords/2D_POINT.html
+  Keywords/2D_POLY_FROM.html
+  Keywords/2D_POLY_TO.html
+  Keywords/2D_RECTANGLE.html
+  Keywords/2D_TARGET_IS.html
+  Keywords/3D_ACTOR.html
+  Keywords/3D_BOX.html
+  Keywords/3D_CHAIN.html
+  Keywords/3D_CHAIN_BREAK.html
+  Keywords/3D_COLLISION_AS_CUBE.html
+  Keywords/3D_COLLISION_AS_ELLIPSOID.html
+  Keywords/3D_COLLISION_AS_FACES.html
+  Keywords/3D_COLLISION_AS_POINT.html
+  Keywords/3D_COLLISION_AS_SPHERE.html
+  Keywords/3D_COLOR.html
+  Keywords/3D_CONE.html
+  Keywords/3D_CUBE.html
+  Keywords/3D_CYLINDER.html
+  Keywords/3D_DELETE.html
+  Keywords/3D_DELETE_ALL.html
+  Keywords/3D_DODECAHEDRON.html
+  Keywords/3D_HIDE.html
+  Keywords/3D_IMAGE_TEXTURE.html
+  Keywords/3D_LINE.html
+  Keywords/3D_LINE_WIDTH.html
+  Keywords/3D_LOAD_OBJECT.html
+  Keywords/3D_LOAD_TEXTURE.html
+  Keywords/3D_LOAD_TEXTURE_BACK.html
+  Keywords/3D_LOAD_TEXTURE_BOTTOM.html
+  Keywords/3D_LOAD_TEXTURE_FRONT.html
+  Keywords/3D_LOAD_TEXTURE_LEFT.html
+  Keywords/3D_LOAD_TEXTURE_RIGHT.html
+  Keywords/3D_LOAD_TEXTURE_TOP.html
+  Keywords/3D_MESH.html
+  Keywords/3D_MOVE.html
+  Keywords/3D_PLANE.html
+  Keywords/3D_POINT_OBJECT.html
+  Keywords/3D_POSITION.html
+  Keywords/3D_ROTATE.html
+  Keywords/3D_SCALE.html
+  Keywords/3D_SHOW.html
+  Keywords/3D_SKYBOX.html
+  Keywords/3D_SPHERE.html
+  Keywords/3D_TARGET_IS.html
+  Keywords/3D_TEAPOT.html
+  Keywords/3D_TEXT.html
+  Keywords/3D_TEXT_CHANGE.html
+  Keywords/3D_TORUS.html
+  Keywords/3D_TRANSPARENT.html
+  Keywords/3D_U_TILE.html
+  Keywords/3D_V_TILE.html
+  Keywords/3D_X_POSITION.html
+  Keywords/3D_X_ROTATE.html
+  Keywords/3D_X_SCALE.html
+  Keywords/3D_Y_POSITION.html
+  Keywords/3D_Y_ROTATE.html
+  Keywords/3D_Y_SCALE.html
+  Keywords/3D_Z_POSITION.html
+  Keywords/3D_Z_ROTATE.html
+  Keywords/3D_Z_SCALE.html
+  Keywords/ABS().html
+  Keywords/ACOS().html
+  Keywords/ACTIVE().html
+  Keywords/ACTIVE.html
+  Keywords/ADR().html
+  Keywords/ADR1().html
+  Keywords/ADR2().html
+  Keywords/ADR3().html
+  Keywords/ALPHA.html
+  Keywords/AND.html
+  Keywords/APPLICATION_TITLE.html
+  Keywords/ARCHIVER_ADD.html
+  Keywords/ARCHIVER_EXTRACT.html
+  Keywords/ARCHIVER_OFF.html
+  Keywords/ARCHIVER_ON.html
+  Keywords/ASC().html
+  Keywords/ASIN().html
+  Keywords/ATN().html
+  Keywords/AXES_HIDE.html
+  Keywords/AXES_SHOW.html
+  Keywords/BAR_BOTH.html
+  Keywords/BAR_HORIZONTAL.html
+  Keywords/BAR_NONE.html
+  Keywords/BAR_VERTICAL.html
+  Keywords/BEEP.html
+  Keywords/BEEP_ERROR.html
+  Keywords/BEEP_EXCLAMATION.html
+  Keywords/BEEP_INFORMATION.html
+  Keywords/BEEP_QUESTION.html
+  Keywords/BIN_AND().html
+  Keywords/BIN_OR().html
+  Keywords/BIN_XOR().html
+  Keywords/BORDER_HIDE.html
+  Keywords/BORDER_NORMAL.html
+  Keywords/BORDER_SMALL.html
+  Keywords/BRIGHTNESS.html
+  Keywords/BUTTON.html
+  Keywords/BUTTON_PICTURE.html
+  Keywords/BUTTON_PICTURE_TARGET_IS_OBJECT.html
+  Keywords/BUTTON_PICTURE_TARGET_IS_PICTURE.html
+  Keywords/CAM_MOVE.html
+  Keywords/CAM_PITCH.html
+  Keywords/CAM_POSITION.html
+  Keywords/CAM_ROLL.html
+  Keywords/CAM_TURN.html
+  Keywords/CAM_X_POSITION.html
+  Keywords/CAM_Y_POSITION.html
+  Keywords/CAM_Z_POSITION.html
+  Keywords/CAPTION$().html
+  Keywords/CAPTION.html
+  Keywords/CARET_POSITION().html
+  Keywords/CARET_POSITION.html
+  Keywords/CARET_X_POSITION().html
+  Keywords/CARET_Y_POSITION().html
+  Keywords/CASE.html
+  Keywords/CHAIN.html
+  Keywords/CHART.html
+  Keywords/CHART_BAR.html
+  Keywords/CHART_LINE.html
+  Keywords/CHART_POINT.html
+  Keywords/CHECK.html
+  Keywords/CHECKED().html
+  Keywords/CHECKED_MENU.html
+  Keywords/CHECKED_OPTION().html
+  Keywords/CHR$().html
+  Keywords/CLEAR.html
+  Keywords/CLICKED().html
+  Keywords/CLIPBOARD_COPY.html
+  Keywords/CLIPBOARD_CUT.html
+  Keywords/CLIPBOARD_PASTE.html
+  Keywords/CLIPBOARD_STRING_COPY.html
+  Keywords/CLIPBOARD_STRING_PASTE$.html
+  Keywords/CLOSE_ACTIVE.html
+  Keywords/CLOSE_INACTIVE.html
+  Keywords/CLS.html
+  Keywords/COLOR.html
+  Keywords/COLOR_PIXEL_BLUE().html
+  Keywords/COLOR_PIXEL_GREEN().html
+  Keywords/COLOR_PIXEL_RED().html
+  Keywords/COMBO.html
+  Keywords/COMMAND_TARGET_IS.html
+  Keywords/CONTAINER.html
+  Keywords/CONTAINER_OPTION.html
+  Keywords/CONTAINER_TAB.html
+  Keywords/CONTENT_COPY.html
+  Keywords/CONTRAST.html
+  Keywords/COS().html
+  Keywords/COUNT().html
+  Keywords/CREATE_HIDE.html
+  Keywords/CREATE_SHOW.html
+  Keywords/CURSOR_ARROW.html
+  Keywords/CURSOR_BEAM.html
+  Keywords/CURSOR_CROSS.html
+  Keywords/CURSOR_DEFAULT.html
+  Keywords/CURSOR_HELP.html
+  Keywords/CURSOR_HIDE.html
+  Keywords/CURSOR_HOURGLASS.html
+  Keywords/CURSOR_NOPARKING.html
+  Keywords/CURSOR_POINT.html
+  Keywords/DATA.html
+  Keywords/DATE$.html
+  Keywords/DATE_DAY.html
+  Keywords/DATE_MONTH.html
+  Keywords/DATE_YEAR.html
+  Keywords/DEGREES.html
+  Keywords/DEGREE_TO_RADIAN().html
+  Keywords/DELETE.html
+  Keywords/DELETE_ALL.html
+  Keywords/DIGIT1.html
+  Keywords/DIM.html
+  Keywords/DIM_LOCAL.html
+  Keywords/DIR_CHANGE.html
+  Keywords/DIR_CURRENT$.html
+  Keywords/DIR_DIALOG.html
+  Keywords/DIR_EXISTS().html
+  Keywords/DIR_MAKE.html
+  Keywords/DIR_REMOVE.html
+  Keywords/DISK_EXISTS().html
+  Keywords/DISK_KILO_FREE().html
+  Keywords/DISK_KILO_SIZE().html
+  Keywords/DISPLAY.html
+  Keywords/DLIST.html
+  Keywords/DLL_CALL0().html
+  Keywords/DLL_CALL1().html
+  Keywords/DLL_CALL2().html
+  Keywords/DLL_CALL3().html
+  Keywords/DLL_CALL4().html
+  Keywords/DLL_CALL5().html
+  Keywords/DLL_CALL6().html
+  Keywords/DLL_OFF.html
+  Keywords/DLL_ON.html
+  Keywords/DOUBLE_CLICKED().html
+  Keywords/DROP_DOWN.html
+  Keywords/EDIT.html
+  Keywords/ELSE.html
+  Keywords/END.html
+  Keywords/END_FNC.html
+  Keywords/END_IF.html
+  Keywords/END_SELECT.html
+  Keywords/END_SUB.html
+  Keywords/END_WHILE.html
+  Keywords/ENVIRONMENT$.html
+  Keywords/ERROR_ENGLISH.html
+  Keywords/ERROR_FRENCH.html
+  Keywords/ERROR_LINE.html
+  Keywords/ERROR_NUMBER.html
+  Keywords/ERROR_TYPE$.html
+  Keywords/EVEN().html
+  Keywords/EXCEL_FILE_CLOSE.html
+  Keywords/EXCEL_FILE_NEW.html
+  Keywords/EXCEL_FILE_OPEN.html
+  Keywords/EXCEL_READ$().html
+  Keywords/EXCEL_START.html
+  Keywords/EXCEL_STOP.html
+  Keywords/EXCEL_WRITE.html
+  Keywords/EXECUTE.html
+  Keywords/EXECUTE_WAIT.html
+  Keywords/EXIT_FNC.html
+  Keywords/EXIT_FOR.html
+  Keywords/EXIT_REPEAT.html
+  Keywords/EXIT_SUB.html
+  Keywords/EXIT_WHILE.html
+  Keywords/EXP().html
+  Keywords/FILEBIN_BLOCK_READ.html
+  Keywords/FILEBIN_BLOCK_WRITE.html
+  Keywords/FILEBIN_CLOSE.html
+  Keywords/FILEBIN_HEXA_READ$().html
+  Keywords/FILEBIN_HEXA_READ.html
+  Keywords/FILEBIN_HEXA_WRITE.html
+  Keywords/FILEBIN_OPEN_READ.html
+  Keywords/FILEBIN_OPEN_WRITE.html
+  Keywords/FILEBIN_POS().html
+  Keywords/FILEBIN_POSITION.html
+  Keywords/FILEBIN_READ().html
+  Keywords/FILEBIN_READ.html
+  Keywords/FILEBIN_SIZE().html
+  Keywords/FILEBIN_WRITE.html
+  Keywords/FILE_ADD.html
+  Keywords/FILE_ARCHIVE.html
+  Keywords/FILE_ARCHIVE_OFF.html
+  Keywords/FILE_CLOSE.html
+  Keywords/FILE_COPY.html
+  Keywords/FILE_DELETE.html
+  Keywords/FILE_DIALOG.html
+  Keywords/FILE_EOF().html
+  Keywords/FILE_EXISTS().html
+  Keywords/FILE_EXTRACT_DISK$().html
+  Keywords/FILE_EXTRACT_EXTENSION$().html
+  Keywords/FILE_EXTRACT_NAME$().html
+  Keywords/FILE_EXTRACT_PATH$().html
+  Keywords/FILE_FIND_CLOSE.html
+  Keywords/FILE_FIND_FIRST$.html
+  Keywords/FILE_FIND_NEXT$.html
+  Keywords/FILE_HIDE.html
+  Keywords/FILE_HIDE_OFF.html
+  Keywords/FILE_LOAD.html
+  Keywords/FILE_MOVE.html
+  Keywords/FILE_NAME$().html
+  Keywords/FILE_OPEN_APPEND.html
+  Keywords/FILE_OPEN_READ.html
+  Keywords/FILE_OPEN_WRITE.html
+  Keywords/FILE_READ.html
+  Keywords/FILE_READBUF.html
+  Keywords/FILE_READLN$().html
+  Keywords/FILE_READLN.html
+  Keywords/FILE_READ_ONLY.html
+  Keywords/FILE_READ_ONLY_OFF.html
+  Keywords/FILE_RENAME.html
+  Keywords/FILE_SAVE.html
+  Keywords/FILE_SYSTEM.html
+  Keywords/FILE_SYSTEM_OFF.html
+  Keywords/FILE_WRITE.html
+  Keywords/FILE_WRITEBUF.html
+  Keywords/FILE_WRITELN.html
+  Keywords/FILTER.html
+  Keywords/FIND().html
+  Keywords/FNC.html
+  Keywords/FOG_COLOR.html
+  Keywords/FOG_DISTANCE_MAX.html
+  Keywords/FOG_DISTANCE_MIN.html
+  Keywords/FOG_OFF.html
+  Keywords/FOG_ON.html
+  Keywords/FONT_BOLD.html
+  Keywords/FONT_BOLD_OFF.html
+  Keywords/FONT_COLOR.html
+  Keywords/FONT_ITALIC.html
+  Keywords/FONT_ITALIC_OFF.html
+  Keywords/FONT_NAME.html
+  Keywords/FONT_NAMES_ADD.html
+  Keywords/FONT_NAMES_LOAD.html
+  Keywords/FONT_SIZE.html
+  Keywords/FONT_STRIKE.html
+  Keywords/FONT_STRIKE_OFF.html
+  Keywords/FONT_UNDERLINE.html
+  Keywords/FONT_UNDERLINE_OFF.html
+  Keywords/FOR.html
+  Keywords/FORM.html
+  Keywords/FRAC().html
+  Keywords/FREE.html
+  Keywords/FULL_SPACE.html
+  Keywords/GAMMA.html
+  Keywords/GOSUB.html
+  Keywords/GOTO.html
+  Keywords/GRID.html
+  Keywords/GRID_CLEAR.html
+  Keywords/GRID_COLUMN().html
+  Keywords/GRID_COLUMN.html
+  Keywords/GRID_COLUMN_DELETE.html
+  Keywords/GRID_COLUMN_FIXED().html
+  Keywords/GRID_COLUMN_FIXED.html
+  Keywords/GRID_COLUMN_INSERT.html
+  Keywords/GRID_COLUMN_SIZING_OFF.html
+  Keywords/GRID_COLUMN_SIZING_ON.html
+  Keywords/GRID_COLUMN_WIDTH().html
+  Keywords/GRID_COLUMN_WIDTH.html
+  Keywords/GRID_FIXED_COLOR.html
+  Keywords/GRID_LOAD.html
+  Keywords/GRID_ONE_COLUMN_WIDTH().html
+  Keywords/GRID_ONE_COLUMN_WIDTH.html
+  Keywords/GRID_ONE_ROW_HEIGHT().html
+  Keywords/GRID_ONE_ROW_HEIGHT.html
+  Keywords/GRID_READ$().html
+  Keywords/GRID_ROW().html
+  Keywords/GRID_ROW.html
+  Keywords/GRID_ROW_DELETE.html
+  Keywords/GRID_ROW_FIXED().html
+  Keywords/GRID_ROW_FIXED.html
+  Keywords/GRID_ROW_HEIGHT().html
+  Keywords/GRID_ROW_HEIGHT.html
+  Keywords/GRID_ROW_INSERT.html
+  Keywords/GRID_ROW_SIZING_OFF.html
+  Keywords/GRID_ROW_SIZING_ON.html
+  Keywords/GRID_SAVE.html
+  Keywords/GRID_WRITE.html
+  Keywords/GRID_X_TO_COLUMN().html
+  Keywords/GRID_Y_TO_ROW().html
+  Keywords/HANDLE().html
+  Keywords/HANDLE_APPLICATION.html
+  Keywords/HANDLE_CANVAS().html
+  Keywords/HANDLE_FORM().html
+  Keywords/HCOS().html
+  Keywords/HEIGHT().html
+  Keywords/HEIGHT.html
+  Keywords/HEIGHT_CLIENT().html
+  Keywords/HEX$().html
+  Keywords/HEX().html
+  Keywords/HIDE().html
+  Keywords/HIDE.html
+  Keywords/HIDE_ALL.html
+  Keywords/HINT.html
+  Keywords/HINT_HIDE.html
+  Keywords/HORIZONTAL.html
+  Keywords/HSIN().html
+  Keywords/HTAN().html
+  Keywords/HVIEWER.html
+  Keywords/IF.html
+  Keywords/IMAGE.html
+  Keywords/INACTIVE().html
+  Keywords/INACTIVE.html
+  Keywords/INKEY$.html
+  Keywords/INPUT.html
+  Keywords/INPUT_MARK_OFF.html
+  Keywords/INPUT_MARK_ON.html
+  Keywords/INPUT_REDO_OFF.html
+  Keywords/INPUT_REDO_ON.html
+  Keywords/INPUT_SOURCE_IS.html
+  Keywords/INPUT_VISIBLE_OFF.html
+  Keywords/INPUT_VISIBLE_ON.html
+  Keywords/INSERT$().html
+  Keywords/INSTR().html
+  Keywords/INSTR_LAST().html
+  Keywords/INSTR_POS().html
+  Keywords/INSTR_RIGHT().html
+  Keywords/INT().html
+  Keywords/ITEM_ADD.html
+  Keywords/ITEM_DELETE.html
+  Keywords/ITEM_INDEX$().html
+  Keywords/ITEM_INDEX().html
+  Keywords/ITEM_INSERT.html
+  Keywords/ITEM_READ$().html
+  Keywords/ITEM_SELECT.html
+  Keywords/KEY_DOWN_CODE.html
+  Keywords/KEY_DOWN_SPECIAL.html
+  Keywords/KEY_UP_CODE.html
+  Keywords/KEY_UP_SPECIAL.html
+  Keywords/LABEL().html
+  Keywords/LABEL.html
+  Keywords/LED1.html
+  Keywords/LEFT$().html
+  Keywords/LEFT().html
+  Keywords/LEFT.html
+  Keywords/LEN().html
+  Keywords/LIGHT_POSITION.html
+  Keywords/LIGHT_X_POSITION.html
+  Keywords/LIGHT_Y_POSITION.html
+  Keywords/LIGHT_Z_POSITION.html
+  Keywords/LIST.html
+  Keywords/LOG().html
+  Keywords/LOG10().html
+  Keywords/LOG2().html
+  Keywords/LOWER$().html
+  Keywords/LTRIM$().html
+  Keywords/MAIL_SEND.html
+  Keywords/MAIN_MENU.html
+  Keywords/MAIN_MENU_POP.html
+  Keywords/MARK_OFF.html
+  Keywords/MARK_ON.html
+  Keywords/MAX().html
+  Keywords/MAX.html
+  Keywords/MAXIMIZE.html
+  Keywords/MEMO.html
+  Keywords/MEMO_RICH.html
+  Keywords/MESSAGE.html
+  Keywords/MESSAGE_CONFIRMATION_OK().html
+  Keywords/MESSAGE_CONFIRMATION_YES_NO().html
+  Keywords/MESSAGE_ERROR_OK().html
+  Keywords/MESSAGE_ERROR_YES_NO().html
+  Keywords/MESSAGE_INFORMATION_OK().html
+  Keywords/MESSAGE_INFORMATION_YES_NO().html
+  Keywords/MESSAGE_INPUT$().html
+  Keywords/MESSAGE_INPUT().html
+  Keywords/MESSAGE_TEXT$.html
+  Keywords/MESSAGE_WARNING_OK().html
+  Keywords/MESSAGE_WARNING_YES_NO().html
+  Keywords/MID$().html
+  Keywords/MIDI_INSTRUMENT.html
+  Keywords/MIDI_OFF.html
+  Keywords/MIDI_ON.html
+  Keywords/MIDI_PLAY.html
+  Keywords/MIDI_VOLUME.html
+  Keywords/MIN().html
+  Keywords/MIN.html
+  Keywords/MINIMIZE.html
+  Keywords/MOD().html
+  Keywords/MOUSE_LEFT_DOWN().html
+  Keywords/MOUSE_LEFT_UP().html
+  Keywords/MOUSE_RIGHT_DOWN().html
+  Keywords/MOUSE_RIGHT_UP().html
+  Keywords/MOUSE_X_LEFT_DOWN().html
+  Keywords/MOUSE_X_LEFT_UP().html
+  Keywords/MOUSE_X_POSITION().html
+  Keywords/MOUSE_X_RIGHT_DOWN().html
+  Keywords/MOUSE_X_RIGHT_UP().html
+  Keywords/MOUSE_Y_LEFT_DOWN().html
+  Keywords/MOUSE_Y_LEFT_UP().html
+  Keywords/MOUSE_Y_POSITION().html
+  Keywords/MOUSE_Y_RIGHT_DOWN().html
+  Keywords/MOUSE_Y_RIGHT_UP().html
+  Keywords/MOVIE.html
+  Keywords/NEXT.html
+  Keywords/NORMAL.html
+  Keywords/NOT.html
+  Keywords/NUMBER_2D_TARGET.html
+  Keywords/NUMBER_3D_OBJECTS.html
+  Keywords/NUMBER_3D_TARGET.html
+  Keywords/NUMBER_ACTIVATE.html
+  Keywords/NUMBER_CHANGE.html
+  Keywords/NUMBER_CLICK.html
+  Keywords/NUMBER_COMMAND_TARGET.html
+  Keywords/NUMBER_CURRENT_LINE.html
+  Keywords/NUMBER_DOUBLE_CLICK.html
+  Keywords/NUMBER_EVENTS.html
+  Keywords/NUMBER_INPUT_SOURCE.html
+  Keywords/NUMBER_KEY_DOWN.html
+  Keywords/NUMBER_KEY_UP.html
+  Keywords/NUMBER_MOUSE_DOWN.html
+  Keywords/NUMBER_MOUSE_MOVE.html
+  Keywords/NUMBER_MOUSE_UP.html
+  Keywords/NUMBER_OBJECTS.html
+  Keywords/NUMBER_PRINT_TARGET.html
+  Keywords/NUMBER_SHOW.html
+  Keywords/NUMBER_SPRITES.html
+  Keywords/NUMBER_SPRITE_TARGET.html
+  Keywords/NUMBER_TICKS.html
+  Keywords/NUMBER_VARIABLES.html
+  Keywords/NUMERIC().html
+  Keywords/O3D_COLLISION().html
+  Keywords/O3D_OBJECT_EXISTS().html
+  Keywords/O3D_OBJECT_TYPE().html
+  Keywords/O3D_X_POSITION().html
+  Keywords/O3D_X_ROTATE().html
+  Keywords/O3D_X_SCALE().html
+  Keywords/O3D_Y_POSITION().html
+  Keywords/O3D_Y_ROTATE().html
+  Keywords/O3D_Y_SCALE().html
+  Keywords/O3D_Z_POSITION().html
+  Keywords/O3D_Z_ROTATE().html
+  Keywords/O3D_Z_SCALE().html
+  Keywords/OBJECT_EXISTS().html
+  Keywords/OBJECT_INTERNAL().html
+  Keywords/OBJECT_TYPE().html
+  Keywords/ODD().html
+  Keywords/OFF_ACTIVATE.html
+  Keywords/OFF_CHANGE.html
+  Keywords/OFF_CLICK.html
+  Keywords/OFF_CLOSE.html
+  Keywords/OFF_DOUBLE_CLICK.html
+  Keywords/OFF_ERROR_GOTO.html
+  Keywords/OFF_KEY_DOWN.html
+  Keywords/OFF_KEY_UP.html
+  Keywords/OFF_MOUSE_DOWN.html
+  Keywords/OFF_MOUSE_MOVE.html
+  Keywords/OFF_MOUSE_UP.html
+  Keywords/OFF_MOVE.html
+  Keywords/OFF_RESIZE.html
+  Keywords/OFF_SHOW.html
+  Keywords/OFF_USER_EVENT.html
+  Keywords/ON_ACTIVATE.html
+  Keywords/ON_CHANGE.html
+  Keywords/ON_CLICK.html
+  Keywords/ON_CLOSE.html
+  Keywords/ON_DOUBLE_CLICK.html
+  Keywords/ON_ERROR_GOTO.html
+  Keywords/ON_KEY_DOWN.html
+  Keywords/ON_KEY_UP.html
+  Keywords/ON_MOUSE_DOWN.html
+  Keywords/ON_MOUSE_MOVE.html
+  Keywords/ON_MOUSE_UP.html
+  Keywords/ON_MOVE.html
+  Keywords/ON_RECEIVE.html
+  Keywords/ON_RESIZE.html
+  Keywords/ON_SHOW.html
+  Keywords/ON_TIMER.html
+  Keywords/ON_USER_EVENT.html
+  Keywords/OPEN_DIALOG.html
+  Keywords/OPEN_DIALOG_PIC.html
+  Keywords/OPTION.html
+  Keywords/OR.html
+  Keywords/PANEL.html
+  Keywords/PARALLEL_INP().html
+  Keywords/PARALLEL_OFF.html
+  Keywords/PARALLEL_ON.html
+  Keywords/PARALLEL_OUT.html
+  Keywords/PARAM_NUMBER.html
+  Keywords/PARAM_VALUE$().html
+  Keywords/PARENT().html
+  Keywords/PARENT.html
+  Keywords/PAUSE.html
+  Keywords/PEEK().html
+  Keywords/PEEK16().html
+  Keywords/PEEK32().html
+  Keywords/PEEK_NORMAL.html
+  Keywords/PEEK_REVERSE.html
+  Keywords/PI.html
+  Keywords/PICTURE.html
+  Keywords/PICTURE_BOTTOM.html
+  Keywords/PICTURE_LEFT.html
+  Keywords/PICTURE_RIGHT.html
+  Keywords/PICTURE_TOP.html
+  Keywords/PLAY.html
+  Keywords/PLAY_WAIT.html
+  Keywords/POINT_OBJECT.html
+  Keywords/POINT_POSITION.html
+  Keywords/POINT_X_POSITION.html
+  Keywords/POINT_Y_POSITION.html
+  Keywords/POINT_Z_POSITION.html
+  Keywords/POKE.html
+  Keywords/POKE16.html
+  Keywords/POKE32.html
+  Keywords/POKE_NORMAL.html
+  Keywords/POKE_REVERSE.html
+  Keywords/POSITION().html
+  Keywords/POSITION.html
+  Keywords/POWER().html
+  Keywords/PRINT.html
+  Keywords/PRINT_LOCATE.html
+  Keywords/PRINT_TARGET_IS.html
+  Keywords/PRINT_X_LOCATE.html
+  Keywords/PRINT_Y_LOCATE.html
+  Keywords/PROGRESS_BAR.html
+  Keywords/RADIANS.html
+  Keywords/RADIAN_TO_DEGREE().html
+  Keywords/READ.html
+  Keywords/REM.html
+  Keywords/REPEAT.html
+  Keywords/REPLACE().html
+  Keywords/RESTORE.html
+  Keywords/RESTORE_LABEL.html
+  Keywords/RESULT.html
+  Keywords/RETURN.html
+  Keywords/REVERSE$().html
+  Keywords/RIGHT$().html
+  Keywords/RIGHT_POS$().html
+  Keywords/RMDIR.html
+  Keywords/RND().html
+  Keywords/RTRIM$().html
+  Keywords/SAVE_DIALOG.html
+  Keywords/SAVE_DIALOG_PIC.html
+  Keywords/SCANCODE.html
+  Keywords/SCENE2D.html
+  Keywords/SCENE3D.html
+  Keywords/SCREEN_X.html
+  Keywords/SCREEN_Y.html
+  Keywords/SCROLL_BAR.html
+  Keywords/SECRET_OFF.html
+  Keywords/SECRET_ON.html
+  Keywords/SELECT.html
+  Keywords/SELECT_DELETE.html
+  Keywords/SELECT_READ$().html
+  Keywords/SELECT_TEXT.html
+  Keywords/SEPARATOR_IS_COMMA.html
+  Keywords/SEPARATOR_IS_POINT.html
+  Keywords/SERIAL.html
+  Keywords/SERIAL_BAUDRATE.html
+  Keywords/SERIAL_CLOSE.html
+  Keywords/SERIAL_DATABITS.html
+  Keywords/SERIAL_OPEN.html
+  Keywords/SERIAL_PARITY.html
+  Keywords/SERIAL_PORT.html
+  Keywords/SERIAL_PORT_EXISTS().html
+  Keywords/SERIAL_READ$().html
+  Keywords/SERIAL_STOPBITS.html
+  Keywords/SERIAL_WRITE.html
+  Keywords/SET_FOCUS.html
+  Keywords/SGN().html
+  Keywords/SHAPE.html
+  Keywords/SHAPE_CIRCLE.html
+  Keywords/SHAPE_ELLIPSE.html
+  Keywords/SHAPE_RECTANGLE.html
+  Keywords/SHAPE_RECTANGLE_ROUNDED.html
+  Keywords/SHAPE_SQUARE.html
+  Keywords/SHAPE_SQUARE_ROUNDED.html
+  Keywords/SHOW().html
+  Keywords/SHOW.html
+  Keywords/SHOW_ALL.html
+  Keywords/SHOW_MODAL.html
+  Keywords/SIN().html
+  Keywords/SNAPSHOT.html
+  Keywords/SORT.html
+  Keywords/SORT_OFF.html
+  Keywords/SORT_ON.html
+  Keywords/SOUND.html
+  Keywords/SPIN.html
+  Keywords/SPRITE.html
+  Keywords/SPRITE_BRIGHTNESS.html
+  Keywords/SPRITE_CONTRAST.html
+  Keywords/SPRITE_CREATE_HIDE.html
+  Keywords/SPRITE_CREATE_SHOW.html
+  Keywords/SPRITE_DELETE.html
+  Keywords/SPRITE_DELETE_ALL.html
+  Keywords/SPRITE_EXISTS().html
+  Keywords/SPRITE_FILE_LOAD.html
+  Keywords/SPRITE_GAMMA.html
+  Keywords/SPRITE_HIDE.html
+  Keywords/SPRITE_HIDE_ALL.html
+  Keywords/SPRITE_IMAGE_LOAD.html
+  Keywords/SPRITE_POSITION.html
+  Keywords/SPRITE_SCALE.html
+  Keywords/SPRITE_SHOW.html
+  Keywords/SPRITE_SHOW_ALL.html
+  Keywords/SPRITE_TARGET_IS.html
+  Keywords/SPRITE_TEXT.html
+  Keywords/SPRITE_X_POSITION().html
+  Keywords/SPRITE_X_POSITION.html
+  Keywords/SPRITE_X_SCALE.html
+  Keywords/SPRITE_Y_POSITION().html
+  Keywords/SPRITE_Y_POSITION.html
+  Keywords/SPRITE_Y_SCALE.html
+  Keywords/SQR().html
+  Keywords/STEP.html
+  Keywords/STOP.html
+  Keywords/STR$().html
+  Keywords/STRETCH_OFF.html
+  Keywords/STRETCH_ON.html
+  Keywords/STRING$().html
+  Keywords/SUB.html
+  Keywords/SUB_MENU.html
+  Keywords/SWITCH1.html
+  Keywords/SYNEDIT.html
+  Keywords/SYNEDIT_TARGET_IS_COMMENT.html
+  Keywords/SYNEDIT_TARGET_IS_GUTTER.html
+  Keywords/SYNEDIT_TARGET_IS_KEYWORD.html
+  Keywords/SYNEDIT_TARGET_IS_OBJECT.html
+  Keywords/SYNEDIT_TARGET_IS_STRING.html
+  Keywords/SYSTEM$.html
+  Keywords/TAB.html
+  Keywords/TAN().html
+  Keywords/TERMINATE.html
+  Keywords/TEXT$().html
+  Keywords/TEXT.html
+  Keywords/TEXT_DELETE.html
+  Keywords/TEXT_HEIGHT().html
+  Keywords/TEXT_INSERT.html
+  Keywords/TEXT_WIDTH().html
+  Keywords/THEN.html
+  Keywords/TIME$.html
+  Keywords/TIMER.html
+  Keywords/TIMER_INTERVAL.html
+  Keywords/TIMER_OFF.html
+  Keywords/TIMER_OFF_ALL.html
+  Keywords/TIMER_ON.html
+  Keywords/TIME_HOUR.html
+  Keywords/TIME_MINUTE.html
+  Keywords/TIME_SECOND.html
+  Keywords/TO.html
+  Keywords/TOP().html
+  Keywords/TOP.html
+  Keywords/TO_BACKGROUND.html
+  Keywords/TO_FOREGROUND.html
+  Keywords/TRACE_OFF.html
+  Keywords/TRACE_ON.html
+  Keywords/TRACK_BAR.html
+  Keywords/TRIGGER_CLICK.html
+  Keywords/TRIGGER_KEY_DOWN.html
+  Keywords/TRIGGER_KEY_UP.html
+  Keywords/TRIM$().html
+  Keywords/UNTIL.html
+  Keywords/UPPER$().html
+  Keywords/USER_EVENT_LPARAM.html
+  Keywords/USER_EVENT_WPARAM.html
+  Keywords/VAL().html
+  Keywords/VARIABLE().html
+  Keywords/VERSION$.html
+  Keywords/VERTICAL.html
+  Keywords/WAIT.html
+  Keywords/WHILE.html
+  Keywords/WIDTH().html
+  Keywords/WIDTH.html
+  Keywords/WIDTH_CLIENT().html
+  Keywords/WRAP_VALUE().html
+
+
+────────────────────────────────────────────────────────────
+6. RESSOURCES STATIQUES
+────────────────────────────────────────────────────────────
+
+  assets/css/style.css            → Feuille de styles principale
+  assets/js/main.js               → Scripts JavaScript du site
+  assets/js/theme-init.js         → Initialisation du thème clair/sombre
+  assets/images/logo.png          → Logo PANORAMIC
+  assets/images/exemple_*.jpg     → Captures d'écran des exemples
+  assets/images/objets_systeme.jpg → Schéma des objets système
+  assets/images/realisations/     → ~330 vignettes des réalisations
+  assets/partials/                → Partials HTML réutilisables (header, footer, etc.)
+
+  inject_copy_button.js           → Script d'injection des boutons "Copier"
+  linkify_en_rapport.js           → Script de linkification automatique
+  style_keywords.js               → Styles pour la coloration syntaxique des keywords
+
+
+────────────────────────────────────────────────────────────
+7. AUTRES RÉPERTOIRES
+────────────────────────────────────────────────────────────
+
+  download/         → Ressources téléchargeables (installeurs, ZIP)
+  Tuto/Sources/     → Fichiers source des tutoriels
+  Tuto/TUTOPICT/    → Images des tutoriels
+
+────────────────────────────────────────────────────────────
+Fin du plan du site — Généré le 01/06/2026

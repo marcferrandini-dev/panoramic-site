@@ -1,0 +1,332 @@
+PLAN DU SITE PANORAMIC
+=====================
+
+URL de base : https://www.panoramic-language.fr (ou équivalent local)
+
+────────────────────────────────────────────────────────────
+1. PAGES PRINCIPALES (navigation header)
+────────────────────────────────────────────────────────────
+
+  index.html
+  ├── Accueil du site PANORAMIC
+  │   Présentation du langage, exemples de code (bouton, clic, théière 3D),
+  │   objets système, communication externe, communauté.
+
+  documentation.html
+  ├── Hub de la documentation officielle
+  │   Accès aux manuels de référence et aux 9 chapitres thématiques.
+
+  tutoriels.html
+  ├── Hub des tutoriels et guides pas à pas
+  │   7 catégories : bases, syntaxe, GUI, événements, 3D, hardware, projets.
+
+  faq.html
+  ├── Foire Aux Questions & Conseils
+  │   5 catégories : Généralités, Monde 3D, Objets GUI, Multimédia, Divers.
+
+  programmes.html
+  ├── Réalisations de la Communauté
+  │   Galerie de 330+ programmes avec recherche, liens vers le forum.
+
+  telechargements.html
+  ├── Téléchargements de PANORAMIC (versions freeware, ressources).
+
+  mentions-legales.html
+  ├── Mentions légales du site.
+
+  [Lien externe] https://panoramic.1fr1.net/
+  └── Forum officiel d'entraide communautaire.
+
+
+────────────────────────────────────────────────────────────
+2. DOCUMENTATION — Manuels de Référence
+────────────────────────────────────────────────────────────
+
+  manuel-a-z.html
+  ├── Manuel de référence de A à Z
+  │   Moteur de recherche parmi les 735 instructions PANORAMIC.
+  │   Chaque instruction a sa page dédiée dans Keywords/ (voir section 5).
+
+  manuel-theme.html
+  ├── Manuel de référence par thèmes
+  │   Instructions regroupées par catégories fonctionnelles.
+
+
+────────────────────────────────────────────────────────────
+3. DOCUMENTATION — Le Manuel par Chapitres (9 parties)
+────────────────────────────────────────────────────────────
+
+  manuel-partie-1.html   → Chapitre 1 : Le Langage de Référence
+  │   (variables, constantes, expressions, boucles, conditions, sous-programmes)
+
+  manuel-partie-2.html   → Chapitre 2 : Les Objets Système
+  │   (GUI : forms, boutons, zones de saisie, menus déroulants)
+
+  manuel-partie-3.html   → Chapitre 3 : Le Dessin 2D
+  │   (formes géométriques, couleurs, épaisseurs de tracé)
+
+  manuel-partie-4.html   → Chapitre 4 : Scene2D et Sprites
+  │   (scènes 2D animées, calques, déplacements, collisions)
+
+  manuel-partie-5.html   → Chapitre 5 : Scene3D et Objets 3D
+  │   (espaces 3D, lumières, caméras, maillages, textures)
+
+  manuel-partie-6.html   → Chapitre 6 : Fichiers & Répertoires
+  │   (lecture/écriture fichiers texte et binaires, dossiers)
+
+  manuel-partie-7.html   → Chapitre 7 : Système & Communication
+  │   (disques, Excel, MIDI, souris, appels DLL externes)
+
+  manuel-partie-8.html   → Chapitre 8 : Événements Système
+  │   (interruptions clavier, souris, redimensionnement, timers)
+
+  manuel-partie-9.html   → Chapitre 9 : Conseils & Astuces
+  │   (bonnes pratiques, optimisation du code BASIC)
+
+
+────────────────────────────────────────────────────────────
+4. TUTORIELS — Guides pas à pas
+────────────────────────────────────────────────────────────
+
+  Tuto/01_01_BASE.html         → 1.1 La base de la base (fonctionnement du compilateur)
+  Tuto/01_02_EDITOR.html       → 1.2 Rôle de PANORAMIC_EDITOR (éditeur de texte)
+  Tuto/01_03_IDE.html          → 1.3 Rôle de PANORAMIC_IDE (environnement complet)
+
+  Tuto/VARIABLES.html          → 2.1 Les variables (données numériques et chaînes)
+  Tuto/LABEL.html              → 2.2 Les labels (sauts et sous-programmes)
+  Tuto/STRINGS.html            → 2.3 Manipuler les chaînes de caractères
+
+  Tuto/OBJET.html              → 3.1 Créer un objet GUI (boutons, zones de texte)
+  Tuto/MENU.html               → 3.2 Créer un menu déroulant
+  Tuto/OPEN_DIALOG.html        → 3.3 Utiliser OPEN_DIALOG (chargement de fichiers)
+
+  Tuto/CLICK.html              → 4.1 Gérer l'événement ON_CLICK
+  Tuto/PRINT_TARGET.html       → 4.2 Imprimer avec PRINT (affichage texte)
+
+  Tuto/BASE3D.html             → 5.1 SCENE3D et objets 3D (univers 3D temps réel)
+
+  (Section 6 : Entrées/Sorties & Matériel — lien direct vers le forum)
+
+  Tuto/GAME_2D.html            → 7.1 Créer un jeu 2D (sprites, collisions, contrôles)
+  Tuto/ADAPTATION_BASIC.html   → 7.2 Migration depuis QBasic vers Windows moderne
+
+
+────────────────────────────────────────────────────────────
+5. KEYWORDS — Référence des 735 instructions (extrait)
+────────────────────────────────────────────────────────────
+
+  Keywords/2D_ARC.html
+  Keywords/2D_CIRCLE.html
+  Keywords/2D_CLEAR.html
+  Keywords/2D_ELLIPSE.html
+  Keywords/2D_FILL_COLOR.html
+  Keywords/2D_FILL_CROSS.html
+  Keywords/2D_FILL_DIAGONAL_CROSS.html
+  Keywords/2D_FILL_DIAGONAL_DOWN.html
+  Keywords/2D_FILL_DIAGONAL_UP.html
+  Keywords/2D_FILL_HORIZONTAL.html
+  Keywords/2D_FILL_OFF.html
+  Keywords/2D_FILL_ON.html
+  Keywords/2D_FILL_SOLID.html
+  Keywords/2D_FILL_VERTICAL.html
+  Keywords/2D_FLOOD.html
+  Keywords/2D_IMAGE_COPY.html
+  Keywords/2D_IMAGE_PASTE.html
+  Keywords/2D_LINE.html
+  Keywords/2D_PEN_COLOR.html
+  Keywords/2D_PEN_DASH_DOT_DOT.html
+  Keywords/2D_PEN_DASH_DOT.html
+  Keywords/2D_PEN_DASH.html
+  Keywords/2D_PEN_DOT.html
+  Keywords/2D_PEN_SOLID.html
+  Keywords/2D_PEN_WIDTH.html
+  Keywords/2D_POINT.html
+  Keywords/2D_POLY_FROM.html
+  Keywords/2D_POLY_TO.html
+  Keywords/2D_RECTANGLE.html
+  Keywords/2D_TARGET_IS.html
+  Keywords/3D_ACTOR.html
+  Keywords/3D_BOX.html
+  Keywords/3D_CHAIN_BREAK.html
+  Keywords/3D_CHAIN.html
+  Keywords/3D_COLLISION_AS_CUBE.html
+  Keywords/3D_COLLISION_AS_ELLIPSOID.html
+  Keywords/3D_COLLISION_AS_FACES.html
+  Keywords/3D_COLLISION_AS_POINT.html
+  Keywords/3D_COLLISION_AS_SPHERE.html
+  Keywords/3D_COLOR.html
+  Keywords/3D_CONE.html
+  Keywords/3D_CUBE.html
+  Keywords/3D_CYLINDER.html
+  Keywords/3D_DELETE_ALL.html
+  Keywords/3D_DELETE.html
+  Keywords/3D_DODECAHEDRON.html
+  Keywords/3D_HIDE.html
+  Keywords/3D_IMAGE_TEXTURE.html
+  Keywords/3D_LINE_WIDTH.html
+  Keywords/3D_LINE.html
+  Keywords/3D_LOAD_OBJECT.html
+  Keywords/3D_LOAD_TEXTURE_BACK.html
+  Keywords/3D_LOAD_TEXTURE_BOTTOM.html
+  Keywords/3D_LOAD_TEXTURE_FRONT.html
+  Keywords/3D_LOAD_TEXTURE_LEFT.html
+  Keywords/3D_LOAD_TEXTURE_RIGHT.html
+  Keywords/3D_LOAD_TEXTURE_TOP.html
+  Keywords/3D_LOAD_TEXTURE.html
+  Keywords/3D_MESH.html
+  Keywords/3D_MOVE.html
+  Keywords/3D_PLANE.html
+  Keywords/3D_POINT_OBJECT.html
+  Keywords/3D_POSITION.html
+  Keywords/3D_ROTATE.html
+  Keywords/3D_SCALE.html
+  Keywords/3D_SHOW.html
+  Keywords/3D_SKYBOX.html
+  Keywords/3D_SPHERE.html
+  Keywords/3D_TARGET_IS.html
+  Keywords/3D_TEAPOT.html
+  Keywords/3D_TEXT_CHANGE.html
+  Keywords/3D_TEXT.html
+  Keywords/3D_TORUS.html
+  Keywords/3D_TRANSPARENT.html
+  Keywords/3D_U_TILE.html
+  Keywords/3D_V_TILE.html
+  Keywords/3D_X_POSITION.html
+  Keywords/3D_X_ROTATE.html
+  Keywords/3D_X_SCALE.html
+  Keywords/3D_Y_POSITION.html
+  Keywords/3D_Y_ROTATE.html
+  Keywords/3D_Y_SCALE.html
+  Keywords/3D_Z_POSITION.html
+  Keywords/3D_Z_ROTATE.html
+  Keywords/3D_Z_SCALE.html
+  Keywords/ABS().html
+  Keywords/ACOS().html
+  Keywords/ACTIVE.html
+  Keywords/ACTIVE().html
+  Keywords/ADR().html
+  Keywords/ADR1().html
+  Keywords/ADR2().html
+  Keywords/ADR3().html
+  Keywords/ALPHA.html
+  Keywords/AND.html
+  Keywords/APPLICATION_TITLE.html
+  Keywords/ARCHIVER_ADD.html
+  Keywords/ARCHIVER_EXTRACT.html
+  Keywords/ARCHIVER_OFF.html
+  Keywords/ARCHIVER_ON.html
+  Keywords/ASC().html
+  Keywords/ASIN().html
+  Keywords/ATN().html
+  Keywords/AXES_HIDE.html
+  Keywords/AXES_SHOW.html
+  Keywords/BAR_BOTH.html
+  Keywords/BAR_HORIZONTAL.html
+  Keywords/BAR_NONE.html
+  Keywords/BAR_VERTICAL.html
+  Keywords/BEEP_ERROR.html
+  Keywords/BEEP_EXCLAMATION.html
+  Keywords/BEEP_INFORMATION.html
+  Keywords/BEEP_QUESTION.html
+  Keywords/BEEP.html
+  Keywords/BIN_AND().html
+  Keywords/BIN_OR().html
+  Keywords/BIN_XOR().html
+  Keywords/BORDER_HIDE.html
+  Keywords/BORDER_NORMAL.html
+  Keywords/BORDER_SMALL.html
+  Keywords/BRIGHTNESS.html
+  Keywords/BUTTON_PICTURE_TARGET_IS_OBJECT.html
+  Keywords/BUTTON_PICTURE_TARGET_IS_PICTURE.html
+  Keywords/BUTTON_PICTURE.html
+  Keywords/BUTTON.html
+  Keywords/CAM_MOVE.html
+  Keywords/CAM_PITCH.html
+  Keywords/CAM_POSITION.html
+  Keywords/CAM_ROLL.html
+  Keywords/CAM_TURN.html
+  Keywords/CAM_X_POSITION.html
+  Keywords/CAM_Y_POSITION.html
+  Keywords/CAM_Z_POSITION.html
+  Keywords/CAPTION.html
+  Keywords/CAPTION$().html
+  Keywords/CARET_POSITION.html
+  Keywords/CARET_POSITION().html
+  Keywords/CARET_X_POSITION().html
+  Keywords/CARET_Y_POSITION().html
+  Keywords/CASE.html
+  Keywords/CHAIN.html
+  Keywords/CHART_BAR.html
+  Keywords/CHART_LINE.html
+  Keywords/CHART_POINT.html
+  Keywords/CHART.html
+  Keywords/CHECK.html
+  Keywords/CHECKED_MENU.html
+  Keywords/CHECKED_OPTION().html
+  Keywords/CHECKED().html
+  Keywords/CHR$().html
+  Keywords/CLEAR.html
+  Keywords/CLICKED().html
+  Keywords/CLIPBOARD_COPY.html
+  Keywords/CLIPBOARD_CUT.html
+  Keywords/CLIPBOARD_PASTE.html
+  Keywords/CLIPBOARD_STRING_COPY.html
+  Keywords/CLIPBOARD_STRING_PASTE$.html
+  Keywords/CLOSE_ACTIVE.html
+  Keywords/CLOSE_INACTIVE.html
+  Keywords/CLS.html
+  Keywords/COLOR_PIXEL_BLUE().html
+  Keywords/COLOR_PIXEL_GREEN().html
+  Keywords/COLOR.html
+  ... (et ~630 autres fichiers Keywords/*.html)
+
+
+────────────────────────────────────────────────────────────
+6. RESSOURCES STATIQUES
+────────────────────────────────────────────────────────────
+
+  assets/css/style.css            → Feuille de styles principale
+  assets/js/main.js               → Scripts JavaScript du site
+  assets/js/theme-init.js         → Initialisation du thème clair/sombre
+  assets/images/logo.png          → Logo PANORAMIC
+  assets/images/exemple_*.jpg     → Captures d'écran des exemples
+  assets/images/objets_systeme.jpg → Schéma des objets système
+  assets/images/realisations/     → ~330 vignettes des réalisations
+  assets/partials/                → Partials HTML réutilisables (header, footer, etc.)
+
+  inject_copy_button.js           → Script d'injection des boutons "Copier"
+  linkify_en_rapport.js           → Script de linkification automatique
+  style_keywords.js               → Styles pour la coloration syntaxique des keywords
+
+
+────────────────────────────────────────────────────────────
+7. FICHIERS DE CONFIGURATION & BUILD
+────────────────────────────────────────────────────────────
+
+  package.json          → Dépendances NPM et scripts
+  package-lock.json     → Lockfile NPM
+  vite.config.js        → Configuration Vite (bundler)
+  post_build.cjs        → Script post-build
+  .gitignore            → Fichiers exclus de Git
+  README.md             → Documentation du projet
+  ServeurLocal.txt      → Instructions pour le serveur local
+
+
+────────────────────────────────────────────────────────────
+8. AUTRES RÉPERTOIRES
+────────────────────────────────────────────────────────────
+
+  dist/             → Fichiers buildés pour la production
+  download/         → Ressources téléchargeables (installeurs, ZIP)
+  Keywords_old/     → Ancienne version des pages de mots-clés
+  node_modules/     → Dépendances NPM
+  pour_gemini/      → Ressources pour Gemini (IA)
+  public_html/      → Version publique/html du site
+  scratch/          → Fichiers temporaires / brouillons
+  Tuto/Sources/     → Fichiers source des tutoriels
+  Tuto/TUTOPICT/    → Images des tutoriels
+  .git/             → Dépôt Git local
+  .vscode/          → Configuration VS Code
+
+────────────────────────────────────────────────────────────
+Fin du plan du site — Généré le 01/06/2026
