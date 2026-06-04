@@ -234,7 +234,15 @@
 <li><a href="./Keywords/PARAM_NUMBER.html" ><b>PARAM_NUMBER</b></a> : retourne le nombre de paramètres passés à l'application</li>
 <li><a href="./Keywords/PARAM_VALUE%24().html" ><b>PARAM_VALUE$(N)</b></a> : retourne le Nième paramètre passé à l'application</li>
 <li><a href="./Keywords/PEEK().html" ><b>PEEK(A)</b></a> : retourne la valeur (octet de 0 à 255) de l'adresse A</li>
+<li><a href="./Keywords/PEEK16().html" ><b>PEEK16(A)</b></a> : retourne le contenu (valeur sur 16 bits de 0 à 65535) des adresses A et A+1</li>
+<li><a href="./Keywords/PEEK32().html" ><b>PEEK32(A)</b></a> : retourne le contenu (valeur sur 32 bits de 0 à 4294967295) des adresses A, A+1, A+2 et A+3</li>
+<li><a href="./Keywords/PEEK_NORMAL.html" ><b>PEEK_NORMAL</b></a> : les fonctions peek16(a) et peek32(a) retournent une valeur dont le poids fort est à l'adresse A</li>
+<li><a href="./Keywords/PEEK_REVERSE.html" ><b>PEEK_REVERSE</b></a> : les fonctions peek16(a) et peek32(a) retournent une valeur dont le poids faible est à l'adresse A</li>
 <li><a href="./Keywords/POKE.html" ><b>POKE A,V</b></a> : écrit la valeur V (octet de 0 à 255) à l'adresse A</li>
+<li><a href="./Keywords/POKE16.html" ><b>POKE16 A,V</b></a> : ecrit la valeur V de 16 bits (de 0 à 65535) aux adresses A et A+1</li>
+<li><a href="./Keywords/POKE32.html" ><b>POKE32 A,V</b></a> : ecrit la valeur V de 32 bits (de 0 à 4294967295) aux adresses A, A+1, A+2 et A+3</li>
+<li><a href="./Keywords/POKE_NORMAL.html" ><b>POKE_NORMAL</b></a> : les commandes poke16 A,V et poke32 A,V écrivent V avec le poids fort de V à l'adresse A</li>
+<li><a href="./Keywords/POKE_REVERSE.html" ><b>POKE_REVERSE</b></a> : les commandes poke16 A,V et poke32 A,V écrivent V avec le poids faible de V à l'adresse A</li>
 <li><a href="./Keywords/PRINT.html" ><b>PRINT E</b></a> : écrit l'expression E à l'intérieur d'un objet système</li>
 <li><a href="./Keywords/PRINT_LOCATE.html" ><b>PRINT_LOCATE X,Y</b></a> : définit la position en X et Y de la prochaine impression par la commande print</li>
 <li><a href="./Keywords/PRINT_X_LOCATE.html" ><b>PRINT_X_LOCATE X</b></a> : définit la position en X de la prochaine impression par la commande print</li>
@@ -242,12 +250,14 @@
 <li><a href="./Keywords/READ.html" ><b>READ V</b></a> : stocke dans la variable V la valeur trouvée dans une déclaration « DATA »</li>
 <li><a href="./Keywords/REM.html" ><b>REM C</b></a> : permet le commentaire C</li>
 <li><a href="./Keywords/RESTORE.html" ><b>RESTORE</b></a> : force la lecture des données à partir de la première déclaration « DATA »</li>
+<li><a href="./Keywords/RESTORE_LABEL.html" ><b>RESTORE_LABEL L</b></a> : force la lecture des données à partir du label L</li>
 <li><a href="./Keywords/RETURN.html" ><b>RETURN</b></a> : termine un sous-programme</li>
 <li><a href="./Keywords/STOP.html" ><b>STOP</b></a> : arrête l'exécution du programme et visualise une fenêtre à acquitter</li>
 <li><a href="./Keywords/TERMINATE.html" ><b>TERMINATE</b></a> : arrête définitivement l'exécution du programme et libère la mémoire</li>
 <li><a href="./Keywords/TRACE_OFF.html" ><b>TRACE_OFF</b></a> : arrête le mode trace et ferme le fichier texte</li>
 <li><a href="./Keywords/TRACE_ON.html" ><b>TRACE_ON F</b></a> : démarre le mode trace et crée le fichier texte F</li>
 <li><a href="./Keywords/VARIABLE().html" ><b>VARIABLE(V)</b></a> : retourne 1 si V$ représente une variable déclarée, 0 sinon</li>
+<li><a href="./Keywords/VERSION%24.html" ><b>VERSION$</b></a> : retourne la version de panoramic</li>
 </ul>
       </div>
     </div>
