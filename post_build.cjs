@@ -43,5 +43,16 @@ copyFolderRecursiveSync('assets/css', 'dist/assets');
 copyFolderRecursiveSync('assets/js', 'dist/assets');
 copyFolderRecursiveSync('assets/images', 'dist/assets');
 
+// Regenerate the sitemap (lists every page) and copy SEO files into dist
+const { generateSitemap } = require('./generate_sitemap.cjs');
+const sitemap = generateSitemap(__dirname);
+console.log('Sitemap generated: ' + sitemap.count + ' pages.');
+
+['sitemap.xml', 'robots.txt'].forEach(function (f) {
+  if (fs.existsSync(f)) {
+    fs.copyFileSync(f, path.join('dist', f));
+  }
+});
+
 console.log('Post-build copy completed successfully.');
 
