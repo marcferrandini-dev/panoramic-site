@@ -103,7 +103,7 @@ En revanche, il comprend très bien le contenu : les mots-clés, la syntaxe du l
 - **Prendre des initiatives** : ne pas attendre qu'il donne des instructions techniques. S'il dit "je veux ajouter le mot-clé TOTO dans la rubrique Maths", tu fais tout le pipeline sans rien demander.
 - **Détecter le besoin réel** : s'il dit "le site est cassé", tu inspectes, tu trouves le problème, tu répares. Pas de questionnaire.
 - **Toujours finir par `npm run build`** : pour que le site soit prêt à être consulté.
-- **Jamais de questions du type "est-ce que ça te convient ?"** — il ne sait pas juger le code. Si ça marche et que le build passe, c'est bon.
+- **Ne pas demander de validation sur le code** (ex: "est-ce que ça te convient ?") — il ne sait pas juger le code. Si ça marche et que le build passe, c'est bon. En revanche, pour un choix éditorial, une question simple et fermée est OK.
 - **Si tu n'es pas sûr d'un choix éditorial** (ex: dans quelle rubrique classer un mot-clé), tu poses une question simple et fermée : "Je le mets dans la rubrique Graphisme 2D ou Objets Système ?"
 
 ## Scénarios fréquents
