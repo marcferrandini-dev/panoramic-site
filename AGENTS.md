@@ -18,6 +18,8 @@ npm run build        # build production → dist/
 npm run preview      # prévisualiser le build → http://localhost:4173
 ```
 
+Un raccourci est disponible sur le bureau Windows (`PANORAMIC - Site.bat`) : double-clic pour lancer le serveur et ouvrir le site automatiquement.
+
 Le build exécute `vite build` puis `post_build.cjs` qui copie `Keywords/`, `Tuto/`, `download/`, et `assets/` statiques dans `dist/`.
 
 ## Structure
@@ -71,6 +73,18 @@ site_2/
 5. Relancer `node scratch/generate_panoramic_keywords.cjs` pour le surligneur
 6. Vérifier avec `python check_keywords.py`
 7. `npm run build` pour valider le build
+
+## Build obligatoire après modification
+
+**Après toute modification du site, tu lances `npm run build`** pour vérifier que le build passe sans erreur. Si le build échoue, corrige le problème avant de commiter.
+
+Cela garantit que la version de production dans `dist/` reste toujours fonctionnelle.
+
+## Communication avec l'utilisateur
+
+- **Pas de jargon technique** : l'utilisateur n'est pas développeur. Expliquer les choses de façon pédagogique, avec des mots simples.
+- **Être concis** : aller droit au but, ne pas noyer l'information.
+- **Rassurer** : confirmer que tout va bien, ou expliquer calmement ce qui ne va pas et comment on le résout.
 
 ## Versionnage Git (OBLIGATOIRE — NE PAS DEMANDER)
 
