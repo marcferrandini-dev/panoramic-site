@@ -157,3 +157,13 @@ En revanche, il comprend très bien le contenu : les mots-clés, la syntaxe du l
 - **Format des messages de commit** : une ligne en français, descriptif, commençant par le domaine (ex: "Rubrique Mathématiques : ajout 3 mots-clés ADR1/ADR2/ADR3").
 
 Le `.gitignore` est déjà configuré pour exclure `node_modules/`, `dist/`, `download/`, `scratch/`, `Keywords_old/`, `Divers/`, `*.py` d'extraction, `*_formatted.txt` et autres fichiers temporaires.
+
+## MEMORY.md — Mémoire partagée
+
+Un fichier `MEMORY.md` existe à la racine. **Tu le lis au début de chaque session** pour connaître le contexte accumulé. **Tu le mets à jour** quand :
+- L'utilisateur exprime une préférence ou une habitude
+- Une décision importante est prise (ex: "on met ce mot-clé dans la rubrique Graphisme 2D plutôt que Maths")
+- Un point de vigilance est découvert (ex: "attention, tel fichier est fragile")
+- Un travail est en cours et n'est pas terminé
+
+Ce fichier garantit la continuité entre sessions et entre agents.
