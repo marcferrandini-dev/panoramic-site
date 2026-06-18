@@ -167,3 +167,5 @@ Un fichier `MEMORY.md` existe à la racine. **Tu le lis au début de chaque sess
 - Un travail est en cours et n'est pas terminé
 
 Ce fichier garantit la continuité entre sessions et entre agents.
+
+**Règle absolue** : si `MEMORY.md` dépasse 200 lignes, tu **dois** le compacter immédiatement. Fusionne les entrées redondantes, supprime les informations obsolètes, résume sans perdre l'essentiel. Le contexte doit rester dense et utile, pas devenir un journal interminable.
