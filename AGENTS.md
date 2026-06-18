@@ -80,11 +80,70 @@ site_2/
 
 Cela garantit que la version de production dans `dist/` reste toujours fonctionnelle.
 
+## À propos de l'utilisateur principal
+
+L'utilisateur principal est le **créateur du langage PANORAMIC**. C'est un expert métier qui connaît parfaitement son langage et sa documentation, mais **ce n'est pas un développeur web**. Il ne connaît pas :
+- Git, Node.js, npm, Vite, CSS, JavaScript
+- Les workflows techniques (build, commit, push, extraction)
+- Le jargon du développement web
+
+En revanche, il comprend très bien le contenu : les mots-clés, la syntaxe du langage, les rubriques thématiques, la logique des tutoriels.
+
 ## Communication avec l'utilisateur
 
-- **Pas de jargon technique** : l'utilisateur n'est pas développeur. Expliquer les choses de façon pédagogique, avec des mots simples.
+- **Pas de jargon technique** : expliquer avec des mots simples, comme on parlerait à quelqu'un qui ne fait pas d'informatique.
 - **Être concis** : aller droit au but, ne pas noyer l'information.
 - **Rassurer** : confirmer que tout va bien, ou expliquer calmement ce qui ne va pas et comment on le résout.
+- **Ne pas poser de questions techniques** : ne pas demander "tu veux que je commit ?" ou "je fais npm run build ?" — tu le fais, point.
+- **Traduire les demandes en actions** : si l'utilisateur dit un truc vague comme "faudrait mettre ça sur le site", tu analyses, tu proposes une solution concrète en une phrase, et tu agis.
+- **Résumer le résultat, pas les étapes** : dire "c'est fait, le mot-clé est en ligne" plutôt que lister les 7 scripts qui ont tourné.
+
+## Comportement proactif face à l'utilisateur
+
+- **Prendre des initiatives** : ne pas attendre qu'il donne des instructions techniques. S'il dit "je veux ajouter le mot-clé TOTO dans la rubrique Maths", tu fais tout le pipeline sans rien demander.
+- **Détecter le besoin réel** : s'il dit "le site est cassé", tu inspectes, tu trouves le problème, tu répares. Pas de questionnaire.
+- **Toujours finir par `npm run build`** : pour que le site soit prêt à être consulté.
+- **Jamais de questions du type "est-ce que ça te convient ?"** — il ne sait pas juger le code. Si ça marche et que le build passe, c'est bon.
+- **Si tu n'es pas sûr d'un choix éditorial** (ex: dans quelle rubrique classer un mot-clé), tu poses une question simple et fermée : "Je le mets dans la rubrique Graphisme 2D ou Objets Système ?"
+
+## Scénarios fréquents
+
+### Ajout d'un nouveau mot-clé
+1. Créer `Keywords/MOTCLE.html` avec le format legacy `<font face="Calibri">`
+2. Lancer toute la chaîne de traitement (shell → style → linkify → copy button)
+3. Mettre à jour `liste_mots_cles.txt`
+4. Lancer les extractions Python et le merge dans `manuel-theme.html`
+5. Régénérer le surligneur (`generate_panoramic_keywords.cjs`)
+6. Vérifier la cohérence (`check_keywords.py`)
+7. `npm run build` puis commit + push
+8. Résumer en une phrase simple : "Le mot-clé XXXXX est en ligne."
+
+### Correction d'un mot-clé existant
+1. Modifier le fichier `Keywords/MOTCLE.html`
+2. Relancer extraction + merge si la signature ou description a changé
+3. `npm run build` puis commit + push
+4. Annoncer "Correction faite."
+
+### Modification d'une page du site (accueil, téléchargements, etc.)
+1. Modifier le `.html` concerné
+2. `npm run build` puis commit + push
+3. Annoncer le résultat simplement
+
+### Ajout d'un tutoriel
+1. Créer le fichier dans `Tuto/` en utilisant la structure d'un tutoriel existant comme modèle
+2. Ajouter les images dans `Tuto/TUTOPICT/` si nécessaire
+3. Mettre à jour `tutoriels.html` pour référencer le nouveau tutoriel
+4. `npm run build` puis commit + push
+
+## Pièges à éviter
+
+- **Ne pas demander** "tu veux que je fasse un commit ?" — tu le fais automatiquement.
+- **Ne pas expliquer** ce qu'est Vite, le DOM, ou le CSS — ça n'intéresse pas l'utilisateur.
+- **Ne pas montrer** les diffs git ou les logs de build — il ne les comprend pas.
+- **Ne pas proposer** de branches, de PR, ou de workflows Git complexes — on reste sur main.
+- **Ne pas modifier** le design ou la mise en page sans qu'on te le demande explicitement.
+- **Ne pas supprimer** de fichiers sans certitude qu'ils sont inutiles — toujours vérifier d'abord.
+- **Ne pas réinventer** la structure des pages — toujours prendre une page existante comme modèle.
 
 ## Versionnage Git (OBLIGATOIRE — NE PAS DEMANDER)
 
