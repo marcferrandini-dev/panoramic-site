@@ -8,7 +8,8 @@ Ce fichier est rempli et mis à jour par les agents au fil du temps. Il conserve
 
 <!-- Les agents ajoutent ici les choix importants faits avec l'utilisateur, en datant chaque entrée -->
 
-[À remplir par les agents au fil du temps]
+- **2026-06-19** — Adresse du site en ligne : `panoramic-basic.fr` (utilisée dans le sitemap, à confirmer définitivement avec l'utilisateur).
+- **2026-06-19** — Le `sitemap.xml` est désormais généré automatiquement au build (`generate_sitemap.cjs`, appelé par `post_build.cjs`) : il liste les ~778 pages (accueil, pages principales, manuel, Tuto/, Keywords/) et est copié dans `dist/` avec `robots.txt`. Ne pas l'éditer à la main, il est régénéré à chaque build.
 
 ## Préférences utilisateur
 
