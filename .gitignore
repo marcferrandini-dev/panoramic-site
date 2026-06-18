@@ -12,3 +12,23 @@ Keywords_old/
 Thumbs.db
 *.log
 .env
+
+# Outils d'extraction de mots-cles
+extract_*.py
+fix_numero.py
+merge_actions_os.py
+
+# Fichiers de travail temporaires
+*_formatted.txt
+Action objets systeme.txt
+Reference.txt
+evenement.txt
+math.txt
+math1.txt
+sprite.txt
+string.txt
+structure.txt
+
+# Anciennes versions / backups
+Divers/
+telechargements_old.html

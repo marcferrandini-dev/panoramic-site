@@ -44,7 +44,7 @@ URL de base : https://www.panoramic-language.fr (ou équivalent local)
 
   manuel-a-z.html
   ├── Manuel de référence de A à Z
-  │   Moteur de recherche parmi les 735 instructions PANORAMIC.
+  │   Moteur de recherche parmi les 746 instructions PANORAMIC.
   │   Chaque instruction a sa page dédiée dans Keywords/ (voir section 5).
 
   manuel-theme.html
