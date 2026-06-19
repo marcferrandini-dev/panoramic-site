@@ -243,4 +243,22 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
   }
+
+  // ==========================================
+  // 7. Back-to-Top Button
+  // ==========================================
+  const backToTop = document.createElement('button');
+  backToTop.className = 'back-to-top';
+  backToTop.setAttribute('aria-label', 'Retour en haut de la page');
+  backToTop.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M5 15l7-7 7 7" /></svg>';
+  document.body.appendChild(backToTop);
+
+  const toggleBackToTop = () => {
+    backToTop.classList.toggle('visible', window.scrollY > 400);
+  };
+  toggleBackToTop();
+  window.addEventListener('scroll', toggleBackToTop);
+  backToTop.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
 });

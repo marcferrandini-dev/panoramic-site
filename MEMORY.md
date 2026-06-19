@@ -9,6 +9,8 @@ Ce fichier est rempli et mis à jour par les agents au fil du temps. Il conserve
 <!-- Les agents ajoutent ici les choix importants faits avec l'utilisateur, en datant chaque entrée -->
 
 - **2026-06-19** — Adresse du site en ligne : `panoramic-basic.fr` (utilisée dans le sitemap, à confirmer définitivement avec l'utilisateur).
+- **2026-06-19** — Casse officielle du nom du langage : **BASIC** (en majuscules) partout, y compris les pieds de page. Ne pas réintroduire « Basic ».
+- **2026-06-19** — Audit complet appliqué (sauf le « plus de 740 » de l'accueil, laissé tel quel sur demande) : balises SEO canonical/Open Graph/Twitter + JSON-LD sur les pages racine, bouton « retour en haut » (injecté par `main.js`), contour clavier `:focus-visible`, navigation précédent/suivant entre les 9 parties du manuel, `<h1>` masqué (`.sr-only`) sur les pages Keywords, titres distincts + favicon sur les 14 tutoriels, mentions légales complétées (confidentialité/contact).
 - **2026-06-19** — Le `sitemap.xml` est désormais généré automatiquement au build (`generate_sitemap.cjs`, appelé par `post_build.cjs`) : il liste les ~778 pages (accueil, pages principales, manuel, Tuto/, Keywords/) et est copié dans `dist/` avec `robots.txt`. Ne pas l'éditer à la main, il est régénéré à chaque build.
 
 ## Préférences utilisateur
