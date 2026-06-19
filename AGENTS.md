@@ -67,7 +67,7 @@ site_2/
 ## Workflow d'ajout de mots-clés
 
 1. Ajouter le fichier `Keywords/MOTCLE.html` (format legacy avec `<font face="Calibri">`)
-2. Lanceer `node inject_keywords_shell.js` puis `node style_keywords.js` puis `node linkify_en_rapport.js` puis `node inject_copy_button.js`
+2. Lancer `node scratch/inject_keywords_shell.cjs` puis `node style_keywords.js` puis `node linkify_en_rapport.js` puis `node inject_copy_button.js`
 3. Mettre à jour `liste_mots_cles.txt`
 4. Lancer les scripts `extract_*.py` puis `merge_*.py` pour injecter dans `manuel-theme.html`
 5. Relancer `node scratch/generate_panoramic_keywords.cjs` pour le surligneur

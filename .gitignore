@@ -11,6 +11,7 @@ Keywords_old/
 .DS_Store
 Thumbs.db
 *.log
+*.bak
 .env
 
 # Outils d'extraction de mots-cles
