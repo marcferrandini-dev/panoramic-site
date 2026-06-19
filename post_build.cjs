@@ -2,8 +2,9 @@
 const fs = require('fs');
 const path = require('path');
 
-function copyFolderRecursiveSync(source, target) {
+function copyFolderRecursiveSync(source, target, exclude) {
   if (!fs.existsSync(source)) return;
+  exclude = exclude || [];
 
   var targetFolder = path.join(target, path.basename(source));
   if (!fs.existsSync(targetFolder)) {
@@ -13,9 +14,10 @@ function copyFolderRecursiveSync(source, target) {
   if (fs.lstatSync(source).isDirectory()) {
     const files = fs.readdirSync(source);
     files.forEach(function (file) {
+      if (exclude.indexOf(file) !== -1) return;
       var curSource = path.join(source, file);
       if (fs.lstatSync(curSource).isDirectory()) {
-        copyFolderRecursiveSync(curSource, targetFolder);
+        copyFolderRecursiveSync(curSource, targetFolder, exclude);
       } else {
         fs.copyFileSync(curSource, path.join(targetFolder, file));
       }
@@ -41,7 +43,9 @@ if (!fs.existsSync('dist/assets')) {
 }
 copyFolderRecursiveSync('assets/css', 'dist/assets');
 copyFolderRecursiveSync('assets/js', 'dist/assets');
-copyFolderRecursiveSync('assets/images', 'dist/assets');
+// 'realisations' est exclu : ces images sont déjà optimisées/copiées par le build
+// (versions hashées dans dist/assets/). Les recopier en clair ferait un doublon de ~27 Mo.
+copyFolderRecursiveSync('assets/images', 'dist/assets', ['realisations']);
 
 // Regenerate the sitemap (lists every page) and copy SEO files into dist
 const { generateSitemap } = require('./generate_sitemap.cjs');
