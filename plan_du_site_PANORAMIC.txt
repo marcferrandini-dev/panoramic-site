@@ -887,7 +887,6 @@ URL de base : https://www.panoramic-language.fr (ou équivalent local)
 ────────────────────────────────────────────────────────────
 
   download/         → Ressources téléchargeables
-  Tuto/Sources/     → Fichiers source des tutoriels
   Tuto/TUTOPICT/    → Images des tutoriels
 
 ────────────────────────────────────────────────────────────

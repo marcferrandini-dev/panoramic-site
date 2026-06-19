@@ -37,7 +37,7 @@ site_2/
 ├── telechargements.html     # Téléchargements des exécutables
 ├── mentions-legales.html    # Mentions légales
 ├── Keywords/                # 746 pages HTML, une par mot-clé (ex: BUTTON.html, SCENE3D.html)
-├── Tuto/                    # 14 tutoriels HTML + images (TUTOPICT/) + sources (Sources/)
+├── Tuto/                    # 14 tutoriels HTML + images (TUTOPICT/)
 ├── assets/
 │   ├── css/                 # style.css (global), keyword-style.css (pages mots-clés)
 │   ├── js/                  # main.js, theme-init.js, panoramic-highlighter.js, panoramic-keywords.js
