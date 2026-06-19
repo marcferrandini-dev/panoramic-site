@@ -72,7 +72,8 @@ site_2/
 4. Lancer les scripts `extract_*.py` puis `merge_*.py` pour injecter dans `manuel-theme.html`
 5. Relancer `node scratch/generate_panoramic_keywords.cjs` pour le surligneur
 6. Vérifier avec `python check_keywords.py`
-7. `npm run build` pour valider le build
+7. `npm run build` pour valider le build, puis commit + push
+8. Résumer en une phrase simple : « Le mot-clé XXXXX est en ligne. »
 
 ## Build obligatoire après modification
 
@@ -109,14 +110,7 @@ En revanche, il comprend très bien le contenu : les mots-clés, la syntaxe du l
 ## Scénarios fréquents
 
 ### Ajout d'un nouveau mot-clé
-1. Créer `Keywords/MOTCLE.html` avec le format legacy `<font face="Calibri">`
-2. Lancer toute la chaîne de traitement (shell → style → linkify → copy button)
-3. Mettre à jour `liste_mots_cles.txt`
-4. Lancer les extractions Python et le merge dans `manuel-theme.html`
-5. Régénérer le surligneur (`generate_panoramic_keywords.cjs`)
-6. Vérifier la cohérence (`check_keywords.py`)
-7. `npm run build` puis commit + push
-8. Résumer en une phrase simple : "Le mot-clé XXXXX est en ligne."
+Suivre la procédure détaillée de la section **« Workflow d'ajout de mots-clés »** ci-dessus (chaîne de traitement complète → build → commit/push → résumé en une phrase).
 
 ### Correction d'un mot-clé existant
 1. Modifier le fichier `Keywords/MOTCLE.html`
