@@ -237,6 +237,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if (targetSection) {
           targetSection.style.display = 'block';
         }
+
+        // Retour en haut de page après le changement de catégorie
+        window.scrollTo({ top: 0, behavior: 'smooth' });
       });
     });
   }

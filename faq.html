@@ -190,7 +190,7 @@
         conseillée d'un programme est la suivante 
         :</P>
       <p>1 - Déclaration 
-        : LABEL et DIM</P>
+        : DIM et LABEL</P>
       <p>2 - Programme 
         principal : définition des composants (objets), calculs, comportement, 
         END</P>
@@ -203,75 +203,31 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>rem 
-            déclaration 
-            des étiquettes utilisées
+  <pre><code><span class="com">rem déclaration des étiquettes utilisées</span>
+<span class="kw">LABEL</span> clk
 
-            LABEL 
-            clk
+<span class="com">rem déclaration des variables utilisées</span>
+<span class="kw">DIM</span> A$
 
-            
+<span class="com">rem --- PROGRAMME PRINCIPAL ---</span>
+A$ = <span class="str">"Cliquez sur moi"</span>
+<span class="com">rem création d'un OBJET</span>
+<span class="kw">button</span> <span class="num">1</span>
+<span class="com">rem lui donner un petit texte (son "intitulé")</span>
+<span class="kw">caption</span> <span class="num">1</span>,a$
+<span class="com">rem définir le traitement quand il est cliqué</span>
+<span class="kw">on_click</span> <span class="num">1</span>,clk
 
-          rem 
-            déclaration 
-            des variables utilisées
+<span class="com">rem --- FIN DU PROGRAMME PRINCIPAL ---</span>
+<span class="kw">end</span>
 
-            DIM 
-            A$
-
-            
-
-          rem 
-            --- PROGRAMME PRINCIPAL ---
-
-            A$ = "Cliquez sur moi"
-
-            rem 
-            création 
-            d'un OBJET
-
-            button 
-            1
-
-            rem 
-            lui donner 
-            un petit texte (son "intitulé")
-
-            caption 
-            1,a$
-
-            rem 
-            définir 
-            le traitement quand il est cliqué
-
-            on_click 
-            1,clk
-
-            
-
-          rem 
-            --- 
-            FIN DU PROGRAMME PRINCIPAL ---
-
-            end
-
-          rem 
-            --- 
-            TRAITEMENT DES éVéNEMENTS---
-
-            Clk :
-
-            caption 1,"Salut!"
-
-            return</code></pre>
+<span class="com">rem --- TRAITEMENT DES éVéNEMENTS---</span>
+Clk :
+<span class="kw">caption</span> <span class="num">1</span>,<span class="str">"Salut!"</span>
+<span class="kw">return</span></code></pre>
 </div>
             </div>
           </div>
@@ -300,16 +256,10 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>scene3d 
-            1</code></pre>
+  <pre><code><span class="kw">scene3d</span> <span class="num">1</span></code></pre>
 </div>
       <p> Une caméra 
         3D et une lumière 3D sont alors automatiquement créés 
@@ -342,16 +292,10 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>3d_teapot 
-            1</code></pre>
+  <pre><code><span class="kw">3d_teapot</span> <span class="num">1</span></code></pre>
 </div>
        
       <p>3 - Vous pouvez alors les déplacer, les dimensionner, les faire 
@@ -374,21 +318,13 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>scene3D 
-            1
+  <pre><code><span class="kw">scene3D</span> <span class="num">1</span>
 
-          Lui donner 
-          tout l'espace disponible dans FORM numéro 0 
-          full_space 
-            1</code></pre>
+<span class="com">rem lui donner tout l'espace disponible dans FORM numéro 0</span>
+<span class="kw">full_space</span> <span class="num">1</span></code></pre>
 </div>
        
       <p>Remarque : pour donner tout l'espace de l'écran à FORM 
@@ -397,16 +333,10 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>full_space 
-            0</code></pre>
+  <pre><code><span class="kw">full_space</span> <span class="num">0</span></code></pre>
 </div>
        
       <p>En combinant les 2 commandes, vous avez un monde 3D prenant tout l'écran 
@@ -415,24 +345,12 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>full_space 
-            0 : rem 
-            FORM0 prend tout l'espace sur l'écran
-
-            scene3D 
-            1
-
-            full_space 
-            1 : rem 
-            SCENE3D prend tout l'espace sur FORM0</code></pre>
+  <pre><code><span class="kw">full_space</span> <span class="num">0</span> : <span class="com">rem FORM0 prend tout l'espace sur l'écran</span>
+<span class="kw">scene3D</span> <span class="num">1</span>
+<span class="kw">full_space</span> <span class="num">1</span> : <span class="com">rem SCENE3D prend tout l'espace sur FORM0</span></code></pre>
 </div>
             </div>
           </div>
@@ -454,50 +372,15 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>scene3d 
-            1 : 
-            rem 
-            créer 
-            le premier monde 3D
-
-            scene3d 
-            2 : 
-            rem 
-            créer 
-            le deuxième monde 3D
-
-            left 
-            2,210 
-            : rem 
-            le positionner 
-            (autrement il recouvre le premier)
-
-            3d_teapot 
-            1 : 
-            rem 
-            créer 
-            le premier objet 3D dans le premier monde 3D
-
-            3d_target_is 
-            2 : 
-            rem 
-            assigner 
-            le deuxième monde 3D comme le récepteur de commandes 
-            3D
-
-            3d_teapot 
-            2 : 
-            rem 
-            créer 
-            le deuxième objet 3D dans le deuxième monde 3D</code></pre>
+  <pre><code><span class="kw">scene3d</span> <span class="num">1</span> : <span class="com">rem créer le premier monde 3D</span>
+<span class="kw">scene3d</span> <span class="num">2</span> : <span class="com">rem créer le deuxième monde 3D</span>
+<span class="kw">left</span> <span class="num">2</span>,<span class="num">210</span> : <span class="com">rem le positionner (autrement il recouvre le premier)</span>
+<span class="kw">3d_teapot</span> <span class="num">1</span> : <span class="com">rem créer le premier objet 3D dans le premier monde 3D</span>
+<span class="kw">3d_target_is</span> <span class="num">2</span> : <span class="com">rem assigner le deuxième monde 3D comme le récepteur de commandes 3D</span>
+<span class="kw">3d_teapot</span> <span class="num">2</span> : <span class="com">rem créer le deuxième objet 3D dans le deuxième monde 3D</span></code></pre>
 </div>
             </div>
           </div>
@@ -521,17 +404,10 @@
       
 <div class="code-editor">
   <div class="editor-header">
-    <div class="editor-buttons">
-      <span class="editor-dot dot-red">
-      <span class="editor-dot dot-yellow">
-      <span class="editor-dot dot-green">
-    </div>
-    <span class="editor-title">code.bas
-    <button class="editor-copy"><span>Copier</button>
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
   </div>
-  <p><code>color 
-            N, Rouge, 
-            Vert, Bleu</code></pre>
+  <pre><code><span class="kw">color</span> N, Rouge, Vert, Bleu</code></pre>
 </div>
             </div>
           </div>
@@ -578,24 +454,20 @@
         3d_z_position</P>
        
       <p>Exemple :</P>
-       
-      <blockquote> 
-        <p>rem 
-          la sphère 
-          n&deg;1 avec rayon=2 est créée en (0,0,0)<br>
-          3d_sphere 
-          1,2 
-          </p>
-        <p>rem 
-          la déplacer 
-          en (5,6,7)<br>
-          3d_x_position 
-          1,5<br>
-          3d_y_position 
-          1,6<br>
-          3d_z_position 
-          1,7</p>
-      </blockquote>
+
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="com">rem la sphère n°1 avec rayon=2 est créée en (0,0,0)</span>
+<span class="kw">3d_sphere</span> <span class="num">1</span>,<span class="num">2</span>
+
+<span class="com">rem la déplacer en (5,6,7)</span>
+<span class="kw">3d_x_position</span> <span class="num">1</span>,<span class="num">5</span>
+<span class="kw">3d_y_position</span> <span class="num">1</span>,<span class="num">6</span>
+<span class="kw">3d_z_position</span> <span class="num">1</span>,<span class="num">7</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -608,33 +480,21 @@
           </button>
           <div class="accordion-content">
             <div class="accordion-content-inner">
-              </B> 
-      <blockquote> 
-        <p>rem 
-           créez 
-          un scene3D (monde 3D)<br>
-          scene3d 
-          1 : 
-          rem 
-          1 est le 
-          numéro d'objet</p>
-      </blockquote>
-      <blockquote> 
-        <p>rem 
-           créez 
-          un objet "maillé"<br>
-          3d_mesh 
-          1 : 
-          rem 
-          1 est le 
-          numéro d'objet 3D 
-          </p>
-        <p>rem 
-           chargez 
-          votre fichier dans l'objet 3D numéro 1<br>
-          3d_load_object 
-          1,"MonObjet.3ds"</p>
-      </blockquote>
+
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="com">rem créez un scene3D (monde 3D)</span>
+<span class="kw">scene3d</span> <span class="num">1</span> : <span class="com">rem 1 est le numéro d'objet</span>
+
+<span class="com">rem créez un objet "maillé"</span>
+<span class="kw">3d_mesh</span> <span class="num">1</span> : <span class="com">rem 1 est le numéro d'objet 3D</span>
+
+<span class="com">rem chargez votre fichier dans l'objet 3D numéro 1</span>
+<span class="kw">3d_load_object</span> <span class="num">1</span>,<span class="str">"MonObjet.3ds"</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -647,30 +507,21 @@
           </button>
           <div class="accordion-content">
             <div class="accordion-content-inner">
-              </B> 
-      <blockquote> 
-        <p>rem 
-           créez 
-          un scene3D (monde 3D)<br>
-          scene3d 
-          1 : 
-          rem 
-          1 est le 
-          numéro d'objet</p>
-        <p> rem 
-           créez 
-          un objet3D "acteur"<br>
-          3d_actor 
-          1 : 
-          rem 
-          1 est le 
-          numéro d'objet 3D</p>
-        <p> rem 
-           chargez 
-          votre fichier dans l'objet 3D numéro 1<br>
-          3d_load_object 
-          1,"MonObjet.md2"</p>
-      </blockquote>
+
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="com">rem créez un scene3D (monde 3D)</span>
+<span class="kw">scene3d</span> <span class="num">1</span> : <span class="com">rem 1 est le numéro d'objet</span>
+
+<span class="com">rem créez un objet3D "acteur"</span>
+<span class="kw">3d_actor</span> <span class="num">1</span> : <span class="com">rem 1 est le numéro d'objet 3D</span>
+
+<span class="com">rem chargez votre fichier dans l'objet 3D numéro 1</span>
+<span class="kw">3d_load_object</span> <span class="num">1</span>,<span class="str">"MonObjet.md2"</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -697,12 +548,15 @@
         (0 
         pour le FORM de Base, ou N pour un FORM créé par la commande 
         form 
-        N) :</P>
-      <DIR> 
-        <p>color 
-          N, Rouge, 
-          Vert, Bleu</P>
-      </DIR>
+        N) :</p>
+
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">color</span> N, Rouge, Vert, Bleu</code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -717,14 +571,14 @@
             <div class="accordion-content-inner">
               conseillé de faire une pause 
         après la coloration d'un FORM</B> :</P>
-      <DIR> 
-        <p>rem 
-          mettre le 
-          fond en couleur blanche<br>
-          color 
-          0,255,255,255 
-          : display</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="com">rem mettre le fond en couleur blanche</span>
+<span class="kw">color</span> <span class="num">0</span>,<span class="num">255</span>,<span class="num">255</span>,<span class="num">255</span> : <span class="kw">display</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -738,17 +592,20 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <p>Une image 
-        a été créée par la commande picture 
-        N . Utilisez 
-        le numéro N dans la 
-        commande color 
+      <p>Une image
+        a été créée par la commande picture
+        N . Utilisez
+        le numéro N dans la
+        commande color
         :</P>
-      <DIR> 
-        <p>color 
-          N, Rouge, 
-          Vert, Bleu</P>
-      </DIR>
+
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">color</span> N, Rouge, Vert, Bleu</code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -763,71 +620,28 @@
             <div class="accordion-content-inner">
               <p>Voir l'exemple suivant :</P>
        
-      <DIR> 
-        <p>rem 
-          créer 
-          l'objet "menu principal"<br>
-          main_menu 
-          1</p>
-        <p> rem 
-          créer 
-          2 "sous menus" au même niveau (fils de l'objet numéro 
-          1)<br>
-          sub_menu 
-          2 : 
-          caption 
-          2,"Fichier" 
-          : parent 
-          2,1<br>
-          sub_menu 
-          3 : 
-          caption 
-          3,"Edition" 
-          : parent 
-          3,1</p>
-        <p> rem 
-          créer 
-          3 "sous-menus" fils de l'objet numéro 2<br>
-          sub_menu 
-          4 : 
-          caption 
-          4,"Ouvrir" 
-          : parent 
-          4,2<br>
-          sub_menu 
-          5 : 
-          caption 
-          5,"Sauvegarder" 
-          : parent 
-          5,2<br>
-          sub_menu 
-          6 : 
-          caption 
-          6,"Quitter" 
-          : parent 
-          6,2</p>
-        <p> rem 
-          créer 
-          3 "sous-menus" fils de l'objet numéro 3<br>
-          sub_menu 
-          7 : 
-          caption 
-          7,"Copier" 
-          : parent 
-          7,3<br>
-          sub_menu 
-          8 : 
-          caption 
-          8,"Coller" 
-          : parent 
-          8,3<br>
-          sub_menu 
-          9 : 
-          caption 
-          9, 
-          "Défaire" : parent 
-          9, 3</p>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="com">rem créer l'objet "menu principal"</span>
+<span class="kw">main_menu</span> <span class="num">1</span>
+
+<span class="com">rem créer 2 "sous menus" au même niveau (fils de l'objet numéro 1)</span>
+<span class="kw">sub_menu</span> <span class="num">2</span> : <span class="kw">caption</span> <span class="num">2</span>,<span class="str">"Fichier"</span> : <span class="kw">parent</span> <span class="num">2</span>,<span class="num">1</span>
+<span class="kw">sub_menu</span> <span class="num">3</span> : <span class="kw">caption</span> <span class="num">3</span>,<span class="str">"Edition"</span> : <span class="kw">parent</span> <span class="num">3</span>,<span class="num">1</span>
+
+<span class="com">rem créer 3 "sous-menus" fils de l'objet numéro 2</span>
+<span class="kw">sub_menu</span> <span class="num">4</span> : <span class="kw">caption</span> <span class="num">4</span>,<span class="str">"Ouvrir"</span> : <span class="kw">parent</span> <span class="num">4</span>,<span class="num">2</span>
+<span class="kw">sub_menu</span> <span class="num">5</span> : <span class="kw">caption</span> <span class="num">5</span>,<span class="str">"Sauvegarder"</span> : <span class="kw">parent</span> <span class="num">5</span>,<span class="num">2</span>
+<span class="kw">sub_menu</span> <span class="num">6</span> : <span class="kw">caption</span> <span class="num">6</span>,<span class="str">"Quitter"</span> : <span class="kw">parent</span> <span class="num">6</span>,<span class="num">2</span>
+
+<span class="com">rem créer 3 "sous-menus" fils de l'objet numéro 3</span>
+<span class="kw">sub_menu</span> <span class="num">7</span> : <span class="kw">caption</span> <span class="num">7</span>,<span class="str">"Copier"</span> : <span class="kw">parent</span> <span class="num">7</span>,<span class="num">3</span>
+<span class="kw">sub_menu</span> <span class="num">8</span> : <span class="kw">caption</span> <span class="num">8</span>,<span class="str">"Coller"</span> : <span class="kw">parent</span> <span class="num">8</span>,<span class="num">3</span>
+<span class="kw">sub_menu</span> <span class="num">9</span> : <span class="kw">caption</span> <span class="num">9</span>,<span class="str">"Défaire"</span> : <span class="kw">parent</span> <span class="num">9</span>,<span class="num">3</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -866,40 +680,27 @@
             <div class="accordion-content-inner">
               <p>Première possibilité :</P>
        
-      <DIR> 
-        <p>form 
-          3 : 
-          rem 
-          créer 
-          un autre FORM (numéro 3)<br>
-          button 
-          1 : 
-          rem 
-          créer un BUTTON (numéro 1)<br>
-          parent 
-          1,3 : 
-          rem 
-          le BUTTON va sur son père (le container) : FORM numéro 
-          3</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">form</span> <span class="num">3</span> : <span class="com">rem créer un autre FORM (numéro 3)</span>
+<span class="kw">button</span> <span class="num">1</span> : <span class="com">rem créer un BUTTON (numéro 1)</span>
+<span class="kw">parent</span> <span class="num">1</span>,<span class="num">3</span> : <span class="com">rem le BUTTON va sur son père (le container) : FORM numéro 3</span></code></pre>
+</div>
       
       <p>Deuxième possibilité :</P>
        
-      <DIR> 
-        <p>form 
-          3 : 
-          rem 
-          créer 
-          un autre FORM (numéro 3)<br>
-          command_target_is 
-          3 : 
-          rem 
-          toutes les commandes vont sur l'objet numéro 3<br>
-          button 
-          1 : 
-          rem 
-          créer un BUTTON : il va sur sur FORM numéro 3</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">form</span> <span class="num">3</span> : <span class="com">rem créer un autre FORM (numéro 3)</span>
+<span class="kw">command_target_is</span> <span class="num">3</span> : <span class="com">rem toutes les commandes vont sur l'objet numéro 3</span>
+<span class="kw">button</span> <span class="num">1</span> : <span class="com">rem créer un BUTTON : il va sur FORM numéro 3</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -913,22 +714,16 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>form 
-          3 : 
-          rem 
-          créer 
-          une autre forme (numéro 3)<br>
-          command_to 
-          3 : rem 
-          toutes les commandes vont sur l'objet numéro 3<br>
-          main_menu 
-          1 : rem 
-          créer un menu sur FORM numéro 3<br>
-          caption 
-          1,"Menu" : rem lui donner un 
-          caption le rend visible</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">form</span> <span class="num">3</span> : <span class="com">rem créer une autre forme (numéro 3)</span>
+<span class="kw">command_target_is</span> <span class="num">3</span> : <span class="com">rem toutes les commandes vont sur l'objet numéro 3</span>
+<span class="kw">main_menu</span> <span class="num">1</span> : <span class="com">rem créer un menu sur FORM numéro 3</span>
+<span class="kw">caption</span> <span class="num">1</span>,<span class="str">"Menu"</span> : <span class="com">rem lui donner un caption le rend visible</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -959,27 +754,17 @@
         "_" si aucun fichier n'est choisi, la valeur rendue doit être 
         stockée dans une variable string puis comparée à 
         "_".</P>
-      <DIR> 
-        <p>dim 
-          a$ 
-          : rem 
-          déclarer une variable string</P>
-        <p>open_dialog 
-          1 : 
-          rem 
-          créer 
-          un open_dialog<br>
-          a$=file_name$(1) 
-          : rem 
-           choisir 
-          un nom de fichier avec l'open_dialog numéro 1<br>
-          if 
-          a$ &lt;&gt; "_" then 
-          - - - : 
-          rem 
-          si a$ contient 
-          un nom de fichier, alors - - -</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">dim</span> a$ : <span class="com">rem déclarer une variable string</span>
+
+<span class="kw">open_dialog</span> <span class="num">1</span> : <span class="com">rem créer un open_dialog</span>
+a$=<span class="kw">file_name$</span>(<span class="num">1</span>) : <span class="com">rem choisir un nom de fichier avec l'open_dialog numéro 1</span>
+<span class="kw">if</span> a$ &lt;&gt; <span class="str">"_"</span> <span class="kw">then</span> - - - : <span class="com">rem si a$ contient un nom de fichier, alors - - -</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1002,24 +787,17 @@
         commande file_name$(N), 
         N étant le numéro du  
         save_dialog.</P>
-      <DIR> save_dialog 
-        1 : 
-        rem 
-        créer 
-        un save_dialog<br>
-        memo 
-        2 : 
-        rem 
-        créer 
-        un memo</DIR>
-      <blockquote> 
-        <p> rem 
-          pour sauvegarder le contenu du memo 
-          avec 
-          le save_dialog<br>
-          file_save 
-          2,file_name$(1)</p>
-      </blockquote>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">save_dialog</span> <span class="num">1</span> : <span class="com">rem créer un save_dialog</span>
+<span class="kw">memo</span> <span class="num">2</span> : <span class="com">rem créer un memo</span>
+
+<span class="com">rem pour sauvegarder le contenu du memo avec le save_dialog</span>
+<span class="kw">file_save</span> <span class="num">2</span>,<span class="kw">file_name$</span>(<span class="num">1</span>)</code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1033,20 +811,17 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>dim 
-          a$ : 
-          rem déclarer 
-          une variable string</p>
-        <p>picture 
-          1 : rem 
-          créer une image<br>
-          a$="c:\MyPicture.bmp" 
-          : rem définir le nom du fichier<br>
-          file_load 
-          1,a$ : rem the file is loaded in the picture 
-        </p>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">dim</span> a$ : <span class="com">rem déclarer une variable string</span>
+
+<span class="kw">picture</span> <span class="num">1</span> : <span class="com">rem créer une image</span>
+a$=<span class="str">"c:\MyPicture.bmp"</span> : <span class="com">rem définir le nom du fichier</span>
+<span class="kw">file_load</span> <span class="num">1</span>,a$ : <span class="com">rem the file is loaded in the picture</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1060,30 +835,19 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>dim 
-          a$ : 
-          rem déclarer 
-          une variable string</P>
-        <p>picture 
-          1 : rem 
-          créer une image<br>
-          open_dialog 
-          2 : rem 
-          créer un open_dialog<br>
-          a$=file_name$ 
-          (2) : rem 
-          active l'open_dialog numéro 2<br>
-          if 
-          a$ &lt;&gt; "_" then 
-          file_load 
-          1,a$ : rem 
-          si un fichier est choisi, le charger dans l'image</P>
-        Rappel : la 
-        fonction file_name$ 
-        retourne le caractère souligné "_" si aucun fichier 
-        n'a été choisi par l'utilisateur. C'est pourquoi il faut 
-        comparer la valeur de a$ avec "_" : if a$ &lt;&gt; "_"</DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">dim</span> a$ : <span class="com">rem déclarer une variable string</span>
+
+<span class="kw">picture</span> <span class="num">1</span> : <span class="com">rem créer une image</span>
+<span class="kw">open_dialog</span> <span class="num">2</span> : <span class="com">rem créer un open_dialog</span>
+a$=<span class="kw">file_name$</span>(<span class="num">2</span>) : <span class="com">rem active l'open_dialog numéro 2</span>
+<span class="kw">if</span> a$ &lt;&gt; <span class="str">"_"</span> <span class="kw">then</span> <span class="kw">file_load</span> <span class="num">1</span>,a$ : <span class="com">rem si un fichier est choisi, le charger dans l'image</span></code></pre>
+</div>
+      <p>Rappel : la fonction file_name$ retourne le caractère souligné "_" si aucun fichier n'a été choisi par l'utilisateur. C'est pourquoi il faut comparer la valeur de a$ avec "_" : if a$ &lt;&gt; "_"</p>
             </div>
           </div>
         </div>
@@ -1097,30 +861,19 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>dim 
-          a$ : 
-          rem déclarer 
-          une variable string</P>
-        <p>memo 
-          1 : rem 
-          créer un memo<br>
-          open_dialog 
-          2 : rem 
-          créer un open_dialog<br>
-          a$ = 
-          file_name$(2) 
-          : rem activer 
-          l'open_dialog<br>
-          if 
-          a$ &lt;&gt; "_" then file_load 
-          1,a$ : rem 
-          si un fichier est choisi, le charger dans le memo</P>
-        Rappel : la 
-        fonction file_name$ 
-        retourne le caractère souligné "_" si aucun fichier 
-        n'a été choisi par l'utilisateur. C'est pourquoi il faut 
-        comparer la valeur de a$ avec "_" : if a$ &lt;&gt; "_"</DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">dim</span> a$ : <span class="com">rem déclarer une variable string</span>
+
+<span class="kw">memo</span> <span class="num">1</span> : <span class="com">rem créer un memo</span>
+<span class="kw">open_dialog</span> <span class="num">2</span> : <span class="com">rem créer un open_dialog</span>
+a$ = <span class="kw">file_name$</span>(<span class="num">2</span>) : <span class="com">rem activer l'open_dialog</span>
+<span class="kw">if</span> a$ &lt;&gt; <span class="str">"_"</span> <span class="kw">then</span> <span class="kw">file_load</span> <span class="num">1</span>,a$ : <span class="com">rem si un fichier est choisi, le charger dans le memo</span></code></pre>
+</div>
+      <p>Rappel : la fonction file_name$ retourne le caractère souligné "_" si aucun fichier n'a été choisi par l'utilisateur. C'est pourquoi il faut comparer la valeur de a$ avec "_" : if a$ &lt;&gt; "_"</p>
             </div>
           </div>
         </div>
@@ -1134,13 +887,13 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>caption 
-          N,"Salut" 
-          : rem 
-          N doit être 
-          un numéro de button, d''option, de check, d'alpha ou de form</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">caption</span> N,<span class="str">"Salut"</span> : <span class="com">rem N doit être un numéro de button, d'option, de check, d'alpha ou de form</span></code></pre>
+</div>
       <p> Cette commande 
         sur un autre type d'objet produit une erreur.</p>
             </div>
@@ -1156,13 +909,13 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               COMBO</B> 
-      <DIR> 
-        <p>text 
-          N,"Salut" 
-          : rem 
-          N doit être 
-          le numéro d'un EDIT ou d'un COMBO</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">text</span> N,<span class="str">"Salut"</span> : <span class="com">rem N doit être le numéro d'un EDIT ou d'un COMBO</span></code></pre>
+</div>
        
       <p>Cette commande sur un autre type d'objet produit une erreur.</P>
             </div>
@@ -1186,22 +939,23 @@
        
       <p>- Pour lire la position du curseur :</P>
        
-      <DIR> 
-        <p> A=position(N) 
-          : rem 
-          N est le 
-          numéro de l'objet barre.</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code>A=<span class="kw">position</span>(N) : <span class="com">rem N est le numéro de l'objet barre.</span></code></pre>
+</div>
        
       <p>- Pour changer la position de curseur :</P>
        
-      <DIR> 
-        <p>position 
-          N, P : 
-          rem 
-          P est la 
-          position à prendre par le curseur de la barre numéro N.</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">position</span> N, P : <span class="com">rem P est la position à prendre par le curseur de la barre numéro N.</span></code></pre>
+</div>
        
       <p>Quand vous 
         créez des barres, elles ont des valeurs standards pour le minimum 
@@ -1209,23 +963,23 @@
       <p>- Pour changer 
         la valeur minimale :</P>
        
-      <DIR> 
-        <p>min 
-          N,M : 
-          rem 
-           M est la 
-          valeur minimale, N est le numéro de l'objet barre.</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">min</span> N,M : <span class="com">rem M est la valeur minimale, N est le numéro de l'objet barre.</span></code></pre>
+</div>
        
       <p>- Pour changer la valeur maximale :</P>
        
-      <DIR> 
-        <p>max 
-          N,M 
-          : rem 
-           M est la 
-          valeur maximale, N est le numéro de l'objet barre.</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">max</span> N,M : <span class="com">rem M est la valeur maximale, N est le numéro de l'objet barre.</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1245,22 +999,15 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>sound 
-          1 : 
-          rem 
-          créer 
-          un son<br>
-          file_load 
-          1,"file.mid" 
-          : rem 
-          charger 
-          un fichier<br>
-          play 
-          1 : 
-          rem 
-          le jouer</p>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">sound</span> <span class="num">1</span> : <span class="com">rem créer un son</span>
+<span class="kw">file_load</span> <span class="num">1</span>,<span class="str">"file.mid"</span> : <span class="com">rem charger un fichier</span>
+<span class="kw">play</span> <span class="num">1</span> : <span class="com">rem le jouer</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1275,22 +1022,15 @@
             <div class="accordion-content-inner">
               un 
       fichier son WAV ?</B> 
-      <DIR> 
-        <p>sound 
-          1 : 
-          rem 
-          créer 
-          un son<br>
-          file_load 
-          1,"file.wav" 
-          : rem 
-          charger 
-          un fichier<br>
-          play 
-          1 : 
-          rem 
-          le jouer</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">sound</span> <span class="num">1</span> : <span class="com">rem créer un son</span>
+<span class="kw">file_load</span> <span class="num">1</span>,<span class="str">"file.wav"</span> : <span class="com">rem charger un fichier</span>
+<span class="kw">play</span> <span class="num">1</span> : <span class="com">rem le jouer</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1304,22 +1044,15 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>sound 
-          1 : 
-          rem 
-          créer 
-          un son<br>
-          file_load 
-          1,"fichier.mp3" 
-          : rem 
-          charger 
-          un fichier<br>
-          play 
-          1 : 
-          rem 
-          le jouer</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">sound</span> <span class="num">1</span> : <span class="com">rem créer un son</span>
+<span class="kw">file_load</span> <span class="num">1</span>,<span class="str">"fichier.mp3"</span> : <span class="com">rem charger un fichier</span>
+<span class="kw">play</span> <span class="num">1</span> : <span class="com">rem le jouer</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1333,28 +1066,18 @@
           <div class="accordion-content">
             <div class="accordion-content-inner">
               </B> 
-      <DIR> 
-        <p>dim 
-          a$ : 
-          rem déclarer 
-          une variable string</p>
-        <p>a$="c:\MonFilm.avi" 
-          : rem définir le nom du fichier<br>
-          movie 
-          1 : 
-          rem 
-          créer 
-          un film<br>
-          file_load 
-          1,a$ : 
-          rem 
-          charger 
-          le fichier<br>
-          play 
-          1 : 
-          rem 
-          le jouer</p>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">dim</span> a$ : <span class="com">rem déclarer une variable string</span>
+
+a$=<span class="str">"c:\MonFilm.avi"</span> : <span class="com">rem définir le nom du fichier</span>
+<span class="kw">movie</span> <span class="num">1</span> : <span class="com">rem créer un film</span>
+<span class="kw">file_load</span> <span class="num">1</span>,a$ : <span class="com">rem charger le fichier</span>
+<span class="kw">play</span> <span class="num">1</span> : <span class="com">rem le jouer</span></code></pre>
+</div>
             </div>
           </div>
         </div>
@@ -1402,23 +1125,20 @@
               </B></p>
       <p>Voir l'exemple 
         suivant : </p>
-      <blockquote>
-        <p>dim 
-          a$<br>
-          label 
-          loop</p>
-        <p>loop:<br>
-          a$=inkey$<br>
-          if 
-          a$="" then 
-          goto 
-          loop</p>
-        </blockquote>
-      <DIR> 
-        <p>rem 
-          ici, a$ 
-          contient la touche qui a été enfoncée</P>
-      </DIR>
+<div class="code-editor">
+  <div class="editor-header">
+    <span class="editor-title">code.bas</span>
+    <button class="editor-copy"><span>Copier</span></button>
+  </div>
+  <pre><code><span class="kw">dim</span> a$
+<span class="kw">label</span> loop
+
+loop:
+a$=<span class="kw">inkey$</span>
+<span class="kw">if</span> a$=<span class="str">""</span> <span class="kw">then</span> <span class="kw">goto</span> loop
+
+<span class="com">rem ici, a$ contient la touche qui a été enfoncée</span></code></pre>
+</div>
             </div>
           </div>
         </div>
