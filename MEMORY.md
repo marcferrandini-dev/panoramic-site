@@ -36,3 +36,4 @@ Ce fichier est rempli et mis à jour par les agents au fil du temps. Il conserve
 - Le format `<font face="Calibri">` est obligatoire dans les pages `Keywords/` — c'est le format source attendu par les scripts de traitement
 - `check_keywords.py` doit toujours passer avant de considérer un build comme valide
 - Le `post_build.cjs` copie `download/` dans `dist/` — ne pas supprimer ce dossier même s'il est gitignoré
+- **Publication = manuelle, pas automatique.** « Pousser » (git push) sauvegarde sur GitHub mais NE publie PAS le site public. Pour mettre en ligne sur `panoramic-basic.fr`, l'utilisateur copie lui-même tout le contenu de `dist/` dans le dossier `public_html` de son hébergeur **Hostinger**. Après une modif : faire `npm run build`, puis lui rappeler de recopier `dist/` → `public_html` (et Ctrl+F5 si le changement ne s'affiche pas, cache navigateur).
