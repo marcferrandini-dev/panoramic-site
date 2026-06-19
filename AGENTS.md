@@ -36,8 +36,8 @@ site_2/
 ├── programmes.html          # Galerie de réalisations (330+ programmes)
 ├── telechargements.html     # Téléchargements des exécutables
 ├── mentions-legales.html    # Mentions légales
-├── Keywords/                # 748 pages HTML, une par mot-clé (ex: BUTTON.html, SCENE3D.html)
-├── Tuto/                    # 15 tutoriels HTML + images (TUTOPICT/) + sources (Sources/)
+├── Keywords/                # 746 pages HTML, une par mot-clé (ex: BUTTON.html, SCENE3D.html)
+├── Tuto/                    # 14 tutoriels HTML + images (TUTOPICT/) + sources (Sources/)
 ├── assets/
 │   ├── css/                 # style.css (global), keyword-style.css (pages mots-clés)
 │   ├── js/                  # main.js, theme-init.js, panoramic-highlighter.js, panoramic-keywords.js
@@ -50,7 +50,7 @@ site_2/
 ├── check_keywords.py        # Vérifie la cohérence liste ↔ manuels HTML
 ├── extract_*.py             # Extraction de signatures/déscriptions depuis Keywords/
 ├── *.js (racine)            # Scripts Node.js de maintenance des pages Keywords/
-├── vite.config.js           # Config Vite multi-pages (17 entrées HTML, base: './')
+├── vite.config.js           # Config Vite multi-pages (18 entrées HTML, base: './')
 └── post_build.cjs           # Post-build : copie des dossiers statiques dans dist/
 ```
 
