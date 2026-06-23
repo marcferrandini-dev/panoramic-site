@@ -132,7 +132,7 @@ const { generateSitemap } = require('./generate_sitemap.cjs');
 const sitemap = generateSitemap(__dirname);
 console.log('Sitemap generated: ' + sitemap.count + ' pages.');
 
-['sitemap.xml', 'robots.txt'].forEach(function (f) {
+['sitemap.xml', 'robots.txt', '.htaccess'].forEach(function (f) {
   if (fs.existsSync(f)) {
     fs.copyFileSync(f, path.join('dist', f));
   }

@@ -1,0 +1,27 @@
+# ==========================================================================
+# Configuration serveur PANORAMIC (Apache / Hostinger)
+# ==========================================================================
+
+# Forcer l'encodage UTF-8
+AddDefaultCharset UTF-8
+
+# --------------------------------------------------------------------------
+# Cache navigateur
+# --------------------------------------------------------------------------
+# Pages HTML : le navigateur doit toujours revérifier si la page a changé
+# (évite l'affichage d'une version périmée chez les visiteurs qui reviennent).
+<IfModule mod_headers.c>
+  <FilesMatch "\.(html|htm)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  # Fichiers « techniques » qui changent rarement : cache long pour la rapidité.
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=604800"
+  </FilesMatch>
+
+  # Images : cache d'un mois.
+  <FilesMatch "\.(png|jpg|jpeg|gif|svg|webp|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
