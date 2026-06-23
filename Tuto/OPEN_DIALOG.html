@@ -102,7 +102,7 @@
       <pre><code>dim a$ : rem on définit une variable string
 open_dialog 1 : rem création de l'objet système numéro 1
 a$=file_name$(1) : rem utilisation de l'open_dialog 1 pour choisir un fichier
-if a$<> "_" then - - - : rem un fichier a été choisi
+if a$&lt;&gt; "_" then - - - : rem un fichier a été choisi
 if a$= "_" then - - - : rem aucun fichier n'a été choisi</code></pre>
     </div>
 <div class="tuto-separator"></div>
@@ -128,7 +128,7 @@ if a$= "_" then - - - : rem aucun fichier n'a été choisi</code></pre>
 open_dialog 1 : rem création de l'objet système numéro 1
 filter 1,"fichiers texte|*.txt": rem on se limite aux fichiers se terminant par "txt"
 a$=file_name$(1) : rem utilisation de l'open_dialog 1 pour choisir un fichier TEXTE (.txt)
-if a$<> "_" then - - - : rem un fichier a été choisi
+if a$&lt;&gt; "_" then - - - : rem un fichier a été choisi
 if a$= "_" then - - - : rem aucun fichier n'a été choisi</code></pre>
     </div>
 <div class="tuto-separator"></div>
@@ -153,7 +153,7 @@ open_dialog 1 : rem création de l'objet système numéro 1
 filter 1,"fichiers texte|*.txt": rem on se limite aux fichiers se terminant par "txt"
 memo 2 : rem création de l'objet système numéro 2
 a$=file_name$(1) : rem utilisation de l'open_dialog 1 pour choisir un fichier TEXTE
-if a$<> "_" then file_load(a$) : rem on remplit le memo avec le fichier TEXTE choisi</code></pre>
+if a$&lt;&gt; "_" then file_load(a$) : rem on remplit le memo avec le fichier TEXTE choisi</code></pre>
     </div>
         </div>
       </div>
