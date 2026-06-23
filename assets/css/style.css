@@ -1066,6 +1066,18 @@ footer {
   margin: 1.5rem 0;
 }
 
+.tuto-content .tuto-screenshot {
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.tuto-content .tuto-screenshot img {
+  display: inline-block;
+  max-width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+}
+
 /* Visible keyboard focus for accessibility */
 :focus-visible {
   outline: 2px solid var(--secondary);
