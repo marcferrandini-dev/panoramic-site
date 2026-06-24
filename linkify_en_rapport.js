@@ -30,7 +30,9 @@ for (const file of allFiles) {
   const after  = match[3];
 
   // Replace each <p>KEYWORD</p> inside the blockquote
-  const newInside = inside.replace(/<p>\s*([A-Z0-9_]+)\s*<\/p>/gi, (full, kw) => {
+  // La classe [A-Z0-9_()] reconnait aussi les mots-clés fonctionnels avec
+  // parenthèses (ex: DLL_CALL5(), LEN(), STR$()...).
+  const newInside = inside.replace(/<p>\s*([A-Z0-9_()]+)\s*<\/p>/gi, (full, kw) => {
     const kwUpper = kw.trim().toUpperCase();
     if (existingKeywords.has(kwUpper)) {
       linkCount++;
