@@ -6,6 +6,11 @@
 AddDefaultCharset UTF-8
 
 # --------------------------------------------------------------------------
+# Page d'erreur 404 : redirige vers la page soignée du site
+# --------------------------------------------------------------------------
+ErrorDocument 404 /404.html
+
+# --------------------------------------------------------------------------
 # Cache navigateur
 # --------------------------------------------------------------------------
 # Pages HTML : le navigateur doit toujours revérifier si la page a changé

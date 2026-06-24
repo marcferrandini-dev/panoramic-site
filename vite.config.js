@@ -23,7 +23,8 @@ export default defineConfig({
         faq: resolve(__dirname, 'faq.html'),
         programmes: resolve(__dirname, 'programmes.html'),
         telechargements: resolve(__dirname, 'telechargements.html'),
-        mentionsLegales: resolve(__dirname, 'mentions-legales.html')
+        mentionsLegales: resolve(__dirname, 'mentions-legales.html'),
+        erreur404: resolve(__dirname, '404.html')
       }
     }
   }
