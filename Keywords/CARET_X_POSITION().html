@@ -149,18 +149,15 @@
         <span class="editor-title">CARET_X_POSITION().bas</span>
         <button type="button" class="editor-copy" aria-label="Copier le code"><span>Copier</span></button>
       </div>
-      <pre><code>' créer un EDIT
-edit 1
+      <pre><code>' créer un MEMO
+memo 1
 ' visualiser un texte
 text 1,"Hello"
 ' mettre le curseur entre "e" et "l"
 set_focus 1
 caret_position 1,2
-print
-print
-print
-print
 ' afficher la position du curseur en X
+print_locate 0,100
 print caret_x_position(1)
 ' afficher la position du curseur en Y
 print caret_y_position(1)</code></pre>

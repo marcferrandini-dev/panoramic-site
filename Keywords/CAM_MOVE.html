@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CAM_MOVE N,D — Documentation PANORAMIC</title>
+  <title>CAM_MOVE D — Documentation PANORAMIC</title>
   <meta name="description" content="Documentation de l'instruction CAM_MOVE N,D du langage de programmation PANORAMIC.">
   <link rel="icon" href="../assets/images/logo.png" type="image/png">
   <link rel="stylesheet" href="../assets/css/style.css">
@@ -67,14 +67,14 @@
           <span aria-hidden="true">/</span>
           <a href="../manuel-a-z.html">Index A-Z</a>
           <span aria-hidden="true">/</span>
-          <span>CAM_MOVE N,D</span>
+          <span>CAM_MOVE D</span>
         </nav>
         <div class="keyword-page">
-<h1 class="sr-only">CAM_MOVE N,D</h1>
+<h1 class="sr-only">CAM_MOVE D</h1>
 <font face="Calibri" color="#333333" size="3">
     
     <p align="center"><font color="#323296" size="6">
-      CAM_MOVE N,D
+      CAM_MOVE D
     </font></p>
     
     <p align="center"><font size="4"><b>
@@ -94,7 +94,7 @@
 
     <blockquote>
       <p>
-        La commande CAM_MOVE N,D fait avancer ou reculer la caméra de la distance D dans sa direction de pointage.
+        La commande CAM_MOVE D fait avancer ou reculer la caméra de la distance D dans sa direction de pointage.
       </p>
       <p>
         La caméra avance si D est positif.
@@ -154,12 +154,16 @@
       </div>
       <pre><code>' créer un monde 3D
 scene3d 1
-' créer un cube
-3d_cube 1,1
+' créer une théière
+3d_teapot 1
+' attendre 1 seconde
+pause 1000
 ' avancer la caméra
-cam_move 1,5
+cam_move 2
+' attendre 1 seconde
+pause 1000
 ' la remetre à sa place
-cam_move 1,-5</code></pre>
+cam_move -2</code></pre>
     </div>
 
     <br>
