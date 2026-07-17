@@ -380,6 +380,10 @@ header.scrolled {
   box-shadow: var(--header-scrolled-shadow, 0 10px 30px rgba(0, 0, 0, 0.3));
 }
 
+html {
+  scroll-padding-top: 90px;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
