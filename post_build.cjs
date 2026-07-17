@@ -32,6 +32,11 @@ if (!fs.existsSync('dist')) {
   fs.mkdirSync('dist', { recursive: true });
 }
 
+// Régénérer l'index des mots-clés (assets/data/keywords-data.js) utilisé par
+// l'Assistant. À faire AVANT la copie des assets vers dist/.
+console.log('Post-build: Building keywords data index...');
+require('child_process').execSync('node scratch/build_keywords_index.cjs', { stdio: 'inherit' });
+
 // Copy folders
 copyFolderRecursiveSync('download', 'dist');
 copyFolderRecursiveSync('Keywords', 'dist');
@@ -43,6 +48,9 @@ if (!fs.existsSync('dist/assets')) {
 }
 copyFolderRecursiveSync('assets/css', 'dist/assets');
 copyFolderRecursiveSync('assets/js', 'dist/assets');
+// assets/data/ contient keywords-data.js (liste des 746 mots-clés pour l'Assistant).
+// Fichier JS classique (window.X), pas un module ES -> chargeable en file://.
+copyFolderRecursiveSync('assets/data', 'dist/assets');
 // 'realisations' est exclu : ces images sont déjà optimisées/copiées par le build
 // (versions hashées dans dist/assets/). Les recopier en clair ferait un doublon de ~27 Mo.
 copyFolderRecursiveSync('assets/images', 'dist/assets', ['realisations']);
@@ -71,6 +79,18 @@ esbuild.buildSync({
   format: 'iife',
   minify: true,
   outfile: path.join(__dirname, 'dist/assets/js/main.js'),
+});
+
+// Compiler assets/js/assistant.js en bundle IIFE pour la page Assistant.
+// C'est un module ES qui écoute DOMContentLoaded -> doit devenir un script
+// classique pour fonctionner en file:// (même raison que main.js).
+console.log('Post-build: Bundling assets/js/assistant.js -> IIFE (esbuild)...');
+esbuild.buildSync({
+  entryPoints: [path.join(__dirname, 'assets/js/assistant.js')],
+  bundle: true,
+  format: 'iife',
+  minify: true,
+  outfile: path.join(__dirname, 'dist/assets/js/assistant.js'),
 });
 // Les sources des modules importés sont maintenant fusionnées dans main.js :
 // on supprime leurs copies brutes (inutiles et non chargeables en file://).

@@ -29,6 +29,18 @@ Ce fichier est rempli et mis à jour par les agents au fil du temps. Il conserve
 
 [Aucun travail en cours]
 
+## Assistant de recherche de mots-clés (page « Assistant »)
+
+- **2026-07-17** — Nouvelle page `assistant.html` accessible depuis le menu principal (entre « Documentation » et « Tutoriels »). Le développeur tape son besoin en français (« je veux dessiner un cercle »), l'assistant propose les mots-clés PANORAMIC pertinents avec lien vers la fiche. Style « chat ».
+- **Pipeline** :
+  - `scratch/build_keywords_index.cjs` parcourt les 746 `Keywords/*.html` et génère `assets/data/keywords-data.js` (exposé en `window.PANORAMIC_KEYWORDS_DATA`, ~308 Ko). Lancé automatiquement par `post_build.cjs` **avant** la copie des assets.
+  - `assets/js/assistant.js` (module ES en source, bundlé en IIFE par esbuild au build, comme `main.js`) contient : thésaurus ~180 synonymes FR→PANORAMIC, normalisation (accents, stemming infinitifs FR léger), moteur de scoring, rendu DOM.
+  - Page `assistant.html` charge `./assets/data/keywords-data.js` (script classique) PUIS `./assets/js/assistant.js` (devenu script classique après build).
+- **Pour enrichir le thésaurus** (quand une recherche naturelle rate) : éditer `assets/js/assistant.js` → objet `THESAURUS` (clé = mot français normalisé-stemé, valeur = `{ noms: [...], groupes: [...], prefixes: [...] }`). Les noms/groupes/préfixes sont matchés en version normalisée.
+- **Tests validés au lancement** : « dessiner un cercle »→2D_CIRCLE, « bouton »→BUTTON, « jouer un son »→PLAY+SOUND+MIDI_PLAY, « lire un fichier »→FILE_OPEN_READ, « sinus »→SIN(), « position souris »→MOUSE_X_POSITION, « désactiver événement »→OFF_*, « créer une fenêtre »→FORM, « maths »→Mathématiques, « imprimer »→PRINT, « fenêtre »→FORM, « liste déroulante »→LIST+COMBO, « racine carrée »→SQR, « vidéo »→MOVIE, « horloge »→TIMER.
+- **Marche hors-ligne** (file://, clé USB, double-clic) — pas de fetch, pas d'appel externe, pas d'AI en ligne. Tout est local.
+- Scripts utilitaires (gitignorés) : `scratch/add_assistant_nav.cjs` (menu pages racine), `scratch/add_assistant_nav_subdirs.cjs` (menu Keywords/ + Tuto/). Idempotents.
+
 ## Points de vigilance
 
 <!-- Choses à vérifier, pièges déjà rencontrés, etc. -->

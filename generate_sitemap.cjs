@@ -8,6 +8,7 @@ const BASE_URL = 'https://panoramic-basic.fr';
 // Pages principales à la racine (l'accueil est couvert par "/").
 const ROOT_PAGES = [
   'documentation.html',
+  'assistant.html',
   'tutoriels.html',
   'faq.html',
   'programmes.html',

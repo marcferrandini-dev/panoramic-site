@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Assistant - PANORAMIC</title>
+  <meta name="description" content="Assistant de recherche intelligent : décrivez votre besoin en français, l'assistant vous propose les mots-clés PANORAMIC les plus pertinents.">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="icon" href="./assets/images/logo.png" type="image/png">
+  <script src="./assets/js/theme-init.js"></script>
+
+  <link rel="canonical" href="https://panoramic-basic.fr/assistant.html">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:site_name" content="PANORAMIC">
+  <meta property="og:url" content="https://panoramic-basic.fr/assistant.html">
+  <meta property="og:title" content="Assistant - PANORAMIC">
+  <meta property="og:description" content="Assistant de recherche intelligent : décrivez votre besoin en français, l'assistant vous propose les mots-clés PANORAMIC les plus pertinents.">
+  <meta property="og:image" content="https://panoramic-basic.fr/assets/images/logo.png">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Assistant - PANORAMIC">
+  <meta name="twitter:description" content="Assistant de recherche intelligent : décrivez votre besoin en français, l'assistant vous propose les mots-clés PANORAMIC les plus pertinents.">
+  <meta name="twitter:image" content="https://panoramic-basic.fr/assets/images/logo.png">
+
+  <style>
+    /* --- Zone Assistant --- */
+    .assistant-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 1rem 4rem;
+    }
+
+    .assistant-intro {
+      text-align: center;
+      margin-bottom: 1.75rem;
+    }
+    .assistant-intro p {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 620px;
+      margin: 0.5rem auto 0;
+    }
+
+    .assistant-box {
+      background: var(--bg-glass, rgba(255,255,255,0.04));
+      border: 1px solid var(--border, rgba(255,255,255,0.1));
+      border-radius: 18px;
+      padding: 2rem 1.75rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .assistant-input-wrap {
+      position: relative;
+      margin-bottom: 1rem;
+    }
+    .assistant-input-wrap .search-icon {
+      position: absolute;
+      left: 1.1rem;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.3rem;
+      opacity: 0.6;
+      pointer-events: none;
+    }
+    #assistant-input {
+      width: 100%;
+      padding: 1.1rem 1.1rem 1.1rem 3rem;
+      font-size: 1.1rem;
+      border-radius: 12px;
+      border: 1.5px solid var(--border, rgba(255,255,255,0.15));
+      background: var(--bg-input, var(--bg-color, #fff));
+      color: var(--text-color, #222);
+      transition: border-color 0.15s, box-shadow 0.15s;
+      box-sizing: border-box;
+      font-family: inherit;
+    }
+    #assistant-input:focus {
+      outline: none;
+      border-color: var(--secondary, #06b6d4);
+      box-shadow: 0 0 0 3px var(--secondary-glow, rgba(6,182,212,0.18));
+    }
+    #assistant-input::placeholder {
+      color: var(--text-muted);
+      opacity: 0.8;
+    }
+
+    .assistant-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .assistant-chip {
+      display: inline-block;
+      padding: 0.45rem 0.9rem;
+      font-size: 0.88rem;
+      border-radius: 999px;
+      border: 1px solid var(--border, rgba(255,255,255,0.18));
+      background: transparent;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s;
+      font-family: inherit;
+    }
+    .assistant-chip:hover {
+      border-color: var(--secondary, #06b6d4);
+      color: var(--secondary, #06b6d4);
+      background: var(--secondary-glow, rgba(6,182,212,0.08));
+    }
+
+    .assistant-hint {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-top: 0.75rem;
+      opacity: 0.8;
+    }
+
+    /* --- Résultats --- */
+    #assistant-results {
+      margin-top: 1.5rem;
+    }
+    .assistant-results-count {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin: 0 0 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .assistant-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0.75rem;
+    }
+    @media (min-width: 640px) {
+      .assistant-cards { grid-template-columns: 1fr 1fr; }
+    }
+
+    .assistant-card {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      padding: 1rem 1.1rem;
+      border-radius: 12px;
+      border: 1px solid var(--border, rgba(255,255,255,0.12));
+      background: var(--bg-card, rgba(255,255,255,0.03));
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.12s, border-color 0.15s, box-shadow 0.15s;
+    }
+    .assistant-card:hover {
+      transform: translateY(-2px);
+      border-color: var(--secondary, #06b6d4);
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    }
+    .assistant-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 0.5rem;
+    }
+    .assistant-card-name {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--secondary, #06b6d4);
+      font-family: 'Consolas', 'Monaco', monospace;
+      word-break: break-all;
+    }
+    .assistant-card-score {
+      font-size: 0.85rem;
+      color: var(--accent, #f59e0b);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+    .assistant-card-desc {
+      margin: 0;
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+    .assistant-card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: auto;
+    }
+    .assistant-badge {
+      display: inline-block;
+      padding: 0.18rem 0.55rem;
+      font-size: 0.72rem;
+      border-radius: 6px;
+      border: 1px solid;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-weight: 600;
+    }
+    .assistant-badge-group {
+      border-color: var(--border, rgba(255,255,255,0.2));
+      color: var(--text-muted);
+      text-transform: none;
+    }
+
+    .assistant-empty {
+      text-align: center;
+      padding: 2rem 1rem;
+      color: var(--text-muted);
+    }
+    .assistant-empty-hint {
+      font-size: 0.9rem;
+      margin: 0.75rem 0;
+    }
+    .assistant-empty-links {
+      display: flex;
+      gap: 0.75rem;
+      justify-content: center;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main" class="skip-link">Aller au contenu principal</a>
+
+  <div id="drawer-overlay" class="drawer-overlay"></div>
+
+  <div id="mobile-drawer" class="mobile-drawer">
+    <ul>
+      <li><a href="./index.html" class="nav-link">Accueil</a></li>
+      <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+      <li><a href="./assistant.html" class="nav-link active">Assistant</a></li>
+      <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+      <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+      <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+      <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+      <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum ↗</a></li>
+      <li><button class="theme-toggle-btn" aria-label="Changer de thème" style="margin-left:0;"></button></li>
+    </ul>
+  </div>
+
+  <header>
+    <div class="container nav-container">
+      <a href="./index.html" class="logo">
+        <img src="./assets/images/logo.png" alt="Logo PANORAMIC">
+        <span>PANORAMIC</span>
+      </a>
+
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="./index.html" class="nav-link">Accueil</a></li>
+          <li><a href="./documentation.html" class="nav-link">Documentation</a></li>
+          <li><a href="./assistant.html" class="nav-link active">Assistant</a></li>
+          <li><a href="./tutoriels.html" class="nav-link">Tutoriels</a></li>
+          <li><a href="./faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="./programmes.html" class="nav-link">Réalisations</a></li>
+          <li><a href="./telechargements.html" class="nav-link">Téléchargements</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" class="nav-link" rel="noopener noreferrer">Forum</a></li>
+        </ul>
+        <button class="theme-toggle-btn" aria-label="Changer de thème"></button>
+      </nav>
+
+      <button id="mobile-toggle" class="mobile-nav-toggle" aria-label="Ouvrir le menu">
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" style="padding: 6rem 0 2rem;">
+      <div class="container">
+        <h1>Assistant</h1>
+      </div>
+    </section>
+
+    <section class="assistant-wrap">
+      <div class="assistant-intro">
+        <p>Décris ce que tu veux faire en français&nbsp;: l'assistant te propose les mots-clés PANORAMIC les plus pertinents.</p>
+      </div>
+
+      <div class="assistant-box">
+        <div class="assistant-input-wrap">
+          <span class="search-icon">🔍</span>
+          <input type="text" id="assistant-input" placeholder="Ex : je veux dessiner un cercle, jouer un son, lire un fichier…" autocomplete="off" aria-label="Décris ton besoin">
+        </div>
+
+        <div class="assistant-chips">
+          <button class="assistant-chip" data-q="dessiner un cercle">dessiner un cercle</button>
+          <button class="assistant-chip" data-q="bouton">bouton</button>
+          <button class="assistant-chip" data-q="jouer un son">jouer un son</button>
+          <button class="assistant-chip" data-q="lire un fichier">lire un fichier</button>
+          <button class="assistant-chip" data-q="sinus">sinus</button>
+          <button class="assistant-chip" data-q="position souris">position souris</button>
+          <button class="assistant-chip" data-q="créer une fenêtre">créer une fenêtre</button>
+          <button class="assistant-chip" data-q="maths">maths</button>
+        </div>
+
+        <p class="assistant-hint">Astuce&nbsp;: tape plusieurs mots, en français courant. L'assistant comprend aussi les accords, les pluriels et les infinitifs («&nbsp;dessiner&nbsp;» ou «&nbsp;dessine&nbsp;»).</p>
+
+        <div id="assistant-results"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <div class="footer-info">
+        <h4>PANORAMIC</h4>
+        <p>Un langage de programmation BASIC moderne, puissant et portable pour Windows. Créez des GUI, de la 2D/3D et communiquez avec votre machine en toute liberté.</p>
+      </div>
+      <div class="footer-links">
+        <h4>Ressources</h4>
+        <ul>
+          <li><a href="./documentation.html">Documentation</a></li>
+          <li><a href="./manuel-a-z.html">Index A-Z</a></li>
+          <li><a href="./tutoriels.html">Tutoriels</a></li>
+          <li><a href="./faq.html">FAQ</a></li>
+          <li><a href="./telechargements.html">Téléchargements</a></li>
+        </ul>
+      </div>
+      <div class="footer-links">
+        <h4>Légal</h4>
+        <ul>
+          <li><a href="./mentions-legales.html">Mentions Légales</a></li>
+          <li><a href="https://panoramic.1fr1.net/" target="_blank" rel="noopener noreferrer">Forum d'entraide</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PANORAMIC</p>
+    </div>
+  </footer>
+
+  <script src="./assets/data/keywords-data.js"></script>
+  <script src="./assets/js/assistant.js"></script>
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+</html>

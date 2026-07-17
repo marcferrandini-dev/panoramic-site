@@ -7,6 +7,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, 'index.html'),
+        assistant: resolve(__dirname, 'assistant.html'),
         documentation: resolve(__dirname, 'documentation.html'),
         manuelAZ: resolve(__dirname, 'manuel-a-z.html'),
         manuelTheme: resolve(__dirname, 'manuel-theme.html'),
