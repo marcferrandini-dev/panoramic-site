@@ -59,7 +59,7 @@
       top: 50%;
       transform: translateY(-50%);
       font-size: 1.3rem;
-      opacity: 0.6;
+      color: var(--text-main);
       pointer-events: none;
     }
     #assistant-input {
@@ -80,8 +80,7 @@
       box-shadow: 0 0 0 3px var(--secondary-glow);
     }
     #assistant-input::placeholder {
-      color: var(--text-muted);
-      opacity: 0.8;
+      color: var(--text-main);
     }
 
     .assistant-chips {
@@ -97,7 +96,7 @@
       border-radius: 999px;
       border: 1px solid var(--border-glass);
       background: transparent;
-      color: var(--text-muted);
+      color: var(--text-main);
       cursor: pointer;
       transition: all 0.15s;
       font-family: inherit;
@@ -112,7 +111,6 @@
       font-size: 0.82rem;
       color: var(--text-main);
       margin-top: 0.75rem;
-      opacity: 0.8;
     }
 
     /* --- Résultats --- */
@@ -195,7 +193,7 @@
     }
     .assistant-badge-group {
       border-color: var(--border-glass);
-      color: var(--text-muted);
+      color: var(--text-main);
       text-transform: none;
     }
 
