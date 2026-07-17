@@ -203,12 +203,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (searchInput) searchInput.value = '';
 
         sections.forEach(section => {
-          const sectionId = section.getAttribute('id');
+          const sectionLetter = section.getAttribute('data-letter');
 
           if (letter === 'all') {
             section.style.display = '';
             section.querySelectorAll('.keyword-card').forEach(c => c.style.display = '');
-          } else if (sectionId === `section-${letter}`) {
+          } else if (sectionLetter === letter) {
             section.style.display = '';
             section.querySelectorAll('.keyword-card').forEach(c => c.style.display = '');
             section.scrollIntoView({ behavior: 'smooth', block: 'start' });
