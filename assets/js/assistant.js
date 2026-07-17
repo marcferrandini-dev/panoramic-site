@@ -421,7 +421,7 @@
     return score;
   }
 
-  function search(query, limit = 12) {
+  function search(query, limit = Infinity) {
     if (!INDEX.length) return [];
     const tokens = tokenize(query);
     if (!tokens.length) return [];
@@ -523,7 +523,7 @@
       if (container) container.innerHTML = '';
       return;
     }
-    const results = search(trimmed, 12);
+    const results = search(trimmed);
     renderResults(results, trimmed);
   }
 
