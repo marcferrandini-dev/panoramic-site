@@ -818,23 +818,25 @@ footer {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1315px) {
   .nav-menu {
     display: none;
   }
-  
+
   .mobile-nav-toggle {
     display: block;
   }
-  
+}
+
+@media (max-width: 768px) {
   .hero h1 {
     font-size: 2.3rem;
   }
-  
+
   .hero p {
     font-size: 1.1rem;
   }
-  
+
   .footer-grid {
     grid-template-columns: 1fr;
     gap: 2rem;
