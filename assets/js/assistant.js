@@ -536,7 +536,6 @@
     buildIndex(rawData);
 
     const input = document.getElementById('assistant-input');
-    const chips = document.querySelectorAll('.assistant-chip');
 
     if (input) {
       let timer;
@@ -548,16 +547,6 @@
         if (e.key === 'Enter') { e.preventDefault(); runSearch(input.value); }
       });
     }
-
-    chips.forEach(chip => {
-      chip.addEventListener('click', () => {
-        if (input) {
-          input.value = chip.dataset.q || chip.textContent;
-          input.focus();
-          runSearch(input.value);
-        }
-      });
-    });
   }
 
   if (document.readyState === 'loading') {

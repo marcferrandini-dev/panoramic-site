@@ -83,30 +83,6 @@
       color: var(--text-main);
     }
 
-    .assistant-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      margin-bottom: 0.5rem;
-    }
-    .assistant-chip {
-      display: inline-block;
-      padding: 0.45rem 0.9rem;
-      font-size: 0.88rem;
-      border-radius: 999px;
-      border: 1px solid var(--border-glass);
-      background: transparent;
-      color: var(--text-main);
-      cursor: pointer;
-      transition: all 0.15s;
-      font-family: inherit;
-    }
-    .assistant-chip:hover {
-      border-color: var(--secondary);
-      color: var(--secondary);
-      background: var(--secondary-glow);
-    }
-
     .assistant-hint {
       font-size: 0.82rem;
       color: var(--text-main);
@@ -278,17 +254,6 @@
         <div class="assistant-input-wrap">
           <span class="search-icon">🔍</span>
           <input type="text" id="assistant-input" placeholder="Ex : je veux dessiner un cercle, jouer un son, lire un fichier…" autocomplete="off" aria-label="Décris ton besoin">
-        </div>
-
-        <div class="assistant-chips">
-          <button class="assistant-chip" data-q="dessiner un cercle">dessiner un cercle</button>
-          <button class="assistant-chip" data-q="bouton">bouton</button>
-          <button class="assistant-chip" data-q="jouer un son">jouer un son</button>
-          <button class="assistant-chip" data-q="lire un fichier">lire un fichier</button>
-          <button class="assistant-chip" data-q="sinus">sinus</button>
-          <button class="assistant-chip" data-q="position souris">position souris</button>
-          <button class="assistant-chip" data-q="créer une fenêtre">créer une fenêtre</button>
-          <button class="assistant-chip" data-q="maths">maths</button>
         </div>
 
         <p class="assistant-hint">Astuce&nbsp;: tape plusieurs mots, en français courant. L'assistant comprend aussi les accords, les pluriels et les infinitifs («&nbsp;dessiner&nbsp;» ou «&nbsp;dessine&nbsp;»).</p>
