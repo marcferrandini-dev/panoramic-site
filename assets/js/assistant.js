@@ -546,6 +546,7 @@
       input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') { e.preventDefault(); runSearch(input.value); }
       });
+      try { input.focus(); } catch (_) {}
     }
   }
 
