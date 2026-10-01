@@ -96,7 +96,7 @@
 
     <blockquote>
       <p>
-        La commande TEXT_DELETE N,P,C supprime C caractères à partir de la position P (c'est à dire à partir du Pème caractère) dans l'objet système de numéro N.
+        La commande TEXT_DELETE N,P,C supprime C caractères à partir de la position P (c'est à dire à partir du Pème caractère. P = 0 : début du texte.) dans l'objet système de numéro N.
       </p>
       <p>
         L'objet système est un EDIT, MEMO, COMBO, SPIN, MEMO_RICH, SYNEDIT.
@@ -141,7 +141,7 @@
       <li>Si l'objet système numéro N n'existe pas.</li>
       <li>Si le numéro N n'est pas le numéro d'un EDIT, MEMO, COMBO, SPIN, MEMO_RICH, SYNEDIT.</li>
       <li>Si P n'est pas une expression correcte.</li>
-      <li>Si P est inférieur ou égal à 0.</li>
+      <li>Si P est inférieur à 0.</li>
       <li>Si C n'est pas une expression correcte.</li>
       <li>Si C est inférieur ou égal à 0.</li>
     </ul>
@@ -162,7 +162,7 @@ edit 1
 ' afficher un texte
 text 1,"Bonjour"
 wait 1000
-' sélectionner 4 caractères à partir du 3ème
+' supprimer 4 caractères à partir du 3ème
 text_delete 1,3,4</code></pre>
     </div>
 
