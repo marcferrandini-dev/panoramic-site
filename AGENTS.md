@@ -72,7 +72,7 @@ site_2/
 4. Lancer les scripts `extract_*.py` puis `merge_*.py` pour injecter dans `manuel-theme.html`
 5. Relancer `node scratch/generate_panoramic_keywords.cjs` pour le surligneur
 6. Vérifier avec `python check_keywords.py`
-7. `npm run build` pour valider le build, puis commit + push
+7. `npm run build` pour valider le build, puis commit
 8. Résumer en une phrase simple : « Le mot-clé XXXXX est en ligne. »
 
 ## Build obligatoire après modification
@@ -110,24 +110,24 @@ En revanche, il comprend très bien le contenu : les mots-clés, la syntaxe du l
 ## Scénarios fréquents
 
 ### Ajout d'un nouveau mot-clé
-Suivre la procédure détaillée de la section **« Workflow d'ajout de mots-clés »** ci-dessus (chaîne de traitement complète → build → commit/push → résumé en une phrase).
+Suivre la procédure détaillée de la section **« Workflow d'ajout de mots-clés »** ci-dessus (chaîne de traitement complète → build → commit → résumé en une phrase).
 
 ### Correction d'un mot-clé existant
 1. Modifier le fichier `Keywords/MOTCLE.html`
 2. Relancer extraction + merge si la signature ou description a changé
-3. `npm run build` puis commit + push
+3. `npm run build` puis commit
 4. Annoncer "Correction faite."
 
 ### Modification d'une page du site (accueil, téléchargements, etc.)
 1. Modifier le `.html` concerné
-2. `npm run build` puis commit + push
+2. `npm run build` puis commit
 3. Annoncer le résultat simplement
 
 ### Ajout d'un tutoriel
 1. Créer le fichier dans `Tuto/` en utilisant la structure d'un tutoriel existant comme modèle
 2. Ajouter les images dans `Tuto/TUTOPICT/` si nécessaire
 3. Mettre à jour `tutoriels.html` pour référencer le nouveau tutoriel
-4. `npm run build` puis commit + push
+4. `npm run build` puis commit
 
 ## Pièges à éviter
 
@@ -145,7 +145,7 @@ Suivre la procédure détaillée de la section **« Workflow d'ajout de mots-cl�
 
 - **Commiter chaque modification significative** avec un message clair en français décrivant le changement.
 - **Pas de commit après chaque micro-édition** : grouper les changements cohérents en un seul commit.
-- **Push automatique** après chaque commit ou série de commits validés.
+- **Pas de push** : plus de GitHub (octobre 2026, décision de l'utilisateur) — le dépôt est purement local. **Commit local uniquement, ne jamais tenter de push.**
 - **Rester sur `main`** — pas de branches sauf demande explicite.
 - **Avant de commiter**, vérifier avec `git status` qu'on ne commit que les fichiers pertinents (pas de fichiers temporaires, pas de `dist/`, pas de `node_modules/`).
 - **Format des messages de commit** : une ligne en français, descriptif, commençant par le domaine (ex: "Rubrique Mathématiques : ajout 3 mots-clés ADR1/ADR2/ADR3").
